@@ -1,0 +1,54 @@
+.twitted {
+	background-color: #2F364F;
+	margin: 0;
+	padding: 0;
+}
+
+.twitted h2 {
+
+}
+
+.twitted div.preLoader {
+	background-color: #2F364F;
+	padding: 10px;
+	color: #788990;
+}
+
+.twitted ul#twitter_update_list {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.twitted ul#twitter_update_list li {
+	margin: 0;
+	padding: 10px;
+	font-size: 11px;
+	border-top: 1px solid #464A64; 
+	border-bottom: 1px solid #1B273D;
+}
+
+.twitted ul#twitter_update_list li span {
+	/* tweet content */
+	display: block;
+	color: #788990;
+}
+
+.twitted ul#twitter_update_list li span a {
+	/* links in tweet content */
+
+}
+
+.twitted ul#twitter_update_list li a {
+	/* timestamp link */
+}
+
+.twitted ul#twitter_update_list li.firstTweet {
+}
+
+.twitted ul#twitter_update_list li.lastTweet {
+	border-bottom: none;
+}
+
+.twitted p.profileLink {
+}

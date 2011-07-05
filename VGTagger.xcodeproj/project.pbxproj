@@ -1,0 +1,402 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		925CE82213C3BD6D009D6D94 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925CE82113C3BD6D009D6D94 /* Cocoa.framework */; };
+		925CE82C13C3BD6D009D6D94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 925CE82A13C3BD6D009D6D94 /* InfoPlist.strings */; };
+		925CE82F13C3BD6D009D6D94 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 925CE82E13C3BD6D009D6D94 /* main.m */; };
+		925CE83213C3BD6D009D6D94 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 925CE83013C3BD6D009D6D94 /* Credits.rtf */; };
+		925CE83513C3BD6D009D6D94 /* VGTaggerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 925CE83413C3BD6D009D6D94 /* VGTaggerAppDelegate.m */; };
+		925CE83813C3BD6D009D6D94 /* Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = 925CE83613C3BD6D009D6D94 /* Main.xib */; };
+		925CE84013C3BE30009D6D94 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 925CE83F13C3BE30009D6D94 /* Controller.m */; };
+		925CE86A13C3C64F009D6D94 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925CE86913C3C64F009D6D94 /* MacRuby.framework */; };
+		925CE89813C3CB93009D6D94 /* Vgmdb.rb in Resources */ = {isa = PBXBuildFile; fileRef = 925CE89713C3CB93009D6D94 /* Vgmdb.rb */; };
+		925CE8AE13C3D6FA009D6D94 /* tag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925CE8AD13C3D6FA009D6D94 /* tag.framework */; };
+		925CE8B113C3DA14009D6D94 /* TabLibOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 925CE8B013C3DA14009D6D94 /* TabLibOC.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		925CE81D13C3BD6D009D6D94 /* VGTagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VGTagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		925CE82113C3BD6D009D6D94 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		925CE82413C3BD6D009D6D94 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		925CE82513C3BD6D009D6D94 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		925CE82613C3BD6D009D6D94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		925CE82913C3BD6D009D6D94 /* VGTagger-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VGTagger-Info.plist"; sourceTree = "<group>"; };
+		925CE82B13C3BD6D009D6D94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		925CE82D13C3BD6D009D6D94 /* VGTagger-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VGTagger-Prefix.pch"; sourceTree = "<group>"; };
+		925CE82E13C3BD6D009D6D94 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		925CE83113C3BD6D009D6D94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		925CE83313C3BD6D009D6D94 /* VGTaggerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VGTaggerAppDelegate.h; sourceTree = "<group>"; };
+		925CE83413C3BD6D009D6D94 /* VGTaggerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VGTaggerAppDelegate.m; sourceTree = "<group>"; };
+		925CE83713C3BD6D009D6D94 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		925CE83E13C3BE30009D6D94 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
+		925CE83F13C3BE30009D6D94 /* Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
+		925CE86913C3C64F009D6D94 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = SDKROOT; };
+		925CE87513C3C89F009D6D94 /* aac.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = aac.m4a; path = VGTagger/TestFiles/aac.m4a; sourceTree = "<group>"; };
+		925CE87613C3C89F009D6D94 /* lossless.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = lossless.m4a; path = VGTagger/TestFiles/lossless.m4a; sourceTree = "<group>"; };
+		925CE87713C3C89F009D6D94 /* mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = mp3.mp3; path = VGTagger/TestFiles/mp3.mp3; sourceTree = "<group>"; };
+		925CE87813C3C89F009D6D94 /* test.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = test.html; path = VGTagger/TestFiles/test.html; sourceTree = "<group>"; };
+		925CE87913C3C89F009D6D94 /* test2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = test2.html; path = VGTagger/TestFiles/test2.html; sourceTree = "<group>"; };
+		925CE87B13C3C89F009D6D94 /* a.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = a.js; sourceTree = "<group>"; };
+		925CE87C13C3C89F009D6D94 /* button-add-big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-add-big.png"; sourceTree = "<group>"; };
+		925CE87D13C3C89F009D6D94 /* button-cancel.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "button-cancel.gif"; sourceTree = "<group>"; };
+		925CE87E13C3C89F009D6D94 /* connection-min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "connection-min.js"; sourceTree = "<group>"; };
+		925CE87F13C3C89F009D6D94 /* defaulten.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = defaulten.css; sourceTree = "<group>"; };
+		925CE88013C3C89F009D6D94 /* defaulten.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = defaulten.js; sourceTree = "<group>"; };
+		925CE88113C3C89F009D6D94 /* ga.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = ga.js; sourceTree = "<group>"; };
+		925CE88213C3C89F009D6D94 /* highslide.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = highslide.css; sourceTree = "<group>"; };
+		925CE88313C3C89F009D6D94 /* highslide.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = highslide.js; sourceTree = "<group>"; };
+		925CE88413C3C89F009D6D94 /* jquery-1.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "jquery-1.js"; sourceTree = "<group>"; };
+		925CE88513C3C89F009D6D94 /* jquery.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = jquery.css; sourceTree = "<group>"; };
+		925CE88613C3C89F009D6D94 /* jquery.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
+		925CE88713C3C89F009D6D94 /* jquery_002.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = jquery_002.css; sourceTree = "<group>"; };
+		925CE88813C3C89F009D6D94 /* jquery_002.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jquery_002.js; sourceTree = "<group>"; };
+		925CE88913C3C89F009D6D94 /* jquery_003.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = jquery_003.css; sourceTree = "<group>"; };
+		925CE88A13C3C89F009D6D94 /* jsapi.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jsapi.js; sourceTree = "<group>"; };
+		925CE88B13C3C89F009D6D94 /* menu_open.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = menu_open.gif; sourceTree = "<group>"; };
+		925CE88C13C3C89F009D6D94 /* tab.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = tab.html; sourceTree = "<group>"; };
+		925CE88D13C3C89F009D6D94 /* vbulletin_global.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = vbulletin_global.js; sourceTree = "<group>"; };
+		925CE88E13C3C89F009D6D94 /* vbulletin_important.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = vbulletin_important.css; sourceTree = "<group>"; };
+		925CE88F13C3C89F009D6D94 /* vbulletin_md5.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = vbulletin_md5.js; sourceTree = "<group>"; };
+		925CE89013C3C89F009D6D94 /* vbulletin_menu.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = vbulletin_menu.js; sourceTree = "<group>"; };
+		925CE89113C3C89F009D6D94 /* vgmdb-colorcode-title.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "vgmdb-colorcode-title.css"; sourceTree = "<group>"; };
+		925CE89213C3C89F009D6D94 /* vgmdb.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = vgmdb.css; sourceTree = "<group>"; };
+		925CE89313C3C89F009D6D94 /* vgmdb_global.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = vgmdb_global.js; sourceTree = "<group>"; };
+		925CE89413C3C89F009D6D94 /* vgmdblogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vgmdblogo.png; sourceTree = "<group>"; };
+		925CE89513C3C89F009D6D94 /* yahoo-dom-event.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "yahoo-dom-event.js"; sourceTree = "<group>"; };
+		925CE89613C3C89F009D6D94 /* test3.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = test3.html; path = VGTagger/TestFiles/test3.html; sourceTree = "<group>"; };
+		925CE89713C3CB93009D6D94 /* Vgmdb.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Vgmdb.rb; sourceTree = "<group>"; };
+		925CE8AB13C3D637009D6D94 /* libtag_c.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtag_c.dylib; path = usr/local/lib/libtag_c.dylib; sourceTree = SDKROOT; };
+		925CE8AD13C3D6FA009D6D94 /* tag.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = tag.framework; path = Library/Frameworks/tag.framework; sourceTree = SDKROOT; };
+		925CE8AF13C3DA14009D6D94 /* TabLibOC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabLibOC.h; sourceTree = "<group>"; };
+		925CE8B013C3DA14009D6D94 /* TabLibOC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabLibOC.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		925CE81A13C3BD6D009D6D94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				925CE8AE13C3D6FA009D6D94 /* tag.framework in Frameworks */,
+				925CE86A13C3C64F009D6D94 /* MacRuby.framework in Frameworks */,
+				925CE82213C3BD6D009D6D94 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		925CE81213C3BD6D009D6D94 = {
+			isa = PBXGroup;
+			children = (
+				925CE8AD13C3D6FA009D6D94 /* tag.framework */,
+				925CE86E13C3C7EE009D6D94 /* TestFiles */,
+				925CE82813C3BD6D009D6D94 /* Resources */,
+				925CE82713C3BD6D009D6D94 /* Classes */,
+				925CE82013C3BD6D009D6D94 /* Frameworks */,
+				925CE81E13C3BD6D009D6D94 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		925CE81E13C3BD6D009D6D94 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				925CE81D13C3BD6D009D6D94 /* VGTagger.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		925CE82013C3BD6D009D6D94 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				925CE8AB13C3D637009D6D94 /* libtag_c.dylib */,
+				925CE86913C3C64F009D6D94 /* MacRuby.framework */,
+				925CE82113C3BD6D009D6D94 /* Cocoa.framework */,
+				925CE82313C3BD6D009D6D94 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		925CE82313C3BD6D009D6D94 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				925CE82413C3BD6D009D6D94 /* AppKit.framework */,
+				925CE82513C3BD6D009D6D94 /* CoreData.framework */,
+				925CE82613C3BD6D009D6D94 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		925CE82713C3BD6D009D6D94 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				925CE83313C3BD6D009D6D94 /* VGTaggerAppDelegate.h */,
+				925CE83413C3BD6D009D6D94 /* VGTaggerAppDelegate.m */,
+				925CE83E13C3BE30009D6D94 /* Controller.h */,
+				925CE83F13C3BE30009D6D94 /* Controller.m */,
+			);
+			name = Classes;
+			path = VGTagger;
+			sourceTree = "<group>";
+		};
+		925CE82813C3BD6D009D6D94 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				925CE89713C3CB93009D6D94 /* Vgmdb.rb */,
+				925CE83613C3BD6D009D6D94 /* Main.xib */,
+				925CE82913C3BD6D009D6D94 /* VGTagger-Info.plist */,
+				925CE82A13C3BD6D009D6D94 /* InfoPlist.strings */,
+				925CE82D13C3BD6D009D6D94 /* VGTagger-Prefix.pch */,
+				925CE82E13C3BD6D009D6D94 /* main.m */,
+				925CE83013C3BD6D009D6D94 /* Credits.rtf */,
+				925CE8AF13C3DA14009D6D94 /* TabLibOC.h */,
+				925CE8B013C3DA14009D6D94 /* TabLibOC.m */,
+			);
+			name = Resources;
+			path = VGTagger;
+			sourceTree = "<group>";
+		};
+		925CE86E13C3C7EE009D6D94 /* TestFiles */ = {
+			isa = PBXGroup;
+			children = (
+				925CE87513C3C89F009D6D94 /* aac.m4a */,
+				925CE87613C3C89F009D6D94 /* lossless.m4a */,
+				925CE87713C3C89F009D6D94 /* mp3.mp3 */,
+				925CE87813C3C89F009D6D94 /* test.html */,
+				925CE87913C3C89F009D6D94 /* test2.html */,
+				925CE87A13C3C89F009D6D94 /* test3_files */,
+				925CE89613C3C89F009D6D94 /* test3.html */,
+			);
+			name = TestFiles;
+			sourceTree = "<group>";
+		};
+		925CE87A13C3C89F009D6D94 /* test3_files */ = {
+			isa = PBXGroup;
+			children = (
+				925CE87B13C3C89F009D6D94 /* a.js */,
+				925CE87C13C3C89F009D6D94 /* button-add-big.png */,
+				925CE87D13C3C89F009D6D94 /* button-cancel.gif */,
+				925CE87E13C3C89F009D6D94 /* connection-min.js */,
+				925CE87F13C3C89F009D6D94 /* defaulten.css */,
+				925CE88013C3C89F009D6D94 /* defaulten.js */,
+				925CE88113C3C89F009D6D94 /* ga.js */,
+				925CE88213C3C89F009D6D94 /* highslide.css */,
+				925CE88313C3C89F009D6D94 /* highslide.js */,
+				925CE88413C3C89F009D6D94 /* jquery-1.js */,
+				925CE88513C3C89F009D6D94 /* jquery.css */,
+				925CE88613C3C89F009D6D94 /* jquery.js */,
+				925CE88713C3C89F009D6D94 /* jquery_002.css */,
+				925CE88813C3C89F009D6D94 /* jquery_002.js */,
+				925CE88913C3C89F009D6D94 /* jquery_003.css */,
+				925CE88A13C3C89F009D6D94 /* jsapi.js */,
+				925CE88B13C3C89F009D6D94 /* menu_open.gif */,
+				925CE88C13C3C89F009D6D94 /* tab.html */,
+				925CE88D13C3C89F009D6D94 /* vbulletin_global.js */,
+				925CE88E13C3C89F009D6D94 /* vbulletin_important.css */,
+				925CE88F13C3C89F009D6D94 /* vbulletin_md5.js */,
+				925CE89013C3C89F009D6D94 /* vbulletin_menu.js */,
+				925CE89113C3C89F009D6D94 /* vgmdb-colorcode-title.css */,
+				925CE89213C3C89F009D6D94 /* vgmdb.css */,
+				925CE89313C3C89F009D6D94 /* vgmdb_global.js */,
+				925CE89413C3C89F009D6D94 /* vgmdblogo.png */,
+				925CE89513C3C89F009D6D94 /* yahoo-dom-event.js */,
+			);
+			name = test3_files;
+			path = VGTagger/TestFiles/test3_files;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		925CE81C13C3BD6D009D6D94 /* VGTagger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 925CE83B13C3BD6D009D6D94 /* Build configuration list for PBXNativeTarget "VGTagger" */;
+			buildPhases = (
+				925CE81913C3BD6D009D6D94 /* Sources */,
+				925CE81A13C3BD6D009D6D94 /* Frameworks */,
+				925CE81B13C3BD6D009D6D94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VGTagger;
+			productName = VGTagger;
+			productReference = 925CE81D13C3BD6D009D6D94 /* VGTagger.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		925CE81413C3BD6D009D6D94 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "St. Andrews KY16 9XW";
+			};
+			buildConfigurationList = 925CE81713C3BD6D009D6D94 /* Build configuration list for PBXProject "VGTagger" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 925CE81213C3BD6D009D6D94;
+			productRefGroup = 925CE81E13C3BD6D009D6D94 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				925CE81C13C3BD6D009D6D94 /* VGTagger */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		925CE81B13C3BD6D009D6D94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				925CE82C13C3BD6D009D6D94 /* InfoPlist.strings in Resources */,
+				925CE83213C3BD6D009D6D94 /* Credits.rtf in Resources */,
+				925CE83813C3BD6D009D6D94 /* Main.xib in Resources */,
+				925CE89813C3CB93009D6D94 /* Vgmdb.rb in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		925CE81913C3BD6D009D6D94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				925CE82F13C3BD6D009D6D94 /* main.m in Sources */,
+				925CE83513C3BD6D009D6D94 /* VGTaggerAppDelegate.m in Sources */,
+				925CE84013C3BE30009D6D94 /* Controller.m in Sources */,
+				925CE8B113C3DA14009D6D94 /* TabLibOC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		925CE82A13C3BD6D009D6D94 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				925CE82B13C3BD6D009D6D94 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		925CE83013C3BD6D009D6D94 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				925CE83113C3BD6D009D6D94 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		925CE83613C3BD6D009D6D94 /* Main.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				925CE83713C3BD6D009D6D94 /* en */,
+			);
+			name = Main.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		925CE83913C3BD6D009D6D94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		925CE83A13C3BD6D009D6D94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		925CE83C13C3BD6D009D6D94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VGTagger/VGTagger-Prefix.pch";
+				INFOPLIST_FILE = "VGTagger/VGTagger-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		925CE83D13C3BD6D009D6D94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_GC = required;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VGTagger/VGTagger-Prefix.pch";
+				INFOPLIST_FILE = "VGTagger/VGTagger-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		925CE81713C3BD6D009D6D94 /* Build configuration list for PBXProject "VGTagger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				925CE83913C3BD6D009D6D94 /* Debug */,
+				925CE83A13C3BD6D009D6D94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		925CE83B13C3BD6D009D6D94 /* Build configuration list for PBXNativeTarget "VGTagger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				925CE83C13C3BD6D009D6D94 /* Debug */,
+				925CE83D13C3BD6D009D6D94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 925CE81413C3BD6D009D6D94 /* Project object */;
+}
