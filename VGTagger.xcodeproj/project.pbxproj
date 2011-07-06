@@ -16,8 +16,7 @@
 		925CE84013C3BE30009D6D94 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 925CE83F13C3BE30009D6D94 /* Controller.m */; };
 		925CE86A13C3C64F009D6D94 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925CE86913C3C64F009D6D94 /* MacRuby.framework */; };
 		925CE89813C3CB93009D6D94 /* Vgmdb.rb in Resources */ = {isa = PBXBuildFile; fileRef = 925CE89713C3CB93009D6D94 /* Vgmdb.rb */; };
-		925CE8AE13C3D6FA009D6D94 /* tag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925CE8AD13C3D6FA009D6D94 /* tag.framework */; };
-		925CE8B113C3DA14009D6D94 /* TabLibOC.m in Sources */ = {isa = PBXBuildFile; fileRef = 925CE8B013C3DA14009D6D94 /* TabLibOC.m */; };
+		925CE8B113C3DA14009D6D94 /* TagsLib.mm in Sources */ = {isa = PBXBuildFile; fileRef = 925CE8B013C3DA14009D6D94 /* TagsLib.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,10 +70,9 @@
 		925CE89513C3C89F009D6D94 /* yahoo-dom-event.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "yahoo-dom-event.js"; sourceTree = "<group>"; };
 		925CE89613C3C89F009D6D94 /* test3.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = test3.html; path = VGTagger/TestFiles/test3.html; sourceTree = "<group>"; };
 		925CE89713C3CB93009D6D94 /* Vgmdb.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Vgmdb.rb; sourceTree = "<group>"; };
-		925CE8AB13C3D637009D6D94 /* libtag_c.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtag_c.dylib; path = usr/local/lib/libtag_c.dylib; sourceTree = SDKROOT; };
-		925CE8AD13C3D6FA009D6D94 /* tag.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = tag.framework; path = Library/Frameworks/tag.framework; sourceTree = SDKROOT; };
-		925CE8AF13C3DA14009D6D94 /* TabLibOC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabLibOC.h; sourceTree = "<group>"; };
-		925CE8B013C3DA14009D6D94 /* TabLibOC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabLibOC.m; sourceTree = "<group>"; };
+		925CE8AF13C3DA14009D6D94 /* TagsLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagsLib.h; sourceTree = "<group>"; };
+		925CE8B013C3DA14009D6D94 /* TagsLib.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TagsLib.mm; sourceTree = "<group>"; };
+		925CE8B213C3DD3D009D6D94 /* libtag.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtag.dylib; path = usr/local/lib/libtag.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +80,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				925CE8AE13C3D6FA009D6D94 /* tag.framework in Frameworks */,
 				925CE86A13C3C64F009D6D94 /* MacRuby.framework in Frameworks */,
 				925CE82213C3BD6D009D6D94 /* Cocoa.framework in Frameworks */,
 			);
@@ -94,7 +91,7 @@
 		925CE81213C3BD6D009D6D94 = {
 			isa = PBXGroup;
 			children = (
-				925CE8AD13C3D6FA009D6D94 /* tag.framework */,
+				925CE8B213C3DD3D009D6D94 /* libtag.dylib */,
 				925CE86E13C3C7EE009D6D94 /* TestFiles */,
 				925CE82813C3BD6D009D6D94 /* Resources */,
 				925CE82713C3BD6D009D6D94 /* Classes */,
@@ -114,7 +111,6 @@
 		925CE82013C3BD6D009D6D94 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				925CE8AB13C3D637009D6D94 /* libtag_c.dylib */,
 				925CE86913C3C64F009D6D94 /* MacRuby.framework */,
 				925CE82113C3BD6D009D6D94 /* Cocoa.framework */,
 				925CE82313C3BD6D009D6D94 /* Other Frameworks */,
@@ -135,6 +131,9 @@
 		925CE82713C3BD6D009D6D94 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				925CE8AF13C3DA14009D6D94 /* TagsLib.h */,
+				925CE8B013C3DA14009D6D94 /* TagsLib.mm */,
+				925CE89713C3CB93009D6D94 /* Vgmdb.rb */,
 				925CE83313C3BD6D009D6D94 /* VGTaggerAppDelegate.h */,
 				925CE83413C3BD6D009D6D94 /* VGTaggerAppDelegate.m */,
 				925CE83E13C3BE30009D6D94 /* Controller.h */,
@@ -147,15 +146,12 @@
 		925CE82813C3BD6D009D6D94 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				925CE89713C3CB93009D6D94 /* Vgmdb.rb */,
+				925CE82E13C3BD6D009D6D94 /* main.m */,
 				925CE83613C3BD6D009D6D94 /* Main.xib */,
 				925CE82913C3BD6D009D6D94 /* VGTagger-Info.plist */,
 				925CE82A13C3BD6D009D6D94 /* InfoPlist.strings */,
 				925CE82D13C3BD6D009D6D94 /* VGTagger-Prefix.pch */,
-				925CE82E13C3BD6D009D6D94 /* main.m */,
 				925CE83013C3BD6D009D6D94 /* Credits.rtf */,
-				925CE8AF13C3DA14009D6D94 /* TabLibOC.h */,
-				925CE8B013C3DA14009D6D94 /* TabLibOC.m */,
 			);
 			name = Resources;
 			path = VGTagger;
@@ -277,7 +273,7 @@
 				925CE82F13C3BD6D009D6D94 /* main.m in Sources */,
 				925CE83513C3BD6D009D6D94 /* VGTaggerAppDelegate.m in Sources */,
 				925CE84013C3BE30009D6D94 /* Controller.m in Sources */,
-				925CE8B113C3DA14009D6D94 /* TabLibOC.m in Sources */,
+				925CE8B113C3DA14009D6D94 /* TagsLib.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +350,16 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VGTagger/VGTagger-Prefix.pch";
 				INFOPLIST_FILE = "VGTagger/VGTagger-Info.plist";
+				"OTHER_CPLUSPLUSFLAGS[arch=*]" = (
+					"-L/usr/local/lib",
+					"-ltag",
+					"-I/usr/local/include/taglib",
+				);
+				OTHER_LDFLAGS = (
+					"-I/usr/local/include/taglib",
+					"-L/usr/local/lib",
+					"-ltag",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -370,6 +376,16 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VGTagger/VGTagger-Prefix.pch";
 				INFOPLIST_FILE = "VGTagger/VGTagger-Info.plist";
+				"OTHER_CPLUSPLUSFLAGS[arch=*]" = (
+					"-L/usr/local/lib",
+					"-ltag",
+					"-I/usr/local/include/taglib",
+				);
+				OTHER_LDFLAGS = (
+					"-I/usr/local/include/taglib",
+					"-L/usr/local/lib",
+					"-ltag",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

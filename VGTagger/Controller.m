@@ -6,10 +6,9 @@
 //  Copyright 2011 St. Andrews KY16 9XW. All rights reserved.
 //
 
-#import "Controller.h"
 #import <MacRuby/MacRuby.h>
-#include <fileref.h>
-
+#import "Controller.h"
+#import "TagsLib.h"
 
 @implementation Controller
 
@@ -33,9 +32,11 @@
 
 - (IBAction) search:(id)sender
 {
-
-	FileRef g("/Users/bilalh/Programming/Cocoa/VGTagger/VGTagger/TestFiles/aac.m4a");				
-
+	TagsLib *tl  = [[TagsLib alloc] initWithFilename:@"/Users/bilalh/Programming/Cocoa/VGTagger/VGTagger/TestFiles/aac.m4a"];
+	
+	NSString *s  = [tl getTitle];
+	NSLog(@"%@", s);
+	[title setStringValue:s];
 	
 //	id vgmdb = [[MacRuby sharedRuntime] evaluateString:@"Vgmdb.new"];
 //	NSDictionary *result = [vgmdb performRubySelector:@selector(search:)
