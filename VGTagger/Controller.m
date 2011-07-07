@@ -30,12 +30,24 @@
     [super dealloc];
 }
 
+- (IBAction)onTextChange:(id)sender
+{
+	NSString *s = [sender stringValue] ;
+	NSLog(@"Text is Now %@", s );
+	if (s != @""){
+		TagsLib *tl  = [[TagsLib alloc] initWithFilename:@"/Users/bilalh/Programming/Cocoa/VGTagger/VGTagger/TestFiles/aac.m4a"];
+		[tl setTitle:s];
+	}
+	
+}
+
+
 - (IBAction) search:(id)sender
 {
 	TagsLib *tl  = [[TagsLib alloc] initWithFilename:@"/Users/bilalh/Programming/Cocoa/VGTagger/VGTagger/TestFiles/aac.m4a"];
 	
 	NSString *s  = [tl getTitle];
-	NSLog(@"%@", s);
+	NSLog(@"Title is %@", s);
 	[title setStringValue:s];
 	
 //	id vgmdb = [[MacRuby sharedRuntime] evaluateString:@"Vgmdb.new"];

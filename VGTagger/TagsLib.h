@@ -16,6 +16,7 @@ struct TagsLibImpl;
 
 -(id) initWithFilename:(NSString*)filename;
 -(NSString*)getTitle;
+-(void) setTitle:(NSString*)newText;
 
 @property (assign) struct TagsLibImpl* impl;
 

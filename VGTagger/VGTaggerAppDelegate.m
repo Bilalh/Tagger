@@ -12,7 +12,7 @@
 
 @implementation VGTaggerAppDelegate
 
-@synthesize window;
+@synthesize window, con;
 
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification

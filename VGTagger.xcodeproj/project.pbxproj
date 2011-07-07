@@ -72,7 +72,6 @@
 		925CE89713C3CB93009D6D94 /* Vgmdb.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Vgmdb.rb; sourceTree = "<group>"; };
 		925CE8AF13C3DA14009D6D94 /* TagsLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagsLib.h; sourceTree = "<group>"; };
 		925CE8B013C3DA14009D6D94 /* TagsLib.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TagsLib.mm; sourceTree = "<group>"; };
-		925CE8B213C3DD3D009D6D94 /* libtag.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtag.dylib; path = usr/local/lib/libtag.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +90,7 @@
 		925CE81213C3BD6D009D6D94 = {
 			isa = PBXGroup;
 			children = (
-				925CE8B213C3DD3D009D6D94 /* libtag.dylib */,
+				926EE6F613C5100300021F69 /* Gui */,
 				925CE86E13C3C7EE009D6D94 /* TestFiles */,
 				925CE82813C3BD6D009D6D94 /* Resources */,
 				925CE82713C3BD6D009D6D94 /* Classes */,
@@ -147,7 +146,6 @@
 			isa = PBXGroup;
 			children = (
 				925CE82E13C3BD6D009D6D94 /* main.m */,
-				925CE83613C3BD6D009D6D94 /* Main.xib */,
 				925CE82913C3BD6D009D6D94 /* VGTagger-Info.plist */,
 				925CE82A13C3BD6D009D6D94 /* InfoPlist.strings */,
 				925CE82D13C3BD6D009D6D94 /* VGTagger-Prefix.pch */,
@@ -204,6 +202,15 @@
 			);
 			name = test3_files;
 			path = VGTagger/TestFiles/test3_files;
+			sourceTree = "<group>";
+		};
+		926EE6F613C5100300021F69 /* Gui */ = {
+			isa = PBXGroup;
+			children = (
+				925CE83613C3BD6D009D6D94 /* Main.xib */,
+			);
+			name = Gui;
+			path = VGTagger;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

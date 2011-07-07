@@ -17,7 +17,7 @@
 
 @property (assign) IBOutlet NSTextField *title;
 
--(IBAction) search: (id) sender;
-
+- (IBAction) search:(id)sender;
+- (void)onTextChange:(id)sender;
 
 @end

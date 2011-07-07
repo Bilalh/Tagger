@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+@class Controller;
 
 @interface VGTaggerAppDelegate : NSObject <NSApplicationDelegate> {
 @private
@@ -14,5 +15,6 @@
 }
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet Controller *con;
 
 @end

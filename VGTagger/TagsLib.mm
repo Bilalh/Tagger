@@ -12,13 +12,12 @@
 #include <mp4tag.h> 
 #include <iostream>
 #include <string>
+
 struct TagsLibImpl{
 	TagLib::FileRef file;
 };
 
 using namespace TagLib;
-using namespace std;
-
 @implementation TagsLib
 
 @synthesize impl;
@@ -47,6 +46,22 @@ using namespace std;
 	const char *cstring = map["\251nam"].toStringList().front().toCString(); 
 	return [NSString stringWithUTF8String:cstring];
 }
+
+- (void) setTitle:(NSString*) newText{
+	 
+	MP4::Tag *t = dynamic_cast<MP4::Tag*>(impl->file.tag());
+	MP4::ItemListMap &map =  t->itemListMap();
+	
+	String s = String([newText UTF8String], String::UTF8);
+	std::cout << s << std::endl;
+	
+	String key = String("\251nam");
+	map.insert(key, MP4::Item::Item(s));
+	
+	self.impl->file.save();
+}
+
+
 
 - (void)dealloc
 {
