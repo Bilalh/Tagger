@@ -59,6 +59,7 @@ using namespace TagLib;
 	map.insert(key, MP4::Item::Item(s));
 	
 	self.impl->file.save();
+	NSLog(@"Save");
 }
 
 

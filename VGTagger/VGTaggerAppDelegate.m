@@ -8,19 +8,34 @@
 
 #import "VGTaggerAppDelegate.h"
 #import <MacRuby/MacRuby.h>
+#import "SettingsSheetController.h"
 
 
 @implementation VGTaggerAppDelegate
-
-@synthesize window, con;
+@synthesize window;
 
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    
-//	[[MacRuby sharedRuntime] evaluateFileAtPath:
-//	 @"/Users/bilalh/Programming/Cocoa/VGTagger/VGTagger/Vgmdb.rb"];
+    // Insert code here to initialize your application
+    ssc = [[SettingsSheetController alloc] initWithWindowNibName:@"SettingsSheet"];
+	
+	//	[[MacRuby sharedRuntime] evaluateFileAtPath:
+	//	 @"/Users/bilalh/Programming/Cocoa/VGTagger/VGTagger/Vgmdb.rb"];
 
+	
+}
+
+-(IBAction)showSheet:(id)sender
+{   
+	NSLog(@"Sheet");
+    assert ([ssc window]);
+    assert (window);
+    [NSApp beginSheet: [ssc window]
+       modalForWindow: window 
+        modalDelegate: ssc 
+       didEndSelector: @selector(didEndSheet:returnCode:contextInfo:) 
+          contextInfo: nil]; 
 }
 
 @end

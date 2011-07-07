@@ -10,13 +10,14 @@
 		925CE82213C3BD6D009D6D94 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925CE82113C3BD6D009D6D94 /* Cocoa.framework */; };
 		925CE82C13C3BD6D009D6D94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 925CE82A13C3BD6D009D6D94 /* InfoPlist.strings */; };
 		925CE82F13C3BD6D009D6D94 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 925CE82E13C3BD6D009D6D94 /* main.m */; };
-		925CE83213C3BD6D009D6D94 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 925CE83013C3BD6D009D6D94 /* Credits.rtf */; };
 		925CE83513C3BD6D009D6D94 /* VGTaggerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 925CE83413C3BD6D009D6D94 /* VGTaggerAppDelegate.m */; };
 		925CE83813C3BD6D009D6D94 /* Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = 925CE83613C3BD6D009D6D94 /* Main.xib */; };
-		925CE84013C3BE30009D6D94 /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 925CE83F13C3BE30009D6D94 /* Controller.m */; };
 		925CE86A13C3C64F009D6D94 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925CE86913C3C64F009D6D94 /* MacRuby.framework */; };
 		925CE89813C3CB93009D6D94 /* Vgmdb.rb in Resources */ = {isa = PBXBuildFile; fileRef = 925CE89713C3CB93009D6D94 /* Vgmdb.rb */; };
 		925CE8B113C3DA14009D6D94 /* TagsLib.mm in Sources */ = {isa = PBXBuildFile; fileRef = 925CE8B013C3DA14009D6D94 /* TagsLib.mm */; };
+		9284AFC813C550540055A0DD /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9284AFC713C550540055A0DD /* MainController.m */; };
+		9284AFF813C55B240055A0DD /* SettingsSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9284AFF513C55B240055A0DD /* SettingsSheet.xib */; };
+		9284AFF913C55B240055A0DD /* SettingsSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9284AFF713C55B240055A0DD /* SettingsSheetController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,12 +30,10 @@
 		925CE82B13C3BD6D009D6D94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		925CE82D13C3BD6D009D6D94 /* VGTagger-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VGTagger-Prefix.pch"; sourceTree = "<group>"; };
 		925CE82E13C3BD6D009D6D94 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		925CE83113C3BD6D009D6D94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		925CE83313C3BD6D009D6D94 /* VGTaggerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VGTaggerAppDelegate.h; sourceTree = "<group>"; };
 		925CE83413C3BD6D009D6D94 /* VGTaggerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VGTaggerAppDelegate.m; sourceTree = "<group>"; };
 		925CE83713C3BD6D009D6D94 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		925CE83E13C3BE30009D6D94 /* Controller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controller.h; sourceTree = "<group>"; };
-		925CE83F13C3BE30009D6D94 /* Controller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controller.m; sourceTree = "<group>"; };
+		925CE83E13C3BE30009D6D94 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		925CE86913C3C64F009D6D94 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = SDKROOT; };
 		925CE87513C3C89F009D6D94 /* aac.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = aac.m4a; path = VGTagger/TestFiles/aac.m4a; sourceTree = "<group>"; };
 		925CE87613C3C89F009D6D94 /* lossless.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = lossless.m4a; path = VGTagger/TestFiles/lossless.m4a; sourceTree = "<group>"; };
@@ -72,6 +71,10 @@
 		925CE89713C3CB93009D6D94 /* Vgmdb.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Vgmdb.rb; sourceTree = "<group>"; };
 		925CE8AF13C3DA14009D6D94 /* TagsLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagsLib.h; sourceTree = "<group>"; };
 		925CE8B013C3DA14009D6D94 /* TagsLib.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TagsLib.mm; sourceTree = "<group>"; };
+		9284AFC713C550540055A0DD /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
+		9284AFF513C55B240055A0DD /* SettingsSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsSheet.xib; path = VGTagger/SettingsSheet.xib; sourceTree = "<group>"; };
+		9284AFF613C55B240055A0DD /* SettingsSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsSheetController.h; path = VGTagger/SettingsSheetController.h; sourceTree = "<group>"; };
+		9284AFF713C55B240055A0DD /* SettingsSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsSheetController.m; path = VGTagger/SettingsSheetController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +93,7 @@
 		925CE81213C3BD6D009D6D94 = {
 			isa = PBXGroup;
 			children = (
-				926EE6F613C5100300021F69 /* Gui */,
+				9284AFC913C5514E0055A0DD /* Sheet */,
 				925CE86E13C3C7EE009D6D94 /* TestFiles */,
 				925CE82813C3BD6D009D6D94 /* Resources */,
 				925CE82713C3BD6D009D6D94 /* Classes */,
@@ -130,13 +133,14 @@
 		925CE82713C3BD6D009D6D94 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				925CE83613C3BD6D009D6D94 /* Main.xib */,
 				925CE8AF13C3DA14009D6D94 /* TagsLib.h */,
 				925CE8B013C3DA14009D6D94 /* TagsLib.mm */,
 				925CE89713C3CB93009D6D94 /* Vgmdb.rb */,
 				925CE83313C3BD6D009D6D94 /* VGTaggerAppDelegate.h */,
 				925CE83413C3BD6D009D6D94 /* VGTaggerAppDelegate.m */,
-				925CE83E13C3BE30009D6D94 /* Controller.h */,
-				925CE83F13C3BE30009D6D94 /* Controller.m */,
+				925CE83E13C3BE30009D6D94 /* MainController.h */,
+				9284AFC713C550540055A0DD /* MainController.m */,
 			);
 			name = Classes;
 			path = VGTagger;
@@ -149,7 +153,6 @@
 				925CE82913C3BD6D009D6D94 /* VGTagger-Info.plist */,
 				925CE82A13C3BD6D009D6D94 /* InfoPlist.strings */,
 				925CE82D13C3BD6D009D6D94 /* VGTagger-Prefix.pch */,
-				925CE83013C3BD6D009D6D94 /* Credits.rtf */,
 			);
 			name = Resources;
 			path = VGTagger;
@@ -204,13 +207,14 @@
 			path = VGTagger/TestFiles/test3_files;
 			sourceTree = "<group>";
 		};
-		926EE6F613C5100300021F69 /* Gui */ = {
+		9284AFC913C5514E0055A0DD /* Sheet */ = {
 			isa = PBXGroup;
 			children = (
-				925CE83613C3BD6D009D6D94 /* Main.xib */,
+				9284AFF513C55B240055A0DD /* SettingsSheet.xib */,
+				9284AFF613C55B240055A0DD /* SettingsSheetController.h */,
+				9284AFF713C55B240055A0DD /* SettingsSheetController.m */,
 			);
-			name = Gui;
-			path = VGTagger;
+			name = Sheet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,9 +268,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				925CE82C13C3BD6D009D6D94 /* InfoPlist.strings in Resources */,
-				925CE83213C3BD6D009D6D94 /* Credits.rtf in Resources */,
 				925CE83813C3BD6D009D6D94 /* Main.xib in Resources */,
 				925CE89813C3CB93009D6D94 /* Vgmdb.rb in Resources */,
+				9284AFF813C55B240055A0DD /* SettingsSheet.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,8 +283,9 @@
 			files = (
 				925CE82F13C3BD6D009D6D94 /* main.m in Sources */,
 				925CE83513C3BD6D009D6D94 /* VGTaggerAppDelegate.m in Sources */,
-				925CE84013C3BE30009D6D94 /* Controller.m in Sources */,
 				925CE8B113C3DA14009D6D94 /* TagsLib.mm in Sources */,
+				9284AFC813C550540055A0DD /* MainController.m in Sources */,
+				9284AFF913C55B240055A0DD /* SettingsSheetController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,14 +298,6 @@
 				925CE82B13C3BD6D009D6D94 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		925CE83013C3BD6D009D6D94 /* Credits.rtf */ = {
-			isa = PBXVariantGroup;
-			children = (
-				925CE83113C3BD6D009D6D94 /* en */,
-			);
-			name = Credits.rtf;
 			sourceTree = "<group>";
 		};
 		925CE83613C3BD6D009D6D94 /* Main.xib */ = {

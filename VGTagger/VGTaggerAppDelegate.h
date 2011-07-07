@@ -7,14 +7,18 @@
 //
 
 #import <Cocoa/Cocoa.h>
-@class Controller;
+@class MainController;
+@class SettingsSheetController;
 
 @interface VGTaggerAppDelegate : NSObject <NSApplicationDelegate> {
 @private
 	NSWindow *window;
+	MainController *con;
+	SettingsSheetController * ssc;
 }
 
 @property (assign) IBOutlet NSWindow *window;
-@property (assign) IBOutlet Controller *con;
+-(IBAction)showSheet:(id)sender;
+
 
 @end

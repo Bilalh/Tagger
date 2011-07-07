@@ -1,0 +1,21 @@
+//
+//  SettingsSheetController.h
+//  SheetFromOtherNib
+//
+//  Created by grady player on 6/21/11.
+//  Copyright 2011 Objectively Better, LLC. All rights reserved.
+//
+
+#import <Cocoa/Cocoa.h>
+
+
+@interface SettingsSheetController : NSWindowController {
+@private
+	IBOutlet NSTextField *textField1;
+	IBOutlet NSTextField *testField2;
+	IBOutlet NSWindow    *window;
+}
+-(IBAction)doSomething:(id)sender;
+-(IBAction)cancelSheet:sender;
+-(IBAction)confirmSheet:sender;
+@end
