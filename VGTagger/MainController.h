@@ -19,7 +19,6 @@
 @property (assign) VgmdbController *vgc;
 
 - (IBAction) search:(id)sender;
-- (IBAction) sheet:(id)sender;
 - (IBAction) getData:(id)sender;
 - (void)onTextChange:(id)sender;
 

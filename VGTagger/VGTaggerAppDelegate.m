@@ -20,8 +20,8 @@
     // Insert code here to initialize your application
     ssc = [[SettingsSheetController alloc] initWithWindowNibName:@"SettingsSheet"];
 	
-	//	[[MacRuby sharedRuntime] evaluateFileAtPath:
-	//	 @"/Users/bilalh/Programming/Cocoa/VGTagger/VGTagger/Vgmdb.rb"];
+	[[MacRuby sharedRuntime] evaluateFileAtPath:
+	 @"/Users/bilalh/Programming/Cocoa/VGTagger/VGTagger/Vgmdb.rb"];
 
 	
 }

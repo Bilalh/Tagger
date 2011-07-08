@@ -6,7 +6,6 @@
 //  Copyright 2011 St. Andrews KY16 9XW. All rights reserved.
 //
 
-#import <MacRuby/MacRuby.h>
 #import "MainController.h"
 #import "TagsLib.h"
 #import "VgmdbController.h"
@@ -53,21 +52,12 @@
 
 - (IBAction) search:(id)sender{
 	NSLog(@"Search");
-	vgc = [[VgmdbController alloc] initWithWindowNibName:@"VgmdbSearch"];
+	if (vgc == nil){
+		vgc = [[VgmdbController alloc] initWithWindowNibName:@"VgmdbSearch"];	
+	}
 	[vgc showWindow:self];
 }
 
-- (IBAction) sheet:(id)sender
-{
 
-	
-//	id vgmdb = [[MacRuby sharedRuntime] evaluateString:@"Vgmdb.new"];
-//	NSDictionary *result = [vgmdb performRubySelector:@selector(search:)
-//										withArguments:@"a", nil];
-//	NSDictionary *result = [vgmdb performRubySelector:@selector(get_data:)
-//										withArguments:@"/Users/bilalh/Programming/Cocoa/VGTagger/VGTagger/TestFiles/test2.html", nil];
-	
-//	NSLog(@"hash %@", result);
-}
 
 @end
