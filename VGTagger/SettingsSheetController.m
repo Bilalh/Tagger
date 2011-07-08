@@ -11,8 +11,6 @@
 
 @implementation SettingsSheetController
 
-
-
 - (id)initWithWindow:(NSWindow *)awindow
 {
     self = [super initWithWindow:awindow];
@@ -20,12 +18,6 @@
     }
     
     return self;
-}
-- (IBAction)doSomething:(id)sender
-{
-    NSLog(@"did something");
-    
-    [textField1 setStringValue:[NSString stringWithFormat:@"random: %i",rand()]];
 }
 
 - (IBAction)confirmSheet:sender

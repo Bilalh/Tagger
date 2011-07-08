@@ -11,11 +11,9 @@
 
 @interface SettingsSheetController : NSWindowController {
 @private
-	IBOutlet NSTextField *textField1;
-	IBOutlet NSTextField *testField2;
 	IBOutlet NSWindow    *window;
 }
--(IBAction)doSomething:(id)sender;
+
 -(IBAction)cancelSheet:sender;
 -(IBAction)confirmSheet:sender;
 @end
