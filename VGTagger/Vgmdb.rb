@@ -15,10 +15,10 @@ class Vgmdb
 	def initialize()
 		@names = {
 			'en'       => :@english,
-			'ja'       => :@japanese,
+			'ja'       => :@kanji,
 			'ja-Latn'  => :@romaji,
 			'English'  => :@english,
-			'Japanese' => :@japanese,
+			'Japanese' => :@kanji,
 			'Romaji'   => :@romaji,
 		}
 	end
@@ -189,12 +189,12 @@ class Vgmdb
 end
 
 class Track
-	attr_accessor :engish, :japanese, :romaji, :track_num, :disc_num, :time
+	attr_accessor :engish, :japanese, :kanji, :track_num, :disc_num, :time
 end
 
 if $0 == __FILE__
 	vg = Vgmdb.new()
-	puts vg.search("Atelier Meruru"); exit
+	# puts vg.search("Atelier Meruru"); exit
 
 	#url = "http://vgmdb.net/album/13192"
 	# url = 'http://vgmdb.net/album/3885'
