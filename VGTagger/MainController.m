@@ -9,10 +9,11 @@
 #import <MacRuby/MacRuby.h>
 #import "MainController.h"
 #import "TagsLib.h"
+#import "VgmdbController.h"
 
 @implementation MainController
 
-@synthesize title, window;
+@synthesize title, window, vgc;
 
 - (id)init
 {
@@ -50,7 +51,13 @@
 	[title setStringValue:s];
 }
 
-- (IBAction) search:(id)sender
+- (IBAction) search:(id)sender{
+	NSLog(@"Search");
+	vgc = [[VgmdbController alloc] initWithWindowNibName:@"VgmdbSearch"];
+	[vgc showWindow:self];
+}
+
+- (IBAction) sheet:(id)sender
 {
 
 	
@@ -64,5 +71,3 @@
 }
 
 @end
-
-

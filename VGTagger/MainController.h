@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+@class  VgmdbController;
 
 @interface MainController : NSObject {
 }
@@ -15,7 +16,10 @@
 @property (assign) IBOutlet NSWindow	*window;
 @property (assign) IBOutlet NSTextField *title;
 
+@property (assign) VgmdbController *vgc;
+
 - (IBAction) search:(id)sender;
+- (IBAction) sheet:(id)sender;
 - (IBAction) getData:(id)sender;
 - (void)onTextChange:(id)sender;
 

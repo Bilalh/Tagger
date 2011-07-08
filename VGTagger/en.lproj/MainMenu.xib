@@ -1939,7 +1939,7 @@
 																<object class="NSButtonCell" key="NSCell" id="172663795">
 																	<int key="NSCellFlags">67239424</int>
 																	<int key="NSCellFlags2">134217728</int>
-																	<string key="NSContents">Search</string>
+																	<string key="NSContents">Sheet</string>
 																	<reference key="NSSupport" ref="677191051"/>
 																	<reference key="NSControlView" ref="859869932"/>
 																	<int key="NSButtonFlags">-2038284033</int>
@@ -1956,7 +1956,7 @@
 																<string key="NSFrame">{{59, 115}, {96, 32}}</string>
 																<reference key="NSSuperview" ref="10815081"/>
 																<reference key="NSWindow"/>
-																<reference key="NSNextKeyView" ref="859869932"/>
+																<reference key="NSNextKeyView" ref="802144040"/>
 																<bool key="NSEnabled">YES</bool>
 																<object class="NSButtonCell" key="NSCell" id="113642576">
 																	<int key="NSCellFlags">67239424</int>
@@ -1964,6 +1964,28 @@
 																	<string key="NSContents">Get Data</string>
 																	<reference key="NSSupport" ref="677191051"/>
 																	<reference key="NSControlView" ref="226717133"/>
+																	<int key="NSButtonFlags">-2038284033</int>
+																	<int key="NSButtonFlags2">129</int>
+																	<string key="NSAlternateContents"/>
+																	<string key="NSKeyEquivalent"/>
+																	<int key="NSPeriodicDelay">200</int>
+																	<int key="NSPeriodicInterval">25</int>
+																</object>
+															</object>
+															<object class="NSButton" id="802144040">
+																<reference key="NSNextResponder" ref="10815081"/>
+																<int key="NSvFlags">268</int>
+																<string key="NSFrame">{{202, 101}, {96, 32}}</string>
+																<reference key="NSSuperview" ref="10815081"/>
+																<reference key="NSWindow"/>
+																<reference key="NSNextKeyView" ref="859869932"/>
+																<bool key="NSEnabled">YES</bool>
+																<object class="NSButtonCell" key="NSCell" id="308383775">
+																	<int key="NSCellFlags">67239424</int>
+																	<int key="NSCellFlags2">134217728</int>
+																	<string key="NSContents">Search</string>
+																	<reference key="NSSupport" ref="677191051"/>
+																	<reference key="NSControlView" ref="802144040"/>
 																	<int key="NSButtonFlags">-2038284033</int>
 																	<int key="NSButtonFlags2">129</int>
 																	<string key="NSAlternateContents"/>
@@ -2749,11 +2771,19 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">showSheet:</string>
-						<reference key="source" ref="976324537"/>
+						<string key="label">search:</string>
+						<reference key="source" ref="588631224"/>
+						<reference key="destination" ref="802144040"/>
+					</object>
+					<int key="connectionID">593</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">sheet:</string>
+						<reference key="source" ref="588631224"/>
 						<reference key="destination" ref="859869932"/>
 					</object>
-					<int key="connectionID">590</int>
+					<int key="connectionID">594</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3990,9 +4020,10 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="914539658"/>
-							<reference ref="859869932"/>
 							<reference ref="985815505"/>
 							<reference ref="226717133"/>
+							<reference ref="859869932"/>
+							<reference ref="802144040"/>
 						</object>
 						<reference key="parent" ref="939896340"/>
 					</object>
@@ -4096,6 +4127,20 @@
 						<int key="objectID">580</int>
 						<reference key="object" ref="113642576"/>
 						<reference key="parent" ref="226717133"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">591</int>
+						<reference key="object" ref="802144040"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="308383775"/>
+						</object>
+						<reference key="parent" ref="10815081"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">592</int>
+						<reference key="object" ref="308383775"/>
+						<reference key="parent" ref="802144040"/>
 					</object>
 				</object>
 			</object>
@@ -4362,6 +4407,8 @@
 					<string>58.IBPluginDependency</string>
 					<string>58.ImportedFromIB2</string>
 					<string>580.IBPluginDependency</string>
+					<string>591.IBPluginDependency</string>
+					<string>592.IBPluginDependency</string>
 					<string>72.IBPluginDependency</string>
 					<string>72.ImportedFromIB2</string>
 					<string>73.IBPluginDependency</string>
@@ -4651,6 +4698,8 @@
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
@@ -4690,7 +4739,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">590</int>
+			<int key="maxID">594</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -4704,9 +4753,11 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>getData:</string>
 							<string>search:</string>
+							<string>sheet:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 						</object>
@@ -4717,6 +4768,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>getData:</string>
 							<string>search:</string>
+							<string>sheet:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -4726,6 +4778,10 @@
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">search:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">sheet:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 						</object>
