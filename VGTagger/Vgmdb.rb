@@ -194,7 +194,7 @@ end
 
 if $0 == __FILE__
 	vg = Vgmdb.new()
-	# puts vg.search("Atelier Meruru")
+	puts vg.search("Atelier Meruru"); exit
 
 	#url = "http://vgmdb.net/album/13192"
 	# url = 'http://vgmdb.net/album/3885'

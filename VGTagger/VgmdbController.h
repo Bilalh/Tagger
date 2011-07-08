@@ -8,9 +8,15 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class TagsLib;
 
 @interface VgmdbController : NSWindowController {
-IBOutlet NSWindow *window;    
+	IBOutlet NSWindow *window;    
 }
+
+@property IBOutlet NSTextField *query;
+@property id vgmdb;
+
+- (IBAction) search:(id)sender;
 
 @end
