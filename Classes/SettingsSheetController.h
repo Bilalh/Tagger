@@ -8,7 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-
 @interface SettingsSheetController : NSWindowController {
 @private
 	IBOutlet NSWindow    *window;

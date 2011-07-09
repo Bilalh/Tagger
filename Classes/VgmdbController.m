@@ -32,6 +32,19 @@
     return self;
 }
 
+- (IBAction)confirmSheet:sender
+{
+	NSLog(@"Comfirm");
+	[NSApp endSheet:self.window returnCode:NSOKButton];
+}
+
+- (IBAction)cancelSheet:sender
+{	
+	NSLog(@"Cancel");
+	[NSApp endSheet:self.window returnCode:NSCancelButton];
+}
+
+
 - (void) didEndSheet:(NSWindow*)sheet 
 		  returnCode:(int)returnCode
 		 contextInfo:(void*)contextInfo

@@ -8,9 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class TagsLib;
-
 @interface VgmdbController : NSWindowController {
+@private
 	IBOutlet NSWindow *window;    
 }
 
@@ -18,5 +17,7 @@
 @property id vgmdb;
 
 - (IBAction) search:(id)sender;
+- (IBAction)cancelSheet:sender;
+- (IBAction)confirmSheet:sender;
 
 @end

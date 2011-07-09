@@ -20,8 +20,8 @@
 		922E35DA13C89C04003C5913 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922E35D913C89C04003C5913 /* MacRuby.framework */; };
 		922E35E213C89C51003C5913 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 922E35DC13C89C51003C5913 /* InfoPlist.strings */; };
 		922E35E313C89C51003C5913 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922E35DE13C89C51003C5913 /* MainMenu.xib */; };
-		922E35E413C89C51003C5913 /* VgmdbSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922E35E013C89C51003C5913 /* VgmdbSearch.xib */; };
 		922E35E713C89FB9003C5913 /* libtag.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.dylib */; };
+		92364F7613C8DE5200044153 /* VgmdbSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92364F7413C8DE5200044153 /* VgmdbSearch.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,7 +78,7 @@
 		922E35D913C89C04003C5913 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = SDKROOT; };
 		922E35DD13C89C51003C5913 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
 		922E35DF13C89C51003C5913 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = MainMenu.xib; sourceTree = "<group>"; };
-		922E35E113C89C51003C5913 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = VgmdbSearch.xib; sourceTree = "<group>"; };
+		92364F7513C8DE5200044153 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = VgmdbSearch.xib; sourceTree = "<group>"; };
 		925CE81D13C3BD6D009D6D94 /* VGTagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VGTagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -192,10 +192,10 @@
 		922E35DB13C89C51003C5913 /* English.lproj */ = {
 			isa = PBXGroup;
 			children = (
+				92364F7413C8DE5200044153 /* VgmdbSearch.xib */,
 				920660A713C89845003A3803 /* SettingsSheet.xib */,
 				922E35DC13C89C51003C5913 /* InfoPlist.strings */,
 				922E35DE13C89C51003C5913 /* MainMenu.xib */,
-				922E35E013C89C51003C5913 /* VgmdbSearch.xib */,
 			);
 			path = English.lproj;
 			sourceTree = "<group>";
@@ -277,7 +277,7 @@
 				920660E613C89845003A3803 /* Vgmdb.rb in Resources */,
 				922E35E213C89C51003C5913 /* InfoPlist.strings in Resources */,
 				922E35E313C89C51003C5913 /* MainMenu.xib in Resources */,
-				922E35E413C89C51003C5913 /* VgmdbSearch.xib in Resources */,
+				92364F7613C8DE5200044153 /* VgmdbSearch.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,10 +316,10 @@
 			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
-		922E35E013C89C51003C5913 /* VgmdbSearch.xib */ = {
+		92364F7413C8DE5200044153 /* VgmdbSearch.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				922E35E113C89C51003C5913 /* English */,
+				92364F7513C8DE5200044153 /* English */,
 			);
 			name = VgmdbSearch.xib;
 			sourceTree = "<group>";

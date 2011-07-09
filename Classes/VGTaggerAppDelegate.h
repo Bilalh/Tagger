@@ -8,7 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 @class MainController;
-@class SettingsSheetController;
 
 @interface VGTaggerAppDelegate : NSObject <NSApplicationDelegate> {
 @private
