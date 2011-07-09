@@ -13,7 +13,8 @@
 
 @interface VgmdbController : NSWindowController {
 @private
-	IBOutlet NSWindow *window;    
+	IBOutlet NSWindow *window;
+	NSArray *searchResults;
 }
 
 @property SettingsSheetController *ssc;

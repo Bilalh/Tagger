@@ -174,6 +174,11 @@ class Vgmdb
 		puts
 	end #get_tracks
 	
+	
+	def	get_key(hash, str_key)
+		return hash[str_key.to_sym]
+	end
+	
 	private 
 	# splits the different langs into a hash
 	def spilt_lang(elems)
@@ -192,19 +197,21 @@ class Track
 	attr_accessor :engish, :japanese, :kanji, :track_num, :disc_num, :time
 end
 
+
 if $0 == __FILE__
 	vg = Vgmdb.new()
-	# puts vg.search("Atelier Meruru"); exit
+	puts vg.search("Atelier Meruru"); exit
 
 	#url = "http://vgmdb.net/album/13192"
 	# url = 'http://vgmdb.net/album/3885'
 	# url = File.expand_path("~/Desktop/test.html")
-	url = File.expand_path("~/Desktop/test2.html")
-	hash = vg.get_data(url)
-	puts "Data"
-	hash.each_pair do |name, val|
-		puts "#{name} => #{val}"
-	end
+
+	# url = File.expand_path("~/Desktop/test2.html")
+	# hash = vg.get_data(url)
+	# puts "Data"
+	# hash.each_pair do |name, val|
+	# 	puts "#{name} => #{val}"
+	# end
 
 end
 

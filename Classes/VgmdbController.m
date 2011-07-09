@@ -15,19 +15,41 @@
 
 - (IBAction) search:(id)sender{
 	NSLog(@"Search button pressed");
-	NSDictionary *result = [vgmdb performRubySelector:@selector(search:)
+	searchResults = [vgmdb performRubySelector:@selector(search:)
 										withArguments:@"Atelier Meruru", 
 //										withArguments:[query stringValue], 
 							nil];
 
-	NSLog(@"Search Results %@", result);
+	NSLog(@"Search Results %@", searchResults);
+}
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView {
+    return [searchResults count];
+}
+- (id)          tableView:(NSTableView *)aTableView 
+objectValueForTableColumn:(NSTableColumn *)aTableColumn 
+					  row:(NSInteger)rowIndex {
+	
+//	NSLog(@"%@", [searchResults objectAtIndex:rowIndex]);
+//	NSLog(@"%@", [[searchResults objectAtIndex:rowIndex] 
+//				  valueForKey:[aTableColumn identifier]] );
+	
+	NSString *s = [vgmdb performRubySelector:@selector(get_key:)
+							   withArguments:[searchResults objectAtIndex:rowIndex], 
+											 [aTableColumn identifier], nil];
+    return s;
 }
 
 - (id)initWithWindow:(NSWindow *)awindow
 {
     self = [super initWithWindow:awindow];
     if (self) {
+		
 		vgmdb = [[MacRuby sharedRuntime] evaluateString:@"Vgmdb.new"];
+		searchResults = [vgmdb performRubySelector:@selector(search:)
+									 withArguments:@"Atelier Meruru", 
+//										withArguments:[query stringValue], 
+						 nil];
     }
     
     return self;
@@ -71,14 +93,5 @@
 {
     [super dealloc];
 }
-
-- (void)windowDidLoad
-{
-    [super windowDidLoad];
-    
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
-}
-
-
 
 @end
