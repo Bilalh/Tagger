@@ -272,8 +272,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				922E35E713C89FB9003C5913 /* libtag.dylib in Resources */,
 				920660E313C89845003A3803 /* SettingsSheet.xib in Resources */,
+				922E35E713C89FB9003C5913 /* libtag.dylib in Resources */,
 				920660E613C89845003A3803 /* Vgmdb.rb in Resources */,
 				922E35E213C89C51003C5913 /* InfoPlist.strings in Resources */,
 				922E35E313C89C51003C5913 /* MainMenu.xib in Resources */,
@@ -362,10 +362,10 @@
 		925CE83C13C3BD6D009D6D94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -377,10 +377,13 @@
 				GCC_USE_STANDARD_INCLUDE_SEARCHING = YES;
 				INFOPLIST_FILE = "Other Sources/VGTagger-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Resources";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = "";
-				"OTHER_CPLUSPLUSFLAGS[arch=*]" = "-I/usr/local/include/taglib";
+				"OTHER_CPLUSPLUSFLAGS[arch=*]" = (
+					"-I/usr/local/include/taglib",
+					"-L@executable_path/../Resources",
+				);
 				OTHER_LDFLAGS = "-ltag";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = x86_64;
@@ -391,11 +394,11 @@
 		925CE83D13C3BD6D009D6D94 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = required;
@@ -406,10 +409,13 @@
 				GCC_USE_STANDARD_INCLUDE_SEARCHING = YES;
 				INFOPLIST_FILE = "Other Sources/VGTagger-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Resources";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = "";
-				"OTHER_CPLUSPLUSFLAGS[arch=*]" = "-I/usr/local/include/taglib";
+				"OTHER_CPLUSPLUSFLAGS[arch=*]" = (
+					"-I/usr/local/include/taglib",
+					"-L@executable_path/../Resources",
+				);
 				OTHER_LDFLAGS = "-ltag";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = x86_64;
