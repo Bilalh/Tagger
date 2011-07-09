@@ -22,9 +22,8 @@
 @property SettingsSheetController *ssc;
 
 
-- (IBAction)  search:(id)sender;
-- (IBAction)   sheet:(id)sender;
-- (IBAction) getData:(id)sender;
-- (void)onTextChange:(id)sender;
+- (IBAction)       search:(id)sender;
+- (IBAction)      getData:(id)sender;
+- (IBAction) onTextChange:(id)sender;
 
 @end

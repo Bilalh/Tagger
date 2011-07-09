@@ -17,6 +17,7 @@
 	NSLog(@"Search button pressed");
 	NSDictionary *result = [vgmdb performRubySelector:@selector(search:)
 										withArguments:@"Atelier Meruru", 
+//										withArguments:[query stringValue], 
 							nil];
 
 	NSLog(@"Search Results %@", result);
@@ -26,7 +27,7 @@
 {
     self = [super initWithWindow:awindow];
     if (self) {
-//		vgmdb = [[MacRuby sharedRuntime] evaluateString:@"Vgmdb.new"];
+		vgmdb = [[MacRuby sharedRuntime] evaluateString:@"Vgmdb.new"];
     }
     
     return self;

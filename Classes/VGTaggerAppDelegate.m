@@ -17,8 +17,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {	
-//	NSString *path = [[NSBundle mainBundle] pathForResource:@"Vgmdb" ofType:@"rb"];
-//	[[MacRuby sharedRuntime] evaluateFileAtPath:path];
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"Vgmdb" ofType:@"rb"];
+	[[MacRuby sharedRuntime] evaluateFileAtPath:path];
 
 }
 
