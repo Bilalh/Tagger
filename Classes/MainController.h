@@ -9,20 +9,21 @@
 #import <Foundation/Foundation.h>
 
 @class  VgmdbController;
+@class  SettingsSheetController;
+
 
 @interface MainController : NSObject {
-	@private
-	IBOutlet NSWindow	*window;
-	IBOutlet NSTextField *title;
-	VgmdbController *vgc;
 }
 
 @property (assign) IBOutlet NSWindow	*window;
 @property (assign) IBOutlet NSTextField *title;
 
-@property (assign) VgmdbController *vgc;
+@property VgmdbController *vgc;
+@property SettingsSheetController *ssc;
 
-- (IBAction) search:(id)sender;
+
+- (IBAction)  search:(id)sender;
+- (IBAction)   sheet:(id)sender;
 - (IBAction) getData:(id)sender;
 - (void)onTextChange:(id)sender;
 

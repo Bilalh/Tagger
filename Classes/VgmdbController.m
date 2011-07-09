@@ -26,10 +26,18 @@
 {
     self = [super initWithWindow:awindow];
     if (self) {
-		vgmdb = [[MacRuby sharedRuntime] evaluateString:@"Vgmdb.new"];
+//		vgmdb = [[MacRuby sharedRuntime] evaluateString:@"Vgmdb.new"];
     }
     
     return self;
+}
+
+- (void) didEndSheet:(NSWindow*)sheet 
+		  returnCode:(int)returnCode
+		 contextInfo:(void*)contextInfo
+{	
+	NSLog(@"End Sheet");
+	[sheet orderOut:self];
 }
 
 - (void)dealloc

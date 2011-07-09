@@ -13,12 +13,8 @@
 @interface VGTaggerAppDelegate : NSObject <NSApplicationDelegate> {
 @private
 	NSWindow *window;
-	MainController *con;
-	SettingsSheetController * ssc;
 }
 
 @property (assign) IBOutlet NSWindow *window;
--(IBAction)showSheet:(id)sender;
-
 
 @end

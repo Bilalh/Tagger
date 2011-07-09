@@ -11,15 +11,6 @@
 
 @implementation SettingsSheetController
 
-- (id)initWithWindow:(NSWindow *)awindow
-{
-    self = [super initWithWindow:awindow];
-    if (self) {
-    }
-    
-    return self;
-}
-
 - (IBAction)confirmSheet:sender
 {
 	NSLog(@"Comfirm");
@@ -40,16 +31,16 @@
 	[sheet orderOut:self];
 }
 
-- (void)dealloc
-{
-    [super dealloc];
-}
-
 - (void)windowDidLoad
 {
     [super windowDidLoad];
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+}
+
+- (void)dealloc
+{
+    [super dealloc];
 }
 
 @end;

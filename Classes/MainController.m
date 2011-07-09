@@ -9,10 +9,11 @@
 #import "MainController.h"
 #import "TagsLib.h"
 #import "VgmdbController.h"
+#import "SettingsSheetController.h"
 
 @implementation MainController
 
-@synthesize title, window, vgc;
+@synthesize title, window, vgc, ssc;
 
 - (id)init
 {
@@ -50,12 +51,30 @@
 	[title setStringValue:s];
 }
 
+- (IBAction) sheet:(id)sender{
+	NSLog(@"sheet");
+	if (ssc == nil){
+		ssc = [[SettingsSheetController alloc] initWithWindowNibName:@"SettingsSheet"];
+	}
+	
+	[NSApp beginSheet: [ssc window]
+	   modalForWindow: self.window
+		modalDelegate: ssc 
+	   didEndSelector: @selector(didEndSheet:returnCode:contextInfo:)
+		  contextInfo: nil]; 
+}
+
 - (IBAction) search:(id)sender{
 	NSLog(@"Search");
 	if (vgc == nil){
 		vgc = [[VgmdbController alloc] initWithWindowNibName:@"VgmdbSearch"];	
 	}
-	[vgc showWindow:self];
+	
+	[NSApp beginSheet: [vgc window]
+	   modalForWindow: self.window
+		modalDelegate: vgc 
+	   didEndSelector: @selector(didEndSheet:returnCode:contextInfo:)
+		  contextInfo: nil]; 	
 }
 
 
