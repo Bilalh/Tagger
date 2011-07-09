@@ -21,13 +21,14 @@
 		922E35E213C89C51003C5913 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 922E35DC13C89C51003C5913 /* InfoPlist.strings */; };
 		922E35E313C89C51003C5913 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922E35DE13C89C51003C5913 /* MainMenu.xib */; };
 		922E35E413C89C51003C5913 /* VgmdbSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922E35E013C89C51003C5913 /* VgmdbSearch.xib */; };
+		922E35E713C89FB9003C5913 /* libtag.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		920660A413C89845003A3803 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		920660A513C89845003A3803 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		920660A613C89845003A3803 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
-		920660A713C89845003A3803 /* SettingsSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsSheet.xib; path = ../Classes/SettingsSheet.xib; sourceTree = "<group>"; };
+		920660A713C89845003A3803 /* SettingsSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsSheet.xib; sourceTree = "<group>"; };
 		920660A813C89845003A3803 /* SettingsSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsSheetController.h; sourceTree = "<group>"; };
 		920660A913C89845003A3803 /* SettingsSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsSheetController.m; sourceTree = "<group>"; };
 		920660AA13C89845003A3803 /* TagsLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagsLib.h; sourceTree = "<group>"; };
@@ -271,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				922E35E713C89FB9003C5913 /* libtag.dylib in Resources */,
 				920660E313C89845003A3803 /* SettingsSheet.xib in Resources */,
 				920660E613C89845003A3803 /* Vgmdb.rb in Resources */,
 				922E35E213C89C51003C5913 /* InfoPlist.strings in Resources */,
@@ -375,7 +377,7 @@
 				GCC_USE_STANDARD_INCLUDE_SEARCHING = YES;
 				INFOPLIST_FILE = "Other Sources/VGTagger-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Resources";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Frameworks";
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = "";
 				"OTHER_CPLUSPLUSFLAGS[arch=*]" = "-I/usr/local/include/taglib";
@@ -404,7 +406,7 @@
 				GCC_USE_STANDARD_INCLUDE_SEARCHING = YES;
 				INFOPLIST_FILE = "Other Sources/VGTagger-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Resources";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Frameworks";
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = "";
 				"OTHER_CPLUSPLUSFLAGS[arch=*]" = "-I/usr/local/include/taglib";
