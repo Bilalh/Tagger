@@ -6,12 +6,12 @@
 //  Copyright 2011 St. Andrews KY16 9XW. All rights reserved.
 //
 
-#import "VgmdbController.h"
 #import <MacRuby/MacRuby.h>
-
+#import "VgmdbController.h"
+#import "SettingsSheetController.h"
 
 @implementation VgmdbController
-@synthesize query, vgmdb;
+@synthesize query, vgmdb, ssc;
 
 - (IBAction) search:(id)sender{
 	NSLog(@"Search button pressed");
@@ -19,7 +19,7 @@
 										withArguments:@"Atelier Meruru", 
 							nil];
 
-	NSLog(@"Serch Results %@", result);
+	NSLog(@"Search Results %@", result);
 }
 
 - (id)initWithWindow:(NSWindow *)awindow
@@ -34,23 +34,36 @@
 
 - (IBAction)confirmSheet:sender
 {
-	NSLog(@"Comfirm");
+	NSLog(@"Search Comfirm");
 	[NSApp endSheet:self.window returnCode:NSOKButton];
 }
 
 - (IBAction)cancelSheet:sender
 {	
-	NSLog(@"Cancel");
+	NSLog(@"Search Cancel");
 	[NSApp endSheet:self.window returnCode:NSCancelButton];
 }
 
 
 - (void) didEndSheet:(NSWindow*)sheet 
 		  returnCode:(int)returnCode
-		 contextInfo:(void*)contextInfo
+		 mainWindow:(NSWindow*)mainWindow
 {	
-	NSLog(@"End Sheet");
+	NSLog(@"Search End Sheet");
 	[sheet orderOut:self];
+	
+	if (returnCode == NSOKButton){
+		if (ssc == nil){
+			ssc = [[SettingsSheetController alloc] initWithWindowNibName:@"SettingsSheet"];
+		}
+		
+		[NSApp beginSheet: [ssc window]
+		   modalForWindow: mainWindow
+			modalDelegate: ssc 
+		   didEndSelector: @selector(didEndSheet:returnCode:contextInfo:)
+			  contextInfo: nil]; 		
+	}
+	
 }
 
 - (void)dealloc

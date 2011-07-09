@@ -8,6 +8,8 @@
 
 #import "VGTaggerAppDelegate.h"
 #import <MacRuby/MacRuby.h>
+#import "SettingsSheetController.h"
+#import "MainController.h"
 
 @implementation VGTaggerAppDelegate
 @synthesize window;
@@ -15,7 +17,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {	
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"Vgmdb" ofType:@"rb"];
+//	NSString *path = [[NSBundle mainBundle] pathForResource:@"Vgmdb" ofType:@"rb"];
 //	[[MacRuby sharedRuntime] evaluateFileAtPath:path];
 
 }

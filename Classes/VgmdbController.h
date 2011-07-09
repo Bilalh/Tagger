@@ -8,11 +8,15 @@
 
 #import <Cocoa/Cocoa.h>
 
+
+@class SettingsSheetController;
+
 @interface VgmdbController : NSWindowController {
 @private
 	IBOutlet NSWindow *window;    
 }
 
+@property SettingsSheetController *ssc;
 @property IBOutlet NSTextField *query;
 @property id vgmdb;
 

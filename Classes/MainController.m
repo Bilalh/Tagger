@@ -73,8 +73,8 @@
 	[NSApp beginSheet: [vgc window]
 	   modalForWindow: self.window
 		modalDelegate: vgc 
-	   didEndSelector: @selector(didEndSheet:returnCode:contextInfo:)
-		  contextInfo: nil]; 	
+	   didEndSelector: @selector(didEndSheet:returnCode:mainWindow:)
+		  contextInfo: self.window]; 	
 }
 
 
