@@ -99,16 +99,10 @@
 		920660A313C89845003A3803 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				920660AC13C89845003A3803 /* Vgmdb.rb */,
-				920660A413C89845003A3803 /* main.m */,
+				92364F7813C8E0C900044153 /* TagLib */,
+				92364F7913C8E0E900044153 /* Vgmdb */,
 				920660A513C89845003A3803 /* MainController.h */,
 				920660A613C89845003A3803 /* MainController.m */,
-				920660A813C89845003A3803 /* SettingsSheetController.h */,
-				920660A913C89845003A3803 /* SettingsSheetController.m */,
-				920660AA13C89845003A3803 /* TagsLib.h */,
-				920660AB13C89845003A3803 /* TagsLib.mm */,
-				920660AD13C89845003A3803 /* VgmdbController.h */,
-				920660AE13C89845003A3803 /* VgmdbController.m */,
 				920660AF13C89845003A3803 /* VGTaggerAppDelegate.h */,
 				920660B013C89845003A3803 /* VGTaggerAppDelegate.m */,
 			);
@@ -128,6 +122,7 @@
 		920660BA13C89845003A3803 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				920660A413C89845003A3803 /* main.m */,
 				920660BB13C89845003A3803 /* VGTagger-Info.plist */,
 				920660BC13C89845003A3803 /* VGTagger-Prefix.pch */,
 			);
@@ -198,6 +193,27 @@
 				922E35DE13C89C51003C5913 /* MainMenu.xib */,
 			);
 			path = English.lproj;
+			sourceTree = "<group>";
+		};
+		92364F7813C8E0C900044153 /* TagLib */ = {
+			isa = PBXGroup;
+			children = (
+				920660AA13C89845003A3803 /* TagsLib.h */,
+				920660AB13C89845003A3803 /* TagsLib.mm */,
+			);
+			name = TagLib;
+			sourceTree = "<group>";
+		};
+		92364F7913C8E0E900044153 /* Vgmdb */ = {
+			isa = PBXGroup;
+			children = (
+				920660AC13C89845003A3803 /* Vgmdb.rb */,
+				920660A813C89845003A3803 /* SettingsSheetController.h */,
+				920660A913C89845003A3803 /* SettingsSheetController.m */,
+				920660AD13C89845003A3803 /* VgmdbController.h */,
+				920660AE13C89845003A3803 /* VgmdbController.m */,
+			);
+			name = Vgmdb;
 			sourceTree = "<group>";
 		};
 		925CE81213C3BD6D009D6D94 = {
