@@ -1660,7 +1660,7 @@
 															<string key="NSFrameSize">{303, 366}</string>
 															<reference key="NSSuperview" ref="271199575"/>
 															<reference key="NSWindow"/>
-															<reference key="NSNextKeyView" ref="367438659"/>
+															<reference key="NSNextKeyView" ref="211658329"/>
 															<bool key="NSEnabled">YES</bool>
 															<object class="NSTableHeaderView" key="NSHeaderView" id="310651733">
 																<reference key="NSNextResponder" ref="211658329"/>
@@ -1839,7 +1839,7 @@
 											<string key="NSFrameSize">{305, 384}</string>
 											<reference key="NSSuperview" ref="479247737"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="211658329"/>
+											<reference key="NSNextKeyView" ref="271199575"/>
 											<int key="NSsFlags">562</int>
 											<reference key="NSVScroller" ref="367438659"/>
 											<reference key="NSHScroller" ref="795071022"/>
@@ -1934,7 +1934,6 @@
 																<string key="NSFrame">{{101, 68}, {96, 32}}</string>
 																<reference key="NSSuperview" ref="10815081"/>
 																<reference key="NSWindow"/>
-																<reference key="NSNextKeyView"/>
 																<bool key="NSEnabled">YES</bool>
 																<object class="NSButtonCell" key="NSCell" id="172663795">
 																	<int key="NSCellFlags">67239424</int>
@@ -3872,8 +3871,8 @@
 						<reference key="object" ref="479247737"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="560500441"/>
 							<reference ref="324824505"/>
+							<reference ref="560500441"/>
 						</object>
 						<reference key="parent" ref="698248889"/>
 					</object>
@@ -4753,11 +4752,9 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>getData:</string>
 							<string>search:</string>
-							<string>sheet:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 						</object>
@@ -4768,7 +4765,6 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>getData:</string>
 							<string>search:</string>
-							<string>sheet:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -4778,10 +4774,6 @@
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">search:</string>
-								<string key="candidateClassName">id</string>
-							</object>
-							<object class="IBActionInfo">
-								<string key="name">sheet:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 						</object>

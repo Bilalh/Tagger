@@ -7,79 +7,78 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		925CE82213C3BD6D009D6D94 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925CE82113C3BD6D009D6D94 /* Cocoa.framework */; };
-		925CE82C13C3BD6D009D6D94 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 925CE82A13C3BD6D009D6D94 /* InfoPlist.strings */; };
-		925CE82F13C3BD6D009D6D94 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 925CE82E13C3BD6D009D6D94 /* main.m */; };
-		925CE83513C3BD6D009D6D94 /* VGTaggerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 925CE83413C3BD6D009D6D94 /* VGTaggerAppDelegate.m */; };
-		925CE83813C3BD6D009D6D94 /* Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = 925CE83613C3BD6D009D6D94 /* Main.xib */; };
-		925CE86A13C3C64F009D6D94 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 925CE86913C3C64F009D6D94 /* MacRuby.framework */; };
-		925CE89813C3CB93009D6D94 /* Vgmdb.rb in Resources */ = {isa = PBXBuildFile; fileRef = 925CE89713C3CB93009D6D94 /* Vgmdb.rb */; };
-		925CE8B113C3DA14009D6D94 /* TagsLib.mm in Sources */ = {isa = PBXBuildFile; fileRef = 925CE8B013C3DA14009D6D94 /* TagsLib.mm */; };
-		9278B3C213C6970C00CA6F2A /* VgmdbController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9278B3C113C6970C00CA6F2A /* VgmdbController.m */; };
-		9278B3C413C6973800CA6F2A /* VgmdbSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9278B3C313C6973800CA6F2A /* VgmdbSearch.xib */; };
-		9284AFC813C550540055A0DD /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9284AFC713C550540055A0DD /* MainController.m */; };
-		9284AFF813C55B240055A0DD /* SettingsSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9284AFF513C55B240055A0DD /* SettingsSheet.xib */; };
-		9284AFF913C55B240055A0DD /* SettingsSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9284AFF713C55B240055A0DD /* SettingsSheetController.m */; };
+		920660E113C89845003A3803 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660A413C89845003A3803 /* main.m */; };
+		920660E213C89845003A3803 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660A613C89845003A3803 /* MainController.m */; };
+		920660E313C89845003A3803 /* SettingsSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 920660A713C89845003A3803 /* SettingsSheet.xib */; };
+		920660E413C89845003A3803 /* SettingsSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660A913C89845003A3803 /* SettingsSheetController.m */; };
+		920660E513C89845003A3803 /* TagsLib.mm in Sources */ = {isa = PBXBuildFile; fileRef = 920660AB13C89845003A3803 /* TagsLib.mm */; };
+		920660E613C89845003A3803 /* Vgmdb.rb in Resources */ = {isa = PBXBuildFile; fileRef = 920660AC13C89845003A3803 /* Vgmdb.rb */; };
+		920660E713C89845003A3803 /* VgmdbController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660AE13C89845003A3803 /* VgmdbController.m */; };
+		920660E813C89845003A3803 /* VGTaggerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660B013C89845003A3803 /* VGTaggerAppDelegate.m */; };
+		920660EC13C89845003A3803 /* libtag.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.dylib */; };
+		922E35D713C89BF3003C5913 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922E35D613C89BF3003C5913 /* Cocoa.framework */; };
+		922E35DA13C89C04003C5913 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922E35D913C89C04003C5913 /* MacRuby.framework */; };
+		922E35E213C89C51003C5913 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 922E35DC13C89C51003C5913 /* InfoPlist.strings */; };
+		922E35E313C89C51003C5913 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922E35DE13C89C51003C5913 /* MainMenu.xib */; };
+		922E35E413C89C51003C5913 /* VgmdbSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922E35E013C89C51003C5913 /* VgmdbSearch.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		920660A413C89845003A3803 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		920660A513C89845003A3803 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
+		920660A613C89845003A3803 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
+		920660A713C89845003A3803 /* SettingsSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsSheet.xib; path = ../Classes/SettingsSheet.xib; sourceTree = "<group>"; };
+		920660A813C89845003A3803 /* SettingsSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsSheetController.h; sourceTree = "<group>"; };
+		920660A913C89845003A3803 /* SettingsSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsSheetController.m; sourceTree = "<group>"; };
+		920660AA13C89845003A3803 /* TagsLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagsLib.h; sourceTree = "<group>"; };
+		920660AB13C89845003A3803 /* TagsLib.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TagsLib.mm; sourceTree = "<group>"; };
+		920660AC13C89845003A3803 /* Vgmdb.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Vgmdb.rb; sourceTree = "<group>"; };
+		920660AD13C89845003A3803 /* VgmdbController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VgmdbController.h; sourceTree = "<group>"; };
+		920660AE13C89845003A3803 /* VgmdbController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VgmdbController.m; sourceTree = "<group>"; };
+		920660AF13C89845003A3803 /* VGTaggerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VGTaggerAppDelegate.h; sourceTree = "<group>"; };
+		920660B013C89845003A3803 /* VGTaggerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VGTaggerAppDelegate.m; sourceTree = "<group>"; };
+		920660B913C89845003A3803 /* libtag.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libtag.dylib; sourceTree = "<group>"; };
+		920660BB13C89845003A3803 /* VGTagger-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "VGTagger-Info.plist"; sourceTree = "<group>"; };
+		920660BC13C89845003A3803 /* VGTagger-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VGTagger-Prefix.pch"; sourceTree = "<group>"; };
+		920660BF13C89845003A3803 /* aac.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = aac.m4a; sourceTree = "<group>"; };
+		920660C013C89845003A3803 /* lossless.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = lossless.m4a; sourceTree = "<group>"; };
+		920660C113C89845003A3803 /* mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mp3.mp3; sourceTree = "<group>"; };
+		920660C213C89845003A3803 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
+		920660C313C89845003A3803 /* test2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test2.html; sourceTree = "<group>"; };
+		920660C413C89845003A3803 /* test3.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test3.html; sourceTree = "<group>"; };
+		920660C613C89845003A3803 /* a.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = a.js; sourceTree = "<group>"; };
+		920660C713C89845003A3803 /* button-add-big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-add-big.png"; sourceTree = "<group>"; };
+		920660C813C89845003A3803 /* button-cancel.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "button-cancel.gif"; sourceTree = "<group>"; };
+		920660C913C89845003A3803 /* connection-min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "connection-min.js"; sourceTree = "<group>"; };
+		920660CA13C89845003A3803 /* defaulten.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = defaulten.css; sourceTree = "<group>"; };
+		920660CB13C89845003A3803 /* defaulten.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = defaulten.js; sourceTree = "<group>"; };
+		920660CC13C89845003A3803 /* ga.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = ga.js; sourceTree = "<group>"; };
+		920660CD13C89845003A3803 /* highslide.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = highslide.css; sourceTree = "<group>"; };
+		920660CE13C89845003A3803 /* highslide.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = highslide.js; sourceTree = "<group>"; };
+		920660CF13C89845003A3803 /* jquery-1.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.js"; sourceTree = "<group>"; };
+		920660D013C89845003A3803 /* jquery.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = jquery.css; sourceTree = "<group>"; };
+		920660D113C89845003A3803 /* jquery.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
+		920660D213C89845003A3803 /* jquery_002.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = jquery_002.css; sourceTree = "<group>"; };
+		920660D313C89845003A3803 /* jquery_002.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery_002.js; sourceTree = "<group>"; };
+		920660D413C89845003A3803 /* jquery_003.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = jquery_003.css; sourceTree = "<group>"; };
+		920660D513C89845003A3803 /* jsapi.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jsapi.js; sourceTree = "<group>"; };
+		920660D613C89845003A3803 /* menu_open.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = menu_open.gif; sourceTree = "<group>"; };
+		920660D713C89845003A3803 /* tab.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = tab.html; sourceTree = "<group>"; };
+		920660D813C89845003A3803 /* vbulletin_global.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = vbulletin_global.js; sourceTree = "<group>"; };
+		920660D913C89845003A3803 /* vbulletin_important.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = vbulletin_important.css; sourceTree = "<group>"; };
+		920660DA13C89845003A3803 /* vbulletin_md5.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = vbulletin_md5.js; sourceTree = "<group>"; };
+		920660DB13C89845003A3803 /* vbulletin_menu.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = vbulletin_menu.js; sourceTree = "<group>"; };
+		920660DC13C89845003A3803 /* vgmdb-colorcode-title.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "vgmdb-colorcode-title.css"; sourceTree = "<group>"; };
+		920660DD13C89845003A3803 /* vgmdb.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = vgmdb.css; sourceTree = "<group>"; };
+		920660DE13C89845003A3803 /* vgmdb_global.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = vgmdb_global.js; sourceTree = "<group>"; };
+		920660DF13C89845003A3803 /* vgmdblogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vgmdblogo.png; sourceTree = "<group>"; };
+		920660E013C89845003A3803 /* yahoo-dom-event.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "yahoo-dom-event.js"; sourceTree = "<group>"; };
+		922E35D613C89BF3003C5913 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		922E35D913C89C04003C5913 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = SDKROOT; };
+		922E35DD13C89C51003C5913 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
+		922E35DF13C89C51003C5913 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = MainMenu.xib; sourceTree = "<group>"; };
+		922E35E113C89C51003C5913 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = VgmdbSearch.xib; sourceTree = "<group>"; };
 		925CE81D13C3BD6D009D6D94 /* VGTagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VGTagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		925CE82113C3BD6D009D6D94 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		925CE82413C3BD6D009D6D94 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		925CE82513C3BD6D009D6D94 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		925CE82613C3BD6D009D6D94 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		925CE82913C3BD6D009D6D94 /* VGTagger-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VGTagger-Info.plist"; sourceTree = "<group>"; };
-		925CE82B13C3BD6D009D6D94 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		925CE82D13C3BD6D009D6D94 /* VGTagger-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VGTagger-Prefix.pch"; sourceTree = "<group>"; };
-		925CE82E13C3BD6D009D6D94 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		925CE83313C3BD6D009D6D94 /* VGTaggerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VGTaggerAppDelegate.h; sourceTree = "<group>"; };
-		925CE83413C3BD6D009D6D94 /* VGTaggerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VGTaggerAppDelegate.m; sourceTree = "<group>"; };
-		925CE83713C3BD6D009D6D94 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		925CE83E13C3BE30009D6D94 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
-		925CE86913C3C64F009D6D94 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = SDKROOT; };
-		925CE87513C3C89F009D6D94 /* aac.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = aac.m4a; path = VGTagger/TestFiles/aac.m4a; sourceTree = "<group>"; };
-		925CE87613C3C89F009D6D94 /* lossless.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = lossless.m4a; path = VGTagger/TestFiles/lossless.m4a; sourceTree = "<group>"; };
-		925CE87713C3C89F009D6D94 /* mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = mp3.mp3; path = VGTagger/TestFiles/mp3.mp3; sourceTree = "<group>"; };
-		925CE87813C3C89F009D6D94 /* test.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = test.html; path = VGTagger/TestFiles/test.html; sourceTree = "<group>"; };
-		925CE87913C3C89F009D6D94 /* test2.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = test2.html; path = VGTagger/TestFiles/test2.html; sourceTree = "<group>"; };
-		925CE87B13C3C89F009D6D94 /* a.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = a.js; sourceTree = "<group>"; };
-		925CE87C13C3C89F009D6D94 /* button-add-big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-add-big.png"; sourceTree = "<group>"; };
-		925CE87D13C3C89F009D6D94 /* button-cancel.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "button-cancel.gif"; sourceTree = "<group>"; };
-		925CE87E13C3C89F009D6D94 /* connection-min.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "connection-min.js"; sourceTree = "<group>"; };
-		925CE87F13C3C89F009D6D94 /* defaulten.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = defaulten.css; sourceTree = "<group>"; };
-		925CE88013C3C89F009D6D94 /* defaulten.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = defaulten.js; sourceTree = "<group>"; };
-		925CE88113C3C89F009D6D94 /* ga.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = ga.js; sourceTree = "<group>"; };
-		925CE88213C3C89F009D6D94 /* highslide.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = highslide.css; sourceTree = "<group>"; };
-		925CE88313C3C89F009D6D94 /* highslide.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = highslide.js; sourceTree = "<group>"; };
-		925CE88413C3C89F009D6D94 /* jquery-1.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "jquery-1.js"; sourceTree = "<group>"; };
-		925CE88513C3C89F009D6D94 /* jquery.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = jquery.css; sourceTree = "<group>"; };
-		925CE88613C3C89F009D6D94 /* jquery.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jquery.js; sourceTree = "<group>"; };
-		925CE88713C3C89F009D6D94 /* jquery_002.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = jquery_002.css; sourceTree = "<group>"; };
-		925CE88813C3C89F009D6D94 /* jquery_002.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jquery_002.js; sourceTree = "<group>"; };
-		925CE88913C3C89F009D6D94 /* jquery_003.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = jquery_003.css; sourceTree = "<group>"; };
-		925CE88A13C3C89F009D6D94 /* jsapi.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = jsapi.js; sourceTree = "<group>"; };
-		925CE88B13C3C89F009D6D94 /* menu_open.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = menu_open.gif; sourceTree = "<group>"; };
-		925CE88C13C3C89F009D6D94 /* tab.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = tab.html; sourceTree = "<group>"; };
-		925CE88D13C3C89F009D6D94 /* vbulletin_global.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = vbulletin_global.js; sourceTree = "<group>"; };
-		925CE88E13C3C89F009D6D94 /* vbulletin_important.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = vbulletin_important.css; sourceTree = "<group>"; };
-		925CE88F13C3C89F009D6D94 /* vbulletin_md5.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = vbulletin_md5.js; sourceTree = "<group>"; };
-		925CE89013C3C89F009D6D94 /* vbulletin_menu.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = vbulletin_menu.js; sourceTree = "<group>"; };
-		925CE89113C3C89F009D6D94 /* vgmdb-colorcode-title.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = "vgmdb-colorcode-title.css"; sourceTree = "<group>"; };
-		925CE89213C3C89F009D6D94 /* vgmdb.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = vgmdb.css; sourceTree = "<group>"; };
-		925CE89313C3C89F009D6D94 /* vgmdb_global.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = vgmdb_global.js; sourceTree = "<group>"; };
-		925CE89413C3C89F009D6D94 /* vgmdblogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vgmdblogo.png; sourceTree = "<group>"; };
-		925CE89513C3C89F009D6D94 /* yahoo-dom-event.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "yahoo-dom-event.js"; sourceTree = "<group>"; };
-		925CE89613C3C89F009D6D94 /* test3.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = test3.html; path = VGTagger/TestFiles/test3.html; sourceTree = "<group>"; };
-		925CE89713C3CB93009D6D94 /* Vgmdb.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; name = Vgmdb.rb; path = VGTagger/Vgmdb.rb; sourceTree = "<group>"; };
-		925CE8AF13C3DA14009D6D94 /* TagsLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagsLib.h; sourceTree = "<group>"; };
-		925CE8B013C3DA14009D6D94 /* TagsLib.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TagsLib.mm; sourceTree = "<group>"; };
-		9278B3C013C6970C00CA6F2A /* VgmdbController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VgmdbController.h; path = VGTagger/VgmdbController.h; sourceTree = "<group>"; };
-		9278B3C113C6970C00CA6F2A /* VgmdbController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VgmdbController.m; path = VGTagger/VgmdbController.m; sourceTree = "<group>"; };
-		9278B3C313C6973800CA6F2A /* VgmdbSearch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VgmdbSearch.xib; path = VGTagger/VgmdbSearch.xib; sourceTree = "<group>"; };
-		9284AFC713C550540055A0DD /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
-		9284AFF513C55B240055A0DD /* SettingsSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsSheet.xib; path = VGTagger/SettingsSheet.xib; sourceTree = "<group>"; };
-		9284AFF613C55B240055A0DD /* SettingsSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsSheetController.h; path = VGTagger/SettingsSheetController.h; sourceTree = "<group>"; };
-		9284AFF713C55B240055A0DD /* SettingsSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsSheetController.m; path = VGTagger/SettingsSheetController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,21 +86,128 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				925CE86A13C3C64F009D6D94 /* MacRuby.framework in Frameworks */,
-				925CE82213C3BD6D009D6D94 /* Cocoa.framework in Frameworks */,
+				922E35DA13C89C04003C5913 /* MacRuby.framework in Frameworks */,
+				922E35D713C89BF3003C5913 /* Cocoa.framework in Frameworks */,
+				920660EC13C89845003A3803 /* libtag.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		920660A313C89845003A3803 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				920660AC13C89845003A3803 /* Vgmdb.rb */,
+				920660A413C89845003A3803 /* main.m */,
+				920660A513C89845003A3803 /* MainController.h */,
+				920660A613C89845003A3803 /* MainController.m */,
+				920660A813C89845003A3803 /* SettingsSheetController.h */,
+				920660A913C89845003A3803 /* SettingsSheetController.m */,
+				920660AA13C89845003A3803 /* TagsLib.h */,
+				920660AB13C89845003A3803 /* TagsLib.mm */,
+				920660AD13C89845003A3803 /* VgmdbController.h */,
+				920660AE13C89845003A3803 /* VgmdbController.m */,
+				920660AF13C89845003A3803 /* VGTaggerAppDelegate.h */,
+				920660B013C89845003A3803 /* VGTaggerAppDelegate.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		920660B813C89845003A3803 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				922E35D913C89C04003C5913 /* MacRuby.framework */,
+				922E35D613C89BF3003C5913 /* Cocoa.framework */,
+				920660B913C89845003A3803 /* libtag.dylib */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		920660BA13C89845003A3803 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				920660BB13C89845003A3803 /* VGTagger-Info.plist */,
+				920660BC13C89845003A3803 /* VGTagger-Prefix.pch */,
+			);
+			path = "Other Sources";
+			sourceTree = "<group>";
+		};
+		920660BD13C89845003A3803 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		920660BE13C89845003A3803 /* Test Files */ = {
+			isa = PBXGroup;
+			children = (
+				920660BF13C89845003A3803 /* aac.m4a */,
+				920660C013C89845003A3803 /* lossless.m4a */,
+				920660C113C89845003A3803 /* mp3.mp3 */,
+				920660C213C89845003A3803 /* test.html */,
+				920660C313C89845003A3803 /* test2.html */,
+				920660C413C89845003A3803 /* test3.html */,
+				920660C513C89845003A3803 /* test3_files */,
+			);
+			path = "Test Files";
+			sourceTree = "<group>";
+		};
+		920660C513C89845003A3803 /* test3_files */ = {
+			isa = PBXGroup;
+			children = (
+				920660C613C89845003A3803 /* a.js */,
+				920660C713C89845003A3803 /* button-add-big.png */,
+				920660C813C89845003A3803 /* button-cancel.gif */,
+				920660C913C89845003A3803 /* connection-min.js */,
+				920660CA13C89845003A3803 /* defaulten.css */,
+				920660CB13C89845003A3803 /* defaulten.js */,
+				920660CC13C89845003A3803 /* ga.js */,
+				920660CD13C89845003A3803 /* highslide.css */,
+				920660CE13C89845003A3803 /* highslide.js */,
+				920660CF13C89845003A3803 /* jquery-1.js */,
+				920660D013C89845003A3803 /* jquery.css */,
+				920660D113C89845003A3803 /* jquery.js */,
+				920660D213C89845003A3803 /* jquery_002.css */,
+				920660D313C89845003A3803 /* jquery_002.js */,
+				920660D413C89845003A3803 /* jquery_003.css */,
+				920660D513C89845003A3803 /* jsapi.js */,
+				920660D613C89845003A3803 /* menu_open.gif */,
+				920660D713C89845003A3803 /* tab.html */,
+				920660D813C89845003A3803 /* vbulletin_global.js */,
+				920660D913C89845003A3803 /* vbulletin_important.css */,
+				920660DA13C89845003A3803 /* vbulletin_md5.js */,
+				920660DB13C89845003A3803 /* vbulletin_menu.js */,
+				920660DC13C89845003A3803 /* vgmdb-colorcode-title.css */,
+				920660DD13C89845003A3803 /* vgmdb.css */,
+				920660DE13C89845003A3803 /* vgmdb_global.js */,
+				920660DF13C89845003A3803 /* vgmdblogo.png */,
+				920660E013C89845003A3803 /* yahoo-dom-event.js */,
+			);
+			path = test3_files;
+			sourceTree = "<group>";
+		};
+		922E35DB13C89C51003C5913 /* English.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				920660A713C89845003A3803 /* SettingsSheet.xib */,
+				922E35DC13C89C51003C5913 /* InfoPlist.strings */,
+				922E35DE13C89C51003C5913 /* MainMenu.xib */,
+				922E35E013C89C51003C5913 /* VgmdbSearch.xib */,
+			);
+			path = English.lproj;
+			sourceTree = "<group>";
+		};
 		925CE81213C3BD6D009D6D94 = {
 			isa = PBXGroup;
 			children = (
-				925CE86E13C3C7EE009D6D94 /* TestFiles */,
-				925CE82813C3BD6D009D6D94 /* Resources */,
-				925CE82713C3BD6D009D6D94 /* Classes */,
-				925CE82013C3BD6D009D6D94 /* Frameworks */,
+				920660A313C89845003A3803 /* Classes */,
+				922E35DB13C89C51003C5913 /* English.lproj */,
+				920660B813C89845003A3803 /* Frameworks */,
+				920660BD13C89845003A3803 /* Resources */,
+				920660BA13C89845003A3803 /* Other Sources */,
+				920660BE13C89845003A3803 /* Test Files */,
 				925CE81E13C3BD6D009D6D94 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,134 +218,6 @@
 				925CE81D13C3BD6D009D6D94 /* VGTagger.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		925CE82013C3BD6D009D6D94 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				925CE86913C3C64F009D6D94 /* MacRuby.framework */,
-				925CE82113C3BD6D009D6D94 /* Cocoa.framework */,
-				925CE82313C3BD6D009D6D94 /* Other Frameworks */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		925CE82313C3BD6D009D6D94 /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				925CE82413C3BD6D009D6D94 /* AppKit.framework */,
-				925CE82513C3BD6D009D6D94 /* CoreData.framework */,
-				925CE82613C3BD6D009D6D94 /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
-			sourceTree = "<group>";
-		};
-		925CE82713C3BD6D009D6D94 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				9284AFC913C5514E0055A0DD /* VGMDB */,
-				9278B3B913C68A3000CA6F2A /* Tags */,
-				925CE83313C3BD6D009D6D94 /* VGTaggerAppDelegate.h */,
-				925CE83413C3BD6D009D6D94 /* VGTaggerAppDelegate.m */,
-				925CE83E13C3BE30009D6D94 /* MainController.h */,
-				9284AFC713C550540055A0DD /* MainController.m */,
-				925CE83613C3BD6D009D6D94 /* Main.xib */,
-			);
-			name = Classes;
-			path = VGTagger;
-			sourceTree = "<group>";
-		};
-		925CE82813C3BD6D009D6D94 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				9278B3BA13C68F4B00CA6F2A /* Other Sources */,
-			);
-			name = Resources;
-			path = VGTagger;
-			sourceTree = "<group>";
-		};
-		925CE86E13C3C7EE009D6D94 /* TestFiles */ = {
-			isa = PBXGroup;
-			children = (
-				925CE87513C3C89F009D6D94 /* aac.m4a */,
-				925CE87613C3C89F009D6D94 /* lossless.m4a */,
-				925CE87713C3C89F009D6D94 /* mp3.mp3 */,
-				925CE87813C3C89F009D6D94 /* test.html */,
-				925CE87913C3C89F009D6D94 /* test2.html */,
-				925CE87A13C3C89F009D6D94 /* test3_files */,
-				925CE89613C3C89F009D6D94 /* test3.html */,
-			);
-			name = TestFiles;
-			sourceTree = "<group>";
-		};
-		925CE87A13C3C89F009D6D94 /* test3_files */ = {
-			isa = PBXGroup;
-			children = (
-				925CE87B13C3C89F009D6D94 /* a.js */,
-				925CE87C13C3C89F009D6D94 /* button-add-big.png */,
-				925CE87D13C3C89F009D6D94 /* button-cancel.gif */,
-				925CE87E13C3C89F009D6D94 /* connection-min.js */,
-				925CE87F13C3C89F009D6D94 /* defaulten.css */,
-				925CE88013C3C89F009D6D94 /* defaulten.js */,
-				925CE88113C3C89F009D6D94 /* ga.js */,
-				925CE88213C3C89F009D6D94 /* highslide.css */,
-				925CE88313C3C89F009D6D94 /* highslide.js */,
-				925CE88413C3C89F009D6D94 /* jquery-1.js */,
-				925CE88513C3C89F009D6D94 /* jquery.css */,
-				925CE88613C3C89F009D6D94 /* jquery.js */,
-				925CE88713C3C89F009D6D94 /* jquery_002.css */,
-				925CE88813C3C89F009D6D94 /* jquery_002.js */,
-				925CE88913C3C89F009D6D94 /* jquery_003.css */,
-				925CE88A13C3C89F009D6D94 /* jsapi.js */,
-				925CE88B13C3C89F009D6D94 /* menu_open.gif */,
-				925CE88C13C3C89F009D6D94 /* tab.html */,
-				925CE88D13C3C89F009D6D94 /* vbulletin_global.js */,
-				925CE88E13C3C89F009D6D94 /* vbulletin_important.css */,
-				925CE88F13C3C89F009D6D94 /* vbulletin_md5.js */,
-				925CE89013C3C89F009D6D94 /* vbulletin_menu.js */,
-				925CE89113C3C89F009D6D94 /* vgmdb-colorcode-title.css */,
-				925CE89213C3C89F009D6D94 /* vgmdb.css */,
-				925CE89313C3C89F009D6D94 /* vgmdb_global.js */,
-				925CE89413C3C89F009D6D94 /* vgmdblogo.png */,
-				925CE89513C3C89F009D6D94 /* yahoo-dom-event.js */,
-			);
-			name = test3_files;
-			path = VGTagger/TestFiles/test3_files;
-			sourceTree = "<group>";
-		};
-		9278B3B913C68A3000CA6F2A /* Tags */ = {
-			isa = PBXGroup;
-			children = (
-				925CE8AF13C3DA14009D6D94 /* TagsLib.h */,
-				925CE8B013C3DA14009D6D94 /* TagsLib.mm */,
-			);
-			name = Tags;
-			sourceTree = "<group>";
-		};
-		9278B3BA13C68F4B00CA6F2A /* Other Sources */ = {
-			isa = PBXGroup;
-			children = (
-				925CE82E13C3BD6D009D6D94 /* main.m */,
-				925CE82913C3BD6D009D6D94 /* VGTagger-Info.plist */,
-				925CE82A13C3BD6D009D6D94 /* InfoPlist.strings */,
-				925CE82D13C3BD6D009D6D94 /* VGTagger-Prefix.pch */,
-			);
-			name = "Other Sources";
-			sourceTree = "<group>";
-		};
-		9284AFC913C5514E0055A0DD /* VGMDB */ = {
-			isa = PBXGroup;
-			children = (
-				925CE89713C3CB93009D6D94 /* Vgmdb.rb */,
-				9284AFF613C55B240055A0DD /* SettingsSheetController.h */,
-				9284AFF713C55B240055A0DD /* SettingsSheetController.m */,
-				9284AFF513C55B240055A0DD /* SettingsSheet.xib */,
-				9278B3C013C6970C00CA6F2A /* VgmdbController.h */,
-				9278B3C113C6970C00CA6F2A /* VgmdbController.m */,
-				9278B3C313C6973800CA6F2A /* VgmdbSearch.xib */,
-			);
-			name = VGMDB;
-			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +254,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				English,
 			);
 			mainGroup = 925CE81213C3BD6D009D6D94;
 			productRefGroup = 925CE81E13C3BD6D009D6D94 /* Products */;
@@ -292,11 +271,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				925CE82C13C3BD6D009D6D94 /* InfoPlist.strings in Resources */,
-				925CE83813C3BD6D009D6D94 /* Main.xib in Resources */,
-				925CE89813C3CB93009D6D94 /* Vgmdb.rb in Resources */,
-				9284AFF813C55B240055A0DD /* SettingsSheet.xib in Resources */,
-				9278B3C413C6973800CA6F2A /* VgmdbSearch.xib in Resources */,
+				920660E313C89845003A3803 /* SettingsSheet.xib in Resources */,
+				920660E613C89845003A3803 /* Vgmdb.rb in Resources */,
+				922E35E213C89C51003C5913 /* InfoPlist.strings in Resources */,
+				922E35E313C89C51003C5913 /* MainMenu.xib in Resources */,
+				922E35E413C89C51003C5913 /* VgmdbSearch.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,32 +286,40 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				925CE82F13C3BD6D009D6D94 /* main.m in Sources */,
-				925CE83513C3BD6D009D6D94 /* VGTaggerAppDelegate.m in Sources */,
-				925CE8B113C3DA14009D6D94 /* TagsLib.mm in Sources */,
-				9284AFC813C550540055A0DD /* MainController.m in Sources */,
-				9284AFF913C55B240055A0DD /* SettingsSheetController.m in Sources */,
-				9278B3C213C6970C00CA6F2A /* VgmdbController.m in Sources */,
+				920660E113C89845003A3803 /* main.m in Sources */,
+				920660E213C89845003A3803 /* MainController.m in Sources */,
+				920660E413C89845003A3803 /* SettingsSheetController.m in Sources */,
+				920660E513C89845003A3803 /* TagsLib.mm in Sources */,
+				920660E713C89845003A3803 /* VgmdbController.m in Sources */,
+				920660E813C89845003A3803 /* VGTaggerAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		925CE82A13C3BD6D009D6D94 /* InfoPlist.strings */ = {
+		922E35DC13C89C51003C5913 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				925CE82B13C3BD6D009D6D94 /* en */,
+				922E35DD13C89C51003C5913 /* English */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		925CE83613C3BD6D009D6D94 /* Main.xib */ = {
+		922E35DE13C89C51003C5913 /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				925CE83713C3BD6D009D6D94 /* en */,
+				922E35DF13C89C51003C5913 /* English */,
 			);
-			name = Main.xib;
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		922E35E013C89C51003C5913 /* VgmdbSearch.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				922E35E113C89C51003C5913 /* English */,
+			);
+			name = VgmdbSearch.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -373,25 +360,28 @@
 		925CE83C13C3BD6D009D6D94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Frameworks";
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = required;
+				GCC_ENABLE_PASCAL_STRINGS = YES;
+				GCC_FORCE_CPU_SUBTYPE_ALL = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "VGTagger/VGTagger-Prefix.pch";
-				INFOPLIST_FILE = "VGTagger/VGTagger-Info.plist";
-				"OTHER_CPLUSPLUSFLAGS[arch=*]" = (
-					"-L/usr/local/lib",
-					"-ltag",
-					"-I/usr/local/include/taglib",
-				);
-				OTHER_LDFLAGS = (
-					"-I/usr/local/include/taglib",
-					"-L/usr/local/lib",
-					"-ltag",
-				);
+				GCC_PREFIX_HEADER = "Other Sources/VGTagger-Prefix.pch";
+				GCC_USE_STANDARD_INCLUDE_SEARCHING = YES;
+				INFOPLIST_FILE = "Other Sources/VGTagger-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Resources";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_CFLAGS = "";
+				OTHER_CPLUSPLUSFLAGS = "";
+				"OTHER_CPLUSPLUSFLAGS[arch=*]" = "-I/usr/local/include/taglib";
+				OTHER_LDFLAGS = "-ltag";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -399,25 +389,28 @@
 		925CE83D13C3BD6D009D6D94 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Frameworks";
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = required;
+				GCC_ENABLE_PASCAL_STRINGS = YES;
+				GCC_FORCE_CPU_SUBTYPE_ALL = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "VGTagger/VGTagger-Prefix.pch";
-				INFOPLIST_FILE = "VGTagger/VGTagger-Info.plist";
-				"OTHER_CPLUSPLUSFLAGS[arch=*]" = (
-					"-L/usr/local/lib",
-					"-ltag",
-					"-I/usr/local/include/taglib",
-				);
-				OTHER_LDFLAGS = (
-					"-I/usr/local/include/taglib",
-					"-L/usr/local/lib",
-					"-ltag",
-				);
+				GCC_PREFIX_HEADER = "Other Sources/VGTagger-Prefix.pch";
+				GCC_USE_STANDARD_INCLUDE_SEARCHING = YES;
+				INFOPLIST_FILE = "Other Sources/VGTagger-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Resources";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_CFLAGS = "";
+				OTHER_CPLUSPLUSFLAGS = "";
+				"OTHER_CPLUSPLUSFLAGS[arch=*]" = "-I/usr/local/include/taglib";
+				OTHER_LDFLAGS = "-ltag";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

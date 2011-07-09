@@ -35,7 +35,7 @@
 	NSString *s = [sender stringValue] ;
 	NSLog(@"Text is Now %@", s );
 	if (s != @""){
-		TagsLib *tl  = [[TagsLib alloc] initWithFilename:@"/Users/bilalh/Programming/Cocoa/VGTagger/VGTagger/TestFiles/aac.m4a"];
+		TagsLib *tl  = [[TagsLib alloc] initWithFilename:@"/Users/bilalh/Programming/Cocoa/VGTagger/Test Files/aac.m4a"];
 		[tl setTitle:s];
 	}
 	
@@ -43,7 +43,7 @@
 
 - (IBAction) getData:(id)sender
 {
-	TagsLib *tl  = [[TagsLib alloc] initWithFilename:@"/Users/bilalh/Programming/Cocoa/VGTagger/VGTagger/TestFiles/aac.m4a"];
+	TagsLib *tl  = [[TagsLib alloc] initWithFilename:@"/Users/bilalh/Programming/Cocoa/VGTagger/Test Files/aac.m4a"];
 	
 	NSString *s  = [tl getTitle];
 	NSLog(@"Title is %@", s);

@@ -11,6 +11,10 @@
 @class  VgmdbController;
 
 @interface MainController : NSObject {
+	@private
+	IBOutlet NSWindow	*window;
+	IBOutlet NSTextField *title;
+	VgmdbController *vgc;
 }
 
 @property (assign) IBOutlet NSWindow	*window;
