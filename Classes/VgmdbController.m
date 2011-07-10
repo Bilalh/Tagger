@@ -23,30 +23,30 @@
 	[table setNeedsDisplayInRect:
 	 [table rectOfColumn:
 	  [table columnWithIdentifier:@"album"]]];
-
+	
 }
 
 - (IBAction) searchForAlbums:(id)sender
 {
 	NSLog(@"Search button pressed");
 	searchResults = [vgmdb performRubySelector:@selector(search:)
-								 withArguments:@"Atelier Meruru", 
-					 //				hArguments:[query stringValue], 
+								 withArguments:[query stringValue], 
 					 nil];
-	NSLog(@"Search Results %@", searchResults);
+	//	NSLog(@"Search Results %@", searchResults);
 	[table reloadData];
 }
 
 - (IBAction) selectAlbum:(id)sender{
 	if (ssc == nil){
-		ssc = [[SettingsSheetController alloc] initWithWindowNibName:@"SettingsSheet"];
+		ssc = [[SettingsSheetController alloc] initWithWindowNibNameAndVgmdb:@"SettingsSheet"
+																	   vgmdb:vgmdb];
 	}else{
 		[ssc reset];
 	}
-//	[ssc setAlbum: 
-//	 [self valueFromHash:
-//		[searchResults objectAtIndex:[table selectedRow]] 
-//	  key:@"url"]];
+	//	[ssc setAlbum: 
+	//	 [self valueFromHash:
+	//		[searchResults objectAtIndex:[table selectedRow]] 
+	//	  key:@"url"]];
 	[ssc setAlbum:@"/Users/bilalh/Programming/Cocoa/VGTagger/Test Files/test.html"];
 	
 	[self confirmSheet:nil];

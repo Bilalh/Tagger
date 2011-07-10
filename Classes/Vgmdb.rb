@@ -49,6 +49,9 @@ class Vgmdb
 	
 	# Returns the data at the vgmdb url as a hash
 	def get_data(url)
+		puts url
+		url = File.expand_path("~/Desktop/test.html");
+		puts url
 		doc = Nokogiri::HTML(open(url).read)
 		
 		hash = {}
@@ -84,8 +87,8 @@ class Vgmdb
 		hash[:composer]  = get_spilt_data[8]
 		hash[:arranger]  = get_spilt_data[8]
 		hash[:performer] = get_spilt_data[9]
-				
-				
+		
+		
 		stats     = doc.css('tr> td#rightcolumn > div > div.smallfont > div > b')
 		get_stats = ->(id){  return stats[id].next.next.text.strip  }
 		
@@ -93,8 +96,8 @@ class Vgmdb
 		
 		ps = ->(id){ 
 			if stats[id].next.next.children.length > 0 then
-				 spilt_lang(stats[id].next.next.children)
-			else 
+				spilt_lang(stats[id].next.next.children)
+				else 
 				stats[id].next.next.text.split(', ').map { |e| {:@english => e.strip} }
 			end
 		}
@@ -112,12 +115,12 @@ class Vgmdb
 		
 		puts
 	end
-
+	
 	def get_notes(doc,hash)
 		puts "Getting notes"
 		notes = ""
 		doc.css('div.page table tr td div div.smallfont')[-1].children.each do |e|
-		notes <<  e.text  << "\n" if e.text != ""
+			notes <<  e.text  << "\n" if e.text != ""
 		end
 		hash[:notes] = HTMLEntities.new.decode notes
 	end
@@ -136,7 +139,7 @@ class Vgmdb
 		puts refs
 		
 		tracks = {}
-				
+		
 		refs.each do |ref|
 			disc_tables = doc.css("span##{ref[:ref]}>table")
 			num_discs = disc_tables.length
@@ -153,7 +156,7 @@ class Vgmdb
 					track = 
 					if tracks.include? "#{disc_num}-#{num}" then
 						tracks["#{disc_num}-#{num}"]
-					else 
+						else 
 						track                        = Track.new
 						track.track_num              = num
 						track.disc_num               = num_discs
@@ -200,19 +203,19 @@ end
 
 if $0 == __FILE__
 	vg = Vgmdb.new()
-	puts vg.search("Atelier Meruru"); exit
-
+	# puts vg.search("Atelier Meruru"); exit
+	
 	#url = "http://vgmdb.net/album/13192"
 	# url = 'http://vgmdb.net/album/3885'
-	# url = File.expand_path("~/Desktop/test.html")
-
 	# url = File.expand_path("~/Desktop/test2.html")
-	# hash = vg.get_data(url)
-	# puts "Data"
-	# hash.each_pair do |name, val|
-	# 	puts "#{name} => #{val}"
-	# end
-
+	
+	url = File.expand_path("~/Desktop/test.html")
+	hash = vg.get_data(url)
+	puts "Data"
+	hash.each_pair do |name, val|
+		puts "#{name} => #{val}"
+	end
+	
 end
 
 

@@ -11,12 +11,19 @@
 @interface SettingsSheetController : NSWindowController {
 @private
 	IBOutlet NSWindow    *window;
+	IBOutlet NSTextField *album;
+	id vgmdb; // macruby Vgmdb class
+	NSDictionary *albumDetails;
 }
 
 -(IBAction)cancelSheet:sender;
 -(IBAction)confirmSheet:sender;
 
+-(id)initWithWindowNibNameAndVgmdb:(NSString*)nibName
+							 vgmdb:(id)vgmdbObject;
 -(void)reset;
 -(void)setAlbum:(NSString *)url;
+
+
 
 @end

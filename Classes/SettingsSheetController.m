@@ -6,6 +6,7 @@
 //  Copyright 2011 Objectively Better, LLC. All rights reserved.
 //
 
+#import <MacRuby/MacRuby.h>
 #import "SettingsSheetController.h"
 
 
@@ -14,6 +15,10 @@
 -(void)setAlbum:(NSString *)url
 {
 	NSLog(@"Album Url %@", url );
+	albumDetails = [vgmdb performRubySelector:@selector(get_data:)
+								withArguments:url, 
+					nil];
+	NSLog(@"Album\n %@", albumDetails);
 }
 
 #pragma mark -
@@ -32,8 +37,8 @@
 }
 
 - (void) didEndSheet:(NSWindow*)sheet 
-				   returnCode:(int)returnCode
-				  contextInfo:(void*)contextInfo
+		  returnCode:(int)returnCode
+		 contextInfo:(void*)contextInfo
 {	
 	NSLog(@"End Sheet");
 	[sheet orderOut:self];
@@ -48,12 +53,12 @@
 	
 }
 
-- (void)windowDidLoad
+- (id)initWithWindowNibNameAndVgmdb:(NSString*)nibName
+							  vgmdb:(id)vgmdbObject
 {
-    [super windowDidLoad];
-    
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
-}
+	vgmdb = vgmdbObject;
+	return[self initWithWindowNibName:nibName];
+} 
 
 - (void)dealloc
 {
