@@ -25,4 +25,9 @@
 - (IBAction)cancelSheet:sender;
 - (IBAction)confirmSheet:sender;
 
+- (id) valueFromHash:(NSDictionary*)hash
+				 key:(NSString*)key;
+
+- (NSString*) valueFromResult:(id)result;
+
 @end
