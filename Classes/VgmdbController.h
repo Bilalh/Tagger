@@ -22,7 +22,6 @@
 	NSArray *languages;
 	NSString *selectedLanguage;
 	
-	
 	SettingsSheetController *ssc;
 	id vgmdb; // macruby Vgmdb class
 }

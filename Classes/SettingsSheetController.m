@@ -11,6 +11,14 @@
 
 @implementation SettingsSheetController
 
+-(void)setAlbum:(NSString *)url
+{
+	
+}
+
+#pragma mark -
+#pragma mark Sheet
+
 - (IBAction)confirmSheet:sender
 {
 	NSLog(@"Comfirm");
@@ -29,6 +37,15 @@
 {	
 	NSLog(@"End Sheet");
 	[sheet orderOut:self];
+}
+
+
+#pragma mark -
+#pragma mark Alloc
+
+-(void)reset
+{
+	
 }
 
 - (void)windowDidLoad

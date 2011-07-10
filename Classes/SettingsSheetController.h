@@ -15,4 +15,7 @@
 
 -(IBAction)cancelSheet:sender;
 -(IBAction)confirmSheet:sender;
+
+-(void)reset;
+
 @end

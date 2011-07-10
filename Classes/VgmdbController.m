@@ -26,7 +26,6 @@
 
 }
 
-
 - (IBAction) searchForAlbums:(id)sender
 {
 	NSLog(@"Search button pressed");
@@ -39,7 +38,12 @@
 }
 
 - (IBAction) selectAlbum:(id)sender{
-	
+	if (ssc == nil){
+		ssc = [[SettingsSheetController alloc] initWithWindowNibName:@"SettingsSheet"];
+	}else{
+		[ssc reset];
+	}
+	[self confirmSheet:nil];
 }
 
 #pragma mark -
@@ -95,11 +99,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSLog(@"Search End Sheet");
 	[sheet orderOut:self];
 	
-	if (returnCode == NSOKButton){
-		if (ssc == nil){
-			ssc = [[SettingsSheetController alloc] initWithWindowNibName:@"SettingsSheet"];
-		}
-		
+	if (returnCode == NSOKButton){		
 		[NSApp beginSheet: [ssc window]
 		   modalForWindow: mainWindow
 			modalDelegate: ssc 
