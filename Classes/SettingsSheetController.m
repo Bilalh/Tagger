@@ -13,7 +13,7 @@
 
 -(void)setAlbum:(NSString *)url
 {
-	
+	NSLog(@"Album Url %@", url );
 }
 
 #pragma mark -

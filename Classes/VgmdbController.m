@@ -43,6 +43,12 @@
 	}else{
 		[ssc reset];
 	}
+//	[ssc setAlbum: 
+//	 [self valueFromHash:
+//		[searchResults objectAtIndex:[table selectedRow]] 
+//	  key:@"url"]];
+	[ssc setAlbum:@"/Users/bilalh/Programming/Cocoa/VGTagger/Test Files/test.html"];
+	
 	[self confirmSheet:nil];
 }
 

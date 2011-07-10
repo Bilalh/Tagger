@@ -17,5 +17,6 @@
 -(IBAction)confirmSheet:sender;
 
 -(void)reset;
+-(void)setAlbum:(NSString *)url;
 
 @end
