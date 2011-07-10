@@ -14,7 +14,10 @@
 @interface VgmdbController : NSWindowController {
 @private
 	IBOutlet NSWindow *window;
+	IBOutlet NSTableView *table;
 	NSArray *searchResults;
+	NSArray *languages;
+	NSString *selectedLanguage;
 }
 
 @property SettingsSheetController *ssc;
@@ -22,8 +25,11 @@
 @property id vgmdb;
 
 - (IBAction) search:(id)sender;
+- (IBAction)findSelectedButton:(id)sender;
+
 - (IBAction)cancelSheet:sender;
 - (IBAction)confirmSheet:sender;
+
 
 - (id) valueFromHash:(NSDictionary*)hash
 				 key:(NSString*)key;
