@@ -48,6 +48,13 @@
 #pragma mark -
 #pragma mark Alloc
 
+-(void) awakeFromNib
+{
+	NSLog(@"aa");
+	[album setStringValue:@"test"];
+}
+
+
 -(void)reset
 {
 	

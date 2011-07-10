@@ -14,12 +14,12 @@ class Vgmdb
 	
 	def initialize()
 		@names = {
-			'en'       => :@english,
-			'ja'       => :@kanji,
-			'ja-Latn'  => :@romaji,
-			'English'  => :@english,
-			'Japanese' => :@kanji,
-			'Romaji'   => :@romaji,
+			'en'       => '@english',
+			'ja'       => '@kanji',
+			'ja-Latn'  => '@romaji',
+			'English'  => '@english',
+			'Japanese' => '@kanji',
+			'Romaji'   => '@romaji',
 		}
 	end
 	
@@ -28,7 +28,7 @@ class Vgmdb
 		#url = "http://vgmdb.net/search?q=#{CGI.escape string}"
 		url = File.expand_path("~/Desktop/test3.html")
 		
-		doc = Nokogiri::HTML(open(url).read)
+		doc = Nokogiri.HTML(open(url).read)
 		album_results = doc.css 'div#albumresults tr'
 		rows_tr = album_results[1..-1]
 		
@@ -36,10 +36,10 @@ class Vgmdb
 		
 		rows_tr.each do |tr|
 			row = {}
-			row[:catalog]  = tr.children[0].text
-			row[:released] = tr.children[3].text
-			row[:album]    = spilt_lang tr.children[2].children[0].children
-			row[:url]      = tr.children[2].children[0]['href']
+			row['catalog']  = tr.children[0].text
+			row['released'] = tr.children[3].text
+			row['album']    = spilt_lang tr.children[2].children[0].children
+			row['url']      = tr.children[2].children[0]['href']
 			rows<<row
 		end
 		
@@ -52,7 +52,7 @@ class Vgmdb
 		puts url
 		url = File.expand_path("~/Desktop/test.html");
 		puts url
-		doc = Nokogiri::HTML(open(url).read)
+		doc = Nokogiri.HTML(open(url).read)
 		
 		hash = {}
 		get_titles(doc,hash)
@@ -63,7 +63,7 @@ class Vgmdb
 	end
 	
 	def get_meta(doc,hash)
-		puts "Getting metadata"
+		#puts "Getting metadata"
 		
 		meta = doc.css('table#album_infobit_large')
 		
@@ -80,19 +80,19 @@ class Vgmdb
 			return arr
 		}
 		
-		hash[:catalog]   = get_data[0]
-		hash[:date]      = get_data[1]
-		hash[:year]      = hash[:date][/\d{4}$/]
-		hash[:publisher] = get_spilt_data[6]
-		hash[:composer]  = get_spilt_data[8]
-		hash[:arranger]  = get_spilt_data[8]
-		hash[:performer] = get_spilt_data[9]
+		hash['catalog']   = get_data[0]
+		hash['date']      = get_data[1]
+		hash['year']      = hash['date'][/\d{4}$/]
+		hash['publisher'] = get_spilt_data[6]
+		hash['composer']  = get_spilt_data[8]
+		hash['arranger']  = get_spilt_data[8]
+		hash['performer'] = get_spilt_data[9]
 		
 		
 		stats     = doc.css('tr> td#rightcolumn > div > div.smallfont > div > b')
 		get_stats = ->(id){  return stats[id].next.next.text.strip  }
 		
-		hash[:category] = get_stats[2]
+		hash['category'] = get_stats[2]
 		
 		ps = ->(id){ 
 			if stats[id].next.next.children.length > 0 then
@@ -102,53 +102,53 @@ class Vgmdb
 			end
 		}
 		
-		hash[:products] =  ps[3]
-		hash[:platforms] = ps[4]
-		puts
+		hash['products'] =  ps[3]
+		hash['platforms'] = ps[4]
+		#puts
 	end
 	
 	def get_titles(doc, hash)
-		puts "Getting Titles"
+		#puts "Getting Titles"
 		titles ={}
 		titles = spilt_lang(doc.css('h1 > span.albumtitle'))
-		hash[:title] = titles
+		hash['title'] = titles
 		
-		puts
+		#puts
 	end
 	
 	def get_notes(doc,hash)
-		puts "Getting notes"
+		#puts "Getting notes"
 		notes = ""
 		doc.css('div.page table tr td div div.smallfont')[-1].children.each do |e|
 			notes <<  e.text  << "\n" if e.text != ""
 		end
-		hash[:notes] = HTMLEntities.new.decode notes
+		hash['notes'] = HTMLEntities.new.decode notes
 	end
 	
 	def get_tracks(doc, hash)
 		coder = HTMLEntities.new
 		
-		puts "Getting Tracks"
+		#puts "Getting Tracks"
 		# Gets the id of each language
 		
 		refs = []
 		doc.css('ul#tlnav>li>a').each do |ele|
-			refs << {lang: @names[ele.text], ref:ele['rel'] }
+			refs << {'lang' => @names[ele.text], 'ref' => ele['rel'] }
 		end
-		puts "refs:"
-		puts refs
+		#puts "refs:"
+		#puts refs
 		
 		tracks = {}
 		
 		refs.each do |ref|
-			disc_tables = doc.css("span##{ref[:ref]}>table")
+			disc_tables = doc.css("span##{ref['ref']}>table")
 			num_discs = disc_tables.length
-			hash[:total_discs] = num_discs
-			puts "Getting #{ref[:lang]} tracks, #{num_discs} Discs"
+			hash['total_discs'] = num_discs
+			#puts "Getting #{ref['lang']} tracks, #{num_discs} Discs"
 			
 			disc_tables.each_with_index do |disc,disc_index|
 				disc_num = disc_index + 1;
-				puts "disc #{disc_num}"
+				#puts "disc #{disc_num}"
 				disc.css('tr').each do |track_tr|
 					num = track_tr.children[0].text.to_i(10)
 					
@@ -164,22 +164,22 @@ class Vgmdb
 						tracks["#{disc_num}-#{num}"] = track
 					end
 					
-					track.instance_variable_set(ref[:lang], coder.decode(track_tr.children[2].text))
-					p track
+					track.instance_variable_set(ref['lang'].to_sym, coder.decode(track_tr.children[2].text))
+					# p track
 				end
 				
-				puts
+				#puts
 			end
 			
 		end
 		
-		hash[:tracks]= tracks;
-		puts
+		hash['tracks']= tracks;
+		#puts
 	end #get_tracks
 	
 	
 	def	get_key(hash, str_key)
-		return hash[str_key.to_sym]
+		return hash[str_key]
 	end
 	
 	private 
@@ -203,7 +203,7 @@ end
 
 if $0 == __FILE__
 	vg = Vgmdb.new()
-	# puts vg.search("Atelier Meruru"); exit
+	# #puts vg.search("Atelier Meruru"); exit
 	
 	#url = "http://vgmdb.net/album/13192"
 	# url = 'http://vgmdb.net/album/3885'
@@ -211,9 +211,9 @@ if $0 == __FILE__
 	
 	url = File.expand_path("~/Desktop/test.html")
 	hash = vg.get_data(url)
-	puts "Data"
+	#puts "Data"
 	hash.each_pair do |name, val|
-		puts "#{name} => #{val}"
+		#puts "#{name} => #{val}"
 	end
 	
 end

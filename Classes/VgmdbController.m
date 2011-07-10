@@ -80,18 +80,16 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 - (id) valueFromHash:(NSDictionary*)hash
 				 key:(NSString*)key
 {
-	return [vgmdb performRubySelector:@selector(get_key:)
-						withArguments:hash, key, nil];
+//	return [vgmdb performRubySelector:@selector(get_key:)
+//						withArguments:hash, key, nil];	
+	return [hash objectForKey:key];
 }
 
 - (NSString*) valueFromResult:(id)result
 {
-	NSString *lang = selectedLanguage;
 	if ([result isKindOfClass:[NSDictionary class]]){
-		return [self valueFromHash:result 
-							   key:lang];
+		return [self valueFromHash:result key:selectedLanguage];
 	}
-	
 	return result;
 }
 
