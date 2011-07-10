@@ -54,6 +54,8 @@
 - (IBAction) search:(id)sender{
 	if (vgc == nil){
 		vgc = [[VgmdbController alloc] initWithWindowNibName:@"VgmdbSearch"];	
+	}else{
+		[vgc reset];	
 	}
 	
 	[NSApp beginSheet: [vgc window]

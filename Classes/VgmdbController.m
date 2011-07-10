@@ -32,10 +32,10 @@
 	NSLog(@"Search button pressed");
 	searchResults = [vgmdb performRubySelector:@selector(search:)
 								 withArguments:@"Atelier Meruru", 
-					 //										withArguments:[query stringValue], 
+					 //				hArguments:[query stringValue], 
 					 nil];
-	
 	NSLog(@"Search Results %@", searchResults);
+	[table reloadData];
 }
 
 - (IBAction) selectAlbum:(id)sender{
@@ -46,7 +46,7 @@
 #pragma mark Table Methods 
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification{
-	[selectAlbumButton setEnabled:YES];
+	[selectAlbumButton setEnabled:([table selectedRow] != -1 ? YES : NO )];
 }
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView 
@@ -120,11 +120,16 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[NSApp endSheet:self.window returnCode:NSOKButton];
 }
 
-
-
 #pragma mark -
 #pragma mark Alloc
 
+- (void)reset
+{
+	[query setStringValue:@""];
+	[selectAlbumButton setEnabled:NO];
+	searchResults = [[NSArray alloc] init];
+	[table reloadData];
+}
 
 - (id)initWithWindow:(NSWindow *)awindow
 {
@@ -134,10 +139,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		languages = [[NSArray alloc] initWithObjects:@"@english", @"@romaji",@"@kanji" , nil];
 		selectedLanguage = [languages objectAtIndex:0];
 		vgmdb = [[MacRuby sharedRuntime] evaluateString:@"Vgmdb.new"];
-		searchResults = [vgmdb performRubySelector:@selector(search:)
-									 withArguments:@"Atelier Meruru", 
-						 //				hArguments:[query stringValue], 
-						 nil];
+		[self reset];
     }
     
     return self;

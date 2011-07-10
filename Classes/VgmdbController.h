@@ -37,9 +37,11 @@
 - (IBAction)confirmSheet:sender;
 
 
+- (NSString*) valueFromResult:(id)result;
 - (id) valueFromHash:(NSDictionary*)hash
 				 key:(NSString*)key;
 
-- (NSString*) valueFromResult:(id)result;
+- (void)reset;
+
 
 @end
