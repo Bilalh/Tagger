@@ -15,16 +15,22 @@
 @private
 	IBOutlet NSWindow *window;
 	IBOutlet NSTableView *table;
+	IBOutlet NSTextField *query;
+	IBOutlet NSButton *selectAlbumButton;
+	
 	NSArray *searchResults;
 	NSArray *languages;
 	NSString *selectedLanguage;
+	
+	
+	SettingsSheetController *ssc;
+	id vgmdb; // macruby Vgmdb class
 }
 
-@property SettingsSheetController *ssc;
-@property IBOutlet NSTextField *query;
-@property id vgmdb;
 
-- (IBAction) search:(id)sender;
+- (IBAction) searchForAlbums:(id)sender;
+- (IBAction) selectAlbum:(id)sender;
+
 - (IBAction)findSelectedButton:(id)sender;
 
 - (IBAction)cancelSheet:sender;

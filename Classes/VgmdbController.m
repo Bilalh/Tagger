@@ -11,7 +11,6 @@
 #import "SettingsSheetController.h"
 
 @implementation VgmdbController
-@synthesize query, vgmdb, ssc;
 
 #pragma mark -
 #pragma mark GUI Callbacks
@@ -28,7 +27,7 @@
 }
 
 
-- (IBAction) search:(id)sender
+- (IBAction) searchForAlbums:(id)sender
 {
 	NSLog(@"Search button pressed");
 	searchResults = [vgmdb performRubySelector:@selector(search:)
@@ -37,6 +36,32 @@
 					 nil];
 	
 	NSLog(@"Search Results %@", searchResults);
+}
+
+- (IBAction) selectAlbum:(id)sender{
+	
+}
+
+#pragma mark -
+#pragma mark Table Methods 
+
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification{
+	[selectAlbumButton setEnabled:YES];
+}
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView 
+{
+    return [searchResults count];
+}
+
+- (id)          tableView:(NSTableView *)aTableView 
+objectValueForTableColumn:(NSTableColumn *)aTableColumn 
+					  row:(NSInteger)rowIndex 
+{
+	NSString *s = [self valueFromResult:
+				   [self valueFromHash:[searchResults objectAtIndex:rowIndex]
+								   key:[aTableColumn identifier]]];
+    return s;
 }
 
 #pragma mark -
@@ -59,24 +84,6 @@
 	
 	return result;
 }
-
-#pragma mark -
-#pragma mark Table Methods 
-- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView 
-{
-    return [searchResults count];
-}
-
-- (id)          tableView:(NSTableView *)aTableView 
-objectValueForTableColumn:(NSTableColumn *)aTableColumn 
-					  row:(NSInteger)rowIndex 
-{
-	NSString *s = [self valueFromResult:
-				   [self valueFromHash:[searchResults objectAtIndex:rowIndex]
-								   key:[aTableColumn identifier]]];
-    return s;
-}
-
 
 #pragma mark -
 #pragma mark Sheets 
