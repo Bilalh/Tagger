@@ -14,7 +14,7 @@
 #pragma mark -
 #pragma mark Hash Methods
 
-+ (NSString*) valueFromResult:(id)result
++ (id) valueFromResult:(id)result
 			 selectedLanguage:(NSString*)selectedLanguage
 {
 	if ([result isKindOfClass:[NSDictionary class]]){

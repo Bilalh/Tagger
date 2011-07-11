@@ -11,9 +11,19 @@
 @interface DisplayController : NSWindowController {
 @private
 	IBOutlet NSWindow    *window;
-	IBOutlet NSTextField *album;
-	id vgmdb; // macruby Vgmdb class
 	NSDictionary *albumDetails;
+	id vgmdb; // macruby Vgmdb class
+	
+	NSString  *selectedLanguage;
+	
+	NSString  *album;
+	NSString  *artist;
+	NSString  *albumArtist;
+	NSNumber  *year;
+	NSString  *genre;
+	NSNumber  *totalTracks;
+	NSNumber  *totalDisks;
+	
 }
 
 - (IBAction)cancelSheet:sender;

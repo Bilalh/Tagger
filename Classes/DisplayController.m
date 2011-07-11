@@ -13,6 +13,12 @@
 
 @implementation DisplayController
 
+-(id) valuefromDetails:(NSString*)key
+{
+	return [Utility valueFromResult:[albumDetails objectForKey:key] 
+				   selectedLanguage:selectedLanguage];
+}
+
 -(void)setAlbumUrl:(NSString *)url
 {
 	NSLog(@"Set Album called, Album Url %@", url );
@@ -20,23 +26,26 @@
 								withArguments:url, 
 					nil];
 	NSLog(@"Album\n %@", albumDetails);
+	album       = [self valuefromDetails:@"title" ];
+	artist      = [self valuefromDetails:@"composer"];
+	albumArtist = @"";
+	year        = [self valuefromDetails:@"year"];
+	genre       = [self valuefromDetails:@"category"];
+	
+	totalTracks = [NSNumber numberWithInt:2] ;
+	totalDisks  = [self valuefromDetails:@"total_discs"];
 }
 
 
 #pragma mark -
 #pragma mark Alloc
 
--(void) windowDidLoad
-{
-	NSLog(@"awakeFromNib");
-	[album setStringValue:[albumDetails objectForKey:@"title"] ];
-}
-
 
 - (id)initWithUrl:(NSString*)url
 			vgmdb:(id)vgmdbObject
 {
 	vgmdb = vgmdbObject;
+	selectedLanguage = @"@english";
 	[self setAlbumUrl:url];
 	return[self initWithWindowNibName:@"VgmdbDisplay"];
 } 
@@ -66,6 +75,14 @@
 		 contextInfo:(void*)contextInfo
 {	
 	NSLog(@"End Sheet");
+	NSLog(@"album       %@", album       );
+	NSLog(@"artist      %@", artist      );
+	NSLog(@"albumArtist %@", albumArtist );
+	NSLog(@"year        %@", year        );
+	NSLog(@"genre       %@", genre       );
+	NSLog(@"totalTracks %@", totalTracks );
+	NSLog(@"totalDisks  %@", totalDisks  );
+	
 	[sheet orderOut:self];
 }
  
