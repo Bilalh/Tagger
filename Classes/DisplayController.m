@@ -74,7 +74,7 @@
 		  returnCode:(int)returnCode
 		 contextInfo:(void*)contextInfo
 {	
-	NSLog(@"End Sheet");
+	NSLog(@"End Sheet Vars:");
 	NSLog(@"album       %@", album       );
 	NSLog(@"artist      %@", artist      );
 	NSLog(@"albumArtist %@", albumArtist );

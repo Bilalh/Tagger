@@ -14,12 +14,27 @@
 #pragma mark -
 #pragma mark Hash Methods
 
+// Recursively looks into the result until the result is 
+// a string or number, selectedLanguage is the Language to 
+// choose 
 + (id) valueFromResult:(id)result
 			 selectedLanguage:(NSString*)selectedLanguage
 {
 	if ([result isKindOfClass:[NSDictionary class]]){
-		return [result objectForKey:selectedLanguage];
+		return [Utility valueFromResult:[result objectForKey:selectedLanguage] 
+					   selectedLanguage:selectedLanguage];
+		
+	}else if ([result isKindOfClass:[NSArray class]]){
+		
+		NSMutableArray *array = [[NSMutableArray alloc] init];
+		for (id ele in result) {
+			[array addObject:[Utility valueFromResult:ele
+									 selectedLanguage:selectedLanguage ]];
+		}
+		return [array componentsJoinedByString:@","];
+		
 	}
+	
 	return result;
 }
 
