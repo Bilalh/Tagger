@@ -157,14 +157,14 @@ class Vgmdb
 					if tracks.include? "#{disc_num}-#{num}" then
 						tracks["#{disc_num}-#{num}"]
 						else 
-						track                        = Track.new
-						track.track_num              = num
-						track.disc_num               = num_discs
-						track.time                   = track_tr.children[4].text
+						track                        = {}
+						track['track_num']           = num
+						track['disc_num']            = num_discs
+						track['time']                = track_tr.children[4].text
 						tracks["#{disc_num}-#{num}"] = track
 					end
 					
-					track.instance_variable_set(ref['lang'].to_sym, coder.decode(track_tr.children[2].text))
+					track[ref['lang']] = coder.decode(track_tr.children[2].text)
 					# p track
 				end
 				

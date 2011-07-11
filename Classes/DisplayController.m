@@ -9,7 +9,7 @@
 #import <MacRuby/MacRuby.h>
 #import "DisplayController.h"
 #import "Utility.h"
-
+#import "Track.h"
 
 @implementation DisplayController
 
