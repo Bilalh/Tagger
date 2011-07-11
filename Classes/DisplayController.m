@@ -26,15 +26,21 @@
 								withArguments:url, 
 					nil];
 	NSLog(@"Album\n %@", albumDetails);
+	
 	album       = [self valuefromDetails:@"title" ];
 	artist      = [self valuefromDetails:@"composer"];
-	NSLog(@"%@", artist);
 	albumArtist = @"";
 	year        = [self valuefromDetails:@"year"];
-	genre       = [self valuefromDetails:@"category"];
-	
-	totalTracks = [NSNumber numberWithInt:2] ;
+	genre       = [self valuefromDetails:@"category"];	
+	totalTracks = [NSNumber numberWithInt:65] ;
 	totalDisks  = [self valuefromDetails:@"total_discs"];
+	
+	composer  = [self valuefromDetails:@"composer"];
+	performer = [self valuefromDetails:@"performer"];
+	products  = [self valuefromDetails:@"products"];
+	publisher = [self valuefromDetails:@"publisher"];
+	notes     = [self valuefromDetails:@"notes"];
+	
 }
 
 
@@ -83,6 +89,12 @@
 	NSLog(@"genre       %@", genre       );
 	NSLog(@"totalTracks %@", totalTracks );
 	NSLog(@"totalDisks  %@", totalDisks  );
+	
+	NSLog(@"composer    %@", composer    );  
+	NSLog(@"performer   %@", performer   );
+	NSLog(@"products    %@", products    );
+	NSLog(@"publisher   %@", publisher   );
+	NSLog(@"notes       %@", notes       );
 	
 	[sheet orderOut:self];
 }

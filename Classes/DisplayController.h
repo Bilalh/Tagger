@@ -16,13 +16,19 @@
 	
 	NSString  *selectedLanguage;
 	
-	NSString  *album;
-	NSString  *artist;
-	NSString  *albumArtist;
-	NSNumber  *year;
-	NSString  *genre;
-	NSNumber  *totalTracks;
-	NSNumber  *totalDisks;
+	NSString *album;
+	NSString *artist;
+	NSString *albumArtist;
+	NSNumber *year;
+	NSString *genre;
+	NSNumber *totalTracks;
+	NSNumber *totalDisks;
+	
+	NSString *composer;
+	NSString *performer;
+	NSString *products;
+	NSString *publisher;
+	NSString *notes;
 	
 }
 
