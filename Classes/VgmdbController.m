@@ -8,7 +8,8 @@
 
 #import <MacRuby/MacRuby.h>
 #import "VgmdbController.h"
-#import "SettingsSheetController.h"
+#import "DisplayController.h"
+#import "Utility.h"
 
 @implementation VgmdbController
 
@@ -37,18 +38,18 @@
 }
 
 - (IBAction) selectAlbum:(id)sender{
-	if (ssc == nil){
-		ssc = [[SettingsSheetController alloc] initWithWindowNibNameAndVgmdb:@"SettingsSheet"
-																	   vgmdb:vgmdb];
-	}else{
-		[ssc reset];
-	}
-	//	[ssc setAlbum: 
-	//	 [self valueFromHash:
-	//		[searchResults objectAtIndex:[table selectedRow]] 
-	//	  key:@"url"]];
-	[ssc setAlbum:@"/Users/bilalh/Programming/Cocoa/VGTagger/Test Files/test.html"];
 	
+	if (ssc != nil){
+		[ssc release];
+	}
+	
+	ssc = [[DisplayController alloc] 
+		   initWithUrl:@"/Users/bilalh/Programming/Cocoa/VGTagger/Test Files/test.html"
+		   vgmdb:vgmdb];
+	
+//	[ssc setAlbumUrl: [[searchResults objectAtIndex:[table selectedRow]] 
+//					   objectForKey:@"url"]];
+		
 	[self confirmSheet:nil];
 }
 
@@ -68,30 +69,13 @@
 objectValueForTableColumn:(NSTableColumn *)aTableColumn 
 					  row:(NSInteger)rowIndex 
 {
-	NSString *s = [self valueFromResult:
-				   [self valueFromHash:[searchResults objectAtIndex:rowIndex]
-								   key:[aTableColumn identifier]]];
-    return s;
+	NSString *s = [Utility valueFromResult:
+				   [[searchResults objectAtIndex:rowIndex] 
+					objectForKey:[aTableColumn identifier]]
+				   selectedLanguage:selectedLanguage];
+	return s;
 }
 
-#pragma mark -
-#pragma mark Hash Methods
-
-- (id) valueFromHash:(NSDictionary*)hash
-				 key:(NSString*)key
-{
-//	return [vgmdb performRubySelector:@selector(get_key:)
-//						withArguments:hash, key, nil];	
-	return [hash objectForKey:key];
-}
-
-- (NSString*) valueFromResult:(id)result
-{
-	if ([result isKindOfClass:[NSDictionary class]]){
-		return [self valueFromHash:result key:selectedLanguage];
-	}
-	return result;
-}
 
 #pragma mark -
 #pragma mark Sheets 
@@ -133,6 +117,11 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[selectAlbumButton setEnabled:NO];
 	searchResults = [[NSArray alloc] init];
 	[table reloadData];
+}
+
+- (id)init
+{
+    return [self initWithWindowNibName:@"VgmdbSearch"];
 }
 
 - (id)initWithWindow:(NSWindow *)awindow

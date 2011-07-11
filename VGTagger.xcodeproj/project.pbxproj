@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		920660E113C89845003A3803 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660A413C89845003A3803 /* main.m */; };
 		920660E213C89845003A3803 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660A613C89845003A3803 /* MainController.m */; };
-		920660E313C89845003A3803 /* SettingsSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 920660A713C89845003A3803 /* SettingsSheet.xib */; };
-		920660E413C89845003A3803 /* SettingsSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660A913C89845003A3803 /* SettingsSheetController.m */; };
+		920660E313C89845003A3803 /* VgmdbDisplay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 920660A713C89845003A3803 /* VgmdbDisplay.xib */; };
+		920660E413C89845003A3803 /* DisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660A913C89845003A3803 /* DisplayController.m */; };
 		920660E513C89845003A3803 /* TagsLib.mm in Sources */ = {isa = PBXBuildFile; fileRef = 920660AB13C89845003A3803 /* TagsLib.mm */; };
 		920660E613C89845003A3803 /* Vgmdb.rb in Resources */ = {isa = PBXBuildFile; fileRef = 920660AC13C89845003A3803 /* Vgmdb.rb */; };
 		920660E713C89845003A3803 /* VgmdbController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660AE13C89845003A3803 /* VgmdbController.m */; };
 		920660E813C89845003A3803 /* VGTaggerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660B013C89845003A3803 /* VGTaggerAppDelegate.m */; };
 		920660EC13C89845003A3803 /* libtag.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.dylib */; };
+		922D30C013CA77A1008EED70 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 922D30BF13CA77A1008EED70 /* Utility.m */; };
 		922E35D713C89BF3003C5913 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922E35D613C89BF3003C5913 /* Cocoa.framework */; };
 		922E35DA13C89C04003C5913 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922E35D913C89C04003C5913 /* MacRuby.framework */; };
 		922E35E213C89C51003C5913 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 922E35DC13C89C51003C5913 /* InfoPlist.strings */; };
@@ -28,9 +29,9 @@
 		920660A413C89845003A3803 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		920660A513C89845003A3803 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		920660A613C89845003A3803 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
-		920660A713C89845003A3803 /* SettingsSheet.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsSheet.xib; sourceTree = "<group>"; };
-		920660A813C89845003A3803 /* SettingsSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsSheetController.h; sourceTree = "<group>"; };
-		920660A913C89845003A3803 /* SettingsSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsSheetController.m; sourceTree = "<group>"; };
+		920660A713C89845003A3803 /* VgmdbDisplay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VgmdbDisplay.xib; sourceTree = "<group>"; };
+		920660A813C89845003A3803 /* DisplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = DisplayController.h; sourceTree = "<group>"; };
+		920660A913C89845003A3803 /* DisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayController.m; sourceTree = "<group>"; };
 		920660AA13C89845003A3803 /* TagsLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagsLib.h; sourceTree = "<group>"; };
 		920660AB13C89845003A3803 /* TagsLib.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TagsLib.mm; sourceTree = "<group>"; };
 		920660AC13C89845003A3803 /* Vgmdb.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Vgmdb.rb; sourceTree = "<group>"; };
@@ -74,6 +75,8 @@
 		920660DE13C89845003A3803 /* vgmdb_global.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = vgmdb_global.js; sourceTree = "<group>"; };
 		920660DF13C89845003A3803 /* vgmdblogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vgmdblogo.png; sourceTree = "<group>"; };
 		920660E013C89845003A3803 /* yahoo-dom-event.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "yahoo-dom-event.js"; sourceTree = "<group>"; };
+		922D30BE13CA77A1008EED70 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		922D30BF13CA77A1008EED70 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		922E35D613C89BF3003C5913 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		922E35D913C89C04003C5913 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = SDKROOT; };
 		922E35DD13C89C51003C5913 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
@@ -188,7 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				92364F7413C8DE5200044153 /* VgmdbSearch.xib */,
-				920660A713C89845003A3803 /* SettingsSheet.xib */,
+				920660A713C89845003A3803 /* VgmdbDisplay.xib */,
 				922E35DC13C89C51003C5913 /* InfoPlist.strings */,
 				922E35DE13C89C51003C5913 /* MainMenu.xib */,
 			);
@@ -208,10 +211,12 @@
 			isa = PBXGroup;
 			children = (
 				920660AC13C89845003A3803 /* Vgmdb.rb */,
-				920660A813C89845003A3803 /* SettingsSheetController.h */,
-				920660A913C89845003A3803 /* SettingsSheetController.m */,
+				920660A813C89845003A3803 /* DisplayController.h */,
+				920660A913C89845003A3803 /* DisplayController.m */,
 				920660AD13C89845003A3803 /* VgmdbController.h */,
 				920660AE13C89845003A3803 /* VgmdbController.m */,
+				922D30BE13CA77A1008EED70 /* Utility.h */,
+				922D30BF13CA77A1008EED70 /* Utility.m */,
 			);
 			name = Vgmdb;
 			sourceTree = "<group>";
@@ -288,7 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				920660E313C89845003A3803 /* SettingsSheet.xib in Resources */,
+				920660E313C89845003A3803 /* VgmdbDisplay.xib in Resources */,
 				922E35E713C89FB9003C5913 /* libtag.dylib in Resources */,
 				920660E613C89845003A3803 /* Vgmdb.rb in Resources */,
 				922E35E213C89C51003C5913 /* InfoPlist.strings in Resources */,
@@ -306,10 +311,11 @@
 			files = (
 				920660E113C89845003A3803 /* main.m in Sources */,
 				920660E213C89845003A3803 /* MainController.m in Sources */,
-				920660E413C89845003A3803 /* SettingsSheetController.m in Sources */,
+				920660E413C89845003A3803 /* DisplayController.m in Sources */,
 				920660E513C89845003A3803 /* TagsLib.mm in Sources */,
 				920660E713C89845003A3803 /* VgmdbController.m in Sources */,
 				920660E813C89845003A3803 /* VGTaggerAppDelegate.m in Sources */,
+				922D30C013CA77A1008EED70 /* Utility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

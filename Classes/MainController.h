@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class  VgmdbController;
-@class  SettingsSheetController;
+@class  DisplayController;
 
 
 @interface MainController : NSObject {
@@ -19,7 +19,7 @@
 @property (assign) IBOutlet NSTextField *title;
 
 @property VgmdbController *vgc;
-@property SettingsSheetController *ssc;
+@property DisplayController *ssc;
 
 
 - (IBAction)       search:(id)sender;

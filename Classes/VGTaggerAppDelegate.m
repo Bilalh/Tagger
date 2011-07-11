@@ -8,7 +8,6 @@
 
 #import "VGTaggerAppDelegate.h"
 #import <MacRuby/MacRuby.h>
-#import "SettingsSheetController.h"
 #import "MainController.h"
 
 @implementation VGTaggerAppDelegate

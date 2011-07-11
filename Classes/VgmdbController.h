@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 
-@class SettingsSheetController;
+@class DisplayController;
 
 @interface VgmdbController : NSWindowController {
 @private
@@ -22,7 +22,7 @@
 	NSArray *languages;
 	NSString *selectedLanguage;
 	
-	SettingsSheetController *ssc;
+	DisplayController *ssc;
 	id vgmdb; // macruby Vgmdb class
 }
 
@@ -34,11 +34,6 @@
 
 - (IBAction)cancelSheet:sender;
 - (IBAction)confirmSheet:sender;
-
-
-- (NSString*) valueFromResult:(id)result;
-- (id) valueFromHash:(NSDictionary*)hash
-				 key:(NSString*)key;
 
 - (void)reset;
 
