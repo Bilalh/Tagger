@@ -32,7 +32,21 @@
 						   selectedLanguage:selectedLanguage ];
 			[array addObject:a];
 		}
-		return [array componentsJoinedByString:@","];
+		switch ([array count]) {
+			case 0: 
+				return @"";
+				break;
+			case 1:
+				return [array objectAtIndex:0];
+			case 2:
+				return [[array objectAtIndex:0] stringByAppendingString:[@" & " stringByAppendingString: [array objectAtIndex:1]]];
+				break;
+			default:
+			{
+				return [array componentsJoinedByString:@","];
+				break;	
+			}
+		}
 		
 	}
 	

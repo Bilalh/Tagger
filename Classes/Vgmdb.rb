@@ -50,7 +50,7 @@ class Vgmdb
 	# Returns the data at the vgmdb url as a hash
 	def get_data(url)
 		puts url
-		url = File.expand_path("~/Desktop/test2.html");
+		url = File.expand_path("~/Desktop/test.html");
 		puts url
 		doc = Nokogiri.HTML(open(url).read)
 		
