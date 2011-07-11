@@ -3,6 +3,7 @@
 require 'rubygems'
 require 'htmlentities'
 require 'nokogiri'
+require 'pp'
 
 require 'open-uri'
 require 'fileutils'
@@ -60,6 +61,16 @@ class Vgmdb
 		get_tracks(doc,hash)
 		get_notes(doc,hash)
 		return hash
+	end
+	
+	def get_tracks_array(hash)
+		return hash['tracks'].values.sort do |x,y|
+			res = x['disc#']   <=> y['disc#'] 
+			res = x['track#']  <=> y['track#']  if res ==0
+			res = x['track#']  <=> y['track#']  if res ==0
+			res = (x['length'] <=> y['length']) if res ==0
+			res		
+		end
 	end
 	
 	def get_meta(doc,hash)
@@ -158,13 +169,14 @@ class Vgmdb
 						tracks["#{disc_num}-#{num}"]
 						else 
 						track                        = {}
-						track['track_num']           = num
-						track['disc_num']            = num_discs
-						track['time']                = track_tr.children[4].text
+						track['title']               = {}
+						track['track#']              = num
+						track['disc#']               = disc_num
+						track['length']              = track_tr.children[4].text
 						tracks["#{disc_num}-#{num}"] = track
 					end
 					
-					track[ref['lang']] = coder.decode(track_tr.children[2].text)
+					track['title'][ref['lang']] = coder.decode(track_tr.children[2].text)
 					# p track
 				end
 				
@@ -189,17 +201,12 @@ class Vgmdb
 		elems.each do |ele|
 			#TODO check for nothing
 			lang = (ele.has_attribute? 'lang') ? @names[ele['lang']] : '@english'
-			h[lang] = ele.text.strip.sub /^\/ /, "" # !> ambiguous first argument; put parentheses or even spaces
+			h[lang] = ele.text.strip.sub /^\/ /, ""
 		end
 		return h
 	end
 	
 end
-
-class Track
-	attr_accessor :engish, :japanese, :kanji, :track_num, :disc_num, :time
-end
-
 
 if $0 == __FILE__
 	vg = Vgmdb.new()
@@ -210,11 +217,8 @@ if $0 == __FILE__
 	# url = File.expand_path("~/Desktop/test2.html")
 	
 	url = File.expand_path("~/Desktop/test.html")
-	hash = vg.get_data(url)
-	#puts "Data"
-	hash.each_pair do |name, val|
-		#puts "#{name} => #{val}"
-	end
+	hash = vg.get_data(url)	
+	pp vg.get_tracks_array hash;
 	
 end
 

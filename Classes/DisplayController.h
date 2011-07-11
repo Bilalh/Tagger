@@ -14,6 +14,7 @@
 	NSDictionary *albumDetails;
 	id vgmdb; // macruby Vgmdb class
 	
+	NSDictionary *tracks;
 	NSString  *selectedLanguage;
 	
 	NSString *album;
@@ -38,7 +39,6 @@
 - (IBAction)cancelSheet:sender;
 - (IBAction)confirmSheet:sender;
 
-- (void)setAlbumUrl:(NSString *)url;
 - (id)initWithUrl:(NSString*)url
 			vgmdb:(id)vgmdbObject;
 

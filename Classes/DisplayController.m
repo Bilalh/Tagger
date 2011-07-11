@@ -11,13 +11,15 @@
 #import "Utility.h"
 #import "Track.h"
 
+@interface DisplayController() // private methdods
+- (id) valuefromDetails:(NSString*)key;
+- (void)setAlbumUrl:(NSString *)url;
+@end
+
 @implementation DisplayController
 
--(id) valuefromDetails:(NSString*)key
-{
-	return [Utility valueFromResult:[albumDetails objectForKey:key] 
-				   selectedLanguage:selectedLanguage];
-}
+#pragma mark -
+#pragma mark setup
 
 -(void)setAlbumUrl:(NSString *)url
 {
@@ -25,7 +27,11 @@
 	albumDetails = [vgmdb performRubySelector:@selector(get_data:)
 								withArguments:url, 
 					nil];
-	NSLog(@"Album\n %@", albumDetails);
+//	NSLog(@"Album\n %@", albumDetails);
+	tracks =  [vgmdb performRubySelector:@selector(get_tracks_array:)
+						   withArguments:albumDetails, 
+			   nil];
+	NSLog(@"Tracks\n %@", tracks);
 	
 	album       = [self valuefromDetails:@"title" ];
 	artist      = [self valuefromDetails:@"composer"];
@@ -46,6 +52,37 @@
 	
 }
 
+-(id) valuefromDetails:(NSString*)key
+{
+	return [Utility valueFromResult:[albumDetails objectForKey:key] 
+				   selectedLanguage:selectedLanguage];
+}
+
+
+#pragma mark -
+#pragma mark Table Methods 
+
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification{
+	//	[selectAlbumButton setEnabled:([table selectedRow] != -1 ? YES : NO )];
+}
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView 
+{
+	return [tracks count];
+}
+
+- (id)          tableView:(NSTableView *)aTableView 
+objectValueForTableColumn:(NSTableColumn *)aTableColumn 
+					  row:(NSInteger)rowIndex 
+{
+	//	NSString *s = [Utility valueFromResult:
+	//				   [[searchResults objectAtIndex:rowIndex] 
+	//					objectForKey:[aTableColumn identifier]]
+	//						  selectedLanguage:selectedLanguage];
+	//	return s;
+	return @"22:22";
+}
+
 
 #pragma mark -
 #pragma mark Alloc
@@ -54,8 +91,9 @@
 - (id)initWithUrl:(NSString*)url
 			vgmdb:(id)vgmdbObject
 {
-	vgmdb = vgmdbObject;
+	vgmdb            = vgmdbObject;
 	selectedLanguage = @"@english";
+	tracks           = [[NSDictionary alloc] initWithObjectsAndKeys:@"value", @"key", nil ];
 	[self setAlbumUrl:url];
 	return[self initWithWindowNibName:@"VgmdbDisplay"];
 } 

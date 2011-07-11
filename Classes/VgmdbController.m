@@ -54,7 +54,8 @@
 #pragma mark -
 #pragma mark Table Methods 
 
-- (void)tableViewSelectionDidChange:(NSNotification *)aNotification{
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification
+{
 	[selectAlbumButton setEnabled:([table selectedRow] != -1 ? YES : NO )];
 }
 
