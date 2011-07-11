@@ -34,8 +34,11 @@
 	genre       = [self valuefromDetails:@"category"];	
 	totalTracks = [NSNumber numberWithInt:65] ;
 	totalDisks  = [self valuefromDetails:@"total_discs"];
+	catalog     = [self valuefromDetails:@"catalog"];
+	compiltation = NO;
 	
-	composer  = [self valuefromDetails:@"composer"];
+	arranger  = [self valuefromDetails:@"arranger"];
+	performer = [self valuefromDetails:@"performer"];
 	performer = [self valuefromDetails:@"performer"];
 	products  = [self valuefromDetails:@"products"];
 	publisher = [self valuefromDetails:@"publisher"];
@@ -82,19 +85,23 @@
 		 contextInfo:(void*)contextInfo
 {	
 	NSLog(@"End Sheet Vars:");
-	NSLog(@"album       %@", album       );
-	NSLog(@"artist      %@", artist      );
-	NSLog(@"albumArtist %@", albumArtist );
-	NSLog(@"year        %@", year        );
-	NSLog(@"genre       %@", genre       );
-	NSLog(@"totalTracks %@", totalTracks );
-	NSLog(@"totalDisks  %@", totalDisks  );
+	NSLog(@"album        %@", album       );
+	NSLog(@"artist       %@", artist      );
+	NSLog(@"albumArtist  %@", albumArtist );
+	NSLog(@"year         %@", year        );
+	NSLog(@"genre        %@", genre       );
+	NSLog(@"totalTracks  %@", totalTracks );
+	NSLog(@"totalDisks   %@", totalDisks  );
+	NSLog(@"catalog      %@", catalog     );
+	NSLog(@"compiltation %d", compiltation);
+
 	
-	NSLog(@"composer    %@", composer    );  
-	NSLog(@"performer   %@", performer   );
-	NSLog(@"products    %@", products    );
-	NSLog(@"publisher   %@", publisher   );
-	NSLog(@"notes       %@", notes       );
+	NSLog(@"arranger     %@", arranger    );  
+	NSLog(@"composer     %@", composer    );  
+	NSLog(@"performer    %@", performer   );
+	NSLog(@"products     %@", products    );
+	NSLog(@"publisher    %@", publisher   );
+	NSLog(@"notes        %@", notes       );
 	
 	[sheet orderOut:self];
 }

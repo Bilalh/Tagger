@@ -23,9 +23,12 @@
 	NSString *genre;
 	NSNumber *totalTracks;
 	NSNumber *totalDisks;
+	NSString *catalog;
+	bool      compiltation;
 	
 	NSString *composer;
 	NSString *performer;
+	NSString *arranger;
 	NSString *products;
 	NSString *publisher;
 	NSString *notes;
