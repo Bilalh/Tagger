@@ -44,12 +44,10 @@
 	}
 	
 	ssc = [[DisplayController alloc] 
-		   initWithUrl:@"/Users/bilalh/Programming/Cocoa/VGTagger/Test Files/test.html"
+		   initWithUrl:[[searchResults objectAtIndex:[table selectedRow]] 
+											   objectForKey:@"url"]
 		   vgmdb:vgmdb];
 	
-//	[ssc setAlbumUrl: [[searchResults objectAtIndex:[table selectedRow]] 
-//					   objectForKey:@"url"]];
-		
 	[self confirmSheet:nil];
 }
 

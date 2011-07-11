@@ -50,7 +50,7 @@ class Vgmdb
 	# Returns the data at the vgmdb url as a hash
 	def get_data(url)
 		puts url
-		url = File.expand_path("~/Desktop/test.html");
+		url = File.expand_path("~/Desktop/test2.html");
 		puts url
 		doc = Nokogiri.HTML(open(url).read)
 		
@@ -98,7 +98,7 @@ class Vgmdb
 			if stats[id].next.next.children.length > 0 then
 				spilt_lang(stats[id].next.next.children)
 				else 
-				stats[id].next.next.text.split(', ').map { |e| {:@english => e.strip} }
+				stats[id].next.next.text.split(', ').map { |e| {'@english' => e.strip} }
 			end
 		}
 		
@@ -188,7 +188,7 @@ class Vgmdb
 		h = {}
 		elems.each do |ele|
 			#TODO check for nothing
-			lang = (ele.has_attribute? 'lang') ? @names[ele['lang']] : :@english
+			lang = (ele.has_attribute? 'lang') ? @names[ele['lang']] : '@english'
 			h[lang] = ele.text.strip.sub /^\/ /, "" # !> ambiguous first argument; put parentheses or even spaces
 		end
 		return h

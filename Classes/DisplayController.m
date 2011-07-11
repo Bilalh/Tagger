@@ -28,6 +28,7 @@
 	NSLog(@"Album\n %@", albumDetails);
 	album       = [self valuefromDetails:@"title" ];
 	artist      = [self valuefromDetails:@"composer"];
+	NSLog(@"%@", artist);
 	albumArtist = @"";
 	year        = [self valuefromDetails:@"year"];
 	genre       = [self valuefromDetails:@"category"];

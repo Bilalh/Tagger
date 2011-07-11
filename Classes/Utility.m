@@ -28,8 +28,9 @@
 		
 		NSMutableArray *array = [[NSMutableArray alloc] init];
 		for (id ele in result) {
-			[array addObject:[Utility valueFromResult:ele
-									 selectedLanguage:selectedLanguage ]];
+			id a = [Utility valueFromResult:ele
+						   selectedLanguage:selectedLanguage ];
+			[array addObject:a];
 		}
 		return [array componentsJoinedByString:@","];
 		
