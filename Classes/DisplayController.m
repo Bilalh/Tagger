@@ -12,8 +12,10 @@
 #import "Track.h"
 
 @interface DisplayController() // private methdods
-- (id) valuefromDetails:(NSString*)key;
-- (void)setAlbumUrl:(NSString *)url;
+- (id)   valuefromDetails:(NSString*)key;
+- (void) setAlbumUrl:(NSString *)url;
+- (void) initFieldValues;
+- (void) initFieldProperties;
 
 -(NSDictionary*) makeButtonProperties:(NSString*)b1Title
 						  button1Full:(NSString*)b1Full
@@ -32,64 +34,6 @@
 {
 	NSLog(@"fieldProperties \n%@ ", properties);
 	NSLog(@"buttonProperties \n%@ ", buttonProperties);
-}
-
-
-#pragma mark -
-#pragma mark Setup
-
--(void)setAlbumUrl:(NSString *)url
-{
-	NSLog(@"Set Album called, Album Url %@", url );
-	albumDetails = [vgmdb performRubySelector:@selector(get_data:)
-								withArguments:url, 
-					nil];
-//	NSLog(@"Album\n %@", albumDetails);
-	tracks =  [vgmdb performRubySelector:@selector(get_tracks_array:)
-						   withArguments:albumDetails, 
-			   nil];
-//	NSLog(@"Tracks\n %@", tracks);
-	
-	NSMutableArray  *keys = [[NSMutableArray alloc] initWithObjects: 
-							   @"album",
-							   @"artist",
-							   @"year",
-							   @"genre",
-							   @"totalDiscs",
-							   @"catalog",
-							   @"composer",
-							   @"performer",
-							   @"arranger",
-							   @"products",
-							   @"publisher",
-							   @"notes",
-							   nil ];
-	NSMutableArray *values = [[NSMutableArray alloc] initWithCapacity:[keys count]+3];
-	
-	for (NSString *key in keys) {
-		[values addObject:[self valuefromDetails:key]];
-	}
-	
-	[keys addObject:@"albumArtist"];
-	[values addObject:@""];
-	[keys addObject:@"totalTracks"];
-	[values addObject:[NSNumber numberWithInt:65]];
-	[keys addObject:@"compilation"];
-	[values addObject:[NSNumber numberWithBool:NO]];
-
-	fieldValues = [[NSDictionary alloc] initWithObjects:values forKeys:keys];
-
-	NSLog(@"fieldProperties\n %@", fieldProperties);
-	NSLog(@"fieldValues\n %@", fieldValues);
-}
-
-
-
--(id) valuefromDetails:(NSString*)key
-{
-	return [Utility valueFromResult:[albumDetails objectForKey:key] 
-				   selectedLanguage:[[fieldProperties objectForKey:key] 
-									 objectForKey:@"language"]];
 }
 
 
@@ -121,13 +65,29 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 #pragma mark -
 #pragma mark Alloc
 
-
 - (id)initWithUrl:(NSString*)url
 			vgmdb:(id)vgmdbObject
 {
 	vgmdb            = vgmdbObject;
 	selectedLanguage = @"@english";
 	
+	[self initFieldProperties];
+	[self setAlbumUrl:url];
+	[self initFieldValues];
+	return[self initWithWindowNibName:@"VgmdbDisplay"];
+} 
+
+- (void)dealloc
+{
+    [super dealloc];
+}
+
+#pragma mark -
+#pragma mark Setup
+
+
+- (void) initFieldProperties 
+{
 	NSDictionary* (^hb)() = ^{
 		return [self makeButtonProperties:@"R"
 							  button1Full:@"@romaji" 
@@ -141,28 +101,76 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	};
 	
 	fieldProperties = [[NSDictionary alloc] initWithObjectsAndKeys:
-							hb(), @"album"       ,
-							hb(), @"artist"      ,
-							hc(), @"albumArtist" ,
-							hc(), @"year"        ,
-							hc(), @"genre"       ,
-							hc(), @"totalTracks" ,
-							hc(), @"totalDisks"  ,
-							hc(), @"catalog"     ,
-							hc(), @"compilation" ,
-							
-							hb(), @"arranger"    ,
-							hb(), @"composer"    ,
-							hb(), @"performer"   ,
-							hb(), @"products"    ,
-							hb(), @"publisher"   ,
-							hc(), @"notes"       ,
-							nil];	
+					   hb(), @"album"       ,
+					   hb(), @"artist"      ,
+					   hc(), @"albumArtist" ,
+					   hc(), @"year"        ,
+					   hc(), @"genre"       ,
+					   hc(), @"totalTracks" ,
+					   hc(), @"totalDisks"  ,
+					   hc(), @"catalog"     ,
+					   hc(), @"compilation" ,
+					   
+					   hb(), @"arranger"    ,
+					   hb(), @"composer"    ,
+					   hb(), @"performer"   ,
+					   hb(), @"products"    ,
+					   hb(), @"publisher"   ,
+					   hc(), @"notes"       ,
+					   nil];
 	
-	[self setAlbumUrl:url];
-	return[self initWithWindowNibName:@"VgmdbDisplay"];
-} 
+}
 
+-(void)setAlbumUrl:(NSString *)url
+{
+	NSLog(@"Set Album called, Album Url %@", url );
+	albumDetails = [vgmdb performRubySelector:@selector(get_data:)
+								withArguments:url, 
+					nil];
+	//	NSLog(@"Album\n %@", albumDetails);
+	tracks =  [vgmdb performRubySelector:@selector(get_tracks_array:)
+						   withArguments:albumDetails, 
+			   nil];
+}
+
+
+- (void) initFieldValues 
+{
+	//	NSLog(@"Tracks\n %@", tracks);
+	
+	NSMutableArray  *keys = [[NSMutableArray alloc] initWithObjects: 
+							 @"album",
+							 @"artist",
+							 @"year",
+							 @"genre",
+							 @"totalDiscs",
+							 @"catalog",
+							 @"composer",
+							 @"performer",
+							 @"arranger",
+							 @"products",
+							 @"publisher",
+							 @"notes",
+							 nil ];
+	NSMutableArray *values = [[NSMutableArray alloc] initWithCapacity:[keys count]+3];
+	
+	for (NSString *key in keys) {
+		[values addObject:[self valuefromDetails:key]];
+	}
+	
+	[keys addObject:@"albumArtist"];
+	[values addObject:@""];
+	[keys addObject:@"totalTracks"];
+	[values addObject:[NSNumber numberWithInt:65]];
+	[keys addObject:@"compilation"];
+	[values addObject:[NSNumber numberWithBool:NO]];
+	
+	fieldValues = [[NSMutableDictionary alloc] initWithObjects:values forKeys:keys];
+	
+	NSLog(@"fieldProperties\n %@", fieldProperties);
+	NSLog(@"fieldValues\n %@", fieldValues);
+	
+}
 
 
 -(NSDictionary*) makeButtonProperties:(NSString*)b1Title
@@ -190,9 +198,12 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 			nil];
 }
 
-- (void)dealloc
+
+-(id) valuefromDetails:(NSString*)key
 {
-    [super dealloc];
+	return [Utility valueFromResult:[albumDetails objectForKey:key] 
+				   selectedLanguage:[[fieldProperties objectForKey:key] 
+									 objectForKey:@"language"]];
 }
 
 #pragma mark -
