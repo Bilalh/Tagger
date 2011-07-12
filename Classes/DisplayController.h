@@ -14,7 +14,7 @@
 	NSDictionary *albumDetails;
 	id vgmdb; // macruby Vgmdb class
 	
-	NSDictionary *tracks;
+	NSArray *tracks;
 	NSString  *selectedLanguage;
 	
 	NSString *album;

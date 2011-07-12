@@ -75,12 +75,11 @@
 objectValueForTableColumn:(NSTableColumn *)aTableColumn 
 					  row:(NSInteger)rowIndex 
 {
-	//	NSString *s = [Utility valueFromResult:
-	//				   [[searchResults objectAtIndex:rowIndex] 
-	//					objectForKey:[aTableColumn identifier]]
-	//						  selectedLanguage:selectedLanguage];
-	//	return s;
-	return @"22:22";
+	id result = [[tracks objectAtIndex:rowIndex] objectForKey:[aTableColumn identifier]];
+	if ([result isKindOfClass:[NSDictionary class]]){
+		return [result objectForKey:selectedLanguage];
+	}
+	return result;
 }
 
 
