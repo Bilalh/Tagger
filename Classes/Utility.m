@@ -9,10 +9,40 @@
 #import "Utility.h"
 
 
+static NSDictionary *languages;
+
 @implementation Utility
 
 #pragma mark -
 #pragma mark Hash Methods
+
++ (void) initialize
+{
+	[super initialize];
+	languages = [[NSDictionary alloc] initWithObjectsAndKeys:
+				 [NSArray arrayWithObjects:@"romaji",@"kanji",   nil], @"english",
+				 [NSArray arrayWithObjects:@"kanji" ,@"english", nil], @"romaji",
+				 [NSArray arrayWithObjects:@"romaji",@"english", nil], @"kanji",
+				 nil];
+}
+
++ (NSString*) stringFromTitle:(NSDictionary*)title
+			 selectedLanguage:(NSString*)selectedLanguage
+{
+	if ([title count] == 0) return nil;
+		
+	NSString *result = [title objectForKey:selectedLanguage];
+	if (result) return result;
+	
+	// Checks each other Language
+	for (NSString *newLanguage in [languages objectForKey:selectedLanguage] ) {
+		result = [title objectForKey:newLanguage];
+		if (result) return result;
+	}
+	
+	// if we can find it just return the first language
+	return [[title allValues ] objectAtIndex:0];
+}
 
 // Recursively looks into the result until the result is 
 // a string or number, selectedLanguage is the Language to 

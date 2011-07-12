@@ -19,7 +19,7 @@
 @implementation DisplayController
 
 #pragma mark -
-#pragma mark setup
+#pragma mark Setup
 
 -(void)setAlbumUrl:(NSString *)url
 {
@@ -77,7 +77,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 {
 	id result = [[tracks objectAtIndex:rowIndex] objectForKey:[aTableColumn identifier]];
 	if ([result isKindOfClass:[NSDictionary class]]){
-		return [result objectForKey:selectedLanguage];
+		return [Utility stringFromTitle:result 
+					   selectedLanguage:@"@romaji"];
 	}
 	return result;
 }
