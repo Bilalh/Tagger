@@ -51,7 +51,7 @@ static NSDictionary *languages;
 			 selectedLanguage:(NSString*)selectedLanguage
 {
 	if ([result isKindOfClass:[NSDictionary class]]){
-		return [Utility valueFromResult:[result objectForKey:selectedLanguage] 
+		return [Utility valueFromResult:[Utility  stringFromTitle:result selectedLanguage:selectedLanguage] 
 					   selectedLanguage:selectedLanguage];
 		
 	}else if ([result isKindOfClass:[NSArray class]]){

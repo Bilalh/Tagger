@@ -14,9 +14,10 @@
 	NSDictionary *albumDetails;
 	id vgmdb; // macruby Vgmdb class
 	
-	NSArray *tracks;
-	NSString  *selectedLanguage;
+	NSArray  *tracks;
+	NSString *selectedLanguage;
 	
+	// Infomation
 	NSString *album;
 	NSString *artist;
 	NSString *albumArtist;
@@ -27,6 +28,7 @@
 	NSString *catalog;
 	bool      compiltation;
 	
+	// extra infomation
 	NSString *composer;
 	NSString *performer;
 	NSString *arranger;
@@ -34,6 +36,8 @@
 	NSString *publisher;
 	NSString *notes;
 	
+	// Buttons
+	NSDictionary *otherLanguagesProperties;
 }
 
 - (IBAction)cancelSheet:sender;

@@ -11,9 +11,16 @@
 #import "Utility.h"
 #import "Track.h"
 
+typedef NSDictionary* (^HashBlock)();
+
 @interface DisplayController() // private methdods
 - (id) valuefromDetails:(NSString*)key;
 - (void)setAlbumUrl:(NSString *)url;
+
+-(NSDictionary*) makeButtonProperties:(NSString*)b1Title
+						  button1Full:(NSString*)b1Full
+						 button2Title:(NSString*)b2Title
+						  button2Full:(NSString*)b2Full;
 @end
 
 @implementation DisplayController
@@ -93,10 +100,47 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 {
 	vgmdb            = vgmdbObject;
 	selectedLanguage = @"@english";
-	tracks           = [[NSDictionary alloc] initWithObjectsAndKeys:@"value", @"key", nil ];
 	[self setAlbumUrl:url];
+	
+	HashBlock hb     = ^{
+		return [self makeButtonProperties:@"R"
+							  button1Full:@"@romaji" 
+							 button2Title:@"K" 
+							  button2Full:@"@kanji"];
+	};
+		
+	otherLanguagesProperties = [[NSDictionary alloc] initWithObjectsAndKeys:
+							hb(), @"album", 
+							nil];	
+	
 	return[self initWithWindowNibName:@"VgmdbDisplay"];
 } 
+
+
+
+-(NSDictionary*) makeButtonProperties:(NSString*)b1Title
+						  button1Full:(NSString*)b1Full
+						 button2Title:(NSString*)b2Title
+						  button2Full:(NSString*)b2Full
+{
+
+	NSMutableDictionary *button1 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+									b1Title,       @"title",
+									b1Full,        @"full",
+									[NSNumber numberWithBool:YES],@"hidden",
+									nil];
+	
+	NSMutableDictionary *button2 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+									b2Title,       @"title",
+									b2Full,        @"full",
+									[NSNumber numberWithBool:NO],@"hidden",
+									nil];
+	
+	return [[NSDictionary alloc] initWithObjectsAndKeys:
+			button1, @"button1",
+			button2, @"button2",
+			nil];
+}
 
 - (void)dealloc
 {

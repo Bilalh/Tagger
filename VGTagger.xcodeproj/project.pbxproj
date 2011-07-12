@@ -403,9 +403,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/VGTagger-Prefix.pch";
 				GCC_USE_STANDARD_INCLUDE_SEARCHING = YES;
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Other Sources/VGTagger-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Resources";
 				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = NO;
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = "";
 				"OTHER_CPLUSPLUSFLAGS[arch=*]" = (
@@ -435,9 +437,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/VGTagger-Prefix.pch";
 				GCC_USE_STANDARD_INCLUDE_SEARCHING = YES;
+				GCC_VERSION = "";
 				INFOPLIST_FILE = "Other Sources/VGTagger-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Resources";
 				LIBRARY_SEARCH_PATHS = "";
+				LLVM_LTO = NO;
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = "";
 				"OTHER_CPLUSPLUSFLAGS[arch=*]" = (
