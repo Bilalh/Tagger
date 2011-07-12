@@ -17,8 +17,8 @@
 
 	NSArray  *tracks; // array of tracks info
 	
-	NSDictionary *fieldValues;     // The value of the fields
-	NSDictionary *fieldProperties; // The properties e.g. language
+	NSMutableDictionary *fieldValues; // The value of the fields
+	NSDictionary *fieldProperties;    // The properties e.g. language
 }
 
 - (id)initWithUrl:(NSString*)url

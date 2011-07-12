@@ -56,7 +56,7 @@
 			   nil];
 //	NSLog(@"Tracks\n %@", tracks);
 	
-	fieldValues = [[NSDictionary alloc] initWithObjectsAndKeys:
+	fieldValues = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
 				   [self valuefromDetails:@"album"],       @"album",
 				   [self valuefromDetails:@"artist"],      @"artist",
 				   @"",             @"albumArtist",
