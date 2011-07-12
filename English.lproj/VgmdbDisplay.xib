@@ -2,9 +2,9 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.10">
 	<data>
 		<int key="IBDocument.SystemTarget">1060</int>
-		<string key="IBDocument.SystemVersion">10J869</string>
+		<string key="IBDocument.SystemVersion">10K540</string>
 		<string key="IBDocument.InterfaceBuilderVersion">1305</string>
-		<string key="IBDocument.AppKitVersion">1038.35</string>
+		<string key="IBDocument.AppKitVersion">1038.36</string>
 		<string key="IBDocument.HIToolboxVersion">461.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -452,9 +452,9 @@
 												<int key="NSCellFlags">67239424</int>
 												<int key="NSCellFlags2">134217728</int>
 												<string key="NSContents">A</string>
-												<object class="NSFont" key="NSSupport" id="14281689">
+												<object class="NSFont" key="NSSupport" id="24">
 													<string key="NSName">LucidaGrande</string>
-													<double key="NSSize">9</double>
+													<double key="NSSize">10</double>
 													<int key="NSfFlags">16</int>
 												</object>
 												<reference key="NSControlView" ref="247758598"/>
@@ -478,7 +478,7 @@
 												<int key="NSCellFlags">67239424</int>
 												<int key="NSCellFlags2">134217728</int>
 												<string key="NSContents">B</string>
-												<reference key="NSSupport" ref="14281689"/>
+												<reference key="NSSupport" ref="24"/>
 												<reference key="NSControlView" ref="859699141"/>
 												<int key="NSButtonFlags">-2033434369</int>
 												<int key="NSButtonFlags2">134</int>
@@ -2253,7 +2253,6 @@
 							<reference ref="536582981"/>
 							<reference ref="446256374"/>
 							<reference ref="247758598"/>
-							<reference ref="859699141"/>
 							<reference ref="770493298"/>
 							<reference ref="886931711"/>
 							<reference ref="971969800"/>
@@ -2261,6 +2260,7 @@
 							<reference ref="304289585"/>
 							<reference ref="1015448905"/>
 							<reference ref="239318511"/>
+							<reference ref="859699141"/>
 						</object>
 						<reference key="parent" ref="84049175"/>
 					</object>

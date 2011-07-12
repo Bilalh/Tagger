@@ -26,7 +26,7 @@ static NSDictionary *languages;
 				 nil];
 }
 
-+ (NSString*) stringFromTitle:(NSDictionary*)title
++ (NSString*) stringFromLanguages:(NSDictionary*)title
 			 selectedLanguage:(NSString*)selectedLanguage
 {
 	if ([title count] == 0) return nil;
@@ -51,7 +51,7 @@ static NSDictionary *languages;
 			 selectedLanguage:(NSString*)selectedLanguage
 {
 	if ([result isKindOfClass:[NSDictionary class]]){
-		return [Utility valueFromResult:[Utility  stringFromTitle:result selectedLanguage:selectedLanguage] 
+		return [Utility valueFromResult:[Utility  stringFromLanguages:result selectedLanguage:selectedLanguage] 
 					   selectedLanguage:selectedLanguage];
 		
 	}else if ([result isKindOfClass:[NSArray class]]){

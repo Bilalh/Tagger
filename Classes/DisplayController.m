@@ -23,12 +23,6 @@
 
 @implementation DisplayController
 
-- (id)valueForUndefinedKey:(NSString *)key
-{
-	NSLog(@"valueForUndefinedKey:%@",key);
-	return @"AA";
-}
-
 #pragma mark -
 #pragma mark Gui callback
 
@@ -56,28 +50,37 @@
 			   nil];
 //	NSLog(@"Tracks\n %@", tracks);
 	
-	fieldValues = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-				   [self valuefromDetails:@"album"],       @"album",
-				   [self valuefromDetails:@"artist"],      @"artist",
-				   @"",             @"albumArtist",
-				   [self valuefromDetails:@"year"],        @"year",
-				   [self valuefromDetails:@"genre"],       @"genre",
-				   [NSNumber numberWithInt:65],            @"totalTracks",
-				   [self valuefromDetails:@"totalDiscs"],  @"totalDiscs",
-				   [self valuefromDetails:@"catalog"],     @"catalog",
-				   [NSNumber numberWithBool:NO],           @"compilation",
-				   
-				   [self valuefromDetails:@"composer" ], @"composer",
-				   [self valuefromDetails:@"performer"], @"performer",
-				   [self valuefromDetails:@"arranger" ], @"arranger",
-				   [self valuefromDetails:@"products" ], @"products",
-				   [self valuefromDetails:@"publisher"], @"publisher",
-				   [self valuefromDetails:@"notes"    ], @"notes",
-				   nil ];
+	NSMutableArray  *keys = [[NSMutableArray alloc] initWithObjects: 
+							   @"album",
+							   @"artist",
+							   @"year",
+							   @"genre",
+							   @"totalDiscs",
+							   @"catalog",
+							   @"composer",
+							   @"performer",
+							   @"arranger",
+							   @"products",
+							   @"publisher",
+							   @"notes",
+							   nil ];
+	NSMutableArray *values = [[NSMutableArray alloc] initWithCapacity:[keys count]+3];
+	
+	for (NSString *key in keys) {
+		[values addObject:[self valuefromDetails:key]];
+	}
+	
+	[keys addObject:@"albumArtist"];
+	[values addObject:@""];
+	[keys addObject:@"totalTracks"];
+	[values addObject:[NSNumber numberWithInt:65]];
+	[keys addObject:@"compilation"];
+	[values addObject:[NSNumber numberWithBool:NO]];
+
+	fieldValues = [[NSDictionary alloc] initWithObjects:values forKeys:keys];
 
 	NSLog(@"fieldProperties\n %@", fieldProperties);
 	NSLog(@"fieldValues\n %@", fieldValues);
-	
 }
 
 
@@ -108,7 +111,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 {
 	id result = [[tracks objectAtIndex:rowIndex] objectForKey:[aTableColumn identifier]];
 	if ([result isKindOfClass:[NSDictionary class]]){
-		return [Utility stringFromTitle:result 
+		return [Utility stringFromLanguages:result 
 					   selectedLanguage:@"@romaji"];
 	}
 	return result;
@@ -171,13 +174,13 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSMutableDictionary *button1 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
 									b1Title,       @"title",
 									b1Full,        @"full",
-									[NSNumber numberWithBool:NO],@"hidden",
+									[NSNumber numberWithBool:YES],@"hidden",
 									nil];
 	
 	NSMutableDictionary *button2 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
 									b2Title,       @"title",
 									b2Full,        @"full",
-									[NSNumber numberWithBool:NO],@"hidden",
+									[NSNumber numberWithBool:YES],@"hidden",
 									nil];
 	
 	return [[NSDictionary alloc] initWithObjectsAndKeys:
@@ -195,16 +198,17 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 #pragma mark -
 #pragma mark Sheet
 
-- (IBAction)confirmSheet:sender
-{
-	NSLog(@"Comfirm");
-	[NSApp endSheet:self.window returnCode:NSOKButton];
-}
-
 - (IBAction)cancelSheet:sender
 {	
 	NSLog(@"Cancel");
 	[NSApp endSheet:self.window returnCode:NSCancelButton];
+}
+
+
+- (IBAction)confirmSheet:sender
+{
+	NSLog(@"Comfirm");
+	[NSApp endSheet:self.window returnCode:NSOKButton];
 }
 
 - (void) didEndSheet:(NSWindow*)sheet 
@@ -231,6 +235,14 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 	[sheet orderOut:self];
 }
- 
+
+#pragma mark -
+#pragma mark Misc
+
+- (id)valueForUndefinedKey:(NSString *)key
+{
+	NSLog(@"valueForUndefinedKey:%@",key);
+	return @"ERROR";
+}
 
 @end;
