@@ -212,7 +212,7 @@
 											<string key="NSFrame">{{105, 172}, {281, 22}}</string>
 											<reference key="NSSuperview" ref="894355921"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="119141069"/>
+											<reference key="NSNextKeyView" ref="426092868"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="229706049">
 												<int key="NSCellFlags">-1804468671</int>
@@ -294,43 +294,6 @@
 												<string key="NSContents"/>
 												<reference key="NSSupport" ref="880941277"/>
 												<reference key="NSControlView" ref="223914762"/>
-												<bool key="NSDrawsBackground">YES</bool>
-												<reference key="NSBackgroundColor" ref="295751496"/>
-												<reference key="NSTextColor" ref="252035883"/>
-											</object>
-										</object>
-										<object class="NSTextField" id="119141069">
-											<reference key="NSNextResponder" ref="894355921"/>
-											<int key="NSvFlags">268</int>
-											<string key="NSFrame">{{12, 149}, {88, 17}}</string>
-											<reference key="NSSuperview" ref="894355921"/>
-											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="925927290"/>
-											<bool key="NSEnabled">YES</bool>
-											<object class="NSTextFieldCell" key="NSCell" id="133247898">
-												<int key="NSCellFlags">68288064</int>
-												<int key="NSCellFlags2">71304192</int>
-												<string key="NSContents">Album Artist:</string>
-												<reference key="NSSupport" ref="880941277"/>
-												<reference key="NSControlView" ref="119141069"/>
-												<reference key="NSBackgroundColor" ref="181688276"/>
-												<reference key="NSTextColor" ref="169378744"/>
-											</object>
-										</object>
-										<object class="NSTextField" id="925927290">
-											<reference key="NSNextResponder" ref="894355921"/>
-											<int key="NSvFlags">268</int>
-											<string key="NSFrame">{{105, 144}, {281, 22}}</string>
-											<reference key="NSSuperview" ref="894355921"/>
-											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="426092868"/>
-											<bool key="NSEnabled">YES</bool>
-											<object class="NSTextFieldCell" key="NSCell" id="836151008">
-												<int key="NSCellFlags">-1804468671</int>
-												<int key="NSCellFlags2">272630784</int>
-												<string key="NSContents"/>
-												<reference key="NSSupport" ref="880941277"/>
-												<reference key="NSControlView" ref="925927290"/>
 												<bool key="NSDrawsBackground">YES</bool>
 												<reference key="NSBackgroundColor" ref="295751496"/>
 												<reference key="NSTextColor" ref="252035883"/>
@@ -1442,46 +1405,6 @@
 					<int key="connectionID">25</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: albumArtist</string>
-						<reference key="source" ref="836151008"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="836151008"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: albumArtist</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">albumArtist</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
-								<boolean value="YES" key="NS.object.0"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">91</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: albumArtist</string>
-						<reference key="source" ref="552070827"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="552070827"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: albumArtist</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">albumArtist</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
-								<boolean value="YES" key="NS.object.0"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">163</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="57791093"/>
@@ -1949,26 +1872,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">attributedString: fieldValues.notes</string>
-						<reference key="source" ref="6121220"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="6121220"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">attributedString: fieldValues.notes</string>
-							<string key="NSBinding">attributedString</string>
-							<string key="NSKeyPath">fieldValues.notes</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
-								<boolean value="YES" key="NS.object.0"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">495</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: fieldValues.compilation</string>
 						<reference key="source" ref="446256374"/>
 						<reference key="destination" ref="1001"/>
@@ -2005,19 +1908,19 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: fieldValues.albumArtist</string>
-						<reference key="source" ref="925927290"/>
+						<string key="label">value: fieldValues.notes</string>
+						<reference key="source" ref="6121220"/>
 						<reference key="destination" ref="1001"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="925927290"/>
+							<reference key="NSSource" ref="6121220"/>
 							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: fieldValues.albumArtist</string>
+							<string key="NSLabel">value: fieldValues.notes</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">fieldValues.albumArtist</string>
+							<string key="NSKeyPath">fieldValues.notes</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">509</int>
+					<int key="connectionID">511</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -2285,7 +2188,6 @@
 							<reference ref="818602924"/>
 							<reference ref="702536076"/>
 							<reference ref="426092868"/>
-							<reference ref="119141069"/>
 							<reference ref="711244810"/>
 							<reference ref="271242561"/>
 							<reference ref="223914762"/>
@@ -2297,10 +2199,9 @@
 							<reference ref="859699141"/>
 							<reference ref="770493298"/>
 							<reference ref="886931711"/>
-							<reference ref="304289585"/>
 							<reference ref="971969800"/>
 							<reference ref="263968333"/>
-							<reference ref="925927290"/>
+							<reference ref="304289585"/>
 						</object>
 						<reference key="parent" ref="84049175"/>
 					</object>
@@ -2345,20 +2246,6 @@
 						<int key="objectID">41</int>
 						<reference key="object" ref="312633802"/>
 						<reference key="parent" ref="971969800"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">52</int>
-						<reference key="object" ref="925927290"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="836151008"/>
-						</object>
-						<reference key="parent" ref="510491738"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">53</int>
-						<reference key="object" ref="836151008"/>
-						<reference key="parent" ref="925927290"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">56</int>
@@ -2429,20 +2316,6 @@
 						<int key="objectID">58</int>
 						<reference key="object" ref="459821687"/>
 						<reference key="parent" ref="711244810"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">51</int>
-						<reference key="object" ref="119141069"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="133247898"/>
-						</object>
-						<reference key="parent" ref="510491738"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">54</int>
-						<reference key="object" ref="133247898"/>
-						<reference key="parent" ref="119141069"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">43</int>
@@ -2838,10 +2711,6 @@
 					<string>44.IBPluginDependency</string>
 					<string>45.IBPluginDependency</string>
 					<string>46.IBPluginDependency</string>
-					<string>51.IBPluginDependency</string>
-					<string>52.IBPluginDependency</string>
-					<string>53.IBPluginDependency</string>
-					<string>54.IBPluginDependency</string>
 					<string>55.IBPluginDependency</string>
 					<string>56.IBPluginDependency</string>
 					<string>57.IBPluginDependency</string>
@@ -2942,10 +2811,6 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
@@ -2960,7 +2825,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">509</int>
+			<int key="maxID">513</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
