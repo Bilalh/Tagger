@@ -17,27 +17,8 @@
 
 	NSArray  *tracks; // array of tracks info
 	
-	// Infomation
-	NSString *album;
-	NSString *artist;
-	NSString *albumArtist;
-	NSNumber *year;
-	NSString *genre;
-	NSNumber *totalTracks;
-	NSNumber *totalDisks;
-	NSString *catalog;
-	bool      compiltation;
-	
-	// extra infomation
-	NSString *composer;
-	NSString *performer;
-	NSString *arranger;
-	NSString *products;
-	NSString *publisher;
-	NSString *notes;
-	
-	// Buttons
-	NSDictionary *fieldProperties;
+	NSDictionary *fieldValues;     // The value of the fields
+	NSDictionary *fieldProperties; // The properties e.g. language
 }
 
 - (id)initWithUrl:(NSString*)url

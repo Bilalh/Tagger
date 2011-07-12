@@ -99,11 +99,14 @@ class Vgmdb
 		hash['arranger']  = get_spilt_data[8]
 		hash['performer'] = get_spilt_data[9]
 		
+		# artist is composer
+		hash['artist']    = get_spilt_data[8]
 		
 		stats     = doc.css('tr> td#rightcolumn > div > div.smallfont > div > b')
 		get_stats = ->(id){  return stats[id].next.next.text.strip  }
 		
-		hash['category'] = get_stats[2]
+		# genre is category
+		hash['genre'] = get_stats[2]
 		
 		ps = ->(id){ 
 			if stats[id].next.next.children.length > 0 then
@@ -122,7 +125,7 @@ class Vgmdb
 		#puts "Getting Titles"
 		titles ={}
 		titles = spilt_lang(doc.css('h1 > span.albumtitle'))
-		hash['title'] = titles
+		hash['album'] = titles
 		
 		#puts
 	end
@@ -154,7 +157,7 @@ class Vgmdb
 		refs.each do |ref|
 			disc_tables = doc.css("span##{ref['ref']}>table")
 			num_discs = disc_tables.length
-			hash['total_discs'] = num_discs
+			hash['totalDiscs'] = num_discs
 			#puts "Getting #{ref['lang']} tracks, #{num_discs} Discs"
 			
 			disc_tables.each_with_index do |disc,disc_index|
@@ -218,7 +221,8 @@ if $0 == __FILE__
 	
 	url = File.expand_path("~/Desktop/test.html")
 	hash = vg.get_data(url)	
-	pp vg.get_tracks_array hash;
+	pp hash
+	# pp vg.get_tracks_array hash;
 	
 end
 

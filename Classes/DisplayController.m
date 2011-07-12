@@ -11,8 +11,6 @@
 #import "Utility.h"
 #import "Track.h"
 
-typedef NSDictionary* (^HashBlock)();
-
 @interface DisplayController() // private methdods
 - (id) valuefromDetails:(NSString*)key;
 - (void)setAlbumUrl:(NSString *)url;
@@ -24,6 +22,12 @@ typedef NSDictionary* (^HashBlock)();
 @end
 
 @implementation DisplayController
+
+- (id)valueForUndefinedKey:(NSString *)key
+{
+	NSLog(@"valueForUndefinedKey:%@",key);
+	return @"AA";
+}
 
 #pragma mark -
 #pragma mark Gui callback
@@ -50,31 +54,39 @@ typedef NSDictionary* (^HashBlock)();
 	tracks =  [vgmdb performRubySelector:@selector(get_tracks_array:)
 						   withArguments:albumDetails, 
 			   nil];
-	NSLog(@"Tracks\n %@", tracks);
-		
-	album       = [self valuefromDetails:@"title" ];
-	artist      = [self valuefromDetails:@"composer"];
-	albumArtist = @"";
-	year        = [self valuefromDetails:@"year"];
-	genre       = [self valuefromDetails:@"category"];	
-	totalTracks = [NSNumber numberWithInt:65] ;
-	totalDisks  = [self valuefromDetails:@"total_discs"];
-	catalog     = [self valuefromDetails:@"catalog"];
-	compiltation = NO;
+//	NSLog(@"Tracks\n %@", tracks);
 	
-	arranger  = [self valuefromDetails:@"arranger"];
-	performer = [self valuefromDetails:@"performer"];
-	performer = [self valuefromDetails:@"performer"];
-	products  = [self valuefromDetails:@"products"];
-	publisher = [self valuefromDetails:@"publisher"];
-	notes     = [self valuefromDetails:@"notes"];
+	fieldValues = [[NSDictionary alloc] initWithObjectsAndKeys:
+				   [self valuefromDetails:@"album"],       @"album",
+				   [self valuefromDetails:@"artist"],      @"artist",
+				   @"",             @"albumArtist",
+				   [self valuefromDetails:@"year"],        @"year",
+				   [self valuefromDetails:@"genre"],       @"genre",
+				   [NSNumber numberWithInt:65],            @"totalTracks",
+				   [self valuefromDetails:@"totalDiscs"],  @"totalDiscs",
+				   [self valuefromDetails:@"catalog"],     @"catalog",
+				   [NSNumber numberWithBool:NO],           @"compilation",
+				   
+				   [self valuefromDetails:@"composer" ], @"composer",
+				   [self valuefromDetails:@"performer"], @"performer",
+				   [self valuefromDetails:@"arranger" ], @"arranger",
+				   [self valuefromDetails:@"products" ], @"products",
+				   [self valuefromDetails:@"publisher"], @"publisher",
+				   [self valuefromDetails:@"notes"    ], @"notes",
+				   nil ];
+
+	NSLog(@"fieldProperties\n %@", fieldProperties);
+	NSLog(@"fieldValues\n %@", fieldValues);
 	
 }
+
+
 
 -(id) valuefromDetails:(NSString*)key
 {
 	return [Utility valueFromResult:[albumDetails objectForKey:key] 
-				   selectedLanguage:selectedLanguage];
+				   selectedLanguage:[[fieldProperties objectForKey:key] 
+									 objectForKey:@"language"]];
 }
 
 
@@ -112,19 +124,39 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 {
 	vgmdb            = vgmdbObject;
 	selectedLanguage = @"@english";
-	[self setAlbumUrl:url];
 	
-	HashBlock hb     = ^{
+	NSDictionary* (^hb)() = ^{
 		return [self makeButtonProperties:@"R"
 							  button1Full:@"@romaji" 
 							 button2Title:@"K" 
 							  button2Full:@"@kanji"];
 	};
-		
+	NSDictionary* (^hc)() = ^{
+		return (NSDictionary*) [[NSDictionary alloc] initWithObjectsAndKeys:
+								[selectedLanguage copy], @"language",
+								nil];
+	};
+	
 	fieldProperties = [[NSDictionary alloc] initWithObjectsAndKeys:
-							hb(), @"album", 
+							hb(), @"album"       ,
+							hb(), @"artist"      ,
+							hc(), @"albumArtist" ,
+							hc(), @"year"        ,
+							hc(), @"genre"       ,
+							hc(), @"totalTracks" ,
+							hc(), @"totalDisks"  ,
+							hc(), @"catalog"     ,
+							hc(), @"compilation" ,
+							
+							hb(), @"arranger"    ,
+							hb(), @"composer"    ,
+							hb(), @"performer"   ,
+							hb(), @"products"    ,
+							hb(), @"publisher"   ,
+							hc(), @"notes"       ,
 							nil];	
 	
+	[self setAlbumUrl:url];
 	return[self initWithWindowNibName:@"VgmdbDisplay"];
 } 
 
@@ -180,23 +212,22 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		 contextInfo:(void*)contextInfo
 {	
 	NSLog(@"End Sheet Vars:");
-	NSLog(@"album        %@", album       );
-	NSLog(@"artist       %@", artist      );
-	NSLog(@"albumArtist  %@", albumArtist );
-	NSLog(@"year         %@", year        );
-	NSLog(@"genre        %@", genre       );
-	NSLog(@"totalTracks  %@", totalTracks );
-	NSLog(@"totalDisks   %@", totalDisks  );
-	NSLog(@"catalog      %@", catalog     );
-	NSLog(@"compiltation %d", compiltation);
+	NSLog(@"album        %@", [fieldValues objectForKey:@"album"       ]);
+	NSLog(@"artist       %@", [fieldValues objectForKey:@"artist"      ]);
+	NSLog(@"albumArtist  %@", [fieldValues objectForKey:@"albumArtist" ]);
+	NSLog(@"year         %@", [fieldValues objectForKey:@"year"        ]);
+	NSLog(@"genre        %@", [fieldValues objectForKey:@"genre"       ]);
+	NSLog(@"totalTracks  %@", [fieldValues objectForKey:@"totalTracks" ]);
+	NSLog(@"totalDiscs   %@", [fieldValues objectForKey:@"totalDiscs"  ]);
+	NSLog(@"catalog      %@", [fieldValues objectForKey:@"catalog"     ]);
+	NSLog(@"compilation  %@", [fieldValues objectForKey:@"compilation" ]);
 
-	
-	NSLog(@"arranger     %@", arranger    );  
-	NSLog(@"composer     %@", composer    );  
-	NSLog(@"performer    %@", performer   );
-	NSLog(@"products     %@", products    );
-	NSLog(@"publisher    %@", publisher   );
-	NSLog(@"notes        %@", notes       );
+	NSLog(@"arranger     %@", [fieldValues objectForKey:@"arranger"    ]);  
+	NSLog(@"composer     %@", [fieldValues objectForKey:@"composer"    ]);  
+	NSLog(@"performer    %@", [fieldValues objectForKey:@"performer"   ]);
+	NSLog(@"products     %@", [fieldValues objectForKey:@"products"    ]);
+	NSLog(@"publisher    %@", [fieldValues objectForKey:@"publisher"   ]);
+	NSLog(@"notes        %@", [fieldValues objectForKey:@"notes"       ]);
 	
 	[sheet orderOut:self];
 }

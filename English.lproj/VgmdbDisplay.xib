@@ -403,7 +403,7 @@
 											<object class="NSTextFieldCell" key="NSCell" id="578959758">
 												<int key="NSCellFlags">68288064</int>
 												<int key="NSCellFlags2">71304192</int>
-												<string key="NSContents">Disks:</string>
+												<string key="NSContents">Discs:</string>
 												<reference key="NSSupport" ref="880941277"/>
 												<reference key="NSControlView" ref="271242561"/>
 												<reference key="NSBackgroundColor" ref="181688276"/>
@@ -1443,46 +1443,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: album</string>
-						<reference key="source" ref="770493298"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="770493298"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: album</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">album</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
-								<boolean value="YES" key="NS.object.0"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">83</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: artist</string>
-						<reference key="source" ref="304289585"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="304289585"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: artist</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">artist</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
-								<boolean value="YES" key="NS.object.0"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">87</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: albumArtist</string>
 						<reference key="source" ref="836151008"/>
 						<reference key="destination" ref="1001"/>
@@ -1503,106 +1463,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: year</string>
-						<reference key="source" ref="971969800"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="971969800"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: year</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">year</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
-								<boolean value="YES" key="NS.object.0"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">94</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: albumArtist</string>
-						<reference key="source" ref="925927290"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="925927290"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: albumArtist</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">albumArtist</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
-								<boolean value="YES" key="NS.object.0"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">99</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: genre</string>
-						<reference key="source" ref="223914762"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="223914762"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: genre</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">genre</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
-								<boolean value="YES" key="NS.object.0"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">101</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: totalTracks</string>
-						<reference key="source" ref="886931711"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="886931711"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: totalTracks</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">totalTracks</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
-								<boolean value="YES" key="NS.object.0"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">104</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: totalDisks</string>
-						<reference key="source" ref="263968333"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="263968333"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: totalDisks</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">totalDisks</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
-								<boolean value="YES" key="NS.object.0"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">107</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: albumArtist</string>
 						<reference key="source" ref="552070827"/>
 						<reference key="destination" ref="1001"/>
@@ -1620,162 +1480,6 @@
 						</object>
 					</object>
 					<int key="connectionID">163</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: composer</string>
-						<reference key="source" ref="974131902"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="974131902"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: composer</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">composer</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
-								<boolean value="YES" key="NS.object.0"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">184</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: performer</string>
-						<reference key="source" ref="103215024"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="103215024"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: performer</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">performer</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
-								<boolean value="YES" key="NS.object.0"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">185</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: products</string>
-						<reference key="source" ref="332481298"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="332481298"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: products</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">products</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
-								<boolean value="YES" key="NS.object.0"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">186</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: publisher</string>
-						<reference key="source" ref="868696179"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="868696179"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: publisher</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">publisher</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
-								<boolean value="YES" key="NS.object.0"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">187</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">attributedString: notes</string>
-						<reference key="source" ref="6121220"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="6121220"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">attributedString: notes</string>
-							<string key="NSBinding">attributedString</string>
-							<string key="NSKeyPath">notes</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
-								<boolean value="YES" key="NS.object.0"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">190</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: catalog</string>
-						<reference key="source" ref="536582981"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="536582981"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: catalog</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">catalog</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
-								<boolean value="YES" key="NS.object.0"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">203</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: compiltation</string>
-						<reference key="source" ref="446256374"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="446256374"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: compiltation</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">compiltation</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">212</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: arranger</string>
-						<reference key="source" ref="927979405"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="927979405"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: arranger</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">arranger</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
-								<boolean value="YES" key="NS.object.0"/>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">213</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1862,7 +1566,7 @@
 						<string key="label">argument: fieldProperties.album.button1</string>
 						<reference key="source" ref="247758598"/>
 						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector" id="458421389">
+						<object class="NSNibBindingConnector" key="connector" id="1010410380">
 							<reference key="NSSource" ref="247758598"/>
 							<reference key="NSDestination" ref="1001"/>
 							<string key="NSLabel">argument: fieldProperties.album.button1</string>
@@ -1882,7 +1586,7 @@
 						<string key="label">argument: fieldProperties.album</string>
 						<reference key="source" ref="247758598"/>
 						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector" id="691606345">
+						<object class="NSNibBindingConnector" key="connector" id="1031427527">
 							<reference key="NSSource" ref="247758598"/>
 							<reference key="NSDestination" ref="1001"/>
 							<string key="NSLabel">argument: fieldProperties.album</string>
@@ -1892,7 +1596,7 @@
 								<string key="NS.key.0">NSSelectorName</string>
 								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
 							</object>
-							<reference key="NSPreviousConnector" ref="458421389"/>
+							<reference key="NSPreviousConnector" ref="1010410380"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -1903,7 +1607,7 @@
 						<string key="label">argument2: fieldProperties.album.button1</string>
 						<reference key="source" ref="247758598"/>
 						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector" id="624710154">
+						<object class="NSNibBindingConnector" key="connector" id="932417209">
 							<reference key="NSSource" ref="247758598"/>
 							<reference key="NSDestination" ref="1001"/>
 							<string key="NSLabel">argument2: fieldProperties.album.button1</string>
@@ -1913,7 +1617,7 @@
 								<string key="NS.key.0">NSSelectorName</string>
 								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
 							</object>
-							<reference key="NSPreviousConnector" ref="691606345"/>
+							<reference key="NSPreviousConnector" ref="1031427527"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -1934,7 +1638,7 @@
 								<string key="NS.key.0">NSSelectorName</string>
 								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
 							</object>
-							<reference key="NSPreviousConnector" ref="624710154"/>
+							<reference key="NSPreviousConnector" ref="932417209"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -1945,7 +1649,7 @@
 						<string key="label">argument: fieldProperties.album</string>
 						<reference key="source" ref="859699141"/>
 						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector" id="619219482">
+						<object class="NSNibBindingConnector" key="connector" id="499012650">
 							<reference key="NSSource" ref="859699141"/>
 							<reference key="NSDestination" ref="1001"/>
 							<string key="NSLabel">argument: fieldProperties.album</string>
@@ -1965,7 +1669,7 @@
 						<string key="label">argument: fieldProperties.album</string>
 						<reference key="source" ref="859699141"/>
 						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector" id="746765442">
+						<object class="NSNibBindingConnector" key="connector" id="320644471">
 							<reference key="NSSource" ref="859699141"/>
 							<reference key="NSDestination" ref="1001"/>
 							<string key="NSLabel">argument: fieldProperties.album</string>
@@ -1975,7 +1679,7 @@
 								<string key="NS.key.0">NSSelectorName</string>
 								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
 							</object>
-							<reference key="NSPreviousConnector" ref="619219482"/>
+							<reference key="NSPreviousConnector" ref="499012650"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -1986,7 +1690,7 @@
 						<string key="label">argument2: fieldProperties.album.button2</string>
 						<reference key="source" ref="859699141"/>
 						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector" id="366329296">
+						<object class="NSNibBindingConnector" key="connector" id="115955277">
 							<reference key="NSSource" ref="859699141"/>
 							<reference key="NSDestination" ref="1001"/>
 							<string key="NSLabel">argument2: fieldProperties.album.button2</string>
@@ -1996,7 +1700,7 @@
 								<string key="NS.key.0">NSSelectorName</string>
 								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
 							</object>
-							<reference key="NSPreviousConnector" ref="746765442"/>
+							<reference key="NSPreviousConnector" ref="320644471"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -2017,11 +1721,303 @@
 								<string key="NS.key.0">NSSelectorName</string>
 								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
 							</object>
-							<reference key="NSPreviousConnector" ref="366329296"/>
+							<reference key="NSPreviousConnector" ref="115955277"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
 					<int key="connectionID">479</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: fieldValues.album</string>
+						<reference key="source" ref="770493298"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="770493298"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: fieldValues.album</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">fieldValues.album</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
+								<boolean value="YES" key="NS.object.0"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">480</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: fieldValues.artist</string>
+						<reference key="source" ref="304289585"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="304289585"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: fieldValues.artist</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">fieldValues.artist</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
+								<boolean value="YES" key="NS.object.0"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">481</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: fieldValues.year</string>
+						<reference key="source" ref="971969800"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="971969800"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: fieldValues.year</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">fieldValues.year</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
+								<boolean value="YES" key="NS.object.0"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">484</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: fieldValues.genre</string>
+						<reference key="source" ref="223914762"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="223914762"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: fieldValues.genre</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">fieldValues.genre</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
+								<boolean value="YES" key="NS.object.0"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">485</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: fieldValues.totalTracks</string>
+						<reference key="source" ref="886931711"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="886931711"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: fieldValues.totalTracks</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">fieldValues.totalTracks</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
+								<boolean value="YES" key="NS.object.0"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">486</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: fieldValues.catalog</string>
+						<reference key="source" ref="536582981"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="536582981"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: fieldValues.catalog</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">fieldValues.catalog</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
+								<boolean value="YES" key="NS.object.0"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">487</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: fieldValues.composer</string>
+						<reference key="source" ref="974131902"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="974131902"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: fieldValues.composer</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">fieldValues.composer</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
+								<boolean value="YES" key="NS.object.0"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">490</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: fieldValues.performer</string>
+						<reference key="source" ref="103215024"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="103215024"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: fieldValues.performer</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">fieldValues.performer</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
+								<boolean value="YES" key="NS.object.0"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">491</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: fieldValues.arranger</string>
+						<reference key="source" ref="927979405"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="927979405"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: fieldValues.arranger</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">fieldValues.arranger</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
+								<boolean value="YES" key="NS.object.0"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">492</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: fieldValues.products</string>
+						<reference key="source" ref="332481298"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="332481298"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: fieldValues.products</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">fieldValues.products</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
+								<boolean value="YES" key="NS.object.0"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">493</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: fieldValues.publisher</string>
+						<reference key="source" ref="868696179"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="868696179"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: fieldValues.publisher</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">fieldValues.publisher</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
+								<boolean value="YES" key="NS.object.0"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">494</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">attributedString: fieldValues.notes</string>
+						<reference key="source" ref="6121220"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="6121220"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">attributedString: fieldValues.notes</string>
+							<string key="NSBinding">attributedString</string>
+							<string key="NSKeyPath">fieldValues.notes</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
+								<boolean value="YES" key="NS.object.0"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">495</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: fieldValues.compilation</string>
+						<reference key="source" ref="446256374"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="446256374"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: fieldValues.compilation</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">fieldValues.compilation</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">496</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: fieldValues.totalDiscs</string>
+						<reference key="source" ref="263968333"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="263968333"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: fieldValues.totalDiscs</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">fieldValues.totalDiscs</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSContinuouslyUpdatesValue</string>
+								<boolean value="YES" key="NS.object.0"/>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">503</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: fieldValues.albumArtist</string>
+						<reference key="source" ref="925927290"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="925927290"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: fieldValues.albumArtist</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">fieldValues.albumArtist</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">509</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -2067,10 +2063,10 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="345777575"/>
 							<reference ref="925537109"/>
-							<reference ref="510491738"/>
 							<reference ref="91079538"/>
 							<reference ref="896927744"/>
 							<reference ref="100093494"/>
+							<reference ref="510491738"/>
 						</object>
 						<reference key="parent" ref="742964741"/>
 					</object>
@@ -2157,7 +2153,6 @@
 							<reference ref="296820249"/>
 							<reference ref="235594215"/>
 							<reference ref="103215024"/>
-							<reference ref="974131902"/>
 							<reference ref="631357553"/>
 							<reference ref="332481298"/>
 							<reference ref="804658191"/>
@@ -2165,6 +2160,7 @@
 							<reference ref="398603580"/>
 							<reference ref="715261463"/>
 							<reference ref="819868675"/>
+							<reference ref="974131902"/>
 							<reference ref="927979405"/>
 						</object>
 						<reference key="parent" ref="84049175"/>
@@ -2287,16 +2283,10 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="818602924"/>
-							<reference ref="770493298"/>
 							<reference ref="702536076"/>
-							<reference ref="304289585"/>
 							<reference ref="426092868"/>
-							<reference ref="971969800"/>
 							<reference ref="119141069"/>
-							<reference ref="925927290"/>
 							<reference ref="711244810"/>
-							<reference ref="886931711"/>
-							<reference ref="263968333"/>
 							<reference ref="271242561"/>
 							<reference ref="223914762"/>
 							<reference ref="355274124"/>
@@ -2305,6 +2295,12 @@
 							<reference ref="446256374"/>
 							<reference ref="247758598"/>
 							<reference ref="859699141"/>
+							<reference ref="770493298"/>
+							<reference ref="886931711"/>
+							<reference ref="304289585"/>
+							<reference ref="971969800"/>
+							<reference ref="263968333"/>
+							<reference ref="925927290"/>
 						</object>
 						<reference key="parent" ref="84049175"/>
 					</object>
@@ -2964,7 +2960,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">479</int>
+			<int key="maxID">509</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
