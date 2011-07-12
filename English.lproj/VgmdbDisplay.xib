@@ -1859,35 +1859,127 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">argument: otherLanguagesProperties.album.button1.full</string>
+						<string key="label">argument: otherLanguagesProperties.album</string>
+						<reference key="source" ref="247758598"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="39210314">
+							<reference key="NSSource" ref="247758598"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument: otherLanguagesProperties.album</string>
+							<string key="NSBinding">argument</string>
+							<string key="NSKeyPath">otherLanguagesProperties.album</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">409</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument2: otherLanguagesProperties.album.button1</string>
+						<reference key="source" ref="247758598"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="1037404543">
+							<reference key="NSSource" ref="247758598"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument2: otherLanguagesProperties.album.button1</string>
+							<string key="NSBinding">argument2</string>
+							<string key="NSKeyPath">otherLanguagesProperties.album.button1</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="39210314"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">410</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">target: self</string>
 						<reference key="source" ref="247758598"/>
 						<reference key="destination" ref="1001"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="247758598"/>
 							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">argument: otherLanguagesProperties.album.button1.full</string>
-							<string key="NSBinding">argument</string>
-							<string key="NSKeyPath">otherLanguagesProperties.album.button1.full</string>
+							<string key="NSLabel">target: self</string>
+							<string key="NSBinding">target</string>
+							<string key="NSKeyPath">self</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="1037404543"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">367</int>
+					<int key="connectionID">411</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">argument: otherLanguagesProperties.album.button2.full</string>
+						<string key="label">argument: otherLanguagesProperties.album</string>
+						<reference key="source" ref="859699141"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="1023410586">
+							<reference key="NSSource" ref="859699141"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument: otherLanguagesProperties.album</string>
+							<string key="NSBinding">argument</string>
+							<string key="NSKeyPath">otherLanguagesProperties.album</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">422</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument2: otherLanguagesProperties.album.button2</string>
+						<reference key="source" ref="859699141"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="951518239">
+							<reference key="NSSource" ref="859699141"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument2: otherLanguagesProperties.album.button2</string>
+							<string key="NSBinding">argument2</string>
+							<string key="NSKeyPath">otherLanguagesProperties.album.button2</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="1023410586"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">423</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">target: self</string>
 						<reference key="source" ref="859699141"/>
 						<reference key="destination" ref="1001"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="859699141"/>
 							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">argument: otherLanguagesProperties.album.button2.full</string>
-							<string key="NSBinding">argument</string>
-							<string key="NSKeyPath">otherLanguagesProperties.album.button2.full</string>
+							<string key="NSLabel">target: self</string>
+							<string key="NSBinding">target</string>
+							<string key="NSKeyPath">self</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="951518239"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">369</int>
+					<int key="connectionID">424</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -2830,7 +2922,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">369</int>
+			<int key="maxID">424</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

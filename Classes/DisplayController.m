@@ -26,6 +26,18 @@ typedef NSDictionary* (^HashBlock)();
 @implementation DisplayController
 
 #pragma mark -
+#pragma mark Gui callback
+
+
+-(IBAction) changeLanguage:(NSDictionary*)fieldProperties
+		  buttonProperties:(NSDictionary*)buttonProperties
+{
+	NSLog(@"fieldProperties \n%@ ", fieldProperties);
+	NSLog(@"buttonProperties \n%@ ", buttonProperties);
+}
+
+
+#pragma mark -
 #pragma mark Setup
 
 -(void)setAlbumUrl:(NSString *)url
@@ -39,7 +51,7 @@ typedef NSDictionary* (^HashBlock)();
 						   withArguments:albumDetails, 
 			   nil];
 	NSLog(@"Tracks\n %@", tracks);
-	
+		
 	album       = [self valuefromDetails:@"title" ];
 	artist      = [self valuefromDetails:@"composer"];
 	albumArtist = @"";
@@ -127,7 +139,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSMutableDictionary *button1 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
 									b1Title,       @"title",
 									b1Full,        @"full",
-									[NSNumber numberWithBool:YES],@"hidden",
+									[NSNumber numberWithBool:NO],@"hidden",
 									nil];
 	
 	NSMutableDictionary *button2 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
@@ -139,6 +151,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	return [[NSDictionary alloc] initWithObjectsAndKeys:
 			button1, @"button1",
 			button2, @"button2",
+			[selectedLanguage copy], @"language",
 			nil];
 }
 

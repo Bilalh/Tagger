@@ -11,11 +11,11 @@
 @interface DisplayController : NSWindowController {
 @private
 	IBOutlet NSWindow    *window;
-	NSDictionary *albumDetails;
 	id vgmdb; // macruby Vgmdb class
-	
-	NSArray  *tracks;
-	NSString *selectedLanguage;
+	NSDictionary *albumDetails; // contains all the infomation
+	NSString *selectedLanguage; 
+
+	NSArray  *tracks; // array of tracks info
 	
 	// Infomation
 	NSString *album;
@@ -40,11 +40,15 @@
 	NSDictionary *otherLanguagesProperties;
 }
 
+- (id)initWithUrl:(NSString*)url
+			vgmdb:(id)vgmdbObject;
+
+-(IBAction) changeLanguage:(NSDictionary*)fieldProperties
+		  buttonProperties:(NSDictionary*)buttonProperties;
+
 - (IBAction)cancelSheet:sender;
 - (IBAction)confirmSheet:sender;
 
-- (id)initWithUrl:(NSString*)url
-			vgmdb:(id)vgmdbObject;
 
 
 
