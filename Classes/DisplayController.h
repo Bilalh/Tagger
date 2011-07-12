@@ -37,20 +37,17 @@
 	NSString *notes;
 	
 	// Buttons
-	NSDictionary *otherLanguagesProperties;
+	NSDictionary *fieldProperties;
 }
 
 - (id)initWithUrl:(NSString*)url
 			vgmdb:(id)vgmdbObject;
 
--(IBAction) changeLanguage:(NSDictionary*)fieldProperties
+-(IBAction) changeLanguage:(NSDictionary*)properties
 		  buttonProperties:(NSDictionary*)buttonProperties;
 
 - (IBAction)cancelSheet:sender;
 - (IBAction)confirmSheet:sender;
-
-
-
 
 
 @end

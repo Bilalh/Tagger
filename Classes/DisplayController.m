@@ -29,10 +29,10 @@ typedef NSDictionary* (^HashBlock)();
 #pragma mark Gui callback
 
 
--(IBAction) changeLanguage:(NSDictionary*)fieldProperties
+-(IBAction) changeLanguage:(NSDictionary*)properties
 		  buttonProperties:(NSDictionary*)buttonProperties
 {
-	NSLog(@"fieldProperties \n%@ ", fieldProperties);
+	NSLog(@"fieldProperties \n%@ ", properties);
 	NSLog(@"buttonProperties \n%@ ", buttonProperties);
 }
 
@@ -121,7 +121,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 							  button2Full:@"@kanji"];
 	};
 		
-	otherLanguagesProperties = [[NSDictionary alloc] initWithObjectsAndKeys:
+	fieldProperties = [[NSDictionary alloc] initWithObjectsAndKeys:
 							hb(), @"album", 
 							nil];	
 	
