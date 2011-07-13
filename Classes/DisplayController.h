@@ -20,9 +20,7 @@
 	NSMutableDictionary *fieldValues; // The value of the fields
 	NSDictionary *fieldProperties;    // The properties of the fields and their buttons
 	
-	IBOutlet NSTableView *table; // table of tracks
-	NSArray *languages; // for radio buttons
-	
+	IBOutlet NSTableView *table; // table of tracks	
 }
 
 - (id)initWithUrl:(NSString*)url

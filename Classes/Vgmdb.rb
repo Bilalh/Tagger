@@ -63,16 +63,6 @@ class Vgmdb
 		return hash
 	end
 	
-	def get_tracks_array(hash)
-		return hash['tracks'].values.sort do |x,y|
-			res = x['disc#']   <=> y['disc#'] 
-			res = x['track#']  <=> y['track#']  if res ==0
-			res = x['track#']  <=> y['track#']  if res ==0
-			res = (x['length'] <=> y['length']) if res ==0
-			res		
-		end
-	end
-	
 	def get_meta(doc,hash)
 		#puts "Getting metadata"
 		
@@ -195,6 +185,17 @@ class Vgmdb
 	
 	def	get_key(hash, str_key)
 		return hash[str_key]
+	end
+	
+	
+	def get_tracks_array(hash)
+		return hash['tracks'].values.sort do |x,y|
+			res = x['disc#']   <=> y['disc#'] 
+			res = x['track#']  <=> y['track#']  if res ==0
+			res = x['track#']  <=> y['track#']  if res ==0
+			res = (x['length'] <=> y['length']) if res ==0
+			res		
+		end
 	end
 	
 	private 

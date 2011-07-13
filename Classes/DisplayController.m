@@ -60,7 +60,7 @@
 {
     NSInteger tag = [[sender selectedCell] tag];
 	selectedLanguage = [[[fieldProperties objectForKey:@"radio"] 
-						objectForKey: [NSNumber numberWithInteger:tag]] 
+						objectForKey: [NSString stringWithFormat:@"%d",tag ]] 
 						objectForKey: @"language"];
 	
 	[table setNeedsDisplayInRect:
@@ -104,13 +104,25 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 {
 	vgmdb            = vgmdbObject;
 	selectedLanguage = @"@english";
-	languages        = [[NSArray alloc] initWithObjects:@"@english", @"@romaji",@"@kanji" , nil];
 	
 	[self initFieldProperties];
 	[self setAlbumUrl:url];
 	[self initFieldValues];	
 	[self initButtonsState];
+	
+	
+	NSDictionary *title = [[tracks objectAtIndex:0] objectForKey:@"title"];
+	NSDictionary *radio = [fieldProperties objectForKey:@"radio"];
 
+	NSString *l[] = {@"@english", @"@romaji",@"@kanji"};
+	
+	int i;
+	for (i =0; i < sizeof(l)/sizeof(size_t) ; ++i) {
+		if ([title objectForKey:l[i]] ){
+			[[radio objectForKey:[NSString stringWithFormat:@"%d", i]] setObject:[NSNumber numberWithBool:YES ] forKey:@"enable"];
+		}
+	}	
+	
 	return[self initWithWindowNibName:@"VgmdbDisplay"];	
 } 
 
@@ -141,15 +153,15 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 	NSMutableDictionary* (^hd)(NSString*) = ^(NSString *value){
 		return (NSMutableDictionary*) 	[[NSMutableDictionary alloc] initWithObjectsAndKeys:
-										 [NSNumber numberWithBool:NO] , @"hidden",
+										 [NSNumber numberWithBool:NO] , @"enable",
 										 value, @"language",
 										 nil];
 	};
 	
 	NSMutableDictionary* radio =  hc(@"radio");
-	[radio setObject:hd(@"@english") forKey:[NSNumber numberWithInteger:0]];
-	[radio setObject:hd(@"@romaji")  forKey:[NSNumber numberWithInteger:1]];
-	[radio setObject:hd(@"@kanji")   forKey:[NSNumber numberWithInteger:2]];
+	[radio setObject:hd(@"@english") forKey:@"0"];
+	[radio setObject:hd(@"@romaji")  forKey:@"1"];
+	[radio setObject:hd(@"@kanji")   forKey:@"2"];
 	
 	
 	fieldProperties = [[NSDictionary alloc] initWithObjectsAndKeys:
@@ -244,7 +256,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 						  [[fieldProperties objectForKey:key] objectForKey:@"language"] ];
 		int len = (int) MIN([other count], 2);
 		int i, index;
-		for (i =0, index=1; i< len; ++i) {
+		for (i = 0, index = 1; i< len; ++i) {
 			
 			id  field = [albumDetails objectForKey:key];
 			if ([field isKindOfClass: [NSArray class] ] && [field count] > 0 ){
