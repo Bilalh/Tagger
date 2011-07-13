@@ -123,7 +123,9 @@ class Vgmdb
 	def get_notes(doc,hash)
 		#puts "Getting notes"
 		notes = ""
-		doc.css('div.page table tr td div div.smallfont')[-1].children.each do |e|
+		# 'div.page > table > tr > td > div > div > div > div.covertab > table > tr div.smallfont
+	  notes_note = doc.css('div.page > table > tr > td > div > div > div > div.covertab  div.smallfont')[-1] 
+		notes_note.children.each do |e|
 			notes <<  e.text  << "\n" if e.text != ""
 		end
 		hash['notes'] = HTMLEntities.new.decode notes
@@ -222,7 +224,7 @@ if $0 == __FILE__
 	
 	url = File.expand_path("~/Desktop/test.html")
 	hash = vg.get_data(url)	
-	pp hash
+	pp hash['notes']
 	# pp vg.get_tracks_array hash;
 	
 end
