@@ -33,8 +33,9 @@ static NSDictionary *languages;
 }
 
 + (NSString*) stringFromLanguages:(NSDictionary*)title
-			 selectedLanguage:(NSString*)selectedLanguage
+			 selectedLanguage:(NSString**)selectedLanguagePtr
 {
+	NSString* selectedLanguage =*selectedLanguagePtr;
 	if ([title count] == 0) return nil;
 		
 	NSString *result = [title objectForKey:selectedLanguage];
@@ -43,29 +44,39 @@ static NSDictionary *languages;
 	// Checks each other Language
 	for (NSString *newLanguage in [languages objectForKey:selectedLanguage] ) {
 		result = [title objectForKey:newLanguage];
-		if (result) return result;
+		if (result) {
+			*selectedLanguagePtr = result;
+			return result;	
+		}
 	}
 	
 	// if we can find it just return the first language
 	return [[title allValues ] objectAtIndex:0];
 }
 
+
++ (id) valueFromResult:(id)result
+	  selectedLanguage:(NSString*)selectedLanguage
+{
+	return [self valueFromResult:result selectedLanguagePtr: &selectedLanguage];
+}
+
 // Recursively looks into the result until the result is 
 // a string or number, selectedLanguage is the Language to 
 // choose 
 + (id) valueFromResult:(id)result
-			 selectedLanguage:(NSString*)selectedLanguage
+	  selectedLanguagePtr:(NSString**)selectedLanguage
 {
 	if ([result isKindOfClass:[NSDictionary class]]){
 		return [Utility valueFromResult:[Utility  stringFromLanguages:result selectedLanguage:selectedLanguage] 
-					   selectedLanguage:selectedLanguage];
+					   selectedLanguagePtr:selectedLanguage];
 		
 	}else if ([result isKindOfClass:[NSArray class]]){
 		
 		NSMutableArray *array = [[NSMutableArray alloc] init];
 		for (id ele in result) {
 			id a = [Utility valueFromResult:ele
-						   selectedLanguage:selectedLanguage ];
+						   selectedLanguagePtr:selectedLanguage ];
 			[array addObject:a];
 		}
 		switch ([array count]) {

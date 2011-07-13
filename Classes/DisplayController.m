@@ -53,10 +53,13 @@
 objectValueForTableColumn:(NSTableColumn *)aTableColumn 
 					  row:(NSInteger)rowIndex 
 {
+	
+	NSString *s =  @"@romaji";
+	NSString **sPtr = &s;
 	id result = [[tracks objectAtIndex:rowIndex] objectForKey:[aTableColumn identifier]];
 	if ([result isKindOfClass:[NSDictionary class]]){
 		return [Utility stringFromLanguages:result 
-					   selectedLanguage:@"@romaji"];
+					   selectedLanguage:sPtr];
 	}
 	return result;
 }
@@ -271,3 +274,4 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 }
 
 @end;
+;

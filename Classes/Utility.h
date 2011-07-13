@@ -17,8 +17,13 @@
 + (id) valueFromResult:(id)result
 	  selectedLanguage:(NSString*)selectedLanguage;
 
-+(NSDictionary*) languagesDictionary;
++ (id) valueFromResult:(id)result
+   selectedLanguagePtr:(NSString**)selectedLanguage;
+
 + (NSString*) stringFromLanguages:(NSDictionary*)title
-			 selectedLanguage:(NSString*)selectedLanguage;
+				 selectedLanguage:(NSString**)selectedLanguagePtr;
+
++(NSDictionary*) languagesDictionary;
+
 
 @end
