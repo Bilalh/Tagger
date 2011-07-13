@@ -12,6 +12,7 @@
 		</object>
 		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<string>NSUserDefaultsController</string>
 			<string>NSScroller</string>
 			<string>NSTableHeaderView</string>
 			<string>NSButton</string>
@@ -54,7 +55,7 @@
 			<object class="NSWindowTemplate" id="742964741">
 				<int key="NSWindowStyleMask">95</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{169, 105}, {1044, 535}}</string>
+				<string key="NSWindowRect">{{169, 105}, {1086, 535}}</string>
 				<int key="NSWTFlags">-1535639552</int>
 				<string key="NSWindowTitle">Window</string>
 				<string key="NSWindowClass">NSPanel</string>
@@ -67,7 +68,7 @@
 						<object class="NSButton" id="345777575">
 							<reference key="NSNextResponder" ref="84049175"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{499, 12}, {96, 32}}</string>
+							<string key="NSFrame">{{543, 12}, {96, 32}}</string>
 							<reference key="NSSuperview" ref="84049175"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView"/>
@@ -93,7 +94,7 @@
 						<object class="NSButton" id="925537109">
 							<reference key="NSNextResponder" ref="84049175"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{403, 12}, {96, 32}}</string>
+							<string key="NSFrame">{{447, 12}, {96, 32}}</string>
 							<reference key="NSSuperview" ref="84049175"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="345777575"/>
@@ -212,7 +213,7 @@
 											<string key="NSFrame">{{105, 172}, {281, 22}}</string>
 											<reference key="NSSuperview" ref="894355921"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="1015448905"/>
+											<reference key="NSNextKeyView" ref="118003281"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="229706049">
 												<int key="NSCellFlags">-1804468671</int>
@@ -469,7 +470,7 @@
 										<object class="NSButton" id="859699141">
 											<reference key="NSNextResponder" ref="894355921"/>
 											<int key="NSvFlags">268</int>
-											<string key="NSFrame">{{410, 202}, {19, 22}}</string>
+											<string key="NSFrame">{{416, 202}, {19, 22}}</string>
 											<reference key="NSSuperview" ref="894355921"/>
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="702536076"/>
@@ -525,14 +526,58 @@
 												<reference key="NSTextColor" ref="252035883"/>
 											</object>
 										</object>
+										<object class="NSButton" id="118003281">
+											<reference key="NSNextResponder" ref="894355921"/>
+											<int key="NSvFlags">268</int>
+											<string key="NSFrame">{{392, 172}, {19, 22}}</string>
+											<reference key="NSSuperview" ref="894355921"/>
+											<reference key="NSWindow"/>
+											<reference key="NSNextKeyView" ref="924212422"/>
+											<bool key="NSEnabled">YES</bool>
+											<object class="NSButtonCell" key="NSCell" id="293224545">
+												<int key="NSCellFlags">67239424</int>
+												<int key="NSCellFlags2">134217728</int>
+												<string key="NSContents">A</string>
+												<reference key="NSSupport" ref="24"/>
+												<reference key="NSControlView" ref="118003281"/>
+												<int key="NSButtonFlags">-2033434369</int>
+												<int key="NSButtonFlags2">134</int>
+												<string key="NSAlternateContents"/>
+												<string key="NSKeyEquivalent"/>
+												<int key="NSPeriodicDelay">400</int>
+												<int key="NSPeriodicInterval">75</int>
+											</object>
+										</object>
+										<object class="NSButton" id="924212422">
+											<reference key="NSNextResponder" ref="894355921"/>
+											<int key="NSvFlags">268</int>
+											<string key="NSFrame">{{416, 172}, {19, 22}}</string>
+											<reference key="NSSuperview" ref="894355921"/>
+											<reference key="NSWindow"/>
+											<reference key="NSNextKeyView" ref="1015448905"/>
+											<bool key="NSEnabled">YES</bool>
+											<object class="NSButtonCell" key="NSCell" id="551821827">
+												<int key="NSCellFlags">67239424</int>
+												<int key="NSCellFlags2">134217728</int>
+												<string key="NSContents">B</string>
+												<reference key="NSSupport" ref="24"/>
+												<reference key="NSControlView" ref="924212422"/>
+												<int key="NSButtonFlags">-2033434369</int>
+												<int key="NSButtonFlags2">134</int>
+												<string key="NSAlternateContents"/>
+												<string key="NSKeyEquivalent"/>
+												<int key="NSPeriodicDelay">400</int>
+												<int key="NSPeriodicInterval">75</int>
+											</object>
+										</object>
 									</object>
-									<string key="NSFrame">{{1, 1}, {447, 234}}</string>
+									<string key="NSFrame">{{1, 1}, {445, 234}}</string>
 									<reference key="NSSuperview" ref="510491738"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="818602924"/>
 								</object>
 							</object>
-							<string key="NSFrame">{{17, 272}, {449, 250}}</string>
+							<string key="NSFrame">{{17, 272}, {447, 250}}</string>
 							<reference key="NSSuperview" ref="84049175"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="894355921"/>
@@ -581,7 +626,7 @@
 														<object class="NSTableView" id="57791093">
 															<reference key="NSNextResponder" ref="665683912"/>
 															<int key="NSvFlags">256</int>
-															<string key="NSFrameSize">{949, 152}</string>
+															<string key="NSFrameSize">{1034, 152}</string>
 															<reference key="NSSuperview" ref="665683912"/>
 															<reference key="NSWindow"/>
 															<reference key="NSNextKeyView" ref="528645146"/>
@@ -589,7 +634,7 @@
 															<object class="NSTableHeaderView" key="NSHeaderView" id="664125429">
 																<reference key="NSNextResponder" ref="696664538"/>
 																<int key="NSvFlags">256</int>
-																<string key="NSFrameSize">{949, 17}</string>
+																<string key="NSFrameSize">{1034, 17}</string>
 																<reference key="NSSuperview" ref="696664538"/>
 																<reference key="NSWindow"/>
 																<reference key="NSNextKeyView" ref="83702553"/>
@@ -598,7 +643,7 @@
 															<object class="_NSCornerView" key="NSCornerView" id="83702553">
 																<reference key="NSNextResponder" ref="857492702"/>
 																<int key="NSvFlags">-2147483392</int>
-																<string key="NSFrame">{{935, 0}, {16, 17}}</string>
+																<string key="NSFrame">{{1020, 0}, {16, 17}}</string>
 																<reference key="NSSuperview" ref="857492702"/>
 																<reference key="NSWindow"/>
 																<reference key="NSNextKeyView" ref="665683912"/>
@@ -645,6 +690,38 @@
 																	<bool key="NSIsEditable">YES</bool>
 																	<reference key="NSTableView" ref="57791093"/>
 																</object>
+																<object class="NSTableColumn" id="922272426">
+																	<string key="NSIdentifier">disc#</string>
+																	<double key="NSWidth">64</double>
+																	<double key="NSMinWidth">10</double>
+																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
+																	<object class="NSTableHeaderCell" key="NSHeaderCell">
+																		<int key="NSCellFlags">75628096</int>
+																		<int key="NSCellFlags2">2048</int>
+																		<string key="NSContents">Disc# db</string>
+																		<reference key="NSSupport" ref="26"/>
+																		<object class="NSColor" key="NSBackgroundColor" id="468804466">
+																			<int key="NSColorSpace">6</int>
+																			<string key="NSCatalogName">System</string>
+																			<string key="NSColorName">headerColor</string>
+																			<reference key="NSColor" ref="692370982"/>
+																		</object>
+																		<reference key="NSTextColor" ref="995297799"/>
+																	</object>
+																	<object class="NSTextFieldCell" key="NSDataCell" id="877341694">
+																		<int key="NSCellFlags">337772096</int>
+																		<int key="NSCellFlags2">2048</int>
+																		<string key="NSContents">Text Cell</string>
+																		<reference key="NSSupport" ref="880941277"/>
+																		<reference key="NSControlView" ref="57791093"/>
+																		<reference key="NSBackgroundColor" ref="764170804"/>
+																		<reference key="NSTextColor" ref="169378744"/>
+																	</object>
+																	<int key="NSResizingMask">3</int>
+																	<bool key="NSIsResizeable">YES</bool>
+																	<bool key="NSIsEditable">YES</bool>
+																	<reference key="NSTableView" ref="57791093"/>
+																</object>
 																<object class="NSTableColumn" id="627640860">
 																	<string key="NSIdentifier">track#File</string>
 																	<double key="NSWidth">62</double>
@@ -672,6 +749,33 @@
 																	<bool key="NSIsEditable">YES</bool>
 																	<reference key="NSTableView" ref="57791093"/>
 																</object>
+																<object class="NSTableColumn" id="690592154">
+																	<string key="NSIdentifier">disc#File</string>
+																	<double key="NSWidth">64</double>
+																	<double key="NSMinWidth">10</double>
+																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
+																	<object class="NSTableHeaderCell" key="NSHeaderCell">
+																		<int key="NSCellFlags">75628096</int>
+																		<int key="NSCellFlags2">2048</int>
+																		<string key="NSContents">Disc#</string>
+																		<reference key="NSSupport" ref="26"/>
+																		<reference key="NSBackgroundColor" ref="468804466"/>
+																		<reference key="NSTextColor" ref="995297799"/>
+																	</object>
+																	<object class="NSTextFieldCell" key="NSDataCell" id="17344796">
+																		<int key="NSCellFlags">337772096</int>
+																		<int key="NSCellFlags2">2048</int>
+																		<string key="NSContents">Text Cell</string>
+																		<reference key="NSSupport" ref="880941277"/>
+																		<reference key="NSControlView" ref="57791093"/>
+																		<reference key="NSBackgroundColor" ref="764170804"/>
+																		<reference key="NSTextColor" ref="169378744"/>
+																	</object>
+																	<int key="NSResizingMask">3</int>
+																	<bool key="NSIsResizeable">YES</bool>
+																	<bool key="NSIsEditable">YES</bool>
+																	<reference key="NSTableView" ref="57791093"/>
+																</object>
 																<object class="NSTableColumn" id="7131260">
 																	<string key="NSIdentifier">length</string>
 																	<double key="NSWidth">62</double>
@@ -682,12 +786,7 @@
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Length db</string>
 																		<reference key="NSSupport" ref="26"/>
-																		<object class="NSColor" key="NSBackgroundColor" id="468804466">
-																			<int key="NSColorSpace">6</int>
-																			<string key="NSCatalogName">System</string>
-																			<string key="NSColorName">headerColor</string>
-																			<reference key="NSColor" ref="692370982"/>
-																		</object>
+																		<reference key="NSBackgroundColor" ref="468804466"/>
 																		<reference key="NSTextColor" ref="995297799"/>
 																	</object>
 																	<object class="NSTextFieldCell" key="NSDataCell" id="222578078">
@@ -733,7 +832,7 @@
 																</object>
 																<object class="NSTableColumn" id="1059137077">
 																	<string key="NSIdentifier">title</string>
-																	<double key="NSWidth">344</double>
+																	<double key="NSWidth">316</double>
 																	<double key="NSMinWidth">10</double>
 																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -760,7 +859,7 @@
 																</object>
 																<object class="NSTableColumn" id="816167973">
 																	<string key="NSIdentifier">titleFile</string>
-																	<double key="NSWidth">337</double>
+																	<double key="NSWidth">316</double>
 																	<double key="NSMinWidth">10</double>
 																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -799,7 +898,7 @@
 																</object>
 															</object>
 															<double key="NSRowHeight">17</double>
-															<int key="NSTvFlags">-700448768</int>
+															<int key="NSTvFlags">-692060160</int>
 															<reference key="NSDelegate"/>
 															<reference key="NSDataSource"/>
 															<int key="NSColumnAutoresizingStyle">4</int>
@@ -809,7 +908,7 @@
 															<int key="NSTableViewDraggingDestinationStyle">0</int>
 														</object>
 													</object>
-													<string key="NSFrame">{{1, 17}, {949, 152}}</string>
+													<string key="NSFrame">{{1, 17}, {1034, 152}}</string>
 													<reference key="NSSuperview" ref="857492702"/>
 													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="57791093"/>
@@ -820,7 +919,7 @@
 												<object class="NSScroller" id="528645146">
 													<reference key="NSNextResponder" ref="857492702"/>
 													<int key="NSvFlags">-2147483392</int>
-													<string key="NSFrame">{{935, 17}, {15, 137}}</string>
+													<string key="NSFrame">{{1020, 17}, {15, 137}}</string>
 													<reference key="NSSuperview" ref="857492702"/>
 													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="126056555"/>
@@ -831,14 +930,14 @@
 												<object class="NSScroller" id="126056555">
 													<reference key="NSNextResponder" ref="857492702"/>
 													<int key="NSvFlags">-2147483392</int>
-													<string key="NSFrame">{{1, 154}, {949, 15}}</string>
+													<string key="NSFrame">{{1, 154}, {1034, 15}}</string>
 													<reference key="NSSuperview" ref="857492702"/>
 													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="925537109"/>
 													<int key="NSsFlags">1</int>
 													<reference key="NSTarget" ref="857492702"/>
 													<string key="NSAction">_doScroller:</string>
-													<double key="NSPercent">0.99267782426778239</double>
+													<double key="NSPercent">0.89913043478260868</double>
 												</object>
 												<object class="NSClipView" id="696664538">
 													<reference key="NSNextResponder" ref="857492702"/>
@@ -847,7 +946,7 @@
 														<bool key="EncodedWithXMLCoder">YES</bool>
 														<reference ref="664125429"/>
 													</object>
-													<string key="NSFrame">{{1, 0}, {949, 17}}</string>
+													<string key="NSFrame">{{1, 0}, {1034, 17}}</string>
 													<reference key="NSSuperview" ref="857492702"/>
 													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="664125429"/>
@@ -857,7 +956,7 @@
 												</object>
 												<reference ref="83702553"/>
 											</object>
-											<string key="NSFrame">{{7, 7}, {951, 170}}</string>
+											<string key="NSFrame">{{7, 7}, {1036, 170}}</string>
 											<reference key="NSSuperview" ref="326441593"/>
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="696664538"/>
@@ -870,13 +969,13 @@
 											<bytes key="NSScrollAmts">QSAAAEEgAABBmAAAQZgAAA</bytes>
 										</object>
 									</object>
-									<string key="NSFrame">{{1, 1}, {965, 180}}</string>
+									<string key="NSFrame">{{1, 1}, {1050, 180}}</string>
 									<reference key="NSSuperview" ref="91079538"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="857492702"/>
 								</object>
 							</object>
-							<string key="NSFrame">{{17, 56}, {967, 196}}</string>
+							<string key="NSFrame">{{17, 56}, {1052, 196}}</string>
 							<reference key="NSSuperview" ref="84049175"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="326441593"/>
@@ -963,7 +1062,7 @@
 									<reference key="NSNextKeyView" ref="185299946"/>
 								</object>
 							</object>
-							<string key="NSFrame">{{815, 301}, {212, 225}}</string>
+							<string key="NSFrame">{{857, 297}, {212, 225}}</string>
 							<reference key="NSSuperview" ref="84049175"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="177816902"/>
@@ -1019,7 +1118,7 @@
 											<string key="NSFrame">{{90, 203}, {235, 22}}</string>
 											<reference key="NSSuperview" ref="374271042"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="235594215"/>
+											<reference key="NSNextKeyView" ref="151117710"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="815229447">
 												<int key="NSCellFlags">-1804468671</int>
@@ -1056,7 +1155,7 @@
 											<string key="NSFrame">{{90, 173}, {235, 22}}</string>
 											<reference key="NSSuperview" ref="374271042"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="819868675"/>
+											<reference key="NSNextKeyView" ref="53155030"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="617416019">
 												<int key="NSCellFlags">-2072904127</int>
@@ -1094,7 +1193,7 @@
 											<string key="NSFrame">{{90, 113}, {235, 22}}</string>
 											<reference key="NSSuperview" ref="374271042"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="804658191"/>
+											<reference key="NSNextKeyView" ref="320370617"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="552070827">
 												<int key="NSCellFlags">-2072904127</int>
@@ -1132,7 +1231,7 @@
 											<string key="NSFrame">{{90, 83}, {235, 22}}</string>
 											<reference key="NSSuperview" ref="374271042"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="398603580"/>
+											<reference key="NSNextKeyView" ref="541231019"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="909254601">
 												<int key="NSCellFlags">-2072904127</int>
@@ -1200,7 +1299,7 @@
 																	<string>public.url</string>
 																</object>
 															</object>
-															<string key="NSFrame">{{0, -4}, {288, 14}}</string>
+															<string key="NSFrameSize">{339, 14}</string>
 															<reference key="NSSuperview" ref="802636451"/>
 															<reference key="NSWindow"/>
 															<reference key="NSNextKeyView" ref="792130082"/>
@@ -1220,7 +1319,7 @@
 																	<nil key="NSDelegate"/>
 																</object>
 																<reference key="NSTextView" ref="6121220"/>
-																<double key="NSWidth">288</double>
+																<double key="NSWidth">339</double>
 																<int key="NSTCFlags">1</int>
 															</object>
 															<object class="NSTextViewSharedData" key="NSSharedData">
@@ -1281,7 +1380,7 @@
 															<nil key="NSDelegate"/>
 														</object>
 													</object>
-													<string key="NSFrame">{{1, 1}, {287, 47}}</string>
+													<string key="NSFrame">{{1, 1}, {338, 47}}</string>
 													<reference key="NSSuperview" ref="715261463"/>
 													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="6121220"/>
@@ -1296,7 +1395,7 @@
 												<object class="NSScroller" id="792130082">
 													<reference key="NSNextResponder" ref="715261463"/>
 													<int key="NSvFlags">256</int>
-													<string key="NSFrame">{{288, 1}, {15, 47}}</string>
+													<string key="NSFrame">{{339, 1}, {15, 47}}</string>
 													<reference key="NSSuperview" ref="715261463"/>
 													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="896927744"/>
@@ -1320,7 +1419,7 @@
 													<double key="NSPercent">0.94565218687057495</double>
 												</object>
 											</object>
-											<string key="NSFrame">{{21, 14}, {304, 49}}</string>
+											<string key="NSFrame">{{21, 14}, {355, 49}}</string>
 											<reference key="NSSuperview" ref="374271042"/>
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="452448503"/>
@@ -1353,7 +1452,7 @@
 											<string key="NSFrame">{{90, 143}, {235, 22}}</string>
 											<reference key="NSSuperview" ref="374271042"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="631357553"/>
+											<reference key="NSNextKeyView" ref="847749364"/>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSTextFieldCell" key="NSCell" id="1069431340">
 												<int key="NSCellFlags">-2072904127</int>
@@ -1367,14 +1466,234 @@
 												<reference key="NSTextColor" ref="252035883"/>
 											</object>
 										</object>
+										<object class="NSButton" id="151117710">
+											<reference key="NSNextResponder" ref="374271042"/>
+											<int key="NSvFlags">268</int>
+											<string key="NSFrame">{{333, 203}, {19, 22}}</string>
+											<reference key="NSSuperview" ref="374271042"/>
+											<reference key="NSWindow"/>
+											<reference key="NSNextKeyView" ref="773529061"/>
+											<bool key="NSEnabled">YES</bool>
+											<object class="NSButtonCell" key="NSCell" id="487414598">
+												<int key="NSCellFlags">67239424</int>
+												<int key="NSCellFlags2">134217728</int>
+												<string key="NSContents">A</string>
+												<reference key="NSSupport" ref="24"/>
+												<reference key="NSControlView" ref="151117710"/>
+												<int key="NSButtonFlags">-2033434369</int>
+												<int key="NSButtonFlags2">134</int>
+												<string key="NSAlternateContents"/>
+												<string key="NSKeyEquivalent"/>
+												<int key="NSPeriodicDelay">400</int>
+												<int key="NSPeriodicInterval">75</int>
+											</object>
+										</object>
+										<object class="NSButton" id="773529061">
+											<reference key="NSNextResponder" ref="374271042"/>
+											<int key="NSvFlags">268</int>
+											<string key="NSFrame">{{357, 203}, {19, 22}}</string>
+											<reference key="NSSuperview" ref="374271042"/>
+											<reference key="NSWindow"/>
+											<reference key="NSNextKeyView" ref="235594215"/>
+											<bool key="NSEnabled">YES</bool>
+											<object class="NSButtonCell" key="NSCell" id="120322782">
+												<int key="NSCellFlags">67239424</int>
+												<int key="NSCellFlags2">134217728</int>
+												<string key="NSContents">B</string>
+												<reference key="NSSupport" ref="24"/>
+												<reference key="NSControlView" ref="773529061"/>
+												<int key="NSButtonFlags">-2033434369</int>
+												<int key="NSButtonFlags2">134</int>
+												<string key="NSAlternateContents"/>
+												<string key="NSKeyEquivalent"/>
+												<int key="NSPeriodicDelay">400</int>
+												<int key="NSPeriodicInterval">75</int>
+											</object>
+										</object>
+										<object class="NSButton" id="53155030">
+											<reference key="NSNextResponder" ref="374271042"/>
+											<int key="NSvFlags">268</int>
+											<string key="NSFrame">{{333, 173}, {19, 22}}</string>
+											<reference key="NSSuperview" ref="374271042"/>
+											<reference key="NSWindow"/>
+											<reference key="NSNextKeyView" ref="164520919"/>
+											<bool key="NSEnabled">YES</bool>
+											<object class="NSButtonCell" key="NSCell" id="66285795">
+												<int key="NSCellFlags">67239424</int>
+												<int key="NSCellFlags2">134217728</int>
+												<string key="NSContents">A</string>
+												<reference key="NSSupport" ref="24"/>
+												<reference key="NSControlView" ref="53155030"/>
+												<int key="NSButtonFlags">-2033434369</int>
+												<int key="NSButtonFlags2">134</int>
+												<string key="NSAlternateContents"/>
+												<string key="NSKeyEquivalent"/>
+												<int key="NSPeriodicDelay">400</int>
+												<int key="NSPeriodicInterval">75</int>
+											</object>
+										</object>
+										<object class="NSButton" id="164520919">
+											<reference key="NSNextResponder" ref="374271042"/>
+											<int key="NSvFlags">268</int>
+											<string key="NSFrame">{{357, 173}, {19, 22}}</string>
+											<reference key="NSSuperview" ref="374271042"/>
+											<reference key="NSWindow"/>
+											<reference key="NSNextKeyView" ref="819868675"/>
+											<bool key="NSEnabled">YES</bool>
+											<object class="NSButtonCell" key="NSCell" id="306323695">
+												<int key="NSCellFlags">67239424</int>
+												<int key="NSCellFlags2">134217728</int>
+												<string key="NSContents">B</string>
+												<reference key="NSSupport" ref="24"/>
+												<reference key="NSControlView" ref="164520919"/>
+												<int key="NSButtonFlags">-2033434369</int>
+												<int key="NSButtonFlags2">134</int>
+												<string key="NSAlternateContents"/>
+												<string key="NSKeyEquivalent"/>
+												<int key="NSPeriodicDelay">400</int>
+												<int key="NSPeriodicInterval">75</int>
+											</object>
+										</object>
+										<object class="NSButton" id="847749364">
+											<reference key="NSNextResponder" ref="374271042"/>
+											<int key="NSvFlags">268</int>
+											<string key="NSFrame">{{333, 143}, {19, 22}}</string>
+											<reference key="NSSuperview" ref="374271042"/>
+											<reference key="NSWindow"/>
+											<reference key="NSNextKeyView" ref="445600004"/>
+											<bool key="NSEnabled">YES</bool>
+											<object class="NSButtonCell" key="NSCell" id="960452273">
+												<int key="NSCellFlags">67239424</int>
+												<int key="NSCellFlags2">134217728</int>
+												<string key="NSContents">A</string>
+												<reference key="NSSupport" ref="24"/>
+												<reference key="NSControlView" ref="847749364"/>
+												<int key="NSButtonFlags">-2033434369</int>
+												<int key="NSButtonFlags2">134</int>
+												<string key="NSAlternateContents"/>
+												<string key="NSKeyEquivalent"/>
+												<int key="NSPeriodicDelay">400</int>
+												<int key="NSPeriodicInterval">75</int>
+											</object>
+										</object>
+										<object class="NSButton" id="445600004">
+											<reference key="NSNextResponder" ref="374271042"/>
+											<int key="NSvFlags">268</int>
+											<string key="NSFrame">{{357, 143}, {19, 22}}</string>
+											<reference key="NSSuperview" ref="374271042"/>
+											<reference key="NSWindow"/>
+											<reference key="NSNextKeyView" ref="631357553"/>
+											<bool key="NSEnabled">YES</bool>
+											<object class="NSButtonCell" key="NSCell" id="704380176">
+												<int key="NSCellFlags">67239424</int>
+												<int key="NSCellFlags2">134217728</int>
+												<string key="NSContents">B</string>
+												<reference key="NSSupport" ref="24"/>
+												<reference key="NSControlView" ref="445600004"/>
+												<int key="NSButtonFlags">-2033434369</int>
+												<int key="NSButtonFlags2">134</int>
+												<string key="NSAlternateContents"/>
+												<string key="NSKeyEquivalent"/>
+												<int key="NSPeriodicDelay">400</int>
+												<int key="NSPeriodicInterval">75</int>
+											</object>
+										</object>
+										<object class="NSButton" id="320370617">
+											<reference key="NSNextResponder" ref="374271042"/>
+											<int key="NSvFlags">268</int>
+											<string key="NSFrame">{{333, 113}, {19, 22}}</string>
+											<reference key="NSSuperview" ref="374271042"/>
+											<reference key="NSWindow"/>
+											<reference key="NSNextKeyView" ref="926504910"/>
+											<bool key="NSEnabled">YES</bool>
+											<object class="NSButtonCell" key="NSCell" id="985879244">
+												<int key="NSCellFlags">67239424</int>
+												<int key="NSCellFlags2">134217728</int>
+												<string key="NSContents">A</string>
+												<reference key="NSSupport" ref="24"/>
+												<reference key="NSControlView" ref="320370617"/>
+												<int key="NSButtonFlags">-2033434369</int>
+												<int key="NSButtonFlags2">134</int>
+												<string key="NSAlternateContents"/>
+												<string key="NSKeyEquivalent"/>
+												<int key="NSPeriodicDelay">400</int>
+												<int key="NSPeriodicInterval">75</int>
+											</object>
+										</object>
+										<object class="NSButton" id="926504910">
+											<reference key="NSNextResponder" ref="374271042"/>
+											<int key="NSvFlags">268</int>
+											<string key="NSFrame">{{357, 113}, {19, 22}}</string>
+											<reference key="NSSuperview" ref="374271042"/>
+											<reference key="NSWindow"/>
+											<reference key="NSNextKeyView" ref="804658191"/>
+											<bool key="NSEnabled">YES</bool>
+											<object class="NSButtonCell" key="NSCell" id="413340179">
+												<int key="NSCellFlags">67239424</int>
+												<int key="NSCellFlags2">134217728</int>
+												<string key="NSContents">B</string>
+												<reference key="NSSupport" ref="24"/>
+												<reference key="NSControlView" ref="926504910"/>
+												<int key="NSButtonFlags">-2033434369</int>
+												<int key="NSButtonFlags2">134</int>
+												<string key="NSAlternateContents"/>
+												<string key="NSKeyEquivalent"/>
+												<int key="NSPeriodicDelay">400</int>
+												<int key="NSPeriodicInterval">75</int>
+											</object>
+										</object>
+										<object class="NSButton" id="541231019">
+											<reference key="NSNextResponder" ref="374271042"/>
+											<int key="NSvFlags">268</int>
+											<string key="NSFrame">{{333, 83}, {19, 22}}</string>
+											<reference key="NSSuperview" ref="374271042"/>
+											<reference key="NSWindow"/>
+											<reference key="NSNextKeyView" ref="314175965"/>
+											<bool key="NSEnabled">YES</bool>
+											<object class="NSButtonCell" key="NSCell" id="309755555">
+												<int key="NSCellFlags">67239424</int>
+												<int key="NSCellFlags2">134217728</int>
+												<string key="NSContents">A</string>
+												<reference key="NSSupport" ref="24"/>
+												<reference key="NSControlView" ref="541231019"/>
+												<int key="NSButtonFlags">-2033434369</int>
+												<int key="NSButtonFlags2">134</int>
+												<string key="NSAlternateContents"/>
+												<string key="NSKeyEquivalent"/>
+												<int key="NSPeriodicDelay">400</int>
+												<int key="NSPeriodicInterval">75</int>
+											</object>
+										</object>
+										<object class="NSButton" id="314175965">
+											<reference key="NSNextResponder" ref="374271042"/>
+											<int key="NSvFlags">268</int>
+											<string key="NSFrame">{{357, 83}, {19, 22}}</string>
+											<reference key="NSSuperview" ref="374271042"/>
+											<reference key="NSWindow"/>
+											<reference key="NSNextKeyView" ref="398603580"/>
+											<bool key="NSEnabled">YES</bool>
+											<object class="NSButtonCell" key="NSCell" id="119202331">
+												<int key="NSCellFlags">67239424</int>
+												<int key="NSCellFlags2">134217728</int>
+												<string key="NSContents">B</string>
+												<reference key="NSSupport" ref="24"/>
+												<reference key="NSControlView" ref="314175965"/>
+												<int key="NSButtonFlags">-2033434369</int>
+												<int key="NSButtonFlags2">134</int>
+												<string key="NSAlternateContents"/>
+												<string key="NSKeyEquivalent"/>
+												<int key="NSPeriodicDelay">400</int>
+												<int key="NSPeriodicInterval">75</int>
+											</object>
+										</object>
 									</object>
-									<string key="NSFrame">{{1, 1}, {343, 235}}</string>
+									<string key="NSFrame">{{1, 1}, {387, 235}}</string>
 									<reference key="NSSuperview" ref="100093494"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="296820249"/>
 								</object>
 							</object>
-							<string key="NSFrame">{{468, 272}, {345, 251}}</string>
+							<string key="NSFrame">{{466, 271}, {389, 251}}</string>
 							<reference key="NSSuperview" ref="84049175"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="374271042"/>
@@ -1397,13 +1716,16 @@
 							<bool key="NSTransparent">NO</bool>
 						</object>
 					</object>
-					<string key="NSFrame">{{7, 11}, {1044, 535}}</string>
+					<string key="NSFrame">{{7, 11}, {1086, 535}}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="510491738"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMaxSize">{1e+13, 1e+13}</string>
+			</object>
+			<object class="NSUserDefaultsController" id="761322555">
+				<bool key="NSSharedInstance">YES</bool>
 			</object>
 		</object>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -1462,7 +1784,7 @@
 						<string key="label">title: fieldProperties.album.button1.title</string>
 						<reference key="source" ref="247758598"/>
 						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector" id="789405386">
+						<object class="NSNibBindingConnector" key="connector" id="1058153127">
 							<reference key="NSSource" ref="247758598"/>
 							<reference key="NSDestination" ref="1001"/>
 							<string key="NSLabel">title: fieldProperties.album.button1.title</string>
@@ -1478,7 +1800,7 @@
 						<string key="label">title: fieldProperties.album.button2.title</string>
 						<reference key="source" ref="859699141"/>
 						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
+						<object class="NSNibBindingConnector" key="connector" id="185183479">
 							<reference key="NSSource" ref="859699141"/>
 							<reference key="NSDestination" ref="1001"/>
 							<string key="NSLabel">title: fieldProperties.album.button2.title</string>
@@ -1994,11 +2316,1376 @@
 							<string key="NSLabel">toolTip: fieldProperties.album.button1.toolTip</string>
 							<string key="NSBinding">toolTip</string>
 							<string key="NSKeyPath">fieldProperties.album.button1.toolTip</string>
-							<reference key="NSPreviousConnector" ref="789405386"/>
+							<reference key="NSPreviousConnector" ref="1058153127"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
 					<int key="connectionID">522</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">toolTip: fieldProperties.album.button2.toolTip</string>
+						<reference key="source" ref="859699141"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="859699141"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">toolTip: fieldProperties.album.button2.toolTip</string>
+							<string key="NSBinding">toolTip</string>
+							<string key="NSKeyPath">fieldProperties.album.button2.toolTip</string>
+							<reference key="NSPreviousConnector" ref="185183479"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">525</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument: fieldProperties.artist</string>
+						<reference key="source" ref="924212422"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="627862320">
+							<reference key="NSSource" ref="924212422"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument: fieldProperties.artist</string>
+							<string key="NSBinding">argument</string>
+							<string key="NSKeyPath">fieldProperties.artist</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">669</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument2: fieldProperties.artist.button2</string>
+						<reference key="source" ref="924212422"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="124326813">
+							<reference key="NSSource" ref="924212422"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument2: fieldProperties.artist.button2</string>
+							<string key="NSBinding">argument2</string>
+							<string key="NSKeyPath">fieldProperties.artist.button2</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="627862320"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">672</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">target: self</string>
+						<reference key="source" ref="924212422"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="924212422"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">target: self</string>
+							<string key="NSBinding">target</string>
+							<string key="NSKeyPath">self</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="124326813"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">673</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: fieldProperties.artist.button2.hidden</string>
+						<reference key="source" ref="924212422"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="924212422"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">hidden: fieldProperties.artist.button2.hidden</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">fieldProperties.artist.button2.hidden</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">674</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">title: fieldProperties.artist.button2.title</string>
+						<reference key="source" ref="924212422"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="410971549">
+							<reference key="NSSource" ref="924212422"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">title: fieldProperties.artist.button2.title</string>
+							<string key="NSBinding">title</string>
+							<string key="NSKeyPath">fieldProperties.artist.button2.title</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">675</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">toolTip: fieldProperties.artist.button2.toolTip</string>
+						<reference key="source" ref="924212422"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="924212422"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">toolTip: fieldProperties.artist.button2.toolTip</string>
+							<string key="NSBinding">toolTip</string>
+							<string key="NSKeyPath">fieldProperties.artist.button2.toolTip</string>
+							<reference key="NSPreviousConnector" ref="410971549"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">677</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument: fieldProperties.artist</string>
+						<reference key="source" ref="118003281"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="626262592">
+							<reference key="NSSource" ref="118003281"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument: fieldProperties.artist</string>
+							<string key="NSBinding">argument</string>
+							<string key="NSKeyPath">fieldProperties.artist</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">678</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument2: fieldProperties.artist.button1</string>
+						<reference key="source" ref="118003281"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="917708726">
+							<reference key="NSSource" ref="118003281"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument2: fieldProperties.artist.button1</string>
+							<string key="NSBinding">argument2</string>
+							<string key="NSKeyPath">fieldProperties.artist.button1</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="626262592"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">681</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">target: self</string>
+						<reference key="source" ref="118003281"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="118003281"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">target: self</string>
+							<string key="NSBinding">target</string>
+							<string key="NSKeyPath">self</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="917708726"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">682</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: fieldProperties.artist.button1.hidden</string>
+						<reference key="source" ref="118003281"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="118003281"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">hidden: fieldProperties.artist.button1.hidden</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">fieldProperties.artist.button1.hidden</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">683</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">title: fieldProperties.artist.button1.title</string>
+						<reference key="source" ref="118003281"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="237736910">
+							<reference key="NSSource" ref="118003281"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">title: fieldProperties.artist.button1.title</string>
+							<string key="NSBinding">title</string>
+							<string key="NSKeyPath">fieldProperties.artist.button1.title</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">684</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">toolTip: fieldProperties.artist.button1.toolTip</string>
+						<reference key="source" ref="118003281"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="118003281"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">toolTip: fieldProperties.artist.button1.toolTip</string>
+							<string key="NSBinding">toolTip</string>
+							<string key="NSKeyPath">fieldProperties.artist.button1.toolTip</string>
+							<reference key="NSPreviousConnector" ref="237736910"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">688</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument: fieldProperties.composer</string>
+						<reference key="source" ref="151117710"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="65028660">
+							<reference key="NSSource" ref="151117710"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument: fieldProperties.composer</string>
+							<string key="NSBinding">argument</string>
+							<string key="NSKeyPath">fieldProperties.composer</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">689</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument2: fieldProperties.composer.button1</string>
+						<reference key="source" ref="151117710"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="115860492">
+							<reference key="NSSource" ref="151117710"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument2: fieldProperties.composer.button1</string>
+							<string key="NSBinding">argument2</string>
+							<string key="NSKeyPath">fieldProperties.composer.button1</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="65028660"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">692</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">target: self</string>
+						<reference key="source" ref="151117710"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="151117710"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">target: self</string>
+							<string key="NSBinding">target</string>
+							<string key="NSKeyPath">self</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="115860492"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">693</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: fieldProperties.composer.button1.hidden</string>
+						<reference key="source" ref="151117710"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="151117710"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">hidden: fieldProperties.composer.button1.hidden</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">fieldProperties.composer.button1.hidden</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">694</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">title: fieldProperties.composer.button1.title</string>
+						<reference key="source" ref="151117710"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="491702993">
+							<reference key="NSSource" ref="151117710"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">title: fieldProperties.composer.button1.title</string>
+							<string key="NSBinding">title</string>
+							<string key="NSKeyPath">fieldProperties.composer.button1.title</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">695</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">toolTip: fieldProperties.composer.button1.toolTip</string>
+						<reference key="source" ref="151117710"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="151117710"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">toolTip: fieldProperties.composer.button1.toolTip</string>
+							<string key="NSBinding">toolTip</string>
+							<string key="NSKeyPath">fieldProperties.composer.button1.toolTip</string>
+							<reference key="NSPreviousConnector" ref="491702993"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">697</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument: fieldProperties.composer</string>
+						<reference key="source" ref="773529061"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="554428116">
+							<reference key="NSSource" ref="773529061"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument: fieldProperties.composer</string>
+							<string key="NSBinding">argument</string>
+							<string key="NSKeyPath">fieldProperties.composer</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">698</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument2: fieldProperties.composer.button2</string>
+						<reference key="source" ref="773529061"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="271794179">
+							<reference key="NSSource" ref="773529061"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument2: fieldProperties.composer.button2</string>
+							<string key="NSBinding">argument2</string>
+							<string key="NSKeyPath">fieldProperties.composer.button2</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="554428116"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">701</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">target: self</string>
+						<reference key="source" ref="773529061"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="773529061"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">target: self</string>
+							<string key="NSBinding">target</string>
+							<string key="NSKeyPath">self</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="271794179"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">702</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: fieldProperties.composer.button2.hidden</string>
+						<reference key="source" ref="773529061"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="773529061"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">hidden: fieldProperties.composer.button2.hidden</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">fieldProperties.composer.button2.hidden</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">703</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">title: fieldProperties.composer.button2.title</string>
+						<reference key="source" ref="773529061"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="676374216">
+							<reference key="NSSource" ref="773529061"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">title: fieldProperties.composer.button2.title</string>
+							<string key="NSBinding">title</string>
+							<string key="NSKeyPath">fieldProperties.composer.button2.title</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">704</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">toolTip: fieldProperties.composer.button2.toolTip</string>
+						<reference key="source" ref="773529061"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="773529061"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">toolTip: fieldProperties.composer.button2.toolTip</string>
+							<string key="NSBinding">toolTip</string>
+							<string key="NSKeyPath">fieldProperties.composer.button2.toolTip</string>
+							<reference key="NSPreviousConnector" ref="676374216"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">708</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument: fieldProperties.performer</string>
+						<reference key="source" ref="53155030"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="64410226">
+							<reference key="NSSource" ref="53155030"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument: fieldProperties.performer</string>
+							<string key="NSBinding">argument</string>
+							<string key="NSKeyPath">fieldProperties.performer</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">709</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument2: fieldProperties.performer.button1</string>
+						<reference key="source" ref="53155030"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="1019706835">
+							<reference key="NSSource" ref="53155030"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument2: fieldProperties.performer.button1</string>
+							<string key="NSBinding">argument2</string>
+							<string key="NSKeyPath">fieldProperties.performer.button1</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="64410226"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">712</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">target: self</string>
+						<reference key="source" ref="53155030"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="53155030"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">target: self</string>
+							<string key="NSBinding">target</string>
+							<string key="NSKeyPath">self</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="1019706835"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">713</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: fieldProperties.performer.button1.hidden</string>
+						<reference key="source" ref="53155030"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="53155030"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">hidden: fieldProperties.performer.button1.hidden</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">fieldProperties.performer.button1.hidden</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">714</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">title: fieldProperties.performer.button1.title</string>
+						<reference key="source" ref="53155030"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="13100149">
+							<reference key="NSSource" ref="53155030"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">title: fieldProperties.performer.button1.title</string>
+							<string key="NSBinding">title</string>
+							<string key="NSKeyPath">fieldProperties.performer.button1.title</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">715</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">toolTip: fieldProperties.performer.button1.toolTip</string>
+						<reference key="source" ref="53155030"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="53155030"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">toolTip: fieldProperties.performer.button1.toolTip</string>
+							<string key="NSBinding">toolTip</string>
+							<string key="NSKeyPath">fieldProperties.performer.button1.toolTip</string>
+							<reference key="NSPreviousConnector" ref="13100149"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">717</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument: fieldProperties.arranger</string>
+						<reference key="source" ref="847749364"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="408631446">
+							<reference key="NSSource" ref="847749364"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument: fieldProperties.arranger</string>
+							<string key="NSBinding">argument</string>
+							<string key="NSKeyPath">fieldProperties.arranger</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">718</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument2: fieldProperties.arranger.button1</string>
+						<reference key="source" ref="847749364"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="638097379">
+							<reference key="NSSource" ref="847749364"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument2: fieldProperties.arranger.button1</string>
+							<string key="NSBinding">argument2</string>
+							<string key="NSKeyPath">fieldProperties.arranger.button1</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="408631446"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">721</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">target: self</string>
+						<reference key="source" ref="847749364"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="847749364"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">target: self</string>
+							<string key="NSBinding">target</string>
+							<string key="NSKeyPath">self</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="638097379"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">722</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: fieldProperties.arranger.button1.hidden</string>
+						<reference key="source" ref="847749364"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="847749364"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">hidden: fieldProperties.arranger.button1.hidden</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">fieldProperties.arranger.button1.hidden</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">723</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">title: fieldProperties.arranger.button1.title</string>
+						<reference key="source" ref="847749364"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="679558547">
+							<reference key="NSSource" ref="847749364"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">title: fieldProperties.arranger.button1.title</string>
+							<string key="NSBinding">title</string>
+							<string key="NSKeyPath">fieldProperties.arranger.button1.title</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">724</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">toolTip: fieldProperties.arranger.button1.toolTip</string>
+						<reference key="source" ref="847749364"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="847749364"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">toolTip: fieldProperties.arranger.button1.toolTip</string>
+							<string key="NSBinding">toolTip</string>
+							<string key="NSKeyPath">fieldProperties.arranger.button1.toolTip</string>
+							<reference key="NSPreviousConnector" ref="679558547"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">726</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument: fieldProperties.arranger</string>
+						<reference key="source" ref="445600004"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="526631729">
+							<reference key="NSSource" ref="445600004"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument: fieldProperties.arranger</string>
+							<string key="NSBinding">argument</string>
+							<string key="NSKeyPath">fieldProperties.arranger</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">727</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument2: fieldProperties.arranger.button2</string>
+						<reference key="source" ref="445600004"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="488565978">
+							<reference key="NSSource" ref="445600004"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument2: fieldProperties.arranger.button2</string>
+							<string key="NSBinding">argument2</string>
+							<string key="NSKeyPath">fieldProperties.arranger.button2</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="526631729"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">730</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">target: self</string>
+						<reference key="source" ref="445600004"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="445600004"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">target: self</string>
+							<string key="NSBinding">target</string>
+							<string key="NSKeyPath">self</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="488565978"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">731</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: fieldProperties.arranger.button2.hidden</string>
+						<reference key="source" ref="445600004"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="445600004"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">hidden: fieldProperties.arranger.button2.hidden</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">fieldProperties.arranger.button2.hidden</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">732</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">title: fieldProperties.arranger.button2.title</string>
+						<reference key="source" ref="445600004"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="965204275">
+							<reference key="NSSource" ref="445600004"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">title: fieldProperties.arranger.button2.title</string>
+							<string key="NSBinding">title</string>
+							<string key="NSKeyPath">fieldProperties.arranger.button2.title</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">733</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">toolTip: fieldProperties.arranger.button2.toolTip</string>
+						<reference key="source" ref="445600004"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="445600004"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">toolTip: fieldProperties.arranger.button2.toolTip</string>
+							<string key="NSBinding">toolTip</string>
+							<string key="NSKeyPath">fieldProperties.arranger.button2.toolTip</string>
+							<reference key="NSPreviousConnector" ref="965204275"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">735</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument: fieldProperties.products</string>
+						<reference key="source" ref="320370617"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="677748440">
+							<reference key="NSSource" ref="320370617"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument: fieldProperties.products</string>
+							<string key="NSBinding">argument</string>
+							<string key="NSKeyPath">fieldProperties.products</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">736</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument2: fieldProperties.products.button1</string>
+						<reference key="source" ref="320370617"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="541718010">
+							<reference key="NSSource" ref="320370617"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument2: fieldProperties.products.button1</string>
+							<string key="NSBinding">argument2</string>
+							<string key="NSKeyPath">fieldProperties.products.button1</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="677748440"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">739</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">target: self</string>
+						<reference key="source" ref="320370617"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="320370617"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">target: self</string>
+							<string key="NSBinding">target</string>
+							<string key="NSKeyPath">self</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="541718010"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">740</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: fieldProperties.products.button1.hidden</string>
+						<reference key="source" ref="320370617"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="320370617"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">hidden: fieldProperties.products.button1.hidden</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">fieldProperties.products.button1.hidden</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">741</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">title: fieldProperties.products.button1.title</string>
+						<reference key="source" ref="320370617"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="211833067">
+							<reference key="NSSource" ref="320370617"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">title: fieldProperties.products.button1.title</string>
+							<string key="NSBinding">title</string>
+							<string key="NSKeyPath">fieldProperties.products.button1.title</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">742</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">toolTip: fieldProperties.products.button1.toolTip</string>
+						<reference key="source" ref="320370617"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="320370617"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">toolTip: fieldProperties.products.button1.toolTip</string>
+							<string key="NSBinding">toolTip</string>
+							<string key="NSKeyPath">fieldProperties.products.button1.toolTip</string>
+							<reference key="NSPreviousConnector" ref="211833067"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">744</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument: fieldProperties.products</string>
+						<reference key="source" ref="926504910"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="145235636">
+							<reference key="NSSource" ref="926504910"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument: fieldProperties.products</string>
+							<string key="NSBinding">argument</string>
+							<string key="NSKeyPath">fieldProperties.products</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">745</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument2: fieldProperties.products.button2</string>
+						<reference key="source" ref="926504910"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="315725549">
+							<reference key="NSSource" ref="926504910"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument2: fieldProperties.products.button2</string>
+							<string key="NSBinding">argument2</string>
+							<string key="NSKeyPath">fieldProperties.products.button2</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="145235636"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">748</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">target: self</string>
+						<reference key="source" ref="926504910"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="926504910"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">target: self</string>
+							<string key="NSBinding">target</string>
+							<string key="NSKeyPath">self</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="315725549"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">749</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: fieldProperties.products.button2.hidden</string>
+						<reference key="source" ref="926504910"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="926504910"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">hidden: fieldProperties.products.button2.hidden</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">fieldProperties.products.button2.hidden</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">750</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">title: fieldProperties.products.button2.title</string>
+						<reference key="source" ref="926504910"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="985359131">
+							<reference key="NSSource" ref="926504910"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">title: fieldProperties.products.button2.title</string>
+							<string key="NSBinding">title</string>
+							<string key="NSKeyPath">fieldProperties.products.button2.title</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">751</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">toolTip: fieldProperties.products.button2.toolTip</string>
+						<reference key="source" ref="926504910"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="926504910"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">toolTip: fieldProperties.products.button2.toolTip</string>
+							<string key="NSBinding">toolTip</string>
+							<string key="NSKeyPath">fieldProperties.products.button2.toolTip</string>
+							<reference key="NSPreviousConnector" ref="985359131"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">753</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument: values</string>
+						<reference key="source" ref="309755555"/>
+						<reference key="destination" ref="761322555"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="309755555"/>
+							<reference key="NSDestination" ref="761322555"/>
+							<string key="NSLabel">argument: values</string>
+							<string key="NSBinding">argument</string>
+							<string key="NSKeyPath">values</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">755</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument: fieldProperties.publisher</string>
+						<reference key="source" ref="541231019"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="838120218">
+							<reference key="NSSource" ref="541231019"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument: fieldProperties.publisher</string>
+							<string key="NSBinding">argument</string>
+							<string key="NSKeyPath">fieldProperties.publisher</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">756</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument2: fieldProperties.publisher.button1</string>
+						<reference key="source" ref="541231019"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="623928522">
+							<reference key="NSSource" ref="541231019"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument2: fieldProperties.publisher.button1</string>
+							<string key="NSBinding">argument2</string>
+							<string key="NSKeyPath">fieldProperties.publisher.button1</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="838120218"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">759</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">target: self</string>
+						<reference key="source" ref="541231019"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="541231019"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">target: self</string>
+							<string key="NSBinding">target</string>
+							<string key="NSKeyPath">self</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="623928522"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">760</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: fieldProperties.publisher.button1.hidden</string>
+						<reference key="source" ref="541231019"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="541231019"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">hidden: fieldProperties.publisher.button1.hidden</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">fieldProperties.publisher.button1.hidden</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">761</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">title: fieldProperties.publisher.button1.title</string>
+						<reference key="source" ref="541231019"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="315441052">
+							<reference key="NSSource" ref="541231019"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">title: fieldProperties.publisher.button1.title</string>
+							<string key="NSBinding">title</string>
+							<string key="NSKeyPath">fieldProperties.publisher.button1.title</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">762</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">toolTip: fieldProperties.publisher.button1.toolTip</string>
+						<reference key="source" ref="541231019"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="541231019"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">toolTip: fieldProperties.publisher.button1.toolTip</string>
+							<string key="NSBinding">toolTip</string>
+							<string key="NSKeyPath">fieldProperties.publisher.button1.toolTip</string>
+							<reference key="NSPreviousConnector" ref="315441052"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">764</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument: fieldProperties.performer</string>
+						<reference key="source" ref="164520919"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="962446032">
+							<reference key="NSSource" ref="164520919"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument: fieldProperties.performer</string>
+							<string key="NSBinding">argument</string>
+							<string key="NSKeyPath">fieldProperties.performer</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">765</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument2: fieldProperties.performer.button2</string>
+						<reference key="source" ref="164520919"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="1034899072">
+							<reference key="NSSource" ref="164520919"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument2: fieldProperties.performer.button2</string>
+							<string key="NSBinding">argument2</string>
+							<string key="NSKeyPath">fieldProperties.performer.button2</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="962446032"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">768</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">target: self</string>
+						<reference key="source" ref="164520919"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="164520919"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">target: self</string>
+							<string key="NSBinding">target</string>
+							<string key="NSKeyPath">self</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="1034899072"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">769</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: fieldProperties.performer.button2.hidden</string>
+						<reference key="source" ref="164520919"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="164520919"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">hidden: fieldProperties.performer.button2.hidden</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">fieldProperties.performer.button2.hidden</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">770</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">title: fieldProperties.performer.button2.title</string>
+						<reference key="source" ref="164520919"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="941702644">
+							<reference key="NSSource" ref="164520919"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">title: fieldProperties.performer.button2.title</string>
+							<string key="NSBinding">title</string>
+							<string key="NSKeyPath">fieldProperties.performer.button2.title</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">771</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">toolTip: fieldProperties.performer.button2.toolTip</string>
+						<reference key="source" ref="164520919"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="164520919"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">toolTip: fieldProperties.performer.button2.toolTip</string>
+							<string key="NSBinding">toolTip</string>
+							<string key="NSKeyPath">fieldProperties.performer.button2.toolTip</string>
+							<reference key="NSPreviousConnector" ref="941702644"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">773</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument: fieldProperties.publisher</string>
+						<reference key="source" ref="314175965"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="806412933">
+							<reference key="NSSource" ref="314175965"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument: fieldProperties.publisher</string>
+							<string key="NSBinding">argument</string>
+							<string key="NSKeyPath">fieldProperties.publisher</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">774</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">argument2: fieldProperties.publisher.button2</string>
+						<reference key="source" ref="314175965"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="198892159">
+							<reference key="NSSource" ref="314175965"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">argument2: fieldProperties.publisher.button2</string>
+							<string key="NSBinding">argument2</string>
+							<string key="NSKeyPath">fieldProperties.publisher.button2</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="806412933"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">777</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">target: self</string>
+						<reference key="source" ref="314175965"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="314175965"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">target: self</string>
+							<string key="NSBinding">target</string>
+							<string key="NSKeyPath">self</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSSelectorName</string>
+								<string key="NS.object.0">changeLanguage:buttonProperties:</string>
+							</object>
+							<reference key="NSPreviousConnector" ref="198892159"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">778</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: fieldProperties.publisher.button2.hidden</string>
+						<reference key="source" ref="314175965"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="314175965"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">hidden: fieldProperties.publisher.button2.hidden</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">fieldProperties.publisher.button2.hidden</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">779</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">title: fieldProperties.publisher.button2.title</string>
+						<reference key="source" ref="314175965"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector" id="1006730305">
+							<reference key="NSSource" ref="314175965"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">title: fieldProperties.publisher.button2.title</string>
+							<string key="NSBinding">title</string>
+							<string key="NSKeyPath">fieldProperties.publisher.button2.title</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">780</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">toolTip: fieldProperties.publisher.button2.toolTip</string>
+						<reference key="source" ref="314175965"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="314175965"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">toolTip: fieldProperties.publisher.button2.toolTip</string>
+							<string key="NSBinding">toolTip</string>
+							<string key="NSKeyPath">fieldProperties.publisher.button2.toolTip</string>
+							<reference key="NSPreviousConnector" ref="1006730305"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">782</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -2042,12 +3729,12 @@
 						<reference key="object" ref="84049175"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="91079538"/>
+							<reference ref="510491738"/>
+							<reference ref="896927744"/>
 							<reference ref="345777575"/>
 							<reference ref="925537109"/>
-							<reference ref="91079538"/>
-							<reference ref="896927744"/>
 							<reference ref="100093494"/>
-							<reference ref="510491738"/>
 						</object>
 						<reference key="parent" ref="742964741"/>
 					</object>
@@ -2093,8 +3780,8 @@
 						<reference key="object" ref="896927744"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="185299946"/>
 							<reference ref="698400046"/>
+							<reference ref="185299946"/>
 						</object>
 						<reference key="parent" ref="84049175"/>
 					</object>
@@ -2143,6 +3830,16 @@
 							<reference ref="819868675"/>
 							<reference ref="974131902"/>
 							<reference ref="927979405"/>
+							<reference ref="773529061"/>
+							<reference ref="151117710"/>
+							<reference ref="53155030"/>
+							<reference ref="445600004"/>
+							<reference ref="320370617"/>
+							<reference ref="926504910"/>
+							<reference ref="541231019"/>
+							<reference ref="314175965"/>
+							<reference ref="847749364"/>
+							<reference ref="164520919"/>
 						</object>
 						<reference key="parent" ref="84049175"/>
 					</object>
@@ -2282,6 +3979,8 @@
 							<reference ref="239318511"/>
 							<reference ref="859699141"/>
 							<reference ref="247758598"/>
+							<reference ref="924212422"/>
+							<reference ref="118003281"/>
 						</object>
 						<reference key="parent" ref="84049175"/>
 					</object>
@@ -2527,10 +4226,12 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="346308647"/>
 							<reference ref="627640860"/>
-							<reference ref="7131260"/>
 							<reference ref="99828755"/>
 							<reference ref="1059137077"/>
 							<reference ref="816167973"/>
+							<reference ref="7131260"/>
+							<reference ref="922272426"/>
+							<reference ref="690592154"/>
 						</object>
 						<reference key="parent" ref="857492702"/>
 					</object>
@@ -2744,6 +4445,207 @@
 						<reference key="object" ref="604639509"/>
 						<reference key="parent" ref="1015448905"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">526</int>
+						<reference key="object" ref="151117710"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="487414598"/>
+						</object>
+						<reference key="parent" ref="100093494"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">529</int>
+						<reference key="object" ref="487414598"/>
+						<reference key="parent" ref="151117710"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">527</int>
+						<reference key="object" ref="773529061"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="120322782"/>
+						</object>
+						<reference key="parent" ref="100093494"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">528</int>
+						<reference key="object" ref="120322782"/>
+						<reference key="parent" ref="773529061"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">562</int>
+						<reference key="object" ref="118003281"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="293224545"/>
+						</object>
+						<reference key="parent" ref="510491738"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">563</int>
+						<reference key="object" ref="924212422"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="551821827"/>
+						</object>
+						<reference key="parent" ref="510491738"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">564</int>
+						<reference key="object" ref="551821827"/>
+						<reference key="parent" ref="924212422"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">565</int>
+						<reference key="object" ref="293224545"/>
+						<reference key="parent" ref="118003281"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">580</int>
+						<reference key="object" ref="53155030"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="66285795"/>
+						</object>
+						<reference key="parent" ref="100093494"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">581</int>
+						<reference key="object" ref="164520919"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="306323695"/>
+						</object>
+						<reference key="parent" ref="100093494"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">582</int>
+						<reference key="object" ref="306323695"/>
+						<reference key="parent" ref="164520919"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">583</int>
+						<reference key="object" ref="66285795"/>
+						<reference key="parent" ref="53155030"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">598</int>
+						<reference key="object" ref="847749364"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="960452273"/>
+						</object>
+						<reference key="parent" ref="100093494"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">599</int>
+						<reference key="object" ref="445600004"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="704380176"/>
+						</object>
+						<reference key="parent" ref="100093494"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">600</int>
+						<reference key="object" ref="704380176"/>
+						<reference key="parent" ref="445600004"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">601</int>
+						<reference key="object" ref="960452273"/>
+						<reference key="parent" ref="847749364"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">616</int>
+						<reference key="object" ref="320370617"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="985879244"/>
+						</object>
+						<reference key="parent" ref="100093494"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">617</int>
+						<reference key="object" ref="926504910"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="413340179"/>
+						</object>
+						<reference key="parent" ref="100093494"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">618</int>
+						<reference key="object" ref="413340179"/>
+						<reference key="parent" ref="926504910"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">619</int>
+						<reference key="object" ref="985879244"/>
+						<reference key="parent" ref="320370617"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">634</int>
+						<reference key="object" ref="541231019"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="309755555"/>
+						</object>
+						<reference key="parent" ref="100093494"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">635</int>
+						<reference key="object" ref="314175965"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="119202331"/>
+						</object>
+						<reference key="parent" ref="100093494"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">636</int>
+						<reference key="object" ref="119202331"/>
+						<reference key="parent" ref="314175965"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">637</int>
+						<reference key="object" ref="309755555"/>
+						<reference key="parent" ref="541231019"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">656</int>
+						<reference key="object" ref="922272426"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="877341694"/>
+						</object>
+						<reference key="parent" ref="57791093"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">657</int>
+						<reference key="object" ref="877341694"/>
+						<reference key="parent" ref="922272426"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">658</int>
+						<reference key="object" ref="690592154"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="17344796"/>
+						</object>
+						<reference key="parent" ref="57791093"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">659</int>
+						<reference key="object" ref="17344796"/>
+						<reference key="parent" ref="690592154"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">754</int>
+						<reference key="object" ref="761322555"/>
+						<reference key="parent" ref="0"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -2823,13 +4725,37 @@
 					<string>515.IBPluginDependency</string>
 					<string>516.IBPluginDependency</string>
 					<string>517.IBPluginDependency</string>
+					<string>526.IBPluginDependency</string>
+					<string>527.IBPluginDependency</string>
+					<string>528.IBPluginDependency</string>
+					<string>529.IBPluginDependency</string>
 					<string>55.IBPluginDependency</string>
 					<string>56.IBPluginDependency</string>
+					<string>562.IBPluginDependency</string>
+					<string>563.IBPluginDependency</string>
+					<string>564.IBPluginDependency</string>
+					<string>565.IBPluginDependency</string>
 					<string>57.IBPluginDependency</string>
 					<string>58.IBPluginDependency</string>
+					<string>580.IBPluginDependency</string>
+					<string>581.IBPluginDependency</string>
+					<string>582.IBPluginDependency</string>
+					<string>583.IBPluginDependency</string>
 					<string>59.IBPluginDependency</string>
+					<string>598.IBPluginDependency</string>
+					<string>599.IBPluginDependency</string>
 					<string>60.IBPluginDependency</string>
+					<string>600.IBPluginDependency</string>
+					<string>601.IBPluginDependency</string>
+					<string>616.IBPluginDependency</string>
+					<string>617.IBPluginDependency</string>
+					<string>618.IBPluginDependency</string>
+					<string>619.IBPluginDependency</string>
 					<string>63.IBPluginDependency</string>
+					<string>634.IBPluginDependency</string>
+					<string>635.IBPluginDependency</string>
+					<string>636.IBPluginDependency</string>
+					<string>637.IBPluginDependency</string>
 					<string>64.IBPluginDependency</string>
 					<string>65.IBPluginDependency</string>
 					<string>67.IBPluginDependency</string>
@@ -2927,6 +4853,30 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="unlocalizedProperties">
@@ -2941,7 +4891,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">522</int>
+			<int key="maxID">782</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
