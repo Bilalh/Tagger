@@ -59,9 +59,11 @@
 - (IBAction)changeTableLanguage:(id)sender 
 {
     NSInteger tag = [[sender selectedCell] tag];
-	selectedLanguage = [[[fieldProperties objectForKey:@"radio"] 
-						objectForKey: [NSString stringWithFormat:@"%d",tag ]] 
-						objectForKey: @"language"];
+	NSMutableDictionary *radio = [fieldProperties objectForKey:@"radio"];
+	
+	[radio setObject: 
+	 [[radio objectForKey: [NSString stringWithFormat:@"%d",tag ]] 
+	  objectForKey: @"language"] forKey:@"language"]; 
 	
 	[table setNeedsDisplayInRect:
 	 [table rectOfColumn:
@@ -86,11 +88,11 @@
 objectValueForTableColumn:(NSTableColumn *)aTableColumn 
 					  row:(NSInteger)rowIndex 
 {
-	NSString **sPtr = &selectedLanguage;
+	NSString *sPtr =  [[fieldProperties objectForKey:@"radio"] objectForKey:@"language"] ;
 	id result = [[tracks objectAtIndex:rowIndex] objectForKey:[aTableColumn identifier]];
 	if ([result isKindOfClass:[NSDictionary class]]){
 		return [Utility stringFromLanguages:result 
-					   selectedLanguage:sPtr];
+					   selectedLanguage: &sPtr];
 	}
 	return result;
 }
