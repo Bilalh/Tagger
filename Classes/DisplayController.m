@@ -75,6 +75,20 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[self setAlbumUrl:url];
 	[self initFieldValues];
 	return[self initWithWindowNibName:@"VgmdbDisplay"];
+	
+	NSMutableArray  *keys = [[NSMutableArray alloc] initWithObjects: 
+							 @"album",    @"artist",
+							 @"composer", @"performer",
+							 @"arranger", @"products",
+							 @"publisher", nil ];
+	
+	
+	NSDictionary* languagesDictionary = [Utility languagesDictionary];
+	
+	for (NSString *s in keys) {
+		
+	}
+	
 } 
 
 - (void)dealloc

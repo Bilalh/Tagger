@@ -17,6 +17,7 @@
 + (id) valueFromResult:(id)result
 	  selectedLanguage:(NSString*)selectedLanguage;
 
++(NSDictionary*) languagesDictionary;
 + (NSString*) stringFromLanguages:(NSDictionary*)title
 			 selectedLanguage:(NSString*)selectedLanguage;
 

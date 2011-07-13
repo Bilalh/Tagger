@@ -26,6 +26,12 @@ static NSDictionary *languages;
 				 nil];
 }
 
+
++(NSDictionary*) languagesDictionary
+{
+	return languages;
+}
+
 + (NSString*) stringFromLanguages:(NSDictionary*)title
 			 selectedLanguage:(NSString*)selectedLanguage
 {
