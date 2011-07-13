@@ -31,11 +31,28 @@
 #pragma mark Gui callback
 
 
--(IBAction) changeLanguage:(NSDictionary*)properties
-		  buttonProperties:(NSDictionary*)buttonProperties
+-(IBAction) changeLanguage:(NSMutableDictionary*)properties
+		  buttonProperties:(NSMutableDictionary*)buttonProperties
 {
 	NSLog(@"fieldProperties \n%@ ", properties);
 	NSLog(@"buttonProperties \n%@ ", buttonProperties);
+	
+	id newValue =[self valuefromDetails:[properties objectForKey:@"name"]];
+	[fieldValues setObject:newValue forKey:[properties objectForKey:@"name"]];
+	
+	// swap the language
+	NSString *tmp = [properties objectForKey:@"language"];
+	[properties setObject:[buttonProperties objectForKey:@"full"]  forKey:@"language"];
+	[buttonProperties setObject:tmp forKey:@"full"];
+	
+	
+	[buttonProperties setObject:tmp  forKey:@"full"];
+	[buttonProperties setObject:[[tmp substringWithRange:NSMakeRange(1, 1)] 
+					capitalizedString] forKey:@"title" ];
+	[buttonProperties setObject:[[tmp substringFromIndex:1] 
+					capitalizedString] forKey:@"toolTip"  ];
+	
+	
 }
 
 
@@ -213,8 +230,10 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 										   [NSString stringWithFormat:@"button%d",index] ];
 				[btn setObject:[NSNumber numberWithBool:NO] forKey:@"hidden"];
 				[btn setObject:[other objectAtIndex:i ]     forKey:@"full" ];
-				[btn setObject:[[other objectAtIndex:i] substringWithRange:NSMakeRange(1, 1) ] forKey:@"title" ];
-				[btn setObject:[[other objectAtIndex:i] substringFromIndex:1 ] forKey:@"toolTip" ];
+				[btn setObject:[[[other objectAtIndex:i] substringWithRange:NSMakeRange(1, 1)] 
+								capitalizedString] forKey:@"title" ];
+				[btn setObject:[[[other objectAtIndex:i] substringFromIndex:1] 
+								capitalizedString] forKey:@"toolTip"  ];
 				++index;
 			}
 			

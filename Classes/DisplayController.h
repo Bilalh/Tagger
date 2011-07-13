@@ -24,8 +24,8 @@
 - (id)initWithUrl:(NSString*)url
 			vgmdb:(id)vgmdbObject;
 
--(IBAction) changeLanguage:(NSDictionary*)properties
-		  buttonProperties:(NSDictionary*)buttonProperties;
+-(IBAction) changeLanguage:(NSMutableDictionary*)properties
+		  buttonProperties:(NSMutableDictionary*)buttonProperties;
 
 - (IBAction)cancelSheet:sender;
 - (IBAction)confirmSheet:sender;
