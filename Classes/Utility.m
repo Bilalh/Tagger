@@ -20,9 +20,9 @@ static NSDictionary *languages;
 {
 	[super initialize];
 	languages = [[NSDictionary alloc] initWithObjectsAndKeys:
-				 [NSArray arrayWithObjects:@"romaji",@"kanji",   nil], @"english",
-				 [NSArray arrayWithObjects:@"kanji" ,@"english", nil], @"romaji",
-				 [NSArray arrayWithObjects:@"romaji",@"english", nil], @"kanji",
+				 [NSArray arrayWithObjects:@"@romaji",@"@kanji",   nil], @"@english",
+				 [NSArray arrayWithObjects:@"@kanji" ,@"@english", nil], @"@romaji",
+				 [NSArray arrayWithObjects:@"@romaji",@"@english", nil], @"@kanji",
 				 nil];
 }
 
@@ -45,7 +45,7 @@ static NSDictionary *languages;
 	for (NSString *newLanguage in [languages objectForKey:selectedLanguage] ) {
 		result = [title objectForKey:newLanguage];
 		if (result) {
-			*selectedLanguagePtr = result;
+			*selectedLanguagePtr = newLanguage;
 			return result;	
 		}
 	}

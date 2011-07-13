@@ -16,11 +16,13 @@
 - (void) setAlbumUrl:(NSString *)url;
 - (void) initFieldValues;
 - (void) initFieldProperties;
+- (void) initButtonsState;
 
--(NSDictionary*) makeButtonProperties:(NSString*)b1Title
-						  button1Full:(NSString*)b1Full
-						 button2Title:(NSString*)b2Title
-						  button2Full:(NSString*)b2Full;
+-(NSMutableDictionary*) makeButtonProperties:(NSString*)b1Title
+								 button1Full:(NSString*)b1Full
+								button2Title:(NSString*)b2Title
+								 button2Full:(NSString*)b2Full
+										name:(NSString*)name;
 @end
 
 @implementation DisplayController
@@ -76,22 +78,10 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 	[self initFieldProperties];
 	[self setAlbumUrl:url];
-	[self initFieldValues];
-	return[self initWithWindowNibName:@"VgmdbDisplay"];
-	
-	NSMutableArray  *keys = [[NSMutableArray alloc] initWithObjects: 
-							 @"album",    @"artist",
-							 @"composer", @"performer",
-							 @"arranger", @"products",
-							 @"publisher", nil ];
-	
-	
-	NSDictionary* languagesDictionary = [Utility languagesDictionary];
-	
-	for (NSString *s in keys) {
-		
-	}
-	
+	[self initFieldValues];	
+	[self initButtonsState];
+
+	return[self initWithWindowNibName:@"VgmdbDisplay"];	
 } 
 
 - (void)dealloc
@@ -105,37 +95,38 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (void) initFieldProperties 
 {
-	NSDictionary* (^hb)() = ^{
+	NSMutableDictionary* (^hb)(NSString*) = ^(NSString *name){
 		return [self makeButtonProperties:@"R"
 							  button1Full:@"@romaji" 
 							 button2Title:@"K" 
-							  button2Full:@"@kanji"];
+							  button2Full:@"@kanji"
+									 name:name];
 	};
-	NSDictionary* (^hc)() = ^{
-		return (NSDictionary*) [[NSDictionary alloc] initWithObjectsAndKeys:
+	NSMutableDictionary* (^hc)(NSString*) = ^(NSString *name){
+		return (NSMutableDictionary*) [[NSMutableDictionary alloc] initWithObjectsAndKeys:
 								[selectedLanguage copy], @"language",
+								name, @"name",
 								nil];
 	};
 	
 	fieldProperties = [[NSDictionary alloc] initWithObjectsAndKeys:
-					   hb(), @"album"       ,
-					   hb(), @"artist"      ,
-					   hc(), @"albumArtist" ,
-					   hc(), @"year"        ,
-					   hc(), @"genre"       ,
-					   hc(), @"totalTracks" ,
-					   hc(), @"totalDisks"  ,
-					   hc(), @"catalog"     ,
-					   hc(), @"compilation" ,
-					   
-					   hb(), @"arranger"    ,
-					   hb(), @"composer"    ,
-					   hb(), @"performer"   ,
-					   hb(), @"products"    ,
-					   hb(), @"publisher"   ,
-					   hc(), @"notes"       ,
+					   hb(@"album"      ), @"album"       ,
+					   hb(@"artist"     ), @"artist"      ,
+					   hc(@"albumArtist"), @"albumArtist" ,
+					   hc(@"year"       ), @"year"        ,
+					   hc(@"genre"      ), @"genre"       ,
+					   hc(@"totalTracks"), @"totalTracks" ,
+					   hc(@"totalDisks" ), @"totalDisks"  ,
+					   hc(@"catalog"    ), @"catalog"     ,
+					   hc(@"compilation"), @"compilation" ,
+					      
+					   hb(@"arranger"   ), @"arranger"    ,
+					   hb(@"composer"   ), @"composer"    ,
+					   hb(@"performer"  ), @"performer"   ,
+					   hb(@"products"   ), @"products"    ,
+					   hb(@"publisher"  ), @"publisher"   ,
+					   hc(@"notes"      ), @"notes"       ,
 					   nil];
-	
 }
 
 -(void)setAlbumUrl:(NSString *)url
@@ -144,7 +135,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	albumDetails = [vgmdb performRubySelector:@selector(get_data:)
 								withArguments:url, 
 					nil];
-	//	NSLog(@"Album\n %@", albumDetails);
+//	NSLog(@"Album\n %@", albumDetails);
 	tracks =  [vgmdb performRubySelector:@selector(get_tracks_array:)
 						   withArguments:albumDetails, 
 			   nil];
@@ -152,17 +143,15 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 
 - (void) initFieldValues 
-{
-	//	NSLog(@"Tracks\n %@", tracks);
-	
+{	
 	NSMutableArray  *keys = [[NSMutableArray alloc] initWithObjects: 
+							 @"composer",
 							 @"album",
 							 @"artist",
 							 @"year",
 							 @"genre",
 							 @"totalDiscs",
 							 @"catalog",
-							 @"composer",
 							 @"performer",
 							 @"arranger",
 							 @"products",
@@ -172,7 +161,14 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSMutableArray *values = [[NSMutableArray alloc] initWithCapacity:[keys count]+3];
 	
 	for (NSString *key in keys) {
-		[values addObject:[self valuefromDetails:key]];
+		
+		NSString *s = [[fieldProperties objectForKey:key] objectForKey:@"language"];
+		id obj =  [Utility valueFromResult:[albumDetails objectForKey:key] 
+					   selectedLanguagePtr:&s];
+
+		[[fieldProperties objectForKey:key] setObject:s forKey:@"language"];
+		
+		[values addObject:obj];
 	}
 	
 	[keys addObject:@"albumArtist"];
@@ -184,34 +180,77 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 	fieldValues = [[NSMutableDictionary alloc] initWithObjects:values forKeys:keys];
 	
-	NSLog(@"fieldProperties\n %@", fieldProperties);
 	NSLog(@"fieldValues\n %@", fieldValues);
 	
 }
 
+- (void) initButtonsState
+{
+	NSMutableArray  *keys = [[NSMutableArray alloc] initWithObjects: 
+							 @"album",    @"artist",
+							 @"composer", @"performer",
+							 @"arranger", @"products",
+							 @"publisher", nil ];
+	
+	
+	NSDictionary* languagesDictionary = [Utility languagesDictionary];
+	
+	for (NSString *key in keys) {
+		NSArray *other = [languagesDictionary objectForKey: 
+						  [[fieldProperties objectForKey:key] objectForKey:@"language"] ];
+		int len = (int) MIN([other count], 2);
+		int i, index;
+		for (i =0, index=1; i< len; ++i) {
+			
+			id  field = [albumDetails objectForKey:key];
+			if ([field isKindOfClass: [NSArray class] ] && [field count] > 0 ){
+				field = [field objectAtIndex:0];
+			}
+			
+			NSMutableDictionary *d = field;
+			if ([d objectForKey: [other objectAtIndex:i]]){
+				NSMutableDictionary *btn= [[fieldProperties objectForKey:key] objectForKey:
+										   [NSString stringWithFormat:@"button%d",index] ];
+				[btn setObject:[NSNumber numberWithBool:NO] forKey:@"hidden"];
+				[btn setObject:[other objectAtIndex:i ]     forKey:@"full" ];
+				[btn setObject:[[other objectAtIndex:i] substringWithRange:NSMakeRange(1, 1) ] forKey:@"title" ];
+				[btn setObject:[[other objectAtIndex:i] substringFromIndex:1 ] forKey:@"toolTip" ];
+				++index;
+			}
+			
+		}
+		
+	}
+	
+}
 
--(NSDictionary*) makeButtonProperties:(NSString*)b1Title
-						  button1Full:(NSString*)b1Full
-						 button2Title:(NSString*)b2Title
-						  button2Full:(NSString*)b2Full
+
+-(NSMutableDictionary*) makeButtonProperties:(NSString*)b1Title
+								 button1Full:(NSString*)b1Full
+								button2Title:(NSString*)b2Title
+								 button2Full:(NSString*)b2Full
+										name:(NSString*)name
 {
 
 	NSMutableDictionary *button1 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
 									b1Title,       @"title",
 									b1Full,        @"full",
+									b1Full,        @"toolTip",
 									[NSNumber numberWithBool:YES],@"hidden",
 									nil];
 	
 	NSMutableDictionary *button2 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
 									b2Title,       @"title",
 									b2Full,        @"full",
+									b2Full,        @"toolTip",
 									[NSNumber numberWithBool:YES],@"hidden",
 									nil];
 	
-	return [[NSDictionary alloc] initWithObjectsAndKeys:
+	return [[NSMutableDictionary alloc] initWithObjectsAndKeys:
 			button1, @"button1",
 			button2, @"button2",
 			[selectedLanguage copy], @"language",
+			name, @"name",
 			nil];
 }
 

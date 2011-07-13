@@ -443,7 +443,7 @@
 										<object class="NSButton" id="247758598">
 											<reference key="NSNextResponder" ref="894355921"/>
 											<int key="NSvFlags">268</int>
-											<string key="NSFrame">{{389, 202}, {19, 22}}</string>
+											<string key="NSFrame">{{392, 202}, {19, 22}}</string>
 											<reference key="NSSuperview" ref="894355921"/>
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="859699141"/>
@@ -1462,7 +1462,7 @@
 						<string key="label">title: fieldProperties.album.button1.title</string>
 						<reference key="source" ref="247758598"/>
 						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
+						<object class="NSNibBindingConnector" key="connector" id="789405386">
 							<reference key="NSSource" ref="247758598"/>
 							<reference key="NSDestination" ref="1001"/>
 							<string key="NSLabel">title: fieldProperties.album.button1.title</string>
@@ -1983,6 +1983,23 @@
 					</object>
 					<int key="connectionID">520</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">toolTip: fieldProperties.album.button1.toolTip</string>
+						<reference key="source" ref="247758598"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="247758598"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">toolTip: fieldProperties.album.button1.toolTip</string>
+							<string key="NSBinding">toolTip</string>
+							<string key="NSKeyPath">fieldProperties.album.button1.toolTip</string>
+							<reference key="NSPreviousConnector" ref="789405386"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">522</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -2256,7 +2273,6 @@
 							<reference ref="601964409"/>
 							<reference ref="536582981"/>
 							<reference ref="446256374"/>
-							<reference ref="247758598"/>
 							<reference ref="770493298"/>
 							<reference ref="886931711"/>
 							<reference ref="971969800"/>
@@ -2265,6 +2281,7 @@
 							<reference ref="1015448905"/>
 							<reference ref="239318511"/>
 							<reference ref="859699141"/>
+							<reference ref="247758598"/>
 						</object>
 						<reference key="parent" ref="84049175"/>
 					</object>
@@ -2924,7 +2941,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">520</int>
+			<int key="maxID">522</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
