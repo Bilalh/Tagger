@@ -56,6 +56,19 @@
 	
 }
 
+- (IBAction)changeTableLanguage:(id)sender 
+{
+    NSInteger tag = [[sender selectedCell] tag];
+	selectedLanguage = [[[fieldProperties objectForKey:@"radio"] 
+						objectForKey: [NSNumber numberWithInteger:tag]] 
+						objectForKey: @"language"];
+	
+	[table setNeedsDisplayInRect:
+	 [table rectOfColumn:
+	  [table columnWithIdentifier:@"title"]]];
+	
+}
+
 
 #pragma mark -
 #pragma mark Table Methods 
@@ -73,9 +86,7 @@
 objectValueForTableColumn:(NSTableColumn *)aTableColumn 
 					  row:(NSInteger)rowIndex 
 {
-	
-	NSString *s =  @"@romaji";
-	NSString **sPtr = &s;
+	NSString **sPtr = &selectedLanguage;
 	id result = [[tracks objectAtIndex:rowIndex] objectForKey:[aTableColumn identifier]];
 	if ([result isKindOfClass:[NSDictionary class]]){
 		return [Utility stringFromLanguages:result 
@@ -93,6 +104,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 {
 	vgmdb            = vgmdbObject;
 	selectedLanguage = @"@english";
+	languages        = [[NSArray alloc] initWithObjects:@"@english", @"@romaji",@"@kanji" , nil];
 	
 	[self initFieldProperties];
 	[self setAlbumUrl:url];
@@ -126,6 +138,19 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 								name, @"name",
 								nil];
 	};
+
+	NSMutableDictionary* (^hd)(NSString*) = ^(NSString *value){
+		return (NSMutableDictionary*) 	[[NSMutableDictionary alloc] initWithObjectsAndKeys:
+										 [NSNumber numberWithBool:NO] , @"hidden",
+										 value, @"language",
+										 nil];
+	};
+	
+	NSMutableDictionary* radio =  hc(@"radio");
+	[radio setObject:hd(@"@english") forKey:[NSNumber numberWithInteger:0]];
+	[radio setObject:hd(@"@romaji")  forKey:[NSNumber numberWithInteger:1]];
+	[radio setObject:hd(@"@kanji")   forKey:[NSNumber numberWithInteger:2]];
+	
 	
 	fieldProperties = [[NSDictionary alloc] initWithObjectsAndKeys:
 					   hb(@"album"      ), @"album"       ,
@@ -144,6 +169,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 					   hb(@"products"   ), @"products"    ,
 					   hb(@"publisher"  ), @"publisher"   ,
 					   hc(@"notes"      ), @"notes"       ,
+					   radio             , @"radio"       ,
 					   nil];
 }
 

@@ -13,12 +13,16 @@
 	IBOutlet NSWindow    *window;
 	id vgmdb; // macruby Vgmdb class
 	NSDictionary *albumDetails; // contains all the infomation
-	NSString *selectedLanguage; 
-
+	
+	NSString *selectedLanguage; // language of the tracks
 	NSArray  *tracks; // array of tracks info
 	
 	NSMutableDictionary *fieldValues; // The value of the fields
-	NSDictionary *fieldProperties;    // The properties e.g. language
+	NSDictionary *fieldProperties;    // The properties of the fields and their buttons
+	
+	IBOutlet NSTableView *table; // table of tracks
+	NSArray *languages; // for radio buttons
+	
 }
 
 - (id)initWithUrl:(NSString*)url
@@ -29,6 +33,8 @@
 
 - (IBAction)cancelSheet:sender;
 - (IBAction)confirmSheet:sender;
+
+- (IBAction)changeTableLanguage:(id)sender;
 
 
 @end

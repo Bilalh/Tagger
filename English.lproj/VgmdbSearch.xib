@@ -428,7 +428,7 @@
 						<object class="NSTextField" id="685692781">
 							<reference key="NSNextResponder" ref="84049175"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{223, 299}, {130, 22}}</string>
+							<string key="NSFrame">{{222, 305}, {132, 22}}</string>
 							<reference key="NSSuperview" ref="84049175"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="15096824"/>
@@ -436,7 +436,7 @@
 							<object class="NSTextFieldCell" key="NSCell" id="324398189">
 								<int key="NSCellFlags">68288064</int>
 								<int key="NSCellFlags2">272630784</int>
-								<string key="NSContents">Search</string>
+								<string key="NSContents">VGmdb Search</string>
 								<object class="NSFont" key="NSSupport">
 									<string key="NSName">LucidaGrande</string>
 									<double key="NSSize">18</double>
@@ -808,12 +808,12 @@ AAMAAAABAAEAAAFTAAMAAAAEAAAFwgAAAAAACAAIAAgACAABAAEAAQABA</bytes>
 							<reference ref="80904655"/>
 							<reference ref="726039616"/>
 							<reference ref="792424313"/>
-							<reference ref="685692781"/>
 							<reference ref="1007243565"/>
 							<reference ref="656697158"/>
 							<reference ref="44622213"/>
 							<reference ref="602154248"/>
 							<reference ref="596931598"/>
+							<reference ref="685692781"/>
 						</object>
 						<reference key="parent" ref="742964741"/>
 					</object>
