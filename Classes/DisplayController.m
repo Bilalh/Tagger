@@ -34,11 +34,6 @@
 -(IBAction) changeLanguage:(NSMutableDictionary*)properties
 		  buttonProperties:(NSMutableDictionary*)buttonProperties
 {
-	NSLog(@"fieldProperties \n%@ ", properties);
-	NSLog(@"buttonProperties \n%@ ", buttonProperties);
-	
-	id newValue =[self valuefromDetails:[properties objectForKey:@"name"]];
-	[fieldValues setObject:newValue forKey:[properties objectForKey:@"name"]];
 	
 	// swap the language
 	NSString *tmp = [properties objectForKey:@"language"];
@@ -52,6 +47,12 @@
 	[buttonProperties setObject:[[tmp substringFromIndex:1] 
 					capitalizedString] forKey:@"toolTip"  ];
 	
+	id newValue =[self valuefromDetails:[properties objectForKey:@"name"]];
+	[fieldValues setObject:newValue forKey:[properties objectForKey:@"name"]];
+	
+	NSLog(@"fieldProperties \n%@ ", properties);
+	NSLog(@"buttonProperties \n%@ ", buttonProperties);
+
 	
 }
 
