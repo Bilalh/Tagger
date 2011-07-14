@@ -11,7 +11,7 @@
 		920660E213C89845003A3803 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660A613C89845003A3803 /* MainController.m */; };
 		920660E313C89845003A3803 /* VgmdbDisplay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 920660A713C89845003A3803 /* VgmdbDisplay.xib */; };
 		920660E413C89845003A3803 /* DisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660A913C89845003A3803 /* DisplayController.m */; };
-		920660E513C89845003A3803 /* TagsLib.mm in Sources */ = {isa = PBXBuildFile; fileRef = 920660AB13C89845003A3803 /* TagsLib.mm */; };
+		920660E513C89845003A3803 /* Tags.mm in Sources */ = {isa = PBXBuildFile; fileRef = 920660AB13C89845003A3803 /* Tags.mm */; };
 		920660E613C89845003A3803 /* Vgmdb.rb in Resources */ = {isa = PBXBuildFile; fileRef = 920660AC13C89845003A3803 /* Vgmdb.rb */; };
 		920660E713C89845003A3803 /* VgmdbController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660AE13C89845003A3803 /* VgmdbController.m */; };
 		920660E813C89845003A3803 /* VGTaggerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660B013C89845003A3803 /* VGTaggerAppDelegate.m */; };
@@ -33,8 +33,8 @@
 		920660A713C89845003A3803 /* VgmdbDisplay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VgmdbDisplay.xib; sourceTree = "<group>"; };
 		920660A813C89845003A3803 /* DisplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayController.h; sourceTree = "<group>"; };
 		920660A913C89845003A3803 /* DisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayController.m; sourceTree = "<group>"; };
-		920660AA13C89845003A3803 /* TagsLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagsLib.h; sourceTree = "<group>"; };
-		920660AB13C89845003A3803 /* TagsLib.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = TagsLib.mm; sourceTree = "<group>"; };
+		920660AA13C89845003A3803 /* Tags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tags.h; sourceTree = "<group>"; };
+		920660AB13C89845003A3803 /* Tags.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Tags.mm; sourceTree = "<group>"; };
 		920660AC13C89845003A3803 /* Vgmdb.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = Vgmdb.rb; sourceTree = "<group>"; };
 		920660AD13C89845003A3803 /* VgmdbController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VgmdbController.h; sourceTree = "<group>"; };
 		920660AE13C89845003A3803 /* VgmdbController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VgmdbController.m; sourceTree = "<group>"; };
@@ -206,8 +206,8 @@
 		92364F7813C8E0C900044153 /* TagLib */ = {
 			isa = PBXGroup;
 			children = (
-				920660AA13C89845003A3803 /* TagsLib.h */,
-				920660AB13C89845003A3803 /* TagsLib.mm */,
+				920660AA13C89845003A3803 /* Tags.h */,
+				920660AB13C89845003A3803 /* Tags.mm */,
 			);
 			name = TagLib;
 			sourceTree = "<group>";
@@ -317,7 +317,7 @@
 				920660E113C89845003A3803 /* main.m in Sources */,
 				920660E213C89845003A3803 /* MainController.m in Sources */,
 				920660E413C89845003A3803 /* DisplayController.m in Sources */,
-				920660E513C89845003A3803 /* TagsLib.mm in Sources */,
+				920660E513C89845003A3803 /* Tags.mm in Sources */,
 				920660E713C89845003A3803 /* VgmdbController.m in Sources */,
 				920660E813C89845003A3803 /* VGTaggerAppDelegate.m in Sources */,
 				922D30C013CA77A1008EED70 /* Utility.m in Sources */,

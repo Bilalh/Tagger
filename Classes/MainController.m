@@ -7,7 +7,7 @@
 //
 
 #import "MainController.h"
-#import "TagsLib.h"
+#import "Tags.h"
 #import "VgmdbController.h"
 #import "DisplayController.h"
 #import "FileSystemNode.h"
@@ -32,7 +32,7 @@
 
 - (IBAction) getData:(id)sender
 {
-	TagsLib *tl  = [[TagsLib alloc] initWithFilename:@"/Users/bilalh/Programming/Cocoa/VGTagger/Test Files/aac.m4a"];
+	Tags *tl  = [[Tags alloc] initWithMp4Filename:@"/Users/bilalh/Programming/Cocoa/VGTagger/Test Files/aac.m4a"];
 	
 	NSString *s  = [tl getTitle];
 	NSLog(@"Title is %@", s);
@@ -44,7 +44,7 @@
 	NSString *s = [sender stringValue] ;
 	NSLog(@"Text is Now %@", s );
 	if (s != @""){
-		TagsLib *tl  = [[TagsLib alloc] initWithFilename:@"/Users/bilalh/Programming/Cocoa/VGTagger/Test Files/aac.m4a"];
+		Tags *tl  = [[Tags alloc] initWithMp4Filename:@"/Users/bilalh/Programming/Cocoa/VGTagger/Test Files/aac.m4a"];
 		[tl setTitle:s];
 	}
 	

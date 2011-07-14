@@ -9,7 +9,6 @@
 #import <MacRuby/MacRuby.h>
 #import "DisplayController.h"
 #import "Utility.h"
-#import "Track.h"
 
 @interface DisplayController() // private methdods
 - (id)   valuefromDetails:(NSString*)key;
