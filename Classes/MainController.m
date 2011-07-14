@@ -10,14 +10,25 @@
 #import "TagsLib.h"
 #import "VgmdbController.h"
 #import "DisplayController.h"
+#import "FileSystemNode.h"
 
 @implementation MainController
 
-@synthesize title, window, vgc, ssc;
+@synthesize window, currentDirectory;
 
 
 #pragma mark -
 #pragma mark Gui Callback
+
+
+- (IBAction) open:(id)sender
+{
+	currentDirectory = [[FileSystemNode alloc] initWithURL:
+						[NSURL fileURLWithPath:@"/Users/bilalh/Movies/add/"]];
+	NSArray *children = [currentDirectory children];
+	NSLog(@"%@", children);
+	
+}
 
 - (IBAction) getData:(id)sender
 {

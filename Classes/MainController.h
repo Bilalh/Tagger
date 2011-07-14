@@ -10,20 +10,23 @@
 
 @class  VgmdbController;
 @class  DisplayController;
-
+@class  FileSystemNode;
 
 @interface MainController : NSObject {
+@private
+	IBOutlet NSTextField *title;
+	
+	VgmdbController *vgc;
+	DisplayController *ssc;
 }
-
-@property (assign) IBOutlet NSWindow	*window;
-@property (assign) IBOutlet NSTextField *title;
-
-@property VgmdbController *vgc;
-@property DisplayController *ssc;
-
 
 - (IBAction)       search:(id)sender;
 - (IBAction)      getData:(id)sender;
 - (IBAction) onTextChange:(id)sender;
+
+@property (assign) IBOutlet NSWindow	*window;
+@property FileSystemNode *currentDirectory;
+
+
 
 @end

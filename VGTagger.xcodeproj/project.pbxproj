@@ -23,7 +23,7 @@
 		922E35E313C89C51003C5913 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922E35DE13C89C51003C5913 /* MainMenu.xib */; };
 		922E35E713C89FB9003C5913 /* libtag.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.dylib */; };
 		92364F7613C8DE5200044153 /* VgmdbSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92364F7413C8DE5200044153 /* VgmdbSearch.xib */; };
-		923E39A913CB883000117536 /* Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 923E39A813CB883000117536 /* Track.m */; };
+		92FCBF5413CE83D10011F744 /* FileSystemNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FCBF5313CE83D10011F744 /* FileSystemNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,9 +83,9 @@
 		922E35DD13C89C51003C5913 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
 		922E35DF13C89C51003C5913 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = MainMenu.xib; sourceTree = "<group>"; };
 		92364F7513C8DE5200044153 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = VgmdbSearch.xib; sourceTree = "<group>"; };
-		923E39A713CB883000117536 /* Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Track.h; sourceTree = "<group>"; };
-		923E39A813CB883000117536 /* Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Track.m; sourceTree = "<group>"; };
 		925CE81D13C3BD6D009D6D94 /* VGTagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VGTagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		92FCBF5213CE83D10011F744 /* FileSystemNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystemNode.h; sourceTree = "<group>"; };
+		92FCBF5313CE83D10011F744 /* FileSystemNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystemNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,8 +111,8 @@
 				920660A613C89845003A3803 /* MainController.m */,
 				920660AF13C89845003A3803 /* VGTaggerAppDelegate.h */,
 				920660B013C89845003A3803 /* VGTaggerAppDelegate.m */,
-				923E39A713CB883000117536 /* Track.h */,
-				923E39A813CB883000117536 /* Track.m */,
+				92FCBF5213CE83D10011F744 /* FileSystemNode.h */,
+				92FCBF5313CE83D10011F744 /* FileSystemNode.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -321,7 +321,7 @@
 				920660E713C89845003A3803 /* VgmdbController.m in Sources */,
 				920660E813C89845003A3803 /* VGTaggerAppDelegate.m in Sources */,
 				922D30C013CA77A1008EED70 /* Utility.m in Sources */,
-				923E39A913CB883000117536 /* Track.m in Sources */,
+				92FCBF5413CE83D10011F744 /* FileSystemNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
