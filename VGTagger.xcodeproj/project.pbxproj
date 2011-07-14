@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9201935713CF6D050085E167 /* MP4Tags.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9201935613CF6D050085E167 /* MP4Tags.mm */; };
 		920660E113C89845003A3803 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660A413C89845003A3803 /* main.m */; };
 		920660E213C89845003A3803 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660A613C89845003A3803 /* MainController.m */; };
 		920660E313C89845003A3803 /* VgmdbDisplay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 920660A713C89845003A3803 /* VgmdbDisplay.xib */; };
@@ -27,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9201935513CF6D050085E167 /* MP4Tags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MP4Tags.h; sourceTree = "<group>"; };
+		9201935613CF6D050085E167 /* MP4Tags.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MP4Tags.mm; sourceTree = "<group>"; };
+		9201935813CF91DC0085E167 /* TagStructs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagStructs.h; sourceTree = "<group>"; };
 		920660A413C89845003A3803 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		920660A513C89845003A3803 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		920660A613C89845003A3803 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
@@ -208,6 +212,9 @@
 			children = (
 				920660AA13C89845003A3803 /* Tags.h */,
 				920660AB13C89845003A3803 /* Tags.mm */,
+				9201935513CF6D050085E167 /* MP4Tags.h */,
+				9201935613CF6D050085E167 /* MP4Tags.mm */,
+				9201935813CF91DC0085E167 /* TagStructs.h */,
 			);
 			name = TagLib;
 			sourceTree = "<group>";
@@ -322,6 +329,7 @@
 				920660E813C89845003A3803 /* VGTaggerAppDelegate.m in Sources */,
 				922D30C013CA77A1008EED70 /* Utility.m in Sources */,
 				92FCBF5413CE83D10011F744 /* FileSystemNode.m in Sources */,
+				9201935713CF6D050085E167 /* MP4Tags.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

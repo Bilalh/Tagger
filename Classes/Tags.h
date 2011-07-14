@@ -6,16 +6,15 @@
 //  Copyright 2011 St. Andrews KY16 9XW. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 
 
 struct FileData;
 @interface Tags : NSObject {
-	@private
 	struct FileData* data;
 }
 
--(id) initWithMp4Filename:(NSString *)filename;
+-(id) initWithFilename:(NSString *)filename;
 -(NSString*)getTitle;
 -(void) setTitle:(NSString*)newText;
 

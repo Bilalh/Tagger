@@ -7,6 +7,7 @@
 //
 
 #import "Tags.h"
+#import "TagStructs.h"
 
 #include <iostream>
 #include <string>
@@ -18,21 +19,17 @@
 #include <mpegfile.h>
 
 
-union FileDetails{
-	TagLib::MP4::File  *mp4;
-	TagLib::MPEG::File *mpeg;
-};
-
-struct FileData{
-	TagLib::File *file;
-	FileDetails *f;
-};
-
 using namespace TagLib;
 @implementation Tags
 
+- (id) init
+{
+	[self doesNotRecognizeSelector:_cmd];
+	return nil;
+}
 
-- (id) initWithMp4Filename:(NSString *)filename{
+- (id) initWithFilename:(NSString *)filename
+{
 	self = [super init];
 	if(self) {
 		if(filename == nil) {
@@ -40,8 +37,6 @@ using namespace TagLib;
 			return nil;
 		} else {
 			data = new FileData;
-			data->f->mp4 = new MP4::File([filename UTF8String]);
-			data->file = data->f->mp4;
 		}
 	}
 	
@@ -50,26 +45,12 @@ using namespace TagLib;
 
 
 - (NSString*) getTitle{
-		
-	MP4::Tag *t = data->f->mp4->tag();
-	MP4::ItemListMap &map =  t->itemListMap();
-	const char *cstring = map["\251nam"].toStringList().front().toCString(); 
-	return [NSString stringWithUTF8String:cstring];
+	NSLog(@"Abstact class called");
+	return nil;
 }
 
 - (void) setTitle:(NSString*) newText{
-	 
-	MP4::Tag *t = data->f->mp4->tag();
-	MP4::ItemListMap &map =  t->itemListMap();
-	
-	String s = String([newText UTF8String], String::UTF8);
-	std::cout << s << std::endl;
-	
-	String key = String("\251nam");
-	map.insert(key, MP4::Item::Item(s));
-	
-	data->file->save();
-	NSLog(@"Saved");
+	NSLog(@"Abstact class called");
 }
 
 
