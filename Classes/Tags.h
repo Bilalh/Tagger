@@ -15,7 +15,15 @@ struct FileData;
 }
 
 -(id) initWithFilename:(NSString *)filename;
--(NSString*)getTitle;
--(void) setTitle:(NSString*)newText;
+-(void) initFields;
+
+
+@property (assign) NSString *title; 
+@property (assign) NSString *artist; 
+@property (assign) NSString *album; 
+@property (assign) NSString *comment;
+@property (assign) NSString *genre;
+@property (assign) NSUInteger year;
+@property (assign) NSUInteger track; 
 
 @end

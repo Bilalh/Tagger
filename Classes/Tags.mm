@@ -8,19 +8,24 @@
 
 #import "Tags.h"
 #import "TagStructs.h"
+#import "NSString+Convert.h"
 
-#include <iostream>
-#include <string>
-
-#include <fileref.h>
 #include <mp4tag.h> 
 #include <mp4file.h>
-
 #include <mpegfile.h>
 
 
+@interface Tags() // private methdods
+#pragma mark private
+@end
+#pragma mark -
+
 using namespace TagLib;
 @implementation Tags
+@synthesize title, artist, album, comment, genre, year, track;
+
+#pragma mark -
+#pragma mark Init
 
 - (id) init
 {
@@ -43,14 +48,16 @@ using namespace TagLib;
 	return self;
 }
 
-
-- (NSString*) getTitle{
-	NSLog(@"Abstact class called");
-	return nil;
+- (void) initFields
+{
+	NSLog(@"initFields");
+	const Tag *t = data->file->tag();
+	title = [[NSString  alloc] initWithTagString:t->title()];
 }
 
+
 - (void) setTitle:(NSString*) newText{
-	NSLog(@"Abstact class called");
+	NSLog(@"Abstact class method setTitle");
 }
 
 

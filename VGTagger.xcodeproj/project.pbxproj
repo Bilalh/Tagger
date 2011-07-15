@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9201935713CF6D050085E167 /* MP4Tags.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9201935613CF6D050085E167 /* MP4Tags.mm */; };
+		9201935C13CFBBC20085E167 /* NSString+Convert.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9201935B13CFBBC20085E167 /* NSString+Convert.mm */; };
 		920660E113C89845003A3803 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660A413C89845003A3803 /* main.m */; };
 		920660E213C89845003A3803 /* MainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660A613C89845003A3803 /* MainController.m */; };
 		920660E313C89845003A3803 /* VgmdbDisplay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 920660A713C89845003A3803 /* VgmdbDisplay.xib */; };
@@ -31,6 +32,8 @@
 		9201935513CF6D050085E167 /* MP4Tags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MP4Tags.h; sourceTree = "<group>"; };
 		9201935613CF6D050085E167 /* MP4Tags.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MP4Tags.mm; sourceTree = "<group>"; };
 		9201935813CF91DC0085E167 /* TagStructs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagStructs.h; sourceTree = "<group>"; };
+		9201935A13CFBBC20085E167 /* NSString+Convert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Convert.h"; sourceTree = "<group>"; };
+		9201935B13CFBBC20085E167 /* NSString+Convert.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+Convert.mm"; sourceTree = "<group>"; };
 		920660A413C89845003A3803 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		920660A513C89845003A3803 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		920660A613C89845003A3803 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
@@ -106,17 +109,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9201935913CF95FA0085E167 /* IO */ = {
+			isa = PBXGroup;
+			children = (
+				92FCBF5213CE83D10011F744 /* FileSystemNode.h */,
+				92FCBF5313CE83D10011F744 /* FileSystemNode.m */,
+			);
+			name = IO;
+			sourceTree = "<group>";
+		};
 		920660A313C89845003A3803 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				92364F7813C8E0C900044153 /* TagLib */,
+				9201935913CF95FA0085E167 /* IO */,
 				92364F7913C8E0E900044153 /* Vgmdb */,
 				920660A513C89845003A3803 /* MainController.h */,
 				920660A613C89845003A3803 /* MainController.m */,
 				920660AF13C89845003A3803 /* VGTaggerAppDelegate.h */,
 				920660B013C89845003A3803 /* VGTaggerAppDelegate.m */,
-				92FCBF5213CE83D10011F744 /* FileSystemNode.h */,
-				92FCBF5313CE83D10011F744 /* FileSystemNode.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -211,10 +222,12 @@
 			isa = PBXGroup;
 			children = (
 				920660AA13C89845003A3803 /* Tags.h */,
-				920660AB13C89845003A3803 /* Tags.mm */,
-				9201935513CF6D050085E167 /* MP4Tags.h */,
 				9201935613CF6D050085E167 /* MP4Tags.mm */,
+				9201935513CF6D050085E167 /* MP4Tags.h */,
+				920660AB13C89845003A3803 /* Tags.mm */,
 				9201935813CF91DC0085E167 /* TagStructs.h */,
+				9201935A13CFBBC20085E167 /* NSString+Convert.h */,
+				9201935B13CFBBC20085E167 /* NSString+Convert.mm */,
 			);
 			name = TagLib;
 			sourceTree = "<group>";
@@ -330,6 +343,7 @@
 				922D30C013CA77A1008EED70 /* Utility.m in Sources */,
 				92FCBF5413CE83D10011F744 /* FileSystemNode.m in Sources */,
 				9201935713CF6D050085E167 /* MP4Tags.mm in Sources */,
+				9201935C13CFBBC20085E167 /* NSString+Convert.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

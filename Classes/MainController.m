@@ -35,10 +35,7 @@
 - (IBAction) getData:(id)sender
 {
 	Tags *tl  = [[MP4Tags alloc] initWithFilename:@"/Users/bilalh/Programming/Cocoa/VGTagger/Test Files/aac.m4a"];
-	
-	NSString *s  = [tl getTitle];
-	NSLog(@"Title is %@", s);
-	[title setStringValue:s];
+	[title setStringValue:tl.title];
 }
 
 - (IBAction)onTextChange:(id)sender

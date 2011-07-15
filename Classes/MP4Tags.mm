@@ -22,21 +22,22 @@ using namespace TagLib;
     if (self) {
 		data->f->mp4 = new MP4::File([filename UTF8String]);
 		data->file = data->f->mp4;
+		[super initFields];
     }
     
     return self;	
 }
 
 
-- (NSString*) getTitle{
+- (NSString*) getTitleTest{
 	
 	MP4::Tag *t = data->f->mp4->tag();
 	MP4::ItemListMap &map =  t->itemListMap();
-	const char *cstring = map["\251nam"].toStringList().front().toCString(); 
+	const char *cstring = map["\251nam"].toStringList().front().toCString(true); 
 	return [NSString stringWithUTF8String:cstring];
 }
 
-- (void) setTitle:(NSString*) newText{
+- (void) setTitleTest:(NSString*) newText{
 	
 	MP4::Tag *t = data->f->mp4->tag();
 	MP4::ItemListMap &map =  t->itemListMap();
