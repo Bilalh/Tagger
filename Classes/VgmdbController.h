@@ -27,7 +27,16 @@
 }
 
 
+ /**  
+  * Search vgmdb for albums 
+  * @param sender a object can repsonds to stringValue
+  */
 - (IBAction) searchForAlbums:(id)sender;
+
+ /**  
+  * Select the specifed album and display the data of it
+  * @param sender unused
+  */
 - (IBAction) selectAlbum:(id)sender;
 
 - (IBAction)findSelectedButton:(id)sender;

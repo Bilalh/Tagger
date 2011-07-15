@@ -23,16 +23,27 @@
 	IBOutlet NSTableView *table; // table of tracks	
 }
 
+
+
+
+ /**  Setup (Only method for setup)
+  *
+  * @param url         The url of the result vgmdb page
+  * @param vgmdbObject The pointer to a vgmdb object
+  *
+  * @return An new Display Controller 
+  */
 - (id)initWithUrl:(NSString*)url
 			vgmdb:(id)vgmdbObject;
 
+// change the language
 -(IBAction) changeLanguage:(NSMutableDictionary*)properties
 		  buttonProperties:(NSMutableDictionary*)buttonProperties;
 
+- (IBAction)changeTableLanguage:(id)sender;
 - (IBAction)cancelSheet:sender;
 - (IBAction)confirmSheet:sender;
 
-- (IBAction)changeTableLanguage:(id)sender;
 
 
 @end

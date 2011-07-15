@@ -10,6 +10,9 @@
 #include <tstring.h> 
 
 @interface NSString (NSString_Convert)
+
+// Goes between a NSString and a TagLib::String
+
 - (NSString*) initWithTagString:(TagLib::String) cppString;
 + (NSString*) stringWithTagString:(TagLib::String) cppString;
 

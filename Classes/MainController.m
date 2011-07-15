@@ -36,6 +36,7 @@
 {
 	Tags *tl  = [[MP4Tags alloc] initWithFilename:@"/Users/bilalh/Programming/Cocoa/VGTagger/Test Files/aac.m4a"];
 	[title setStringValue:tl.title];
+	NSLog(@"%lu",tl.year);
 }
 
 - (IBAction)onTextChange:(id)sender

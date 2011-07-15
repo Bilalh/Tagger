@@ -48,11 +48,19 @@ using namespace TagLib;
 	return self;
 }
 
+
 - (void) initFields
 {
 	NSLog(@"initFields");
 	const Tag *t = data->file->tag();
-	title = [[NSString  alloc] initWithTagString:t->title()];
+	title   = [[NSString  alloc] initWithTagString:t->title()  ];
+	title   = [[NSString  alloc] initWithTagString:t->title()  ];
+	artist  = [[NSString  alloc] initWithTagString:t->artist() ];
+	album   = [[NSString  alloc] initWithTagString:t->album()  ];
+	comment = [[NSString  alloc] initWithTagString:t->comment()];
+	genre   = [[NSString  alloc] initWithTagString:t->genre()  ];
+	year    = t->year();
+	track   = t->track();
 }
 
 

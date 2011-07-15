@@ -14,7 +14,22 @@ struct FileData;
 	struct FileData* data;
 }
 
+
+
+ /**  
+  * Creates and finds the tags of the specifed file
+  * should be used on one of the subclass e.g MP4Tag
+  *
+  * @param filename The filepath to the file
+  *
+  * @return A new Tags 
+  */
 -(id) initWithFilename:(NSString *)filename;
+
+
+ /**  
+  *  Gives value to the fields class should call this method at init
+  */
 -(void) initFields;
 
 
