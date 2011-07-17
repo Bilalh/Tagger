@@ -1,20 +1,28 @@
-//
-//  ImageAndTextCell.h
-//
-//  Copyright © 2006, Apple. All rights reserved.
-//
 
 #import "FileSystemNode.h"
+#import "Tags.h"
+#import "MP4Tags.h"
 
 @interface FileSystemNode()
--(BOOL)isaDirectory:(NSURL*)url;
+- (BOOL) isaDirectory:(NSURL*)url;
 @end
 
 @implementation FileSystemNode
+@synthesize URL = _url, tags;
+@dynamic displayName, children, isDirectory, icon, labelColor;
 
 - (id)initWithURL:(NSURL *)url {
     if ((self = [super init])) {
         _url = [url retain];
+		if (! [self isDirectory] ){
+			NSString *path = [url path];
+			
+			if ([path hasSuffix:@"m4a"]){
+				tags = [[MP4Tags alloc] initWithFilename:path];
+			}else{
+				tags = [[Tags alloc] initWithFilename:path];	
+			}
+		}
     }
     return self;
 }
@@ -29,9 +37,6 @@
 - (NSString *)description {
     return [NSString stringWithFormat:@"%@ - %@", super.description, _url];
 }
-
-@synthesize URL = _url;
-@dynamic displayName, children, isDirectory, icon, labelColor;
 
 - (NSString *)displayName {
     id value = nil;

@@ -1,12 +1,9 @@
-//
-//  ImageAndTextCell.h
-//
-//  Copyright © 2006, Apple. All rights reserved.
-//
 
 #import <Cocoa/Cocoa.h>
+@class Tags;
 
 // This is a simple wrapper around the file system. Its main purpose is to cache children.
+// It also keeps the tags of audio file (only m4a at the moment)
 @interface FileSystemNode : NSObject {
 @private
     NSURL *_url;
@@ -17,12 +14,16 @@
 // The designated initializer
 - (id)initWithURL:(NSURL *)url;
 
-@property(readonly, assign) NSURL *URL;
-@property(readonly, copy) NSString *displayName;
-@property(readonly, retain) NSImage *icon;
-@property(readonly, retain) NSArray *children;
-@property(readonly) BOOL isDirectory;
-@property(readonly, retain) NSColor *labelColor;
+@property(readonly, assign) NSURL    *URL;
+@property(readonly, copy)   NSString *displayName;
+@property(readonly, retain) NSImage  *icon;
+@property(readonly, retain) NSArray  *children;
+@property(readonly)         BOOL      isDirectory;
+@property(readonly, retain) NSColor  *labelColor;
+
+/** The audio tags such as title */
+@property(readonly, assign) Tags      *tags;
+
 
 - (void)invalidateChildren;
 

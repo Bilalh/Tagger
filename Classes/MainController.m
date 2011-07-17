@@ -39,12 +39,17 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 					  row:(NSInteger)rowIndex 
 {
 	NSArray *children = [[directoryStack lastObject] children];
-	if ( ![[aTableColumn identifier] isEqualToString:@"filename"] &&  [[children objectAtIndex:rowIndex] isDirectory]){
+	FileSystemNode *node = [children objectAtIndex:rowIndex];
+	
+	if ( [[aTableColumn identifier] isEqualToString:@"filename"] ){
+		return [node displayName];
+		
+	}else if([node isDirectory]){
 		return @"";
 	}
-	
-	NSString *name = [[children objectAtIndex:rowIndex] displayName];
-	return name;
+//	id a = [node.tags valueForKey:[aTableColumn identifier]]; 
+//	NSLog(@"%@",a);
+	return  node.tags.title;
 }
 
 
@@ -72,7 +77,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 - (IBAction) open:(id)sender
 {
 	FileSystemNode *currentDirectory = [[FileSystemNode alloc] initWithURL:
-						[NSURL fileURLWithPath:@"/Users/bilalh/Movies/add/higher"]];
+						[NSURL fileURLWithPath:@"/Users/bilalh/Movies/add/start"]];
 	[self.directoryStack push:currentDirectory];
 
 	NSArray *children = [currentDirectory children];
@@ -127,7 +132,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 {
 	directoryStack = [[NSMutableArray alloc] init];
 	FileSystemNode *currentDirectory = [[FileSystemNode alloc] initWithURL:
-										[NSURL fileURLWithPath:@"/Users/bilalh/Movies/add/higher"]];
+										[NSURL fileURLWithPath:@"/Users/bilalh/Movies/add/start"]];
 	[self.directoryStack push:currentDirectory];
 }
 

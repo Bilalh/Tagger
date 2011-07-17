@@ -15,7 +15,6 @@ struct FileData;
 }
 
 
-
  /**  
   * Creates and finds the tags of the specifed file
   * should be used on one of the subclass e.g MP4Tag
