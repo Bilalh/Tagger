@@ -9,11 +9,11 @@
 #import "MainController.h"
 #import "Tags.h"
 #import "MP4Tags.h"
-
 #import "VgmdbController.h"
 #import "DisplayController.h"
 #import "FileSystemNode.h"
 #import "NSMutableArray+Stack.h"
+#import "ImageAndTextCell.h"
 
 @interface MainController()
 
@@ -23,7 +23,7 @@
 @end
 
 @implementation MainController
-@synthesize window, directoryStack;
+@synthesize window, directoryStack, table;
 
 #pragma mark -
 #pragma mark Table Methods 
@@ -38,29 +38,27 @@
 objectValueForTableColumn:(NSTableColumn *)aTableColumn 
 					  row:(NSInteger)rowIndex 
 {
-//	[aTableColumn identifier]
-	
 	NSArray *children = [[directoryStack lastObject] children];
-	NSImage *icon = [[children objectAtIndex:rowIndex] icon];
-	[icon setSize:NSMakeSize(16, 16)];
+	if ( ![[aTableColumn identifier] isEqualToString:@"filename"] &&  [[children objectAtIndex:rowIndex] isDirectory]){
+		return @"";
+	}
 	
 	NSString *name = [[children objectAtIndex:rowIndex] displayName];
+	return name;
+}
 
-	NSTextAttachment *attachment;
-    attachment = [[[NSTextAttachment alloc] init] autorelease];
-	
-    NSCell *cell = (NSCell*) [attachment attachmentCell]; // cast to quiet compiler warning
-    [cell setImage: icon];
-	
-    NSAttributedString *attrname;
-    attrname = [[NSAttributedString alloc] initWithString: name];
-	
-    NSMutableAttributedString *prettyName;
-	// cast to quiet compiler warning
-    prettyName = (id)[NSMutableAttributedString attributedStringWithAttachment:attachment]; 
-    [prettyName appendAttributedString: attrname];
-	
-    return prettyName;	
+
+- (void)tableView:(NSTableView *)tableView 
+  willDisplayCell:(id)cell 
+   forTableColumn:(NSTableColumn *)tableColumn
+			  row:(NSInteger)rowIndex
+{
+	if ([[tableColumn identifier] isEqualToString:@"filename"]){
+		NSArray *children = [[directoryStack lastObject] children];
+		NSImage *icon = [[children objectAtIndex:rowIndex] icon];
+		[icon setSize:NSMakeSize(16, 16)];
+		[(ImageAndTextCell*)cell setImage: icon];		
+	}
 }
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
@@ -115,7 +113,15 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 }
 
 #pragma mark -
-#pragma mark Alloc
+#pragma mark Alloc/init
+
+-(void) awakeFromNib
+{
+//	NSTableColumn* tableColumn = [self.table tableColumnWithIdentifier: @"filename"];
+//    ImageAndTextCell* imageAndTextCell = [[[ImageAndTextCell alloc] init] autorelease];
+//    [imageAndTextCell setEditable: YES];
+//    [tableColumn setDataCell:imageAndTextCell];
+}
 
 -(void) initDirectoryTable
 {

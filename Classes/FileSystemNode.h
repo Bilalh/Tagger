@@ -1,3 +1,9 @@
+//
+//  ImageAndTextCell.h
+//
+//  Copyright © 2006, Apple. All rights reserved.
+//
+
 #import <Cocoa/Cocoa.h>
 
 // This is a simple wrapper around the file system. Its main purpose is to cache children.

@@ -1,3 +1,8 @@
+//
+//  ImageAndTextCell.h
+//
+//  Copyright © 2006, Apple. All rights reserved.
+//
 
 #import "FileSystemNode.h"
 
