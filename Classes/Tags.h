@@ -37,7 +37,7 @@ struct FileData;
 @property (assign) NSString *album; 
 @property (assign) NSString *comment;
 @property (assign) NSString *genre;
-@property (assign) NSUInteger year;
-@property (assign) NSUInteger track; 
+@property (assign) NSNumber *year;
+@property (assign) NSNumber *track; 
 
 @end
