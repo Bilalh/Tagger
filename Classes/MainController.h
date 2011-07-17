@@ -15,7 +15,6 @@
 @interface MainController : NSObject {
 @private
 	IBOutlet NSTextField *title;
-	
 	VgmdbController *vgc;
 	DisplayController *ssc;
 }
@@ -25,8 +24,5 @@
 - (IBAction) onTextChange:(id)sender;
 
 @property (assign) IBOutlet NSWindow	*window;
-@property FileSystemNode *currentDirectory;
-
-
 
 @end

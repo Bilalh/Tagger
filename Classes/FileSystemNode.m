@@ -1,6 +1,10 @@
 
 #import "FileSystemNode.h"
 
+@interface FileSystemNode()
+-(BOOL)isaDirectory:(NSURL*)url;
+@end
+
 @implementation FileSystemNode
 
 - (id)initWithURL:(NSURL *)url {
@@ -39,8 +43,12 @@
 }
 
 - (BOOL)isDirectory {
+	return [self isaDirectory:_url];
+}
+
+- (BOOL)isaDirectory:(NSURL*)url {
     id value = nil;
-    [_url getResourceValue:&value forKey:NSURLIsDirectoryKey error:nil];
+    [url getResourceValue:&value forKey:NSURLIsDirectoryKey error:nil];
     return [value boolValue];
 }
 
@@ -84,7 +92,16 @@
                         node = [_children objectAtIndex:oldIndex];
                     }
                 }
-                [newChildren addObject:node];
+				//TODO make user passable block
+				if ([[node displayName] hasSuffix:@"mp3"]  || 
+					[[node displayName] hasSuffix:@"m4a"]  || 
+//					[[node displayName] hasSuffix:@"flac"] || 
+//					[[node displayName] hasSuffix:@"ogg"]  || 
+//					[[node displayName] hasSuffix:@"wma"]  || 
+					[self isaDirectory:node.URL ] ){
+					[newChildren addObject:node];
+				}
+
             } else if (enumeratorResult == kCFURLEnumeratorError) {
                 // A possible enhancement would be to present error-based items to the user.
             }

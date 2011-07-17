@@ -22,7 +22,7 @@ using namespace TagLib;
     if (self) {
 		data->f->mp4 = new MP4::File([filename UTF8String]);
 		data->file = data->f->mp4;
-		[super initFields];
+		[self initFields];
     }
     
     return self;	
