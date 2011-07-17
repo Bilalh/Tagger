@@ -47,9 +47,9 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}else if([node isDirectory]){
 		return @"";
 	}
-//	id a = [node.tags valueForKey:[aTableColumn identifier]]; 
-//	NSLog(@"%@",a);
-	return  node.tags.title;
+	
+	SEL selector = NSSelectorFromString([aTableColumn identifier]);
+	return [node.tags performSelector:selector];
 }
 
 
