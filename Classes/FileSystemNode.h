@@ -9,6 +9,7 @@
     NSURL *_url;
     NSArray *_children;
     BOOL _childrenDirty;
+	NSMutableArray* _parentNodes;
 }
 
 // The designated initializer
@@ -25,6 +26,11 @@
 @property(readonly, assign) Tags      *tags;
 
 
+ /**  
+  * Finds all the parent nodes
+  * @return A array containing all the parent nodes 
+  */
+- (NSMutableArray*)parentNodes;
 - (void)invalidateChildren;
 
 @end

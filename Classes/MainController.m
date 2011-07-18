@@ -23,7 +23,7 @@
 @end
 
 @implementation MainController
-@synthesize window, directoryStack, table;
+@synthesize window, directoryStack, table, parentArray;
 
 #pragma mark -
 #pragma mark Table Methods 
@@ -89,7 +89,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 {
 	Tags *tl  = [[MP4Tags alloc] initWithFilename:@"/Users/bilalh/Programming/Projects/VGTagger/Test Files/aac.m4a"];
 	[title setStringValue:tl.title];
-	NSLog(@"%lu",tl.year);
+	NSLog(@"%@",tl.year);
 }
 
 - (IBAction)onTextChange:(id)sender
@@ -131,9 +131,22 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 -(void) initDirectoryTable
 {
 	directoryStack = [[NSMutableArray alloc] init];
+	parentArray    = [[NSMutableArray alloc] init];
+
 	FileSystemNode *currentDirectory = [[FileSystemNode alloc] initWithURL:
 										[NSURL fileURLWithPath:@"/Users/bilalh/Movies/add/start"]];
-	[self.directoryStack push:currentDirectory];
+	[directoryStack push:currentDirectory];
+	
+//	NSString *path = [[currentDirectory.URL path] stringByStandardizingPath];
+//	[parentArray removeAllObjects];
+//	[parentArray addObject:path];
+//	while (![path isEqualToString:@"/"] ){
+//		path = [path stringByDeletingLastPathComponent];
+//		if ([path isEqualToString:@""]) break;
+//		[parentArray addObject:path];
+//	}
+//	NSLog(@"%@", parentArray);
+	NSLog(@"%@", [currentDirectory parentNodes]);
 }
 
 - (id)init

@@ -25,5 +25,7 @@
 
 @property (assign) IBOutlet NSWindow	*window;
 @property (assign) IBOutlet NSTableView *table;
+@property (assign) NSMutableArray       *parentArray;
+
 
 @end

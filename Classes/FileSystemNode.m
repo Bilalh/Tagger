@@ -11,6 +11,9 @@
 @synthesize URL = _url, tags;
 @dynamic displayName, children, isDirectory, icon, labelColor;
 
+#pragma mark -
+#pragma mark Alloc
+
 - (id)initWithURL:(NSURL *)url {
     if ((self = [super init])) {
         _url = [url retain];
@@ -34,6 +37,9 @@
     [super dealloc];
 }
 
+#pragma mark -
+#pragma mark Display
+
 - (NSString *)description {
     return [NSString stringWithFormat:@"%@ - %@", super.description, _url];
 }
@@ -52,6 +58,15 @@
     return [[NSWorkspace sharedWorkspace] iconForFile:[_url path]];
 }
 
+- (NSColor *)labelColor {
+    id value = nil;
+    [_url getResourceValue:&value forKey:NSURLLabelColorKey error:nil];
+    return value;
+}
+
+#pragma mark -
+#pragma mark Metadata
+
 - (BOOL)isDirectory {
 	return [self isaDirectory:_url];
 }
@@ -60,12 +75,6 @@
     id value = nil;
     [url getResourceValue:&value forKey:NSURLIsDirectoryKey error:nil];
     return [value boolValue];
-}
-
-- (NSColor *)labelColor {
-    id value = nil;
-    [_url getResourceValue:&value forKey:NSURLLabelColorKey error:nil];
-    return value;
 }
 
 // We are equal if we represent the same URL. This allows children to reuse the same instances.
@@ -81,6 +90,30 @@
 
 - (NSUInteger)hash {
     return self.URL.hash;
+}
+
+#pragma mark -
+#pragma mark Finding Parent and child nodes
+
+- (NSMutableArray*)parentNodes{
+	
+	if (_parentNodes){
+		return _parentNodes;
+	}
+	NSString *path = [[_url path] stringByStandardizingPath];
+	_parentNodes = [[NSMutableArray alloc] init];
+	
+	[_parentNodes addObject:[[[FileSystemNode alloc] initWithURL:
+							 [[NSURL alloc]initWithString:path ]] 
+							autorelease]];
+	while (![path isEqualToString:@"/"] ){
+		path = [path stringByDeletingLastPathComponent];
+		if ([path isEqualToString:@""]) break;
+		[_parentNodes addObject:[[[FileSystemNode alloc] initWithURL:
+								 [[NSURL alloc]initWithString:path ]] 
+								autorelease]];
+	}
+	return _parentNodes;	
 }
 
 - (NSArray *)children {
