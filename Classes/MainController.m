@@ -129,7 +129,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	FileSystemNode *currentDirectory = [[FileSystemNode alloc] initWithURL:
 										[NSURL fileURLWithPath:@"/Users/bilalh/Movies/add/start"]];
 	[directoryStack push:currentDirectory];
-	parentNodes = [currentDirectory parentNodes];
+	parentNodes  = [currentDirectory parentNodes];
+	selectedNode = [parentNodes objectAtIndex:0];
 	NSLog(@"%@", parentNodes);
 	
 }

@@ -2020,21 +2020,29 @@
 					<int key="connectionID">652</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">goToParent:</string>
+						<reference key="source" ref="588631224"/>
+						<reference key="destination" ref="324824505"/>
+					</object>
+					<int key="connectionID">661</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">contentValues: arrangedObjects.displayName</string>
+						<string key="label">contentValues: arrangedObjects.URL</string>
 						<reference key="source" ref="324824505"/>
 						<reference key="destination" ref="478916470"/>
-						<object class="NSNibBindingConnector" key="connector" id="65345547">
+						<object class="NSNibBindingConnector" key="connector" id="591353190">
 							<reference key="NSSource" ref="324824505"/>
 							<reference key="NSDestination" ref="478916470"/>
-							<string key="NSLabel">contentValues: arrangedObjects.displayName</string>
+							<string key="NSLabel">contentValues: arrangedObjects.URL</string>
 							<string key="NSBinding">contentValues</string>
-							<string key="NSKeyPath">arrangedObjects.displayName</string>
+							<string key="NSKeyPath">arrangedObjects.URL</string>
 							<reference key="NSPreviousConnector" ref="264959069"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">656</int>
+					<int key="connectionID">662</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -2047,19 +2055,11 @@
 							<string key="NSLabel">selectedObject: selectedNode</string>
 							<string key="NSBinding">selectedObject</string>
 							<string key="NSKeyPath">selectedNode</string>
-							<reference key="NSPreviousConnector" ref="65345547"/>
+							<reference key="NSPreviousConnector" ref="591353190"/>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">660</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">goToParent:</string>
-						<reference key="source" ref="588631224"/>
-						<reference key="destination" ref="324824505"/>
-					</object>
-					<int key="connectionID">661</int>
+					<int key="connectionID">663</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3448,7 +3448,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">661</int>
+			<int key="maxID">663</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
