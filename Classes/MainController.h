@@ -14,21 +14,38 @@
 
 @interface MainController : NSObject {
 @private
-	IBOutlet NSTextField *title;
-	VgmdbController *vgc;
+	IBOutlet NSTextField   *title;
+	IBOutlet NSPopUpButton *popup;
+	IBOutlet NSTableView   *table;
+
+	
+	VgmdbController   *vgc;
 	DisplayController *ssc;
+
+	NSMutableArray *parentNodes;
+	NSNumber       *selectedNodeindex;
+	
 }
 
-- (IBAction)       search:(id)sender;
-- (IBAction)      getData:(id)sender;
--(IBAction)    goToParent:(id)sender;
-
-@property (assign) IBOutlet NSWindow	  *window;
-@property (assign) IBOutlet NSPopUpButton *popup;
-
-@property (assign) NSMutableArray       *parentNodes;
-@property (assign) NSNumber             *selectedNodeindex;
+@property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSMutableArray *directoryStack;
 
 
+ /**  
+  * Shows the sheet for searching for tags
+  * @param sender the object that called this method
+  *
+  */
+- (IBAction) search:(id)sender;
+
+ /**  
+  * Changes the current directory if changed by the user and update the gui
+  * @param sender the object that called this method
+  *
+  */
+- (IBAction) goToParent:(id)sender;
+
+
+- (IBAction) getData:(id)sender;
 
 @end

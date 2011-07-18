@@ -17,13 +17,13 @@
 
 @interface MainController()
 
--(void) initDirectoryTable;
+- (void) initDirectoryTable;
+- (void) setPopupMenuIcons;
 
-@property (assign) NSMutableArray *directoryStack;
 @end
 
 @implementation MainController
-@synthesize window, popup, directoryStack, parentNodes, selectedNodeindex;
+@synthesize window, directoryStack;
 
 #pragma mark -
 #pragma mark Table Methods 
@@ -31,6 +31,7 @@
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView 
 {
+//	NSLog(@"numberOfRowsInTableView %@\n %zu", [directoryStack lastObject], [[[directoryStack lastObject] children] count]);
     return [[[directoryStack lastObject] children] count];
 }
 
@@ -39,6 +40,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 					  row:(NSInteger)rowIndex 
 {
 	NSArray *children = [[directoryStack lastObject] children];
+//	NSLog(@"tableViewUpdate %@\t %zu", [directoryStack lastObject], [children count]);
+
 	FileSystemNode *node = [children objectAtIndex:rowIndex];
 	
 	if ( [[aTableColumn identifier] isEqualToString:@"filename"] ){
@@ -75,25 +78,65 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 -(IBAction) goToParent:(id)sender
 {
+	NSLog(@"i:%@ pN:%@", selectedNodeindex, [parentNodes objectAtIndex:[selectedNodeindex intValue]]);
 	int index = [selectedNodeindex intValue];
 	if (index == 0) {
-		NSLog(@"index %@\n%@",selectedNodeindex,  parentNodes);
 		return;
 	}
 	
+	// remove all the child elements
 	int i;
 	for (i =0; i < index; ++i) {
 		[parentNodes removeObjectAtIndex:0];
 		[popup  removeItemAtIndex:0];
 	}
 	
+	//Refresh the gui
 	selectedNodeindex = [NSNumber numberWithInt:0];
-	NSLog(@"index %@\n%@",selectedNodeindex,  parentNodes);
+	[directoryStack addObject:[parentNodes objectAtIndex:0]];
+	NSLog(@"directoryStack %@", directoryStack);
+	[table reloadData];
 }
 
 - (IBAction) open:(id)sender
 {
+	id  a = [parentNodes objectAtIndex:1];
+	id  b = [parentNodes objectAtIndex:2];
 
+	[parentNodes removeAllObjects];
+	[parentNodes addObject:a];
+	[parentNodes addObject:b];
+	
+ 	[directoryStack addObject:a];
+	[table reloadData];
+
+	NSInteger popupCount = [popup numberOfItems];
+	NSInteger min = MIN([parentNodes count], popupCount);
+	NSLog(@"min:%zu pN:%zu popN:%zu", min, [parentNodes count], popupCount);
+	
+	NSInteger i;
+	for (i=min; i < [parentNodes count]; ++i) {
+		[popup addItemWithTitle:@"2"];
+		NSLog(@"pN:%zu popN:%zu", [parentNodes count], [popup numberOfItems]);
+	}	
+
+	for (i=min; i < popupCount; ++i) {
+		[popup removeItemAtIndex:0];
+	}
+	
+	for (i=0; i < [popup numberOfItems]; ++i) {
+		[[popup itemAtIndex:i] setTitle:[[parentNodes objectAtIndex:i] displayName]];
+		[[popup itemAtIndex:i] setImage:[[parentNodes objectAtIndex:i] icon]];
+	}	
+	
+}
+
+- (void) setPopupMenuIcons
+{
+	int i =0; 
+	for (i=0; i< [popup numberOfItems]; ++i) {
+		[[popup itemAtIndex:i] setImage:[[parentNodes objectAtIndex:i] icon]];
+	}
 }
 
 #pragma mark -
@@ -125,10 +168,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 -(void) awakeFromNib
 {	
-	int i =0; 
-	for (i=0; i< [popup numberOfItems]; ++i) {
-		[[popup itemAtIndex:i] setImage:[[parentNodes objectAtIndex:i] icon]];
-	}
+	[self setPopupMenuIcons];
 }
 
 -(void) initDirectoryTable
