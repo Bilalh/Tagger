@@ -23,7 +23,7 @@
 @end
 
 @implementation MainController
-@synthesize window, popup, directoryStack, parentNodes, selectedNode;
+@synthesize window, popup, directoryStack, parentNodes, selectedNodeindex;
 
 #pragma mark -
 #pragma mark Table Methods 
@@ -71,33 +71,39 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 }
 
 #pragma mark -
-#pragma mark Gui Callback
+#pragma mark Directory Manipulation Methods
 
 -(IBAction) goToParent:(id)sender
 {
-	NSLog(@"%@", selectedNode);
+	int index = [selectedNodeindex intValue];
+	if (index == 0) {
+		NSLog(@"index %@\n%@",selectedNodeindex,  parentNodes);
+		return;
+	}
+	
+	int i;
+	for (i =0; i < index; ++i) {
+		[parentNodes removeObjectAtIndex:0];
+		[popup  removeItemAtIndex:0];
+	}
+	
+	selectedNodeindex = [NSNumber numberWithInt:0];
+	NSLog(@"index %@\n%@",selectedNodeindex,  parentNodes);
 }
 
 - (IBAction) open:(id)sender
 {
+
 }
+
+#pragma mark -
+#pragma mark Gui Callback
 
 - (IBAction) getData:(id)sender
 {
 	Tags *tl  = [[MP4Tags alloc] initWithFilename:@"/Users/bilalh/Programming/Projects/VGTagger/Test Files/aac.m4a"];
 	[title setStringValue:tl.title];
 	NSLog(@"%@",tl.year);
-}
-
-- (IBAction)onTextChange:(id)sender
-{
-	NSString *s = [sender stringValue] ;
-	NSLog(@"Text is Now %@", s );
-	if (s != @""){
-		Tags *tl  = [[MP4Tags alloc] initWithFilename:@"/Users/bilalh/Programming/Projects/VGTagger/Test Files/aac.m4a"];
-		[tl setTitle:s];
-	}
-	
 }
 
 - (IBAction) search:(id)sender{
@@ -118,8 +124,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 #pragma mark Alloc/init
 
 -(void) awakeFromNib
-{
-	
+{	
 	int i =0; 
 	for (i=0; i< [popup numberOfItems]; ++i) {
 		[[popup itemAtIndex:i] setImage:[[parentNodes objectAtIndex:i] icon]];
@@ -134,7 +139,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 										[NSURL fileURLWithPath:@"/Users/bilalh/Movies/add/start"]];
 	[directoryStack push:currentDirectory];
 	parentNodes  = [currentDirectory parentNodes];
-	selectedNode = [parentNodes objectAtIndex:0];
+	selectedNodeindex = [NSNumber numberWithInt:0];
 	NSLog(@"%@", parentNodes);
 	
 }

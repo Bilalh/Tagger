@@ -21,14 +21,13 @@
 
 - (IBAction)       search:(id)sender;
 - (IBAction)      getData:(id)sender;
-- (IBAction) onTextChange:(id)sender;
 -(IBAction)    goToParent:(id)sender;
 
 @property (assign) IBOutlet NSWindow	  *window;
 @property (assign) IBOutlet NSPopUpButton *popup;
 
 @property (assign) NSMutableArray       *parentNodes;
-@property (assign) FileSystemNode       *selectedNode;
+@property (assign) NSNumber             *selectedNodeindex;
 
 
 
