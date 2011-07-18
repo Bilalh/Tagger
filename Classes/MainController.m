@@ -23,7 +23,7 @@
 @end
 
 @implementation MainController
-@synthesize window, directoryStack, table, parentNodes, selectedNode;
+@synthesize window, popup, directoryStack, parentNodes, selectedNode;
 
 #pragma mark -
 #pragma mark Table Methods 
@@ -69,7 +69,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
 }
-
 
 #pragma mark -
 #pragma mark Gui Callback
@@ -121,10 +120,15 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 -(void) awakeFromNib
 {
 	
+	int i =0; 
+	for (i=0; i< [popup numberOfItems]; ++i) {
+		[[popup itemAtIndex:i] setImage:[[parentNodes objectAtIndex:i] icon]];
+	}
 }
 
 -(void) initDirectoryTable
 {
+	NSLog(@"initDirectoryTable");
 	directoryStack = [[NSMutableArray alloc] init];
 	FileSystemNode *currentDirectory = [[FileSystemNode alloc] initWithURL:
 										[NSURL fileURLWithPath:@"/Users/bilalh/Movies/add/start"]];

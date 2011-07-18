@@ -42,6 +42,7 @@ using namespace TagLib;
 			return nil;
 		} else {
 			data = new FileData;
+			data->f = new FileDetails;
 		}
 	}
 	
