@@ -23,7 +23,7 @@
 @end
 
 @implementation MainController
-@synthesize window, directoryStack, table, parentArray;
+@synthesize window, directoryStack, table, parentNodes, selectedNode;
 
 #pragma mark -
 #pragma mark Table Methods 
@@ -74,15 +74,13 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 #pragma mark -
 #pragma mark Gui Callback
 
+-(IBAction) goToParent:(id)sender
+{
+	NSLog(@"%@", selectedNode);
+}
+
 - (IBAction) open:(id)sender
 {
-	FileSystemNode *currentDirectory = [[FileSystemNode alloc] initWithURL:
-						[NSURL fileURLWithPath:@"/Users/bilalh/Movies/add/start"]];
-	[self.directoryStack push:currentDirectory];
-
-	NSArray *children = [currentDirectory children];
-	NSLog(@"%lu", [directoryStack count]);
-	NSLog(@"%@", [children objectAtIndex:0]);
 }
 
 - (IBAction) getData:(id)sender
@@ -122,31 +120,18 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 -(void) awakeFromNib
 {
-//	NSTableColumn* tableColumn = [self.table tableColumnWithIdentifier: @"filename"];
-//    ImageAndTextCell* imageAndTextCell = [[[ImageAndTextCell alloc] init] autorelease];
-//    [imageAndTextCell setEditable: YES];
-//    [tableColumn setDataCell:imageAndTextCell];
+	
 }
 
 -(void) initDirectoryTable
 {
 	directoryStack = [[NSMutableArray alloc] init];
-	parentArray    = [[NSMutableArray alloc] init];
-
 	FileSystemNode *currentDirectory = [[FileSystemNode alloc] initWithURL:
 										[NSURL fileURLWithPath:@"/Users/bilalh/Movies/add/start"]];
 	[directoryStack push:currentDirectory];
+	parentNodes = [currentDirectory parentNodes];
+	NSLog(@"%@", parentNodes);
 	
-//	NSString *path = [[currentDirectory.URL path] stringByStandardizingPath];
-//	[parentArray removeAllObjects];
-//	[parentArray addObject:path];
-//	while (![path isEqualToString:@"/"] ){
-//		path = [path stringByDeletingLastPathComponent];
-//		if ([path isEqualToString:@""]) break;
-//		[parentArray addObject:path];
-//	}
-//	NSLog(@"%@", parentArray);
-	NSLog(@"%@", [currentDirectory parentNodes]);
 }
 
 - (id)init

@@ -22,10 +22,13 @@
 - (IBAction)       search:(id)sender;
 - (IBAction)      getData:(id)sender;
 - (IBAction) onTextChange:(id)sender;
+-(IBAction)    goToParent:(id)sender;
 
 @property (assign) IBOutlet NSWindow	*window;
 @property (assign) IBOutlet NSTableView *table;
-@property (assign) NSMutableArray       *parentArray;
+@property (assign) NSMutableArray       *parentNodes;
+@property (assign) FileSystemNode       *selectedNode;
+
 
 
 @end
