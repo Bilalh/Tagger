@@ -104,13 +104,13 @@
 	_parentNodes = [[NSMutableArray alloc] init];
 	
 	[_parentNodes addObject:[[[FileSystemNode alloc] initWithURL:
-							 [[NSURL alloc]initWithString:path ]] 
+							 [[NSURL alloc]initFileURLWithPath:path ]] 
 							autorelease]];
 	while (![path isEqualToString:@"/"] ){
 		path = [path stringByDeletingLastPathComponent];
 		if ([path isEqualToString:@""]) break;
 		[_parentNodes addObject:[[[FileSystemNode alloc] initWithURL:
-								 [[NSURL alloc]initWithString:path ]] 
+								 [[NSURL alloc]initFileURLWithPath:path ]] 
 								autorelease]];
 	}
 	return _parentNodes;	
