@@ -21,11 +21,18 @@
 - (void) setPopupMenuIcons;
 - (IBAction) getData:(id)sender;
 - (IBAction) onClick:(id)sender;
-
 @end
 
 @implementation MainController
-@synthesize window, directoryStack;
+@synthesize window, directoryStack, a;
+@dynamic currentNode;
+
+
+- (FileSystemNode*) currentNode
+{
+	NSLog(@"current:%@",[[[directoryStack lastObject] children] objectAtIndex:0]);
+	return [[[directoryStack lastObject] children] objectAtIndex:0];
+}
 
 #pragma mark -
 #pragma mark Table Methods 
@@ -186,7 +193,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 - (IBAction) getData:(id)sender
 {
 	Tags *tl  = [[MP4Tags alloc] initWithFilename:@"/Users/bilalh/Programming/Projects/VGTagger/Test Files/aac.m4a"];
-	[title setStringValue:tl.title];
+//	[title setStringValue:tl.title];
 	NSLog(@"%@",tl.year);
 }
 

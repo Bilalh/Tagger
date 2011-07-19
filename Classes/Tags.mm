@@ -10,6 +10,8 @@
 #import "TagStructs.h"
 #import "NSString+Convert.h"
 
+#include <tag.h>
+
 @interface Tags() // private methdods
 #pragma mark private
 @end
@@ -60,15 +62,23 @@ using namespace TagLib;
 }
 
 
-- (void) setTitle:(NSString*) newText{
-	NSLog(@"Abstact class method setTitle");
-}
-
-
 - (void)dealloc
 {
     [super dealloc];
 	delete data;
 }
+
+
+#pragma mark -
+#pragma mark Setters
+
+-(void) setTitle:(NSString *)title
+{
+	Tag * const t = data->file->tag();
+	String *s= [self.title tagLibString];
+	t->setTitle(*s);
+	data->file->save();
+}
+
 
 @end

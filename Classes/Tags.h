@@ -16,22 +16,26 @@ struct FileData;
 	struct FileData* data;  /// The tag data
 }
 
+/// @name Initializing an Tags Object
+
 
  /**  
   * Creates and finds the tags of the specifed file
   * should be used on one of the subclass e.g MP4Tag
   *
-  * @param filename The filepath to the file
+  * @param filename The filepath to the file.
   *
-  * @return A new Tags 
+  * @return A new Tags.
   */
 -(id) initWithFilename:(NSString *)filename;
 
 
  /**  
-  *  Gives value to the fields class should call this method at init
+  *  Gives value to the fields class should call this method in subclasses initWithFilename.
   */
 -(void) initFields;
+
+/// @name Finding metadata.
 
 /// The title of the file
 @property (assign) NSString *title; 

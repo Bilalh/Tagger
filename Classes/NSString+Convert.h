@@ -9,12 +9,16 @@
 #import <Foundation/Foundation.h>
 #include <tstring.h> 
 
+/// Converts NSString to TagLib::String and back again
 @interface NSString (NSString_Convert)
 
-// Goes between a NSString and a TagLib::String
-
+/// Converts a TagLib::String to a NSString 
 - (NSString*) initWithTagString:(TagLib::String) cppString;
+/// Converts a TagLib::String to a NSString (autoreleased)
 + (NSString*) stringWithTagString:(TagLib::String) cppString;
+
+/// Convert the string to a TagLib::String, the memory is allocated with new
+- (TagLib::String*) tagLibString;
 
 
 @end

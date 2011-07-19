@@ -15,7 +15,6 @@
 /// The main controller creates the other controllers 
 @interface MainController : NSObject {
 @private
-	IBOutlet NSTextField   *title;
 	IBOutlet NSPopUpButton *popup;
 	IBOutlet NSTableView   *table;
 
@@ -31,6 +30,8 @@
 @property (assign) IBOutlet NSWindow *window;
 /// The stack of previous directories
 @property (assign) IBOutlet NSMutableArray *directoryStack;
+@property (readonly) FileSystemNode *currentNode;
+@property (assign) NSString *a;
 
 
  /**  
