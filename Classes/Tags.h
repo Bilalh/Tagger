@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-
 struct FileData;
+
+/// Tags allows reading and writing of tags of audio files
 @interface Tags : NSObject {
-	struct FileData* data;
+	@protected
+	struct FileData* data;  /// The tag data
 }
 
 
@@ -31,13 +33,19 @@ struct FileData;
   */
 -(void) initFields;
 
-
+/// The title of the file
 @property (assign) NSString *title; 
+/// The artist of the file
 @property (assign) NSString *artist; 
+/// The album of the file
 @property (assign) NSString *album; 
+/// The comment of the file
 @property (assign) NSString *comment;
+/// The genre of the file
 @property (assign) NSString *genre;
+/// The year of the file
 @property (assign) NSNumber *year;
+/// The track of the file
 @property (assign) NSNumber *track; 
 
 @end

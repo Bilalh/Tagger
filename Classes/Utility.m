@@ -32,18 +32,18 @@ static NSDictionary *languages;
 	return languages;
 }
 
-+ (NSString*) stringFromLanguages:(NSDictionary*)title
++ (NSString*) stringFromLanguages:(NSDictionary*)field
 			 selectedLanguage:(NSString**)selectedLanguagePtr
 {
 	NSString* selectedLanguage =*selectedLanguagePtr;
-	if ([title count] == 0) return nil;
+	if ([field count] == 0) return nil;
 		
-	NSString *result = [title objectForKey:selectedLanguage];
+	NSString *result = [field objectForKey:selectedLanguage];
 	if (result) return result;
 	
 	// Checks each other Language
 	for (NSString *newLanguage in [languages objectForKey:selectedLanguage] ) {
-		result = [title objectForKey:newLanguage];
+		result = [field objectForKey:newLanguage];
 		if (result) {
 			*selectedLanguagePtr = newLanguage;
 			return result;	
@@ -51,7 +51,7 @@ static NSDictionary *languages;
 	}
 	
 	// if we can find it just return the first language
-	return [[title allValues ] objectAtIndex:0];
+	return [[field allValues ] objectAtIndex:0];
 }
 
 

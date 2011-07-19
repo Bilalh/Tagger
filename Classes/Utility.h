@@ -8,21 +8,45 @@
 
 #import <Foundation/Foundation.h>
 
-
+/// Utility methods 
 @interface Utility : NSObject {
 @private
     
 }
 
-+ (id) valueFromResult:(id)result
-	  selectedLanguage:(NSString*)selectedLanguage;
-
+/** Converts a field to a string or NSNumber
+ 
+ If there is multiple language only the selected is returned.
+ If there is an array it is joined by commas expect 
+ for two values which is joined by an &.
+ 
+ @param result           The field to get the value from
+ @param selectedLanguage A _pointer_ to the selected language, 
+ which is updated with the new language.
+ @return 
+ */
 + (id) valueFromResult:(id)result
    selectedLanguagePtr:(NSString**)selectedLanguage;
 
-+ (NSString*) stringFromLanguages:(NSDictionary*)title
++ (id) valueFromResult:(id)result
+	  selectedLanguage:(NSString*)selectedLanguage;
+
+
+/** Get the field in the selected language.
+ 
+ @param field               The field to get the title from.
+ @param selectedLanguagePtr A _pointer_ to the selected language, 
+ which is updated with the new language.
+ @return The title is the language in selectedLanguagePtr
+ */
++ (NSString*) stringFromLanguages:(NSDictionary*)field
 				 selectedLanguage:(NSString**)selectedLanguagePtr;
 
+/** Returns a dictionary of language to try if the selected language 
+ is not found 
+ 
+ @return The dictinary of languages
+ */
 +(NSDictionary*) languagesDictionary;
 
 

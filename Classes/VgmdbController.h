@@ -11,6 +11,7 @@
 
 @class DisplayController;
 
+/// This class allows the user to serach for albums on vgmdb
 @interface VgmdbController : NSWindowController {
 @private
 	IBOutlet NSWindow *window;
@@ -26,24 +27,31 @@
 	id vgmdb; // macruby Vgmdb class
 }
 
+/// @name Searching for albums
 
  /**  
-  * Search vgmdb for albums 
-  * @param sender a object can repsonds to stringValue
+  * Search vgmdb for albums.
+  * @param sender a object can repsonds to stringValue.
   */
 - (IBAction) searchForAlbums:(id)sender;
 
  /**  
-  * Select the specifed album and display the data of it
-  * @param sender unused
+  * Select the specifed album and display the data of it.
+  * @param sender unused.
   */
-- (IBAction) selectAlbum:(id)sender;
+-(IBAction) selectAlbum:(id)sender;
 
-- (IBAction)findSelectedButton:(id)sender;
+/// @name Changes the language
 
-- (IBAction)cancelSheet:sender;
-- (IBAction)confirmSheet:sender;
+/** Changes the language of the results.
+ 
+ @param sender The radio button of the new selected language.
+ */
+- (IBAction)changeDisplayLanguage:(id)sender;
 
+/// @name Other methods
+
+/// Reset all the fields to their default values
 - (void)reset;
 
 

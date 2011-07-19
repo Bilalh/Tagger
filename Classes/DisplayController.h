@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
+/// This class shows the data of the selected album in a sheet
 @interface DisplayController : NSWindowController {
 @private
 	IBOutlet NSWindow    *window;
@@ -23,18 +24,20 @@
 	IBOutlet NSTableView *table;      /// table of tracks	
 }
 
-
+/// @name Initializing an DisplayController Object
 
  /**  
-  *  Setup (Only method for setup)
+  *  Setup (Only method for setup).
   *
   * @param url         The url of the result vgmdb page.
   * @param vgmdbObject The pointer to a vgmdb object.
   *
-  * @return An new Display Controller 
+  * @return An new Display Controller.
   */
 - (id)initWithUrl:(NSString*)url
 			vgmdb:(id)vgmdbObject;
+
+/// @name Changing the language
 
 /** Changes the Language of of the specifed field.
  
@@ -49,9 +52,9 @@
 
 
 
-/** Changes the language of the table
+/** Changes the language of the table.
  
- @param sender The radio button of the new selected 
+ @param sender The radio button of the new selected language.
  */
 - (IBAction)changeTableLanguage:(id)sender;
 

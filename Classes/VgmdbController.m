@@ -11,12 +11,17 @@
 #import "DisplayController.h"
 #import "Utility.h"
 
+@interface VgmdbController()
+- (IBAction)cancelSheet:sender;
+- (IBAction)confirmSheet:sender;
+@end
+
 @implementation VgmdbController
 
 #pragma mark -
 #pragma mark GUI Callbacks
 
-- (IBAction)findSelectedButton:(id)sender 
+- (IBAction)changeDisplayLanguage:(id)sender 
 {
     NSButtonCell *selCell = [sender selectedCell];
     NSLog(@"Selected cell is %@", [languages objectAtIndex:[selCell tag]]);

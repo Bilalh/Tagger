@@ -12,13 +12,13 @@
 @class  DisplayController;
 @class  FileSystemNode;
 
+/// The main controller creates the other controllers 
 @interface MainController : NSObject {
 @private
 	IBOutlet NSTextField   *title;
 	IBOutlet NSPopUpButton *popup;
 	IBOutlet NSTableView   *table;
 
-	
 	VgmdbController   *vgc;
 	DisplayController *ssc;
 
@@ -27,27 +27,23 @@
 	
 }
 
+/// The main window
 @property (assign) IBOutlet NSWindow *window;
+/// The stack of previous directories
 @property (assign) IBOutlet NSMutableArray *directoryStack;
 
-
-- (IBAction) onClick:(id)sender;
 
  /**  
   * Shows the sheet for searching for tags
   * @param sender the object that called this method
-  *
   */
 - (IBAction) search:(id)sender;
 
  /**  
   * Changes the current directory if changed by the user and update the gui
   * @param sender the object that called this method
-  *
   */
 - (IBAction) goToParent:(id)sender;
 
-
-- (IBAction) getData:(id)sender;
 
 @end

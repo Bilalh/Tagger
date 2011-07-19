@@ -19,6 +19,8 @@
 
 - (void) initDirectoryTable;
 - (void) setPopupMenuIcons;
+- (IBAction) getData:(id)sender;
+- (IBAction) onClick:(id)sender;
 
 @end
 
