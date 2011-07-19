@@ -100,23 +100,28 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (IBAction) open:(id)sender
 {
-	id  a = [parentNodes objectAtIndex:1];
-	id  b = [parentNodes objectAtIndex:2];
-
+	NSOpenPanel *op = [NSOpenPanel openPanel];
+	[op setCanChooseFiles:NO];
+	[op setCanChooseDirectories:YES];
+    if ([op runModal] != NSOKButton) return;
+    
+	NSURL *url = [op URL];
+	NSLog(@"%@", url);
+	FileSystemNode *node  = [[FileSystemNode alloc ] initWithURL:url];
 	[parentNodes removeAllObjects];
-	[parentNodes addObject:a];
-	[parentNodes addObject:b];
+	[parentNodes addObjectsFromArray:[node parentNodes] ];
 	
- 	[directoryStack addObject:a];
+ 	[directoryStack addObject:node];
 	[table reloadData];
 
 	NSInteger popupCount = [popup numberOfItems];
 	NSInteger min = MIN([parentNodes count], popupCount);
 	NSLog(@"min:%zu pN:%zu popN:%zu", min, [parentNodes count], popupCount);
 	
+	// Correct the number of items in the popupmenu
 	NSInteger i;
 	for (i=min; i < [parentNodes count]; ++i) {
-		[popup addItemWithTitle:@"2"];
+		[popup addItemWithTitle:[[NSNumber numberWithLong:i] stringValue] ];
 		NSLog(@"pN:%zu popN:%zu", [parentNodes count], [popup numberOfItems]);
 	}	
 
