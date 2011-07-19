@@ -11,18 +11,17 @@
 @interface DisplayController : NSWindowController {
 @private
 	IBOutlet NSWindow    *window;
-	id vgmdb; // macruby Vgmdb class
-	NSDictionary *albumDetails; // contains all the infomation
+	id vgmdb;                         /// macruby Vgmdb class
+	NSDictionary *albumDetails;       /// contains all the infomation
 	
-	NSString *selectedLanguage; // language of the tracks
-	NSArray  *tracks; // array of tracks info
+	NSString *selectedLanguage;       /// language of the tracks
+	NSArray  *tracks;                 /// array of tracks info
 	
-	NSMutableDictionary *fieldValues; // The value of the fields
-	NSDictionary *fieldProperties;    // The properties of the fields and their buttons
+	NSMutableDictionary *fieldValues; /// The value of the fields
+	NSDictionary *fieldProperties;    /// The properties of the fields and their buttons
 	
-	IBOutlet NSTableView *table; // table of tracks	
+	IBOutlet NSTableView *table;      /// table of tracks	
 }
-
 
 
 
@@ -44,14 +43,17 @@
   
  @param properties       The properties containg the data about the new language.	
  @param buttonProperties The properties containg the data of the sender button.
-  
  */
 - (IBAction) changeLanguage:(NSMutableDictionary*)properties
 		  buttonProperties:(NSMutableDictionary*)buttonProperties;
 
+
+
+/** Changes the language of the table
+ 
+ @param sender The radio button of the new selected 
+ */
 - (IBAction)changeTableLanguage:(id)sender;
-- (IBAction)cancelSheet:sender;
-- (IBAction)confirmSheet:sender;
 
 
 @end

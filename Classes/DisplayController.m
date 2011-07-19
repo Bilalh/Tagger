@@ -16,6 +16,8 @@
 - (void) initFieldValues;
 - (void) initFieldProperties;
 - (void) initButtonsState;
+- (IBAction)cancelSheet:sender;
+- (IBAction)confirmSheet:sender;
 
 -(NSMutableDictionary*) makeButtonProperties:(NSString*)b1Title
 								 button1Full:(NSString*)b1Full

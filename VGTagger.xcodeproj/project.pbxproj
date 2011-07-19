@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		9273E64013D6166C002BA3A0 /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 9273E64313D6166C002BA3A0 /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				9273E64513D61678002BA3A0 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		9201935713CF6D050085E167 /* MP4Tags.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9201935613CF6D050085E167 /* MP4Tags.mm */; };
 		9201935C13CFBBC20085E167 /* NSString+Convert.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9201935B13CFBBC20085E167 /* NSString+Convert.mm */; };
@@ -303,7 +317,6 @@
 				925CE81913C3BD6D009D6D94 /* Sources */,
 				925CE81A13C3BD6D009D6D94 /* Frameworks */,
 				925CE81B13C3BD6D009D6D94 /* Resources */,
-				92698CC113D6070D00AD22B9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -336,6 +349,7 @@
 			projectRoot = "";
 			targets = (
 				925CE81C13C3BD6D009D6D94 /* VGTagger */,
+				9273E64013D6166C002BA3A0 /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -357,7 +371,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		92698CC113D6070D00AD22B9 /* ShellScript */ = {
+		9273E64513D61678002BA3A0 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -368,8 +382,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/appledoc          \\\n--project-name VGTagger          \\\n--project-company \"Bilal\"        \\\n--company-id bilal               \\\n--exit-threshold 2               \\\n--output ~/Desktop/log/          \\\n--logformat xcode                \\\n--ignore .m                      \\\n--ignore .rb                     \\\n\"$PROJECT_DIR\"/Classes";
-			showEnvVarsInLog = 0;
+			shellScript = "/usr/local/bin/appledoc          \\\n--project-name VGTagger          \\\n--project-company \"Bilal\"        \\\n--company-id bilal               \\\n--exit-threshold 2               \\\n--output ~/Desktop/log/          \\\n--logformat xcode                \\\n--ignore .m                      \\\n--ignore .mm                     \\\n--ignore .rb                     \\\n\"$PROJECT_DIR\"/Classes";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -523,6 +536,20 @@
 			};
 			name = Release;
 		};
+		9273E64113D6166C002BA3A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9273E64213D6166C002BA3A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -543,6 +570,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		9273E64313D6166C002BA3A0 /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9273E64113D6166C002BA3A0 /* Debug */,
+				9273E64213D6166C002BA3A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
