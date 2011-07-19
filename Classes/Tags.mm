@@ -10,11 +10,6 @@
 #import "TagStructs.h"
 #import "NSString+Convert.h"
 
-#include <mp4tag.h> 
-#include <mp4file.h>
-#include <mpegfile.h>
-
-
 @interface Tags() // private methdods
 #pragma mark private
 @end

@@ -12,6 +12,10 @@
 #include <iostream>
 #include <string>
 
+#include <mp4tag.h> 
+#include <mp4file.h>
+#include <mpegfile.h>
+
 
 using namespace TagLib;
 @implementation MP4Tags

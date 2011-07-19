@@ -26,24 +26,32 @@
 
 
 
- /**  Setup (Only method for setup)
+ /**  
+  *  Setup (Only method for setup)
   *
-  * @param url         The url of the result vgmdb page
-  * @param vgmdbObject The pointer to a vgmdb object
+  * @param url         The url of the result vgmdb page.
+  * @param vgmdbObject The pointer to a vgmdb object.
   *
   * @return An new Display Controller 
   */
 - (id)initWithUrl:(NSString*)url
 			vgmdb:(id)vgmdbObject;
 
-// change the language
--(IBAction) changeLanguage:(NSMutableDictionary*)properties
+/** Changes the Language of of the specifed field.
+ 
+ Each field can have a different language, the sender button language is switch with 
+ the current language.
+  
+ @param properties       The properties containg the data about the new language.	
+ @param buttonProperties The properties containg the data of the sender button.
+  
+ */
+- (IBAction) changeLanguage:(NSMutableDictionary*)properties
 		  buttonProperties:(NSMutableDictionary*)buttonProperties;
 
 - (IBAction)changeTableLanguage:(id)sender;
 - (IBAction)cancelSheet:sender;
 - (IBAction)confirmSheet:sender;
-
 
 
 @end
