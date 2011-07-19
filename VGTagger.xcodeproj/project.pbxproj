@@ -303,6 +303,7 @@
 				925CE81913C3BD6D009D6D94 /* Sources */,
 				925CE81A13C3BD6D009D6D94 /* Frameworks */,
 				925CE81B13C3BD6D009D6D94 /* Resources */,
+				92698CC113D6070D00AD22B9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -354,6 +355,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		92698CC113D6070D00AD22B9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/appledoc          \\\n--project-name VGTagger          \\\n--project-company \"Bilal\"        \\\n--company-id bilal               \\\n--exit-threshold 2               \\\n--output ~/Desktop/log/          \\\n--logformat xcode                \\\n--ignore .m                      \\\n--ignore .rb                     \\\n\"$PROJECT_DIR\"/Classes";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		925CE81913C3BD6D009D6D94 /* Sources */ = {
