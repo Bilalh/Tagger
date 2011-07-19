@@ -31,6 +31,8 @@
 @property (assign) IBOutlet NSMutableArray *directoryStack;
 
 
+- (IBAction) onClick:(id)sender;
+
  /**  
   * Shows the sheet for searching for tags
   * @param sender the object that called this method

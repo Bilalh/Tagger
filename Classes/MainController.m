@@ -28,6 +28,35 @@
 #pragma mark -
 #pragma mark Table Methods 
 
+- (IBAction) onClick:(id)sender
+{
+	// code to make cells that are editable go to edit
+	NSEvent *currentEvent = [NSApp currentEvent];
+	NSInteger column = [table clickedColumn];
+	NSInteger row = [table clickedRow];
+	NSCell *theCell = [table preparedCellAtColumn:column row:row];
+	NSRect cellFrame = [table frameOfCellAtColumn:column row:row];
+	NSUInteger hitTestResult = [theCell hitTestForEvent:currentEvent inRect:cellFrame ofView:table];
+	
+	if ( ( hitTestResult & NSCellHitEditableTextArea ) != NSCellHitEditableTextArea ) return;
+	if ([[[table tableColumns] objectAtIndex:column] isEditable]){
+		[table editColumn:column row:row withEvent:currentEvent select:YES];	
+		return;
+	}
+	
+	NSArray *children = [[directoryStack lastObject] children];
+	FileSystemNode *node = [children objectAtIndex:row];
+	NSLog(@"selected %@", node);
+	if ([node isDirectory]){
+		[directoryStack addObject:node];
+		[table reloadData];
+		[parentNodes insertObject:node atIndex:0];
+		[popup insertItemWithTitle:[node displayName] atIndex:0];
+		[[popup itemAtIndex:0] setImage:[node icon]];
+		selectedNodeindex = [NSNumber numberWithInteger:0];	
+	}	
+}
+
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView 
 {
@@ -71,6 +100,11 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
+}
+
+- (void)tableView:(NSTableView *)tableView didClickTableColumn:(NSTableColumn *)tableColumn
+{
+	NSLog(@"aa");
 }
 
 #pragma mark -
@@ -174,6 +208,10 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 -(void) awakeFromNib
 {	
 	[self setPopupMenuIcons];
+	[table setDoubleAction:@selector(onClick:)];
+	[[table tableColumnWithIdentifier:@"filename"] setEditable:false];
+	[[table tableColumnWithIdentifier:@"title"] setEditable:true];
+	[table setTarget:self];
 }
 
 -(void) initDirectoryTable
@@ -186,7 +224,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	parentNodes  = [currentDirectory parentNodes];
 	selectedNodeindex = [NSNumber numberWithInt:0];
 	NSLog(@"%@", parentNodes);
-	
 }
 
 - (id)init
