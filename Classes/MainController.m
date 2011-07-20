@@ -20,24 +20,14 @@
 - (void) initDirectoryTable;
 - (void) setPopupMenuIcons;
 - (IBAction) onClick:(id)sender;
+- (IBAction) open:(id)sender;
 @end
 
 @implementation MainController
-@synthesize window, directoryStack, a;
-@dynamic currentNode;
+@synthesize window, directoryStack, currentNode;
 
 #pragma mark -
 #pragma mark Table Methods 
-
-
-- (FileSystemNode*) currentNode
-{
-	const NSInteger selected = [table selectedRow];
-	if (selected ==-1) return nil;
-	
-	NSLog(@"current:%@",[[[directoryStack lastObject] children] objectAtIndex:selected]);
-	return [[[directoryStack lastObject] children] objectAtIndex:selected];
-}
 
 
 - (IBAction) onClick:(id)sender
@@ -112,6 +102,13 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
+	const NSInteger selectedRow = [table selectedRow];
+	if (selectedRow == -1){
+		self.currentNode = nil;
+	}else{
+		NSLog(@"current:%@",[[[directoryStack lastObject] children] objectAtIndex:selectedRow]);
+		self.currentNode = [[[directoryStack lastObject] children] objectAtIndex:selectedRow];
+	}
 }
 
 - (void)tableView:(NSTableView *)tableView didClickTableColumn:(NSTableColumn *)tableColumn
@@ -226,7 +223,10 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	FileSystemNode *currentDirectory = [[FileSystemNode alloc] initWithURL:
 										[NSURL fileURLWithPath:@"/Users/bilalh/Movies/add/start"]];
 	[directoryStack push:currentDirectory];
-	parentNodes  = [currentDirectory parentNodes];
+	
+	self.currentNode  = nil;
+	
+	parentNodes       = [currentDirectory parentNodes];
 	selectedNodeindex = [NSNumber numberWithInt:0];
 	NSLog(@"%@", parentNodes);
 }

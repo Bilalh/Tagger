@@ -15,6 +15,7 @@
 /// The main controller creates the other controllers 
 @interface MainController : NSObject {
 @private
+	
 	IBOutlet NSPopUpButton *popup;
 	IBOutlet NSTableView   *table;
 
@@ -22,16 +23,15 @@
 	DisplayController *ssc;
 
 	NSMutableArray *parentNodes;
-	NSNumber       *selectedNodeindex;
-	
+	NSNumber       *selectedNodeindex;	
 }
 
 /// The main window
 @property (assign) IBOutlet NSWindow *window;
 /// The stack of previous directories
 @property (assign) IBOutlet NSMutableArray *directoryStack;
-@property (readonly) FileSystemNode *currentNode;
-@property (assign) NSString *a;
+/// The node of the selected row, nil if no row selected
+@property (assign) FileSystemNode *currentNode;
 
 
  /**  
