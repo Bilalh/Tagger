@@ -39,10 +39,10 @@ struct FileData;
 
 /// The title of the file
 @property (assign) NSString *title; 
-/// The artist of the file
-@property (assign) NSString *artist; 
 /// The album of the file
 @property (assign) NSString *album; 
+/// The artist of the file
+@property (assign) NSString *artist; 
 /// The comment of the file
 @property (assign) NSString *comment;
 /// The genre of the file
