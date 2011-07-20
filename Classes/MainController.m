@@ -19,7 +19,6 @@
 
 - (void) initDirectoryTable;
 - (void) setPopupMenuIcons;
-- (IBAction) getData:(id)sender;
 - (IBAction) onClick:(id)sender;
 @end
 
@@ -189,13 +188,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 #pragma mark -
 #pragma mark Gui Callback
-
-- (IBAction) getData:(id)sender
-{
-	Tags *tl  = [[MP4Tags alloc] initWithFilename:@"/Users/bilalh/Programming/Projects/VGTagger/Test Files/aac.m4a"];
-//	[title setStringValue:tl.title];
-	NSLog(@"%@",tl.year);
-}
 
 - (IBAction) search:(id)sender{
 	if (vgc == nil){
