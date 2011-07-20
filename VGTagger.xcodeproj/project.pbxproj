@@ -39,6 +39,8 @@
 		922E35E313C89C51003C5913 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922E35DE13C89C51003C5913 /* MainMenu.xib */; };
 		922E35E713C89FB9003C5913 /* libtag.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.dylib */; };
 		92364F7613C8DE5200044153 /* VgmdbSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92364F7413C8DE5200044153 /* VgmdbSearch.xib */; };
+		9264488A13D773CE0035E693 /* arrowLeftBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */; };
+		9264488B13D773CE0035E693 /* arrowRightBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488913D773CE0035E693 /* arrowRightBlack16.tiff */; };
 		9286164A13D65621001481E5 /* NSString+Numbers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9286164913D65621001481E5 /* NSString+Numbers.m */; };
 		92B65BD213D261DF0018F988 /* NSMutableArray+Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B65BD113D261DF0018F988 /* NSMutableArray+Stack.m */; };
 		92B65BF813D27BED0018F988 /* ImageAndTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B65BF713D27BEC0018F988 /* ImageAndTextCell.m */; };
@@ -109,6 +111,8 @@
 		92364F7513C8DE5200044153 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = VgmdbSearch.xib; sourceTree = "<group>"; };
 		925CE81D13C3BD6D009D6D94 /* VGTagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VGTagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9264486513D74DED0035E693 /* tags mapping */ = {isa = PBXFileReference; lastKnownFileType = text; name = "tags mapping"; path = "../Test Files/tags mapping"; sourceTree = "<group>"; };
+		9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowLeftBlack16.tiff; sourceTree = "<group>"; };
+		9264488913D773CE0035E693 /* arrowRightBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowRightBlack16.tiff; sourceTree = "<group>"; };
 		9286164813D65621001481E5 /* NSString+Numbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Numbers.h"; sourceTree = "<group>"; };
 		9286164913D65621001481E5 /* NSString+Numbers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Numbers.m"; sourceTree = "<group>"; };
 		92B65BD013D261DF0018F988 /* NSMutableArray+Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Stack.h"; sourceTree = "<group>"; };
@@ -279,6 +283,7 @@
 				920660A313C89845003A3803 /* Classes */,
 				922E35DB13C89C51003C5913 /* English.lproj */,
 				920660B813C89845003A3803 /* Frameworks */,
+				9264488713D773CE0035E693 /* Images */,
 				920660BD13C89845003A3803 /* Resources */,
 				920660BA13C89845003A3803 /* Other Sources */,
 				920660BE13C89845003A3803 /* Test Files */,
@@ -292,6 +297,15 @@
 				925CE81D13C3BD6D009D6D94 /* VGTagger.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9264488713D773CE0035E693 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */,
+				9264488913D773CE0035E693 /* arrowRightBlack16.tiff */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		92B65BD413D261E60018F988 /* Categories */ = {
@@ -372,6 +386,8 @@
 				922E35E213C89C51003C5913 /* InfoPlist.strings in Resources */,
 				922E35E313C89C51003C5913 /* MainMenu.xib in Resources */,
 				92364F7613C8DE5200044153 /* VgmdbSearch.xib in Resources */,
+				9264488A13D773CE0035E693 /* arrowLeftBlack16.tiff in Resources */,
+				9264488B13D773CE0035E693 /* arrowRightBlack16.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

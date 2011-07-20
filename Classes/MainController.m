@@ -26,15 +26,19 @@
 @synthesize window, directoryStack, a;
 @dynamic currentNode;
 
+#pragma mark -
+#pragma mark Table Methods 
+
 
 - (FileSystemNode*) currentNode
 {
-	NSLog(@"current:%@",[[[directoryStack lastObject] children] objectAtIndex:0]);
-	return [[[directoryStack lastObject] children] objectAtIndex:0];
+	const NSInteger selected = [table selectedRow];
+	if (selected ==-1) return nil;
+	
+	NSLog(@"current:%@",[[[directoryStack lastObject] children] objectAtIndex:selected]);
+	return [[[directoryStack lastObject] children] objectAtIndex:selected];
 }
 
-#pragma mark -
-#pragma mark Table Methods 
 
 - (IBAction) onClick:(id)sender
 {
