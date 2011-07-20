@@ -57,8 +57,8 @@ using namespace TagLib;
 	album   = [[NSString  alloc] initWithTagString:t->album()  ];
 	comment = [[NSString  alloc] initWithTagString:t->comment()];
 	genre   = [[NSString  alloc] initWithTagString:t->genre()  ];
-	year    = [NSNumber numberWithUnsignedLong:t->year()];
-	track   = [NSNumber numberWithUnsignedLong:t->track()];
+	year    = [NSNumber numberWithUnsignedInt:t->year()];
+	track   = [NSNumber numberWithUnsignedInt:t->track()];
 }
 
 
@@ -72,13 +72,33 @@ using namespace TagLib;
 #pragma mark -
 #pragma mark Setters
 
--(void) setTitle:(NSString *)title
-{
-	Tag * const t = data->file->tag();
-	String *s= [self.title tagLibString];
-	t->setTitle(*s);
-	data->file->save();
-}
+// Saves the newData to file
+
+#define setMetadata(newText,field,saveFunction)         \
+NSLog(@"Setting "#field" from %@ to %@",field, newText);\
+field = newText;                                        \
+Tag * const t = data->file->tag();                      \
+t->saveFunction ([ field tagLibString]);                \
+bool b =data->file->save();                             \
+NSLog(@"res:%d "#field":%s", b, t->field().toCString() );
+
+#define setNumberMetadata(newNumber,field,saveFunction)    \
+NSLog(@"Setting "#field" from %@ to %@",field, newNumber); \
+field = newNumber;                                         \
+Tag * const t = data->file->tag();                         \
+t->saveFunction ([ field unsignedIntValue]);               \
+bool b =data->file->save();                                \
+NSLog(@"res:%d "#field":%u", b, t->field());               
+
+
+-(void) setTitle:(NSString *)newText  { setMetadata(newText,title,setTitle); }
+-(void) setArtist:(NSString *)newText { setMetadata(newText,artist,setArtist); }
+-(void) setAlbum:(NSString *)newText  { setMetadata(newText,album,setAlbum); }
+-(void) setComment:(NSString *)newText{ setMetadata(newText,comment,setComment); }
+-(void) setGenre:(NSString *)newText  { setMetadata(newText,genre,setGenre); }
+
+-(void) setYear:(NSNumber*)newNumber  { setNumberMetadata(newNumber,year,setYear);}
+-(void) setTrack:(NSNumber*)newNumber { setNumberMetadata(newNumber,track,setTrack); }
 
 
 @end

@@ -18,7 +18,7 @@
 + (NSString*) stringWithTagString:(TagLib::String) cppString;
 
 /// Convert the string to a TagLib::String, the memory is allocated with new
-- (TagLib::String*) tagLibString;
+- (TagLib::String) tagLibString;
 
 
 @end

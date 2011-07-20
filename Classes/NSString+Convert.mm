@@ -20,9 +20,9 @@
 	return [NSString stringWithUTF8String: cppString.toCString(true)];
 }
 
-- (TagLib::String*) tagLibString
+- (TagLib::String) tagLibString
 {
-	TagLib::String *s = new TagLib::String([self UTF8String], TagLib::String::UTF8);
+	TagLib::String s = TagLib::String([self UTF8String], TagLib::String::UTF8);
 	return s;
 }
 
