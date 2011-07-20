@@ -108,6 +108,7 @@
 		922E35DF13C89C51003C5913 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = MainMenu.xib; sourceTree = "<group>"; };
 		92364F7513C8DE5200044153 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = VgmdbSearch.xib; sourceTree = "<group>"; };
 		925CE81D13C3BD6D009D6D94 /* VGTagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VGTagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9264486513D74DED0035E693 /* tags mapping */ = {isa = PBXFileReference; lastKnownFileType = text; name = "tags mapping"; path = "../Test Files/tags mapping"; sourceTree = "<group>"; };
 		9286164813D65621001481E5 /* NSString+Numbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Numbers.h"; sourceTree = "<group>"; };
 		9286164913D65621001481E5 /* NSString+Numbers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Numbers.m"; sourceTree = "<group>"; };
 		92B65BD013D261DF0018F988 /* NSMutableArray+Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Stack.h"; sourceTree = "<group>"; };
@@ -246,6 +247,7 @@
 		92364F7813C8E0C900044153 /* TagLib */ = {
 			isa = PBXGroup;
 			children = (
+				9264486513D74DED0035E693 /* tags mapping */,
 				920660AA13C89845003A3803 /* Tags.h */,
 				9201935513CF6D050085E167 /* MP4Tags.h */,
 				9201935613CF6D050085E167 /* MP4Tags.mm */,

@@ -56,6 +56,7 @@ using namespace TagLib;
 	artist  = [[NSString  alloc] initWithTagString:t->artist() ];
 	album   = [[NSString  alloc] initWithTagString:t->album()  ];
 	comment = [[NSString  alloc] initWithTagString:t->comment()];
+	NSLog(@"comment:%@",comment);
 	genre   = [[NSString  alloc] initWithTagString:t->genre()  ];
 	year    = [NSNumber numberWithUnsignedInt:t->year()];
 	track   = [NSNumber numberWithUnsignedInt:t->track()];

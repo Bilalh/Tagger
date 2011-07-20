@@ -52,4 +52,8 @@ struct FileData;
 /// The track of the file
 @property (assign) NSNumber *track; 
 
+/// @name Finding extra Metadata 
+
+
+
 @end
