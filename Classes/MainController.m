@@ -26,7 +26,7 @@
 @end
 
 @implementation MainController
-@synthesize window, directoryStack, currentNode,forwardStack, selectedNodeindex, parentNodes;
+@synthesize window, directoryStack, currentNode,forwardStack, selectedNodeindex, parentNodes, generalInfoEnable, extendedGeneralInfoEnable;
 
 #pragma mark -
 #pragma mark Table Methods 
@@ -137,9 +137,15 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	const NSInteger selectedRow = [table selectedRow];
 	if (selectedRow == -1){
 		self.currentNode = nil;
+		self.generalInfoEnable         = [NSNumber numberWithBool:NO];
+		self.extendedGeneralInfoEnable = [NSNumber numberWithBool:NO];
 	}else{
 		NSLog(@"current:%@",[[[directoryStack lastObject] children] objectAtIndex:selectedRow]);
 		self.currentNode = [[[directoryStack lastObject] children] objectAtIndex:selectedRow];
+		if (!currentNode.isDirectory){
+			self.generalInfoEnable         = [NSNumber numberWithBool:YES];
+//			self.extendedGeneralInfoEnable = [NSNumber numberWithBool:YES];
+		}
 	}
 }
 
@@ -174,6 +180,14 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[table reloadData];
 }
 
+- (void) setPopupMenuIcons
+{
+	int i =0; 
+	for (i=0; i< [popup numberOfItems]; ++i) {
+		[[popup itemAtIndex:i] setImage:[[parentNodes objectAtIndex:i] icon]];
+	}
+}
+
 - (IBAction) open:(id)sender
 {
 	NSOpenPanel *op = [NSOpenPanel openPanel];
@@ -189,7 +203,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
  	[directoryStack addObject:node];
 	[table reloadData];
-
+	
 	NSInteger popupCount = [popup numberOfItems];
 	NSInteger min = MIN([parentNodes count], popupCount);
 	NSLog(@"min:%zu pN:%zu popN:%zu", min, [parentNodes count], popupCount);
@@ -200,7 +214,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		[popup addItemWithTitle:[[NSNumber numberWithLong:i] stringValue] ];
 		NSLog(@"pN:%zu popN:%zu", [parentNodes count], [popup numberOfItems]);
 	}	
-
+	
 	for (i=min; i < popupCount; ++i) {
 		[popup removeItemAtIndex:0];
 	}
@@ -210,14 +224,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		[[popup itemAtIndex:i] setImage:[[parentNodes objectAtIndex:i] icon]];
 	}	
 	
-}
-
-- (void) setPopupMenuIcons
-{
-	int i =0; 
-	for (i=0; i< [popup numberOfItems]; ++i) {
-		[[popup itemAtIndex:i] setImage:[[parentNodes objectAtIndex:i] icon]];
-	}
 }
 
 #pragma mark -
@@ -271,6 +277,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
     self = [super init];
     if (self) {
 		[self initDirectoryTable ];
+		self.generalInfoEnable         = [NSNumber numberWithBool:NO];
+		self.extendedGeneralInfoEnable = [NSNumber numberWithBool:NO];
     }
 	
     return self;

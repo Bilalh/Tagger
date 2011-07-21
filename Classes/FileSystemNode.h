@@ -51,7 +51,7 @@
 /// The node's icon
 @property(readonly, retain) NSImage  *icon;
 
-/// true if a directory
+/// YES if a directory
 @property(readonly)         BOOL      isDirectory;
 
 /// The label colour of this node
