@@ -98,6 +98,7 @@
 - (NSMutableArray*)parentNodes{
 
 	NSLog(@"%@, parentNodes",self.displayName);
+	// FIXME parentNode does not cashe right
 //	if (_parentNodes){
 //		NSLog(@"already have parentNodes");
 //		return _parentNodes;

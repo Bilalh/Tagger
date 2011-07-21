@@ -35,16 +35,26 @@
 {
 	NSLog(@"backForwordDirectories");
     NSInteger tag = [[sender cell] tagForSegment:[sender selectedSegment]];
-	if (tag == 0 && [directoryStack count] >= 2){
-		// remove all the child elements
-		[directoryStack pop];
-		NSLog(@"%@ bf parentNodes %@", [[directoryStack lastObject] displayName], [[directoryStack lastObject] parentNodes]);
+	NSLog(@"tag :%zd  ds %zd fs %zd", tag,  [directoryStack count],[forwardStack count] );
+	
+	// updates the gui
+	void (^common)() = ^{
 		self.parentNodes = [[directoryStack lastObject] parentNodes];
+		NSLog(@"%@ bf parentNodes %@", [[directoryStack lastObject] displayName], parentNodes);
+		
 		[self setPopupMenuIcons];
-		//Refresh the gui
 		self.selectedNodeindex = [NSNumber numberWithInt:0];
 		NSLog(@"directoryStack %@", directoryStack);
 		[table reloadData];
+	};
+	
+	
+	if (tag == 0 && [directoryStack count] >= 2){
+		[forwardStack addObject:[directoryStack pop]];
+		common();
+	}else if (tag == 1 && [forwardStack count] >= 1){
+		[directoryStack addObject:[forwardStack pop]];
+		common();
 	}
 	
 }
@@ -75,7 +85,9 @@
 		[parentNodes insertObject:node atIndex:0];
 		[popup insertItemWithTitle:[node displayName] atIndex:0];
 		[[popup itemAtIndex:0] setImage:[node icon]];
-		self.selectedNodeindex = [NSNumber numberWithInteger:0];	
+		self.selectedNodeindex = [NSNumber numberWithInteger:0];
+		// clear the forward stack since it would not make sence any more
+		[forwardStack removeAllObjects];
 	}	
 }
 
@@ -156,6 +168,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 	//Refresh the gui
 	self.selectedNodeindex = [NSNumber numberWithInt:0];
+	
 	[directoryStack addObject:[parentNodes objectAtIndex:0]];
 	NSLog(@"directoryStack %@", directoryStack);
 	[table reloadData];
@@ -240,14 +253,16 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 {
 	NSLog(@"initDirectoryTable");
 	directoryStack = [[NSMutableArray alloc] init];
+	forwardStack   = [[NSMutableArray alloc] init];
+
 	FileSystemNode *currentDirectory = [[FileSystemNode alloc] initWithURL:
 										[NSURL fileURLWithPath:@"/Users/bilalh/Movies/add/start"]];
 	[directoryStack push:currentDirectory];
 	
-	self.currentNode  = nil;
+	self.currentNode       = nil;
+	self.selectedNodeindex = [NSNumber numberWithInt:0];
+	parentNodes            = [currentDirectory parentNodes];
 	
-	parentNodes       = [currentDirectory parentNodes];
-	selectedNodeindex = [NSNumber numberWithInt:0];
 	NSLog(@"%@", parentNodes);
 }
 
