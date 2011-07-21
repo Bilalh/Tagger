@@ -23,15 +23,20 @@
 	DisplayController *ssc;
 
 	NSMutableArray *parentNodes;
-	NSNumber       *selectedNodeindex;	
 }
 
 /// The main window
 @property (assign) IBOutlet NSWindow *window;
-/// The stack of previous directories
-@property (assign) IBOutlet NSMutableArray *directoryStack;
+/// The stack of previous directories.
+@property (assign) NSMutableArray *directoryStack;
+/// The stack of directories to allow the user to go back.
+@property (assign) NSMutableArray *forwardStack;
 /// The node of the selected row, nil if no row selected
 @property (assign) FileSystemNode *currentNode;
+/// The selected node in the popup
+@property (assign) NSNumber *selectedNodeindex;
+
+@property (assign) NSMutableArray *parentNodes;
 
 
  /**  
@@ -46,5 +51,10 @@
   */
 - (IBAction) goToParent:(id)sender;
 
+/** Goes to the previous/forword directory if there is one
+ 
+ @param sender The back/forword button
+ */
+- (IBAction) backForwordDirectories:(id)sender; 
 
 @end

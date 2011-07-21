@@ -96,10 +96,12 @@
 #pragma mark Finding Parent and child nodes
 
 - (NSMutableArray*)parentNodes{
-	
-	if (_parentNodes){
-		return _parentNodes;
-	}
+
+	NSLog(@"%@, parentNodes",self.displayName);
+//	if (_parentNodes){
+//		NSLog(@"already have parentNodes");
+//		return _parentNodes;
+//	}
 	NSString *path = [[_url path] stringByStandardizingPath];
 	_parentNodes = [[NSMutableArray alloc] init];
 	
@@ -113,6 +115,8 @@
 								 [[NSURL alloc]initFileURLWithPath:path ]] 
 								autorelease]];
 	}
+	NSLog(@"%@, parentNodes are ",_parentNodes	);
+
 	return _parentNodes;	
 }
 

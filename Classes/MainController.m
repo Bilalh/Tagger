@@ -19,15 +19,35 @@
 
 - (void) initDirectoryTable;
 - (void) setPopupMenuIcons;
-- (IBAction) onClick:(id)sender;
 - (IBAction) open:(id)sender;
+
+/// Change the current directory to the clicked entries
+- (IBAction) onClick:(id)sender;
 @end
 
 @implementation MainController
-@synthesize window, directoryStack, currentNode;
+@synthesize window, directoryStack, currentNode,forwardStack, selectedNodeindex, parentNodes;
 
 #pragma mark -
 #pragma mark Table Methods 
+
+- (IBAction) backForwordDirectories:(id)sender
+{
+	NSLog(@"backForwordDirectories");
+    NSInteger tag = [[sender cell] tagForSegment:[sender selectedSegment]];
+	if (tag == 0 && [directoryStack count] >= 2){
+		// remove all the child elements
+		[directoryStack pop];
+		NSLog(@"%@ bf parentNodes %@", [[directoryStack lastObject] displayName], [[directoryStack lastObject] parentNodes]);
+		self.parentNodes = [[directoryStack lastObject] parentNodes];
+		[self setPopupMenuIcons];
+		//Refresh the gui
+		self.selectedNodeindex = [NSNumber numberWithInt:0];
+		NSLog(@"directoryStack %@", directoryStack);
+		[table reloadData];
+	}
+	
+}
 
 
 - (IBAction) onClick:(id)sender
@@ -55,7 +75,7 @@
 		[parentNodes insertObject:node atIndex:0];
 		[popup insertItemWithTitle:[node displayName] atIndex:0];
 		[[popup itemAtIndex:0] setImage:[node icon]];
-		selectedNodeindex = [NSNumber numberWithInteger:0];	
+		self.selectedNodeindex = [NSNumber numberWithInteger:0];	
 	}	
 }
 
@@ -135,7 +155,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}
 	
 	//Refresh the gui
-	selectedNodeindex = [NSNumber numberWithInt:0];
+	self.selectedNodeindex = [NSNumber numberWithInt:0];
 	[directoryStack addObject:[parentNodes objectAtIndex:0]];
 	NSLog(@"directoryStack %@", directoryStack);
 	[table reloadData];
