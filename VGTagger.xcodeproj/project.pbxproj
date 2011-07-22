@@ -42,6 +42,7 @@
 		9264488A13D773CE0035E693 /* arrowLeftBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */; };
 		9264488B13D773CE0035E693 /* arrowRightBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488913D773CE0035E693 /* arrowRightBlack16.tiff */; };
 		9286164A13D65621001481E5 /* NSString+Numbers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9286164913D65621001481E5 /* NSString+Numbers.m */; };
+		929A4ACE13DA027C00244796 /* Changelog.md in Resources */ = {isa = PBXBuildFile; fileRef = 929A4ACD13DA027C00244796 /* Changelog.md */; };
 		92B65BD213D261DF0018F988 /* NSMutableArray+Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B65BD113D261DF0018F988 /* NSMutableArray+Stack.m */; };
 		92B65BF813D27BED0018F988 /* ImageAndTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B65BF713D27BEC0018F988 /* ImageAndTextCell.m */; };
 		92FCBF5413CE83D10011F744 /* FileSystemNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FCBF5313CE83D10011F744 /* FileSystemNode.m */; };
@@ -115,6 +116,7 @@
 		9264488913D773CE0035E693 /* arrowRightBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowRightBlack16.tiff; sourceTree = "<group>"; };
 		9286164813D65621001481E5 /* NSString+Numbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Numbers.h"; sourceTree = "<group>"; };
 		9286164913D65621001481E5 /* NSString+Numbers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Numbers.m"; sourceTree = "<group>"; };
+		929A4ACD13DA027C00244796 /* Changelog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Changelog.md; sourceTree = "<group>"; };
 		92AD54DC13D90A3600E35AA2 /* MP4Fields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MP4Fields.h; sourceTree = "<group>"; };
 		92B65BD013D261DF0018F988 /* NSMutableArray+Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Stack.h"; sourceTree = "<group>"; };
 		92B65BD113D261DF0018F988 /* NSMutableArray+Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Stack.m"; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				920660BA13C89845003A3803 /* Other Sources */,
 				920660BE13C89845003A3803 /* Test Files */,
 				925CE81E13C3BD6D009D6D94 /* Products */,
+				929A4ACD13DA027C00244796 /* Changelog.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -390,6 +393,7 @@
 				92364F7613C8DE5200044153 /* VgmdbSearch.xib in Resources */,
 				9264488A13D773CE0035E693 /* arrowLeftBlack16.tiff in Resources */,
 				9264488B13D773CE0035E693 /* arrowRightBlack16.tiff in Resources */,
+				929A4ACE13DA027C00244796 /* Changelog.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
