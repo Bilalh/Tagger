@@ -2,6 +2,7 @@
 #import "FileSystemNode.h"
 #import "Tags.h"
 #import "MP4Tags.h"
+#import "MPEGTags.h"
 
 @interface FileSystemNode()
 - (BOOL) isaDirectory:(NSURL*)url;
@@ -22,6 +23,8 @@
 			
 			if ([path hasSuffix:@"m4a"]){
 				tags = [[MP4Tags alloc] initWithFilename:path];
+			}else if ([path hasSuffix:@"mp3"]){
+				tags = [[MPEGTags alloc] initWithFilename:path];
 			}else{
 				tags = [[Tags alloc] initWithFilename:path];	
 			}

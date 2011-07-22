@@ -39,6 +39,7 @@
 		922E35E313C89C51003C5913 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922E35DE13C89C51003C5913 /* MainMenu.xib */; };
 		922E35E713C89FB9003C5913 /* libtag.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.dylib */; };
 		92364F7613C8DE5200044153 /* VgmdbSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92364F7413C8DE5200044153 /* VgmdbSearch.xib */; };
+		923FC13513DA117100B14A3E /* MPEGTags.mm in Sources */ = {isa = PBXBuildFile; fileRef = 923FC13413DA117100B14A3E /* MPEGTags.mm */; };
 		9264488A13D773CE0035E693 /* arrowLeftBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */; };
 		9264488B13D773CE0035E693 /* arrowRightBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488913D773CE0035E693 /* arrowRightBlack16.tiff */; };
 		9286164A13D65621001481E5 /* NSString+Numbers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9286164913D65621001481E5 /* NSString+Numbers.m */; };
@@ -115,6 +116,8 @@
 		922E35DD13C89C51003C5913 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
 		922E35DF13C89C51003C5913 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = MainMenu.xib; sourceTree = "<group>"; };
 		92364F7513C8DE5200044153 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = VgmdbSearch.xib; sourceTree = "<group>"; };
+		923FC13313DA117100B14A3E /* MPEGTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPEGTags.h; sourceTree = "<group>"; };
+		923FC13413DA117100B14A3E /* MPEGTags.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MPEGTags.mm; sourceTree = "<group>"; };
 		925CE81D13C3BD6D009D6D94 /* VGTagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VGTagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9264486513D74DED0035E693 /* tags mapping */ = {isa = PBXFileReference; lastKnownFileType = text; name = "tags mapping"; path = "../Test Files/tags mapping"; sourceTree = "<group>"; };
 		9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowLeftBlack16.tiff; sourceTree = "<group>"; };
@@ -275,6 +278,8 @@
 				920660AB13C89845003A3803 /* Tags.mm */,
 				9201935513CF6D050085E167 /* MP4Tags.h */,
 				9201935613CF6D050085E167 /* MP4Tags.mm */,
+				923FC13313DA117100B14A3E /* MPEGTags.h */,
+				923FC13413DA117100B14A3E /* MPEGTags.mm */,
 				9201935813CF91DC0085E167 /* TagStructs.h */,
 				9201935A13CFBBC20085E167 /* NSString+Convert.h */,
 				9201935B13CFBBC20085E167 /* NSString+Convert.mm */,
@@ -471,6 +476,7 @@
 				929A4ADC13DA087D00244796 /* DDFileLogger.m in Sources */,
 				929A4ADD13DA087D00244796 /* DDLog.m in Sources */,
 				929A4ADE13DA087D00244796 /* DDTTYLogger.m in Sources */,
+				923FC13513DA117100B14A3E /* MPEGTags.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
