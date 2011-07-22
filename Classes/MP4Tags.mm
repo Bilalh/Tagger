@@ -20,7 +20,8 @@
 #include "MP4Fields.h"
 
 @interface MP4Tags()
-- (NSString*) getField:(TagLib::String)field;
+- (NSString*) getFieldWithString:(TagLib::String)field;
+- (TagLib::MP4::Item) getField:(TagLib::String)field;
 - (bool) setFieldWithString:(TagLib::String)field
 					  value:(NSString*)value;
 @end
@@ -48,9 +49,12 @@ using namespace MP4Fields;
 -(void) initFields
 {	
 	[super initFields];	
-	albumArtist = [self getField:ALBUM_ARTIST];
-	composer    = [self getField:COMPOSER];
-	grouping    = [self getField:GROUPING];
+	albumArtist = [self getFieldWithString:ALBUM_ARTIST];
+	composer    = [self getFieldWithString:COMPOSER];
+	grouping    = [self getFieldWithString:GROUPING];
+	bpm         = [NSNumber numberWithInt:[self getField:BPM].toInt()];
+	const MP4::Item::IntPair tracks = [self getField:TRACK_NUMBER].toIntPair();
+	totalTracks = [NSNumber numberWithInt:tracks.second];
 }
 
 - (void)dealloc
@@ -61,9 +65,19 @@ using namespace MP4Fields;
 #pragma mark -
 #pragma mark Fields helpers
 
-- (NSString*) getField:(TagLib::String)field
+
+- (MP4::Item) getField:(TagLib::String)field
 {
+	MP4::Tag * const t = data->f->mp4->tag();
+	const MP4::ItemListMap &map =  t->itemListMap();
+	if (!map.contains(field)) return 0;
 	
+	return  map[field];
+}
+
+
+- (NSString*) getFieldWithString:(TagLib::String)field
+{
 	MP4::Tag * const t = data->f->mp4->tag();
 	const MP4::ItemListMap &map =  t->itemListMap();
 	if (!map.contains(field)) return nil;
@@ -78,9 +92,19 @@ using namespace MP4Fields;
 {	
 	MP4::Tag * const t = data->f->mp4->tag();
 	MP4::ItemListMap &map =  t->itemListMap();	
-	map.insert(field, MP4::Item::Item([value tagLibString]));
+	map.insert(field,StringList([value tagLibString]));
 	return data->file->save();
 }
+
+- (bool) setField:(TagLib::String)field
+					  value:(MP4::Item)valueItem
+{	
+	MP4::Tag * const t = data->f->mp4->tag();
+	MP4::ItemListMap &map =  t->itemListMap();	
+	map.insert(field,valueItem);
+	return data->file->save();
+}
+
 
 #pragma mark -
 #pragma mark Setters
@@ -104,6 +128,27 @@ using namespace MP4Fields;
 	NSLog(@"Setting %s from %@ to %@","Grouping", grouping, newValue);
 	grouping = newValue;
 	[self setFieldWithString:GROUPING  value:newValue]; 
+}
+
+- (void) setBpm:(NSNumber *)newValue
+{
+	NSLog(@"Setting %s from %@ to %@","BPM", bpm, newValue);
+	bpm = newValue;
+	[self setField:BPM value:MP4::Item([newValue intValue])];
+}
+
+- (void) setTotalTracks:(NSNumber *)newValue
+{
+	NSLog(@"Setting %s from %@ to %@","Total Tracks", totalTracks, newValue);
+	totalTracks = newValue;
+	[self setField:TRACK_NUMBER value:MP4::Item([track intValue], [newValue intValue])];
+}
+
+- (void) setTrack:(NSNumber *)newValue
+{
+	NSLog(@"Setting %s from %@ to %@","Track#", track, newValue);
+	track = newValue;
+	[self setField:TRACK_NUMBER value:MP4::Item([newValue intValue], [totalTracks intValue])];
 }
 
 @end

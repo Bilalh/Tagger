@@ -831,10 +831,9 @@
 								<string key="NSToolbarItemPaletteLabel">Navigation</string>
 								<nil key="NSToolbarItemToolTip"/>
 								<object class="NSSegmentedControl" key="NSToolbarItemView" id="1036583554">
-									<reference key="NSNextResponder"/>
+									<nil key="NSNextResponder"/>
 									<int key="NSvFlags">268</int>
 									<string key="NSFrame">{{0, 14}, {77, 25}}</string>
-									<reference key="NSSuperview"/>
 									<int key="NSViewLayerContentsRedrawPolicy">2</int>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSSegmentedCell" key="NSCell" id="928548561">
@@ -2667,22 +2666,6 @@
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: currentNode.tags.title</string>
-						<reference key="source" ref="801882294"/>
-						<reference key="destination" ref="588631224"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="801882294"/>
-							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">value: currentNode.tags.title</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">currentNode.tags.title</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">789</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: currentNode.tags.title</string>
 						<reference key="source" ref="72236978"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
@@ -2711,22 +2694,6 @@
 						</object>
 					</object>
 					<int key="connectionID">799</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: currentNode.tags.title</string>
-						<reference key="source" ref="453348077"/>
-						<reference key="destination" ref="588631224"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="453348077"/>
-							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">value: currentNode.tags.title</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">currentNode.tags.title</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">824</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -3127,6 +3094,38 @@
 						</object>
 					</object>
 					<int key="connectionID">904</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: currentNode.tags.bpm</string>
+						<reference key="source" ref="453348077"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="453348077"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">value: currentNode.tags.bpm</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">currentNode.tags.bpm</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">905</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: currentNode.tags.totalTracks</string>
+						<reference key="source" ref="801882294"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="801882294"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">value: currentNode.tags.totalTracks</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">currentNode.tags.totalTracks</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">906</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3812,7 +3811,6 @@
 							<reference ref="28535669"/>
 							<reference ref="573398950"/>
 							<reference ref="929714935"/>
-							<reference ref="801882294"/>
 							<reference ref="676697020"/>
 							<reference ref="621862520"/>
 							<reference ref="419261290"/>
@@ -3828,6 +3826,7 @@
 							<reference ref="110665699"/>
 							<reference ref="198770580"/>
 							<reference ref="721275556"/>
+							<reference ref="801882294"/>
 						</object>
 						<reference key="parent" ref="939896340"/>
 					</object>
@@ -5021,7 +5020,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">904</int>
+			<int key="maxID">906</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

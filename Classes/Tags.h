@@ -19,6 +19,10 @@ struct FileData;
 	NSString *albumArtist;
 	NSString *composer;
 	NSString *grouping;
+	NSNumber *bpm;
+	NSNumber *totalTracks;
+	// Tracks may be handed by the subclass
+	NSNumber *track;
 }
 
 /// @name Initializing an Tags Object
@@ -66,7 +70,9 @@ struct FileData;
 /// The grouping of the file
 @property (assign) NSString *grouping;
 
+@property (assign) NSNumber *bpm;
 
+@property (assign) NSNumber *totalTracks;
 
 
 @end

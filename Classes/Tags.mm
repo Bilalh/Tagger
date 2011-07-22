@@ -20,7 +20,7 @@
 using namespace TagLib;
 @implementation Tags
 @synthesize title, artist, album, comment, genre, year, track;
-@synthesize albumArtist, composer, grouping;
+@synthesize albumArtist, composer, grouping, bpm, totalTracks;
 
 #pragma mark -
 #pragma mark Init
@@ -105,5 +105,9 @@ NSLog(@"res:%d "#field":%u", b, t->field());
 -(void) setAlbumArtist:(NSString *)newText{}
 -(void) setComposer:(NSString *)newText{}
 -(void) setGrouping:(NSString *)newText{}
+
+-(void) setBpm:(NSNumber *)newValue{}
+
+
 
 @end
