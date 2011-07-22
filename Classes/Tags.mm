@@ -76,12 +76,12 @@ using namespace TagLib;
 
 // Saves the newData to file
 
-#define setMetadata(newText,field,saveFunction)         \
-NSLog(@"Setting "#field" from %@ to %@",field, newText);\
-field = newText;                                        \
-Tag * const t = data->file->tag();                      \
-t->saveFunction ([ field tagLibString]);                \
-bool b =data->file->save();                             \
+#define setMetadata(newText,field,saveFunction)                  \
+NSLog(@"Setting "#field" from %@ to %@",field, newText);         \
+field = newText;                                                 \
+Tag * const t = data->file->tag();                               \
+t->saveFunction (field ? [ field tagLibString] : String::null ); \
+bool b =data->file->save();                                      \
 NSLog(@"res:%d "#field":%s", b, t->field().toCString() );
 
 #define setNumberMetadata(newNumber,field,saveFunction)    \
