@@ -16,8 +16,15 @@
 #include <mp4file.h>
 #include <mpegfile.h>
 
+#include "MP4Fields.h"
+
+@interface MP4Tags()
+- (NSString*) getField:(TagLib::String)field;
+@end
 
 using namespace TagLib;
+using namespace MP4Fields;
+
 @implementation MP4Tags
 
 - (id) initWithFilename:(NSString *)filename
@@ -32,14 +39,24 @@ using namespace TagLib;
     return self;	
 }
 
+-(void) initFields
+{	
+	[super initFields];	
+	albumArtist = [self getField:ALBUM_ARTIST];
+}
 
-- (NSString*) getTitleTest{
+
+- (NSString*) getField:(TagLib::String)field{
 	
 	MP4::Tag *t = data->f->mp4->tag();
-	MP4::ItemListMap &map =  t->itemListMap();
-	const char *cstring = map["\251nam"].toStringList().front().toCString(true); 
+	const MP4::ItemListMap &map =  t->itemListMap();
+	if (!map.contains(field)) return nil;
+		
+	const char *cstring = map[field].toStringList().front().toCString(true); 
 	return [NSString stringWithUTF8String:cstring];
 }
+
+
 
 - (void) setTitleTest:(NSString*) newText{
 	
@@ -56,6 +73,17 @@ using namespace TagLib;
 	NSLog(@"Saved");
 }
 
+
+
+//aART   		.toStringList()		Album Artist
+//\251ART		.toStringList()		Artist
+//\251alb		.toStringList()		Album
+//\251day		.toStringList()		Year
+//\251gen		.toStringList()		Genre
+//\251grp		.toStringList()		Grouping
+//\251nam		.toStringList()		Title
+//\251wrt		.toStringList()		Composer
+//\251cmt		.toStringList()		Comment
 
 
 - (void)dealloc

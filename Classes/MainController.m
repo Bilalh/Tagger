@@ -144,7 +144,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		self.currentNode = [[[directoryStack lastObject] children] objectAtIndex:selectedRow];
 		if (!currentNode.isDirectory){
 			self.generalInfoEnable         = [NSNumber numberWithBool:YES];
-//			self.extendedGeneralInfoEnable = [NSNumber numberWithBool:YES];
+			self.extendedGeneralInfoEnable = [NSNumber numberWithBool:YES];
 		}
 	}
 }

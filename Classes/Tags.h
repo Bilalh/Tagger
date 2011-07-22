@@ -14,6 +14,11 @@ struct FileData;
 @interface Tags : NSObject {
 	@protected
 	struct FileData* data;  /// The tag data
+	
+	// Field that are handed by the subclasses
+	NSString *albumArtist;
+	NSString *composer;
+	NSString *grouping;
 }
 
 /// @name Initializing an Tags Object
@@ -35,7 +40,7 @@ struct FileData;
   */
 -(void) initFields;
 
-/// @name Finding metadata.
+/// @name Finding General metadata.
 
 /// The title of the file
 @property (assign) NSString *title; 
@@ -52,7 +57,15 @@ struct FileData;
 /// The track of the file
 @property (assign) NSNumber *track; 
 
-/// @name Finding extra Metadata 
+/// @name Finding Extra Metadata 
+
+/// The album artist of the file
+@property (assign) NSString *albumArtist;
+/// The composer of the file
+@property (assign) NSString *composer;
+/// The grouping of the file
+@property (assign) NSString *grouping;
+
 
 
 
