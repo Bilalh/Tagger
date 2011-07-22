@@ -22,6 +22,7 @@
 @interface MP4Tags()
 - (NSString*) getFieldWithString:(TagLib::String)field;
 - (TagLib::MP4::Item) getField:(TagLib::String)field;
+- (bool) clearField:(TagLib::String)field;
 - (bool) setFieldWithString:(TagLib::String)field
 					  value:(NSString*)value;
 @end
@@ -51,15 +52,19 @@ using namespace MP4Fields;
 	[super initFields];	
 	const MP4::Item::IntPair tracks = [self getField:TRACK_NUMBER].toIntPair();
 	const MP4::Item::IntPair disks  = [self getField:DISK_NUMBER].toIntPair();
-
-	albumArtist = [self getFieldWithString:ALBUM_ARTIST];
-	composer    = [self getFieldWithString:COMPOSER];
-	grouping    = [self getFieldWithString:GROUPING];
-	bpm         = [NSNumber numberWithInt:[self getField:BPM].toInt()];
-	disk        = [NSNumber numberWithInt:disks.first];
-	totalDisks  = [NSNumber numberWithInt:disks.second];
-	totalTracks = [NSNumber numberWithInt:tracks.second];
-	complication =[NSNumber numberWithBool:[self getField:COMPILATION].toBool()];
+	int i;
+	
+	albumArtist  = [self getFieldWithString:ALBUM_ARTIST];
+	composer     = [self getFieldWithString:COMPOSER];
+	grouping     = [self getFieldWithString:GROUPING];
+	complication = [NSNumber numberWithBool:[self getField:COMPILATION].toBool()];
+	i            = [self getField:BPM].toInt();
+	bpm          = i ?  [NSNumber numberWithInt: i] : nil;
+	
+	disk         = disks.first   ? [NSNumber numberWithInt:disks.first]   : nil;
+	totalDisks   = disks.second  ? [NSNumber numberWithInt:disks.second]  : nil;
+	totalTracks  = tracks.second ? [NSNumber numberWithInt:tracks.second] : nil;
+	
 	
 }
 
@@ -111,6 +116,14 @@ using namespace MP4Fields;
 	return data->file->save();
 }
 
+- (bool) clearField:(TagLib::String)field
+{	
+	MP4::Tag * const t = data->f->mp4->tag();
+	MP4::ItemListMap &map =  t->itemListMap();	
+	map.erase(field);
+	return data->file->save();
+}
+
 
 #pragma mark -
 #pragma mark Setters
@@ -140,7 +153,7 @@ using namespace MP4Fields;
 {
 	NSLog(@"Setting %s from %@ to %@","BPM", bpm, newValue);
 	bpm = newValue;
-	[self setField:BPM value:MP4::Item([newValue intValue])];
+	[self setField:BPM value:  MP4::Item([newValue intValue])];
 }
 
 - (void) setTrack:(NSNumber *)newValue
