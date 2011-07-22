@@ -49,11 +49,15 @@ using namespace MP4Fields;
 -(void) initFields
 {	
 	[super initFields];	
+	const MP4::Item::IntPair tracks = [self getField:TRACK_NUMBER].toIntPair();
+	const MP4::Item::IntPair disks  = [self getField:DISK_NUMBER].toIntPair();
+
 	albumArtist = [self getFieldWithString:ALBUM_ARTIST];
 	composer    = [self getFieldWithString:COMPOSER];
 	grouping    = [self getFieldWithString:GROUPING];
 	bpm         = [NSNumber numberWithInt:[self getField:BPM].toInt()];
-	const MP4::Item::IntPair tracks = [self getField:TRACK_NUMBER].toIntPair();
+	disk        = [NSNumber numberWithInt:disks.first];
+	totalDisks  = [NSNumber numberWithInt:disks.second];
 	totalTracks = [NSNumber numberWithInt:tracks.second];
 }
 
@@ -137,6 +141,13 @@ using namespace MP4Fields;
 	[self setField:BPM value:MP4::Item([newValue intValue])];
 }
 
+- (void) setTrack:(NSNumber *)newValue
+{
+	NSLog(@"Setting %s from %@ to %@","Track#", track, newValue);
+	track = newValue;
+	[self setField:TRACK_NUMBER value:MP4::Item([newValue intValue], [totalTracks intValue])];
+}
+
 - (void) setTotalTracks:(NSNumber *)newValue
 {
 	NSLog(@"Setting %s from %@ to %@","Total Tracks", totalTracks, newValue);
@@ -144,11 +155,19 @@ using namespace MP4Fields;
 	[self setField:TRACK_NUMBER value:MP4::Item([track intValue], [newValue intValue])];
 }
 
-- (void) setTrack:(NSNumber *)newValue
+- (void) setDisk:(NSNumber *)newValue
 {
-	NSLog(@"Setting %s from %@ to %@","Track#", track, newValue);
-	track = newValue;
-	[self setField:TRACK_NUMBER value:MP4::Item([newValue intValue], [totalTracks intValue])];
+	NSLog(@"Setting %s from %@ to %@","Disk#", disk, newValue);
+	disk = newValue;
+	[self setField:DISK_NUMBER value:MP4::Item([newValue intValue], [totalDisks intValue])];
 }
+
+- (void) setTotalDisks:(NSNumber *)newValue
+{
+	NSLog(@"Setting %s from %@ to %@","Total Disks", totalDisks, newValue);
+	totalDisks = newValue;
+	[self setField:DISK_NUMBER value:MP4::Item([disk intValue], [newValue intValue])];
+}
+
 
 @end

@@ -7,8 +7,10 @@
 //
 
 #import "VGTaggerAppDelegate.h"
-#import <MacRuby/MacRuby.h>
 #import "MainController.h"
+
+#import <MacRuby/MacRuby.h>
+
 
 @implementation VGTaggerAppDelegate
 @synthesize window;

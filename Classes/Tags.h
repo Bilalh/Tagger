@@ -21,6 +21,9 @@ struct FileData;
 	NSString *grouping;
 	NSNumber *bpm;
 	NSNumber *totalTracks;
+	NSNumber *disk;
+	NSNumber *totalDisks;
+	
 	// Tracks may be handed by the subclass
 	NSNumber *track;
 }
@@ -58,7 +61,7 @@ struct FileData;
 @property (assign) NSString *genre;
 /// The year of the file
 @property (assign) NSNumber *year;
-/// The track of the file
+/// The track# of the file
 @property (assign) NSNumber *track; 
 
 /// @name Finding Extra Metadata 
@@ -69,10 +72,14 @@ struct FileData;
 @property (assign) NSString *composer;
 /// The grouping of the file
 @property (assign) NSString *grouping;
-
+/// The grouping of the file
 @property (assign) NSNumber *bpm;
-
+/// The total number of tracks in the album
 @property (assign) NSNumber *totalTracks;
+/// The disk# of the file
+@property (assign) NSNumber *disk;
+/// The total number of disks in the album
+@property (assign) NSNumber *totalDisks;
 
 
 @end

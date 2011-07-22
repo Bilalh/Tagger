@@ -134,17 +134,24 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
+	void (^disable)() = ^{
+		self.generalInfoEnable         = [NSNumber numberWithBool:NO];
+		self.extendedGeneralInfoEnable = [NSNumber numberWithBool:NO];
+	};	
 	const NSInteger selectedRow = [table selectedRow];
 	if (selectedRow == -1){
 		self.currentNode = nil;
-		self.generalInfoEnable         = [NSNumber numberWithBool:NO];
-		self.extendedGeneralInfoEnable = [NSNumber numberWithBool:NO];
+		disable();
 	}else{
 		NSLog(@"current:%@",[[[directoryStack lastObject] children] objectAtIndex:selectedRow]);
 		self.currentNode = [[[directoryStack lastObject] children] objectAtIndex:selectedRow];
-		if (!currentNode.isDirectory){
+		if (currentNode.isDirectory){
+			disable();
+		}else if ([[currentNode displayName] hasSuffix:@"m4a"]){
 			self.generalInfoEnable         = [NSNumber numberWithBool:YES];
-			self.extendedGeneralInfoEnable = [NSNumber numberWithBool:YES];
+			self.extendedGeneralInfoEnable = [NSNumber numberWithBool:YES];	
+		}else{
+			disable();
 		}
 	}
 }
