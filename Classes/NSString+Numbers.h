@@ -12,7 +12,10 @@
 /// needed in MainMenu.xib for the textfields binding
 @interface NSString (NSString_Numbers)
 
+
+/// Converts the String to a unsigned int
 - (unsigned int)unsignedIntValue;
+/// Converts the String to a unsigned long
 - (unsigned long)unsignedLongValue;
 
 @end

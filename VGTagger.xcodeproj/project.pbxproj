@@ -43,6 +43,11 @@
 		9264488B13D773CE0035E693 /* arrowRightBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488913D773CE0035E693 /* arrowRightBlack16.tiff */; };
 		9286164A13D65621001481E5 /* NSString+Numbers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9286164913D65621001481E5 /* NSString+Numbers.m */; };
 		929A4ACE13DA027C00244796 /* Changelog.md in Resources */ = {isa = PBXBuildFile; fileRef = 929A4ACD13DA027C00244796 /* Changelog.md */; };
+		929A4ADA13DA087D00244796 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD113DA087D00244796 /* DDAbstractDatabaseLogger.m */; };
+		929A4ADB13DA087D00244796 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD313DA087D00244796 /* DDASLLogger.m */; };
+		929A4ADC13DA087D00244796 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD513DA087D00244796 /* DDFileLogger.m */; };
+		929A4ADD13DA087D00244796 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD713DA087D00244796 /* DDLog.m */; };
+		929A4ADE13DA087D00244796 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD913DA087D00244796 /* DDTTYLogger.m */; };
 		92B65BD213D261DF0018F988 /* NSMutableArray+Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B65BD113D261DF0018F988 /* NSMutableArray+Stack.m */; };
 		92B65BF813D27BED0018F988 /* ImageAndTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B65BF713D27BEC0018F988 /* ImageAndTextCell.m */; };
 		92FCBF5413CE83D10011F744 /* FileSystemNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FCBF5313CE83D10011F744 /* FileSystemNode.m */; };
@@ -117,6 +122,16 @@
 		9286164813D65621001481E5 /* NSString+Numbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Numbers.h"; sourceTree = "<group>"; };
 		9286164913D65621001481E5 /* NSString+Numbers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Numbers.m"; sourceTree = "<group>"; };
 		929A4ACD13DA027C00244796 /* Changelog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Changelog.md; sourceTree = "<group>"; };
+		929A4AD013DA087D00244796 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
+		929A4AD113DA087D00244796 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
+		929A4AD213DA087D00244796 /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
+		929A4AD313DA087D00244796 /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
+		929A4AD413DA087D00244796 /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
+		929A4AD513DA087D00244796 /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
+		929A4AD613DA087D00244796 /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
+		929A4AD713DA087D00244796 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
+		929A4AD813DA087D00244796 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
+		929A4AD913DA087D00244796 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
 		92AD54DC13D90A3600E35AA2 /* MP4Fields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MP4Fields.h; sourceTree = "<group>"; };
 		92B65BD013D261DF0018F988 /* NSMutableArray+Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Stack.h"; sourceTree = "<group>"; };
 		92B65BD113D261DF0018F988 /* NSMutableArray+Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Stack.m"; sourceTree = "<group>"; };
@@ -178,6 +193,7 @@
 		920660BA13C89845003A3803 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				929A4ACF13DA087D00244796 /* Lumberjack */,
 				920660A413C89845003A3803 /* main.m */,
 				920660BB13C89845003A3803 /* VGTagger-Info.plist */,
 				920660BC13C89845003A3803 /* VGTagger-Prefix.pch */,
@@ -313,6 +329,23 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		929A4ACF13DA087D00244796 /* Lumberjack */ = {
+			isa = PBXGroup;
+			children = (
+				929A4AD013DA087D00244796 /* DDAbstractDatabaseLogger.h */,
+				929A4AD113DA087D00244796 /* DDAbstractDatabaseLogger.m */,
+				929A4AD213DA087D00244796 /* DDASLLogger.h */,
+				929A4AD313DA087D00244796 /* DDASLLogger.m */,
+				929A4AD413DA087D00244796 /* DDFileLogger.h */,
+				929A4AD513DA087D00244796 /* DDFileLogger.m */,
+				929A4AD613DA087D00244796 /* DDLog.h */,
+				929A4AD713DA087D00244796 /* DDLog.m */,
+				929A4AD813DA087D00244796 /* DDTTYLogger.h */,
+				929A4AD913DA087D00244796 /* DDTTYLogger.m */,
+			);
+			path = Lumberjack;
+			sourceTree = "<group>";
+		};
 		92B65BD413D261E60018F988 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,6 +466,11 @@
 				92B65BD213D261DF0018F988 /* NSMutableArray+Stack.m in Sources */,
 				92B65BF813D27BED0018F988 /* ImageAndTextCell.m in Sources */,
 				9286164A13D65621001481E5 /* NSString+Numbers.m in Sources */,
+				929A4ADA13DA087D00244796 /* DDAbstractDatabaseLogger.m in Sources */,
+				929A4ADB13DA087D00244796 /* DDASLLogger.m in Sources */,
+				929A4ADC13DA087D00244796 /* DDFileLogger.m in Sources */,
+				929A4ADD13DA087D00244796 /* DDLog.m in Sources */,
+				929A4ADE13DA087D00244796 /* DDTTYLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,10 @@
 #import "VGTaggerAppDelegate.h"
 #import "MainController.h"
 
+#import "DDLog.h"
+#import "DDASLLogger.h"
+#import "DDTTYLogger.h"
+
 #import <MacRuby/MacRuby.h>
 
 
@@ -20,7 +24,8 @@
 {	
 //	NSString *path = [[NSBundle mainBundle] pathForResource:@"Vgmdb" ofType:@"rb"];
 //	[[MacRuby sharedRuntime] evaluateFileAtPath:path];
-
+	[DDLog addLogger:[DDASLLogger sharedInstance]];
+	[DDLog addLogger:[DDTTYLogger sharedInstance]];
 }
 
 @end

@@ -15,6 +15,9 @@
 #import "NSMutableArray+Stack.h"
 #import "ImageAndTextCell.h"
 
+#import "DDLog.h"
+static const int ddLogLevel = LOG_LEVEL_ERROR;
+
 @interface MainController()
 
 - (void) initDirectoryTable;
@@ -33,18 +36,18 @@
 
 - (IBAction) backForwordDirectories:(id)sender
 {
-	NSLog(@"backForwordDirectories");
+	DDLogVerbose(@"backForwordDirectories");
     NSInteger tag = [[sender cell] tagForSegment:[sender selectedSegment]];
-	NSLog(@"tag :%zd  ds %zd fs %zd", tag,  [directoryStack count],[forwardStack count] );
+	DDLogVerbose(@"tag :%zd  ds %zd fs %zd", tag,  [directoryStack count],[forwardStack count] );
 	
 	// updates the gui
 	void (^common)() = ^{
 		self.parentNodes = [[directoryStack lastObject] parentNodes];
-		NSLog(@"%@ bf parentNodes %@", [[directoryStack lastObject] displayName], parentNodes);
+		DDLogVerbose(@"%@ bf parentNodes %@", [[directoryStack lastObject] displayName], parentNodes);
 		
 		[self setPopupMenuIcons];
 		self.selectedNodeindex = [NSNumber numberWithInt:0];
-		NSLog(@"directoryStack %@", directoryStack);
+		DDLogVerbose (@"directoryStack %@", directoryStack);
 		[table reloadData];
 	};
 	
@@ -78,7 +81,7 @@
 	
 	NSArray *children = [[directoryStack lastObject] children];
 	FileSystemNode *node = [children objectAtIndex:row];
-	NSLog(@"selected %@", node);
+	DDLogVerbose(@"onClick selected %@", node);
 	if ([node isDirectory]){
 		[directoryStack addObject:node];
 		[table reloadData];
@@ -94,7 +97,6 @@
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView 
 {
-//	NSLog(@"numberOfRowsInTableView %@\n %zu", [directoryStack lastObject], [[[directoryStack lastObject] children] count]);
     return [[[directoryStack lastObject] children] count];
 }
 
@@ -103,7 +105,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 					  row:(NSInteger)rowIndex 
 {
 	NSArray *children = [[directoryStack lastObject] children];
-//	NSLog(@"tableViewUpdate %@\t %zu", [directoryStack lastObject], [children count]);
 
 	FileSystemNode *node = [children objectAtIndex:rowIndex];
 	
@@ -143,7 +144,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		self.currentNode = nil;
 		disable();
 	}else{
-		NSLog(@"current:%@",[[[directoryStack lastObject] children] objectAtIndex:selectedRow]);
 		self.currentNode = [[[directoryStack lastObject] children] objectAtIndex:selectedRow];
 		if (currentNode.isDirectory){
 			disable();
@@ -158,7 +158,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (void)tableView:(NSTableView *)tableView didClickTableColumn:(NSTableColumn *)tableColumn
 {
-	NSLog(@"aa");
+	DDLogVerbose(@"headerClicked");
 }
 
 #pragma mark -
@@ -166,7 +166,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 -(IBAction) goToParent:(id)sender
 {
-	NSLog(@"i:%@ pN:%@", selectedNodeindex, [parentNodes objectAtIndex:[selectedNodeindex intValue]]);
+	DDLogVerbose(@"i:%@ pN:%@", selectedNodeindex, [parentNodes objectAtIndex:[selectedNodeindex intValue]]);
 	int index = [selectedNodeindex intValue];
 	if (index == 0) {
 		return;
@@ -183,7 +183,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	self.selectedNodeindex = [NSNumber numberWithInt:0];
 	
 	[directoryStack addObject:[parentNodes objectAtIndex:0]];
-	NSLog(@"directoryStack %@", directoryStack);
+	DDLogInfo(@"directoryStack %@", directoryStack);
 	[table reloadData];
 }
 
@@ -203,7 +203,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
     if ([op runModal] != NSOKButton) return;
     
 	NSURL *url = [op URL];
-	NSLog(@"%@", url);
+	DDLogInfo(@"%@ selected", url);
 	FileSystemNode *node  = [[FileSystemNode alloc ] initWithURL:url];
 	[parentNodes removeAllObjects];
 	[parentNodes addObjectsFromArray:[node parentNodes] ];
@@ -213,13 +213,13 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 	NSInteger popupCount = [popup numberOfItems];
 	NSInteger min = MIN([parentNodes count], popupCount);
-	NSLog(@"min:%zu pN:%zu popN:%zu", min, [parentNodes count], popupCount);
-	
+	DDLogVerbose(@"min:%zu pN:%zu popN:%zu", min, [parentNodes count], popupCount);
+
 	// Correct the number of items in the popupmenu
 	NSInteger i;
 	for (i=min; i < [parentNodes count]; ++i) {
 		[popup addItemWithTitle:[[NSNumber numberWithLong:i] stringValue] ];
-		NSLog(@"pN:%zu popN:%zu", [parentNodes count], [popup numberOfItems]);
+		DDLogVerbose(@"pN:%zu popN:%zu", [parentNodes count], [popup numberOfItems]);
 	}	
 	
 	for (i=min; i < popupCount; ++i) {
@@ -264,7 +264,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 -(void) initDirectoryTable
 {
-	NSLog(@"initDirectoryTable");
 	directoryStack = [[NSMutableArray alloc] init];
 	forwardStack   = [[NSMutableArray alloc] init];
 
@@ -276,7 +275,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	self.selectedNodeindex = [NSNumber numberWithInt:0];
 	parentNodes            = [currentDirectory parentNodes];
 	
-	NSLog(@"%@", parentNodes);
+	DDLogVerbose(@"Staring parentNodes%@", parentNodes);
 }
 
 - (id)init

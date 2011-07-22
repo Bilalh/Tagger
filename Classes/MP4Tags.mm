@@ -19,6 +19,9 @@
 
 #include "MP4Fields.h"
 
+#import "DDLog.h"
+static const int ddLogLevel = LOG_LEVEL_INFO;
+
 @interface MP4Tags()
 - (NSString*) getFieldWithString:(TagLib::String)field;
 - (TagLib::MP4::Item) getField:(TagLib::String)field;
@@ -130,63 +133,64 @@ using namespace MP4Fields;
 
 - (void) setAlbumArtist:(NSString *)newValue
 { 
-	NSLog(@"Setting %s from %@ to %@","Album Artist", albumArtist, newValue);
+	DDLogInfo(@"Setting %s from %@ to %@","Album Artist", albumArtist, newValue);
 	albumArtist = newValue;
 	[self setFieldWithString:ALBUM_ARTIST  value:newValue]; 
 }
 
 - (void) setComposer:(NSString *)newValue
 {
-	NSLog(@"Setting %s from %@ to %@", "Composer", composer, newValue);
+	DDLogInfo(@"Setting %s from %@ to %@", "Composer", composer, newValue);
 	composer = newValue;
 	[self setFieldWithString:COMPOSER  value:newValue]; 
 }
 
 - (void) setGrouping:(NSString *)newValue
 {
-	NSLog(@"Setting %s from %@ to %@","Grouping", grouping, newValue);
+	DDLogInfo(@"Setting %s from %@ to %@","Grouping", grouping, newValue);
 	grouping = newValue;
 	[self setFieldWithString:GROUPING  value:newValue]; 
 }
 
 - (void) setBpm:(NSNumber *)newValue
 {
-	NSLog(@"Setting %s from %@ to %@","BPM", bpm, newValue);
+	DDLogInfo(@"Setting %s from %@ to %@","BPM", bpm, newValue);
 	bpm = newValue;
 	[self setField:BPM value:  MP4::Item([newValue intValue])];
 }
 
 - (void) setTrack:(NSNumber *)newValue
 {
-	NSLog(@"Setting %s from %@ to %@","Track#", track, newValue);
+	DDLogInfo(@"Setting %s from %@ to %@","Track#", track, newValue);
 	track = newValue;
 	[self setField:TRACK_NUMBER value:MP4::Item([newValue intValue], [totalTracks intValue])];
 }
 
 - (void) setTotalTracks:(NSNumber *)newValue
 {
-	NSLog(@"Setting %s from %@ to %@","Total Tracks", totalTracks, newValue);
+	
+	DDLogInfo(@"Setting %s from %@ to %@","Total Tracks", totalTracks, newValue);
 	totalTracks = newValue;
 	[self setField:TRACK_NUMBER value:MP4::Item([track intValue], [newValue intValue])];
 }
 
 - (void) setDisk:(NSNumber *)newValue
 {
-	NSLog(@"Setting %s from %@ to %@","Disk#", disk, newValue);
+	DDLogInfo(@"Setting %s from %@ to %@","Disk#", disk, newValue);
 	disk = newValue;
 	[self setField:DISK_NUMBER value:MP4::Item([newValue intValue], [totalDisks intValue])];
 }
 
 - (void) setTotalDisks:(NSNumber *)newValue
 {
-	NSLog(@"Setting %s from %@ to %@","Total Disks", totalDisks, newValue);
+	DDLogInfo(@"Setting %s from %@ to %@","Total Disks", totalDisks, newValue);
 	totalDisks = newValue;
 	[self setField:DISK_NUMBER value:MP4::Item([disk intValue], [newValue intValue])];
 }
 
 - (void) setComplication:(NSNumber *)newValue
 {
-	NSLog(@"Setting %s from %@ to %@","Complication", complication, newValue);
+	DDLogInfo(@"Setting %s from %@ to %@","Complication", complication, newValue);
 	complication = newValue;
 	[self setField:COMPILATION value:MP4::Item([newValue boolValue] )];
 }

@@ -11,6 +11,8 @@
 #import "NSString+Convert.h"
 
 #include <tag.h>
+#import "DDLog.h"
+static const int ddLogLevel = LOG_LEVEL_INFO;
 
 @interface Tags() // private methdods
 #pragma mark private
@@ -50,7 +52,6 @@ using namespace TagLib;
 
 - (void) initFields
 {
-	NSLog(@"initFields");
 	const Tag *t = data->file->tag();
 	title   = [[NSString  alloc] initWithTagString:t->title()  ];
 	title   = [[NSString  alloc] initWithTagString:t->title()  ];
@@ -79,20 +80,20 @@ using namespace TagLib;
 // Saves the newData to file
 
 #define setMetadata(newText,field,saveFunction)                  \
-NSLog(@"Setting "#field" from %@ to %@",field, newText);         \
+DDLogInfo(@"Setting "#field" from %@ to %@",field, newText);         \
 field = newText;                                                 \
 Tag * const t = data->file->tag();                               \
 t->saveFunction (field ? [ field tagLibString] : String::null ); \
 bool b =data->file->save();                                      \
-NSLog(@"res:%d "#field":%s", b, t->field().toCString() );
+DDLogInfo(@"res:%d "#field":%s", b, t->field().toCString() );
 
 #define setNumberMetadata(newNumber,field,saveFunction)    \
-NSLog(@"Setting "#field" from %@ to %@",field, newNumber); \
+DDLogInfo(@"Setting "#field" from %@ to %@",field, newNumber); \
 field = newNumber;                                         \
 Tag * const t = data->file->tag();                         \
 t->saveFunction (field ? [field unsignedIntValue] :0 );    \
 bool b =data->file->save();                                \
-NSLog(@"res:%d "#field":%u", b, t->field());               
+DDLogInfo(@"res:%d "#field":%u", b, t->field());               
 
 
 -(void) setTitle:(NSString *)newText  { setMetadata(newText,title,setTitle); }

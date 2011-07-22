@@ -11,7 +11,9 @@
 
 @interface NSMutableArray (NSArray_Stack)
 
+/// Adds a item to the end  of the array
 - (void)push:(id)inObject;
+/// Removes the last items and retuns it
 - (id)pop;
 
 @end
