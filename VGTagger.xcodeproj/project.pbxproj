@@ -42,7 +42,6 @@
 		9264488A13D773CE0035E693 /* arrowLeftBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */; };
 		9264488B13D773CE0035E693 /* arrowRightBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488913D773CE0035E693 /* arrowRightBlack16.tiff */; };
 		9286164A13D65621001481E5 /* NSString+Numbers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9286164913D65621001481E5 /* NSString+Numbers.m */; };
-		92AD54DB13D90A0A00E35AA2 /* MP4Fields.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92AD54DA13D90A0A00E35AA2 /* MP4Fields.cpp */; };
 		92B65BD213D261DF0018F988 /* NSMutableArray+Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B65BD113D261DF0018F988 /* NSMutableArray+Stack.m */; };
 		92B65BF813D27BED0018F988 /* ImageAndTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B65BF713D27BEC0018F988 /* ImageAndTextCell.m */; };
 		92FCBF5413CE83D10011F744 /* FileSystemNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FCBF5313CE83D10011F744 /* FileSystemNode.m */; };
@@ -116,7 +115,6 @@
 		9264488913D773CE0035E693 /* arrowRightBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowRightBlack16.tiff; sourceTree = "<group>"; };
 		9286164813D65621001481E5 /* NSString+Numbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Numbers.h"; sourceTree = "<group>"; };
 		9286164913D65621001481E5 /* NSString+Numbers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Numbers.m"; sourceTree = "<group>"; };
-		92AD54DA13D90A0A00E35AA2 /* MP4Fields.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MP4Fields.cpp; sourceTree = "<group>"; };
 		92AD54DC13D90A3600E35AA2 /* MP4Fields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MP4Fields.h; sourceTree = "<group>"; };
 		92B65BD013D261DF0018F988 /* NSMutableArray+Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Stack.h"; sourceTree = "<group>"; };
 		92B65BD113D261DF0018F988 /* NSMutableArray+Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Stack.m"; sourceTree = "<group>"; };
@@ -263,7 +261,6 @@
 				9201935A13CFBBC20085E167 /* NSString+Convert.h */,
 				9201935B13CFBBC20085E167 /* NSString+Convert.mm */,
 				92AD54DC13D90A3600E35AA2 /* MP4Fields.h */,
-				92AD54DA13D90A0A00E35AA2 /* MP4Fields.cpp */,
 			);
 			name = TagLib;
 			sourceTree = "<group>";
@@ -432,7 +429,6 @@
 				92B65BD213D261DF0018F988 /* NSMutableArray+Stack.m in Sources */,
 				92B65BF813D27BED0018F988 /* ImageAndTextCell.m in Sources */,
 				9286164A13D65621001481E5 /* NSString+Numbers.m in Sources */,
-				92AD54DB13D90A0A00E35AA2 /* MP4Fields.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

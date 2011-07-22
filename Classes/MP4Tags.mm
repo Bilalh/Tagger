@@ -8,6 +8,7 @@
 
 #import "MP4Tags.h"
 #import "TagStructs.h"
+#import "NSString+Convert.h"
 
 #include <iostream>
 #include <string>
@@ -20,12 +21,17 @@
 
 @interface MP4Tags()
 - (NSString*) getField:(TagLib::String)field;
+- (bool) setFieldWithString:(TagLib::String)field
+					  value:(NSString*)value;
 @end
 
 using namespace TagLib;
 using namespace MP4Fields;
 
 @implementation MP4Tags
+
+#pragma mark -
+#pragma mark init/alloc
 
 - (id) initWithFilename:(NSString *)filename
 {
@@ -43,12 +49,22 @@ using namespace MP4Fields;
 {	
 	[super initFields];	
 	albumArtist = [self getField:ALBUM_ARTIST];
+	composer    = [self getField:COMPOSER];
+	grouping    = [self getField:GROUPING];
 }
 
+- (void)dealloc
+{
+    [super dealloc];
+}
 
-- (NSString*) getField:(TagLib::String)field{
+#pragma mark -
+#pragma mark Fields helpers
+
+- (NSString*) getField:(TagLib::String)field
+{
 	
-	MP4::Tag *t = data->f->mp4->tag();
+	MP4::Tag * const t = data->f->mp4->tag();
 	const MP4::ItemListMap &map =  t->itemListMap();
 	if (!map.contains(field)) return nil;
 		
@@ -57,38 +73,37 @@ using namespace MP4Fields;
 }
 
 
-
-- (void) setTitleTest:(NSString*) newText{
-	
-	MP4::Tag *t = data->f->mp4->tag();
-	MP4::ItemListMap &map =  t->itemListMap();
-	
-	String s = String([newText UTF8String], String::UTF8);
-	std::cout << s << std::endl;
-	
-	String key = String("\251nam");
-	map.insert(key, MP4::Item::Item(s));
-	
-	data->file->save();
-	NSLog(@"Saved");
+- (bool) setFieldWithString:(TagLib::String)field
+					  value:(NSString*)value
+{	
+	MP4::Tag * const t = data->f->mp4->tag();
+	MP4::ItemListMap &map =  t->itemListMap();	
+	map.insert(field, MP4::Item::Item([value tagLibString]));
+	return data->file->save();
 }
 
+#pragma mark -
+#pragma mark Setters
 
+- (void) setAlbumArtist:(NSString *)newValue
+{ 
+	NSLog(@"Setting %s from %@ to %@","Album Artist", albumArtist, newValue);
+	albumArtist = newValue;
+	[self setFieldWithString:ALBUM_ARTIST  value:newValue]; 
+}
 
-//aART   		.toStringList()		Album Artist
-//\251ART		.toStringList()		Artist
-//\251alb		.toStringList()		Album
-//\251day		.toStringList()		Year
-//\251gen		.toStringList()		Genre
-//\251grp		.toStringList()		Grouping
-//\251nam		.toStringList()		Title
-//\251wrt		.toStringList()		Composer
-//\251cmt		.toStringList()		Comment
-
-
-- (void)dealloc
+- (void) setComposer:(NSString *)newValue
 {
-    [super dealloc];
+	NSLog(@"Setting %s from %@ to %@", "Composer", composer, newValue);
+	composer = newValue;
+	[self setFieldWithString:COMPOSER  value:newValue]; 
+}
+
+- (void) setGrouping:(NSString *)newValue
+{
+	NSLog(@"Setting %s from %@ to %@","Grouping", grouping, newValue);
+	grouping = newValue;
+	[self setFieldWithString:GROUPING  value:newValue]; 
 }
 
 @end

@@ -11,6 +11,7 @@
 
 #include <tstring.h> 
 
+/// Contains fields for directory accessing fields 
 namespace MP4Fields {
 	TagLib::String const ALBUM_ARTIST = "aART";
 	TagLib::String const COMPOSER = "\251wrt";
