@@ -59,6 +59,8 @@ using namespace MP4Fields;
 	disk        = [NSNumber numberWithInt:disks.first];
 	totalDisks  = [NSNumber numberWithInt:disks.second];
 	totalTracks = [NSNumber numberWithInt:tracks.second];
+	complication =[NSNumber numberWithBool:[self getField:COMPILATION].toBool()];
+	
 }
 
 - (void)dealloc
@@ -167,6 +169,13 @@ using namespace MP4Fields;
 	NSLog(@"Setting %s from %@ to %@","Total Disks", totalDisks, newValue);
 	totalDisks = newValue;
 	[self setField:DISK_NUMBER value:MP4::Item([disk intValue], [newValue intValue])];
+}
+
+- (void) setComplication:(NSNumber *)newValue
+{
+	NSLog(@"Setting %s from %@ to %@","Complication", complication, newValue);
+	complication = newValue;
+	[self setField:COMPILATION value:MP4::Item([newValue boolValue] )];
 }
 
 

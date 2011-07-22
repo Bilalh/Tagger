@@ -17,7 +17,7 @@ namespace MP4Fields {
 	TagLib::String const COMPOSER = "\251wrt";
 	TagLib::String const GROUPING = "\251grp";
 	
-	TagLib::String const COMPILATION_FLAG = "cpil";
+	TagLib::String const COMPILATION = "cpil";
 	TagLib::String const BPM = "tmpo";
 	
 	TagLib::String const TRACK_NUMBER = "trkn";

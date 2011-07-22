@@ -2089,7 +2089,7 @@
 														<nil key="NSNextResponder"/>
 														<int key="NSvFlags">256</int>
 														<string key="NSFrame">{{10, 33}, {509, 428}}</string>
-														<reference key="NSNextKeyView" ref="573093410"/>
+														<reference key="NSNextKeyView"/>
 													</object>
 													<string key="NSLabel">Artwork</string>
 													<reference key="NSColor" ref="98462531"/>
@@ -3126,6 +3126,22 @@
 						</object>
 					</object>
 					<int key="connectionID">908</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: currentNode.tags.complication</string>
+						<reference key="source" ref="198770580"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="198770580"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">value: currentNode.tags.complication</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">currentNode.tags.complication</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">911</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -5020,7 +5036,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">908</int>
+			<int key="maxID">911</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
