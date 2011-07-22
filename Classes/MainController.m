@@ -29,8 +29,7 @@ static const int ddLogLevel = LOG_LEVEL_ERROR;
 @end
 
 @implementation MainController
-@synthesize window, directoryStack, currentNode,forwardStack, selectedNodeindex, parentNodes, generalInfoEnable, extendedGeneralInfoEnable;
-
+@synthesize window, directoryStack, currentNode,forwardStack, selectedNodeindex, parentNodes;
 #pragma mark -
 #pragma mark Table Methods 
 
@@ -135,24 +134,11 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
-	void (^disable)() = ^{
-		self.generalInfoEnable         = [NSNumber numberWithBool:NO];
-		self.extendedGeneralInfoEnable = [NSNumber numberWithBool:NO];
-	};	
 	const NSInteger selectedRow = [table selectedRow];
 	if (selectedRow == -1){
 		self.currentNode = nil;
-		disable();
 	}else{
 		self.currentNode = [[[directoryStack lastObject] children] objectAtIndex:selectedRow];
-		if (currentNode.isDirectory){
-			disable();
-		}else if ([[currentNode displayName] hasSuffix:@"m4a"]){
-			self.generalInfoEnable         = [NSNumber numberWithBool:YES];
-			self.extendedGeneralInfoEnable = [NSNumber numberWithBool:YES];	
-		}else{
-			disable();
-		}
 	}
 }
 
@@ -250,6 +236,12 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		  contextInfo: self.window]; 	
 }
 
+- (id)valueForUndefinedKey:(NSString *)key
+{
+	NSLog(@"valueForUndefinedKey:%@",key);
+	return @"ERROR";
+}
+
 #pragma mark -
 #pragma mark Alloc/init
 
@@ -283,8 +275,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
     self = [super init];
     if (self) {
 		[self initDirectoryTable ];
-		self.generalInfoEnable         = [NSNumber numberWithBool:NO];
-		self.extendedGeneralInfoEnable = [NSNumber numberWithBool:NO];
     }
 	
     return self;

@@ -35,11 +35,6 @@
 /// The node of the selected row, nil if no row selected.
 @property (assign) FileSystemNode *currentNode;
 
-/// YES if the selected file is a music file that allows basic general metadata
-@property (assign) NSNumber *generalInfoEnable;
-/// YES if the selected file is a music file that allows all general metadata such album artist
-@property (assign) NSNumber *extendedGeneralInfoEnable;
-
 /// The selected node in the popup.
 @property (assign) NSNumber *selectedNodeindex;
 /// The parent nodes of the current directory.

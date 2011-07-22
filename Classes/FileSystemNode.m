@@ -9,7 +9,7 @@
 @end
 
 @implementation FileSystemNode
-@synthesize URL = _url, tags;
+@synthesize URL = _url, tags, hasBasicMetadata, hasExtenedMetadata;
 @dynamic displayName, children, isDirectory, icon, labelColor;
 
 #pragma mark -
@@ -23,10 +23,15 @@
 			
 			if ([path hasSuffix:@"m4a"]){
 				tags = [[MP4Tags alloc] initWithFilename:path];
+				hasBasicMetadata   = true;
+				hasExtenedMetadata = true;
 			}else if ([path hasSuffix:@"mp3"]){
 				tags = [[MPEGTags alloc] initWithFilename:path];
+				hasBasicMetadata   = true;
 			}else{
-				tags = [[Tags alloc] initWithFilename:path];	
+				tags = nil;	
+				hasBasicMetadata   = false;
+				hasExtenedMetadata = false;
 			}
 		}
     }

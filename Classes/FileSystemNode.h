@@ -11,6 +11,9 @@
     NSArray *_children;
     BOOL _childrenDirty;
 	NSMutableArray* _parentNodes;
+	
+	BOOL      hasBasicMetadata;
+	BOOL      hasExtenedMetadata;
 }
 
 /// @name Initializing an FileSystemNode Object
@@ -57,8 +60,13 @@
 /// The label colour of this node
 @property(readonly, retain) NSColor  *labelColor;
 
-/** The audio tags such as the title */
+/// The audio tags such as the title.
 @property(readonly, assign) Tags      *tags;
+/// YES if the file has basic metadata info.
+@property(readonly)         BOOL      hasBasicMetadata;
+/// YES if the file has extend metadata info.
+@property(readonly)         BOOL      hasExtenedMetadata;
+
 
 
 

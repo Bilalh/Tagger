@@ -1150,7 +1150,7 @@
 															<string key="NSFrameSize">{571, 400}</string>
 															<reference key="NSSuperview" ref="271199575"/>
 															<reference key="NSWindow"/>
-															<reference key="NSNextKeyView" ref="211658329"/>
+															<reference key="NSNextKeyView" ref="367438659"/>
 															<bool key="NSEnabled">YES</bool>
 															<object class="NSTableHeaderView" key="NSHeaderView" id="310651733">
 																<reference key="NSNextResponder" ref="211658329"/>
@@ -1444,7 +1444,7 @@
 											<string key="NSFrameSize">{496, 433}</string>
 											<reference key="NSSuperview" ref="479247737"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="271199575"/>
+											<reference key="NSNextKeyView" ref="211658329"/>
 											<int key="NSsFlags">690</int>
 											<reference key="NSVScroller" ref="367438659"/>
 											<reference key="NSHScroller" ref="795071022"/>
@@ -1493,7 +1493,7 @@
 																<object class="NSTextFieldCell" key="NSCell" id="360223553">
 																	<int key="NSCellFlags">-1804468671</int>
 																	<int key="NSCellFlags2">272630784</int>
-																	<string key="NSContents"/>
+																	<string key="NSContents">1</string>
 																	<reference key="NSSupport" ref="677191051"/>
 																	<reference key="NSControlView" ref="985815505"/>
 																	<bool key="NSDrawsBackground">YES</bool>
@@ -1547,7 +1547,7 @@
 																<object class="NSTextFieldCell" key="NSCell" id="549014783">
 																	<int key="NSCellFlags">-1804468671</int>
 																	<int key="NSCellFlags2">272630784</int>
-																	<string key="NSContents"/>
+																	<string key="NSContents">2</string>
 																	<reference key="NSSupport" ref="677191051"/>
 																	<reference key="NSControlView" ref="491346229"/>
 																	<bool key="NSDrawsBackground">YES</bool>
@@ -1586,7 +1586,7 @@
 																<object class="NSTextFieldCell" key="NSCell" id="612420011">
 																	<int key="NSCellFlags">-1804468671</int>
 																	<int key="NSCellFlags2">272630784</int>
-																	<string key="NSContents"/>
+																	<string key="NSContents">3</string>
 																	<reference key="NSSupport" ref="677191051"/>
 																	<reference key="NSControlView" ref="933196869"/>
 																	<bool key="NSDrawsBackground">YES</bool>
@@ -1625,7 +1625,7 @@
 																<object class="NSTextFieldCell" key="NSCell" id="974911550">
 																	<int key="NSCellFlags">-1804468671</int>
 																	<int key="NSCellFlags2">272630784</int>
-																	<string key="NSContents"/>
+																	<string key="NSContents">4</string>
 																	<reference key="NSSupport" ref="677191051"/>
 																	<reference key="NSControlView" ref="857368046"/>
 																	<bool key="NSDrawsBackground">YES</bool>
@@ -1664,7 +1664,7 @@
 																<object class="NSTextFieldCell" key="NSCell" id="716198655">
 																	<int key="NSCellFlags">-1804468671</int>
 																	<int key="NSCellFlags2">272630784</int>
-																	<string key="NSContents"/>
+																	<string key="NSContents">5</string>
 																	<reference key="NSSupport" ref="677191051"/>
 																	<reference key="NSControlView" ref="890062118"/>
 																	<bool key="NSDrawsBackground">YES</bool>
@@ -1817,7 +1817,7 @@
 																<object class="NSTextFieldCell" key="NSCell" id="591276558">
 																	<int key="NSCellFlags">-1804468671</int>
 																	<int key="NSCellFlags2">272630784</int>
-																	<string key="NSContents"/>
+																	<string key="NSContents">6</string>
 																	<reference key="NSSupport" ref="677191051"/>
 																	<reference key="NSControlView" ref="608450119"/>
 																	<bool key="NSDrawsBackground">YES</bool>
@@ -1856,7 +1856,7 @@
 																<object class="NSTextFieldCell" key="NSCell" id="200860837">
 																	<int key="NSCellFlags">-1804468671</int>
 																	<int key="NSCellFlags2">272630784</int>
-																	<string key="NSContents"/>
+																	<string key="NSContents">77</string>
 																	<reference key="NSSupport" ref="677191051"/>
 																	<reference key="NSControlView" ref="595101705"/>
 																	<bool key="NSDrawsBackground">YES</bool>
@@ -1938,13 +1938,13 @@
 																<string key="NSFrame">{{126, 83}, {366, 66}}</string>
 																<reference key="NSSuperview" ref="10815081"/>
 																<reference key="NSWindow"/>
-																<reference key="NSNextKeyView" ref="573093410"/>
+																<reference key="NSNextKeyView"/>
 																<int key="NSViewLayerContentsRedrawPolicy">2</int>
 																<bool key="NSEnabled">YES</bool>
 																<object class="NSTextFieldCell" key="NSCell" id="54779877">
 																	<int key="NSCellFlags">-1805517311</int>
 																	<int key="NSCellFlags2">272629760</int>
-																	<string key="NSContents"/>
+																	<string key="NSContents">ff</string>
 																	<reference key="NSSupport" ref="677191051"/>
 																	<reference key="NSControlView" ref="721275556"/>
 																	<bool key="NSDrawsBackground">YES</bool>
@@ -1964,7 +1964,7 @@
 																<object class="NSTextFieldCell" key="NSCell" id="762757839">
 																	<int key="NSCellFlags">-1804468671</int>
 																	<int key="NSCellFlags2">272630784</int>
-																	<real value="434" key="NSContents"/>
+																	<real value="3" key="NSContents"/>
 																	<reference key="NSSupport" ref="677191051"/>
 																	<object class="NSNumberFormatter" key="NSFormatter" id="21401910">
 																		<object class="NSMutableDictionary" key="NS.attributes">
@@ -2048,7 +2048,7 @@
 																<object class="NSTextFieldCell" key="NSCell" id="55389420">
 																	<int key="NSCellFlags">-1804468671</int>
 																	<int key="NSCellFlags2">272630784</int>
-																	<real value="434" key="NSContents"/>
+																	<real value="5" key="NSContents"/>
 																	<reference key="NSSupport" ref="677191051"/>
 																	<object class="NSNumberFormatter" key="NSFormatter" id="782510430">
 																		<object class="NSMutableDictionary" key="NS.attributes">
@@ -2124,7 +2124,7 @@
 																<object class="NSTextFieldCell" key="NSCell" id="623853800">
 																	<int key="NSCellFlags">-1804468671</int>
 																	<int key="NSCellFlags2">272630784</int>
-																	<real value="434" key="NSContents"/>
+																	<real value="22" key="NSContents"/>
 																	<reference key="NSSupport" ref="677191051"/>
 																	<object class="NSNumberFormatter" key="NSFormatter" id="559943780">
 																		<object class="NSMutableDictionary" key="NS.attributes">
@@ -2200,7 +2200,7 @@
 																<object class="NSTextFieldCell" key="NSCell" id="677579113">
 																	<int key="NSCellFlags">-1804468671</int>
 																	<int key="NSCellFlags2">272630784</int>
-																	<real value="434" key="NSContents"/>
+																	<real value="55" key="NSContents"/>
 																	<reference key="NSSupport" ref="677191051"/>
 																	<object class="NSNumberFormatter" key="NSFormatter" id="283792451">
 																		<object class="NSMutableDictionary" key="NS.attributes">
@@ -2351,8 +2351,8 @@
 																<bool key="NSEnabled">YES</bool>
 																<object class="NSTextFieldCell" key="NSCell" id="6643660">
 																	<int key="NSCellFlags">-1804468671</int>
-																	<int key="NSCellFlags2">272630784</int>
-																	<real value="434" key="NSContents"/>
+																	<int key="NSCellFlags2">-1874852864</int>
+																	<string key="NSContents">44</string>
 																	<reference key="NSSupport" ref="677191051"/>
 																	<object class="NSNumberFormatter" key="NSFormatter" id="1008695521">
 																		<object class="NSMutableDictionary" key="NS.attributes">
@@ -2434,7 +2434,6 @@
 														<nil key="NSNextResponder"/>
 														<int key="NSvFlags">256</int>
 														<string key="NSFrame">{{10, 33}, {509, 428}}</string>
-														<reference key="NSNextKeyView" ref="573093410"/>
 													</object>
 													<string key="NSLabel">Artwork</string>
 													<reference key="NSColor" ref="98462531"/>
@@ -3090,150 +3089,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: generalInfoEnable</string>
-						<reference key="source" ref="491346229"/>
-						<reference key="destination" ref="588631224"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="491346229"/>
-							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: generalInfoEnable</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">generalInfoEnable</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">883</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: generalInfoEnable</string>
-						<reference key="source" ref="933196869"/>
-						<reference key="destination" ref="588631224"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="933196869"/>
-							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: generalInfoEnable</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">generalInfoEnable</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">884</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: extendedGeneralInfoEnable</string>
-						<reference key="source" ref="857368046"/>
-						<reference key="destination" ref="588631224"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="857368046"/>
-							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: extendedGeneralInfoEnable</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">extendedGeneralInfoEnable</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">888</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: extendedGeneralInfoEnable</string>
-						<reference key="source" ref="890062118"/>
-						<reference key="destination" ref="588631224"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="890062118"/>
-							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: extendedGeneralInfoEnable</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">extendedGeneralInfoEnable</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">889</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: extendedGeneralInfoEnable</string>
-						<reference key="source" ref="198770580"/>
-						<reference key="destination" ref="588631224"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="198770580"/>
-							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: extendedGeneralInfoEnable</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">extendedGeneralInfoEnable</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">896</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: extendedGeneralInfoEnable</string>
-						<reference key="source" ref="608450119"/>
-						<reference key="destination" ref="588631224"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="608450119"/>
-							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: extendedGeneralInfoEnable</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">extendedGeneralInfoEnable</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">898</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: generalInfoEnable</string>
-						<reference key="source" ref="595101705"/>
-						<reference key="destination" ref="588631224"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="595101705"/>
-							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: generalInfoEnable</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">generalInfoEnable</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">899</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: generalInfoEnable</string>
-						<reference key="source" ref="721275556"/>
-						<reference key="destination" ref="588631224"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="721275556"/>
-							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: generalInfoEnable</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">generalInfoEnable</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">900</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: generalInfoEnable</string>
-						<reference key="source" ref="360223553"/>
-						<reference key="destination" ref="588631224"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="360223553"/>
-							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: generalInfoEnable</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">generalInfoEnable</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">901</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: currentNode.tags.albumArtist</string>
 						<reference key="source" ref="857368046"/>
 						<reference key="destination" ref="588631224"/>
@@ -3362,86 +3217,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: extendedGeneralInfoEnable</string>
-						<reference key="source" ref="676211420"/>
-						<reference key="destination" ref="588631224"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="676211420"/>
-							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: extendedGeneralInfoEnable</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">extendedGeneralInfoEnable</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">930</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: extendedGeneralInfoEnable</string>
-						<reference key="source" ref="983249531"/>
-						<reference key="destination" ref="588631224"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="983249531"/>
-							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: extendedGeneralInfoEnable</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">extendedGeneralInfoEnable</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">932</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: extendedGeneralInfoEnable</string>
-						<reference key="source" ref="241776072"/>
-						<reference key="destination" ref="588631224"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="241776072"/>
-							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: extendedGeneralInfoEnable</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">extendedGeneralInfoEnable</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">933</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: extendedGeneralInfoEnable</string>
-						<reference key="source" ref="1032257612"/>
-						<reference key="destination" ref="588631224"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="1032257612"/>
-							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: extendedGeneralInfoEnable</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">extendedGeneralInfoEnable</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">934</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: extendedGeneralInfoEnable</string>
-						<reference key="source" ref="230074618"/>
-						<reference key="destination" ref="588631224"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="230074618"/>
-							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: extendedGeneralInfoEnable</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">extendedGeneralInfoEnable</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">938</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: currentNode.tags.bpm</string>
 						<reference key="source" ref="230074618"/>
 						<reference key="destination" ref="588631224"/>
@@ -3458,22 +3233,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: extendedGeneralInfoEnable</string>
-						<reference key="source" ref="308916266"/>
-						<reference key="destination" ref="588631224"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="308916266"/>
-							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: extendedGeneralInfoEnable</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">extendedGeneralInfoEnable</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">944</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: currentNode.tags.year</string>
 						<reference key="source" ref="308916266"/>
 						<reference key="destination" ref="588631224"/>
@@ -3487,6 +3246,246 @@
 						</object>
 					</object>
 					<int key="connectionID">946</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: currentNode.hasBasicMetadata</string>
+						<reference key="source" ref="491346229"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="491346229"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: currentNode.hasBasicMetadata</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">currentNode.hasBasicMetadata</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">953</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: currentNode.hasBasicMetadata</string>
+						<reference key="source" ref="933196869"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="933196869"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: currentNode.hasBasicMetadata</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">currentNode.hasBasicMetadata</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">955</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: currentNode.hasBasicMetadata</string>
+						<reference key="source" ref="676211420"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="676211420"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: currentNode.hasBasicMetadata</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">currentNode.hasBasicMetadata</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">956</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: currentNode.hasBasicMetadata</string>
+						<reference key="source" ref="308916266"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="308916266"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: currentNode.hasBasicMetadata</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">currentNode.hasBasicMetadata</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">957</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: currentNode.hasBasicMetadata</string>
+						<reference key="source" ref="595101705"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="595101705"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: currentNode.hasBasicMetadata</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">currentNode.hasBasicMetadata</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">958</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: currentNode.hasBasicMetadata</string>
+						<reference key="source" ref="721275556"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="721275556"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: currentNode.hasBasicMetadata</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">currentNode.hasBasicMetadata</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">959</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: currentNode.hasExtenedMetadata</string>
+						<reference key="source" ref="608450119"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="608450119"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: currentNode.hasExtenedMetadata</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">currentNode.hasExtenedMetadata</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">960</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: currentNode.hasExtenedMetadata</string>
+						<reference key="source" ref="230074618"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="230074618"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: currentNode.hasExtenedMetadata</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">currentNode.hasExtenedMetadata</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">961</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: currentNode.hasExtenedMetadata</string>
+						<reference key="source" ref="198770580"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="198770580"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: currentNode.hasExtenedMetadata</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">currentNode.hasExtenedMetadata</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">962</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: currentNode.hasExtenedMetadata</string>
+						<reference key="source" ref="983249531"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="983249531"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: currentNode.hasExtenedMetadata</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">currentNode.hasExtenedMetadata</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">963</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: currentNode.hasExtenedMetadata</string>
+						<reference key="source" ref="1032257612"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="1032257612"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: currentNode.hasExtenedMetadata</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">currentNode.hasExtenedMetadata</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">964</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: currentNode.hasExtenedMetadata</string>
+						<reference key="source" ref="890062118"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="890062118"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: currentNode.hasExtenedMetadata</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">currentNode.hasExtenedMetadata</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">965</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: currentNode.hasExtenedMetadata</string>
+						<reference key="source" ref="857368046"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="857368046"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: currentNode.hasExtenedMetadata</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">currentNode.hasExtenedMetadata</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">966</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: currentNode.hasBasicMetadata</string>
+						<reference key="source" ref="985815505"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="985815505"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: currentNode.hasBasicMetadata</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">currentNode.hasBasicMetadata</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">970</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: currentNode.hasExtenedMetadata</string>
+						<reference key="source" ref="241776072"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="241776072"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: currentNode.hasExtenedMetadata</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">currentNode.hasExtenedMetadata</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">972</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -4157,21 +4156,17 @@
 						<reference key="object" ref="10815081"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="985815505"/>
 							<reference ref="914539658"/>
-							<reference ref="491346229"/>
 							<reference ref="847415293"/>
 							<reference ref="933196869"/>
 							<reference ref="452196155"/>
 							<reference ref="857368046"/>
 							<reference ref="731212581"/>
-							<reference ref="890062118"/>
 							<reference ref="350864578"/>
 							<reference ref="28535669"/>
 							<reference ref="929714935"/>
 							<reference ref="676697020"/>
 							<reference ref="107685483"/>
-							<reference ref="608450119"/>
 							<reference ref="983914682"/>
 							<reference ref="595101705"/>
 							<reference ref="829859210"/>
@@ -4179,13 +4174,17 @@
 							<reference ref="228635633"/>
 							<reference ref="110665699"/>
 							<reference ref="198770580"/>
-							<reference ref="721275556"/>
-							<reference ref="676211420"/>
 							<reference ref="983249531"/>
+							<reference ref="676211420"/>
+							<reference ref="890062118"/>
 							<reference ref="241776072"/>
+							<reference ref="608450119"/>
 							<reference ref="1032257612"/>
 							<reference ref="230074618"/>
+							<reference ref="491346229"/>
+							<reference ref="721275556"/>
 							<reference ref="308916266"/>
+							<reference ref="985815505"/>
 						</object>
 						<reference key="parent" ref="939896340"/>
 					</object>
@@ -4197,20 +4196,6 @@
 							<reference ref="445146545"/>
 						</object>
 						<reference key="parent" ref="10815081"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">560</int>
-						<reference key="object" ref="985815505"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="360223553"/>
-						</object>
-						<reference key="parent" ref="10815081"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">561</int>
-						<reference key="object" ref="360223553"/>
-						<reference key="parent" ref="985815505"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">562</int>
@@ -4437,15 +4422,6 @@
 						<reference key="parent" ref="801629814"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">760</int>
-						<reference key="object" ref="491346229"/>
-						<object class="NSMutableArray" key="children">
-							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="549014783"/>
-						</object>
-						<reference key="parent" ref="10815081"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">761</int>
 						<reference key="object" ref="847415293"/>
 						<object class="NSMutableArray" key="children">
@@ -4458,11 +4434,6 @@
 						<int key="objectID">762</int>
 						<reference key="object" ref="117544504"/>
 						<reference key="parent" ref="847415293"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">763</int>
-						<reference key="object" ref="549014783"/>
-						<reference key="parent" ref="491346229"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">765</int>
@@ -4895,6 +4866,34 @@
 						<int key="objectID">943</int>
 						<reference key="object" ref="1008695521"/>
 						<reference key="parent" ref="6643660"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">560</int>
+						<reference key="object" ref="985815505"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="360223553"/>
+						</object>
+						<reference key="parent" ref="10815081"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">561</int>
+						<reference key="object" ref="360223553"/>
+						<reference key="parent" ref="985815505"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">760</int>
+						<reference key="object" ref="491346229"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="549014783"/>
+						</object>
+						<reference key="parent" ref="10815081"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">763</int>
+						<reference key="object" ref="549014783"/>
+						<reference key="parent" ref="491346229"/>
 					</object>
 				</object>
 			</object>
@@ -5339,12 +5338,9 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<object class="NSMutableDictionary">
-						<string key="NS.key.0">InitialTabViewItem</string>
-						<object class="IBInitialTabViewItemAttribute" key="NS.object.0">
-							<string key="name">InitialTabViewItem</string>
-							<reference key="object" ref="573093410"/>
-							<reference key="initialTabViewItem" ref="939896340"/>
-						</object>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<reference key="dict.sortedKeys" ref="0"/>
+						<reference key="dict.values" ref="0"/>
 					</object>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -5478,7 +5474,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">946</int>
+			<int key="maxID">972</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
