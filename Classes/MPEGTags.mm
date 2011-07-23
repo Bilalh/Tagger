@@ -60,15 +60,29 @@ using namespace MPEGFields;
 -(void) initFields
 {	
 	[super initFields];
+	NSString *temp = nil;
+	NSRange   range;
+	
 	albumArtist = [self getFieldWithString:ALBUM_ARTIST];
 	composer    = [self getFieldWithString:COMPOSER];
 	grouping    = [self getFieldWithString:GROUPING];
+	
+	temp        = [self getFieldWithString:BPM];
+	bpm         = temp ? [NSNumber numberWithInt:[temp intValue]] : nil;
+	
+	temp = [self getFieldWithString:TRACK_NUMBER];
+	range			= [temp rangeOfString:@"/" options:NSLiteralSearch];
+	
+	if(range.location != NSNotFound && range.length != 0) {
+		totalTracks	=  [NSNumber numberWithInt: [[temp substringFromIndex:range.location + 1] intValue] ];
+	}else{
+		totalTracks = nil;
+	}
 	
 }
 
 //TODO
 //complication = [NSNumber numberWithBool:[self getField:COMPILATION].toBool()];
-//bpm          = i ?  [NSNumber numberWithInt: i] : nil;
 //
 //disk         = disks.first   ? [NSNumber numberWithInt:disks.first]   : nil;
 //totalDisks   = disks.second  ? [NSNumber numberWithInt:disks.second]  : nil;
@@ -94,6 +108,7 @@ using namespace MPEGFields;
 - (bool) setFieldWithString:(const char*)field
 					   data:(NSString *)newValue
 {
+	(TagLib::ID3v2::FrameFactory::instance())->setDefaultTextEncoding(TagLib::String::UTF8);
 	ID3v2::Tag *tag = data->f->mpeg->ID3v2Tag();	
 	tag->removeFrames(field);
 	if(nil != newValue) {
@@ -127,5 +142,13 @@ using namespace MPEGFields;
 	grouping = newValue;
 	[self setFieldWithString:GROUPING data:newValue];
 }
+
+- (void) setBpm:(NSNumber *)newValue
+{
+	DDLogInfo(@"Setting %s from %@ to %@","Bpm", bpm, newValue);
+	bpm = newValue;
+	[self setFieldWithString:BPM data:[newValue stringValue]];	
+}
+
 
 @end
