@@ -119,7 +119,7 @@
 		923FC13313DA117100B14A3E /* MPEGTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPEGTags.h; sourceTree = "<group>"; };
 		923FC13413DA117100B14A3E /* MPEGTags.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MPEGTags.mm; sourceTree = "<group>"; };
 		925CE81D13C3BD6D009D6D94 /* VGTagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VGTagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9264486513D74DED0035E693 /* tags mapping */ = {isa = PBXFileReference; lastKnownFileType = text; name = "tags mapping"; path = "../Test Files/tags mapping"; sourceTree = "<group>"; };
+		9264486513D74DED0035E693 /* mp4 tag mapping */ = {isa = PBXFileReference; lastKnownFileType = text; name = "mp4 tag mapping"; path = "../Test Files/mp4 tag mapping"; sourceTree = "<group>"; };
 		9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowLeftBlack16.tiff; sourceTree = "<group>"; };
 		9264488913D773CE0035E693 /* arrowRightBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowRightBlack16.tiff; sourceTree = "<group>"; };
 		9286164813D65621001481E5 /* NSString+Numbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Numbers.h"; sourceTree = "<group>"; };
@@ -135,11 +135,12 @@
 		929A4AD713DA087D00244796 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
 		929A4AD813DA087D00244796 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
 		929A4AD913DA087D00244796 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
-		92AD54DC13D90A3600E35AA2 /* MP4Fields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MP4Fields.h; sourceTree = "<group>"; };
 		92B65BD013D261DF0018F988 /* NSMutableArray+Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Stack.h"; sourceTree = "<group>"; };
 		92B65BD113D261DF0018F988 /* NSMutableArray+Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Stack.m"; sourceTree = "<group>"; };
 		92B65BF613D27BEC0018F988 /* ImageAndTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAndTextCell.h; sourceTree = "<group>"; };
 		92B65BF713D27BEC0018F988 /* ImageAndTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAndTextCell.m; sourceTree = "<group>"; };
+		92CC309013DA386600BC78DC /* Fields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fields.h; sourceTree = "<group>"; };
+		92CC309113DA3F3A00BC78DC /* framelistmp4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = framelistmp4.cpp; sourceTree = "<group>"; };
 		92FCBF5213CE83D10011F744 /* FileSystemNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystemNode.h; sourceTree = "<group>"; };
 		92FCBF5313CE83D10011F744 /* FileSystemNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystemNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -273,7 +274,9 @@
 		92364F7813C8E0C900044153 /* TagLib */ = {
 			isa = PBXGroup;
 			children = (
-				9264486513D74DED0035E693 /* tags mapping */,
+				92CC309113DA3F3A00BC78DC /* framelistmp4.cpp */,
+				92CC309013DA386600BC78DC /* Fields.h */,
+				9264486513D74DED0035E693 /* mp4 tag mapping */,
 				920660AA13C89845003A3803 /* Tags.h */,
 				920660AB13C89845003A3803 /* Tags.mm */,
 				9201935513CF6D050085E167 /* MP4Tags.h */,
@@ -283,7 +286,6 @@
 				9201935813CF91DC0085E167 /* TagStructs.h */,
 				9201935A13CFBBC20085E167 /* NSString+Convert.h */,
 				9201935B13CFBBC20085E167 /* NSString+Convert.mm */,
-				92AD54DC13D90A3600E35AA2 /* MP4Fields.h */,
 			);
 			name = TagLib;
 			sourceTree = "<group>";

@@ -9,15 +9,10 @@
 #import "MP4Tags.h"
 #import "TagStructs.h"
 #import "NSString+Convert.h"
-
-#include <iostream>
-#include <string>
+#import "Fields.h"
 
 #include <mp4tag.h> 
 #include <mp4file.h>
-#include <mpegfile.h>
-
-#include "MP4Fields.h"
 
 #import "DDLog.h"
 static const int ddLogLevel = LOG_LEVEL_INFO;
@@ -25,14 +20,13 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 @interface MP4Tags()
 - (NSString*) getFieldWithString:(TagLib::String)field;
 - (TagLib::MP4::Item) getField:(TagLib::String)field;
-- (bool) clearField:(TagLib::String)field;
 - (bool) setFieldWithString:(TagLib::String)field
 					  value:(NSString*)value;
 @end
 
 using namespace TagLib;
 using namespace MP4Fields;
-
+using namespace std;
 @implementation MP4Tags
 
 #pragma mark -
@@ -79,7 +73,6 @@ using namespace MP4Fields;
 #pragma mark -
 #pragma mark Fields helpers
 
-
 - (MP4::Item) getField:(TagLib::String)field
 {
 	MP4::Tag * const t = data->f->mp4->tag();
@@ -116,14 +109,6 @@ using namespace MP4Fields;
 	MP4::Tag * const t = data->f->mp4->tag();
 	MP4::ItemListMap &map =  t->itemListMap();	
 	map.insert(field,valueItem);
-	return data->file->save();
-}
-
-- (bool) clearField:(TagLib::String)field
-{	
-	MP4::Tag * const t = data->f->mp4->tag();
-	MP4::ItemListMap &map =  t->itemListMap();	
-	map.erase(field);
 	return data->file->save();
 }
 
@@ -194,6 +179,5 @@ using namespace MP4Fields;
 	complication = newValue;
 	[self setField:COMPILATION value:MP4::Item([newValue boolValue] )];
 }
-
 
 @end

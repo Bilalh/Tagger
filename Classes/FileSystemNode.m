@@ -28,6 +28,7 @@
 			}else if ([path hasSuffix:@"mp3"]){
 				tags = [[MPEGTags alloc] initWithFilename:path];
 				hasBasicMetadata   = true;
+				hasExtenedMetadata = true;
 			}else{
 				tags = nil;	
 				hasBasicMetadata   = false;
