@@ -49,6 +49,7 @@
 		929A4ADC13DA087D00244796 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD513DA087D00244796 /* DDFileLogger.m */; };
 		929A4ADD13DA087D00244796 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD713DA087D00244796 /* DDLog.m */; };
 		929A4ADE13DA087D00244796 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD913DA087D00244796 /* DDTTYLogger.m */; };
+		929B4E7F13DCB67F00E2FE54 /* PSDDFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 929B4E7E13DCB67F00E2FE54 /* PSDDFormatter.m */; };
 		92B65BD213D261DF0018F988 /* NSMutableArray+Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B65BD113D261DF0018F988 /* NSMutableArray+Stack.m */; };
 		92B65BF813D27BED0018F988 /* ImageAndTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B65BF713D27BEC0018F988 /* ImageAndTextCell.m */; };
 		92FCBF5413CE83D10011F744 /* FileSystemNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FCBF5313CE83D10011F744 /* FileSystemNode.m */; };
@@ -135,6 +136,8 @@
 		929A4AD713DA087D00244796 /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
 		929A4AD813DA087D00244796 /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
 		929A4AD913DA087D00244796 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
+		929B4E7D13DCB67F00E2FE54 /* PSDDFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDDFormatter.h; sourceTree = "<group>"; };
+		929B4E7E13DCB67F00E2FE54 /* PSDDFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDDFormatter.m; sourceTree = "<group>"; };
 		92B65BD013D261DF0018F988 /* NSMutableArray+Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Stack.h"; sourceTree = "<group>"; };
 		92B65BD113D261DF0018F988 /* NSMutableArray+Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Stack.m"; sourceTree = "<group>"; };
 		92B65BF613D27BEC0018F988 /* ImageAndTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAndTextCell.h; sourceTree = "<group>"; };
@@ -171,6 +174,7 @@
 		920660A313C89845003A3803 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				929B4E6F13DCB58400E2FE54 /* Logging */,
 				92B65BD413D261E60018F988 /* Categories */,
 				92B65BF913D283130018F988 /* Gui */,
 				92364F7813C8E0C900044153 /* TagLib */,
@@ -353,6 +357,15 @@
 			path = Lumberjack;
 			sourceTree = "<group>";
 		};
+		929B4E6F13DCB58400E2FE54 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				929B4E7D13DCB67F00E2FE54 /* PSDDFormatter.h */,
+				929B4E7E13DCB67F00E2FE54 /* PSDDFormatter.m */,
+			);
+			name = Logging;
+			sourceTree = "<group>";
+		};
 		92B65BD413D261E60018F988 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -479,6 +492,7 @@
 				929A4ADD13DA087D00244796 /* DDLog.m in Sources */,
 				929A4ADE13DA087D00244796 /* DDTTYLogger.m in Sources */,
 				923FC13513DA117100B14A3E /* MPEGTags.mm in Sources */,
+				929B4E7F13DCB67F00E2FE54 /* PSDDFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

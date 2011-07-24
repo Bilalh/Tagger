@@ -17,7 +17,6 @@
 @private
 	IBOutlet NSWindow *window;
 	IBOutlet NSTableView *table;
-	IBOutlet NSTextField *query;
 	IBOutlet NSButton *selectAlbumButton;
 	
 	NSArray *searchResults;
@@ -27,6 +26,9 @@
 	DisplayController *ssc;
 	id vgmdb; // macruby Vgmdb class
 }
+
+@property (assign) NSArray *files;
+@property (assign) NSString *query;
 
 /// array of FileSystemNode
 - (id)initWithFiles:(NSArray*)newFiles;
@@ -57,8 +59,5 @@
 
 /// Reset all the fields to their default values
 - (void)reset:(NSArray*)newFiles;
-
-
-@property (assign) NSArray* files;
 
 @end

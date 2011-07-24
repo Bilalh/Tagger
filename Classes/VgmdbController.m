@@ -11,6 +11,8 @@
 #import "DisplayController.h"
 #import "Utility.h"
 #import "FileSystemNode.h"
+#import "DDLog.h"
+static const int ddLogLevel = LOG_LEVEL_INFO;
 
 @interface VgmdbController()
 - (IBAction)cancelSheet:sender;
@@ -18,7 +20,7 @@
 @end
 
 @implementation VgmdbController
-@synthesize files;
+@synthesize files, query;
 
 #pragma mark -
 #pragma mark GUI Callbacks
@@ -38,9 +40,8 @@
 {
 	NSLog(@"Search button pressed");
 	searchResults = [vgmdb performRubySelector:@selector(search:)
-								 withArguments:[query stringValue], 
+								 withArguments:query, 
 					 nil];
-	//	NSLog(@"Search Results %@", searchResults);
 	[table reloadData];
 }
 
@@ -120,7 +121,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 - (void)reset:(NSArray*)newFiles;
 {
 	self.files = newFiles;
-	[query setStringValue:@""];
+	self.query =@"";
 	[selectAlbumButton setEnabled:NO];
 	searchResults = [[NSArray alloc] init];
 	[table reloadData];
@@ -134,8 +135,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		languages = [[NSArray alloc] initWithObjects:@"@english", @"@romaji",@"@kanji" , nil];
 		selectedLanguage = [languages objectAtIndex:0];
 		
-		NSString *path = [[NSBundle mainBundle] pathForResource:@"Vgmdb" ofType:@"rb"];
-		[[MacRuby sharedRuntime] evaluateFileAtPath:path];
+//		NSString *path = [[NSBundle mainBundle] pathForResource:@"Vgmdb" ofType:@"rb"];
+//		[[MacRuby sharedRuntime] evaluateFileAtPath:path];
 		vgmdb = [[MacRuby sharedRuntime] evaluateString:@"Vgmdb.new"];
 		[self reset:newFiles];
     }
