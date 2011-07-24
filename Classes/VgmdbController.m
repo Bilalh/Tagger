@@ -10,6 +10,7 @@
 #import "VgmdbController.h"
 #import "DisplayController.h"
 #import "Utility.h"
+#import "FileSystemNode.h"
 
 @interface VgmdbController()
 - (IBAction)cancelSheet:sender;
@@ -17,6 +18,7 @@
 @end
 
 @implementation VgmdbController
+@synthesize files;
 
 #pragma mark -
 #pragma mark GUI Callbacks
@@ -115,22 +117,18 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 #pragma mark -
 #pragma mark Alloc
 
-- (void)reset
+- (void)reset:(NSArray*)newFiles;
 {
+	self.files = newFiles;
 	[query setStringValue:@""];
 	[selectAlbumButton setEnabled:NO];
 	searchResults = [[NSArray alloc] init];
 	[table reloadData];
 }
 
-- (id)init
+- (id)initWithFiles:(NSArray*)newFiles
 {
-    return [self initWithWindowNibName:@"VgmdbSearch"];
-}
-
-- (id)initWithWindow:(NSWindow *)awindow
-{
-    self = [super initWithWindow:awindow];
+	self = [super initWithWindowNibName:@"VgmdbSearch"];
     if (self) {
 		
 		languages = [[NSArray alloc] initWithObjects:@"@english", @"@romaji",@"@kanji" , nil];
@@ -139,11 +137,11 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		NSString *path = [[NSBundle mainBundle] pathForResource:@"Vgmdb" ofType:@"rb"];
 		[[MacRuby sharedRuntime] evaluateFileAtPath:path];
 		vgmdb = [[MacRuby sharedRuntime] evaluateString:@"Vgmdb.new"];
-		[self reset];
+		[self reset:newFiles];
     }
-    
     return self;
 }
+
 
 - (void)dealloc
 {

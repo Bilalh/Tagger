@@ -224,11 +224,10 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (IBAction) search:(id)sender{
 	if (vgc == nil){
-		vgc = [[VgmdbController alloc] init];	
+		vgc = [[VgmdbController alloc] initWithFiles:[[directoryStack lastObject] children]];	
 	}else{
-		[vgc reset];	
+		[vgc reset:[[directoryStack lastObject] children]];	
 	}
-	
 	[NSApp beginSheet: [vgc window]
 	   modalForWindow: self.window
 		modalDelegate: vgc 

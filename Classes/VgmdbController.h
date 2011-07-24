@@ -10,6 +10,7 @@
 
 
 @class DisplayController;
+@class FileSystemNode;
 
 /// This class allows the user to serach for albums on vgmdb
 @interface VgmdbController : NSWindowController {
@@ -26,6 +27,9 @@
 	DisplayController *ssc;
 	id vgmdb; // macruby Vgmdb class
 }
+
+/// array of FileSystemNode
+- (id)initWithFiles:(NSArray*)newFiles;
 
 /// @name Searching for albums
 
@@ -52,7 +56,9 @@
 /// @name Other methods
 
 /// Reset all the fields to their default values
-- (void)reset;
+- (void)reset:(NSArray*)newFiles;
 
+
+@property (assign) NSArray* files;
 
 @end
