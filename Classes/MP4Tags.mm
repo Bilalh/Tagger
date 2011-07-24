@@ -48,7 +48,7 @@ using namespace std;
 {	
 	[super initFields];	
 	const MP4::Item::IntPair tracks = [self getField:TRACK_NUMBER].toIntPair();
-	const MP4::Item::IntPair disks  = [self getField:DISK_NUMBER].toIntPair();
+	const MP4::Item::IntPair discs  = [self getField:DISK_NUMBER].toIntPair();
 	int i;
 	
 	albumArtist  = [self getFieldWithString:ALBUM_ARTIST];
@@ -58,8 +58,8 @@ using namespace std;
 	i            = [self getField:BPM].toInt();
 	bpm          = i ?  [NSNumber numberWithInt: i] : nil;
 	
-	disk         = disks.first   ? [NSNumber numberWithInt:disks.first]   : nil;
-	totalDisks   = disks.second  ? [NSNumber numberWithInt:disks.second]  : nil;
+	disc         = discs.first   ? [NSNumber numberWithInt:discs.first]   : nil;
+	totalDiscs   = discs.second  ? [NSNumber numberWithInt:discs.second]  : nil;
 	totalTracks  = tracks.second ? [NSNumber numberWithInt:tracks.second] : nil;
 	
 	
@@ -159,18 +159,18 @@ using namespace std;
 	[self setField:TRACK_NUMBER value:MP4::Item([track intValue], [newValue intValue])];
 }
 
-- (void) setDisk:(NSNumber *)newValue
+- (void) setDisc:(NSNumber *)newValue
 {
-	DDLogInfo(@"Setting %s from %@ to %@","Disk#", disk, newValue);
-	disk = newValue;
-	[self setField:DISK_NUMBER value:MP4::Item([newValue intValue], [totalDisks intValue])];
+	DDLogInfo(@"Setting %s from %@ to %@","Disc#", disc, newValue);
+	disc = newValue;
+	[self setField:DISK_NUMBER value:MP4::Item([newValue intValue], [totalDiscs intValue])];
 }
 
-- (void) setTotalDisks:(NSNumber *)newValue
+- (void) setTotalDiscs:(NSNumber *)newValue
 {
-	DDLogInfo(@"Setting %s from %@ to %@","Total Disks", totalDisks, newValue);
-	totalDisks = newValue;
-	[self setField:DISK_NUMBER value:MP4::Item([disk intValue], [newValue intValue])];
+	DDLogInfo(@"Setting %s from %@ to %@","Total Discs", totalDiscs, newValue);
+	totalDiscs = newValue;
+	[self setField:DISK_NUMBER value:MP4::Item([disc intValue], [newValue intValue])];
 }
 
 - (void) setComplication:(NSNumber *)newValue

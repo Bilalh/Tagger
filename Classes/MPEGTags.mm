@@ -94,12 +94,12 @@ using namespace MPEGFields;
 		
 		if(range.location != NSNotFound && range.length != 0) {
 			int i = [[temp substringToIndex:range.location] intValue];
-			disk        = i == 0 ? nil : [NSNumber numberWithInt:  i];
+			disc        = i == 0 ? nil : [NSNumber numberWithInt:  i];
 			i = [[temp substringFromIndex:range.location+1] intValue];
-			totalDisks	= i == 0 ? nil : [NSNumber numberWithInt:  i];
+			totalDiscs	= i == 0 ? nil : [NSNumber numberWithInt:  i];
 		}else{
-			disk       = nil;
-			totalDisks = nil;
+			disc       = nil;
+			totalDiscs = nil;
 		}	
 	}	
 }
@@ -211,18 +211,18 @@ using namespace MPEGFields;
 	[self setNumberPair:TRACK_NUMBER firstValue:track secondValue:totalTracks];
 }
 
-- (void) setDisk:(NSNumber *)newValue
+- (void) setDisc:(NSNumber *)newValue
 {
-	DDLogInfo(@"Setting %s from %@ to %@","Disk#", disk, newValue);
-	disk = newValue;
-	[self setNumberPair:DISK_NUMBER firstValue:disk secondValue:totalDisks];
+	DDLogInfo(@"Setting %s from %@ to %@","Disc#", disc, newValue);
+	disc = newValue;
+	[self setNumberPair:DISK_NUMBER firstValue:disc secondValue:totalDiscs];
 }
 
-- (void) setTotalDisks:(NSNumber *)newValue
+- (void) setTotalDiscs:(NSNumber *)newValue
 {
-	DDLogInfo(@"Setting %s from %@ to %@","Total Disks", totalDisks, newValue);
-	totalDisks = newValue;
-	[self setNumberPair:DISK_NUMBER firstValue:disk secondValue:totalDisks];
+	DDLogInfo(@"Setting %s from %@ to %@","Total Discs", totalDiscs, newValue);
+	totalDiscs = newValue;
+	[self setNumberPair:DISK_NUMBER firstValue:disc secondValue:totalDiscs];
 }
 
 @end

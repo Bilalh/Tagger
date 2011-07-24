@@ -174,7 +174,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 					   hc(@"year"       ), @"year"        ,
 					   hc(@"genre"      ), @"genre"       ,
 					   hc(@"totalTracks"), @"totalTracks" ,
-					   hc(@"totalDisks" ), @"totalDisks"  ,
+					   hc(@"totalDiscs" ), @"totalDiscs"  ,
 					   hc(@"catalog"    ), @"catalog"     ,
 					   hc(@"compilation"), @"compilation" ,
 					      

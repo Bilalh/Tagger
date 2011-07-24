@@ -21,8 +21,8 @@ struct FileData;
 	NSString *grouping;
 	NSNumber *bpm;
 	NSNumber *totalTracks;
-	NSNumber *disk;
-	NSNumber *totalDisks;
+	NSNumber *disc;
+	NSNumber *totalDiscs;
 	NSNumber *complication;
 	
 	// Tracks may be handed by the subclass
@@ -77,10 +77,10 @@ struct FileData;
 @property (assign) NSNumber *bpm;
 /// The total number of tracks in the album
 @property (assign) NSNumber *totalTracks;
-/// The disk# of the file
-@property (assign) NSNumber *disk;
-/// The total number of disks in the album
-@property (assign) NSNumber *totalDisks;
+/// The disc# of the file
+@property (assign) NSNumber *disc;
+/// The total number of discs in the album
+@property (assign) NSNumber *totalDiscs;
 /// YES if the track is part of a complication.
 @property (assign) NSNumber *complication;
 

@@ -3185,38 +3185,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: currentNode.tags.disk</string>
-						<reference key="source" ref="241776072"/>
-						<reference key="destination" ref="588631224"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="241776072"/>
-							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">value: currentNode.tags.disk</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">currentNode.tags.disk</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">927</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: currentNode.tags.totalDisks</string>
-						<reference key="source" ref="1032257612"/>
-						<reference key="destination" ref="588631224"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="1032257612"/>
-							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">value: currentNode.tags.totalDisks</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">currentNode.tags.totalDisks</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">929</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: currentNode.tags.bpm</string>
 						<reference key="source" ref="230074618"/>
 						<reference key="destination" ref="588631224"/>
@@ -3486,6 +3454,38 @@
 						</object>
 					</object>
 					<int key="connectionID">972</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: currentNode.tags.disc</string>
+						<reference key="source" ref="241776072"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="241776072"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">value: currentNode.tags.disc</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">currentNode.tags.disc</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">973</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: currentNode.tags.totalDiscs</string>
+						<reference key="source" ref="1032257612"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="1032257612"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">value: currentNode.tags.totalDiscs</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">currentNode.tags.totalDiscs</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">974</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -5474,7 +5474,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">972</int>
+			<int key="maxID">974</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
