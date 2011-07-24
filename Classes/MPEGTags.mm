@@ -70,24 +70,36 @@ using namespace MPEGFields;
 	temp        = [self getFieldWithString:BPM];
 	bpm         = temp ? [NSNumber numberWithInt:[temp intValue]] : nil;
 	
-	temp = [self getFieldWithString:TRACK_NUMBER];
-	range			= [temp rangeOfString:@"/" options:NSLiteralSearch];
-	
-	if(range.location != NSNotFound && range.length != 0) {
-		totalTracks	=  [NSNumber numberWithInt: [[temp substringFromIndex:range.location + 1] intValue] ];
-	}else{
-		totalTracks = nil;
+	temp  = [self getFieldWithString:TRACK_NUMBER];
+	if (temp){
+		range = [temp rangeOfString:@"/" options:NSLiteralSearch];
+		
+		if(range.location != NSNotFound && range.length != 0) {
+			int i = [[temp substringFromIndex:range.location+1] intValue];
+			totalTracks	=  i == 0 ? nil : [NSNumber numberWithInt:  i];
+		}else{
+			totalTracks = nil;
+		}	
 	}
-	
+
+	temp  = [self getFieldWithString:DISK_NUMBER];
+	if (temp){
+		range = [temp rangeOfString:@"/" options:NSLiteralSearch];
+		
+		if(range.location != NSNotFound && range.length != 0) {
+			int i = [[temp substringToIndex:range.location] intValue];
+			disk        = i == 0 ? nil : [NSNumber numberWithInt:  i];
+			i = [[temp substringFromIndex:range.location+1] intValue];
+			totalDisks	= i == 0 ? nil : [NSNumber numberWithInt:  i];
+		}else{
+			disk       = nil;
+			totalDisks = nil;
+		}	
+	}	
 }
 
 //TODO
 //complication = [NSNumber numberWithBool:[self getField:COMPILATION].toBool()];
-//
-//disk         = disks.first   ? [NSNumber numberWithInt:disks.first]   : nil;
-//totalDisks   = disks.second  ? [NSNumber numberWithInt:disks.second]  : nil;
-//totalTracks  = tracks.second ? [NSNumber numberWithInt:tracks.second] : nil;
-
 
 - (void)dealloc
 {
@@ -108,9 +120,12 @@ using namespace MPEGFields;
 - (bool) setFieldWithString:(const char*)field
 					   data:(NSString *)newValue
 {
+	NSLog(@"%s '%@'", field, newValue);
 	(TagLib::ID3v2::FrameFactory::instance())->setDefaultTextEncoding(TagLib::String::UTF8);
 	ID3v2::Tag *tag = data->f->mpeg->ID3v2Tag();	
 	tag->removeFrames(field);
+	//  Total tracks on it own does not work without this
+	data->f->mpeg->strip(MPEG::File::ID3v1);
 	if(nil != newValue) {
 		ID3v2::TextIdentificationFrame *frame = new ID3v2::TextIdentificationFrame(field, TagLib::String::UTF8);
 		frame->setText([newValue tagLibString]);
@@ -148,6 +163,56 @@ using namespace MPEGFields;
 	DDLogInfo(@"Setting %s from %@ to %@","Bpm", bpm, newValue);
 	bpm = newValue;
 	[self setFieldWithString:BPM data:[newValue stringValue]];	
+}
+
+- (void) setNumberPair:(const char *)field
+			firstValue:(NSNumber*)firstValue
+			secondValue:(NSNumber*)secondValue
+{
+	NSString *text = nil;
+	if (firstValue != nil && secondValue != nil){
+		text = [[NSString alloc] initWithFormat:@"%@/%@",firstValue, secondValue];
+		NSLog(@"1 %@",text);
+	}else if (firstValue != nil){
+		text = [[NSString alloc] initWithFormat:@"%@/",firstValue];
+		NSLog(@"2 %@",text);
+	}else if (secondValue != nil){
+		text = [[NSString alloc] initWithFormat:@"/%@",secondValue];
+		NSLog(@"3 %@",text);
+	}
+	
+	BOOL b = [self setFieldWithString:field data:text];		
+	NSLog(@"res:%d",b);
+}
+
+- (void) setTrack:(NSNumber *)newValue
+{
+	DDLogInfo(@"Setting %s from %@ to %@","Track#", track, newValue);
+	track = newValue;
+	[self setNumberPair:TRACK_NUMBER firstValue:track secondValue:totalTracks];
+	NSLog(@"file track %@",[self getFieldWithString:TRACK_NUMBER] );
+}
+
+- (void) setTotalTracks:(NSNumber *)newValue
+{
+	DDLogInfo(@"Setting %s from %@ to %@","Total Tracks", totalTracks, newValue);
+	totalTracks = newValue;
+	[self setNumberPair:TRACK_NUMBER firstValue:track secondValue:totalTracks];
+	NSLog(@"file track %@",[self getFieldWithString:TRACK_NUMBER] );
+}
+
+- (void) setDisk:(NSNumber *)newValue
+{
+	DDLogInfo(@"Setting %s from %@ to %@","Disk#", disk, newValue);
+	disk = newValue;
+	[self setNumberPair:DISK_NUMBER firstValue:disk secondValue:totalDisks];
+}
+
+- (void) setTotalDisks:(NSNumber *)newValue
+{
+	DDLogInfo(@"Setting %s from %@ to %@","Total Disks", totalDisks, newValue);
+	totalDisks = newValue;
+	[self setNumberPair:DISK_NUMBER firstValue:disk secondValue:totalDisks];
 }
 
 
