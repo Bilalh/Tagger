@@ -11,6 +11,7 @@
 
 @class DisplayController;
 @class FileSystemNode;
+@class Tags;
 
 /// This class allows the user to serach for albums on vgmdb
 @interface VgmdbController : NSWindowController {
@@ -25,13 +26,18 @@
 	
 	DisplayController *ssc;
 	id vgmdb; // macruby Vgmdb class
+	Tags *tags;
 }
 
-@property (assign) NSArray *files;
-@property (assign) NSString *query;
+@property (assign) NSMutableArray *files;
+
+/// @name Init
 
 /// array of FileSystemNode
 - (id)initWithFiles:(NSArray*)newFiles;
+
+/// Reset all the fields to their default values
+- (void)reset:(NSArray*)newFiles;
 
 /// @name Searching for albums
 
@@ -55,9 +61,11 @@
  */
 - (IBAction)changeDisplayLanguage:(id)sender;
 
-/// @name Other methods
+- (IBAction)cancelSheet:sender;
 
-/// Reset all the fields to their default values
-- (void)reset:(NSArray*)newFiles;
+- (IBAction)useAlbumForQuery:(id)sender;
+- (IBAction)useArtistForQuery:(id)sender;
+- (IBAction)useCommentForQuery:(id)sender;
+
 
 @end

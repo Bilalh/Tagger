@@ -11,12 +11,15 @@
 #import "DisplayController.h"
 #import "Utility.h"
 #import "FileSystemNode.h"
+#import "Tags.h"
+
 #import "DDLog.h"
 static const int ddLogLevel = LOG_LEVEL_INFO;
 
 @interface VgmdbController()
-- (IBAction)cancelSheet:sender;
 - (IBAction)confirmSheet:sender;
+
+@property (assign) NSString *query;
 @end
 
 @implementation VgmdbController
@@ -28,7 +31,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 - (IBAction)changeDisplayLanguage:(id)sender 
 {
     NSButtonCell *selCell = [sender selectedCell];
-    NSLog(@"Selected cell is %@", [languages objectAtIndex:[selCell tag]]);
+    DDLogInfo(@"Selected cell is %@", [languages objectAtIndex:[selCell tag]]);
 	selectedLanguage = [languages objectAtIndex:[selCell tag]];
 	[table setNeedsDisplayInRect:
 	 [table rectOfColumn:
@@ -38,7 +41,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 
 - (IBAction) searchForAlbums:(id)sender
 {
-	NSLog(@"Search button pressed");
+	DDLogInfo(@"Search button pressed");
 	searchResults = [vgmdb performRubySelector:@selector(search:)
 								 withArguments:query, 
 					 nil];
@@ -53,11 +56,16 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 	
 	ssc = [[DisplayController alloc] 
 		   initWithUrl:[[searchResults objectAtIndex:[table selectedRow]] 
-											   objectForKey:@"url"]
+						objectForKey:@"url"]
 		   vgmdb:vgmdb];
 	
 	[self confirmSheet:nil];
 }
+
+- (IBAction) useAlbumForQuery:(id)sender   { self.query = tags.album; }
+- (IBAction) useArtistForQuery:(id)sender  { self.query = tags.artist; }
+- (IBAction) useCommentForQuery:(id)sender { self.query = tags.comment; }
+
 
 #pragma mark -
 #pragma mark Table Methods 
@@ -91,7 +99,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		  returnCode:(int)returnCode
 		  mainWindow:(NSWindow*)mainWindow
 {	
-	NSLog(@"Search End Sheet");
+	DDLogInfo(@"Search End Sheet");
 	[sheet orderOut:self];
 	
 	if (returnCode == NSOKButton){		
@@ -105,13 +113,13 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 }
 - (IBAction)cancelSheet:sender
 {	
-	NSLog(@"Search Cancel");
+	DDLogInfo(@"Search Cancel");
 	[NSApp endSheet:self.window returnCode:NSCancelButton];
 }
 
 - (IBAction)confirmSheet:sender
 {
-	NSLog(@"Search Comfirm");
+	DDLogInfo(@"Search Comfirm");
 	[NSApp endSheet:self.window returnCode:NSOKButton];
 }
 
@@ -120,11 +128,17 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (void)reset:(NSArray*)newFiles;
 {
-	self.files = newFiles;
+	
+	files = [[NSMutableArray alloc ] init];
+	for (FileSystemNode *n in newFiles) {
+		if (!n.isDirectory) [files addObject:n];
+	}
+	
 	self.query =@"";
 	[selectAlbumButton setEnabled:NO];
 	searchResults = [[NSArray alloc] init];
 	[table reloadData];
+	tags = 	[[files objectAtIndex:0 ] tags];
 }
 
 - (id)initWithFiles:(NSArray*)newFiles

@@ -80,19 +80,19 @@ using namespace TagLib;
 // Saves the newData to file
 
 #define setMetadata(newText,field,saveFunction)                  \
-DDLogInfo(@"Setting "#field" from %@ to %@",field, newText);         \
+DDLogInfo(@"Setting "#field" from %@ to %@",field, newText);     \
 field = newText;                                                 \
 Tag * const t = data->file->tag();                               \
 t->saveFunction (field ? [ field tagLibString] : String::null ); \
 bool b =data->file->save();                                      \
 DDLogInfo(@"res:%d "#field":%s", b, t->field().toCString() );
 
-#define setNumberMetadata(newNumber,field,saveFunction)    \
+#define setNumberMetadata(newNumber,field,saveFunction)        \
 DDLogInfo(@"Setting "#field" from %@ to %@",field, newNumber); \
-field = newNumber;                                         \
-Tag * const t = data->file->tag();                         \
-t->saveFunction (field ? [field unsignedIntValue] :0 );    \
-bool b =data->file->save();                                \
+field = newNumber;                                             \
+Tag * const t = data->file->tag();                             \
+t->saveFunction (field ? [field unsignedIntValue] :0 );        \
+bool b =data->file->save();                                    \
 DDLogInfo(@"res:%d "#field":%u", b, t->field());               
 
 
