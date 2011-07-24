@@ -36,6 +36,9 @@ namespace MPEGFields {	// can not be put in the header for some reason
 
 @interface MPEGTags()
 - (NSString*) getFieldWithString:(const char*)field;
+- (void) setNumberPair:(const char *)field
+			firstValue:(NSNumber*)firstValue
+		   secondValue:(NSNumber*)secondValue;
 @end
 
 using namespace TagLib;
@@ -69,6 +72,9 @@ using namespace MPEGFields;
 	
 	temp        = [self getFieldWithString:BPM];
 	bpm         = temp ? [NSNumber numberWithInt:[temp intValue]] : nil;
+	
+	temp         = [self getFieldWithString:COMPILATION];
+	complication = [NSNumber numberWithBool: temp ? YES : NO];
 	
 	temp  = [self getFieldWithString:TRACK_NUMBER];
 	if (temp){
@@ -120,7 +126,7 @@ using namespace MPEGFields;
 - (bool) setFieldWithString:(const char*)field
 					   data:(NSString *)newValue
 {
-	NSLog(@"%s '%@'", field, newValue);
+	DDLogVerbose(@"%s '%@'", field, newValue);
 	(TagLib::ID3v2::FrameFactory::instance())->setDefaultTextEncoding(TagLib::String::UTF8);
 	ID3v2::Tag *tag = data->f->mpeg->ID3v2Tag();	
 	tag->removeFrames(field);
@@ -132,6 +138,25 @@ using namespace MPEGFields;
 		tag->addFrame(frame);
 	}
 	return data->file->save();
+}
+
+- (void) setNumberPair:(const char *)field
+			firstValue:(NSNumber*)firstValue
+		   secondValue:(NSNumber*)secondValue
+{
+	NSString *text = nil;
+	if (firstValue != nil && secondValue != nil){
+		text = [[NSString alloc] initWithFormat:@"%@/%@",firstValue, secondValue];
+		DDLogVerbose(@"1 %@",text);
+	}else if (firstValue != nil){
+		text = [[NSString alloc] initWithFormat:@"%@/",firstValue];
+		DDLogVerbose(@"2 %@",text);
+	}else if (secondValue != nil){
+		text = [[NSString alloc] initWithFormat:@"/%@",secondValue];
+		DDLogVerbose(@"3 %@",text);
+	}
+	
+	[self setFieldWithString:field data:text];		
 }
 
 #pragma mark -
@@ -165,24 +190,11 @@ using namespace MPEGFields;
 	[self setFieldWithString:BPM data:[newValue stringValue]];	
 }
 
-- (void) setNumberPair:(const char *)field
-			firstValue:(NSNumber*)firstValue
-			secondValue:(NSNumber*)secondValue
+- (void) setComplication:(NSNumber *)newValue
 {
-	NSString *text = nil;
-	if (firstValue != nil && secondValue != nil){
-		text = [[NSString alloc] initWithFormat:@"%@/%@",firstValue, secondValue];
-		NSLog(@"1 %@",text);
-	}else if (firstValue != nil){
-		text = [[NSString alloc] initWithFormat:@"%@/",firstValue];
-		NSLog(@"2 %@",text);
-	}else if (secondValue != nil){
-		text = [[NSString alloc] initWithFormat:@"/%@",secondValue];
-		NSLog(@"3 %@",text);
-	}
-	
-	BOOL b = [self setFieldWithString:field data:text];		
-	NSLog(@"res:%d",b);
+	DDLogInfo(@"Setting %s from %@ to %@","Complication", complication, newValue);
+	complication = newValue;
+	[self setFieldWithString:COMPILATION data:[newValue boolValue] ? @"1" : nil ];		
 }
 
 - (void) setTrack:(NSNumber *)newValue
@@ -190,7 +202,6 @@ using namespace MPEGFields;
 	DDLogInfo(@"Setting %s from %@ to %@","Track#", track, newValue);
 	track = newValue;
 	[self setNumberPair:TRACK_NUMBER firstValue:track secondValue:totalTracks];
-	NSLog(@"file track %@",[self getFieldWithString:TRACK_NUMBER] );
 }
 
 - (void) setTotalTracks:(NSNumber *)newValue
@@ -198,7 +209,6 @@ using namespace MPEGFields;
 	DDLogInfo(@"Setting %s from %@ to %@","Total Tracks", totalTracks, newValue);
 	totalTracks = newValue;
 	[self setNumberPair:TRACK_NUMBER firstValue:track secondValue:totalTracks];
-	NSLog(@"file track %@",[self getFieldWithString:TRACK_NUMBER] );
 }
 
 - (void) setDisk:(NSNumber *)newValue
@@ -214,6 +224,5 @@ using namespace MPEGFields;
 	totalDisks = newValue;
 	[self setNumberPair:DISK_NUMBER firstValue:disk secondValue:totalDisks];
 }
-
 
 @end
