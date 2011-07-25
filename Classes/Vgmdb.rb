@@ -51,8 +51,9 @@ class Vgmdb
 	# Returns the data at the vgmdb url as a hash
 	def get_data(url)
 		puts url
-		url = File.expand_path("~/Desktop/test.html");
-		puts url
+		# url = File.expand_path("~/Desktop/meruru.html");
+		# url = File.expand_path("~/Desktop/meruruVisual.html");
+		# url = File.expand_path("~/Desktop/meruDa.html");
 		doc = Nokogiri.HTML(open(url).read)
 		
 		hash = {}
@@ -65,14 +66,18 @@ class Vgmdb
 	
 	def get_meta(doc,hash)
 		#puts "Getting metadata"
-		
 		meta = doc.css('table#album_infobit_large')
 		
 		# get the data from the specific row
-		get_data       = ->(id){  return meta.children[id].children[2].text.strip  }
+		# old method
+		# get_data     = ->(id){  return meta.children[id].children[2].text.strip  }
+		get_data       = ->(id){ meta.children[id].children[2].text.strip  }
+		
 		# get the data from the specific row spilt into lang
-		get_spilt_data = ->(id){  
+		get_spilt_data = ->(id){
 			arr = [] 
+			# old method
+			# meta.children[id].children[2].children.each do |e|
 			meta.children[id].children[2].children.each do |e|
 				if e.children.length > 0 then
 					arr << spilt_lang(e.children)
@@ -121,14 +126,18 @@ class Vgmdb
 	end
 	
 	def get_notes(doc,hash)
-		#puts "Getting notes"
+		# puts "Getting notes"
 		notes = ""
-		# 'div.page > table > tr > td > div > div > div > div.covertab > table > tr div.smallfont
-	  notes_note = doc.css('div.page > table > tr > td > div > div > div > div.covertab  div.smallfont')[-1] 
+		# old notes
+		# puts notes_note = doc.css('div.page > table > tr > td > div > div > div > div.covertab  div.smallfont')
+		notes_note = doc.css('div.page > table > tr > td > div').children[-4]
+		# exit
+		# notes_note = doc.css('div.page > table > tr > td > div').children[64]
 		notes_note.children.each do |e|
 			notes <<  e.text  << "\n" if e.text != ""
 		end
-		hash['notes'] = HTMLEntities.new.decode notes
+		hash['notes'] = HTMLEntities.new.decode(notes)
+		
 	end
 	
 	def get_tracks(doc, hash)
@@ -222,10 +231,10 @@ if $0 == __FILE__
 	# url = 'http://vgmdb.net/album/3885'
 	# url = File.expand_path("~/Desktop/test2.html")
 	
-	url = File.expand_path("~/Desktop/test.html")
+	url = File.expand_path("~/Desktop/meruru.html")
 	hash = vg.get_data(url)	
-	pp hash['notes']
-	# pp vg.get_tracks_array hash;
+	pp hash
+	vg.get_tracks_array hash;
 	
 end
 

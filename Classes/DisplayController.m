@@ -10,6 +10,9 @@
 #import "DisplayController.h"
 #import "Utility.h"
 
+#import "DDLog.h"
+static const int ddLogLevel = LOG_LEVEL_INFO;
+
 @interface DisplayController() // private methdods
 - (id)   valuefromDetails:(NSString*)key;
 - (void) setAlbumUrl:(NSString *)url;
@@ -51,8 +54,8 @@
 	id newValue =[self valuefromDetails:[properties objectForKey:@"name"]];
 	[fieldValues setObject:newValue forKey:[properties objectForKey:@"name"]];
 	
-	NSLog(@"fieldProperties \n%@ ", properties);
-	NSLog(@"buttonProperties \n%@ ", buttonProperties);
+	DDLogInfo(@"fieldProperties \n%@ ", properties);
+	DDLogInfo(@"buttonProperties \n%@ ", buttonProperties);
 
 	
 }
@@ -125,7 +128,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 			[[radio objectForKey:[NSString stringWithFormat:@"%d", i]] setObject:[NSNumber numberWithBool:YES ] forKey:@"enable"];
 		}
 	}	
-	
 	return[self initWithWindowNibName:@"VgmdbDisplay"];	
 } 
 
@@ -190,11 +192,11 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 -(void)setAlbumUrl:(NSString *)url
 {
-	NSLog(@"Set Album called, Album Url %@", url );
+	DDLogInfo(@"Set Album called, Album Url %@", url );
 	albumDetails = [vgmdb performRubySelector:@selector(get_data:)
 								withArguments:url, 
 					nil];
-//	NSLog(@"Album\n %@", albumDetails);
+//	DDLogInfo(@"Album\n %@", albumDetails);
 	tracks =  [vgmdb performRubySelector:@selector(get_tracks_array:)
 						   withArguments:albumDetails, 
 			   nil];
@@ -239,7 +241,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 	fieldValues = [[NSMutableDictionary alloc] initWithObjects:values forKeys:keys];
 	
-	NSLog(@"fieldValues\n %@", fieldValues);
+	DDLogInfo(@"fieldValues\n %@", fieldValues);
 	
 }
 
@@ -262,8 +264,9 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		for (i = 0, index = 1; i< len; ++i) {
 			
 			id  field = [albumDetails objectForKey:key];
-			if ([field isKindOfClass: [NSArray class] ] && [field count] > 0 ){
-				field = [field objectAtIndex:0];
+			if ([field isKindOfClass: [NSArray class]] ){
+				if ([field count] == 0) continue;
+				if ([field count] > 0) field = [field objectAtIndex:0];
 			}
 			
 			NSMutableDictionary *d = field;
@@ -328,14 +331,14 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (IBAction)cancelSheet:sender
 {	
-	NSLog(@"Cancel");
+	DDLogInfo(@"Cancel");
 	[NSApp endSheet:self.window returnCode:NSCancelButton];
 }
 
 
 - (IBAction)confirmSheet:sender
 {
-	NSLog(@"Comfirm");
+	DDLogInfo(@"Comfirm");
 	[NSApp endSheet:self.window returnCode:NSOKButton];
 }
 
@@ -343,7 +346,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		  returnCode:(int)returnCode
 		 contextInfo:(void*)contextInfo
 {	
-	NSLog(@"End Sheet Vars:");
+	DDLogInfo(@"End Sheet Vars:");
 	NSLog(@"album        %@", [fieldValues objectForKey:@"album"       ]);
 	NSLog(@"artist       %@", [fieldValues objectForKey:@"artist"      ]);
 	NSLog(@"albumArtist  %@", [fieldValues objectForKey:@"albumArtist" ]);
@@ -369,7 +372,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (id)valueForUndefinedKey:(NSString *)key
 {
-	NSLog(@"valueForUndefinedKey:%@",key);
+	DDLogInfo(@"valueForUndefinedKey:%@",key);
 	return @"ERROR";
 }
 
