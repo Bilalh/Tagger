@@ -139,7 +139,10 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 	files = [filesNodes sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
 		FileSystemNode *a = obj1, *b = obj2;
-		return [a.tags compare:b.tags];
+		NSComparisonResult res = [a.tags compare:b.tags];
+		
+		if (res ==  NSOrderedSame) res = [a.displayName compare:b.displayName];
+		return res;
 	}];
 	
 	selectedLanguage = @"@english";
@@ -374,15 +377,29 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 {
 	
 	NSString *tracklanguage =  [[fieldProperties objectForKey:@"radio"] objectForKey:@"language"] ;
-
+	NSMutableArray  *keys = [[NSMutableArray alloc] initWithObjects: 
+							 @"album", @"artist", @"albumArtist",
+							 @"year" , @"genre" , @"composer",
+							 
+							 @"totalDiscs", @"totalTracks",
+							 nil ];
+	
+	
 	NSUInteger i;
 	for (i =0; i < [tracks count]; ++i) {
 		Tags *tags = [[files objectAtIndex:i] tags];
 		NSDictionary *data = [tracks objectAtIndex:i];
+		
+		for (NSString *key in keys) {
+			[tags setValue: [fieldValues objectForKey:key]  
+					forKey:key];
+		}
+		
 		id newValue = [data objectForKey:@"title"];
 		if ([newValue isKindOfClass:[NSDictionary class]]){
 			newValue = [Utility stringFromLanguages:newValue selectedLanguage: &tracklanguage];
 		}
+		
 		[tags setValue:newValue forKey:@"title"];
 	}
 	

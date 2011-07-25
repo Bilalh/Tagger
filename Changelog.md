@@ -5,6 +5,8 @@ Version 0.9
 -----------
 * The length of track can now be found using Tags.
 * Made length column uneditable since it should not be changed.
+* Auto tagging for tracks names is done
+  * Allows choosing the language.
 
 -----------
 Version 0.8 (Mon Jul 25 2011 02:55:27 +0100)
