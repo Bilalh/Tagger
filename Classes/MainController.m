@@ -244,6 +244,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		modalDelegate: vgc 
 	   didEndSelector: @selector(didEndSheet:returnCode:mainWindow:)
 		  contextInfo: self.window]; 	
+	[table reloadData];
 }
 
 - (id)valueForUndefinedKey:(NSString *)key

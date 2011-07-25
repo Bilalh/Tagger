@@ -136,7 +136,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 			files:(NSArray*)filesNodes;
 {
 	vgmdb = vgmdbObject;
-
 	files = [filesNodes sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
 		FileSystemNode *a = obj1, *b = obj2;
 		NSComparisonResult res = [a.tags compare:b.tags];
@@ -146,12 +145,16 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}];
 	
 	selectedLanguage = @"@english";
-	
+
+	DDLogVerbose(@"----");
 	[self initFieldProperties];
+	DDLogVerbose(@"----");
 	[self setAlbumUrl:url];
+	DDLogVerbose(@"----");
 	[self initFieldValues];	
+	DDLogVerbose(@"----");
 	[self initButtonsState];
-	
+	DDLogVerbose(@"----");
 	
 	NSDictionary *title = [[tracks objectAtIndex:0] objectForKey:@"title"];
 	NSDictionary *radio = [fieldProperties objectForKey:@"radio"];
@@ -164,7 +167,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 			[[radio objectForKey:[NSString stringWithFormat:@"%d", i]] setObject:[NSNumber numberWithBool:YES ] forKey:@"enable"];
 		}
 	}	
-	
+	DDLogVerbose(@"----");
 	
 	
 	return[self initWithWindowNibName:@"VgmdbDisplay"];	
@@ -225,7 +228,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 					   hb(@"performer"  ), @"performer"   ,
 					   hb(@"products"   ), @"products"    ,
 					   hb(@"publisher"  ), @"publisher"   ,
-					   hc(@"notes"      ), @"notes"       ,
+					   hc(@"comment"    ), @"comment"     ,
 					   radio             , @"radio"       ,
 					   nil];
 }
@@ -257,7 +260,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 							 @"arranger",
 							 @"products",
 							 @"publisher",
-							 @"notes",
+							 @"comment",
 							 nil ];
 	NSMutableArray *values = [[NSMutableArray alloc] initWithCapacity:[keys count]+3];
 	
@@ -380,8 +383,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSMutableArray  *keys = [[NSMutableArray alloc] initWithObjects: 
 							 @"album", @"artist", @"albumArtist",
 							 @"year" , @"genre" , @"composer",
-							 
-							 @"totalDiscs", @"totalTracks",
+							 @"comment",@"totalDiscs",
 							 nil ];
 	
 	
@@ -401,6 +403,16 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		}
 		
 		[tags setValue:newValue forKey:@"title"];
+
+		newValue = [data objectForKey:@"totalTracks"];
+		[tags setValue:newValue forKey:@"totalTracks"];
+
+		newValue = [data objectForKey:@"track#"];
+		[tags setValue:newValue forKey:@"track"];
+
+		newValue = [data objectForKey:@"disc#"];
+		[tags setValue:newValue forKey:@"disc"];
+		
 	}
 	
 }
@@ -421,7 +433,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSLog(@"performer    %@", [fieldValues objectForKey:@"performer"   ]);
 	NSLog(@"products     %@", [fieldValues objectForKey:@"products"    ]);
 	NSLog(@"publisher    %@", [fieldValues objectForKey:@"publisher"   ]);
-	NSLog(@"notes        %@", [fieldValues objectForKey:@"notes"       ]);
+	NSLog(@"comment      %@", [fieldValues objectForKey:@"comment"       ]);
 	
 	[self tagTracks ];
 	[NSApp endSheet:self.window returnCode:NSOKButton];

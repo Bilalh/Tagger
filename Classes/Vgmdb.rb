@@ -136,7 +136,7 @@ class Vgmdb
 		notes_note.children.each do |e|
 			notes <<  e.text  << "\n" if e.text != ""
 		end
-		hash['notes'] = HTMLEntities.new.decode(notes)
+		hash['comment'] = HTMLEntities.new.decode(notes)
 		
 	end
 	
@@ -164,10 +164,13 @@ class Vgmdb
 			disc_tables.each_with_index do |disc,disc_index|
 				disc_num = disc_index + 1;
 				#puts "disc #{disc_num}"
-				disc.css('tr').each do |track_tr|
+				
+				tracks_tr    = disc.css('tr')
+				total_tracks = tracks_tr.length
+				
+				tracks_tr.each do |track_tr|
 					num = track_tr.children[0].text.to_i(10)
 					
-					# gets the track
 					track = 
 					if tracks.include? "#{disc_num}-#{num}" then
 						tracks["#{disc_num}-#{num}"]
@@ -177,6 +180,7 @@ class Vgmdb
 						track['track#']              = num
 						track['disc#']               = disc_num
 						track['length']              = track_tr.children[4].text
+						track['totalTracks']         = total_tracks
 						tracks["#{disc_num}-#{num}"] = track
 					end
 					
@@ -232,7 +236,7 @@ if $0 == __FILE__
 	
 	url = File.expand_path("~/Desktop/meruru.html")
 	hash = vg.get_data(url)	
-	pp hash
+	# pp hash
 	vg.get_tracks_array hash;
 	
 end
