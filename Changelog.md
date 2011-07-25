@@ -4,12 +4,14 @@ Changelog
 Version 0.8
 -----------
 
+* Complete mp3 (IDV tag read/write support.
 * Fixed a bug when trying to save a field with an empty string.
 * Allows clearing number fields e.g year.
 * Validate number fields to allow only numbers. 
 * Allows changes the language of each field in the results from vgmdb
 * Now allows search using the tags of the song to allow easier searching 
 * Better error handing when vgmdb is missing data
+
 
 ###Todo###
 
