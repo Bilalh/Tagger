@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-
 struct FileData;
 
 /// Tags allows reading and writing of tags of audio files

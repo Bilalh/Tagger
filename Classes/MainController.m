@@ -114,8 +114,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		return @"";
 	}
 	
-	SEL selector = NSSelectorFromString([aTableColumn identifier]);
-	return [node.tags performSelector:selector];
+	return [node.tags valueForKey:[aTableColumn identifier]];
 }
 
 

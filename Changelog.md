@@ -1,21 +1,25 @@
 Changelog
 =========
 -----------
+Version 0.9
+-----------
+* The length of track can now be found using Tags.
+* Made length column uneditable since it should not be changed.
+
+-----------
 Version 0.8 (Mon Jul 25 2011 02:55:27 +0100)
 -----------
-
 * Complete mp3 (IDV tag read/write support.
 * Fixed a bug when trying to save a field with an empty string.
 * Allows clearing number fields e.g year.
 * Validate number fields to allow only numbers. 
-* Allows changes the language of each field in the results from vgmdb
-* Now allows search using the tags of the song to allow easier searching 
-* Better error handing when vgmdb is missing data
-
+* Allows changes the language of each field in the results from vgmdb.
+* Now allows search using the tags of the song to allow easier searching.
+* Better error handing when vgmdb is missing data.
 
 ###Todo###
 
-* Some kind of error handing when vgmdb returns no tracks
+* Some kind of error handing when vgmdb returns no tracks.
 
 -----------
 Version 0.7 (Fri Jul 22 2011 20:06:13 +0100)

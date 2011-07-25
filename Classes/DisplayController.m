@@ -105,8 +105,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSString *label =[aTableColumn identifier]; 
 	if ([label rangeOfString:@"#File"].location != NSNotFound) {
 		
-		SEL selector = NSSelectorFromString([label stringByReplacingOccurrencesOfString:@"#File" withString:@""]);		
-		const id result =  [[[files objectAtIndex:rowIndex] tags] performSelector:selector];
+		const id result = [[[files objectAtIndex:rowIndex] tags] valueForKey:
+						   [label stringByReplacingOccurrencesOfString:@"#File" withString:@""]];
 		
 		if ([label isEqualToString:@"length#File"]){
 			return [self intToTime:[result intValue] ];
