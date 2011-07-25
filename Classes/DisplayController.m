@@ -370,17 +370,25 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[NSApp endSheet:self.window returnCode:NSCancelButton];
 }
 
+- (void) tagTracks
+{
+	
+	NSString *tracklanguage =  [[fieldProperties objectForKey:@"radio"] objectForKey:@"language"] ;
 
+	NSUInteger i;
+	for (i =0; i < [tracks count]; ++i) {
+		Tags *tags = [[files objectAtIndex:i] tags];
+		NSDictionary *data = [tracks objectAtIndex:i];
+		id newValue = [data objectForKey:@"title"];
+		if ([newValue isKindOfClass:[NSDictionary class]]){
+			newValue = [Utility stringFromLanguages:newValue selectedLanguage: &tracklanguage];
+		}
+		[tags setValue:newValue forKey:@"title"];
+	}
+	
+}
 - (IBAction)confirmSheet:sender
 {
-	DDLogInfo(@"Comfirm");
-	[NSApp endSheet:self.window returnCode:NSOKButton];
-}
-
-- (void) didEndSheet:(NSWindow*)sheet 
-		  returnCode:(int)returnCode
-		 contextInfo:(void*)contextInfo
-{	
 	DDLogInfo(@"End Sheet Vars:");
 	NSLog(@"album        %@", [fieldValues objectForKey:@"album"       ]);
 	NSLog(@"artist       %@", [fieldValues objectForKey:@"artist"      ]);
@@ -390,13 +398,22 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSLog(@"totalTracks  %@", [fieldValues objectForKey:@"totalTracks" ]);
 	NSLog(@"totalDiscs   %@", [fieldValues objectForKey:@"totalDiscs"  ]);
 	NSLog(@"catalog      %@", [fieldValues objectForKey:@"catalog"     ]);
-
+	
 	NSLog(@"arranger     %@", [fieldValues objectForKey:@"arranger"    ]);  
 	NSLog(@"composer     %@", [fieldValues objectForKey:@"composer"    ]);  
 	NSLog(@"performer    %@", [fieldValues objectForKey:@"performer"   ]);
 	NSLog(@"products     %@", [fieldValues objectForKey:@"products"    ]);
 	NSLog(@"publisher    %@", [fieldValues objectForKey:@"publisher"   ]);
 	NSLog(@"notes        %@", [fieldValues objectForKey:@"notes"       ]);
+	
+	[self tagTracks ];
+	[NSApp endSheet:self.window returnCode:NSOKButton];
+}
+
+- (void) didEndSheet:(NSWindow*)sheet 
+		  returnCode:(int)returnCode
+		 contextInfo:(void*)contextInfo
+{	
 	
 	[sheet orderOut:self];
 }

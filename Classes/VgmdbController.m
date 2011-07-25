@@ -18,7 +18,6 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 
 @interface VgmdbController()
 - (IBAction)confirmSheet:sender;
-
 @property (assign) NSString *query;
 @end
 
@@ -119,6 +118,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	DDLogInfo(@"Search Cancel");
 	[NSApp endSheet:self.window returnCode:NSCancelButton];
 }
+
+
 
 - (IBAction)confirmSheet:sender
 {
