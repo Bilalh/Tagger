@@ -51,7 +51,7 @@ class Vgmdb
 	# Returns the data at the vgmdb url as a hash
 	def get_data(url)
 		puts url
-		# url = File.expand_path("~/Desktop/meruru.html");
+		url = File.expand_path("~/Desktop/meruru.html");
 		# url = File.expand_path("~/Desktop/meruruVisual.html");
 		# url = File.expand_path("~/Desktop/meruDa.html");
 		doc = Nokogiri.HTML(open(url).read)
@@ -202,7 +202,6 @@ class Vgmdb
 	def get_tracks_array(hash)
 		return hash['tracks'].values.sort do |x,y|
 			res = x['disc#']   <=> y['disc#'] 
-			res = x['track#']  <=> y['track#']  if res ==0
 			res = x['track#']  <=> y['track#']  if res ==0
 			res = (x['length'] <=> y['length']) if res ==0
 			res		

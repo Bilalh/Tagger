@@ -9,6 +9,8 @@
 #import <MacRuby/MacRuby.h>
 #import "DisplayController.h"
 #import "Utility.h"
+#import "FileSystemNode.h"
+#import "Tags.h"
 
 #import "DDLog.h"
 static const int ddLogLevel = LOG_LEVEL_INFO;
@@ -30,6 +32,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 @end
 
 @implementation DisplayController
+@synthesize files;
 
 #pragma mark -
 #pragma mark Gui callback
@@ -92,23 +95,42 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 objectValueForTableColumn:(NSTableColumn *)aTableColumn 
 					  row:(NSInteger)rowIndex 
 {
-	NSString *sPtr =  [[fieldProperties objectForKey:@"radio"] objectForKey:@"language"] ;
-	id result = [[tracks objectAtIndex:rowIndex] objectForKey:[aTableColumn identifier]];
-	if ([result isKindOfClass:[NSDictionary class]]){
-		return [Utility stringFromLanguages:result 
-					   selectedLanguage: &sPtr];
+	
+	NSString *label =[aTableColumn identifier]; 
+	if ([label rangeOfString:@"#File"].location != NSNotFound) {
+		if ([label rangeOfString:@"length#File"].location != NSNotFound) return @"-1:00";
+		
+		SEL selector = NSSelectorFromString([label stringByReplacingOccurrencesOfString:@"#File" withString:@""]);		
+		return [[[files objectAtIndex:rowIndex] tags] performSelector:selector];
+		
+	}else{
+		NSString *sPtr =  [[fieldProperties objectForKey:@"radio"] objectForKey:@"language"] ;
+		id result = [[tracks objectAtIndex:rowIndex] objectForKey:[aTableColumn identifier]];
+		if ([result isKindOfClass:[NSDictionary class]]){
+			return [Utility stringFromLanguages:result 
+							   selectedLanguage: &sPtr];
+		}
+		return result;
 	}
-	return result;
+	
+	return @"error";
 }
 
 
 #pragma mark -
-#pragma mark Alloc
+#pragma mark Init
 
 - (id)initWithUrl:(NSString*)url
 			vgmdb:(id)vgmdbObject
+			files:(NSArray*)filesNodes;
 {
-	vgmdb            = vgmdbObject;
+	vgmdb = vgmdbObject;
+
+	files = [filesNodes sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+		FileSystemNode *a = obj1, *b = obj2;
+		return [a.tags compare:b.tags];
+	}];
+	
 	selectedLanguage = @"@english";
 	
 	[self initFieldProperties];

@@ -48,6 +48,8 @@ struct FileData;
   */
 -(void) initFields;
 
+- (NSComparisonResult)compare:(Tags *)otherTag;
+
 /// @name Finding General metadata.
 
 /// The title of the file

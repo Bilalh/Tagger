@@ -24,6 +24,8 @@
 	IBOutlet NSTableView *table;      /// table of tracks	
 }
 
+@property (assign) NSArray *files;
+
 /// @name Initializing an DisplayController Object
 
  /**  
@@ -35,7 +37,8 @@
   * @return An new Display Controller.
   */
 - (id)initWithUrl:(NSString*)url
-			vgmdb:(id)vgmdbObject;
+			vgmdb:(id)vgmdbObject
+			files:(NSArray*)files;
 
 /// @name Changing the language
 

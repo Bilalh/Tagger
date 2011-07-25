@@ -1,7 +1,7 @@
 Changelog
 =========
 -----------
-Version 0.8
+Version 0.8 (Mon Jul 25 2011 02:55:27 +0100)
 -----------
 
 * Complete mp3 (IDV tag read/write support.

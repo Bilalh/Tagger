@@ -57,7 +57,8 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 	ssc = [[DisplayController alloc] 
 		   initWithUrl:[[searchResults objectAtIndex:[table selectedRow]] 
 						objectForKey:@"url"]
-		   vgmdb:vgmdb];
+		   vgmdb:vgmdb
+		   files:files];
 	
 	[self confirmSheet:nil];
 }
@@ -84,10 +85,12 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 objectValueForTableColumn:(NSTableColumn *)aTableColumn 
 					  row:(NSInteger)rowIndex 
 {
-	NSString *s = [Utility valueFromResult:
+	NSString *s= [Utility valueFromResult:
 				   [[searchResults objectAtIndex:rowIndex] 
 					objectForKey:[aTableColumn identifier]]
 				   selectedLanguage:selectedLanguage];
+	
+	
 	return s;
 }
 

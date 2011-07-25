@@ -259,7 +259,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	forwardStack   = [[NSMutableArray alloc] init];
 
 	FileSystemNode *currentDirectory = [[FileSystemNode alloc] initWithURL:
-										[NSURL fileURLWithPath:@"/Users/bilalh/Movies/add/start"]];
+										[NSURL fileURLWithPath:@"/Users/bilalh/Movies/add/start/Atelier Meruru OST/"]];
 	[directoryStack push:currentDirectory];
 	
 	self.currentNode       = nil;

@@ -75,6 +75,20 @@ using namespace TagLib;
 
 
 #pragma mark -
+#pragma mark Misc
+
+- (NSComparisonResult)compare:(Tags *)otherTag
+{
+	NSComparisonResult res = [self.album compare:otherTag.album];
+	if (res == NSOrderedSame) res = [self.disc compare:otherTag.disc]; 
+	if (res == NSOrderedSame) res = [self.track compare:otherTag.track];
+	//	if (res == NSOrderedSame) res = [self.length compare:otherTag.length];
+	return res;
+}
+
+
+
+#pragma mark -
 #pragma mark Setters
 
 // Saves the newData to file
