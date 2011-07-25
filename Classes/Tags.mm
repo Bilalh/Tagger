@@ -21,7 +21,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 
 using namespace TagLib;
 @implementation Tags
-@synthesize title, artist, album, comment, genre, year, track;
+@synthesize title, artist, album, comment, genre, year, track, length;
 @synthesize albumArtist, composer, grouping, bpm, totalTracks, disc, totalDiscs, complication;
 
 #pragma mark -
@@ -64,6 +64,9 @@ using namespace TagLib;
 	year    =  i ? [NSNumber numberWithUnsignedInt:i] :nil;
 	i = t->track();
 	track   = i ? [NSNumber numberWithUnsignedInt:i] :nil;
+	
+	length = [NSNumber numberWithInt: data->file->audioProperties()->length()];
+	
 }
 
 

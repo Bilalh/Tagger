@@ -66,6 +66,8 @@ struct FileData;
 @property (assign) NSNumber *year;
 /// The track# of the file
 @property (assign) NSNumber *track; 
+/// The length of the file in seconds
+@property (assign,readonly) NSNumber *length; 
 
 /// @name Finding Extra Metadata 
 

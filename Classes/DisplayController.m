@@ -11,6 +11,7 @@
 #import "Utility.h"
 #import "FileSystemNode.h"
 #import "Tags.h"
+#import "NumberToTimeTransformer.h"
 
 #import "DDLog.h"
 static const int ddLogLevel = LOG_LEVEL_INFO;
@@ -24,7 +25,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 - (IBAction)cancelSheet:sender;
 - (IBAction)confirmSheet:sender;
 
--(NSMutableDictionary*) makeButtonProperties:(NSString*)b1Title
+- (NSMutableDictionary*) makeButtonProperties:(NSString*)b1Title
 								 button1Full:(NSString*)b1Full
 								button2Title:(NSString*)b2Title
 								 button2Full:(NSString*)b2Full
@@ -38,7 +39,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 #pragma mark Gui callback
 
 
--(IBAction) changeLanguage:(NSMutableDictionary*)properties
+- (IBAction) changeLanguage:(NSMutableDictionary*)properties
 		  buttonProperties:(NSMutableDictionary*)buttonProperties
 {
 	
@@ -91,6 +92,11 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 	return [tracks count];
 }
 
+- (NSString*)intToTime:(int)totalSeconds
+{
+	return [NSString stringWithFormat:@"%d:%02d", totalSeconds/60, totalSeconds %60 ];
+}
+
 - (id)          tableView:(NSTableView *)aTableView 
 objectValueForTableColumn:(NSTableColumn *)aTableColumn 
 					  row:(NSInteger)rowIndex 
@@ -98,10 +104,15 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 	NSString *label =[aTableColumn identifier]; 
 	if ([label rangeOfString:@"#File"].location != NSNotFound) {
-		if ([label rangeOfString:@"length#File"].location != NSNotFound) return @"-1:00";
 		
 		SEL selector = NSSelectorFromString([label stringByReplacingOccurrencesOfString:@"#File" withString:@""]);		
-		return [[[files objectAtIndex:rowIndex] tags] performSelector:selector];
+		const id result =  [[[files objectAtIndex:rowIndex] tags] performSelector:selector];
+		
+		if ([label isEqualToString:@"length#File"]){
+			return [self intToTime:[result intValue] ];
+		}
+		
+		return result;
 		
 	}else{
 		NSString *sPtr =  [[fieldProperties objectForKey:@"radio"] objectForKey:@"language"] ;
@@ -150,6 +161,9 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 			[[radio objectForKey:[NSString stringWithFormat:@"%d", i]] setObject:[NSNumber numberWithBool:YES ] forKey:@"enable"];
 		}
 	}	
+	
+	
+	
 	return[self initWithWindowNibName:@"VgmdbDisplay"];	
 } 
 
@@ -157,6 +171,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 {
     [super dealloc];
 }
+	
 
 #pragma mark -
 #pragma mark Setup
@@ -258,8 +273,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[values addObject:@""];
 	[keys addObject:@"totalTracks"];
 	[values addObject:[NSNumber numberWithInt:65]];
-	[keys addObject:@"compilation"];
-	[values addObject:[NSNumber numberWithBool:NO]];
 	
 	fieldValues = [[NSMutableDictionary alloc] initWithObjects:values forKeys:keys];
 	
@@ -377,7 +390,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSLog(@"totalTracks  %@", [fieldValues objectForKey:@"totalTracks" ]);
 	NSLog(@"totalDiscs   %@", [fieldValues objectForKey:@"totalDiscs"  ]);
 	NSLog(@"catalog      %@", [fieldValues objectForKey:@"catalog"     ]);
-	NSLog(@"compilation  %@", [fieldValues objectForKey:@"compilation" ]);
 
 	NSLog(@"arranger     %@", [fieldValues objectForKey:@"arranger"    ]);  
 	NSLog(@"composer     %@", [fieldValues objectForKey:@"composer"    ]);  

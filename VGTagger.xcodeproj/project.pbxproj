@@ -42,6 +42,7 @@
 		923FC13513DA117100B14A3E /* MPEGTags.mm in Sources */ = {isa = PBXBuildFile; fileRef = 923FC13413DA117100B14A3E /* MPEGTags.mm */; };
 		9264488A13D773CE0035E693 /* arrowLeftBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */; };
 		9264488B13D773CE0035E693 /* arrowRightBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488913D773CE0035E693 /* arrowRightBlack16.tiff */; };
+		927F56B913DDCFA000274708 /* NumberToTimeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 927F56B813DDCFA000274708 /* NumberToTimeTransformer.m */; };
 		9286164A13D65621001481E5 /* NSString+Numbers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9286164913D65621001481E5 /* NSString+Numbers.m */; };
 		929A4ACE13DA027C00244796 /* Changelog.md in Resources */ = {isa = PBXBuildFile; fileRef = 929A4ACD13DA027C00244796 /* Changelog.md */; };
 		929A4ADA13DA087D00244796 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD113DA087D00244796 /* DDAbstractDatabaseLogger.m */; };
@@ -123,6 +124,8 @@
 		9264486513D74DED0035E693 /* mp4 tag mapping */ = {isa = PBXFileReference; lastKnownFileType = text; name = "mp4 tag mapping"; path = "../Test Files/mp4 tag mapping"; sourceTree = "<group>"; };
 		9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowLeftBlack16.tiff; sourceTree = "<group>"; };
 		9264488913D773CE0035E693 /* arrowRightBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowRightBlack16.tiff; sourceTree = "<group>"; };
+		927F56B713DDCFA000274708 /* NumberToTimeTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberToTimeTransformer.h; sourceTree = "<group>"; };
+		927F56B813DDCFA000274708 /* NumberToTimeTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberToTimeTransformer.m; sourceTree = "<group>"; };
 		9286164813D65621001481E5 /* NSString+Numbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Numbers.h"; sourceTree = "<group>"; };
 		9286164913D65621001481E5 /* NSString+Numbers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Numbers.m"; sourceTree = "<group>"; };
 		929A4ACD13DA027C00244796 /* Changelog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Changelog.md; sourceTree = "<group>"; };
@@ -201,6 +204,7 @@
 		920660BA13C89845003A3803 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				927F56C313DDD24600274708 /* Unused */,
 				929A4ACF13DA087D00244796 /* Lumberjack */,
 				920660A413C89845003A3803 /* main.m */,
 				920660BB13C89845003A3803 /* VGTagger-Info.plist */,
@@ -338,6 +342,16 @@
 				9264488913D773CE0035E693 /* arrowRightBlack16.tiff */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		927F56C313DDD24600274708 /* Unused */ = {
+			isa = PBXGroup;
+			children = (
+				927F56B713DDCFA000274708 /* NumberToTimeTransformer.h */,
+				927F56B813DDCFA000274708 /* NumberToTimeTransformer.m */,
+			);
+			name = Unused;
+			path = ../Classes;
 			sourceTree = "<group>";
 		};
 		929A4ACF13DA087D00244796 /* Lumberjack */ = {
@@ -493,6 +507,7 @@
 				929A4ADE13DA087D00244796 /* DDTTYLogger.m in Sources */,
 				923FC13513DA117100B14A3E /* MPEGTags.mm in Sources */,
 				929B4E7F13DCB67F00E2FE54 /* PSDDFormatter.m in Sources */,
+				927F56B913DDCFA000274708 /* NumberToTimeTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
