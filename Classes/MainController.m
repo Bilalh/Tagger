@@ -88,7 +88,7 @@ static const int ddLogLevel = LOG_LEVEL_ERROR;
 		[popup insertItemWithTitle:[node displayName] atIndex:0];
 		[[popup itemAtIndex:0] setImage:[node icon]];
 		self.selectedNodeindex = [NSNumber numberWithInteger:0];
-		// clear the forward stack since it would not make sence any more
+		// clear the forward stack since it would not make sense any more
 		[forwardStack removeAllObjects];
 	}	
 }
@@ -104,7 +104,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 					  row:(NSInteger)rowIndex 
 {
 	NSArray *children = [[directoryStack lastObject] children];
-
 	FileSystemNode *node = [children objectAtIndex:rowIndex];
 	
 	if ( [[aTableColumn identifier] isEqualToString:@"filename"] ){
@@ -117,7 +116,20 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	return [node.tags valueForKey:[aTableColumn identifier]];
 }
 
+- (void)tableView:(NSTableView *)aTableView 
+   setObjectValue:(id)anObject 
+   forTableColumn:(NSTableColumn *)aTableColumn 
+			  row:(NSInteger)rowIndex
+{
+	
+	NSArray *children = [[directoryStack lastObject] children];
+	FileSystemNode *node = [children objectAtIndex:rowIndex];
+	
+	if ([[aTableColumn identifier] isEqualToString:@"filename"]) return;
+	[node.tags setValue:anObject forKey:[aTableColumn identifier]];
+}
 
+// Shows the icon for the file
 - (void)tableView:(NSTableView *)tableView 
   willDisplayCell:(id)cell 
    forTableColumn:(NSTableColumn *)tableColumn
