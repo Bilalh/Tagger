@@ -50,7 +50,7 @@
  @param properties       The properties containg the data about the new language.	
  @param buttonProperties The properties containg the data of the sender button.
  */
-- (IBAction) changeLanguage:(NSMutableDictionary*)properties
+- (IBAction)changeLanguage:(NSMutableDictionary*)properties
 		  buttonProperties:(NSMutableDictionary*)buttonProperties;
 
 
@@ -60,6 +60,8 @@
  @param sender The radio button of the new selected language.
  */
 - (IBAction)changeTableLanguage:(id)sender;
+
+- (IBAction)changeState:(id)sender;
 
 - (IBAction)cancelSheet:sender;
 - (IBAction)confirmSheet:sender;

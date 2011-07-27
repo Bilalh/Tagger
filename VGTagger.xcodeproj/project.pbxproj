@@ -56,6 +56,7 @@
 		92C4465413E0A5820038F817 /* NSAttributedString+Hyperlink.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4465313E0A5820038F817 /* NSAttributedString+Hyperlink.m */; };
 		92C4466413E0BF830038F817 /* BWHyperlinkTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4466113E0BF830038F817 /* BWHyperlinkTitleButton.m */; };
 		92C4466513E0BF830038F817 /* BWHyperlinkButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4466313E0BF830038F817 /* BWHyperlinkButtonCell.m */; };
+		92C4466813E0C7880038F817 /* ButtonLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4466713E0C7870038F817 /* ButtonLabelCell.m */; };
 		92FCBF5413CE83D10011F744 /* FileSystemNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FCBF5313CE83D10011F744 /* FileSystemNode.m */; };
 /* End PBXBuildFile section */
 
@@ -165,10 +166,12 @@
 		92C4465213E0A5820038F817 /* NSAttributedString+Hyperlink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Hyperlink.h"; sourceTree = "<group>"; };
 		92C4465313E0A5820038F817 /* NSAttributedString+Hyperlink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Hyperlink.m"; sourceTree = "<group>"; };
 		92C4465813E0BA8E0038F817 /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BWToolkitFramework.framework; sourceTree = "<group>"; };
-		92C4466013E0BF830038F817 /* BWHyperlinkTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; path = BWHyperlinkTitleButton.h; sourceTree = "<group>"; };
+		92C4466013E0BF830038F817 /* BWHyperlinkTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWHyperlinkTitleButton.h; sourceTree = "<group>"; };
 		92C4466113E0BF830038F817 /* BWHyperlinkTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWHyperlinkTitleButton.m; sourceTree = "<group>"; };
 		92C4466213E0BF830038F817 /* BWHyperlinkButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWHyperlinkButtonCell.h; sourceTree = "<group>"; };
 		92C4466313E0BF830038F817 /* BWHyperlinkButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWHyperlinkButtonCell.m; sourceTree = "<group>"; };
+		92C4466613E0C7870038F817 /* ButtonLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonLabelCell.h; sourceTree = "<group>"; };
+		92C4466713E0C7870038F817 /* ButtonLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonLabelCell.m; sourceTree = "<group>"; };
 		92CC309013DA386600BC78DC /* Fields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fields.h; sourceTree = "<group>"; };
 		92CC309113DA3F3A00BC78DC /* framelistmp4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = framelistmp4.cpp; sourceTree = "<group>"; };
 		92FCBF5213CE83D10011F744 /* FileSystemNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystemNode.h; sourceTree = "<group>"; };
@@ -427,6 +430,8 @@
 			children = (
 				92B65BF613D27BEC0018F988 /* ImageAndTextCell.h */,
 				92B65BF713D27BEC0018F988 /* ImageAndTextCell.m */,
+				92C4466613E0C7870038F817 /* ButtonLabelCell.h */,
+				92C4466713E0C7870038F817 /* ButtonLabelCell.m */,
 			);
 			name = Gui;
 			sourceTree = "<group>";
@@ -554,6 +559,7 @@
 				92C4465413E0A5820038F817 /* NSAttributedString+Hyperlink.m in Sources */,
 				92C4466413E0BF830038F817 /* BWHyperlinkTitleButton.m in Sources */,
 				92C4466513E0BF830038F817 /* BWHyperlinkButtonCell.m in Sources */,
+				92C4466813E0C7880038F817 /* ButtonLabelCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

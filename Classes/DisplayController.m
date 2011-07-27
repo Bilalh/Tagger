@@ -37,11 +37,15 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 #pragma mark -
 #pragma mark Gui callback
 
+- (IBAction)changeState:(id)sender
+{
+	DDLogVerbose(@"called");
+}
+
 
 - (IBAction) changeLanguage:(NSMutableDictionary*)properties
 		  buttonProperties:(NSMutableDictionary*)buttonProperties
 {
-	
 	// swap the language
 	NSString *tmp = [properties objectForKey:@"language"];
 	[properties setObject:[buttonProperties objectForKey:@"full"]  forKey:@"language"];
@@ -193,6 +197,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	};
 	NSMutableDictionary* (^hc)(NSString*) = ^(NSString *name){
 		return (NSMutableDictionary*) [[NSMutableDictionary alloc] initWithObjectsAndKeys:
+								[NSNumber numberWithBool:YES], @"write",
 								[selectedLanguage copy], @"language",
 								name, @"name",
 								nil];
@@ -277,13 +282,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[values addObject:@""];
 	
 	fieldValues = [[NSMutableDictionary alloc] initWithObjects:values forKeys:keys];
-	
-//	NSURL* url = [NSURL URLWithString:@"http://vgmdb.net/album/25409"];
-// 	
-//	NSMutableAttributedString* string = [[NSMutableAttributedString alloc] init];
-//	[string appendAttributedString: [NSAttributedString hyperlinkFromString:@"http://vgmdb.net/album/25409" withURL:url]];
- 	
-//	[fieldValues setObject: string forKey:@"url"];
 	[fieldValues setObject: @"http://vgmdb.net/album/25409" forKey:@"url"];	
 	
 	DDLogInfo(@"fieldValues\n %@", fieldValues);
@@ -360,6 +358,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 			button2, @"button2",
 			[selectedLanguage copy], @"language",
 			name, @"name",
+			[NSNumber numberWithBool:YES], @"write",
 			nil];
 }
 
@@ -400,8 +399,10 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		NSDictionary *data = [tracks objectAtIndex:i];
 		
 		for (NSString *key in fieldKeys) {
-			[tags setValue: [fieldValues objectForKey:key]  
-					forKey:key];
+			if ([[[fieldProperties valueForKey:key] valueForKey:@"write"] boolValue]){
+				[tags setValue: [fieldValues objectForKey:key]  
+						forKey:key];	
+			}
 		}
 		
 		id newValue = [data objectForKey:@"title"];
