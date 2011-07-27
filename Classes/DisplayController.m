@@ -218,7 +218,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 					   hc(@"albumArtist"), @"albumArtist" ,
 					   hc(@"year"       ), @"year"        ,
 					   hc(@"genre"      ), @"genre"       ,
-					   hc(@"totalTracks"), @"totalTracks" ,
 					   hc(@"totalDiscs" ), @"totalDiscs"  ,
 					   hc(@"catalog"    ), @"catalog"     ,
 					   hc(@"compilation"), @"compilation" ,
@@ -277,8 +276,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 	[keys addObject:@"albumArtist"];
 	[values addObject:@""];
-	[keys addObject:@"totalTracks"];
-	[values addObject:[NSNumber numberWithInt:65]];
 	
 	fieldValues = [[NSMutableDictionary alloc] initWithObjects:values forKeys:keys];
 	
@@ -379,20 +376,23 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 - (void) tagTracks
 {
 	
-	NSString *tracklanguage =  [[fieldProperties objectForKey:@"radio"] objectForKey:@"language"] ;
-	NSMutableArray  *keys = [[NSMutableArray alloc] initWithObjects: 
+	NSString *tracklanguage    =  [[fieldProperties objectForKey:@"radio"] objectForKey:@"language"] ;
+	NSMutableArray  *fieldKeys = [[NSMutableArray alloc] initWithObjects: 
 							 @"album", @"artist", @"albumArtist",
 							 @"year" , @"genre" , @"composer",
 							 @"comment",@"totalDiscs",
 							 nil ];
 	
+	NSArray  *nodeKeys = [[NSArray alloc] initWithObjects: 
+						  @"track", @"totalTracks", @"disc",
+						  nil ];
 	
 	NSUInteger i;
 	for (i =0; i < [tracks count]; ++i) {
 		Tags *tags = [[files objectAtIndex:i] tags];
 		NSDictionary *data = [tracks objectAtIndex:i];
 		
-		for (NSString *key in keys) {
+		for (NSString *key in fieldKeys) {
 			[tags setValue: [fieldValues objectForKey:key]  
 					forKey:key];
 		}
@@ -401,19 +401,15 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		if ([newValue isKindOfClass:[NSDictionary class]]){
 			newValue = [Utility stringFromLanguages:newValue selectedLanguage: &tracklanguage];
 		}
-		
 		[tags setValue:newValue forKey:@"title"];
 
-		newValue = [data objectForKey:@"totalTracks"];
-		[tags setValue:newValue forKey:@"totalTracks"];
-
-		newValue = [data objectForKey:@"track#"];
-		[tags setValue:newValue forKey:@"track"];
-
-		newValue = [data objectForKey:@"disc#"];
-		[tags setValue:newValue forKey:@"disc"];
 		
+		for (NSString *key in nodeKeys) {
+			newValue = [data objectForKey:key];
+			[tags setValue:newValue forKey:key];
+		}		
 	}
+	
 	
 }
 - (IBAction)confirmSheet:sender
@@ -424,7 +420,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSLog(@"albumArtist  %@", [fieldValues objectForKey:@"albumArtist" ]);
 	NSLog(@"year         %@", [fieldValues objectForKey:@"year"        ]);
 	NSLog(@"genre        %@", [fieldValues objectForKey:@"genre"       ]);
-	NSLog(@"totalTracks  %@", [fieldValues objectForKey:@"totalTracks" ]);
 	NSLog(@"totalDiscs   %@", [fieldValues objectForKey:@"totalDiscs"  ]);
 	NSLog(@"catalog      %@", [fieldValues objectForKey:@"catalog"     ]);
 	

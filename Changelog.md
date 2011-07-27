@@ -7,6 +7,7 @@ Version 0.9
 * Made length column uneditable since it should not be changed.
 * Auto tagging for tracks names is done
   * Allows choosing the language.
+* Auto tagging for other fields done.
 
 -----------
 Version 0.8 (Mon Jul 25 2011 02:55:27 +0100)
@@ -18,10 +19,6 @@ Version 0.8 (Mon Jul 25 2011 02:55:27 +0100)
 * Allows changes the language of each field in the results from vgmdb.
 * Now allows search using the tags of the song to allow easier searching.
 * Better error handing when vgmdb is missing data.
-
-###Todo###
-
-* Some kind of error handing when vgmdb returns no tracks.
 
 -----------
 Version 0.7 (Fri Jul 22 2011 20:06:13 +0100)

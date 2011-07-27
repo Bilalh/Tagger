@@ -177,8 +177,8 @@ class Vgmdb
 						else 
 						track                        = {}
 						track['title']               = {}
-						track['track#']              = num
-						track['disc#']               = disc_num
+						track['track']               = num
+						track['disc']                = disc_num
 						track['length']              = track_tr.children[4].text
 						track['totalTracks']         = total_tracks
 						tracks["#{disc_num}-#{num}"] = track
@@ -205,8 +205,8 @@ class Vgmdb
 	
 	def get_tracks_array(hash)
 		return hash['tracks'].values.sort do |x,y|
-			res = x['disc#']   <=> y['disc#'] 
-			res = x['track#']  <=> y['track#']  if res ==0
+			res = x['disc']   <=> y['disc'] 
+			res = x['track']  <=> y['track']  if res ==0
 			res = (x['length'] <=> y['length']) if res ==0
 			res		
 		end

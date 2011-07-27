@@ -34,7 +34,6 @@
 		920660EC13C89845003A3803 /* libtag.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.dylib */; };
 		922D30C013CA77A1008EED70 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 922D30BF13CA77A1008EED70 /* Utility.m */; };
 		922E35D713C89BF3003C5913 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922E35D613C89BF3003C5913 /* Cocoa.framework */; };
-		922E35DA13C89C04003C5913 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922E35D913C89C04003C5913 /* MacRuby.framework */; };
 		922E35E213C89C51003C5913 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 922E35DC13C89C51003C5913 /* InfoPlist.strings */; };
 		922E35E313C89C51003C5913 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922E35DE13C89C51003C5913 /* MainMenu.xib */; };
 		922E35E713C89FB9003C5913 /* libtag.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.dylib */; };
@@ -42,6 +41,7 @@
 		923FC13513DA117100B14A3E /* MPEGTags.mm in Sources */ = {isa = PBXBuildFile; fileRef = 923FC13413DA117100B14A3E /* MPEGTags.mm */; };
 		9264488A13D773CE0035E693 /* arrowLeftBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */; };
 		9264488B13D773CE0035E693 /* arrowRightBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488913D773CE0035E693 /* arrowRightBlack16.tiff */; };
+		927883BE13E06E0C00063D28 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 927883BD13E06E0C00063D28 /* MacRuby.framework */; };
 		927F56B913DDCFA000274708 /* NumberToTimeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 927F56B813DDCFA000274708 /* NumberToTimeTransformer.m */; };
 		9286164A13D65621001481E5 /* NSString+Numbers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9286164913D65621001481E5 /* NSString+Numbers.m */; };
 		929A4ACE13DA027C00244796 /* Changelog.md in Resources */ = {isa = PBXBuildFile; fileRef = 929A4ACD13DA027C00244796 /* Changelog.md */; };
@@ -114,7 +114,6 @@
 		922D30BE13CA77A1008EED70 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		922D30BF13CA77A1008EED70 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		922E35D613C89BF3003C5913 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		922E35D913C89C04003C5913 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = SDKROOT; };
 		922E35DD13C89C51003C5913 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = InfoPlist.strings; sourceTree = "<group>"; };
 		922E35DF13C89C51003C5913 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = MainMenu.xib; sourceTree = "<group>"; };
 		92364F7513C8DE5200044153 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = VgmdbSearch.xib; sourceTree = "<group>"; };
@@ -124,6 +123,9 @@
 		9264486513D74DED0035E693 /* mp4 tag mapping */ = {isa = PBXFileReference; lastKnownFileType = text; name = "mp4 tag mapping"; path = "../Test Files/mp4 tag mapping"; sourceTree = "<group>"; };
 		9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowLeftBlack16.tiff; sourceTree = "<group>"; };
 		9264488913D773CE0035E693 /* arrowRightBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowRightBlack16.tiff; sourceTree = "<group>"; };
+		927883BD13E06E0C00063D28 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = SDKROOT; };
+		927883BF13E06E5000063D28 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme.md; sourceTree = "<group>"; };
+		927883C013E06EED00063D28 /* Todo.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = Todo.md; sourceTree = "<group>"; };
 		927F56B713DDCFA000274708 /* NumberToTimeTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberToTimeTransformer.h; sourceTree = "<group>"; };
 		927F56B813DDCFA000274708 /* NumberToTimeTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberToTimeTransformer.m; sourceTree = "<group>"; };
 		9286164813D65621001481E5 /* NSString+Numbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Numbers.h"; sourceTree = "<group>"; };
@@ -156,7 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				922E35DA13C89C04003C5913 /* MacRuby.framework in Frameworks */,
+				927883BE13E06E0C00063D28 /* MacRuby.framework in Frameworks */,
 				922E35D713C89BF3003C5913 /* Cocoa.framework in Frameworks */,
 				920660EC13C89845003A3803 /* libtag.dylib in Frameworks */,
 			);
@@ -191,14 +193,15 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		920660B813C89845003A3803 /* Frameworks */ = {
+		920660B813C89845003A3803 /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				922E35D913C89C04003C5913 /* MacRuby.framework */,
+				927883BD13E06E0C00063D28 /* MacRuby.framework */,
 				922E35D613C89BF3003C5913 /* Cocoa.framework */,
 				920660B913C89845003A3803 /* libtag.dylib */,
 			);
-			path = Frameworks;
+			name = "Linked Frameworks";
+			path = ../Frameworks;
 			sourceTree = "<group>";
 		};
 		920660BA13C89845003A3803 /* Other Sources */ = {
@@ -216,6 +219,7 @@
 		920660BD13C89845003A3803 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				920660B813C89845003A3803 /* Linked Frameworks */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -317,13 +321,14 @@
 			children = (
 				920660A313C89845003A3803 /* Classes */,
 				922E35DB13C89C51003C5913 /* English.lproj */,
-				920660B813C89845003A3803 /* Frameworks */,
 				9264488713D773CE0035E693 /* Images */,
 				920660BD13C89845003A3803 /* Resources */,
 				920660BA13C89845003A3803 /* Other Sources */,
 				920660BE13C89845003A3803 /* Test Files */,
 				925CE81E13C3BD6D009D6D94 /* Products */,
+				927883BF13E06E5000063D28 /* Readme.md */,
 				929A4ACD13DA027C00244796 /* Changelog.md */,
+				927883C013E06EED00063D28 /* Todo.md */,
 			);
 			sourceTree = "<group>";
 		};
