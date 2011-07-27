@@ -11,7 +11,8 @@
 #import "Utility.h"
 #import "FileSystemNode.h"
 #import "Tags.h"
-#import "NumberToTimeTransformer.h"
+#import "NSAttributedString+Hyperlink.h"
+
 
 #import "DDLog.h"
 static const int ddLogLevel = LOG_LEVEL_INFO;
@@ -22,8 +23,6 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 - (void) initFieldValues;
 - (void) initFieldProperties;
 - (void) initButtonsState;
-- (IBAction)cancelSheet:sender;
-- (IBAction)confirmSheet:sender;
 
 - (NSMutableDictionary*) makeButtonProperties:(NSString*)b1Title
 								 button1Full:(NSString*)b1Full
@@ -278,6 +277,14 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[values addObject:@""];
 	
 	fieldValues = [[NSMutableDictionary alloc] initWithObjects:values forKeys:keys];
+	
+//	NSURL* url = [NSURL URLWithString:@"http://vgmdb.net/album/25409"];
+// 	
+//	NSMutableAttributedString* string = [[NSMutableAttributedString alloc] init];
+//	[string appendAttributedString: [NSAttributedString hyperlinkFromString:@"http://vgmdb.net/album/25409" withURL:url]];
+ 	
+//	[fieldValues setObject: string forKey:@"url"];
+	[fieldValues setObject: @"http://vgmdb.net/album/25409" forKey:@"url"];	
 	
 	DDLogInfo(@"fieldValues\n %@", fieldValues);
 	

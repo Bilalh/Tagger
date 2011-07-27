@@ -61,5 +61,8 @@
  */
 - (IBAction)changeTableLanguage:(id)sender;
 
+- (IBAction)cancelSheet:sender;
+- (IBAction)confirmSheet:sender;
+
 
 @end
