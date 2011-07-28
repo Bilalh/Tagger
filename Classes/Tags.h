@@ -24,6 +24,8 @@ struct FileData;
 	NSNumber *totalDiscs;
 	NSNumber *complication;
 	
+	NSString *url;
+	
 	// Tracks may be handed by the subclass
 	NSNumber *track;
 }
@@ -86,5 +88,7 @@ struct FileData;
 @property (assign) NSNumber *totalDiscs;
 /// YES if the track is part of a complication.
 @property (assign) NSNumber *complication;
+
+@property (assign) NSString *url;
 
 @end

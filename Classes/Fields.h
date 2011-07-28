@@ -27,6 +27,7 @@ namespace MP4Fields {
 	
 	String const ENCODER      = "\251too";
 	String const COVER        = "covr";
+	String const URL          = "----:com.apple.iTunes:URL_OFFICIAL_RELEASE_SITE";
 }
 
 #endif

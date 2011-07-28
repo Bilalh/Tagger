@@ -62,7 +62,7 @@ using namespace std;
 	totalDiscs   = discs.second  ? [NSNumber numberWithInt:discs.second]  : nil;
 	totalTracks  = tracks.second ? [NSNumber numberWithInt:tracks.second] : nil;
 	
-	
+	url          = [self getFieldWithString:URL];
 }
 
 - (void)dealloc
@@ -179,5 +179,13 @@ using namespace std;
 	complication = newValue;
 	[self setField:COMPILATION value:MP4::Item([newValue boolValue] )];
 }
+
+- (void) setUrl:(NSString *)newValue
+{
+	DDLogInfo(@"Setting %s from %@ to %@", "Url", url, newValue);
+	url = newValue;
+	[self setFieldWithString:URL  value:newValue]; 
+}
+
 
 @end

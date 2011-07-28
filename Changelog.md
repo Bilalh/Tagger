@@ -8,6 +8,10 @@ Version 0.9
 * Auto tagging for tracks names is done
   * Allows choosing the language.
 * Auto tagging for other fields done.
+* Allows choosing which fields to update.
+* Show the url, which is clickable
+* Read write of url tag
+* Allows saving of url of from auto tagger
 
 -----------
 Version 0.8 (Mon Jul 25 2011 02:55:27 +0100)

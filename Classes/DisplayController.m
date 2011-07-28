@@ -232,6 +232,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 					   hb(@"products"   ), @"products"    ,
 					   hb(@"publisher"  ), @"publisher"   ,
 					   hc(@"comment"    ), @"comment"     ,
+					   hc(@"url"        ), @"url"         ,
 					   radio             , @"radio"       ,
 					   nil];
 }
@@ -386,7 +387,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSMutableArray  *fieldKeys = [[NSMutableArray alloc] initWithObjects: 
 							 @"album", @"artist", @"albumArtist",
 							 @"year" , @"genre" , @"composer",
-							 @"comment",@"totalDiscs",
+							 @"comment",@"totalDiscs",@"url",
 							 nil ];
 	
 	NSArray  *nodeKeys = [[NSArray alloc] initWithObjects: 

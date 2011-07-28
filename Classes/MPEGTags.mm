@@ -32,6 +32,7 @@ namespace MPEGFields {	// can not be put in the header for some reason
 	
 	const char *ENCODER      = "TENC";
 	const char *COVER        = "APIC";
+	const char *URL          = "WXXX";
 }
 
 @interface MPEGTags()
@@ -102,10 +103,10 @@ using namespace MPEGFields;
 			totalDiscs = nil;
 		}	
 	}	
+	
+	
+	url = [self getFieldWithString:URL];
 }
-
-//TODO
-//complication = [NSNumber numberWithBool:[self getField:COMPILATION].toBool()];
 
 - (void)dealloc
 {
@@ -224,5 +225,13 @@ using namespace MPEGFields;
 	totalDiscs = newValue;
 	[self setNumberPair:DISK_NUMBER firstValue:disc secondValue:totalDiscs];
 }
+
+- (void) setUrl:(NSString *)newValue
+{
+	DDLogInfo(@"Setting %s from %@ to %@","Url", url, newValue);
+	url = newValue;
+	[self setFieldWithString:URL data:newValue];
+}
+
 
 @end
