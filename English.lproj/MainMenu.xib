@@ -1150,7 +1150,7 @@
 															<int key="NSvFlags">256</int>
 															<string key="NSFrameSize">{571, 400}</string>
 															<reference key="NSSuperview" ref="271199575"/>
-															<reference key="NSNextKeyView" ref="367438659"/>
+															<reference key="NSNextKeyView" ref="211658329"/>
 															<bool key="NSEnabled">YES</bool>
 															<object class="NSTableHeaderView" key="NSHeaderView" id="310651733">
 																<reference key="NSNextResponder" ref="211658329"/>
@@ -1437,7 +1437,7 @@
 											</object>
 											<string key="NSFrameSize">{496, 433}</string>
 											<reference key="NSSuperview" ref="479247737"/>
-											<reference key="NSNextKeyView" ref="211658329"/>
+											<reference key="NSNextKeyView" ref="271199575"/>
 											<int key="NSsFlags">690</int>
 											<reference key="NSVScroller" ref="367438659"/>
 											<reference key="NSHScroller" ref="795071022"/>
@@ -2411,15 +2411,15 @@
 																</object>
 																<string key="NSFrame">{{14, 43}, {481, 385}}</string>
 																<reference key="NSSuperview" ref="463021270"/>
-																<reference key="NSNextKeyView"/>
+																<reference key="NSNextKeyView" ref="573093410"/>
 																<bool key="NSEnabled">YES</bool>
 																<object class="NSImageCell" key="NSCell" id="819217809">
-																	<int key="NSCellFlags">130560</int>
-																	<int key="NSCellFlags2">33554432</int>
+																	<int key="NSCellFlags">270663168</int>
+																	<int key="NSCellFlags2">0</int>
 																	<int key="NSAlign">0</int>
 																	<int key="NSScale">0</int>
 																	<int key="NSStyle">2</int>
-																	<bool key="NSAnimates">NO</bool>
+																	<bool key="NSAnimates">YES</bool>
 																</object>
 																<bool key="NSEditable">YES</bool>
 															</object>
@@ -2446,7 +2446,6 @@
 									</object>
 									<string key="NSFrame">{{505, 0}, {528, 466}}</string>
 									<reference key="NSSuperview" ref="698248889"/>
-									<reference key="NSNextKeyView" ref="573093410"/>
 									<string key="NSClassName">NSView</string>
 								</object>
 							</object>

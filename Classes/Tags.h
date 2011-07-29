@@ -26,6 +26,7 @@ struct FileData;
 	
 	NSString *url;
 	NSImage *cover;
+	NSBitmapImageRep *coverRep;
 	
 	// Tracks may be handed by the subclass
 	NSNumber *track;

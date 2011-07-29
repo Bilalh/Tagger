@@ -108,7 +108,7 @@ using namespace MPEGFields;
 	
 	url = [self getFieldWithString:URL];
 	const ID3v2::Tag *tag = data->f->mpeg->ID3v2Tag();
-	ID3v2::FrameList listOfMp3Frames = tag->frameListMap()["APIC"];
+	ID3v2::FrameList listOfMp3Frames = tag->frameListMap()[COVER];
 	if (!listOfMp3Frames.isEmpty()){
 		ID3v2::AttachedPictureFrame *picture = static_cast<ID3v2::AttachedPictureFrame *>(listOfMp3Frames.front());
 		if (picture){
@@ -243,6 +243,57 @@ using namespace MPEGFields;
 	url = newValue;
 	[self setFieldWithString:URL data:newValue];
 }
+
+
+- (NSData*) getBitmapDataForImage:(NSImage*)image 
+						  forType:(NSBitmapImageFileType)type
+{
+	NSCParameterAssert(nil != image);
+	
+	NSEnumerator		*enumerator					= nil;
+	NSImageRep			*currentRepresentation		= nil;
+	NSBitmapImageRep	*bitmapRep					= nil;
+	NSSize				size;
+	
+	enumerator = [[image representations] objectEnumerator];
+	while((currentRepresentation = [enumerator nextObject])) {
+		if([currentRepresentation isKindOfClass:[NSBitmapImageRep class]]) {
+			bitmapRep = (NSBitmapImageRep *)currentRepresentation;
+		}
+	}
+	
+	// Create a bitmap representation if one doesn't exist
+	if(nil == bitmapRep) {
+		size = [image size];
+		[image lockFocus];
+		bitmapRep = [[[NSBitmapImageRep alloc] initWithFocusedViewRect:NSMakeRect(0, 0, size.width, size.height)] autorelease];
+		[image unlockFocus];
+	}
+	
+	return [bitmapRep representationUsingType:type properties:nil]; 	
+}
+
+- (void) setCover:(NSImage *)newValue
+{
+	DDLogInfo(@"Setting %s same:%d","Cover", cover==newValue);
+	cover = newValue;
+	
+	(TagLib::ID3v2::FrameFactory::instance())->setDefaultTextEncoding(TagLib::String::UTF8);
+	ID3v2::Tag *tag = data->f->mpeg->ID3v2Tag();	
+	tag->removeFrames(COVER);
+	
+	if(nil != cover) {
+		DDLogInfo(@"cover");
+		ID3v2::AttachedPictureFrame *frame = new ID3v2::AttachedPictureFrame();
+		NSData *imageData = [self getBitmapDataForImage:cover forType: NSJPEGFileType];
+		
+		frame->setMimeType("image/jpeg");
+		frame->setPicture(ByteVector((const char *)[imageData bytes], (uint)[imageData length]));
+		tag->addFrame(frame);
+	}	
+	data->file->save();
+}
+
 
 
 @end

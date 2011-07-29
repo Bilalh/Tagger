@@ -12,7 +12,7 @@ Version 0.9
 * Show the url, which is clickable
 * Read and write of url tag
 * Allows saving of url of from auto tagger
-
+* Read/write mp3 cover art
 
 -----------
 Version 0.8 (Mon Jul 25 2011 02:55:27 +0100)
