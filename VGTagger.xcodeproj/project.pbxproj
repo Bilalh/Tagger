@@ -58,6 +58,7 @@
 		92C4466413E0BF830038F817 /* BWHyperlinkTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4466113E0BF830038F817 /* BWHyperlinkTitleButton.m */; };
 		92C4466513E0BF830038F817 /* BWHyperlinkButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4466313E0BF830038F817 /* BWHyperlinkButtonCell.m */; };
 		92C4466813E0C7880038F817 /* ButtonLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4466713E0C7870038F817 /* ButtonLabelCell.m */; };
+		92F7A81F13E2F19000B3446B /* NSImage+bitmapData.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F7A81E13E2F19000B3446B /* NSImage+bitmapData.m */; };
 		92FCBF5413CE83D10011F744 /* FileSystemNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FCBF5313CE83D10011F744 /* FileSystemNode.m */; };
 /* End PBXBuildFile section */
 
@@ -164,6 +165,8 @@
 		92C4466713E0C7870038F817 /* ButtonLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonLabelCell.m; sourceTree = "<group>"; };
 		92CC309013DA386600BC78DC /* Fields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fields.h; sourceTree = "<group>"; };
 		92CC309113DA3F3A00BC78DC /* framelistmp4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = framelistmp4.cpp; sourceTree = "<group>"; };
+		92F7A81D13E2F19000B3446B /* NSImage+bitmapData.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "NSImage+bitmapData.h"; sourceTree = "<group>"; };
+		92F7A81E13E2F19000B3446B /* NSImage+bitmapData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+bitmapData.m"; sourceTree = "<group>"; };
 		92FCBF5213CE83D10011F744 /* FileSystemNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystemNode.h; sourceTree = "<group>"; };
 		92FCBF5313CE83D10011F744 /* FileSystemNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystemNode.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -412,6 +415,8 @@
 				9286164913D65621001481E5 /* NSString+Numbers.m */,
 				92C4465213E0A5820038F817 /* NSAttributedString+Hyperlink.h */,
 				92C4465313E0A5820038F817 /* NSAttributedString+Hyperlink.m */,
+				92F7A81D13E2F19000B3446B /* NSImage+bitmapData.h */,
+				92F7A81E13E2F19000B3446B /* NSImage+bitmapData.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -551,6 +556,7 @@
 				92C4466413E0BF830038F817 /* BWHyperlinkTitleButton.m in Sources */,
 				92C4466513E0BF830038F817 /* BWHyperlinkButtonCell.m in Sources */,
 				92C4466813E0C7880038F817 /* ButtonLabelCell.m in Sources */,
+				92F7A81F13E2F19000B3446B /* NSImage+bitmapData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

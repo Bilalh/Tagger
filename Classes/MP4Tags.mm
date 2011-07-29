@@ -10,6 +10,7 @@
 #import "TagStructs.h"
 #import "NSString+Convert.h"
 #import "Fields.h"
+#import "NSImage+bitmapData.h"
 
 #include <mp4tag.h> 
 #include <mp4file.h>
@@ -49,7 +50,9 @@ using namespace std;
 	[super initFields];	
 	const MP4::Item::IntPair tracks = [self getField:TRACK_NUMBER].toIntPair();
 	const MP4::Item::IntPair discs  = [self getField:DISK_NUMBER].toIntPair();
+	MP4::CoverArtList coverList;
 	int i;
+	
 	
 	albumArtist  = [self getFieldWithString:ALBUM_ARTIST];
 	composer     = [self getFieldWithString:COMPOSER];
@@ -63,6 +66,12 @@ using namespace std;
 	totalTracks  = tracks.second ? [NSNumber numberWithInt:tracks.second] : nil;
 	
 	url          = [self getFieldWithString:URL];
+	coverList    = [self getField:COVER].toCoverArtList();
+	if (!coverList.isEmpty()){
+		TagLib::ByteVector bv = coverList.front().data();
+		cover = [[[NSImage alloc] initWithData: [NSData dataWithBytes:bv.data() length:bv.size()]] autorelease];
+	}
+	
 }
 
 - (void)dealloc
@@ -185,6 +194,19 @@ using namespace std;
 	DDLogInfo(@"Setting %s from %@ to %@", "Url", url, newValue);
 	url = newValue;
 	[self setFieldWithString:URL  value:newValue]; 
+}
+
+- (void) setCover:(NSImage *)newValue
+{
+	using namespace TagLib::MP4;
+	DDLogInfo(@"Setting %s same %d", "Cover", cover == newValue);
+	cover = newValue;
+	
+	NSData *imageData = [cover bitmapDataForType:NSJPEGFileType];
+	CoverArt ca = CoverArt(CoverArt::JPEG, ByteVector((const char *)[imageData bytes], (uint)[imageData length]));	
+	CoverArtList list = CoverArtList();
+	list.append(ca);
+	[self setField:COVER value:list];
 }
 
 

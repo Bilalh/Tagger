@@ -9,6 +9,7 @@
 #import "MPEGTags.h"
 #import "TagStructs.h"
 #import "NSString+Convert.h"
+#import "NSImage+bitmapData.h"
 
 #include <mpegfile.h>
 #include <id3v2tag.h> 
@@ -244,35 +245,6 @@ using namespace MPEGFields;
 	[self setFieldWithString:URL data:newValue];
 }
 
-
-- (NSData*) getBitmapDataForImage:(NSImage*)image 
-						  forType:(NSBitmapImageFileType)type
-{
-	NSCParameterAssert(nil != image);
-	
-	NSEnumerator		*enumerator					= nil;
-	NSImageRep			*currentRepresentation		= nil;
-	NSBitmapImageRep	*bitmapRep					= nil;
-	NSSize				size;
-	
-	enumerator = [[image representations] objectEnumerator];
-	while((currentRepresentation = [enumerator nextObject])) {
-		if([currentRepresentation isKindOfClass:[NSBitmapImageRep class]]) {
-			bitmapRep = (NSBitmapImageRep *)currentRepresentation;
-		}
-	}
-	
-	// Create a bitmap representation if one doesn't exist
-	if(nil == bitmapRep) {
-		size = [image size];
-		[image lockFocus];
-		bitmapRep = [[[NSBitmapImageRep alloc] initWithFocusedViewRect:NSMakeRect(0, 0, size.width, size.height)] autorelease];
-		[image unlockFocus];
-	}
-	
-	return [bitmapRep representationUsingType:type properties:nil]; 	
-}
-
 - (void) setCover:(NSImage *)newValue
 {
 	DDLogInfo(@"Setting %s same:%d","Cover", cover==newValue);
@@ -285,10 +257,11 @@ using namespace MPEGFields;
 	if(nil != cover) {
 		DDLogInfo(@"cover");
 		ID3v2::AttachedPictureFrame *frame = new ID3v2::AttachedPictureFrame();
-		NSData *imageData = [self getBitmapDataForImage:cover forType: NSJPEGFileType];
 		
+		NSData *imageData = [cover bitmapDataForType:NSJPEGFileType];
 		frame->setMimeType("image/jpeg");
 		frame->setPicture(ByteVector((const char *)[imageData bytes], (uint)[imageData length]));
+		
 		tag->addFrame(frame);
 	}	
 	data->file->save();
