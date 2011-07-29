@@ -128,6 +128,8 @@
 		920660DE13C89845003A3803 /* vgmdb_global.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = vgmdb_global.js; sourceTree = "<group>"; };
 		920660DF13C89845003A3803 /* vgmdblogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vgmdblogo.png; sourceTree = "<group>"; };
 		920660E013C89845003A3803 /* yahoo-dom-event.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "yahoo-dom-event.js"; sourceTree = "<group>"; };
+		9210943513E2312B00E429F3 /* tagImage.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tagImage.cpp; sourceTree = "<group>"; };
+		9210943713E2319900E429F3 /* UtilityFunctions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilityFunctions.m; sourceTree = "<group>"; };
 		922D30BE13CA77A1008EED70 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		922D30BF13CA77A1008EED70 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
 		922E35D613C89BF3003C5913 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -316,6 +318,8 @@
 		92364F7813C8E0C900044153 /* TagLib */ = {
 			isa = PBXGroup;
 			children = (
+				9210943713E2319900E429F3 /* UtilityFunctions.m */,
+				9210943513E2312B00E429F3 /* tagImage.cpp */,
 				92CC309113DA3F3A00BC78DC /* framelistmp4.cpp */,
 				92CC309013DA386600BC78DC /* Fields.h */,
 				9264486513D74DED0035E693 /* mp4 tag mapping */,
