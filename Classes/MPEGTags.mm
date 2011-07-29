@@ -12,7 +12,9 @@
 
 #include <mpegfile.h>
 #include <id3v2tag.h> 
+#include <id3v2frame.h>
 #include <textidentificationframe.h>
+#include <attachedPictureFrame.h>
 
 #import "DDLog.h"
 static const int ddLogLevel = LOG_LEVEL_INFO;
@@ -104,8 +106,17 @@ using namespace MPEGFields;
 		}	
 	}	
 	
-	
 	url = [self getFieldWithString:URL];
+	const ID3v2::Tag *tag = data->f->mpeg->ID3v2Tag();
+	ID3v2::FrameList listOfMp3Frames = tag->frameListMap()["APIC"];
+	if (!listOfMp3Frames.isEmpty()){
+		ID3v2::AttachedPictureFrame *picture = static_cast<ID3v2::AttachedPictureFrame *>(listOfMp3Frames.front());
+		if (picture){
+			TagLib::ByteVector bv = picture->picture();
+			cover = [[[NSImage alloc] initWithData: [NSData dataWithBytes:bv.data() length:bv.size()]] autorelease];	
+		}
+	}
+	
 }
 
 - (void)dealloc

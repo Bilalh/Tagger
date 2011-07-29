@@ -25,6 +25,7 @@ struct FileData;
 	NSNumber *complication;
 	
 	NSString *url;
+	NSImage *cover;
 	
 	// Tracks may be handed by the subclass
 	NSNumber *track;
@@ -90,5 +91,7 @@ struct FileData;
 @property (assign) NSNumber *complication;
 
 @property (assign) NSString *url;
+
+@property (assign) NSImage *cover;
 
 @end

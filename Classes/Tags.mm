@@ -22,7 +22,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 using namespace TagLib;
 @implementation Tags
 @synthesize title, artist, album, comment, genre, year, track, length;
-@synthesize albumArtist, composer, grouping, bpm, totalTracks, disc, totalDiscs, complication, url;
+@synthesize albumArtist, composer, grouping, bpm, totalTracks, disc, totalDiscs, complication, url, cover;
 
 #pragma mark -
 #pragma mark Init
@@ -133,5 +133,7 @@ DDLogInfo(@"res:%d "#field":%u", b, t->field());
 -(void) setComplication:(NSNumber *)newValue{}
 
 -(void) setUrl:(NSString *)newText{}
+-(void) setCover:(NSImage *)newText{}
+
 
 @end
