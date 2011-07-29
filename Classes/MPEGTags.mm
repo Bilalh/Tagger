@@ -16,6 +16,7 @@
 #include <id3v2frame.h>
 #include <textidentificationframe.h>
 #include <attachedPictureFrame.h>
+#include <commentsframe.h>
 
 #import "DDLog.h"
 static const int ddLogLevel = LOG_LEVEL_INFO;
@@ -36,6 +37,7 @@ namespace MPEGFields {	// can not be put in the header for some reason
 	const char *ENCODER      = "TENC";
 	const char *COVER        = "APIC";
 	const char *URL          = "WXXX";
+	const char *COMMENT      = "COMM";
 }
 
 @interface MPEGTags()
@@ -268,5 +270,37 @@ using namespace MPEGFields;
 }
 
 
+- (bool) setComment:(const char*)field
+					   data:(NSString *)newValue
+{
+	DDLogVerbose(@"%s '%@'", field, newValue);
+	(TagLib::ID3v2::FrameFactory::instance())->setDefaultTextEncoding(TagLib::String::UTF8);
+	ID3v2::Tag *tag = data->f->mpeg->ID3v2Tag();	
+	tag->removeFrames(field);
+	//  Total tracks on it own does not work without this
+	data->f->mpeg->strip(MPEG::File::ID3v1);
+	if(nil != newValue) {
+		ID3v2::TextIdentificationFrame *frame = new ID3v2::TextIdentificationFrame(field, TagLib::String::UTF8);
+		frame->setText([newValue tagLibString]);
+		tag->addFrame(frame);
+	}
+	return data->file->save();
+}
+
+- (void) setComment:(NSString *)newValue
+{
+	DDLogInfo(@"Setting %s from %@ to %@","Comment", comment, newValue);
+	comment = newValue;
+	(TagLib::ID3v2::FrameFactory::instance())->setDefaultTextEncoding(TagLib::String::UTF8);
+	ID3v2::Tag *tag = data->f->mpeg->ID3v2Tag();	
+	tag->removeFrames(COMMENT);
+	if(nil != newValue) {
+		ID3v2::CommentsFrame *frame =  new ID3v2::CommentsFrame();
+		frame->setText([newValue tagLibString]);
+		frame->setLanguage("eng");
+		tag->addFrame(frame);
+	}
+	data->file->save();
+}
 
 @end

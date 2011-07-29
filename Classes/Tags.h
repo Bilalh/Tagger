@@ -30,6 +30,8 @@ struct FileData;
 	
 	// Tracks may be handed by the subclass
 	NSNumber *track;
+	// MP3 comment need to be handled the subclass
+	NSString *comment;
 }
 
 /// @name Initializing an Tags Object
@@ -91,8 +93,9 @@ struct FileData;
 /// YES if the track is part of a complication.
 @property (assign) NSNumber *complication;
 
+// The url associated with the file
 @property (assign) NSString *url;
-
+// The album cover of the file
 @property (assign) NSImage *cover;
 
 @end
