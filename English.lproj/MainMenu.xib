@@ -1152,7 +1152,7 @@
 															<string key="NSFrameSize">{571, 400}</string>
 															<reference key="NSSuperview" ref="271199575"/>
 															<reference key="NSWindow"/>
-															<reference key="NSNextKeyView" ref="211658329"/>
+															<reference key="NSNextKeyView" ref="367438659"/>
 															<bool key="NSEnabled">YES</bool>
 															<object class="NSTableHeaderView" key="NSHeaderView" id="310651733">
 																<reference key="NSNextResponder" ref="211658329"/>
@@ -1446,7 +1446,7 @@
 											<string key="NSFrameSize">{496, 433}</string>
 											<reference key="NSSuperview" ref="479247737"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="271199575"/>
+											<reference key="NSNextKeyView" ref="211658329"/>
 											<int key="NSsFlags">690</int>
 											<reference key="NSVScroller" ref="367438659"/>
 											<reference key="NSHScroller" ref="795071022"/>
@@ -1940,7 +1940,7 @@
 																<string key="NSFrame">{{126, 83}, {366, 66}}</string>
 																<reference key="NSSuperview" ref="10815081"/>
 																<reference key="NSWindow"/>
-																<reference key="NSNextKeyView" ref="573093410"/>
+																<reference key="NSNextKeyView" ref="389662734"/>
 																<int key="NSViewLayerContentsRedrawPolicy">2</int>
 																<bool key="NSEnabled">YES</bool>
 																<object class="NSTextFieldCell" key="NSCell" id="54779877">
@@ -2424,6 +2424,7 @@
 																<string key="NSFrame">{{34, 9}, {96, 32}}</string>
 																<reference key="NSSuperview" ref="10815081"/>
 																<reference key="NSWindow"/>
+																<reference key="NSNextKeyView"/>
 																<int key="NSViewLayerContentsRedrawPolicy">2</int>
 																<bool key="NSEnabled">YES</bool>
 																<object class="NSButtonCell" key="NSCell" id="1035420977">
@@ -4280,8 +4281,8 @@
 							<reference ref="491346229"/>
 							<reference ref="721275556"/>
 							<reference ref="308916266"/>
-							<reference ref="985815505"/>
 							<reference ref="389662734"/>
+							<reference ref="985815505"/>
 						</object>
 						<reference key="parent" ref="939896340"/>
 					</object>

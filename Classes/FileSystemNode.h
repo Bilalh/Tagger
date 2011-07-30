@@ -71,6 +71,4 @@
 @property(readonly)         BOOL      hasExtenedMetadata;
 
 
-
-
 @end

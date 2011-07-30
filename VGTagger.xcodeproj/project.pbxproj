@@ -43,6 +43,7 @@
 		9259102813E10A6C0033CB7B /* tags.webloc in Resources */ = {isa = PBXBuildFile; fileRef = 9259102713E10A6C0033CB7B /* tags.webloc */; };
 		9264488A13D773CE0035E693 /* arrowLeftBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */; };
 		9264488B13D773CE0035E693 /* arrowRightBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488913D773CE0035E693 /* arrowRightBlack16.tiff */; };
+		926BDEBD13E4B4220050B45C /* FileSystemNodeCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 926BDEBC13E4B4220050B45C /* FileSystemNodeCollection.m */; };
 		927F56B913DDCFA000274708 /* NumberToTimeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 927F56B813DDCFA000274708 /* NumberToTimeTransformer.m */; };
 		9286164A13D65621001481E5 /* NSString+Numbers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9286164913D65621001481E5 /* NSString+Numbers.m */; };
 		929A4ACE13DA027C00244796 /* Changelog.md in Resources */ = {isa = PBXBuildFile; fileRef = 929A4ACD13DA027C00244796 /* Changelog.md */; };
@@ -134,6 +135,8 @@
 		9264486513D74DED0035E693 /* mp4 tag mapping */ = {isa = PBXFileReference; lastKnownFileType = text; name = "mp4 tag mapping"; path = "../Test Files/mp4 tag mapping"; sourceTree = "<group>"; };
 		9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowLeftBlack16.tiff; sourceTree = "<group>"; };
 		9264488913D773CE0035E693 /* arrowRightBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowRightBlack16.tiff; sourceTree = "<group>"; };
+		926BDEBB13E4B4220050B45C /* FileSystemNodeCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; path = FileSystemNodeCollection.h; sourceTree = "<group>"; };
+		926BDEBC13E4B4220050B45C /* FileSystemNodeCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystemNodeCollection.m; sourceTree = "<group>"; };
 		927883BF13E06E5000063D28 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme.md; sourceTree = "<group>"; };
 		927883C013E06EED00063D28 /* Todo.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = Todo.md; sourceTree = "<group>"; };
 		927F56B713DDCFA000274708 /* NumberToTimeTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberToTimeTransformer.h; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 			children = (
 				92FCBF5213CE83D10011F744 /* FileSystemNode.h */,
 				92FCBF5313CE83D10011F744 /* FileSystemNode.m */,
+				926BDEBB13E4B4220050B45C /* FileSystemNodeCollection.h */,
+				926BDEBC13E4B4220050B45C /* FileSystemNodeCollection.m */,
 			);
 			name = IO;
 			sourceTree = "<group>";
@@ -565,6 +570,7 @@
 				92C4466813E0C7880038F817 /* ButtonLabelCell.m in Sources */,
 				92F7A81F13E2F19000B3446B /* NSImage+bitmapData.m in Sources */,
 				925093CC13E39F5000A20CA1 /* TagConverter.cpp in Sources */,
+				926BDEBD13E4B4220050B45C /* FileSystemNodeCollection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
