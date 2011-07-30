@@ -10,7 +10,9 @@
 #import "TagStructs.h"
 #import "NSString+Convert.h"
 
+#include "TagConverter.h"
 #include <tag.h>
+
 #import "DDLog.h"
 static const int ddLogLevel = LOG_LEVEL_INFO;
 
@@ -137,5 +139,12 @@ DDLogInfo(@"res:%d "#field":%u", b, t->field());
 -(void) setUrl:(NSString *)newText{}
 -(void) setCover:(NSImage *)newText{}
 
+-(NSString*)filenameFromFormat:(NSString*)format
+{
+	TagConverter tc;
+	const TagLib::Tag *t = data->file->tag();
+	std::string s = tc.tagToFilename_(*t, *[format cppString]);
+	return [[NSString alloc] initWithCppString:&s];
+}
 
 @end

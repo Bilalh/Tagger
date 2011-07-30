@@ -1380,7 +1380,7 @@
 																	<string>public.url</string>
 																</object>
 															</object>
-															<string key="NSFrame">{{0, 10}, {339, 14}}</string>
+															<string key="NSFrameSize">{354, 14}</string>
 															<reference key="NSSuperview" ref="802636451"/>
 															<reference key="NSWindow"/>
 															<reference key="NSNextKeyView" ref="792130082"/>
@@ -1400,11 +1400,11 @@
 																	<nil key="NSDelegate"/>
 																</object>
 																<reference key="NSTextView" ref="6121220"/>
-																<double key="NSWidth">339</double>
+																<double key="NSWidth">354</double>
 																<int key="NSTCFlags">1</int>
 															</object>
 															<object class="NSTextViewSharedData" key="NSSharedData">
-																<int key="NSFlags">12259</int>
+																<int key="NSFlags">3971</int>
 																<int key="NSTextCheckingTypes">0</int>
 																<nil key="NSMarkedAttributes"/>
 																<reference key="NSBackgroundColor" ref="692370982"/>
@@ -1461,7 +1461,7 @@
 															<nil key="NSDelegate"/>
 														</object>
 													</object>
-													<string key="NSFrame">{{1, 1}, {338, 57}}</string>
+													<string key="NSFrame">{{1, 1}, {353, 57}}</string>
 													<reference key="NSSuperview" ref="715261463"/>
 													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="6121220"/>
@@ -1475,7 +1475,7 @@
 												</object>
 												<object class="NSScroller" id="792130082">
 													<reference key="NSNextResponder" ref="715261463"/>
-													<int key="NSvFlags">256</int>
+													<int key="NSvFlags">-2147483392</int>
 													<string key="NSFrame">{{339, 1}, {15, 57}}</string>
 													<reference key="NSSuperview" ref="715261463"/>
 													<reference key="NSWindow"/>
@@ -1488,7 +1488,7 @@
 												<object class="NSScroller" id="452448503">
 													<reference key="NSNextResponder" ref="715261463"/>
 													<int key="NSvFlags">-2147483392</int>
-													<string key="NSFrame">{{-100, -100}, {87, 18}}</string>
+													<string key="NSFrame">{{-100, -100}, {338, 15}}</string>
 													<reference key="NSSuperview" ref="715261463"/>
 													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="802636451"/>
@@ -1496,15 +1496,14 @@
 													<int key="NSsFlags">1</int>
 													<reference key="NSTarget" ref="715261463"/>
 													<string key="NSAction">_doScroller:</string>
-													<double key="NSCurValue">1</double>
-													<double key="NSPercent">0.94565218687057495</double>
+													<double key="NSPercent">0.99705014749262533</double>
 												</object>
 											</object>
 											<string key="NSFrame">{{21, 14}, {355, 59}}</string>
 											<reference key="NSSuperview" ref="374271042"/>
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="452448503"/>
-											<int key="NSsFlags">146</int>
+											<int key="NSsFlags">658</int>
 											<reference key="NSVScroller" ref="792130082"/>
 											<reference key="NSHScroller" ref="452448503"/>
 											<reference key="NSContentView" ref="802636451"/>

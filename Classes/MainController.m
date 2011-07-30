@@ -249,8 +249,16 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (id)valueForUndefinedKey:(NSString *)key
 {
-	NSLog(@"valueForUndefinedKey:%@",key);
+	DDLogError(@"valueForUndefinedKey:%@",key);
 	return @"ERROR";
+}
+
+- (IBAction) rename:(id)sender
+{
+	DDLogInfo(@"renaming %@", currentNode);
+	if (currentNode && currentNode.hasBasicMetadata){
+		[currentNode renameWithFormat:@"%t - %n - %b - %a - %y"];
+	}
 }
 
 #pragma mark -

@@ -59,4 +59,6 @@
  */
 - (IBAction) backForwordDirectories:(id)sender; 
 
+- (IBAction) rename:(id)sender;
+
 @end

@@ -4,6 +4,9 @@
 #import "MP4Tags.h"
 #import "MPEGTags.h"
 
+#import "DDLog.h"
+static const int ddLogLevel = LOG_LEVEL_INFO;
+
 @interface FileSystemNode()
 - (BOOL) isaDirectory:(NSURL*)url;
 @end
@@ -181,6 +184,12 @@
     for (FileSystemNode *child in _children) {
         [child invalidateChildren];
     }
+}
+
+-(int) renameWithFormat:(NSString*)format{
+	NSString *res = [tags filenameFromFormat:format];
+	DDLogInfo(@"res:%@", res);
+	return 0;
 }
 
 @end

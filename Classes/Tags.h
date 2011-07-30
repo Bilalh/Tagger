@@ -55,6 +55,9 @@ struct FileData;
 
 - (NSComparisonResult)compare:(Tags *)otherTag;
 
+-(NSString*)filenameFromFormat:(NSString*)format;
+
+
 /// @name Finding General metadata.
 
 /// The title of the file
