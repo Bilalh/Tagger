@@ -11,6 +11,7 @@
 #import "NSString+Convert.h"
 #import "Fields.h"
 #import "NSImage+bitmapData.h"
+#include "TagPrivate.h"
 
 #include <mp4tag.h> 
 #include <mp4file.h>
@@ -127,80 +128,68 @@ using namespace std;
 
 - (void) setAlbumArtist:(NSString *)newValue
 { 
-	DDLogInfo(@"Setting %s from %@ to %@","Album Artist", albumArtist, newValue);
-	albumArtist = newValue;
+	TAG_SETTER_START(albumArtist);
 	[self setFieldWithString:ALBUM_ARTIST  value:newValue]; 
 }
 
 - (void) setComposer:(NSString *)newValue
 {
-	DDLogInfo(@"Setting %s from %@ to %@", "Composer", composer, newValue);
-	composer = newValue;
+	TAG_SETTER_START(composer);
 	[self setFieldWithString:COMPOSER  value:newValue]; 
 }
 
 - (void) setGrouping:(NSString *)newValue
 {
-	DDLogInfo(@"Setting %s from %@ to %@","Grouping", grouping, newValue);
-	grouping = newValue;
+	TAG_SETTER_START(grouping);
 	[self setFieldWithString:GROUPING  value:newValue]; 
 }
 
 - (void) setBpm:(NSNumber *)newValue
 {
-	DDLogInfo(@"Setting %s from %@ to %@","BPM", bpm, newValue);
-	bpm = newValue;
+	TAG_SETTER_START(bpm);
 	[self setField:BPM value:  MP4::Item([newValue intValue])];
 }
 
 - (void) setTrack:(NSNumber *)newValue
 {
-	DDLogInfo(@"Setting %s from %@ to %@","Track#", track, newValue);
-	track = newValue;
+	TAG_SETTER_START(track);
 	[self setField:TRACK_NUMBER value:MP4::Item([newValue intValue], [totalTracks intValue])];
 }
 
 - (void) setTotalTracks:(NSNumber *)newValue
 {
-	
-	DDLogInfo(@"Setting %s from %@ to %@","Total Tracks", totalTracks, newValue);
-	totalTracks = newValue;
+	TAG_SETTER_START(totalTracks);
 	[self setField:TRACK_NUMBER value:MP4::Item([track intValue], [newValue intValue])];
 }
 
 - (void) setDisc:(NSNumber *)newValue
 {
-	DDLogInfo(@"Setting %s from %@ to %@","Disc#", disc, newValue);
-	disc = newValue;
+	TAG_SETTER_START(disc);
 	[self setField:DISK_NUMBER value:MP4::Item([newValue intValue], [totalDiscs intValue])];
 }
 
 - (void) setTotalDiscs:(NSNumber *)newValue
 {
-	DDLogInfo(@"Setting %s from %@ to %@","Total Discs", totalDiscs, newValue);
-	totalDiscs = newValue;
+	TAG_SETTER_START(totalDiscs);
 	[self setField:DISK_NUMBER value:MP4::Item([disc intValue], [newValue intValue])];
 }
 
 - (void) setComplication:(NSNumber *)newValue
 {
-	DDLogInfo(@"Setting %s from %@ to %@","Complication", complication, newValue);
-	complication = newValue;
+	TAG_SETTER_START(complication);
 	[self setField:COMPILATION value:MP4::Item([newValue boolValue] )];
 }
 
 - (void) setUrl:(NSString *)newValue
 {
-	DDLogInfo(@"Setting %s from %@ to %@", "Url", url, newValue);
-	url = newValue;
+	TAG_SETTER_START(url);
 	[self setFieldWithString:URL  value:newValue]; 
 }
 
 - (void) setCover:(NSImage *)newValue
 {
 	using namespace TagLib::MP4;
-	DDLogInfo(@"Setting %s same %d", "Cover", cover == newValue);
-	cover = newValue;
+	TAG_SETTER_START(cover);
 	
 	NSData *imageData = [cover bitmapDataForType:NSJPEGFileType];
 	CoverArt ca = CoverArt(CoverArt::JPEG, ByteVector((const char *)[imageData bytes], (uint)[imageData length]));	

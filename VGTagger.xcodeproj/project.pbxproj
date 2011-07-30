@@ -125,6 +125,7 @@
 		92364F7513C8DE5200044153 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = VgmdbSearch.xib; sourceTree = "<group>"; };
 		923FC13313DA117100B14A3E /* MPEGTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPEGTags.h; sourceTree = "<group>"; };
 		923FC13413DA117100B14A3E /* MPEGTags.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MPEGTags.mm; sourceTree = "<group>"; };
+		925093C813E39B2C00A20CA1 /* TagPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagPrivate.h; sourceTree = "<group>"; };
 		9259102713E10A6C0033CB7B /* tags.webloc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tags.webloc; sourceTree = SOURCE_ROOT; };
 		925CE81D13C3BD6D009D6D94 /* VGTagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VGTagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9264486513D74DED0035E693 /* mp4 tag mapping */ = {isa = PBXFileReference; lastKnownFileType = text; name = "mp4 tag mapping"; path = "../Test Files/mp4 tag mapping"; sourceTree = "<group>"; };
@@ -319,6 +320,7 @@
 				9201935813CF91DC0085E167 /* TagStructs.h */,
 				9201935A13CFBBC20085E167 /* NSString+Convert.h */,
 				9201935B13CFBBC20085E167 /* NSString+Convert.mm */,
+				925093C813E39B2C00A20CA1 /* TagPrivate.h */,
 			);
 			name = TagLib;
 			sourceTree = "<group>";

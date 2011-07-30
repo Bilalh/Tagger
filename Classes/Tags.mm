@@ -97,6 +97,7 @@ using namespace TagLib;
 // Saves the newData to file
 
 #define setMetadata(newText,field,saveFunction)                  \
+if ([field isEqualTo:newText]) return;                           \
 DDLogInfo(@"Setting "#field" from %@ to %@",field, newText);     \
 field = newText;                                                 \
 Tag * const t = data->file->tag();                               \
@@ -105,6 +106,7 @@ bool b =data->file->save();                                      \
 DDLogInfo(@"res:%d "#field":%s", b, t->field().toCString() );
 
 #define setNumberMetadata(newNumber,field,saveFunction)        \
+if ([field isEqualTo:newNumber]) return;                       \
 DDLogInfo(@"Setting "#field" from %@ to %@",field, newNumber); \
 field = newNumber;                                             \
 Tag * const t = data->file->tag();                             \

@@ -10,6 +10,7 @@
 #import "TagStructs.h"
 #import "NSString+Convert.h"
 #import "NSImage+bitmapData.h"
+#include "TagPrivate.h"
 
 #include <mpegfile.h>
 #include <id3v2tag.h> 
@@ -177,80 +178,70 @@ using namespace MPEGFields;
 #pragma mark -
 #pragma mark Setters
 
+
 - (void) setAlbumArtist:(NSString *)newValue
 { 
-	DDLogInfo(@"Setting %s from %@ to %@","Album Artist", albumArtist, newValue);
-	albumArtist = newValue;
+	TAG_SETTER_START(albumArtist);
 	[self setFieldWithString:ALBUM_ARTIST data:newValue];
 }
 
 - (void) setComposer:(NSString *)newValue
-{ 
-	DDLogInfo(@"Setting %s from %@ to %@","Composer", composer, newValue);
-	composer = newValue;
+{
+	TAG_SETTER_START(composer);
 	[self setFieldWithString:COMPOSER data:newValue];
 }
 
 - (void) setGrouping:(NSString *)newValue
 { 
-	DDLogInfo(@"Setting %s from %@ to %@","Composer", grouping, newValue);
-	grouping = newValue;
+	TAG_SETTER_START(grouping);
 	[self setFieldWithString:GROUPING data:newValue];
 }
 
 - (void) setBpm:(NSNumber *)newValue
 {
-	DDLogInfo(@"Setting %s from %@ to %@","Bpm", bpm, newValue);
-	bpm = newValue;
+	TAG_SETTER_START(bpm);
 	[self setFieldWithString:BPM data:[newValue stringValue]];	
 }
 
 - (void) setComplication:(NSNumber *)newValue
 {
-	DDLogInfo(@"Setting %s from %@ to %@","Complication", complication, newValue);
-	complication = newValue;
+	TAG_SETTER_START(complication);
 	[self setFieldWithString:COMPILATION data:[newValue boolValue] ? @"1" : nil ];		
 }
 
 - (void) setTrack:(NSNumber *)newValue
 {
-	DDLogInfo(@"Setting %s from %@ to %@","Track#", track, newValue);
-	track = newValue;
+	TAG_SETTER_START(track);
 	[self setNumberPair:TRACK_NUMBER firstValue:track secondValue:totalTracks];
 }
 
 - (void) setTotalTracks:(NSNumber *)newValue
 {
-	DDLogInfo(@"Setting %s from %@ to %@","Total Tracks", totalTracks, newValue);
-	totalTracks = newValue;
+	TAG_SETTER_START(totalTracks);
 	[self setNumberPair:TRACK_NUMBER firstValue:track secondValue:totalTracks];
 }
 
 - (void) setDisc:(NSNumber *)newValue
 {
-	DDLogInfo(@"Setting %s from %@ to %@","Disc#", disc, newValue);
-	disc = newValue;
+	TAG_SETTER_START(disc);
 	[self setNumberPair:DISK_NUMBER firstValue:disc secondValue:totalDiscs];
 }
 
 - (void) setTotalDiscs:(NSNumber *)newValue
 {
-	DDLogInfo(@"Setting %s from %@ to %@","Total Discs", totalDiscs, newValue);
-	totalDiscs = newValue;
+	TAG_SETTER_START(totalDiscs);
 	[self setNumberPair:DISK_NUMBER firstValue:disc secondValue:totalDiscs];
 }
 
 - (void) setUrl:(NSString *)newValue
 {
-	DDLogInfo(@"Setting %s from %@ to %@","Url", url, newValue);
-	url = newValue;
+	TAG_SETTER_START(url);
 	[self setFieldWithString:URL data:newValue];
 }
 
 - (void) setCover:(NSImage *)newValue
 {
-	DDLogInfo(@"Setting %s same:%d","Cover", cover==newValue);
-	cover = newValue;
+	TAG_SETTER_START(cover);
 	
 	(TagLib::ID3v2::FrameFactory::instance())->setDefaultTextEncoding(TagLib::String::UTF8);
 	ID3v2::Tag *tag = data->f->mpeg->ID3v2Tag();	
@@ -269,28 +260,9 @@ using namespace MPEGFields;
 	data->file->save();
 }
 
-
-- (bool) setComment:(const char*)field
-					   data:(NSString *)newValue
-{
-	DDLogVerbose(@"%s '%@'", field, newValue);
-	(TagLib::ID3v2::FrameFactory::instance())->setDefaultTextEncoding(TagLib::String::UTF8);
-	ID3v2::Tag *tag = data->f->mpeg->ID3v2Tag();	
-	tag->removeFrames(field);
-	//  Total tracks on it own does not work without this
-	data->f->mpeg->strip(MPEG::File::ID3v1);
-	if(nil != newValue) {
-		ID3v2::TextIdentificationFrame *frame = new ID3v2::TextIdentificationFrame(field, TagLib::String::UTF8);
-		frame->setText([newValue tagLibString]);
-		tag->addFrame(frame);
-	}
-	return data->file->save();
-}
-
 - (void) setComment:(NSString *)newValue
 {
-	DDLogInfo(@"Setting %s from %@ to %@","Comment", comment, newValue);
-	comment = newValue;
+	TAG_SETTER_START(comment);
 	(TagLib::ID3v2::FrameFactory::instance())->setDefaultTextEncoding(TagLib::String::UTF8);
 	ID3v2::Tag *tag = data->f->mpeg->ID3v2Tag();	
 	tag->removeFrames(COMMENT);
