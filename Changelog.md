@@ -1,5 +1,11 @@
 Changelog
 =========
+
+-------------
+Version 0.9.1
+-------------
+* Made comments iTunes compatible.
+
 -----------
 Version 0.9 (Fri Jul 29 2011 15:05:00 +0100)
 -----------
@@ -9,11 +15,11 @@ Version 0.9 (Fri Jul 29 2011 15:05:00 +0100)
   * Allows choosing the language.
 * Auto tagging for other fields done.
 * Allows choosing which fields to update.
-* Show the url, which is clickable
-* Read and write of url tag
-* Allows saving of url of from auto tagger
-* Read/write mp3 cover art
-* Read/write mp4 cover art
+* Show the url, which is clickable.
+* Read and write of url tag.
+* Allows saving of url of from auto tagger.
+* Read/write mp3 cover art.
+* Read/write mp4 cover art.
 
 -----------
 Version 0.8 (Mon Jul 25 2011 02:55:27 +0100)

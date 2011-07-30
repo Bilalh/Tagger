@@ -165,7 +165,7 @@
 		92C4466713E0C7870038F817 /* ButtonLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonLabelCell.m; sourceTree = "<group>"; };
 		92CC309013DA386600BC78DC /* Fields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fields.h; sourceTree = "<group>"; };
 		92CC309113DA3F3A00BC78DC /* framelistmp4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = framelistmp4.cpp; sourceTree = "<group>"; };
-		92F7A81D13E2F19000B3446B /* NSImage+bitmapData.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "NSImage+bitmapData.h"; sourceTree = "<group>"; };
+		92F7A81D13E2F19000B3446B /* NSImage+bitmapData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+bitmapData.h"; sourceTree = "<group>"; };
 		92F7A81E13E2F19000B3446B /* NSImage+bitmapData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+bitmapData.m"; sourceTree = "<group>"; };
 		92FCBF5213CE83D10011F744 /* FileSystemNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystemNode.h; sourceTree = "<group>"; };
 		92FCBF5313CE83D10011F744 /* FileSystemNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystemNode.m; sourceTree = "<group>"; };

@@ -37,11 +37,23 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 #pragma mark -
 #pragma mark Gui callback
 
-- (IBAction)changeState:(id)sender
-{
-	DDLogVerbose(@"called");
-}
 
+- (IBAction) metadataToComments
+{
+	NSMutableString *buffer = [[NSMutableString alloc] init];
+	void (^add)(NSString*,NSString*) = ^(NSString *key,NSString *spacing){
+		[buffer appendFormat:@"%@:%@%@\n",key, spacing, [fieldValues valueForKey:key]];
+	};
+	
+	add(@"catalog",   @"\t   ");
+	add(@"products",  @"\t   ");
+	add(@"url",       @"\t\t   ");
+	add(@"arranger",  @"\t   ");
+	add(@"performer", @" ");
+	add(@"publisher", @"  ");
+	
+	[fieldValues setValue:buffer forKey:@"comment"];
+}
 
 - (IBAction) changeLanguage:(NSMutableDictionary*)properties
 		  buttonProperties:(NSMutableDictionary*)buttonProperties

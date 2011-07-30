@@ -54,6 +54,8 @@
 		  buttonProperties:(NSMutableDictionary*)buttonProperties;
 
 
+- (IBAction)metadataToComments;
+
 
 /** Changes the language of the table.
  
@@ -61,7 +63,7 @@
  */
 - (IBAction)changeTableLanguage:(id)sender;
 
-- (IBAction)changeState:(id)sender;
+
 
 - (IBAction)cancelSheet:sender;
 - (IBAction)confirmSheet:sender;
