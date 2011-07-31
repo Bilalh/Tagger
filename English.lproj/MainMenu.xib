@@ -3194,22 +3194,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: currentNodes.complication</string>
-						<reference key="source" ref="198770580"/>
-						<reference key="destination" ref="588631224"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="198770580"/>
-							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">value: currentNodes.complication</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">currentNodes.complication</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">911</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: currentNodes.track</string>
 						<reference key="source" ref="676211420"/>
 						<reference key="destination" ref="588631224"/>
@@ -3583,6 +3567,22 @@
 						<reference key="destination" ref="389662734"/>
 					</object>
 					<int key="connectionID">987</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: currentNodes.compilation</string>
+						<reference key="source" ref="198770580"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="198770580"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">value: currentNodes.compilation</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">currentNodes.compilation</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">988</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -5612,7 +5612,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">987</int>
+			<int key="maxID">988</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

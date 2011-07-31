@@ -14,7 +14,7 @@
 #include <tag.h>
 
 #import "DDLog.h"
-static const int ddLogLevel = LOG_LEVEL_INFO;
+static const int ddLogLevel = LOG_LEVEL_ERROR;
 
 @interface Tags() // private methdods
 #pragma mark private
@@ -24,7 +24,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 using namespace TagLib;
 @implementation Tags
 @synthesize title, artist, album, comment, genre, year, track, length;
-@synthesize albumArtist, composer, grouping, bpm, totalTracks, disc, totalDiscs, complication, url, cover;
+@synthesize albumArtist, composer, grouping, bpm, totalTracks, disc, totalDiscs, compilation, url, cover;
 
 #pragma mark -
 #pragma mark Init
@@ -134,7 +134,7 @@ DDLogInfo(@"res:%d "#field":%u", b, t->field());
 -(void) setDisc:(NSNumber *)newValue{}
 -(void) setTotalTracks:(NSNumber *)newValue{}
 -(void) setTotalDiscs:(NSNumber *)newValue{}
--(void) setComplication:(NSNumber *)newValue{}
+-(void) setCompilation:(NSNumber *)newValue{}
 
 -(void) setUrl:(NSString *)newText{}
 -(void) setCover:(NSImage *)newText{}

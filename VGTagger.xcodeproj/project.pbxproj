@@ -135,7 +135,7 @@
 		9264486513D74DED0035E693 /* mp4 tag mapping */ = {isa = PBXFileReference; lastKnownFileType = text; name = "mp4 tag mapping"; path = "../Test Files/mp4 tag mapping"; sourceTree = "<group>"; };
 		9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowLeftBlack16.tiff; sourceTree = "<group>"; };
 		9264488913D773CE0035E693 /* arrowRightBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowRightBlack16.tiff; sourceTree = "<group>"; };
-		926BDEBB13E4B4220050B45C /* FileSystemNodeCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; path = FileSystemNodeCollection.h; sourceTree = "<group>"; };
+		926BDEBB13E4B4220050B45C /* FileSystemNodeCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystemNodeCollection.h; sourceTree = "<group>"; };
 		926BDEBC13E4B4220050B45C /* FileSystemNodeCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileSystemNodeCollection.m; sourceTree = "<group>"; };
 		927883BF13E06E5000063D28 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme.md; sourceTree = "<group>"; };
 		927883C013E06EED00063D28 /* Todo.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = Todo.md; sourceTree = "<group>"; };

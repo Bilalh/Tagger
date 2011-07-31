@@ -147,14 +147,13 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
 	const NSInteger selectedRow = [table selectedRow];
-	const NSIndexSet *indexes = [table selectedRowIndexes];
-	
+	const NSIndexSet *indexes = [table selectedRowIndexes];	
 	if (selectedRow == -1){
 		self.currentNodes.tagsArray = nil;
 	}else{
 		self.currentNodes.tagsArray = [[[directoryStack lastObject] children] 
 									   subarrayWithRange:
-									   NSMakeRange([indexes firstIndex], [indexes lastIndex])];
+									   NSMakeRange([indexes firstIndex], [indexes lastIndex] -[indexes firstIndex] +1)];
 	}
 }
 

@@ -80,8 +80,8 @@ using namespace MPEGFields;
 	temp        = [self getFieldWithString:BPM];
 	bpm         = temp ? [NSNumber numberWithInt:[temp intValue]] : nil;
 	
-	temp         = [self getFieldWithString:COMPILATION];
-	complication = [NSNumber numberWithBool: temp ? YES : NO];
+	temp        = [self getFieldWithString:COMPILATION];
+	compilation = [NSNumber numberWithBool: temp ? YES : NO];
 	
 	temp  = [self getFieldWithString:TRACK_NUMBER];
 	if (temp){
@@ -205,7 +205,7 @@ using namespace MPEGFields;
 
 - (void) setComplication:(NSNumber *)newValue
 {
-	TAG_SETTER_START(complication);
+	TAG_SETTER_START(compilation);
 	[self setFieldWithString:COMPILATION data:[newValue boolValue] ? @"1" : nil ];		
 }
 

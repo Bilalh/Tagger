@@ -22,7 +22,7 @@ struct FileData;
 	NSNumber *totalTracks;
 	NSNumber *disc;
 	NSNumber *totalDiscs;
-	NSNumber *complication;
+	NSNumber *compilation;
 	
 	NSString *url;
 	NSImage *cover;
@@ -93,8 +93,8 @@ struct FileData;
 @property (assign) NSNumber *disc;
 /// The total number of discs in the album
 @property (assign) NSNumber *totalDiscs;
-/// YES if the track is part of a complication.
-@property (assign) NSNumber *complication;
+/// YES if the track is part of a compilation.
+@property (assign) NSNumber *compilation;
 
 // The url associated with the file
 @property (assign) NSString *url;

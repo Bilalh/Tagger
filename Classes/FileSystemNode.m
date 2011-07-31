@@ -16,7 +16,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 @dynamic displayName, children, isDirectory, icon, labelColor;
 
 #pragma mark -
-#pragma mark Alloc
+#pragma mark Init
 
 - (id)initWithURL:(NSURL *)url {
     if ((self = [super init])) {
@@ -53,7 +53,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 #pragma mark Display
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"%@ - %@", super.description, _url];
+    return [NSString stringWithFormat:@"%@ - %@", super.description, [[_url path] lastPathComponent]];
 }
 
 - (NSString *)displayName {

@@ -58,7 +58,7 @@ using namespace std;
 	albumArtist  = [self getFieldWithString:ALBUM_ARTIST];
 	composer     = [self getFieldWithString:COMPOSER];
 	grouping     = [self getFieldWithString:GROUPING];
-	complication = [NSNumber numberWithBool:[self getField:COMPILATION].toBool()];
+	compilation  = [NSNumber numberWithBool:[self getField:COMPILATION].toBool()];
 	i            = [self getField:BPM].toInt();
 	bpm          = i ?  [NSNumber numberWithInt: i] : nil;
 	
@@ -176,7 +176,7 @@ using namespace std;
 
 - (void) setComplication:(NSNumber *)newValue
 {
-	TAG_SETTER_START(complication);
+	TAG_SETTER_START(compilation);
 	[self setField:COMPILATION value:MP4::Item([newValue boolValue] )];
 }
 
