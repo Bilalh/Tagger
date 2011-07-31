@@ -1,11 +1,13 @@
 Changelog
 =========
 
--------------
-Version 0.10
--------------
+------------
+Version 0.10 (Sun Jul 31 2011 04:51:54 +0100)
+------------
 * Made comments iTunes compatible.
 * Muti-row editing
+* Gui Fixes 
+* Some bug fixes
 
 -----------
 Version 0.9 (Fri Jul 29 2011 15:05:00 +0100)
