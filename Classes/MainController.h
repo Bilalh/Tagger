@@ -11,6 +11,7 @@
 @class  VgmdbController;
 @class  DisplayController;
 @class  FileSystemNode;
+@class  FileSystemNodeCollection;
 
 /// The main controller creates the other controllers 
 @interface MainController : NSObject {
@@ -33,7 +34,7 @@
 @property (assign) NSMutableArray *forwardStack;
 
 /// The node of the selected row, nil if no row selected.
-@property (assign) FileSystemNode *currentNode;
+@property (assign) FileSystemNodeCollection *currentNodes;
 
 /// The selected node in the popup.
 @property (assign) NSNumber *selectedNodeindex;

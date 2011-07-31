@@ -3050,15 +3050,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: currentNode.tags.title</string>
+						<string key="label">value: currentNodes.title</string>
 						<reference key="source" ref="985815505"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="985815505"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">value: currentNode.tags.title</string>
+							<string key="NSLabel">value: currentNodes.title</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">currentNode.tags.title</string>
+							<string key="NSKeyPath">currentNodes.title</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3066,15 +3066,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: currentNode.tags.album</string>
+						<string key="label">value: currentNodes.album</string>
 						<reference key="source" ref="491346229"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="491346229"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">value: currentNode.tags.album</string>
+							<string key="NSLabel">value: currentNodes.album</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">currentNode.tags.album</string>
+							<string key="NSKeyPath">currentNodes.album</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3082,15 +3082,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: currentNode.tags.artist</string>
+						<string key="label">value: currentNodes.artist</string>
 						<reference key="source" ref="933196869"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="933196869"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">value: currentNode.tags.artist</string>
+							<string key="NSLabel">value: currentNodes.artist</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">currentNode.tags.artist</string>
+							<string key="NSKeyPath">currentNodes.artist</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3098,15 +3098,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: currentNode.tags.genre</string>
+						<string key="label">value: currentNodes.genre</string>
 						<reference key="source" ref="595101705"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="595101705"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">value: currentNode.tags.genre</string>
+							<string key="NSLabel">value: currentNodes.genre</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">currentNode.tags.genre</string>
+							<string key="NSKeyPath">currentNodes.genre</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3114,15 +3114,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: currentNode.tags.comment</string>
+						<string key="label">value: currentNodes.comment</string>
 						<reference key="source" ref="721275556"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="721275556"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">value: currentNode.tags.comment</string>
+							<string key="NSLabel">value: currentNodes.comment</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">currentNode.tags.comment</string>
+							<string key="NSKeyPath">currentNodes.comment</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3146,15 +3146,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: currentNode.tags.albumArtist</string>
+						<string key="label">value: currentNodes.albumArtist</string>
 						<reference key="source" ref="857368046"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="857368046"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">value: currentNode.tags.albumArtist</string>
+							<string key="NSLabel">value: currentNodes.albumArtist</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">currentNode.tags.albumArtist</string>
+							<string key="NSKeyPath">currentNodes.albumArtist</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3162,15 +3162,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: currentNode.tags.grouping</string>
+						<string key="label">value: currentNodes.grouping</string>
 						<reference key="source" ref="608450119"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="608450119"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">value: currentNode.tags.grouping</string>
+							<string key="NSLabel">value: currentNodes.grouping</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">currentNode.tags.grouping</string>
+							<string key="NSKeyPath">currentNodes.grouping</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3178,15 +3178,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: currentNode.tags.composer</string>
+						<string key="label">value: currentNodes.composer</string>
 						<reference key="source" ref="890062118"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="890062118"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">value: currentNode.tags.composer</string>
+							<string key="NSLabel">value: currentNodes.composer</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">currentNode.tags.composer</string>
+							<string key="NSKeyPath">currentNodes.composer</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3194,15 +3194,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: currentNode.tags.complication</string>
+						<string key="label">value: currentNodes.complication</string>
 						<reference key="source" ref="198770580"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="198770580"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">value: currentNode.tags.complication</string>
+							<string key="NSLabel">value: currentNodes.complication</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">currentNode.tags.complication</string>
+							<string key="NSKeyPath">currentNodes.complication</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3210,15 +3210,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: currentNode.tags.track</string>
+						<string key="label">value: currentNodes.track</string>
 						<reference key="source" ref="676211420"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="676211420"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">value: currentNode.tags.track</string>
+							<string key="NSLabel">value: currentNodes.track</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">currentNode.tags.track</string>
+							<string key="NSKeyPath">currentNodes.track</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3226,15 +3226,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: currentNode.tags.totalTracks</string>
+						<string key="label">value: currentNodes.totalTracks</string>
 						<reference key="source" ref="983249531"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="983249531"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">value: currentNode.tags.totalTracks</string>
+							<string key="NSLabel">value: currentNodes.totalTracks</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">currentNode.tags.totalTracks</string>
+							<string key="NSKeyPath">currentNodes.totalTracks</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3242,15 +3242,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: currentNode.tags.bpm</string>
+						<string key="label">value: currentNodes.bpm</string>
 						<reference key="source" ref="230074618"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="230074618"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">value: currentNode.tags.bpm</string>
+							<string key="NSLabel">value: currentNodes.bpm</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">currentNode.tags.bpm</string>
+							<string key="NSKeyPath">currentNodes.bpm</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3258,15 +3258,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: currentNode.tags.year</string>
+						<string key="label">value: currentNodes.year</string>
 						<reference key="source" ref="308916266"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="308916266"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">value: currentNode.tags.year</string>
+							<string key="NSLabel">value: currentNodes.year</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">currentNode.tags.year</string>
+							<string key="NSKeyPath">currentNodes.year</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3274,15 +3274,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: currentNode.hasBasicMetadata</string>
+						<string key="label">enabled: currentNodes.hasBasicMetadata</string>
 						<reference key="source" ref="491346229"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="491346229"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: currentNode.hasBasicMetadata</string>
+							<string key="NSLabel">enabled: currentNodes.hasBasicMetadata</string>
 							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">currentNode.hasBasicMetadata</string>
+							<string key="NSKeyPath">currentNodes.hasBasicMetadata</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3290,15 +3290,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: currentNode.hasBasicMetadata</string>
+						<string key="label">enabled: currentNodes.hasBasicMetadata</string>
 						<reference key="source" ref="933196869"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="933196869"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: currentNode.hasBasicMetadata</string>
+							<string key="NSLabel">enabled: currentNodes.hasBasicMetadata</string>
 							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">currentNode.hasBasicMetadata</string>
+							<string key="NSKeyPath">currentNodes.hasBasicMetadata</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3306,15 +3306,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: currentNode.hasBasicMetadata</string>
+						<string key="label">enabled: currentNodes.hasBasicMetadata</string>
 						<reference key="source" ref="676211420"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="676211420"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: currentNode.hasBasicMetadata</string>
+							<string key="NSLabel">enabled: currentNodes.hasBasicMetadata</string>
 							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">currentNode.hasBasicMetadata</string>
+							<string key="NSKeyPath">currentNodes.hasBasicMetadata</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3322,15 +3322,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: currentNode.hasBasicMetadata</string>
+						<string key="label">enabled: currentNodes.hasBasicMetadata</string>
 						<reference key="source" ref="308916266"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="308916266"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: currentNode.hasBasicMetadata</string>
+							<string key="NSLabel">enabled: currentNodes.hasBasicMetadata</string>
 							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">currentNode.hasBasicMetadata</string>
+							<string key="NSKeyPath">currentNodes.hasBasicMetadata</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3338,15 +3338,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: currentNode.hasBasicMetadata</string>
+						<string key="label">enabled: currentNodes.hasBasicMetadata</string>
 						<reference key="source" ref="595101705"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="595101705"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: currentNode.hasBasicMetadata</string>
+							<string key="NSLabel">enabled: currentNodes.hasBasicMetadata</string>
 							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">currentNode.hasBasicMetadata</string>
+							<string key="NSKeyPath">currentNodes.hasBasicMetadata</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3354,15 +3354,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: currentNode.hasBasicMetadata</string>
+						<string key="label">enabled: currentNodes.hasBasicMetadata</string>
 						<reference key="source" ref="721275556"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="721275556"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: currentNode.hasBasicMetadata</string>
+							<string key="NSLabel">enabled: currentNodes.hasBasicMetadata</string>
 							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">currentNode.hasBasicMetadata</string>
+							<string key="NSKeyPath">currentNodes.hasBasicMetadata</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3370,15 +3370,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: currentNode.hasExtenedMetadata</string>
+						<string key="label">enabled: currentNodes.hasExtenedMetadata</string>
 						<reference key="source" ref="608450119"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="608450119"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: currentNode.hasExtenedMetadata</string>
+							<string key="NSLabel">enabled: currentNodes.hasExtenedMetadata</string>
 							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">currentNode.hasExtenedMetadata</string>
+							<string key="NSKeyPath">currentNodes.hasExtenedMetadata</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3386,15 +3386,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: currentNode.hasExtenedMetadata</string>
+						<string key="label">enabled: currentNodes.hasExtenedMetadata</string>
 						<reference key="source" ref="230074618"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="230074618"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: currentNode.hasExtenedMetadata</string>
+							<string key="NSLabel">enabled: currentNodes.hasExtenedMetadata</string>
 							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">currentNode.hasExtenedMetadata</string>
+							<string key="NSKeyPath">currentNodes.hasExtenedMetadata</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3402,15 +3402,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: currentNode.hasExtenedMetadata</string>
+						<string key="label">enabled: currentNodes.hasExtenedMetadata</string>
 						<reference key="source" ref="198770580"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="198770580"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: currentNode.hasExtenedMetadata</string>
+							<string key="NSLabel">enabled: currentNodes.hasExtenedMetadata</string>
 							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">currentNode.hasExtenedMetadata</string>
+							<string key="NSKeyPath">currentNodes.hasExtenedMetadata</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3418,15 +3418,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: currentNode.hasExtenedMetadata</string>
+						<string key="label">enabled: currentNodes.hasExtenedMetadata</string>
 						<reference key="source" ref="983249531"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="983249531"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: currentNode.hasExtenedMetadata</string>
+							<string key="NSLabel">enabled: currentNodes.hasExtenedMetadata</string>
 							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">currentNode.hasExtenedMetadata</string>
+							<string key="NSKeyPath">currentNodes.hasExtenedMetadata</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3434,15 +3434,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: currentNode.hasExtenedMetadata</string>
+						<string key="label">enabled: currentNodes.hasExtenedMetadata</string>
 						<reference key="source" ref="1032257612"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="1032257612"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: currentNode.hasExtenedMetadata</string>
+							<string key="NSLabel">enabled: currentNodes.hasExtenedMetadata</string>
 							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">currentNode.hasExtenedMetadata</string>
+							<string key="NSKeyPath">currentNodes.hasExtenedMetadata</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3450,15 +3450,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: currentNode.hasExtenedMetadata</string>
+						<string key="label">enabled: currentNodes.hasExtenedMetadata</string>
 						<reference key="source" ref="890062118"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="890062118"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: currentNode.hasExtenedMetadata</string>
+							<string key="NSLabel">enabled: currentNodes.hasExtenedMetadata</string>
 							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">currentNode.hasExtenedMetadata</string>
+							<string key="NSKeyPath">currentNodes.hasExtenedMetadata</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3466,15 +3466,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: currentNode.hasExtenedMetadata</string>
+						<string key="label">enabled: currentNodes.hasExtenedMetadata</string>
 						<reference key="source" ref="857368046"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="857368046"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: currentNode.hasExtenedMetadata</string>
+							<string key="NSLabel">enabled: currentNodes.hasExtenedMetadata</string>
 							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">currentNode.hasExtenedMetadata</string>
+							<string key="NSKeyPath">currentNodes.hasExtenedMetadata</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3482,15 +3482,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: currentNode.hasBasicMetadata</string>
+						<string key="label">enabled: currentNodes.hasBasicMetadata</string>
 						<reference key="source" ref="985815505"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="985815505"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: currentNode.hasBasicMetadata</string>
+							<string key="NSLabel">enabled: currentNodes.hasBasicMetadata</string>
 							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">currentNode.hasBasicMetadata</string>
+							<string key="NSKeyPath">currentNodes.hasBasicMetadata</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3498,15 +3498,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: currentNode.hasExtenedMetadata</string>
+						<string key="label">enabled: currentNodes.hasExtenedMetadata</string>
 						<reference key="source" ref="241776072"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="241776072"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: currentNode.hasExtenedMetadata</string>
+							<string key="NSLabel">enabled: currentNodes.hasExtenedMetadata</string>
 							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">currentNode.hasExtenedMetadata</string>
+							<string key="NSKeyPath">currentNodes.hasExtenedMetadata</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3514,15 +3514,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: currentNode.tags.disc</string>
+						<string key="label">value: currentNodes.disc</string>
 						<reference key="source" ref="241776072"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="241776072"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">value: currentNode.tags.disc</string>
+							<string key="NSLabel">value: currentNodes.disc</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">currentNode.tags.disc</string>
+							<string key="NSKeyPath">currentNodes.disc</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3530,15 +3530,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: currentNode.tags.totalDiscs</string>
+						<string key="label">value: currentNodes.totalDiscs</string>
 						<reference key="source" ref="1032257612"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="1032257612"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">value: currentNode.tags.totalDiscs</string>
+							<string key="NSLabel">value: currentNodes.totalDiscs</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">currentNode.tags.totalDiscs</string>
+							<string key="NSKeyPath">currentNodes.totalDiscs</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3546,15 +3546,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: currentNode.tags.cover</string>
+						<string key="label">value: currentNodes.cover</string>
 						<reference key="source" ref="245541821"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="245541821"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">value: currentNode.tags.cover</string>
+							<string key="NSLabel">value: currentNodes.cover</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">currentNode.tags.cover</string>
+							<string key="NSKeyPath">currentNodes.cover</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
@@ -3562,15 +3562,15 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: currentNode.hasExtenedMetadata</string>
+						<string key="label">enabled: currentNodes.hasExtenedMetadata</string>
 						<reference key="source" ref="245541821"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
 							<reference key="NSSource" ref="245541821"/>
 							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: currentNode.hasExtenedMetadata</string>
+							<string key="NSLabel">enabled: currentNodes.hasExtenedMetadata</string>
 							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">currentNode.hasExtenedMetadata</string>
+							<string key="NSKeyPath">currentNodes.hasExtenedMetadata</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>

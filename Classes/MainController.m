@@ -14,6 +14,7 @@
 #import "FileSystemNode.h"
 #import "NSMutableArray+Stack.h"
 #import "ImageAndTextCell.h"
+#import "FileSystemNodeCollection.h"
 
 #import "DDLog.h"
 static const int ddLogLevel = LOG_LEVEL_ERROR;
@@ -29,7 +30,7 @@ static const int ddLogLevel = LOG_LEVEL_ERROR;
 @end
 
 @implementation MainController
-@synthesize window, directoryStack, currentNode,forwardStack, selectedNodeindex, parentNodes;
+@synthesize window, directoryStack, currentNodes,forwardStack, selectedNodeindex, parentNodes;
 #pragma mark -
 #pragma mark Table Methods 
 
@@ -146,10 +147,14 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
 	const NSInteger selectedRow = [table selectedRow];
+	const NSIndexSet *indexes = [table selectedRowIndexes];
+	
 	if (selectedRow == -1){
-		self.currentNode = nil;
+		self.currentNodes.tagsArray = nil;
 	}else{
-		self.currentNode = [[[directoryStack lastObject] children] objectAtIndex:selectedRow];
+		self.currentNodes.tagsArray = [[[directoryStack lastObject] children] 
+									   subarrayWithRange:
+									   NSMakeRange([indexes firstIndex], [indexes lastIndex])];
 	}
 }
 
@@ -255,10 +260,10 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (IBAction) rename:(id)sender
 {
-	DDLogInfo(@"renaming %@", currentNode);
-	if (currentNode && currentNode.hasBasicMetadata){
-		[currentNode renameWithFormat:@"%t - %n - %b - %a - %y"];
-	}
+//	DDLogInfo(@"renaming %@", currentNode);
+//	if (currentNode && currentNode.hasBasicMetadata){
+//		[currentNode renameWithFormat:@"%t - %n - %b - %a - %y"];
+//	}
 }
 
 #pragma mark -
@@ -282,8 +287,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 										[NSURL fileURLWithPath:@"/Users/bilalh/Movies/add/start/Atelier Meruru OST/"]];
 	[directoryStack push:currentDirectory];
 	
-	self.currentNode       = nil;
-	self.selectedNodeindex = [NSNumber numberWithInt:0];
+	currentNodes      = [[FileSystemNodeCollection alloc] init];
+	selectedNodeindex = [NSNumber numberWithInt:0];
 	parentNodes            = [currentDirectory parentNodes];
 	
 	DDLogVerbose(@"Staring parentNodes%@", parentNodes);
