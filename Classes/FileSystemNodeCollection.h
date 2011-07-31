@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-
+/// This provides a wrapper around a array of filesystem nodes
+/// It allows the tags to every node in the collection at the same time
+/// to allow muti-row editing.
 @interface FileSystemNodeCollection : NSObject {
 @private
 	NSArray *tagsArray;

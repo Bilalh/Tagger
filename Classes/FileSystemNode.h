@@ -3,7 +3,7 @@
 @class Tags;
 
 /// This is a simple wrapper around the file system. Its main purpose is to cache children.
-/// It also keeps the tags of audio file (only m4a at the moment)
+/// It also keeps the tags of audio file (only m4a and mp3 at the moment)
 /// The properties are cashed so it effient to repeatedly call them. 
 @interface FileSystemNode : NSObject {
 @private

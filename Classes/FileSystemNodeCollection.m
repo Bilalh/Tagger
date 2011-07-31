@@ -41,6 +41,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
     return self;
 }
 
+/// set the new array and finds the metdata for each tag
 -(void) setTagsArray:(NSArray *)newArray
 {
 	DDLogInfo(@"newArray %@", newArray);
@@ -61,7 +62,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 		hasExtenedMetadata &= n.hasExtenedMetadata;
 	}
 	
-	DDLogInfo(@"basic:%d extened %d", hasBasicMetadata, hasExtenedMetadata);
+	DDLogVerbose(@"basic:%d extened %d", hasBasicMetadata, hasExtenedMetadata);
 	if (hasBasicMetadata) [self initfields];
 	
 }

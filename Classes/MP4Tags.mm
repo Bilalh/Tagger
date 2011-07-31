@@ -174,7 +174,7 @@ using namespace std;
 	[self setField:DISK_NUMBER value:MP4::Item([disc intValue], [newValue intValue])];
 }
 
-- (void) setComplication:(NSNumber *)newValue
+- (void) setCompilation:(NSNumber *)newValue
 {
 	TAG_SETTER_START(compilation);
 	[self setField:COMPILATION value:MP4::Item([newValue boolValue] )];

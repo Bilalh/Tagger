@@ -203,7 +203,7 @@ using namespace MPEGFields;
 	[self setFieldWithString:BPM data:[newValue stringValue]];	
 }
 
-- (void) setComplication:(NSNumber *)newValue
+- (void) setCompilation:(NSNumber *)newValue
 {
 	TAG_SETTER_START(compilation);
 	[self setFieldWithString:COMPILATION data:[newValue boolValue] ? @"1" : nil ];		

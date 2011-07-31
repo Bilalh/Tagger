@@ -14,7 +14,7 @@
 #include <tag.h>
 
 #import "DDLog.h"
-static const int ddLogLevel = LOG_LEVEL_ERROR;
+static const int ddLogLevel = LOG_LEVEL_INFO;
 
 @interface Tags() // private methdods
 #pragma mark private
