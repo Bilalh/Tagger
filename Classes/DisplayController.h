@@ -22,10 +22,11 @@
 	NSDictionary *fieldProperties;    /// The properties of the fields and their buttons
 	
 	IBOutlet NSTableView *table;      /// table of tracks	
+	NSInteger min;
 }
 
 @property (assign) NSArray *files;
-
+ 
 /// @name Initializing an DisplayController Object
 
  /**  

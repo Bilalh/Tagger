@@ -22,6 +22,9 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 @synthesize title, artist, album, comment, genre, year, track, length;
 @synthesize albumArtist, composer, grouping, bpm, totalTracks, disc, totalDiscs, compilation, url, cover;
 
+#pragma mark -
+#pragma mark Init
+
 - (id)init
 {
     self = [super init];
@@ -40,6 +43,45 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 	
     return self;
 }
+
+
+
+-(void) initfields
+{
+	writeToAll = false;
+	const Tags *tags= [[tagsArray objectAtIndex:0] tags];
+	for (NSString *s in fieldNames) {
+		[self setValue:[tags valueForKey:s] forKey:s];
+	}
+	
+	for (FileSystemNode *n in tagsArray) {
+		const Tags *tags = n.tags;
+		
+		for (NSString *key in fieldNames) {
+			id mine = [self valueForKey:key];
+			if (!mine) continue;
+			if ([[tags valueForKey:key] isNotEqualTo:mine]){
+				[self setValue:nil forKey:key];
+			}
+		}
+	}
+	writeToAll = true;
+}
+
+#pragma mark -
+#pragma mark general
+
+-(BOOL) renameWithFormat:(NSString*)format
+{
+	BOOL res = YES;
+	for (FileSystemNode *n in tagsArray) {
+		res &= [n renameWithFormat:format];
+	}
+	return res;
+}
+
+#pragma mark -
+#pragma mark Setters
 
 /// set the new array and finds the metdata for each tag
 -(void) setTagsArray:(NSArray *)newArray
@@ -65,28 +107,6 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 	DDLogVerbose(@"basic:%d extened %d", hasBasicMetadata, hasExtenedMetadata);
 	if (hasBasicMetadata) [self initfields];
 	
-}
-
--(void) initfields
-{
-	writeToAll = false;
-	const Tags *tags= [[tagsArray objectAtIndex:0] tags];
-	for (NSString *s in fieldNames) {
-		[self setValue:[tags valueForKey:s] forKey:s];
-	}
-	
-	for (FileSystemNode *n in tagsArray) {
-		const Tags *tags = n.tags;
-		
-		for (NSString *key in fieldNames) {
-			id mine = [self valueForKey:key];
-			if (!mine) continue;
-			if ([[tags valueForKey:key] isNotEqualTo:mine]){
-				[self setValue:nil forKey:key];
-			}
-		}
-	}
-	writeToAll = true;
 }
 
 #define SETTER_METHOD_FSN(field,newValue)                                 \

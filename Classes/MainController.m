@@ -259,10 +259,9 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (IBAction) rename:(id)sender
 {
-//	DDLogInfo(@"renaming %@", currentNode);
-//	if (currentNode && currentNode.hasBasicMetadata){
-//		[currentNode renameWithFormat:@"%t - %n - %b - %a - %y"];
-//	}
+	if (currentNodes.hasExtenedMetadata){
+		[currentNodes renameWithFormat:@"%t - %n - %b - %a - %y"];
+	}
 }
 
 #pragma mark -

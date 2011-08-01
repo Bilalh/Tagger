@@ -17,9 +17,8 @@
 static const int ddLogLevel = LOG_LEVEL_INFO;
 
 @interface Tags() // private methdods
-#pragma mark private
+-(NSString*)makeFilename:(NSMutableString*)format;
 @end
-#pragma mark -
 
 using namespace TagLib;
 @implementation Tags
@@ -139,12 +138,37 @@ DDLogInfo(@"res:%d "#field":%u", b, t->field());
 -(void) setUrl:(NSString *)newText{}
 -(void) setCover:(NSImage *)newText{}
 
+
+-(NSString*)makeFilename:(NSMutableString*)format
+{
+	void (^replace)(NSString*, NSString*) = ^(NSString* fmt, NSString* value)
+	{
+		[format replaceOccurrencesOfString:fmt
+								withString:value
+								   options:0 
+									 range:NSMakeRange(0, [format length])];	
+	};
+	replace(@"%n", self.title);
+	replace(@"%b", self.album);
+	replace(@"%a", self.artist);
+	replace(@"%r", self.artist);
+	replace(@"%c", self.composer);
+	replace(@"%g", self.genre);
+
+	replace(@"%d", [self.disc stringValue]);
+	replace(@"%y", [self.year stringValue]);
+	replace(@"%t", [self.track stringValue]);
+	
+	return format;
+}
+
 -(NSString*)filenameFromFormat:(NSString*)format
 {
-	TagConverter tc;
-	const TagLib::Tag *t = data->file->tag();
-	std::string s = tc.tagToFilename_(*t, *[format cppString]);
-	return [[NSString alloc] initWithCppString:&s];
+	return [self makeFilename:[NSMutableString stringWithString:format]];
+//	TagConverter tc;
+//	const TagLib::Tag *t = data->file->tag();
+//	std::string s = tc.tagToFilename_(*t, *[format cppString]);
+//	return [[NSString alloc] initWithCppString:&s];
 }
 
 @end

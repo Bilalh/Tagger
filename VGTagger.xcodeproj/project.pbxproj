@@ -128,8 +128,8 @@
 		923FC13313DA117100B14A3E /* MPEGTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPEGTags.h; sourceTree = "<group>"; };
 		923FC13413DA117100B14A3E /* MPEGTags.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MPEGTags.mm; sourceTree = "<group>"; };
 		925093C813E39B2C00A20CA1 /* TagPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagPrivate.h; sourceTree = "<group>"; };
-		925093CA13E39F4F00A20CA1 /* TagConverter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TagConverter.cpp; path = ../../../../Desktop/TagConverter.cpp; sourceTree = "<group>"; };
-		925093CB13E39F5000A20CA1 /* TagConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TagConverter.h; path = ../../../../Desktop/TagConverter.h; sourceTree = "<group>"; };
+		925093CA13E39F4F00A20CA1 /* TagConverter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TagConverter.cpp; sourceTree = "<group>"; };
+		925093CB13E39F5000A20CA1 /* TagConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagConverter.h; sourceTree = "<group>"; };
 		9259102713E10A6C0033CB7B /* tags.webloc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tags.webloc; sourceTree = SOURCE_ROOT; };
 		925CE81D13C3BD6D009D6D94 /* VGTagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VGTagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9264486513D74DED0035E693 /* mp4 tag mapping */ = {isa = PBXFileReference; lastKnownFileType = text; name = "mp4 tag mapping"; path = "../Test Files/mp4 tag mapping"; sourceTree = "<group>"; };

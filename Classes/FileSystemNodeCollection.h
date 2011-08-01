@@ -42,10 +42,13 @@
 	NSArray *fieldNames;
 }
 
-/// @name Finding nodes
+/// @name General
 
 /// Array of FileSystemNodes.
 @property (assign) NSArray *tagsArray;
+
+
+-(BOOL) renameWithFormat:(NSString*)format;
 
 /// @name Finding General metadata.
 

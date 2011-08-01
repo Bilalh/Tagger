@@ -104,7 +104,8 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView 
 {
-	return [tracks count];
+	return min;
+//	return [tracks count];
 }
 
 - (NSString*)intToTime:(int)totalSeconds
@@ -155,21 +156,16 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		FileSystemNode *a = obj1, *b = obj2;
 		NSComparisonResult res = [a.tags compare:b.tags];
 		
-		if (res ==  NSOrderedSame) res = [a.displayName compare:b.displayName];
+		if (res ==  NSOrderedSame) res = [[a.URL path] compare:[b.URL path]];
 		return res;
 	}];
 	
 	selectedLanguage = @"@english";
 
-	DDLogVerbose(@"----");
 	[self initFieldProperties];
-	DDLogVerbose(@"----");
 	[self setAlbumUrl:url];
-	DDLogVerbose(@"----");
 	[self initFieldValues];	
-	DDLogVerbose(@"----");
 	[self initButtonsState];
-	DDLogVerbose(@"----");
 	
 	NSDictionary *title = [[tracks objectAtIndex:0] objectForKey:@"title"];
 	NSDictionary *radio = [fieldProperties objectForKey:@"radio"];
@@ -182,8 +178,9 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 			[[radio objectForKey:[NSString stringWithFormat:@"%d", i]] setObject:[NSNumber numberWithBool:YES ] forKey:@"enable"];
 		}
 	}	
-	DDLogVerbose(@"----");
 	
+	min = MIN([files count], [tracks count]);
+	DDLogInfo(@"min:%d", min);
 	
 	return[self initWithWindowNibName:@"VgmdbDisplay"];	
 } 
@@ -245,6 +242,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 					   hb(@"publisher"  ), @"publisher"   ,
 					   hc(@"comment"    ), @"comment"     ,
 					   hc(@"url"        ), @"url"         ,
+					   hc(@"cover"      ), @"cover"       ,
 					   radio             , @"radio"       ,
 					   nil];
 }
@@ -255,7 +253,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	albumDetails = [vgmdb performRubySelector:@selector(get_data:)
 								withArguments:url, 
 					nil];
-//	DDLogInfo(@"Album\n %@", albumDetails);
 	tracks =  [vgmdb performRubySelector:@selector(get_tracks_array:)
 						   withArguments:albumDetails, 
 			   nil];
@@ -295,10 +292,9 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[values addObject:@""];
 	
 	fieldValues = [[NSMutableDictionary alloc] initWithObjects:values forKeys:keys];
-	[fieldValues setObject: @"http://vgmdb.net/album/25409" forKey:@"url"];	
-	
-	DDLogInfo(@"fieldValues\n %@", fieldValues);
-	
+	[fieldValues setObject: @"http://vgmdb.net/album/25409" forKey:@"url"];		
+
+	DDLogInfo(@"fieldValues\n %@", fieldValues);	
 }
 
 - (void) initButtonsState
@@ -399,7 +395,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSMutableArray  *fieldKeys = [[NSMutableArray alloc] initWithObjects: 
 							 @"album", @"artist", @"albumArtist",
 							 @"year" , @"genre" , @"composer",
-							 @"comment",@"totalDiscs",@"url",
+							 @"cover", @"url"   , @"comment", @"totalDiscs",
 							 nil ];
 	
 	NSArray  *nodeKeys = [[NSArray alloc] initWithObjects: 
@@ -407,13 +403,13 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 						  nil ];
 	
 	NSUInteger i;
-	for (i =0; i < [tracks count]; ++i) {
+	for (i =0; i < min; ++i) {
 		Tags *tags = [[files objectAtIndex:i] tags];
 		NSDictionary *data = [tracks objectAtIndex:i];
 		
 		for (NSString *key in fieldKeys) {
 			if ([[[fieldProperties valueForKey:key] valueForKey:@"write"] boolValue]){
-				[tags setValue: [fieldValues objectForKey:key]  
+				[tags setValue:[fieldValues objectForKey:key]  
 						forKey:key];	
 			}
 		}

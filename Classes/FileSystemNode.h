@@ -37,14 +37,14 @@
  */
 - (NSMutableArray*)parentNodes;
 
-
--(int) renameWithFormat:(NSString*)format;
-
 /// All the child nodes of this node 
 @property(readonly, retain) NSArray  *children;
 
 /// Recalucates all the children on call to children
 - (void)invalidateChildren;
+
+
+-(BOOL) renameWithFormat:(NSString*)format;
 
 /// @name Finding metadata
 

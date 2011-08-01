@@ -186,10 +186,10 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
     }
 }
 
--(int) renameWithFormat:(NSString*)format{
+-(BOOL) renameWithFormat:(NSString*)format{
 	NSString *res = [tags filenameFromFormat:format];
 	DDLogInfo(@"res:%@", res);
-	return 0;
+	return NO;
 }
 
 @end
