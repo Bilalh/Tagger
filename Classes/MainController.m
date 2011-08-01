@@ -260,8 +260,10 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 - (IBAction) rename:(id)sender
 {
 	if (currentNodes.hasExtenedMetadata){
-		[currentNodes renameWithFormat:@"%d-%t - %n"];
+		NSError *res = [currentNodes renameWithFormat:@"%d-%t %n"];
+		NSLog(@"res:%@", res );
 	}
+	[[directoryStack lastObject] invalidateChildren];
 }
 
 #pragma mark -

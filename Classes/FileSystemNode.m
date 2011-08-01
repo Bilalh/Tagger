@@ -186,10 +186,21 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
     }
 }
 
--(BOOL) renameWithFormat:(NSString*)format{
-	NSString *res = [tags filenameFromFormat:format];
-	DDLogInfo(@"res:%@", res);
-	return NO;
+-(NSError*) renameWithFormat:(NSString*)format{
+	NSString *newName = [tags filenameFromFormat:format];
+	DDLogInfo(@"newName:%@", newName);
+	
+	NSString *path    = [self.URL path];
+	NSString *ext     = [path pathExtension];
+	
+	NSString *newPath = [[[path stringByDeletingLastPathComponent] 
+	 stringByAppendingPathComponent:newName] stringByAppendingPathExtension:ext];
+	
+	NSError *err;
+	[[NSFileManager defaultManager] moveItemAtPath:path 
+											toPath:newPath
+											 error:&err];
+	return err;
 }
 
 @end

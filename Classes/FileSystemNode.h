@@ -44,7 +44,7 @@
 - (void)invalidateChildren;
 
 
--(BOOL) renameWithFormat:(NSString*)format;
+-(NSError*) renameWithFormat:(NSString*)format;
 
 /// @name Finding metadata
 

@@ -71,13 +71,14 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 #pragma mark -
 #pragma mark general
 
--(BOOL) renameWithFormat:(NSString*)format
+-(NSError*) renameWithFormat:(NSString*)format
 {
-	BOOL res = YES;
+	NSError *err;
 	for (FileSystemNode *n in tagsArray) {
-		res &= [n renameWithFormat:format];
+		err = [n renameWithFormat:format];
+		if (err != nil) return err;
 	}
-	return res;
+	return err;
 }
 
 #pragma mark -
