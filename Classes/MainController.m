@@ -260,7 +260,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 - (IBAction) rename:(id)sender
 {
 	if (currentNodes.hasExtenedMetadata){
-		[currentNodes renameWithFormat:@"%t - %n - %b - %a - %y"];
+		[currentNodes renameWithFormat:@"%d-%t - %n"];
 	}
 }
 

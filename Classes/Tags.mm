@@ -156,9 +156,8 @@ DDLogInfo(@"res:%d "#field":%u", b, t->field());
 	replace(@"%g", self.genre);
 
 	replace(@"%d", [self.disc stringValue]);
-	replace(@"%y", [self.year stringValue]);
-	replace(@"%t", [self.track stringValue]);
-	
+	replace(@"%t", [NSString stringWithFormat:@"%02d", [self.track intValue]]);
+	replace(@"%y", [self.year stringValue]);	
 	return format;
 }
 
