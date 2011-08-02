@@ -16,7 +16,7 @@ Errors
 
 FileNames
 ---------
-Better message when names crash.
+Better message when names clash.
 
 GUI
 ---

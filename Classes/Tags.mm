@@ -18,7 +18,8 @@ static const int ddLogLevel = LOG_LEVEL_ERROR;
 static const NSSet *tokensSet;
 
 @interface Tags() // private methdods
-
+// Format the key nicely 
+-(NSString*)formatKey:(NSString*)key;
 @end
 
 using namespace TagLib;
@@ -149,6 +150,14 @@ DDLogInfo(@"res:%d "#field":%u", b, t->field());
 
 -(void) setCover:(NSImage*)newValue{}
 
+-(NSString*)formatKey:(NSString*)key
+{
+	if ([key isEqualToString:@"track"]){
+		return [NSString stringWithFormat:@"%02d", [self.track intValue]];
+	}else{
+		return [self valueForKey:key];
+	}
+}
 
 -(NSString*)filenameFromFormatArray:(NSArray*)formatStrings
 {
@@ -156,7 +165,7 @@ DDLogInfo(@"res:%d "#field":%u", b, t->field());
 	NSMutableString *res = [[NSMutableString alloc] init];
 	for (NSString *s in formatStrings) {
 		if ([tokensSet containsObject:s]){
-			[res appendFormat:@"%@", [self valueForKeyPath:s]];
+			[res appendFormat:@"%@", [self formatKey:s]];
 		}else{
 			[res appendString: s];
 		}

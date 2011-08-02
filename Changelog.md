@@ -2,10 +2,17 @@ Changelog
 =========
 
 ------------
-Version 0.11
+Version 0.12
+------------
+* Pad the track number when renaming
+
+------------
+Version 0.11 (Tue Aug 02 2011 03:21:21 +0100)
 ------------
 * Better error handing. 
 * Allows batch renaming of files based on tags.
+* Gui for batch renaming of files based on tags.
+
 
 ------------
 Version 0.10 (Sun Jul 31 2011 04:51:54 +0100)
