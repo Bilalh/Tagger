@@ -19,12 +19,16 @@
 
 #import "DDLog.h"
 static const int ddLogLevel = LOG_LEVEL_ERROR;
+static const NSArray *predefinedDirectories;
 
 @interface MainController()  
 
 - (void) initDirectoryTable;
 - (void) setPopupMenuIcons;
-- (IBAction) open:(id)sender;
+
+- (void) backForwordDirectoriesCommon;
+- (void) goToDirectory:(NSURL*)url;
+
 
 /// Change the current directory to the clicked entries
 - (IBAction) onClick:(id)sender;
@@ -32,37 +36,10 @@ static const int ddLogLevel = LOG_LEVEL_ERROR;
 
 @implementation MainController
 @synthesize window, directoryStack, currentNodes,forwardStack, selectedNodeindex, parentNodes;
+
+
 #pragma mark -
 #pragma mark Table Methods 
-
-- (IBAction) backForwordDirectories:(id)sender
-{
-	DDLogVerbose(@"backForwordDirectories");
-    NSInteger tag = [[sender cell] tagForSegment:[sender selectedSegment]];
-	DDLogVerbose(@"tag :%zd  ds %zd fs %zd", tag,  [directoryStack count],[forwardStack count] );
-	
-	// updates the gui
-	void (^common)() = ^{
-		self.parentNodes = [[directoryStack lastObject] parentNodes];
-		DDLogVerbose(@"%@ bf parentNodes %@", [[directoryStack lastObject] displayName], parentNodes);
-		
-		[self setPopupMenuIcons];
-		self.selectedNodeindex = [NSNumber numberWithInt:0];
-		DDLogVerbose (@"directoryStack %@", directoryStack);
-		[table reloadData];
-	};
-	
-	
-	if (tag == 0 && [directoryStack count] >= 2){
-		[forwardStack addObject:[directoryStack pop]];
-		common();
-	}else if (tag == 1 && [forwardStack count] >= 1){
-		[directoryStack addObject:[forwardStack pop]];
-		common();
-	}
-	
-}
-
 
 - (IBAction) onClick:(id)sender
 {
@@ -166,6 +143,15 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 #pragma mark -
 #pragma mark Directory Manipulation Methods
 
+-(IBAction) goToParentMenu:(id)sender
+{
+	if ([parentNodes count] >=2){
+		self.selectedNodeindex = [NSNumber numberWithInt:1];
+		[self goToParent:popup];	
+	}
+}
+
+
 -(IBAction) goToParent:(id)sender
 {
 	DDLogVerbose(@"i:%@ pN:%@", selectedNodeindex, [parentNodes objectAtIndex:[selectedNodeindex intValue]]);
@@ -204,7 +190,11 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[op setCanChooseDirectories:YES];
     if ([op runModal] != NSOKButton) return;
     
-	NSURL *url = [op URL];
+	[self goToDirectory:[op URL]];
+}
+
+- (void) goToDirectory:(NSURL*)url
+{
 	DDLogInfo(@"%@ selected", url);
 	FileSystemNode *node  = [[FileSystemNode alloc ] initWithURL:url];
 	[parentNodes removeAllObjects];
@@ -216,7 +206,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSInteger popupCount = [popup numberOfItems];
 	NSInteger min = MIN([parentNodes count], popupCount);
 	DDLogVerbose(@"min:%zu pN:%zu popN:%zu", min, [parentNodes count], popupCount);
-
+	
 	// Correct the number of items in the popupmenu
 	NSInteger i;
 	for (i=min; i < [parentNodes count]; ++i) {
@@ -232,11 +222,58 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		[[popup itemAtIndex:i] setTitle:[[parentNodes objectAtIndex:i] displayName]];
 		[[popup itemAtIndex:i] setImage:[[parentNodes objectAtIndex:i] icon]];
 	}	
+}
+
+- (IBAction) backForwordDirectories:(id)sender
+{
+	DDLogVerbose(@"backForwordDirectories");
+    NSInteger tag = [[sender cell] tagForSegment:[sender selectedSegment]];
+	DDLogVerbose(@"tag :%zd  ds %zd fs %zd", tag,  [directoryStack count],[forwardStack count] );
+	
+	if (tag == 0){
+		[self backDirectories:sender];		
+	}else if (tag == 1){
+		[self forwordDirectories:sender];
+	}
 	
 }
 
+- (void) backForwordDirectoriesCommon
+{
+	self.parentNodes = [[directoryStack lastObject] parentNodes];
+	DDLogVerbose(@"%@ bf parentNodes %@", [[directoryStack lastObject] displayName], parentNodes);
+	
+	[self setPopupMenuIcons];
+	self.selectedNodeindex = [NSNumber numberWithInt:0];
+	DDLogVerbose (@"directoryStack %@", directoryStack);
+	[table reloadData];
+}
+
+- (IBAction) backDirectories:(id)sender
+{
+	if ( [directoryStack count] >= 2){
+		[forwardStack addObject:[directoryStack pop]];
+		[self backForwordDirectoriesCommon];	
+	}
+}
+
+- (IBAction) forwordDirectories:(id)sender
+{
+	if ( [forwardStack count] >= 1){
+		[directoryStack addObject:[forwardStack pop]];
+		[self backForwordDirectoriesCommon];	
+	}
+}
+
+
+
 #pragma mark -
 #pragma mark Gui Callback
+
+- (IBAction) goToPredefinedDirectory:(id)sender
+{
+	[self goToDirectory:[predefinedDirectories objectAtIndex:[sender tag]]];
+}
 
 - (IBAction) search:(id)sender
 {
@@ -337,6 +374,23 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
     return self;
 }
 
++ (void)initialize
+{
+	predefinedDirectories = [[NSArray alloc] initWithObjects:
+							 [NSURL fileURLWithPath:[@"/" stringByExpandingTildeInPath] 
+										isDirectory:YES],
+							 [NSURL fileURLWithPath:[@"~" stringByExpandingTildeInPath]
+										isDirectory:YES],
+							 [NSURL fileURLWithPath:[@"~/Desktop" stringByExpandingTildeInPath]
+										isDirectory:YES],
+							 [NSURL fileURLWithPath:[@"~/Downloads" stringByExpandingTildeInPath]
+										isDirectory:YES],
+							 [NSURL fileURLWithPath:[@"~/Music"stringByExpandingTildeInPath]
+										isDirectory:YES],
+							 [NSURL fileURLWithPath:[@"~/Movies"stringByExpandingTildeInPath]
+										isDirectory:YES],
+							 nil];
+}
 
 - (void)dealloc
 {

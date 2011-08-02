@@ -3,7 +3,10 @@ TODO
 
 FIXME
 -----
-Muti row selection can be non constive rows, handle this
+* Muti row selection can be non constive rows, handle this.
+* Some means of showing that the values for selected rows are different.
+* Disble buttons thta can not be used.
+* Turn of the hard code values in auto tagger.
 
 Deploy
 -------

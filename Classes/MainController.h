@@ -64,4 +64,9 @@
 
 - (IBAction) rename:(id)sender;
 
+- (IBAction) open:(id)sender;
+- (IBAction) backDirectories:(id)sender;
+- (IBAction) forwordDirectories:(id)sender;
+- (IBAction) goToParentMenu:(id)sender;
+
 @end

@@ -4,8 +4,11 @@ Changelog
 ------------
 Version 0.12
 ------------
-* Pad the track number when renaming
+* Pad the track number when renaming.
 * Batch renaming using sub directories.
+* Shortcuts for back and forword.
+* Shortcuts for parent directory.
+* Menu and shortcuts for common directories.
 
 ------------
 Version 0.11 (Tue Aug 02 2011 03:21:21 +0100)
