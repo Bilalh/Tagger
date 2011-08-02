@@ -39,7 +39,6 @@
 		922E35E713C89FB9003C5913 /* libtag.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.dylib */; };
 		92364F7613C8DE5200044153 /* VgmdbSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92364F7413C8DE5200044153 /* VgmdbSearch.xib */; };
 		923FC13513DA117100B14A3E /* MPEGTags.mm in Sources */ = {isa = PBXBuildFile; fileRef = 923FC13413DA117100B14A3E /* MPEGTags.mm */; };
-		925093CC13E39F5000A20CA1 /* TagConverter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 925093CA13E39F4F00A20CA1 /* TagConverter.cpp */; };
 		9259102813E10A6C0033CB7B /* tags.webloc in Resources */ = {isa = PBXBuildFile; fileRef = 9259102713E10A6C0033CB7B /* tags.webloc */; };
 		9264488A13D773CE0035E693 /* arrowLeftBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */; };
 		9264488B13D773CE0035E693 /* arrowRightBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488913D773CE0035E693 /* arrowRightBlack16.tiff */; };
@@ -131,8 +130,6 @@
 		923FC13313DA117100B14A3E /* MPEGTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPEGTags.h; sourceTree = "<group>"; };
 		923FC13413DA117100B14A3E /* MPEGTags.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MPEGTags.mm; sourceTree = "<group>"; };
 		925093C813E39B2C00A20CA1 /* TagPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagPrivate.h; sourceTree = "<group>"; };
-		925093CA13E39F4F00A20CA1 /* TagConverter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TagConverter.cpp; sourceTree = "<group>"; };
-		925093CB13E39F5000A20CA1 /* TagConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagConverter.h; sourceTree = "<group>"; };
 		9259102713E10A6C0033CB7B /* tags.webloc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tags.webloc; sourceTree = SOURCE_ROOT; };
 		925CE81D13C3BD6D009D6D94 /* VGTagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VGTagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9264486513D74DED0035E693 /* mp4 tag mapping */ = {isa = PBXFileReference; lastKnownFileType = text; name = "mp4 tag mapping"; path = "../Test Files/mp4 tag mapping"; sourceTree = "<group>"; };
@@ -326,9 +323,6 @@
 		92364F7813C8E0C900044153 /* TagLib */ = {
 			isa = PBXGroup;
 			children = (
-				925093CA13E39F4F00A20CA1 /* TagConverter.cpp */,
-				925093CB13E39F5000A20CA1 /* TagConverter.h */,
-				92CC309113DA3F3A00BC78DC /* framelistmp4.cpp */,
 				92CC309013DA386600BC78DC /* Fields.h */,
 				9264486513D74DED0035E693 /* mp4 tag mapping */,
 				920660AA13C89845003A3803 /* Tags.h */,
@@ -395,6 +389,7 @@
 		927F56C313DDD24600274708 /* Unused */ = {
 			isa = PBXGroup;
 			children = (
+				92CC309113DA3F3A00BC78DC /* framelistmp4.cpp */,
 				927F56B713DDCFA000274708 /* NumberToTimeTransformer.h */,
 				927F56B813DDCFA000274708 /* NumberToTimeTransformer.m */,
 			);
@@ -591,7 +586,6 @@
 				92C4466513E0BF830038F817 /* BWHyperlinkButtonCell.m in Sources */,
 				92C4466813E0C7880038F817 /* ButtonLabelCell.m in Sources */,
 				92F7A81F13E2F19000B3446B /* NSImage+bitmapData.m in Sources */,
-				925093CC13E39F5000A20CA1 /* TagConverter.cpp in Sources */,
 				926BDEBD13E4B4220050B45C /* FileSystemNodeCollection.m in Sources */,
 				92B38C5313E7610B00EDF45F /* RenamingFilesController.m in Sources */,
 				92ED323313E797C700722635 /* FormatingAddictions.m in Sources */,

@@ -28,6 +28,10 @@ Images
 * Don't allways use jpeg as the mine type.
 * Better image equals method for NSImage (defualt just does pointer comparing).
 
+Renaming
+--------
+* tags from filename
+
 VGMDB
 -----
 * Taggings when tracks missing (done, but can tag wrong).

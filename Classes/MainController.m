@@ -238,12 +238,36 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 #pragma mark -
 #pragma mark Gui Callback
 
-- (IBAction) search:(id)sender{
+- (IBAction) search:(id)sender
+{
 	if (vgc == nil){
 		vgc = [[VgmdbController alloc] initWithFiles:[[directoryStack lastObject] children]];	
 	}else{
 		[vgc reset:[[directoryStack lastObject] children]];	
 	}
+	[NSApp beginSheet: [vgc window]
+	   modalForWindow: self.window
+		modalDelegate: vgc 
+	   didEndSelector: @selector(didEndSheet:returnCode:mainWindow:)
+		  contextInfo: self.window];
+	[table reloadData];
+}
+
+- (IBAction) searchWithSubDirectories:(id)sender
+{
+	NSMutableArray *nodes = [[NSMutableArray alloc] init ];
+	for (FileSystemNode *n in [[directoryStack lastObject] children]) {
+		if (n.isDirectory){
+			[nodes addObjectsFromArray:n.children];
+		}
+	}
+	
+	if (vgc == nil){
+		vgc = [[VgmdbController alloc] initWithFiles:nodes];	
+	}else{
+		[vgc reset:nodes];	
+	}
+	
 	[NSApp beginSheet: [vgc window]
 	   modalForWindow: self.window
 		modalDelegate: vgc 
