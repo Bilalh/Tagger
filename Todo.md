@@ -1,6 +1,10 @@
 TODO
 ====
 
+FIXME
+-----
+Muti row selection can be non constive rows, handle this
+
 Deploy
 -------
 * Auto embed macruby.
@@ -9,6 +13,10 @@ Deploy
 Errors
 ------
 * Some kind of error handing when vgmdb returns no tracks.
+
+FileNames
+---------
+Better message when names crash.
 
 GUI
 ---

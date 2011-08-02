@@ -14,10 +14,11 @@
 #include <tag.h>
 
 #import "DDLog.h"
-static const int ddLogLevel = LOG_LEVEL_INFO;
+static const int ddLogLevel = LOG_LEVEL_ERROR;
+static const NSSet *tokensSet;
 
 @interface Tags() // private methdods
--(NSString*)makeFilename:(NSMutableString*)format;
+
 @end
 
 using namespace TagLib;
@@ -27,6 +28,15 @@ using namespace TagLib;
 
 #pragma mark -
 #pragma mark Init
+
++ (void) initialize
+{
+	tokensSet = [[NSSet alloc ] initWithObjects:
+				 @"title",  @"album",  @"artist", @"composer", @"year",
+				 @"track",  @"disc",   @"genre",  @"albumArtist",
+				 nil];
+}
+
 
 - (id) init
 {
@@ -136,38 +146,22 @@ DDLogInfo(@"res:%d "#field":%u", b, t->field());
 -(void) setCompilation:(NSNumber *)newValue{}
 
 -(void) setUrl:(NSString *)newText{}
--(void) setCover:(NSImage *)newText{}
+
+-(void) setCover:(NSImage*)newValue{}
 
 
--(NSString*)makeFilename:(NSMutableString*)format
+-(NSString*)filenameFromFormatArray:(NSArray*)formatStrings
 {
-	void (^replace)(NSString*, NSString*) = ^(NSString* fmt, NSString* value)
-	{
-		[format replaceOccurrencesOfString:fmt
-								withString:value
-								   options:0 
-									 range:NSMakeRange(0, [format length])];	
-	};
-	replace(@"%n", self.title);
-	replace(@"%b", self.album);
-	replace(@"%a", self.artist);
-	replace(@"%r", self.artist);
-	replace(@"%c", self.composer);
-	replace(@"%g", self.genre);
-
-	replace(@"%d", [self.disc stringValue]);
-	replace(@"%t", [NSString stringWithFormat:@"%02d", [self.track intValue]]);
-	replace(@"%y", [self.year stringValue]);	
-	return format;
-}
-
--(NSString*)filenameFromFormat:(NSString*)format
-{
-	return [self makeFilename:[NSMutableString stringWithString:format]];
-//	TagConverter tc;
-//	const TagLib::Tag *t = data->file->tag();
-//	std::string s = tc.tagToFilename_(*t, *[format cppString]);
-//	return [[NSString alloc] initWithCppString:&s];
+	DDLogInfo(@"renaming %@", title);
+	NSMutableString *res = [[NSMutableString alloc] init];
+	for (NSString *s in formatStrings) {
+		if ([tokensSet containsObject:s]){
+			[res appendFormat:@"%@", [self valueForKeyPath:s]];
+		}else{
+			[res appendString: s];
+		}
+	}
+	return res;
 }
 
 @end

@@ -48,7 +48,7 @@
 @property (assign) NSArray *tagsArray;
 
 
--(NSError*) renameWithFormat:(NSString*)format;
+-(NSError*) renameWithFormatArray:(NSArray*)formatStrings;
 
 /// @name Finding General metadata.
 

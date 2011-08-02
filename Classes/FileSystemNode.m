@@ -186,20 +186,31 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
     }
 }
 
--(NSError*) renameWithFormat:(NSString*)format{
-	NSString *newName = [tags filenameFromFormat:format];
+
+-(NSError*) filenameFromFormatArray:(NSArray*)formatStrings
+{
+	NSString *newName = [tags filenameFromFormatArray:formatStrings];
 	DDLogInfo(@"newName:%@", newName);
+	if (!newName || [newName isEqualToString:@""]){
+		NSMutableDictionary *errorDetail = [NSMutableDictionary dictionary];
+		[errorDetail setValue:@"New Name Empty" forKey:NSLocalizedDescriptionKey];
+		return [NSError errorWithDomain:@"filenameFromFormatArray" code:100 userInfo:errorDetail];
+	}
 	
 	NSString *path    = [self.URL path];
 	NSString *ext     = [path pathExtension];
 	
 	NSString *newPath = [[[path stringByDeletingLastPathComponent] 
 	 stringByAppendingPathComponent:newName] stringByAppendingPathExtension:ext];
+	DDLogVerbose(@"path:%@\n ext:%@\n newPath:%@ \n", path, ext, newPath);
 	
-	NSError *err;
+	if ([newPath isEqualToString:path]) return nil;
+	
+	NSError *err =nil;
 	[[NSFileManager defaultManager] moveItemAtPath:path 
 											toPath:newPath
 											 error:&err];
+	
 	return err;
 }
 

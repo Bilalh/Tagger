@@ -53,9 +53,9 @@ struct FileData;
   */
 -(void) initFields;
 
-- (NSComparisonResult)compare:(Tags *)otherTag;
+-(NSComparisonResult)compare:(Tags *)otherTag;
 
--(NSString*)filenameFromFormat:(NSString*)format;
+-(NSString*)filenameFromFormatArray:(NSArray*)formatStrings;
 
 
 /// @name Finding General metadata.

@@ -44,7 +44,8 @@
 - (void)invalidateChildren;
 
 
--(NSError*) renameWithFormat:(NSString*)format;
+-(NSError*) filenameFromFormatArray:(NSArray*)formatStrings;
+
 
 /// @name Finding metadata
 

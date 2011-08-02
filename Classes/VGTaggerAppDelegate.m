@@ -23,8 +23,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {	
-//	NSString *path = [[NSBundle mainBundle] pathForResource:@"Vgmdb" ofType:@"rb"];
-//	[[MacRuby sharedRuntime] evaluateFileAtPath:path];
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"Vgmdb" ofType:@"rb"];
+	[[MacRuby sharedRuntime] evaluateFileAtPath:path];
 	[[DDTTYLogger sharedInstance ] setLogFormatter:	[[[PSDDFormatter alloc ] init ] autorelease]];
 	[DDLog addLogger:[DDASLLogger sharedInstance]];
 	[DDLog addLogger:[DDTTYLogger sharedInstance]];

@@ -15,11 +15,12 @@
 #import "NSMutableArray+Stack.h"
 #import "ImageAndTextCell.h"
 #import "FileSystemNodeCollection.h"
+#import "RenamingFilesController.h"
 
 #import "DDLog.h"
 static const int ddLogLevel = LOG_LEVEL_ERROR;
 
-@interface MainController()
+@interface MainController()  
 
 - (void) initDirectoryTable;
 - (void) setPopupMenuIcons;
@@ -247,23 +248,31 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	   modalForWindow: self.window
 		modalDelegate: vgc 
 	   didEndSelector: @selector(didEndSheet:returnCode:mainWindow:)
-		  contextInfo: self.window]; 	
+		  contextInfo: self.window];
 	[table reloadData];
 }
+
+- (IBAction) rename:(id)sender
+{
+	if (!currentNodes.hasExtenedMetadata) return;
+	DDLogInfo(@"rename");
+	
+	if (rfc)  [rfc release];
+	rfc = [[RenamingFilesController alloc] initWithNodes:currentNodes];
+		
+	[NSApp beginSheet: [rfc window]
+	   modalForWindow: self.window
+		modalDelegate: rfc 
+	   didEndSelector: @selector(didEndSheet:returnCode:result:)
+		  contextInfo: [directoryStack lastObject]];
+	
+}
+
 
 - (id)valueForUndefinedKey:(NSString *)key
 {
 	DDLogError(@"valueForUndefinedKey:%@",key);
 	return @"ERROR";
-}
-
-- (IBAction) rename:(id)sender
-{
-	if (currentNodes.hasExtenedMetadata){
-		NSError *res = [currentNodes renameWithFormat:@"%d-%t %n"];
-		NSLog(@"res:%@", res );
-	}
-	[[directoryStack lastObject] invalidateChildren];
 }
 
 #pragma mark -

@@ -69,14 +69,17 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 }
 
 #pragma mark -
-#pragma mark general
+#pragma mark General
 
--(NSError*) renameWithFormat:(NSString*)format
+-(NSError*) renameWithFormatArray:(NSArray*)formatStrings;
 {
 	NSError *err;
 	for (FileSystemNode *n in tagsArray) {
-		err = [n renameWithFormat:format];
-		if (err != nil) return err;
+		err = [n filenameFromFormatArray:formatStrings];
+		if (err) {
+			DDLogError(@"message %@", [err localizedDescription]);
+			return err;	
+		}
 	}
 	return err;
 }
@@ -87,7 +90,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 /// set the new array and finds the metdata for each tag
 -(void) setTagsArray:(NSArray *)newArray
 {
-	DDLogInfo(@"newArray %@", newArray);
+	DDLogVerbose(@"newArray %@", newArray);
 	tagsArray = newArray;
 	if (!tagsArray || [tagsArray count] ==0){
 		hasExtenedMetadata = hasExtenedMetadata = NO;

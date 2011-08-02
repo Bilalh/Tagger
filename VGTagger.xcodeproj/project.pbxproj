@@ -54,6 +54,8 @@
 		929A4ADE13DA087D00244796 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD913DA087D00244796 /* DDTTYLogger.m */; };
 		929B4E7F13DCB67F00E2FE54 /* PSDDFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 929B4E7E13DCB67F00E2FE54 /* PSDDFormatter.m */; };
 		92A3C49E13E2444A0024C7D3 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A3C49B13E244200024C7D3 /* MacRuby.framework */; };
+		92B38C5313E7610B00EDF45F /* RenamingFilesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B38C5213E7610B00EDF45F /* RenamingFilesController.m */; };
+		92B38C5613E7804100EDF45F /* RenameDisplay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B38C5413E7804100EDF45F /* RenameDisplay.xib */; };
 		92B65BD213D261DF0018F988 /* NSMutableArray+Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B65BD113D261DF0018F988 /* NSMutableArray+Stack.m */; };
 		92B65BF813D27BED0018F988 /* ImageAndTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B65BF713D27BEC0018F988 /* ImageAndTextCell.m */; };
 		92C4465413E0A5820038F817 /* NSAttributedString+Hyperlink.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4465313E0A5820038F817 /* NSAttributedString+Hyperlink.m */; };
@@ -157,6 +159,9 @@
 		929B4E7D13DCB67F00E2FE54 /* PSDDFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDDFormatter.h; sourceTree = "<group>"; };
 		929B4E7E13DCB67F00E2FE54 /* PSDDFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDDFormatter.m; sourceTree = "<group>"; };
 		92A3C49B13E244200024C7D3 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = SDKROOT; };
+		92B38C5113E7610B00EDF45F /* RenamingFilesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenamingFilesController.h; sourceTree = "<group>"; };
+		92B38C5213E7610B00EDF45F /* RenamingFilesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenamingFilesController.m; sourceTree = "<group>"; };
+		92B38C5513E7804100EDF45F /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = RenameDisplay.xib; sourceTree = "<group>"; };
 		92B65BD013D261DF0018F988 /* NSMutableArray+Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Stack.h"; sourceTree = "<group>"; };
 		92B65BD113D261DF0018F988 /* NSMutableArray+Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Stack.m"; sourceTree = "<group>"; };
 		92B65BF613D27BEC0018F988 /* ImageAndTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAndTextCell.h; sourceTree = "<group>"; };
@@ -210,6 +215,7 @@
 				92B65BD413D261E60018F988 /* Categories */,
 				92B65BF913D283130018F988 /* Gui */,
 				92364F7813C8E0C900044153 /* TagLib */,
+				92B38C5013E760C400EDF45F /* Tagging */,
 				9201935913CF95FA0085E167 /* IO */,
 				92364F7913C8E0E900044153 /* Vgmdb */,
 				920660A513C89845003A3803 /* MainController.h */,
@@ -305,6 +311,7 @@
 		922E35DB13C89C51003C5913 /* English.lproj */ = {
 			isa = PBXGroup;
 			children = (
+				92B38C5413E7804100EDF45F /* RenameDisplay.xib */,
 				92364F7413C8DE5200044153 /* VgmdbSearch.xib */,
 				920660A713C89845003A3803 /* VgmdbDisplay.xib */,
 				922E35DC13C89C51003C5913 /* InfoPlist.strings */,
@@ -418,6 +425,15 @@
 			name = Logging;
 			sourceTree = "<group>";
 		};
+		92B38C5013E760C400EDF45F /* Tagging */ = {
+			isa = PBXGroup;
+			children = (
+				92B38C5113E7610B00EDF45F /* RenamingFilesController.h */,
+				92B38C5213E7610B00EDF45F /* RenamingFilesController.m */,
+			);
+			name = Tagging;
+			sourceTree = "<group>";
+		};
 		92B65BD413D261E60018F988 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -517,6 +533,7 @@
 				9264488B13D773CE0035E693 /* arrowRightBlack16.tiff in Resources */,
 				929A4ACE13DA027C00244796 /* Changelog.md in Resources */,
 				9259102813E10A6C0033CB7B /* tags.webloc in Resources */,
+				92B38C5613E7804100EDF45F /* RenameDisplay.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,6 +588,7 @@
 				92F7A81F13E2F19000B3446B /* NSImage+bitmapData.m in Sources */,
 				925093CC13E39F5000A20CA1 /* TagConverter.cpp in Sources */,
 				926BDEBD13E4B4220050B45C /* FileSystemNodeCollection.m in Sources */,
+				92B38C5313E7610B00EDF45F /* RenamingFilesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +617,14 @@
 				92364F7513C8DE5200044153 /* English */,
 			);
 			name = VgmdbSearch.xib;
+			sourceTree = "<group>";
+		};
+		92B38C5413E7804100EDF45F /* RenameDisplay.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92B38C5513E7804100EDF45F /* English */,
+			);
+			name = RenameDisplay.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

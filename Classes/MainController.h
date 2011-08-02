@@ -12,6 +12,7 @@
 @class  DisplayController;
 @class  FileSystemNode;
 @class  FileSystemNodeCollection;
+@class  RenamingFilesController;
 
 /// The main controller creates the other controllers 
 @interface MainController : NSObject {
@@ -20,9 +21,10 @@
 	IBOutlet NSPopUpButton *popup;
 	IBOutlet NSTableView   *table;
 
-	VgmdbController   *vgc;
-	DisplayController *ssc;
-
+	VgmdbController         *vgc;
+	DisplayController       *ssc;
+	RenamingFilesController *rfc;
+	
 	NSMutableArray *parentNodes;
 }
 
