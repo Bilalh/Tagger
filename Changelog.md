@@ -11,6 +11,7 @@ Version 0.12
 * Menu and shortcuts for common directories.
 * Refresh menu item
 * Reveal in Finder menu item
+* Reopen menu item which opens the last open window
 
 ------------
 Version 0.11 (Tue Aug 02 2011 03:21:21 +0100)

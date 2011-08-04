@@ -15,7 +15,7 @@
 @class  RenamingFilesController;
 
 /// The main controller creates the other controllers 
-@interface MainController : NSObject {
+@interface MainController : NSWindowController {
 @private
 	
 	IBOutlet NSPopUpButton *popup;
@@ -80,5 +80,6 @@
  */
 - (IBAction) search:(id)sender;
 
+- (IBAction)reopen:(id)sender;
 
 @end

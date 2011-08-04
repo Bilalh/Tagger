@@ -334,7 +334,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 }
 
-- (IBAction) revealInFinder:(id)sender
+- (IBAction)revealInFinder:(id)sender
 {
 	for (FileSystemNode *n in currentNodes.tagsArray) {
 		[[NSWorkspace sharedWorkspace] selectFile:[n.URL path] 
@@ -349,9 +349,25 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 }
 
 #pragma mark -
+#pragma mark Windows
+
+- (BOOL)windowShouldClose:(NSNotification *)notification
+{
+	NSLog(@"bye");
+	[window orderOut:self];
+	return NO;
+}
+
+
+- (IBAction)reopen:(id)sender
+{
+	[self showWindow:self];
+}
+
+#pragma mark -
 #pragma mark Alloc/init
 
--(void) awakeFromNib
+- (void)awakeFromNib
 {	
 	[self setPopupMenuIcons];
 	[table setDoubleAction:@selector(onClick:)];
