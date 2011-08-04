@@ -5,7 +5,7 @@ FIXME
 -----
 * Some means of showing that the values for selected rows are different.
 * Disble buttons that can not be used.
-* Turn of the hard code values in auto tagger.
+* Turn of the hard code values in vgmdb auto tagger.
 
 Deploy
 -------

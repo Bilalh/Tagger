@@ -48,6 +48,11 @@
 @property (assign) NSArray *tagsArray;
 
 
+/** Renames each selected node with the specifed format 
+ 
+ @param formatStrings An Array of strings 
+ @return NSError with the error data.
+ */
 -(NSError*) renameWithFormatArray:(NSArray*)formatStrings;
 
 /// @name Finding General metadata.

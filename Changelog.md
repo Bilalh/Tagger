@@ -16,7 +16,7 @@ Version 0.12
 
 ### Bug fixes ###
 * Fixed a bug where selection was not consecutive.
-
+* Fixed a bug with update data when changing directory
 
 ------------
 Version 0.11 (Tue Aug 02 2011 03:21:21 +0100)

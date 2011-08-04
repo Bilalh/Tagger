@@ -18,7 +18,7 @@
 #import "RenamingFilesController.h"
 
 #import "DDLog.h"
-static const int ddLogLevel = LOG_LEVEL_ERROR;
+static const int ddLogLevel = LOG_LEVEL_INFO;
 static const NSArray *predefinedDirectories;
 
 @interface MainController()  
@@ -124,10 +124,12 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
+	DDLogInfo(@"chnaged");
 	const NSInteger selectedRow = [table selectedRow];
 
 	if (selectedRow == -1){
 		self.currentNodes.tagsArray = nil;
+		
 	}else{
 		self.currentNodes.tagsArray = [[[directoryStack lastObject] children] 
 									   objectsAtIndexes:[table selectedRowIndexes]];
@@ -171,6 +173,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 	[directoryStack addObject:[parentNodes objectAtIndex:0]];
 	DDLogInfo(@"directoryStack %@", directoryStack);
+	[table deselectAll:self];
 	[table reloadData];
 }
 
@@ -200,6 +203,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[parentNodes addObjectsFromArray:[node parentNodes] ];
 	
  	[directoryStack addObject:node];
+	[table deselectAll:self];
 	[table reloadData];
 	
 	NSInteger popupCount = [popup numberOfItems];
@@ -245,6 +249,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[self setPopupMenuIcons];
 	self.selectedNodeindex = [NSNumber numberWithInt:0];
 	DDLogVerbose (@"directoryStack %@", directoryStack);
+	[table deselectAll:self];
 	[table reloadData];
 }
 
@@ -263,8 +268,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		[self backForwordDirectoriesCommon];	
 	}
 }
-
-
 
 #pragma mark -
 #pragma mark Gui Callback

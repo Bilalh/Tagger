@@ -93,7 +93,12 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 	DDLogVerbose(@"newArray %@", newArray);
 	tagsArray = newArray;
 	if (!tagsArray || [tagsArray count] ==0){
+		writeToAll = NO;
 		hasExtenedMetadata = hasExtenedMetadata = NO;
+		for (NSString *key in fieldNames) {
+			[self setValue:nil forKey:key];
+		}
+		writeToAll = YES;
 		return;
 	}
 	
