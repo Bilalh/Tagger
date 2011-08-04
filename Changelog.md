@@ -4,6 +4,7 @@ Changelog
 ------------
 Version 0.12
 ------------
+### Features ###
 * Pad the track number when renaming.
 * Batch renaming using sub directories.
 * Shortcuts for back and forword.
@@ -12,6 +13,10 @@ Version 0.12
 * Refresh menu item
 * Reveal in Finder menu item
 * Reopen menu item which opens the last open window
+
+### Bug fixes ###
+* Fixed a bug where selection was not consecutive.
+
 
 ------------
 Version 0.11 (Tue Aug 02 2011 03:21:21 +0100)
@@ -28,11 +33,12 @@ Version 0.10 (Sun Jul 31 2011 04:51:54 +0100)
 * Muti-row editing.
 * Some bug fixes.
 
+
 -----------
 Version 0.9 (Fri Jul 29 2011 15:05:00 +0100)
 -----------
+### Features ###
 * The length of track can now be found using Tags.
-* Made length column uneditable since it should not be changed.
 * Auto tagging for tracks names is done
   * Allows choosing the language.
 * Auto tagging for other fields done.
@@ -43,16 +49,24 @@ Version 0.9 (Fri Jul 29 2011 15:05:00 +0100)
 * Read/write mp3 cover art.
 * Read/write mp4 cover art.
 
+### Bug fixes ###
+* Made length column uneditable since it should not be changed.
+
+
 -----------
 Version 0.8 (Mon Jul 25 2011 02:55:27 +0100)
 -----------
+### Features ###
 * Complete mp3 (IDV tag read/write support.
-* Fixed a bug when trying to save a field with an empty string.
 * Allows clearing number fields e.g year.
 * Validate number fields to allow only numbers. 
 * Allows changes the language of each field in the results from vgmdb.
 * Now allows search using the tags of the song to allow easier searching.
+
+### Bug fixes ###
 * Better error handing when vgmdb is missing data.
+* Fixed a bug when trying to save a field with an empty string.
+
 
 -----------
 Version 0.7 (Fri Jul 22 2011 20:06:13 +0100)
@@ -61,6 +75,7 @@ Version 0.7 (Fri Jul 22 2011 20:06:13 +0100)
 * File browser with previous and forward buttons.
 	* Allows user specified directory with a open dialog. 
 	* Allows going to parent directories easily.  
+
 
 --------------
 Older Versions
@@ -72,3 +87,4 @@ Older Versions
 * Menu items for to Uppercase ^U, to Lowercase Shift ^U, Capitalise Command ^U
 * GUI
 * Classes 
+
