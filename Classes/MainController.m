@@ -313,6 +313,11 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[table reloadData];
 }
 
+- (IBAction) refresh:(id)sender
+{
+	[[directoryStack lastObject] invalidateChildren];
+}
+
 - (IBAction) rename:(id)sender
 {
 	if (!currentNodes.hasExtenedMetadata) return;

@@ -28,6 +28,8 @@
 	NSMutableArray *parentNodes;
 }
 
+/// @name properties
+
 /// The main window
 @property (assign) IBOutlet NSWindow *window;
 /// The stack of previous directories.
@@ -44,11 +46,7 @@
 @property (assign) NSMutableArray *parentNodes;
 
 
- /**  
-  * Shows the sheet for searching for tags
-  * @param sender the object that called this method
-  */
-- (IBAction) search:(id)sender;
+/// @name Directories 
 
  /**  
   * Changes the current directory if changed by the user and update the gui
@@ -57,16 +55,29 @@
 - (IBAction) goToParent:(id)sender;
 
 /** Goes to the previous/forword directory if there is one
- 
  @param sender The back/forword button
  */
 - (IBAction) backForwordDirectories:(id)sender; 
 
-- (IBAction) rename:(id)sender;
 
 - (IBAction) open:(id)sender;
 - (IBAction) backDirectories:(id)sender;
 - (IBAction) forwordDirectories:(id)sender;
 - (IBAction) goToParentMenu:(id)sender;
+
+
+/// @name Files 
+
+- (IBAction) rename:(id)sender;
+
+
+/**  
+ * Shows the sheet for searching for tags
+ * @param sender the object that called this method
+ */
+- (IBAction) search:(id)sender;
+
+- (IBAction) refresh:(id)sender;
+
 
 @end

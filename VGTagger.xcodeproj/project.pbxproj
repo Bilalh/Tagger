@@ -218,10 +218,7 @@
 				92B38C5013E760C400EDF45F /* Tagging */,
 				9201935913CF95FA0085E167 /* IO */,
 				92364F7913C8E0E900044153 /* Vgmdb */,
-				920660A513C89845003A3803 /* MainController.h */,
-				920660A613C89845003A3803 /* MainController.m */,
-				920660AF13C89845003A3803 /* VGTaggerAppDelegate.h */,
-				920660B013C89845003A3803 /* VGTaggerAppDelegate.m */,
+				9244575313EB26BF00CDF0CF /* Main */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -254,6 +251,8 @@
 		920660BD13C89845003A3803 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				920660BE13C89845003A3803 /* Test Files */,
+				9264488713D773CE0035E693 /* Images */,
 				9259102713E10A6C0033CB7B /* tags.webloc */,
 				920660B813C89845003A3803 /* Linked Frameworks */,
 			);
@@ -271,7 +270,8 @@
 				920660C413C89845003A3803 /* test3.html */,
 				920660C513C89845003A3803 /* test3_files */,
 			);
-			path = "Test Files";
+			name = "Test Files";
+			path = "../Test Files";
 			sourceTree = "<group>";
 		};
 		920660C513C89845003A3803 /* test3_files */ = {
@@ -353,15 +353,24 @@
 			name = Vgmdb;
 			sourceTree = "<group>";
 		};
+		9244575313EB26BF00CDF0CF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				920660A513C89845003A3803 /* MainController.h */,
+				920660A613C89845003A3803 /* MainController.m */,
+				920660AF13C89845003A3803 /* VGTaggerAppDelegate.h */,
+				920660B013C89845003A3803 /* VGTaggerAppDelegate.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
 		925CE81213C3BD6D009D6D94 = {
 			isa = PBXGroup;
 			children = (
 				920660A313C89845003A3803 /* Classes */,
 				922E35DB13C89C51003C5913 /* English.lproj */,
-				9264488713D773CE0035E693 /* Images */,
 				920660BD13C89845003A3803 /* Resources */,
 				920660BA13C89845003A3803 /* Other Sources */,
-				920660BE13C89845003A3803 /* Test Files */,
 				925CE81E13C3BD6D009D6D94 /* Products */,
 				927883BF13E06E5000063D28 /* Readme.md */,
 				929A4ACD13DA027C00244796 /* Changelog.md */,
@@ -383,7 +392,8 @@
 				9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */,
 				9264488913D773CE0035E693 /* arrowRightBlack16.tiff */,
 			);
-			path = Images;
+			name = Images;
+			path = ../Images;
 			sourceTree = "<group>";
 		};
 		927F56C313DDD24600274708 /* Unused */ = {

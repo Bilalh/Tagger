@@ -39,6 +39,10 @@ VGMDB
 -----
 * Taggings when tracks missing (done, but can tag wrong).
 
+Later
+-----
+Add flac (should be easy).
+
 ----
 Done
 ----
