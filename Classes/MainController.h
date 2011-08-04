@@ -68,16 +68,17 @@
 
 /// @name Files 
 
+- (IBAction) refresh:(id)sender;
+
 - (IBAction) rename:(id)sender;
 
+- (IBAction) revealInFinder:(id)sender;
 
 /**  
  * Shows the sheet for searching for tags
  * @param sender the object that called this method
  */
 - (IBAction) search:(id)sender;
-
-- (IBAction) refresh:(id)sender;
 
 
 @end

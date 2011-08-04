@@ -9,6 +9,8 @@ Version 0.12
 * Shortcuts for back and forword.
 * Shortcuts for parent directory.
 * Menu and shortcuts for common directories.
+* Refresh menu item
+* Reveal in Finder menu item
 
 ------------
 Version 0.11 (Tue Aug 02 2011 03:21:21 +0100)

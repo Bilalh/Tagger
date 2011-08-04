@@ -334,6 +334,13 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 }
 
+- (IBAction) revealInFinder:(id)sender
+{
+	for (FileSystemNode *n in currentNodes.tagsArray) {
+		[[NSWorkspace sharedWorkspace] selectFile:[n.URL path] 
+								inFileViewerRootedAtPath:nil];
+	}
+}
 
 - (id)valueForUndefinedKey:(NSString *)key
 {
