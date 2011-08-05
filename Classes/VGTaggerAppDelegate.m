@@ -9,16 +9,20 @@
 #import "VGTaggerAppDelegate.h"
 #import "MainController.h"
 
+#import "GeneralPreferencesViewController.h"
+#import "AdvancedPreferencesViewController.h"
+
 #import "DDLog.h"
 #import "DDASLLogger.h"
 #import "DDTTYLogger.h"
 #import "PSDDFormatter.h"
+#import "MASPreferencesWindowController.h"
 
 #import <MacRuby/MacRuby.h>
 
 
 @implementation VGTaggerAppDelegate
-@synthesize window, mainController;
+@synthesize window, mainController, preferencesWindowController;
 
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -44,6 +48,9 @@
 	[preferences synchronize];
 }
 
+
+
+
 // Handle a file dropped on the dock icon
 - (BOOL)application:(NSApplication *)sender openFile:(NSString *)path
 {
@@ -56,6 +63,31 @@
 	
 	return YES;
 }
+
+#pragma mark - Preferences
+
+- (NSWindowController *)preferencesWindowController
+{
+    if (_preferencesWindowController == nil)
+    {
+        NSViewController *generalViewController = [[GeneralPreferencesViewController alloc] init];
+        NSViewController *advancedViewController = [[AdvancedPreferencesViewController alloc] init];
+        NSArray *controllers = [[NSArray alloc] initWithObjects:generalViewController, advancedViewController, nil];
+        [generalViewController release];
+        [advancedViewController release];
+        
+        NSString *title = NSLocalizedString(@"Preferences", @"Common title for Preferences window");
+        _preferencesWindowController = [[MASPreferencesWindowController alloc] initWithViewControllers:controllers title:title];
+        [controllers release];
+    }
+    return _preferencesWindowController;
+}
+
+- (IBAction)openPreferences:(id)sender
+{
+    [self.preferencesWindowController showWindow:nil];
+}
+
 
 
 @end

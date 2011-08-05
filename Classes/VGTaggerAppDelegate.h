@@ -12,9 +12,14 @@
 @interface VGTaggerAppDelegate : NSObject <NSApplicationDelegate> {
 @private
 	NSWindow *window;
+	NSWindowController *_preferencesWindowController;
 }
 
 @property (assign) IBOutlet NSWindow *window;
 @property (readonly) IBOutlet MainController *mainController;
+@property (nonatomic, readonly) NSWindowController *preferencesWindowController;
+
+- (IBAction)openPreferences:(id)sender;
+
 
 @end

@@ -3,9 +3,9 @@ TODO
 
 FIXME
 -----
+* Defaults e.g path etc 
 * Disble buttons that can not be used.
 * Turn of the hard code values in vgmdb auto tagger.
-* Defaults Saving 
 
 Deploy
 -------

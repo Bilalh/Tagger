@@ -54,6 +54,12 @@
 		929A4ADE13DA087D00244796 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD913DA087D00244796 /* DDTTYLogger.m */; };
 		929B4E7F13DCB67F00E2FE54 /* PSDDFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 929B4E7E13DCB67F00E2FE54 /* PSDDFormatter.m */; };
 		92A3C49E13E2444A0024C7D3 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A3C49B13E244200024C7D3 /* MacRuby.framework */; };
+		92A6808813EC7B130067DD5F /* MASPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A6808513EC7B130067DD5F /* MASPreferencesWindow.xib */; };
+		92A6808913EC7B130067DD5F /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A6808713EC7B130067DD5F /* MASPreferencesWindowController.m */; };
+		92A680A313EC7DAE0067DD5F /* AdvancedPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A6809D13EC7DAE0067DD5F /* AdvancedPreferencesView.xib */; };
+		92A680A413EC7DAE0067DD5F /* AdvancedPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A6809F13EC7DAE0067DD5F /* AdvancedPreferencesViewController.m */; };
+		92A680A513EC7DAE0067DD5F /* GeneralPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A680A013EC7DAE0067DD5F /* GeneralPreferencesView.xib */; };
+		92A680A613EC7DAF0067DD5F /* GeneralPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A680A213EC7DAE0067DD5F /* GeneralPreferencesViewController.m */; };
 		92B38C5313E7610B00EDF45F /* RenamingFilesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B38C5213E7610B00EDF45F /* RenamingFilesController.m */; };
 		92B38C5613E7804100EDF45F /* RenameDisplay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92B38C5413E7804100EDF45F /* RenameDisplay.xib */; };
 		92B65BD213D261DF0018F988 /* NSMutableArray+Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 92B65BD113D261DF0018F988 /* NSMutableArray+Stack.m */; };
@@ -159,6 +165,16 @@
 		929B4E7D13DCB67F00E2FE54 /* PSDDFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDDFormatter.h; sourceTree = "<group>"; };
 		929B4E7E13DCB67F00E2FE54 /* PSDDFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDDFormatter.m; sourceTree = "<group>"; };
 		92A3C49B13E244200024C7D3 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = SDKROOT; };
+		92A6808413EC7B130067DD5F /* MASPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesViewController.h; sourceTree = "<group>"; };
+		92A6808513EC7B130067DD5F /* MASPreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASPreferencesWindow.xib; sourceTree = "<group>"; };
+		92A6808613EC7B130067DD5F /* MASPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesWindowController.h; sourceTree = "<group>"; };
+		92A6808713EC7B130067DD5F /* MASPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASPreferencesWindowController.m; sourceTree = "<group>"; };
+		92A6809D13EC7DAE0067DD5F /* AdvancedPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdvancedPreferencesView.xib; sourceTree = "<group>"; };
+		92A6809E13EC7DAE0067DD5F /* AdvancedPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvancedPreferencesViewController.h; sourceTree = "<group>"; };
+		92A6809F13EC7DAE0067DD5F /* AdvancedPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvancedPreferencesViewController.m; sourceTree = "<group>"; };
+		92A680A013EC7DAE0067DD5F /* GeneralPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralPreferencesView.xib; sourceTree = "<group>"; };
+		92A680A113EC7DAE0067DD5F /* GeneralPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralPreferencesViewController.h; sourceTree = "<group>"; };
+		92A680A213EC7DAE0067DD5F /* GeneralPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralPreferencesViewController.m; sourceTree = "<group>"; };
 		92B38C5113E7610B00EDF45F /* RenamingFilesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenamingFilesController.h; sourceTree = "<group>"; };
 		92B38C5213E7610B00EDF45F /* RenamingFilesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenamingFilesController.m; sourceTree = "<group>"; };
 		92B38C5513E7804100EDF45F /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = RenameDisplay.xib; sourceTree = "<group>"; };
@@ -213,12 +229,13 @@
 		920660A313C89845003A3803 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				929B4E6F13DCB58400E2FE54 /* Logging */,
+				92A6809C13EC7CB30067DD5F /* Preferences */,
 				92B65BD413D261E60018F988 /* Categories */,
 				92B65BF913D283130018F988 /* Gui */,
+				9201935913CF95FA0085E167 /* IO */,
+				929B4E6F13DCB58400E2FE54 /* Logging */,
 				92364F7813C8E0C900044153 /* TagLib */,
 				92B38C5013E760C400EDF45F /* Tagging */,
-				9201935913CF95FA0085E167 /* IO */,
 				92364F7913C8E0E900044153 /* Vgmdb */,
 				9244575313EB26BF00CDF0CF /* Main */,
 			);
@@ -241,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				92C4465F13E0BF830038F817 /* BWToolKitEdits */,
+				92A6808313EC7B130067DD5F /* Preferences */,
 				927F56C313DDD24600274708 /* Unused */,
 				929A4ACF13DA087D00244796 /* Lumberjack */,
 				920660A413C89845003A3803 /* main.m */,
@@ -311,7 +329,7 @@
 			path = test3_files;
 			sourceTree = "<group>";
 		};
-		922E35DB13C89C51003C5913 /* English.lproj */ = {
+		922E35DB13C89C51003C5913 /* xib */ = {
 			isa = PBXGroup;
 			children = (
 				922E35DC13C89C51003C5913 /* InfoPlist.strings */,
@@ -320,6 +338,7 @@
 				920660A713C89845003A3803 /* VgmdbDisplay.xib */,
 				922E35DE13C89C51003C5913 /* MainMenu.xib */,
 			);
+			name = xib;
 			path = English.lproj;
 			sourceTree = "<group>";
 		};
@@ -371,7 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				920660A313C89845003A3803 /* Classes */,
-				922E35DB13C89C51003C5913 /* English.lproj */,
+				922E35DB13C89C51003C5913 /* xib */,
 				920660BD13C89845003A3803 /* Resources */,
 				920660BA13C89845003A3803 /* Other Sources */,
 				925CE81E13C3BD6D009D6D94 /* Products */,
@@ -434,6 +453,30 @@
 				929B4E7E13DCB67F00E2FE54 /* PSDDFormatter.m */,
 			);
 			name = Logging;
+			sourceTree = "<group>";
+		};
+		92A6808313EC7B130067DD5F /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				92A6808413EC7B130067DD5F /* MASPreferencesViewController.h */,
+				92A6808513EC7B130067DD5F /* MASPreferencesWindow.xib */,
+				92A6808613EC7B130067DD5F /* MASPreferencesWindowController.h */,
+				92A6808713EC7B130067DD5F /* MASPreferencesWindowController.m */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		92A6809C13EC7CB30067DD5F /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				92A6809D13EC7DAE0067DD5F /* AdvancedPreferencesView.xib */,
+				92A6809E13EC7DAE0067DD5F /* AdvancedPreferencesViewController.h */,
+				92A6809F13EC7DAE0067DD5F /* AdvancedPreferencesViewController.m */,
+				92A680A013EC7DAE0067DD5F /* GeneralPreferencesView.xib */,
+				92A680A113EC7DAE0067DD5F /* GeneralPreferencesViewController.h */,
+				92A680A213EC7DAE0067DD5F /* GeneralPreferencesViewController.m */,
+			);
+			name = Preferences;
 			sourceTree = "<group>";
 		};
 		92B38C5013E760C400EDF45F /* Tagging */ = {
@@ -548,6 +591,9 @@
 				9259102813E10A6C0033CB7B /* tags.webloc in Resources */,
 				92B38C5613E7804100EDF45F /* RenameDisplay.xib in Resources */,
 				928411AF13EB853600A92F3F /* defaults.plist in Resources */,
+				92A6808813EC7B130067DD5F /* MASPreferencesWindow.xib in Resources */,
+				92A680A313EC7DAE0067DD5F /* AdvancedPreferencesView.xib in Resources */,
+				92A680A513EC7DAE0067DD5F /* GeneralPreferencesView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +649,9 @@
 				926BDEBD13E4B4220050B45C /* FileSystemNodeCollection.m in Sources */,
 				92B38C5313E7610B00EDF45F /* RenamingFilesController.m in Sources */,
 				92ED323313E797C700722635 /* FormatingAddictions.m in Sources */,
+				92A6808913EC7B130067DD5F /* MASPreferencesWindowController.m in Sources */,
+				92A680A413EC7DAE0067DD5F /* AdvancedPreferencesViewController.m in Sources */,
+				92A680A613EC7DAF0067DD5F /* GeneralPreferencesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
