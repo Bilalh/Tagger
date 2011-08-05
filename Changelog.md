@@ -2,7 +2,7 @@ Changelog
 =========
 
 ------------
-Version 0.12
+Version 0.12 (Fri Aug 05 2011 02:23:54 +0100)
 ------------
 ### Features ###
 * Pad the track number when renaming.
