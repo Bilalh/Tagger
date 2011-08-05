@@ -15,6 +15,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 
 @interface FileSystemNodeCollection()
 -(void) initfields;
+-(void) nilAllFields;
 @end
 
 @implementation FileSystemNodeCollection
@@ -87,18 +88,23 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 #pragma mark -
 #pragma mark Setters
 
+-(void) nilAllFields
+{
+	writeToAll = NO;
+	hasBasicMetadata = hasExtenedMetadata = NO; 
+	for (NSString *key in fieldNames) {
+		[self setValue:nil forKey:key];
+	}
+	writeToAll = YES;
+}
+
 /// set the new array and finds the metdata for each tag
 -(void) setTagsArray:(NSArray *)newArray
 {
 	DDLogVerbose(@"newArray %@", newArray);
 	tagsArray = newArray;
 	if (!tagsArray || [tagsArray count] ==0){
-		writeToAll = NO;
-		hasExtenedMetadata = hasExtenedMetadata = NO;
-		for (NSString *key in fieldNames) {
-			[self setValue:nil forKey:key];
-		}
-		writeToAll = YES;
+		[self nilAllFields];
 		return;
 	}
 	
@@ -106,7 +112,9 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 	
 	for (FileSystemNode *n in tagsArray) {
 		if (n.isDirectory){
-			hasExtenedMetadata = hasExtenedMetadata = NO;
+			DDLogInfo(@"dir %@", n);
+			[self nilAllFields];
+			DDLogInfo(@"%d %d", hasBasicMetadata, hasExtenedMetadata);
 			return;
 		}
 		hasBasicMetadata   &= n.hasBasicMetadata;
@@ -115,7 +123,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 	
 	DDLogVerbose(@"basic:%d extened %d", hasBasicMetadata, hasExtenedMetadata);
 	if (hasBasicMetadata) [self initfields];
-	
+	else                  [self nilAllFields];
 }
 
 #define SETTER_METHOD_FSN(field,newValue)                                 \
