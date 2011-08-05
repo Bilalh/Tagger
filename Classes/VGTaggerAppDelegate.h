@@ -15,5 +15,6 @@
 }
 
 @property (assign) IBOutlet NSWindow *window;
+@property (readonly) IBOutlet MainController *mainController;
 
 @end

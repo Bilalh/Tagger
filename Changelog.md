@@ -4,9 +4,11 @@ Changelog
 ------------
 Version 0.13
 ------------
+### Features ###
+* Music files (m4a and mp3) can be dragged onto the dock icon to go the directory of the file
 
 ### Bug fixes ###
-* Fixed Warnings
+* Fixed Warnings about missing method
 
 ------------
 Version 0.12 (Fri Aug 05 2011 02:23:54 +0100)

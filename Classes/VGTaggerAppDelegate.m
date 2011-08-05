@@ -18,7 +18,7 @@
 
 
 @implementation VGTaggerAppDelegate
-@synthesize window;
+@synthesize window, mainController;
 
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
@@ -42,6 +42,18 @@
 	
 	// Save
 	[preferences synchronize];
+}
+
+// Handle a file dropped on the dock icon
+- (BOOL)application:(NSApplication *)sender openFile:(NSString *)path
+{
+	NSString *dirPath = ([[path pathExtension ] isEqualToString:@""]) 
+	? path 
+	: [path stringByDeletingLastPathComponent];
+	
+	[self.mainController goToDirectory:[[NSURL alloc] initFileURLWithPath:dirPath]];
+	
+	return YES;
 }
 
 

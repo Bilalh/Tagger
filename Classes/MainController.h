@@ -48,6 +48,8 @@
 
 /// @name Directories 
 
+- (void) goToDirectory:(NSURL*)url;
+
  /**  
   * Changes the current directory if changed by the user and update the gui
   * @param sender the object that called this method

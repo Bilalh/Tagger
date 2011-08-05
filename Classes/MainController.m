@@ -27,7 +27,6 @@ static const NSArray *predefinedDirectories;
 - (void) setPopupMenuIcons;
 
 - (void) backForwordDirectoriesCommon;
-- (void) goToDirectory:(NSURL*)url;
 
 
 /// Change the current directory to the clicked entries
