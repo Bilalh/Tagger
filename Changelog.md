@@ -2,6 +2,13 @@ Changelog
 =========
 
 ------------
+Version 0.13
+------------
+
+### Bug fixes ###
+* Fixed Warnings
+
+------------
 Version 0.12 (Fri Aug 05 2011 02:23:54 +0100)
 ------------
 ### Features ###

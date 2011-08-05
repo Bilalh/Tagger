@@ -9,6 +9,7 @@
 #import "FileSystemNodeCollection.h"
 #import "FileSystemNode.h"
 #import "Tags.h"
+#import "NSImage+bitmapData.h"
 
 #import "DDLog.h"
 static const int ddLogLevel = LOG_LEVEL_INFO;

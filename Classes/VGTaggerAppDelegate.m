@@ -28,6 +28,20 @@
 	[[DDTTYLogger sharedInstance ] setLogFormatter:	[[[PSDDFormatter alloc ] init ] autorelease]];
 	[DDLog addLogger:[DDASLLogger sharedInstance]];
 	[DDLog addLogger:[DDTTYLogger sharedInstance]];
+	
+	// Set the fallback values for preferences
+	[[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"defaults" ofType:@"plist"]]];
+	
+	// Get the users preferences
+	NSUserDefaults *preferences = [[NSUserDefaults standardUserDefaults] retain];
+	
+	NSInteger i = [preferences integerForKey:@"interval"];
+	NSLog(@"i:%ld",i);
+	NSLog(@"test %@", [preferences stringForKey:@"test"]);
+	[preferences setValue:@"testingNot" forKey:@"test"];
+	
+	// Save
+	[preferences synchronize];
 }
 
 

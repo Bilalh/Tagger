@@ -44,6 +44,7 @@
 		9264488B13D773CE0035E693 /* arrowRightBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488913D773CE0035E693 /* arrowRightBlack16.tiff */; };
 		926BDEBD13E4B4220050B45C /* FileSystemNodeCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 926BDEBC13E4B4220050B45C /* FileSystemNodeCollection.m */; };
 		927F56B913DDCFA000274708 /* NumberToTimeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 927F56B813DDCFA000274708 /* NumberToTimeTransformer.m */; };
+		928411AF13EB853600A92F3F /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 928411AE13EB853600A92F3F /* defaults.plist */; };
 		9286164A13D65621001481E5 /* NSString+Numbers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9286164913D65621001481E5 /* NSString+Numbers.m */; };
 		929A4ACE13DA027C00244796 /* Changelog.md in Resources */ = {isa = PBXBuildFile; fileRef = 929A4ACD13DA027C00244796 /* Changelog.md */; };
 		929A4ADA13DA087D00244796 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD113DA087D00244796 /* DDAbstractDatabaseLogger.m */; };
@@ -141,6 +142,7 @@
 		927883C013E06EED00063D28 /* Todo.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = Todo.md; sourceTree = "<group>"; };
 		927F56B713DDCFA000274708 /* NumberToTimeTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberToTimeTransformer.h; sourceTree = "<group>"; };
 		927F56B813DDCFA000274708 /* NumberToTimeTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberToTimeTransformer.m; sourceTree = "<group>"; };
+		928411AE13EB853600A92F3F /* defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaults.plist; sourceTree = "<group>"; };
 		9286164813D65621001481E5 /* NSString+Numbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Numbers.h"; sourceTree = "<group>"; };
 		9286164913D65621001481E5 /* NSString+Numbers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Numbers.m"; sourceTree = "<group>"; };
 		929A4ACD13DA027C00244796 /* Changelog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Changelog.md; sourceTree = "<group>"; };
@@ -251,9 +253,10 @@
 		920660BD13C89845003A3803 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				928411AE13EB853600A92F3F /* defaults.plist */,
+				9259102713E10A6C0033CB7B /* tags.webloc */,
 				920660BE13C89845003A3803 /* Test Files */,
 				9264488713D773CE0035E693 /* Images */,
-				9259102713E10A6C0033CB7B /* tags.webloc */,
 				920660B813C89845003A3803 /* Linked Frameworks */,
 			);
 			path = Resources;
@@ -544,6 +547,7 @@
 				929A4ACE13DA027C00244796 /* Changelog.md in Resources */,
 				9259102813E10A6C0033CB7B /* tags.webloc in Resources */,
 				92B38C5613E7804100EDF45F /* RenameDisplay.xib in Resources */,
+				928411AF13EB853600A92F3F /* defaults.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
