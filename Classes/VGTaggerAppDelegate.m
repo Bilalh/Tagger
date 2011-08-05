@@ -51,6 +51,7 @@
 	? path 
 	: [path stringByDeletingLastPathComponent];
 	
+	[self.mainController showWindow:self];
 	[self.mainController goToDirectory:[[NSURL alloc] initFileURLWithPath:dirPath]];
 	
 	return YES;
