@@ -1,6 +1,7 @@
 Readme
 ======
 
+
 -------
 Install
 -------
@@ -11,6 +12,7 @@ Build the release version then run the following command on it.
 --------------
 Libraries Used
 --------------
+* MacRuby
 * TagLib 
 * BWHyperlinkButtonCell from BWToolKit
 * Lumberjack

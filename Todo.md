@@ -24,7 +24,6 @@ Images
 -------
 * find image metadata
 * Don't allways use jpeg as the mine type.
-* Better image equals method for NSImage (defualt just does pointer comparing).
 
 Renaming
 --------
@@ -44,3 +43,4 @@ Done
 * Allow muti row editing
 * Muti row selection can be non constive rows, handle this.
 * Some means of showing that the values for selected rows are different.
+* Better image equals method for NSImage (defualt just does pointer comparing).

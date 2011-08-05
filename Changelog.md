@@ -19,6 +19,7 @@ Version 0.12
 * Fixed a bug where selection was not consecutive.
 * Fixed a bug with update data when changing directory
 * Field are now not editable when selecting a directory
+* Compares images properly which shows if the selected files has the same image
 
 ------------
 Version 0.11 (Tue Aug 02 2011 03:21:21 +0100)

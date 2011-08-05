@@ -50,9 +50,9 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 -(void) initfields
 {
 	writeToAll = false;
-	const Tags *tags= [[tagsArray objectAtIndex:0] tags];
+	const Tags *tags0= [[tagsArray objectAtIndex:0] tags];
 	for (NSString *s in fieldNames) {
-		[self setValue:[tags valueForKey:s] forKey:s];
+		[self setValue:[tags0 valueForKey:s] forKey:s];
 	}
 	
 	for (FileSystemNode *n in tagsArray) {
@@ -61,6 +61,16 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 		for (NSString *key in fieldNames) {
 			id mine = [self valueForKey:key];
 			if (!mine) continue;
+			
+			// Check if the images are equal
+			if ([key isEqualToString:@"cover"]){
+				NSData *imageData = [[tags valueForKey:key]  bitmapDataForType:NSJPEGFileType];
+				if (![imageData isEqualToData:[mine bitmapDataForType:NSJPEGFileType]]){
+					[self setValue:NSMultipleValuesMarker forKey:key];
+				}
+				continue;
+			}
+			
 			if ([[tags valueForKey:key] isNotEqualTo:mine]){
 				[self setValue:NSMultipleValuesMarker forKey:key];
 			}
