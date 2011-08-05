@@ -314,10 +314,10 @@
 		922E35DB13C89C51003C5913 /* English.lproj */ = {
 			isa = PBXGroup;
 			children = (
+				922E35DC13C89C51003C5913 /* InfoPlist.strings */,
 				92B38C5413E7804100EDF45F /* RenameDisplay.xib */,
 				92364F7413C8DE5200044153 /* VgmdbSearch.xib */,
 				920660A713C89845003A3803 /* VgmdbDisplay.xib */,
-				922E35DC13C89C51003C5913 /* InfoPlist.strings */,
 				922E35DE13C89C51003C5913 /* MainMenu.xib */,
 			);
 			path = English.lproj;
