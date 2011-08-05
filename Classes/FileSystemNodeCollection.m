@@ -62,7 +62,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 			id mine = [self valueForKey:key];
 			if (!mine) continue;
 			if ([[tags valueForKey:key] isNotEqualTo:mine]){
-				[self setValue:nil forKey:key];
+				[self setValue:NSMultipleValuesMarker forKey:key];
 			}
 		}
 	}
@@ -112,9 +112,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 	
 	for (FileSystemNode *n in tagsArray) {
 		if (n.isDirectory){
-			DDLogInfo(@"dir %@", n);
 			[self nilAllFields];
-			DDLogInfo(@"%d %d", hasBasicMetadata, hasExtenedMetadata);
 			return;
 		}
 		hasBasicMetadata   &= n.hasBasicMetadata;

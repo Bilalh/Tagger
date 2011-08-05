@@ -13,10 +13,12 @@ Version 0.12
 * Refresh menu item
 * Reveal in Finder menu item
 * Reopen menu item which opens the last open window
+* Shows that the selcted tracks have different values
 
 ### Bug fixes ###
 * Fixed a bug where selection was not consecutive.
 * Fixed a bug with update data when changing directory
+* Field are now not editable when selecting a directory
 
 ------------
 Version 0.11 (Tue Aug 02 2011 03:21:21 +0100)
