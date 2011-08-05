@@ -3,9 +3,9 @@ TODO
 
 FIXME
 -----
-* Some means of showing that the values for selected rows are different.
 * Disble buttons that can not be used.
 * Turn of the hard code values in vgmdb auto tagger.
+* Defaults Saving 
 
 Deploy
 -------
@@ -19,10 +19,6 @@ Errors
 FileNames
 ---------
 Better message when names clash.
-
-GUI
----
-* Some means of showing that the values for selected rows are different
 
 Images
 -------
@@ -47,3 +43,4 @@ Done
 ----
 * Allow muti row editing
 * Muti row selection can be non constive rows, handle this.
+* Some means of showing that the values for selected rows are different.
