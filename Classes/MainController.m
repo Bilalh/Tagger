@@ -34,7 +34,7 @@ static const NSArray *predefinedDirectories;
 @end
 
 @implementation MainController
-@synthesize window, directoryStack, currentNodes,forwardStack, selectedNodeindex, parentNodes;
+@synthesize window, directoryStack, currentNodes,forwardStack, selectedNodeindex, parentNodes, table;
 
 
 #pragma mark -
@@ -123,7 +123,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (void)tableViewSelectionDidChange:(NSNotification *)aNotification
 {
-	DDLogInfo(@"chnaged");
 	const NSInteger selectedRow = [table selectedRow];
 
 	if (selectedRow == -1){

@@ -19,8 +19,7 @@
 @private
 	
 	IBOutlet NSPopUpButton *popup;
-	IBOutlet NSTableView   *table;
-
+	IBOutlet NSTableView *table;
 	VgmdbController         *vgc;
 	DisplayController       *ssc;
 	RenamingFilesController *rfc;
@@ -45,6 +44,7 @@
 /// The parent nodes of the current directory.
 @property (assign) NSMutableArray *parentNodes;
 
+@property (assign) IBOutlet NSTableView *table;
 
 /// @name Directories 
 

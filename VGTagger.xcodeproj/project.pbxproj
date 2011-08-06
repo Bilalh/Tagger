@@ -82,7 +82,7 @@
 		920660A413C89845003A3803 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		920660A513C89845003A3803 /* MainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 		920660A613C89845003A3803 /* MainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainController.m; sourceTree = "<group>"; };
-		920660A713C89845003A3803 /* VgmdbDisplay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VgmdbDisplay.xib; sourceTree = "<group>"; };
+		920660A713C89845003A3803 /* VgmdbDisplay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VgmdbDisplay.xib; path = ../English.lproj/VgmdbDisplay.xib; sourceTree = "<group>"; };
 		920660A813C89845003A3803 /* DisplayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayController.h; sourceTree = "<group>"; };
 		920660A913C89845003A3803 /* DisplayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayController.m; sourceTree = "<group>"; };
 		920660AA13C89845003A3803 /* Tags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tags.h; sourceTree = "<group>"; };
@@ -257,6 +257,7 @@
 		920660BA13C89845003A3803 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				922E35DC13C89C51003C5913 /* InfoPlist.strings */,
 				92C4465F13E0BF830038F817 /* BWToolKitEdits */,
 				92A6808313EC7B130067DD5F /* Preferences */,
 				927F56C313DDD24600274708 /* Unused */,
@@ -329,19 +330,6 @@
 			path = test3_files;
 			sourceTree = "<group>";
 		};
-		922E35DB13C89C51003C5913 /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				922E35DC13C89C51003C5913 /* InfoPlist.strings */,
-				92B38C5413E7804100EDF45F /* RenameDisplay.xib */,
-				92364F7413C8DE5200044153 /* VgmdbSearch.xib */,
-				920660A713C89845003A3803 /* VgmdbDisplay.xib */,
-				922E35DE13C89C51003C5913 /* MainMenu.xib */,
-			);
-			name = xib;
-			path = English.lproj;
-			sourceTree = "<group>";
-		};
 		92364F7813C8E0C900044153 /* TagLib */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,6 +352,8 @@
 		92364F7913C8E0E900044153 /* Vgmdb */ = {
 			isa = PBXGroup;
 			children = (
+				920660A713C89845003A3803 /* VgmdbDisplay.xib */,
+				92364F7413C8DE5200044153 /* VgmdbSearch.xib */,
 				920660AC13C89845003A3803 /* Vgmdb.rb */,
 				920660A813C89845003A3803 /* DisplayController.h */,
 				920660A913C89845003A3803 /* DisplayController.m */,
@@ -378,6 +368,7 @@
 		9244575313EB26BF00CDF0CF /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				922E35DE13C89C51003C5913 /* MainMenu.xib */,
 				920660A513C89845003A3803 /* MainController.h */,
 				920660A613C89845003A3803 /* MainController.m */,
 				920660AF13C89845003A3803 /* VGTaggerAppDelegate.h */,
@@ -390,7 +381,6 @@
 			isa = PBXGroup;
 			children = (
 				920660A313C89845003A3803 /* Classes */,
-				922E35DB13C89C51003C5913 /* xib */,
 				920660BD13C89845003A3803 /* Resources */,
 				920660BA13C89845003A3803 /* Other Sources */,
 				925CE81E13C3BD6D009D6D94 /* Products */,
@@ -482,6 +472,7 @@
 		92B38C5013E760C400EDF45F /* Tagging */ = {
 			isa = PBXGroup;
 			children = (
+				92B38C5413E7804100EDF45F /* RenameDisplay.xib */,
 				92B38C5113E7610B00EDF45F /* RenamingFilesController.h */,
 				92B38C5213E7610B00EDF45F /* RenamingFilesController.m */,
 			);
@@ -664,6 +655,7 @@
 				922E35DD13C89C51003C5913 /* English */,
 			);
 			name = InfoPlist.strings;
+			path = ../English.lproj;
 			sourceTree = "<group>";
 		};
 		922E35DE13C89C51003C5913 /* MainMenu.xib */ = {
@@ -672,6 +664,7 @@
 				922E35DF13C89C51003C5913 /* English */,
 			);
 			name = MainMenu.xib;
+			path = ../English.lproj;
 			sourceTree = "<group>";
 		};
 		92364F7413C8DE5200044153 /* VgmdbSearch.xib */ = {
@@ -680,6 +673,7 @@
 				92364F7513C8DE5200044153 /* English */,
 			);
 			name = VgmdbSearch.xib;
+			path = ../English.lproj;
 			sourceTree = "<group>";
 		};
 		92B38C5413E7804100EDF45F /* RenameDisplay.xib */ = {
@@ -688,6 +682,7 @@
 				92B38C5513E7804100EDF45F /* English */,
 			);
 			name = RenameDisplay.xib;
+			path = ../English.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

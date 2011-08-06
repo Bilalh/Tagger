@@ -4,16 +4,32 @@
 //
 
 #import "GeneralPreferencesViewController.h"
+#import "MainController.h"
+
+#import "DDLog.h"
+static const int ddLogLevel = LOG_LEVEL_INFO;
 
 @implementation GeneralPreferencesViewController
+@synthesize tableColumns;
 
-- (id)init
+#pragma mark - init
+
+- (id)initWithMainController:(MainController*)aMainController
 {
-    return [super initWithNibName:@"GeneralPreferencesView" bundle:nil];
+	self = [super initWithNibName:@"GeneralPreferencesView" bundle:nil];
+    if (self) {
+		mainController = aMainController;
+		tableColumns = [[NSMutableDictionary alloc] init];
+		for (NSTableColumn *c in [mainController.table tableColumns]) {
+			[tableColumns setValue:c forKey: [c identifier]];
+		}
+		DDLogInfo(@"cols %@", tableColumns);
+    }
+    return self;
 }
 
-#pragma mark -
-#pragma mark MASPreferencesViewController
+
+#pragma mark - MASPreferencesViewController
 
 - (NSString *)toolbarItemIdentifier
 {

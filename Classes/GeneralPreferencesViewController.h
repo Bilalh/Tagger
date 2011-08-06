@@ -5,5 +5,16 @@
 
 #import "MASPreferencesViewController.h"
 
-@interface GeneralPreferencesViewController : NSViewController <MASPreferencesViewController>
+@class MainController;
+
+@interface GeneralPreferencesViewController : NSViewController <MASPreferencesViewController>{
+@private
+	MainController *mainController;
+	NSDictionary *tableColumns;
+}
+
+- (id)initWithMainController:(MainController*)mainController;
+
+@property (assign) NSDictionary *tableColumns;
+
 @end

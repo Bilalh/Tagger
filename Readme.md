@@ -17,3 +17,6 @@ Libraries Used
 * BWHyperlinkButtonCell from BWToolKit
 * Lumberjack
 * MASPreferencesViewController
+
+
+[[table tableColumnWithIdentifier:@"title"] setHidden:false];

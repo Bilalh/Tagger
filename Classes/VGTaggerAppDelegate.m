@@ -70,7 +70,7 @@
 {
     if (_preferencesWindowController == nil)
     {
-        NSViewController *generalViewController = [[GeneralPreferencesViewController alloc] init];
+        NSViewController *generalViewController = [[GeneralPreferencesViewController alloc] initWithMainController:mainController];
         NSViewController *advancedViewController = [[AdvancedPreferencesViewController alloc] init];
         NSArray *controllers = [[NSArray alloc] initWithObjects:generalViewController, advancedViewController, nil];
         [generalViewController release];
