@@ -558,7 +558,7 @@
 										<object class="NSButtonCell" key="NSCell" id="367121181">
 											<int key="NSCellFlags">-2080244224</int>
 											<int key="NSCellFlags2">0</int>
-											<string key="NSContents">Channel</string>
+											<string key="NSContents">Channels</string>
 											<reference key="NSSupport" ref="519526790"/>
 											<reference key="NSControlView" ref="473084345"/>
 											<int key="NSButtonFlags">1211912703</int>
@@ -630,7 +630,7 @@
 										<object class="NSButtonCell" key="NSCell" id="769502409">
 											<int key="NSCellFlags">-2080244224</int>
 											<int key="NSCellFlags2">0</int>
-											<string key="NSContents">Total Disc</string>
+											<string key="NSContents">Total Discs</string>
 											<reference key="NSSupport" ref="519526790"/>
 											<reference key="NSControlView" ref="124830518"/>
 											<int key="NSButtonFlags">1211912703</int>
@@ -768,26 +768,6 @@
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: tableColumns.filename.hidden</string>
-						<reference key="source" ref="382281324"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="382281324"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: tableColumns.filename.hidden</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">tableColumns.filename.hidden</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSNegateBoolean</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">204</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: tableColumns.filename.hidden</string>
 						<reference key="source" ref="1028822470"/>
 						<reference key="destination" ref="1001"/>
 						<object class="NSNibBindingConnector" key="connector">
@@ -804,366 +784,6 @@
 						</object>
 					</object>
 					<int key="connectionID">219</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: tableColumns.filename.hidden</string>
-						<reference key="source" ref="242711685"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="242711685"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: tableColumns.filename.hidden</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">tableColumns.filename.hidden</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSNegateBoolean</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">222</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: tableColumns.filename.hidden</string>
-						<reference key="source" ref="373917667"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="373917667"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: tableColumns.filename.hidden</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">tableColumns.filename.hidden</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSNegateBoolean</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">225</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: tableColumns.filename.hidden</string>
-						<reference key="source" ref="894003408"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="894003408"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: tableColumns.filename.hidden</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">tableColumns.filename.hidden</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSNegateBoolean</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">231</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: tableColumns.filename.hidden</string>
-						<reference key="source" ref="56919723"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="56919723"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: tableColumns.filename.hidden</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">tableColumns.filename.hidden</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSNegateBoolean</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">234</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: tableColumns.filename.hidden</string>
-						<reference key="source" ref="455182739"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="455182739"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: tableColumns.filename.hidden</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">tableColumns.filename.hidden</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSNegateBoolean</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">237</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: tableColumns.filename.hidden</string>
-						<reference key="source" ref="91546697"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="91546697"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: tableColumns.filename.hidden</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">tableColumns.filename.hidden</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSNegateBoolean</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">240</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: tableColumns.filename.hidden</string>
-						<reference key="source" ref="175088559"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="175088559"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: tableColumns.filename.hidden</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">tableColumns.filename.hidden</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSNegateBoolean</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">243</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: tableColumns.filename.hidden</string>
-						<reference key="source" ref="438930919"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="438930919"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: tableColumns.filename.hidden</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">tableColumns.filename.hidden</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSNegateBoolean</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">246</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: tableColumns.filename.hidden</string>
-						<reference key="source" ref="1000534250"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="1000534250"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: tableColumns.filename.hidden</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">tableColumns.filename.hidden</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSNegateBoolean</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">249</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: tableColumns.filename.hidden</string>
-						<reference key="source" ref="306301728"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="306301728"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: tableColumns.filename.hidden</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">tableColumns.filename.hidden</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSNegateBoolean</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">254</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: tableColumns.filename.hidden</string>
-						<reference key="source" ref="593174481"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="593174481"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: tableColumns.filename.hidden</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">tableColumns.filename.hidden</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSNegateBoolean</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">255</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: tableColumns.filename.hidden</string>
-						<reference key="source" ref="695900185"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="695900185"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: tableColumns.filename.hidden</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">tableColumns.filename.hidden</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSNegateBoolean</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">260</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: tableColumns.filename.hidden</string>
-						<reference key="source" ref="667598586"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="667598586"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: tableColumns.filename.hidden</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">tableColumns.filename.hidden</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSNegateBoolean</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">261</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: tableColumns.filename.hidden</string>
-						<reference key="source" ref="473084345"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="473084345"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: tableColumns.filename.hidden</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">tableColumns.filename.hidden</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSNegateBoolean</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">266</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: tableColumns.filename.hidden</string>
-						<reference key="source" ref="470514813"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="470514813"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: tableColumns.filename.hidden</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">tableColumns.filename.hidden</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSNegateBoolean</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">267</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: tableColumns.filename.hidden</string>
-						<reference key="source" ref="234308297"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="234308297"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: tableColumns.filename.hidden</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">tableColumns.filename.hidden</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSNegateBoolean</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">273</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: tableColumns.filename.hidden</string>
-						<reference key="source" ref="124830518"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="124830518"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: tableColumns.filename.hidden</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">tableColumns.filename.hidden</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSNegateBoolean</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">278</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: tableColumns.filename.hidden</string>
-						<reference key="source" ref="402382228"/>
-						<reference key="destination" ref="1001"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="402382228"/>
-							<reference key="NSDestination" ref="1001"/>
-							<string key="NSLabel">value: tableColumns.filename.hidden</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">tableColumns.filename.hidden</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSNegateBoolean</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">279</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -1204,6 +824,386 @@
 						</object>
 					</object>
 					<int key="connectionID">287</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: tableColumns.artist.hidden</string>
+						<reference key="source" ref="382281324"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="382281324"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: tableColumns.artist.hidden</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">tableColumns.artist.hidden</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">289</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: tableColumns.albumArtist.hidden</string>
+						<reference key="source" ref="242711685"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="242711685"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: tableColumns.albumArtist.hidden</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">tableColumns.albumArtist.hidden</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">291</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: tableColumns.composer.hidden</string>
+						<reference key="source" ref="373917667"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="373917667"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: tableColumns.composer.hidden</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">tableColumns.composer.hidden</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">293</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: tableColumns.genre.hidden</string>
+						<reference key="source" ref="894003408"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="894003408"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: tableColumns.genre.hidden</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">tableColumns.genre.hidden</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">295</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: tableColumns.grouping.hidden</string>
+						<reference key="source" ref="438930919"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="438930919"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: tableColumns.grouping.hidden</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">tableColumns.grouping.hidden</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">297</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: tableColumns.year.hidden</string>
+						<reference key="source" ref="1000534250"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="1000534250"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: tableColumns.year.hidden</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">tableColumns.year.hidden</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">299</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: tableColumns.length.hidden</string>
+						<reference key="source" ref="306301728"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="306301728"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: tableColumns.length.hidden</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">tableColumns.length.hidden</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">301</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: tableColumns.bpm.hidden</string>
+						<reference key="source" ref="455182739"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="455182739"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: tableColumns.bpm.hidden</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">tableColumns.bpm.hidden</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">303</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: tableColumns.sampleRate.hidden</string>
+						<reference key="source" ref="667598586"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="667598586"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: tableColumns.sampleRate.hidden</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">tableColumns.sampleRate.hidden</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">305</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: tableColumns.bitrate.hidden</string>
+						<reference key="source" ref="695900185"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="695900185"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: tableColumns.bitrate.hidden</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">tableColumns.bitrate.hidden</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">307</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: tableColumns.size.hidden</string>
+						<reference key="source" ref="91546697"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="91546697"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: tableColumns.size.hidden</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">tableColumns.size.hidden</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">309</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: tableColumns.kind.hidden</string>
+						<reference key="source" ref="470514813"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="470514813"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: tableColumns.kind.hidden</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">tableColumns.kind.hidden</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">311</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: tableColumns.channels.hidden</string>
+						<reference key="source" ref="473084345"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="473084345"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: tableColumns.channels.hidden</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">tableColumns.channels.hidden</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">313</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: tableColumns.track.hidden</string>
+						<reference key="source" ref="175088559"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="175088559"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: tableColumns.track.hidden</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">tableColumns.track.hidden</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">315</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: tableColumns.disc.hidden</string>
+						<reference key="source" ref="402382228"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="402382228"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: tableColumns.disc.hidden</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">tableColumns.disc.hidden</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">317</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: tableColumns.totalTracks.hidden</string>
+						<reference key="source" ref="234308297"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="234308297"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: tableColumns.totalTracks.hidden</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">tableColumns.totalTracks.hidden</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">319</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: tableColumns.trackPair.hidden</string>
+						<reference key="source" ref="56919723"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="56919723"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: tableColumns.trackPair.hidden</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">tableColumns.trackPair.hidden</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">323</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: tableColumns.totalDiscs.hidden</string>
+						<reference key="source" ref="124830518"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="124830518"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: tableColumns.totalDiscs.hidden</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">tableColumns.totalDiscs.hidden</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">326</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: tableColumns.discPair.hidden</string>
+						<reference key="source" ref="593174481"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="593174481"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: tableColumns.discPair.hidden</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">tableColumns.discPair.hidden</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">328</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1786,7 +1786,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">287</int>
+			<int key="maxID">328</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
