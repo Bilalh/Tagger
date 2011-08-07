@@ -5,26 +5,26 @@ Changelog
 Version 0.14
 ------------
 ### Features ###
-
+* Added a button for searching vgmdb.
 
 ------------
 Version 0.13 (Sun Aug 07 2011 23:39:44 +0100)
 ------------
 ### Features ###
-* Music files (m4a and mp3) can be dragged onto the dock icon to go the directory of the file
-* Can drag directory but now allows all files 
-* Size column
-* Tags can now do bitrate channels sample rate and kind 
-* FileSystemNode can now tell it size
-* Disc and track pairs
-* Prefs for hiding columns
-* Default values
-* Prefs for setting start directory
-  * Allows using the current directory as the start directory
+* Music files (m4a and mp3) can be dragged onto the dock icon to go the directory of the file.
+* Can drag directory but now allows all files.
+* Size column.
+* Tags can now do bitrate channels sample rate and kind.
+* FileSystemNode can now tell it size.
+* Disc and track pairs.
+* Prefs for hiding columns.
+* Default values.
+* Prefs for setting start directory.
+  * Allows using the current directory as the start directory.
 
 ### Bug fixes ###
-* Fixed Warnings about missing method
-* Fixed a bug where no window was open
+* Fixed Warnings about missing method.
+* Fixed a bug where no window was open.
 
 
 ------------
@@ -36,16 +36,16 @@ Version 0.12 (Fri Aug 05 2011 02:23:54 +0100)
 * Shortcuts for back and forword.
 * Shortcuts for parent directory.
 * Menu and shortcuts for common directories.
-* Refresh menu item
-* Reveal in Finder menu item
-* Reopen menu item which opens the last open window
-* Shows that the selcted tracks have different values
+* Refresh menu item.
+* Reveal in Finder menu item.
+* Reopen menu item which opens the last open window.
+* Shows that the selcted tracks have different values.
 
 ### Bug fixes ###
 * Fixed a bug where selection was not consecutive.
-* Fixed a bug with update data when changing directory
-* Field are now not editable when selecting a directory
-* Compares images properly which shows if the selected files has the same image
+* Fixed a bug with update data when changing directory.
+* Field are now not editable when selecting a directory.
+* Compares images properly which shows if the selected files has the same image.
 
 ------------
 Version 0.11 (Tue Aug 02 2011 03:21:21 +0100)
