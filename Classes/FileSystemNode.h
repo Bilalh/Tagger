@@ -71,5 +71,9 @@
 /// YES if the file has extend metadata info.
 @property(readonly)         BOOL      hasExtenedMetadata;
 
+/// Size of the node
+@property(readonly)         NSNumber  *size;
+
+
 
 @end

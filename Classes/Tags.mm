@@ -10,7 +10,6 @@
 #import "TagStructs.h"
 #import "NSString+Convert.h"
 
-#include "TagConverter.h"
 #include <tag.h>
 
 #import "DDLog.h"
@@ -24,8 +23,9 @@ static const NSSet *tokensSet;
 
 using namespace TagLib;
 @implementation Tags
-@synthesize title, artist, album, comment, genre, year, track, length;
+@synthesize title, artist, album, comment, genre, year, track;
 @synthesize albumArtist, composer, grouping, bpm, totalTracks, disc, totalDiscs, compilation, url, cover;
+@synthesize length, bitrate, channels, sampleRate, kind;
 
 #pragma mark -
 #pragma mark Init
@@ -77,8 +77,12 @@ using namespace TagLib;
 	i = t->track();
 	track   = i ? [NSNumber numberWithUnsignedInt:i] :nil;
 	
-	length = [NSNumber numberWithInt: data->file->audioProperties()->length()];
 	
+	length     = [NSNumber numberWithInt: data->file->audioProperties()->length()];
+	sampleRate = [NSNumber numberWithInt: data->file->audioProperties()->sampleRate()];
+	bitrate    = [NSNumber numberWithInt: data->file->audioProperties()->bitrate()];
+	channels   = [NSNumber numberWithInt: data->file->audioProperties()->channels()];
+
 }
 
 

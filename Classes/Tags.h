@@ -28,6 +28,8 @@ struct FileData;
 	NSImage *cover;
 	NSBitmapImageRep *coverRep;
 	
+	NSString *kind;
+	
 	// Tracks may be handed by the subclass
 	NSNumber *track;
 	// MP3 comment need to be handled the subclass
@@ -75,7 +77,15 @@ struct FileData;
 /// The track# of the file
 @property (assign) NSNumber *track; 
 /// The length of the file in seconds
-@property (assign,readonly) NSNumber *length; 
+@property (readonly) NSNumber *length; 
+/// The bitrate of the file in kb/s
+@property (readonly) NSNumber *bitrate; 
+/// The sample rate of the file
+@property (readonly) NSNumber *sampleRate;
+/// The bitrate of the file in kb/s
+@property (readonly) NSNumber *channels;
+/// The kind of the file
+@property (assign) NSString *kind;
 
 /// @name Finding Extra Metadata 
 

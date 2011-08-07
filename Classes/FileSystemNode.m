@@ -12,7 +12,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 @end
 
 @implementation FileSystemNode
-@synthesize URL = _url, tags, hasBasicMetadata, hasExtenedMetadata;
+@synthesize URL = _url, tags, hasBasicMetadata, hasExtenedMetadata, size;
 @dynamic displayName, children, isDirectory, icon, labelColor;
 
 #pragma mark -
@@ -89,8 +89,15 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
     return [value boolValue];
 }
 
-// We are equal if we represent the same URL. This allows children to reuse the same instances.
 
+- (NSNumber*)size{
+    id value = nil;
+    [_url getResourceValue:&value forKey:NSURLFileAllocatedSizeKey error:nil];
+    return value;
+}
+
+
+// We are equal if we represent the same URL. This allows children to reuse the same instances.
 - (BOOL)isEqual:(id)object {
     if ([object isKindOfClass:[FileSystemNode class]]) {
         FileSystemNode *other = (FileSystemNode *)object;

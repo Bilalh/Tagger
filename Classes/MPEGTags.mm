@@ -62,6 +62,7 @@ using namespace MPEGFields;
 		data->f->mpeg = new MPEG::File([filename UTF8String]);
 		data->file = data->f->mpeg;
 		[self initFields];
+		kind = @"MP3";
     }
     
     return self;	

@@ -28,6 +28,7 @@ static const NSArray *predefinedDirectories;
 
 - (void) backForwordDirectoriesCommon;
 
+- (NSString *)stringFromFileSize:(NSInteger)size;
 
 /// Change the current directory to the clicked entries
 - (IBAction) onClick:(id)sender;
@@ -77,6 +78,22 @@ static const NSArray *predefinedDirectories;
     return [[[directoryStack lastObject] children] count];
 }
 
+
+- (NSString *)stringFromFileSize:(NSInteger)size
+{
+	double floatSize = size;
+	if (floatSize<1023)
+		return([NSString stringWithFormat:@"%zd bytes",size]);
+	floatSize = floatSize / 1024;
+	if (floatSize<1023)
+		return([NSString stringWithFormat:@"%1.1lf KB",floatSize]);
+	floatSize = floatSize / 1024;
+	if (floatSize<1023)
+		return([NSString stringWithFormat:@"%1.1lf MB",floatSize]);
+	floatSize = floatSize / 1024;	
+	return([NSString stringWithFormat:@"%1.1lf GB",floatSize]);
+}
+
 - (id)          tableView:(NSTableView *)aTableView 
 objectValueForTableColumn:(NSTableColumn *)aTableColumn 
 					  row:(NSInteger)rowIndex 
@@ -84,10 +101,12 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSArray *children = [[directoryStack lastObject] children];
 	FileSystemNode *node = [children objectAtIndex:rowIndex];
 	
+	
 	if ( [[aTableColumn identifier] isEqualToString:@"filename"] ){
 		return [node displayName];
-		
-	}else if([node isDirectory]){
+	}else if ([[aTableColumn identifier] isEqualToString:@"size"]){
+		return [self stringFromFileSize:[[node size] integerValue]] ;
+	}else if ([node isDirectory]){
 		return @"";
 	}
 	

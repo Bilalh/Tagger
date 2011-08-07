@@ -7,6 +7,10 @@ Version 0.13
 ### Features ###
 * Music files (m4a and mp3) can be dragged onto the dock icon to go the directory of the file
 * Can drag directory but now allows all files 
+* Size column
+* Tags can now do bitrate channels sample rate and kind 
+* FileSystemNode can now tell it size
+
 
 ### Bug fixes ###
 * Fixed Warnings about missing method
