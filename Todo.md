@@ -10,7 +10,6 @@ FIXME
 Deploy
 -------
 * Auto embed macruby.
-* Turn of the hard code values in auto tagger
 
 Errors
 ------
@@ -18,12 +17,13 @@ Errors
 
 FileNames
 ---------
-Better message when names clash.
+* Better message when names clash.
 
 Images
 -------
 * find image metadata
 * Don't allways use jpeg as the mine type.
+* Image dragging
 
 Renaming
 --------

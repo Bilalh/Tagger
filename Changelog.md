@@ -12,6 +12,8 @@ Version 0.13
 * FileSystemNode can now tell it size
 * Disc and track pairs
 * Prefs for hiding columns
+* Default values
+* Prefs for setting start directory
 
 ### Bug fixes ###
 * Fixed Warnings about missing method

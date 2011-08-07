@@ -403,9 +403,13 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 {
 	directoryStack = [[NSMutableArray alloc] init];
 	forwardStack   = [[NSMutableArray alloc] init];
-
+	
+	NSLog(@"url %@", [[NSUserDefaults standardUserDefaults] URLForKey:@"startUrl"]);
 	FileSystemNode *currentDirectory = [[FileSystemNode alloc] initWithURL:
-										[NSURL fileURLWithPath:@"/Users/bilalh/Movies/add/start/Atelier Meruru OST/"]];
+										[[NSUserDefaults standardUserDefaults] URLForKey:@"startUrl"]];
+//	FileSystemNode *currentDirectory = [[FileSystemNode alloc] initWithURL:
+//										[NSURL fileURLWithPath:[@"~/Movies/add/start/Atelier Meruru OST/" 
+//																stringByExpandingTildeInPath]]];
 	[directoryStack push:currentDirectory];
 	
 	currentNodes      = [[FileSystemNodeCollection alloc] init];
@@ -427,6 +431,10 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 + (void)initialize
 {
+	[[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithContentsOfFile:
+															 [[NSBundle mainBundle] pathForResource:@"defaults" ofType:@"plist"]]];	
+	[[NSUserDefaults standardUserDefaults]  synchronize];
+	
 	predefinedDirectories = [[NSArray alloc] initWithObjects:
 							 [NSURL fileURLWithPath:[@"/" stringByExpandingTildeInPath] 
 										isDirectory:YES],

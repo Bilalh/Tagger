@@ -29,6 +29,16 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 }
 
 
+- (IBAction) open:(id)sender
+{
+	NSOpenPanel *op = [NSOpenPanel openPanel];
+	[op setCanChooseFiles:NO];
+	[op setCanChooseDirectories:YES];
+    if ([op runModal] != NSOKButton) return;    
+	[[NSUserDefaults standardUserDefaults] setURL:[op URL] forKey:@"startUrl"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+} 
+
 #pragma mark - MASPreferencesViewController
 
 - (NSString *)toolbarItemIdentifier

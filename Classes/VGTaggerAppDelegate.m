@@ -24,7 +24,6 @@
 @implementation VGTaggerAppDelegate
 @synthesize window, mainController, preferencesWindowController;
 
-
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {	
 	NSString *path = [[NSBundle mainBundle] pathForResource:@"Vgmdb" ofType:@"rb"];
@@ -34,21 +33,7 @@
 	[DDLog addLogger:[DDTTYLogger sharedInstance]];
 	
 	// Set the fallback values for preferences
-	[[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"defaults" ofType:@"plist"]]];
-	
-	// Get the users preferences
-	NSUserDefaults *preferences = [[NSUserDefaults standardUserDefaults] retain];
-	
-	NSInteger i = [preferences integerForKey:@"interval"];
-	NSLog(@"i:%ld",i);
-	NSLog(@"test %@", [preferences stringForKey:@"test"]);
-	[preferences setValue:@"testingNot" forKey:@"test"];
-	
-	// Save
-	[preferences synchronize];
 }
-
-
 
 
 // Handle a file dropped on the dock icon

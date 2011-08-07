@@ -693,7 +693,7 @@
 						<reference key="NSNextKeyView" ref="391422021"/>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="648926228">
-							<int key="NSCellFlags">-1800274367</int>
+							<int key="NSCellFlags">-2070806976</int>
 							<int key="NSCellFlags2">272630784</int>
 							<string key="NSContents"/>
 							<reference key="NSSupport" ref="945722780"/>
@@ -1204,6 +1204,30 @@
 						</object>
 					</object>
 					<int key="connectionID">328</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.startUrl</string>
+						<reference key="source" ref="1052259450"/>
+						<reference key="destination" ref="232777906"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="1052259450"/>
+							<reference key="NSDestination" ref="232777906"/>
+							<string key="NSLabel">value: values.startUrl</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.startUrl</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">331</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">open:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="391422021"/>
+					</object>
+					<int key="connectionID">332</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1786,7 +1810,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">328</int>
+			<int key="maxID">332</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1794,6 +1818,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">GeneralPreferencesViewController</string>
 					<string key="superclassName">NSViewController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">open:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">open:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">open:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/GeneralPreferencesViewController.h</string>

@@ -4,5 +4,7 @@
 <dict>
 	<key>test</key>
 	<string>testing</string>
+	<key>startUrl</key>
+	<string>~/Movies/add/start/Atelier Meruru OST/</string>
 </dict>
 </plist>

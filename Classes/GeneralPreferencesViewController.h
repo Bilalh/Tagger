@@ -14,6 +14,8 @@
 }
 
 - (id)initWithMainController:(MainController*)mainController;
+- (IBAction) open:(id)sender;
+
 
 @property (assign) NSDictionary *tableColumns;
 
