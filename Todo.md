@@ -3,7 +3,6 @@ TODO
 
 FIXME
 -----
-* Defaults e.g path etc 
 * Disble buttons that can not be used.
 * Turn of the hard code values in vgmdb auto tagger.
 
@@ -37,6 +36,10 @@ Later
 -----
 Add flac (should be easy).
 
+Prefs
+-----
+* Disallow the user from changing the tab very quickly 
+
 ----
 Done
 ----
@@ -44,3 +47,4 @@ Done
 * Muti row selection can be non constive rows, handle this.
 * Some means of showing that the values for selected rows are different.
 * Better image equals method for NSImage (defualt just does pointer comparing).
+* Defaults e.g path etc 
