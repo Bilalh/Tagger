@@ -10,6 +10,7 @@ Version 0.13
 * Size column
 * Tags can now do bitrate channels sample rate and kind 
 * FileSystemNode can now tell it size
+* Disc and track pairs
 
 
 ### Bug fixes ###

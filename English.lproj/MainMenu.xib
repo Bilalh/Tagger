@@ -1303,7 +1303,7 @@
 														<object class="NSTableView" id="77340144">
 															<reference key="NSNextResponder" ref="271199575"/>
 															<int key="NSvFlags">256</int>
-															<string key="NSFrameSize">{1524, 390}</string>
+															<string key="NSFrameSize">{1577, 390}</string>
 															<reference key="NSSuperview" ref="271199575"/>
 															<reference key="NSWindow"/>
 															<reference key="NSNextKeyView" ref="795071022"/>
@@ -1311,7 +1311,7 @@
 															<object class="NSTableHeaderView" key="NSHeaderView" id="310651733">
 																<reference key="NSNextResponder" ref="211658329"/>
 																<int key="NSvFlags">256</int>
-																<string key="NSFrameSize">{1524, 17}</string>
+																<string key="NSFrameSize">{1577, 17}</string>
 																<reference key="NSSuperview" ref="211658329"/>
 																<reference key="NSWindow"/>
 																<reference key="NSNextKeyView" ref="712888299"/>
@@ -1359,7 +1359,7 @@
 																		<int key="NSCellFlags">337772096</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
-																		<object class="NSFont" key="NSSupport" id="616083224">
+																		<object class="NSFont" key="NSSupport" id="416819556">
 																			<string key="NSName">LucidaGrande</string>
 																			<double key="NSSize">12</double>
 																			<int key="NSfFlags">16</int>
@@ -1402,7 +1402,7 @@
 																		<int key="NSCellFlags">337772096</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
-																		<reference key="NSSupport" ref="616083224"/>
+																		<reference key="NSSupport" ref="416819556"/>
 																		<reference key="NSControlView" ref="77340144"/>
 																		<reference key="NSBackgroundColor" ref="357894091"/>
 																		<reference key="NSTextColor" ref="687689502"/>
@@ -1437,7 +1437,7 @@
 																		<int key="NSCellFlags">337772096</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
-																		<reference key="NSSupport" ref="616083224"/>
+																		<reference key="NSSupport" ref="416819556"/>
 																		<reference key="NSControlView" ref="77340144"/>
 																		<reference key="NSBackgroundColor" ref="357894091"/>
 																		<reference key="NSTextColor" ref="687689502"/>
@@ -1464,7 +1464,7 @@
 																		<int key="NSCellFlags">337772096</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
-																		<reference key="NSSupport" ref="616083224"/>
+																		<reference key="NSSupport" ref="416819556"/>
 																		<reference key="NSControlView" ref="77340144"/>
 																		<reference key="NSBackgroundColor" ref="357894091"/>
 																		<reference key="NSTextColor" ref="687689502"/>
@@ -1491,7 +1491,7 @@
 																		<int key="NSCellFlags">337772096</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
-																		<reference key="NSSupport" ref="616083224"/>
+																		<reference key="NSSupport" ref="416819556"/>
 																		<reference key="NSControlView" ref="77340144"/>
 																		<reference key="NSBackgroundColor" ref="357894091"/>
 																		<reference key="NSTextColor" ref="687689502"/>
@@ -1518,7 +1518,7 @@
 																		<int key="NSCellFlags">337772096</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
-																		<reference key="NSSupport" ref="616083224"/>
+																		<reference key="NSSupport" ref="416819556"/>
 																		<reference key="NSControlView" ref="77340144"/>
 																		<reference key="NSBackgroundColor" ref="357894091"/>
 																		<reference key="NSTextColor" ref="687689502"/>
@@ -1545,14 +1545,39 @@
 																		<int key="NSCellFlags">337772096</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
-																		<reference key="NSSupport" ref="616083224"/>
+																		<reference key="NSSupport" ref="416819556"/>
 																		<reference key="NSControlView" ref="77340144"/>
 																		<reference key="NSBackgroundColor" ref="357894091"/>
 																		<reference key="NSTextColor" ref="687689502"/>
 																	</object>
 																	<int key="NSResizingMask">3</int>
 																	<bool key="NSIsResizeable">YES</bool>
-																	<bool key="NSIsEditable">YES</bool>
+																	<reference key="NSTableView" ref="77340144"/>
+																</object>
+																<object class="NSTableColumn" id="951059544">
+																	<string key="NSIdentifier">discPair</string>
+																	<double key="NSWidth">50</double>
+																	<double key="NSMinWidth">50</double>
+																	<double key="NSMaxWidth">3.4028234663852886e+38</double>
+																	<object class="NSTableHeaderCell" key="NSHeaderCell">
+																		<int key="NSCellFlags">75628096</int>
+																		<int key="NSCellFlags2">2048</int>
+																		<string key="NSContents">Disc</string>
+																		<reference key="NSSupport" ref="24"/>
+																		<reference key="NSBackgroundColor" ref="851741444"/>
+																		<reference key="NSTextColor" ref="830966565"/>
+																	</object>
+																	<object class="NSTextFieldCell" key="NSDataCell" id="152580770">
+																		<int key="NSCellFlags">337772096</int>
+																		<int key="NSCellFlags2">2048</int>
+																		<string key="NSContents">Text Cell</string>
+																		<reference key="NSSupport" ref="416819556"/>
+																		<reference key="NSControlView" ref="77340144"/>
+																		<reference key="NSBackgroundColor" ref="357894091"/>
+																		<reference key="NSTextColor" ref="687689502"/>
+																	</object>
+																	<int key="NSResizingMask">3</int>
+																	<bool key="NSIsResizeable">YES</bool>
 																	<reference key="NSTableView" ref="77340144"/>
 																</object>
 																<object class="NSTableColumn" id="371929402">
@@ -1572,7 +1597,7 @@
 																		<int key="NSCellFlags">337772096</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
-																		<reference key="NSSupport" ref="616083224"/>
+																		<reference key="NSSupport" ref="416819556"/>
 																		<reference key="NSControlView" ref="77340144"/>
 																		<reference key="NSBackgroundColor" ref="357894091"/>
 																		<reference key="NSTextColor" ref="687689502"/>
@@ -1599,7 +1624,7 @@
 																		<int key="NSCellFlags">337772096</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
-																		<reference key="NSSupport" ref="616083224"/>
+																		<reference key="NSSupport" ref="416819556"/>
 																		<reference key="NSControlView" ref="77340144"/>
 																		<reference key="NSBackgroundColor" ref="357894091"/>
 																		<reference key="NSTextColor" ref="687689502"/>
@@ -1626,7 +1651,7 @@
 																		<int key="NSCellFlags">337772096</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
-																		<reference key="NSSupport" ref="616083224"/>
+																		<reference key="NSSupport" ref="416819556"/>
 																		<reference key="NSControlView" ref="77340144"/>
 																		<reference key="NSBackgroundColor" ref="357894091"/>
 																		<reference key="NSTextColor" ref="687689502"/>
@@ -1653,7 +1678,7 @@
 																		<int key="NSCellFlags">337772096</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
-																		<reference key="NSSupport" ref="616083224"/>
+																		<reference key="NSSupport" ref="416819556"/>
 																		<reference key="NSControlView" ref="77340144"/>
 																		<reference key="NSBackgroundColor" ref="357894091"/>
 																		<reference key="NSTextColor" ref="687689502"/>
@@ -1680,7 +1705,7 @@
 																		<int key="NSCellFlags">337772096</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
-																		<reference key="NSSupport" ref="616083224"/>
+																		<reference key="NSSupport" ref="416819556"/>
 																		<reference key="NSControlView" ref="77340144"/>
 																		<reference key="NSBackgroundColor" ref="357894091"/>
 																		<reference key="NSTextColor" ref="687689502"/>
@@ -1706,7 +1731,7 @@
 																		<int key="NSCellFlags">337772096</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
-																		<reference key="NSSupport" ref="616083224"/>
+																		<reference key="NSSupport" ref="416819556"/>
 																		<reference key="NSControlView" ref="77340144"/>
 																		<reference key="NSBackgroundColor" ref="357894091"/>
 																		<reference key="NSTextColor" ref="687689502"/>
@@ -1733,7 +1758,7 @@
 																		<int key="NSCellFlags">337772096</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
-																		<reference key="NSSupport" ref="616083224"/>
+																		<reference key="NSSupport" ref="416819556"/>
 																		<reference key="NSControlView" ref="77340144"/>
 																		<reference key="NSBackgroundColor" ref="357894091"/>
 																		<reference key="NSTextColor" ref="687689502"/>
@@ -1760,7 +1785,7 @@
 																		<int key="NSCellFlags">337772096</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
-																		<reference key="NSSupport" ref="616083224"/>
+																		<reference key="NSSupport" ref="416819556"/>
 																		<reference key="NSControlView" ref="77340144"/>
 																		<reference key="NSBackgroundColor" ref="357894091"/>
 																		<reference key="NSTextColor" ref="687689502"/>
@@ -1787,7 +1812,7 @@
 																		<int key="NSCellFlags">337772096</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
-																		<reference key="NSSupport" ref="616083224"/>
+																		<reference key="NSSupport" ref="416819556"/>
 																		<reference key="NSControlView" ref="77340144"/>
 																		<reference key="NSBackgroundColor" ref="357894091"/>
 																		<reference key="NSTextColor" ref="687689502"/>
@@ -1814,7 +1839,7 @@
 																		<int key="NSCellFlags">337772096</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
-																		<reference key="NSSupport" ref="616083224"/>
+																		<reference key="NSSupport" ref="416819556"/>
 																		<reference key="NSControlView" ref="77340144"/>
 																		<reference key="NSBackgroundColor" ref="357894091"/>
 																		<reference key="NSTextColor" ref="687689502"/>
@@ -1841,7 +1866,7 @@
 																		<int key="NSCellFlags">337772096</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
-																		<reference key="NSSupport" ref="616083224"/>
+																		<reference key="NSSupport" ref="416819556"/>
 																		<reference key="NSControlView" ref="77340144"/>
 																		<reference key="NSBackgroundColor" ref="357894091"/>
 																		<reference key="NSTextColor" ref="687689502"/>
@@ -1867,7 +1892,7 @@
 																		<int key="NSCellFlags">337772096</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
-																		<reference key="NSSupport" ref="616083224"/>
+																		<reference key="NSSupport" ref="416819556"/>
 																		<reference key="NSControlView" ref="77340144"/>
 																		<reference key="NSBackgroundColor" ref="357894091"/>
 																		<reference key="NSTextColor" ref="687689502"/>
@@ -1893,7 +1918,7 @@
 																		<int key="NSCellFlags">337772096</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
-																		<reference key="NSSupport" ref="616083224"/>
+																		<reference key="NSSupport" ref="416819556"/>
 																		<reference key="NSControlView" ref="77340144"/>
 																		<reference key="NSBackgroundColor" ref="357894091"/>
 																		<reference key="NSTextColor" ref="687689502"/>
@@ -1919,7 +1944,7 @@
 																		<int key="NSCellFlags">337772096</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
-																		<reference key="NSSupport" ref="616083224"/>
+																		<reference key="NSSupport" ref="416819556"/>
 																		<reference key="NSControlView" ref="77340144"/>
 																		<reference key="NSBackgroundColor" ref="357894091"/>
 																		<reference key="NSTextColor" ref="687689502"/>
@@ -1984,7 +2009,7 @@
 													<int key="NSsFlags">1</int>
 													<reference key="NSTarget" ref="560500441"/>
 													<string key="NSAction">_doScroller:</string>
-													<double key="NSPercent">0.39435695538057741</double>
+													<double key="NSPercent">0.38110336081166774</double>
 												</object>
 												<object class="NSClipView" id="211658329">
 													<reference key="NSNextResponder" ref="560500441"/>
@@ -4577,6 +4602,7 @@
 							<reference ref="407447832"/>
 							<reference ref="476220577"/>
 							<reference ref="27491185"/>
+							<reference ref="951059544"/>
 						</object>
 						<reference key="parent" ref="560500441"/>
 					</object>
@@ -6023,6 +6049,20 @@
 						<reference key="object" ref="289696171"/>
 						<reference key="parent" ref="27491185"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1218</int>
+						<reference key="object" ref="951059544"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="152580770"/>
+						</object>
+						<reference key="parent" ref="77340144"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1219</int>
+						<reference key="object" ref="152580770"/>
+						<reference key="parent" ref="951059544"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -6640,7 +6680,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1217</int>
+			<int key="maxID">1219</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

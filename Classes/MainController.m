@@ -108,6 +108,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		return [self stringFromFileSize:[[node size] integerValue]];
 	}else if ([[aTableColumn identifier] isEqualToString:@"trackPair"]){
 		return [NSString stringWithFormat:@"%@ of %@",node.tags.track, node.tags.totalTracks];
+	}else if ([[aTableColumn identifier] isEqualToString:@"discPair"]){
+		return [NSString stringWithFormat:@"%@ of %@",node.tags.disc, node.tags.totalDiscs];
 	}else if ([node isDirectory]){
 		return @"";
 	}
