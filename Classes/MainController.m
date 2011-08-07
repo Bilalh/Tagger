@@ -105,7 +105,9 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	if ( [[aTableColumn identifier] isEqualToString:@"filename"] ){
 		return [node displayName];
 	}else if ([[aTableColumn identifier] isEqualToString:@"size"]){
-		return [self stringFromFileSize:[[node size] integerValue]] ;
+		return [self stringFromFileSize:[[node size] integerValue]];
+	}else if ([[aTableColumn identifier] isEqualToString:@"trackPair"]){
+		return [NSString stringWithFormat:@"%@ of %@",node.tags.track, node.tags.totalTracks];
 	}else if ([node isDirectory]){
 		return @"";
 	}
