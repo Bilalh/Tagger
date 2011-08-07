@@ -5,6 +5,7 @@
 
 #import "GeneralPreferencesViewController.h"
 #import "MainController.h"
+#import "ImageAndTextCell.h"
 
 #import "DDLog.h"
 static const int ddLogLevel = LOG_LEVEL_INFO;
@@ -23,11 +24,21 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 		for (NSTableColumn *c in [mainController.table tableColumns]) {
 			[tableColumns setValue:c forKey: [c identifier]];
 		}
-		DDLogInfo(@"cols %@", tableColumns);
+		DDLogVerbose(@"cols %@", tableColumns);
     }
     return self;
 }
 
+-(void)awakeFromNib
+{
+	NSURL *url = 	[[NSUserDefaults standardUserDefaults] URLForKey:@"startUrl"];
+	NSImage *img = [[NSWorkspace sharedWorkspace] iconForFile:[url path]];
+	[img setSize:NSMakeSize(16, 16)];
+	[imageCell setImage:img];
+}
+
+
+#pragma mark - Gui callback
 
 - (IBAction) open:(id)sender
 {
@@ -35,9 +46,24 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 	[op setCanChooseFiles:NO];
 	[op setCanChooseDirectories:YES];
     if ([op runModal] != NSOKButton) return;    
-	[[NSUserDefaults standardUserDefaults] setURL:[op URL] forKey:@"startUrl"];
-	[[NSUserDefaults standardUserDefaults] synchronize];
+	[self setStartUrl:[op URL]];
 } 
+
+- (IBAction) setStartUrlToCurrent:(id)sender
+{
+	[self setStartUrl: [[[mainController directoryStack] 
+						 lastObject] URL]];
+}
+
+- (void) setStartUrl:(NSURL*)url
+{
+	[[NSUserDefaults standardUserDefaults] setURL:url forKey:@"startUrl"];
+	[[NSUserDefaults standardUserDefaults] synchronize];
+	
+	NSImage *img = [[NSWorkspace sharedWorkspace] iconForFile:[url path]];
+	[img setSize:NSMakeSize(16, 16)];
+	[imageCell setImage:img];
+}
 
 #pragma mark - MASPreferencesViewController
 

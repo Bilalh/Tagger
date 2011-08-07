@@ -229,7 +229,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 	NSInteger popupCount = [popup numberOfItems];
 	NSInteger min = MIN([parentNodes count], popupCount);
-	DDLogVerbose(@"min:%zu pN:%zu popN:%zu", min, [parentNodes count], popupCount);
+	DDLogVerbose(@"min:%zu pN:%zu popN:%zu", min, [parentNodes count], popupCount); 
 	
 	// Correct the number of items in the popupmenu
 	NSInteger i;

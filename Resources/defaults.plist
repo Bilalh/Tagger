@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>test</key>
-	<string>testing</string>
 	<key>startUrl</key>
 	<string>~/Movies/add/start/Atelier Meruru OST/</string>
 </dict>

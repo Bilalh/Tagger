@@ -14,6 +14,7 @@ Version 0.13
 * Prefs for hiding columns
 * Default values
 * Prefs for setting start directory
+  * Allows using the current directory as the start directory
 
 ### Bug fixes ###
 * Fixed Warnings about missing method
