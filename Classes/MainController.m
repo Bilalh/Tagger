@@ -188,7 +188,13 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 - (void)tableView:(NSTableView *)tableView didClickTableColumn:(NSTableColumn *)tableColumn
 {
 	DDLogInfo(@"headerClicked");
+	NSImage *indicatorImage;
 	[[directoryStack lastObject] sort:@"title" ];
+	indicatorImage = [NSImage imageNamed: @"NSDescendingSortIndicator"];
+	
+	[tableView setIndicatorImage: indicatorImage
+                   inTableColumn: tableColumn];
+	
 	[table reloadData];
 }
 
