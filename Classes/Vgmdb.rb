@@ -26,7 +26,8 @@ class Vgmdb
 	
 	def search(string)
 		
-		#url = "http://vgmdb.net/search?q=#{CGI.escape string}"
+		url = "http://vgmdb.net/search?q=#{CGI.escape string}"
+		# FIXME hardcode
 		url = File.expand_path("~/Desktop/test3.html")
 		
 		doc = Nokogiri.HTML(open(url).read)
@@ -50,8 +51,8 @@ class Vgmdb
 	
 	# Returns the data at the vgmdb url as a hash
 	def get_data(url)
-		puts url
-		url = File.expand_path("~/Desktop/meruru.html");
+		# FIXME hardcode
+		# url = File.expand_path("~/Desktop/meruru.html");
 		# url = File.expand_path("~/Desktop/meruruVisual.html");
 		# url = File.expand_path("~/Desktop/meruDa.html");
 		doc = Nokogiri.HTML(open(url).read)
