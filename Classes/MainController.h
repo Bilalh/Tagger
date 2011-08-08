@@ -93,4 +93,5 @@
 
 - (IBAction)reopen:(id)sender;
 
+- (IBAction) goToStartingDirectory:(id)sender;
 @end

@@ -329,6 +329,11 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[self goToDirectory:[predefinedDirectories objectAtIndex:[sender tag]]];
 }
 
+- (IBAction) goToStartingDirectory:(id)sender
+{
+	[self goToDirectory: [[NSUserDefaults standardUserDefaults] URLForKey:@"startUrl"]];
+}
+
 - (IBAction) search:(id)sender
 {
 	if (vgc == nil){
@@ -396,11 +401,11 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}
 }
 
-- (id)valueForUndefinedKey:(NSString *)key
-{
-	DDLogError(@"valueForUndefinedKey:%@",key);
-	return @"ERROR";
-}
+//- (id)valueForUndefinedKey:(NSString *)key
+//{
+//	DDLogError(@"valueForUndefinedKey:%@",key);
+//	return @"ERROR";
+//}
 
 #pragma mark - Windows
 
