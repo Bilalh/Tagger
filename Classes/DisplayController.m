@@ -184,7 +184,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (id)initWithAlbum:(NSDictionary*)album
 			vgmdb:(id)vgmdbObject
-			files:(NSArray*)filesNodes;
+			files:(NSArray*)filesNodes
 {
 	vgmdb = vgmdbObject;
 	albumDetails = album;

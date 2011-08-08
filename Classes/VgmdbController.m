@@ -44,7 +44,21 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 	id temp = [vgmdb performRubySelector:@selector(search:)
 								 withArguments:query, 
 					 nil];
-	searchResults =  (temp == [NSNull null]) ? nil : temp;
+
+	if (temp == [NSNull null]){
+		searchResults = nil;
+	}else if ([temp isKindOfClass:[NSDictionary class]]) {
+		if (ssc != nil){
+			[ssc release];
+		}
+		ssc = [[DisplayController alloc] initWithAlbum:temp 
+												 vgmdb:vgmdb 
+												 files:files];
+		[self confirmSheet:nil];
+	}else{
+		searchResults = temp;
+	}
+	
 	DDLogVerbose(@"result %@", searchResults);
 	[table reloadData];
 }

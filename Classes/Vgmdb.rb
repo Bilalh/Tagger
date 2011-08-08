@@ -33,7 +33,10 @@ class Vgmdb
 		
 		doc = Nokogiri.HTML(open(url).read)
 		album_results = doc.css 'div#albumresults tr'
-		return nil if album_results.empty?
+		if album_results.empty? then
+			return nil if doc.css('ul#tlnav').empty?
+			return get_data_with_doc(doc)
+		end
 		rows_tr = album_results[1..-1]
 		
 		rows =[]
@@ -57,8 +60,12 @@ class Vgmdb
 		# url = File.expand_path("~/Desktop/meruru.html");
 		# url = File.expand_path("~/Desktop/meruruVisual.html");
 		# url = File.expand_path("~/Desktop/meruDa.html");
-		doc = Nokogiri.HTML(open(url).read)
 		
+		doc = Nokogiri.HTML(open(url).read)
+		return get_data_with_doc doc
+	end
+	
+	def get_data_with_doc(doc)
 		hash = {}
 		get_titles(doc,hash)
 		get_meta(doc,hash)
@@ -66,6 +73,7 @@ class Vgmdb
 		get_notes(doc,hash)
 		return hash
 	end
+	
 	
 	def get_meta(doc,hash)
 		#puts "Getting metadata"

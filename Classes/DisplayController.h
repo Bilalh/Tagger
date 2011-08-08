@@ -41,6 +41,10 @@
 			vgmdb:(id)vgmdbObject
 			files:(NSArray*)files;
 
+- (id)initWithAlbum:(NSDictionary*)album
+			  vgmdb:(id)vgmdbObject
+			  files:(NSArray*)filesNodes;
+
 /// @name Changing the language
 
 /** Changes the Language of of the specifed field.
