@@ -27,11 +27,13 @@ class Vgmdb
 	def search(string)
 		
 		url = "http://vgmdb.net/search?q=#{CGI.escape string}"
+		# puts url
 		# FIXME hardcode
-		url = File.expand_path("~/Desktop/test3.html")
+		# url = File.expand_path("~/Desktop/search.html")
 		
 		doc = Nokogiri.HTML(open(url).read)
 		album_results = doc.css 'div#albumresults tr'
+		return nil if album_results.empty?
 		rows_tr = album_results[1..-1]
 		
 		rows =[]
@@ -229,16 +231,15 @@ end
 
 if $0 == __FILE__
 	vg = Vgmdb.new()
-	# #puts vg.search("Atelier Meruru"); exit
+	puts vg.search("Atelier Meruruggg");
 	
-	#url = "http://vgmdb.net/album/13192"
+	# url = "http://vgmdb.net/album/13192"
 	# url = 'http://vgmdb.net/album/3885'
-	# url = File.expand_path("~/Desktop/test2.html")
 	
-	url = File.expand_path("~/Desktop/meruru.html")
-	hash = vg.get_data(url)	
+	# url = File.expand_path("~/Desktop/meruru.html")
+	# hash = vg.get_data(url)	
 	# pp hash
-	vg.get_tracks_array hash;
+	# vg.get_tracks_array hash;
 	
 end
 

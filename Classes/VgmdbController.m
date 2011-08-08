@@ -41,9 +41,11 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 - (IBAction) searchForAlbums:(id)sender
 {
 	DDLogInfo(@"Search button pressed");
-	searchResults = [vgmdb performRubySelector:@selector(search:)
+	id temp = [vgmdb performRubySelector:@selector(search:)
 								 withArguments:query, 
 					 nil];
+	searchResults =  (temp == [NSNull null]) ? nil : temp;
+	DDLogVerbose(@"result %@", searchResults);
 	[table reloadData];
 }
 
@@ -77,7 +79,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView 
 {
-    return [searchResults count];
+    return searchResults ? [searchResults count] : 0;
 }
 
 - (id)          tableView:(NSTableView *)aTableView 

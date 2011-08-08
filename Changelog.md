@@ -7,6 +7,9 @@ Version 0.14
 ### Features ###
 * Added a button for searching vgmdb.
 
+### Bug fixes ###
+* Fixed a bug when vgmdb returns no results.
+
 ------------
 Version 0.13 (Sun Aug 07 2011 23:39:44 +0100)
 ------------
