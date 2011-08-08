@@ -23,6 +23,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 - (void) initFieldValues;
 - (void) initFieldProperties;
 - (void) initButtonsState;
+- (id)initCommon:(NSArray*)filesNodes;
 
 - (NSMutableDictionary*) makeButtonProperties:(NSString*)b1Title
 								 button1Full:(NSString*)b1Full
@@ -147,11 +148,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 #pragma mark -
 #pragma mark Init
 
-- (id)initWithUrl:(NSString*)url
-			vgmdb:(id)vgmdbObject
-			files:(NSArray*)filesNodes;
+- (id)initCommon:(NSArray*)filesNodes
 {
-	vgmdb = vgmdbObject;
 	files = [filesNodes sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
 		FileSystemNode *a = obj1, *b = obj2;
 		NSComparisonResult res = [a.tags compare:b.tags];
@@ -161,15 +159,14 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}];
 	
 	selectedLanguage = @"@english";
-
+	
 	[self initFieldProperties];
-	[self setAlbumUrl:url];
 	[self initFieldValues];	
 	[self initButtonsState];
 	
 	NSDictionary *title = [[tracks objectAtIndex:0] objectForKey:@"title"];
 	NSDictionary *radio = [fieldProperties objectForKey:@"radio"];
-
+	
 	NSString *l[] = {@"@english", @"@romaji",@"@kanji"};
 	
 	int i;
@@ -183,6 +180,27 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	DDLogInfo(@"min:%d", min);
 	
 	return[self initWithWindowNibName:@"VgmdbDisplay"];	
+}
+
+- (id)initWithAlbum:(NSDictionary*)album
+			vgmdb:(id)vgmdbObject
+			files:(NSArray*)filesNodes;
+{
+	vgmdb = vgmdbObject;
+	albumDetails = album;
+	tracks =  [vgmdb performRubySelector:@selector(get_tracks_array:)
+						   withArguments:albumDetails, 
+			   nil];
+	return [self initCommon:filesNodes];
+}
+
+- (id)initWithUrl:(NSString*)url
+			vgmdb:(id)vgmdbObject
+			files:(NSArray*)filesNodes;
+{
+	vgmdb = vgmdbObject;
+	[self setAlbumUrl:url];
+	return [self initCommon:filesNodes];
 } 
 
 - (void)dealloc
