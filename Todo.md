@@ -4,15 +4,11 @@ TODO
 FIXME
 -----
 * Disble buttons that can not be used.
-* Turn of the hard code values in vgmdb auto tagger.
 
 Deploy
 -------
 * Auto embed macruby.
 
-Errors
-------
-* Some kind of error handing when vgmdb returns no tracks.
 
 FileNames
 ---------
@@ -31,6 +27,7 @@ Renaming
 VGMDB
 -----
 * Taggings when tracks missing (done, but can tag wrong).
+* Some kind of error handing when vgmdb returns no tracks.
 
 Later
 -----
@@ -48,3 +45,4 @@ Done
 * Some means of showing that the values for selected rows are different.
 * Better image equals method for NSImage (defualt just does pointer comparing).
 * Defaults e.g path etc 
+* Turn of the hard code values in vgmdb auto tagger.
