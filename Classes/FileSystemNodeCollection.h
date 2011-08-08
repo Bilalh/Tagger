@@ -20,7 +20,7 @@
 	NSString *albumArtist;
 	NSString *composer;
 	NSString *grouping;
-	NSNumber *bpm;
+	NSNumber *bpm; 
 	NSNumber *totalTracks;
 	NSNumber *disc;
 	NSNumber *totalDiscs;
@@ -39,7 +39,7 @@
 	NSNumber *length;
 	
 	BOOL writeToAll;
-	NSArray *fieldNames;
+	BOOL  empty;
 }
 
 /// @name General
@@ -56,6 +56,9 @@
 -(NSError*) renameWithFormatArray:(NSArray*)formatStrings;
 
 /// @name Finding General metadata.
+
+// YES if empty
+@property (assign) BOOL  empty;
 
 /// YES if all the files has basic metadata info.
 @property (readonly) BOOL  hasBasicMetadata;

@@ -46,6 +46,11 @@
 
 @property (assign) IBOutlet NSTableView *table;
 
+@property BOOL forwordStackEnable;
+@property BOOL backwordStackEnable;
+
+
+
 /// @name Directories 
 
 - (void) goToDirectory:(NSURL*)url;

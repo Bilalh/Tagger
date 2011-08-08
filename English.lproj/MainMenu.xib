@@ -1051,7 +1051,6 @@
 													<string key="NSClassName">NSImage</string>
 													<string key="NSResourceName">arrowLeftBlack16</string>
 												</object>
-												<string key="NSSegmentItemLabel"/>
 												<int key="NSSegmentItemImageScaling">2</int>
 											</object>
 											<object class="NSSegmentItem">
@@ -1060,7 +1059,6 @@
 													<string key="NSClassName">NSImage</string>
 													<string key="NSResourceName">arrowRightBlack16</string>
 												</object>
-												<string key="NSSegmentItemLabel"/>
 												<int key="NSSegmentItemTag">1</int>
 												<int key="NSSegmentItemImageScaling">2</int>
 											</object>
@@ -4358,6 +4356,78 @@
 					</object>
 					<int key="connectionID">1225</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: currentNodes.empty</string>
+						<reference key="source" ref="362482220"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="362482220"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: currentNodes.empty</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">currentNodes.empty</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1229</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: currentNodes.empty</string>
+						<reference key="source" ref="630430531"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="630430531"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: currentNodes.empty</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">currentNodes.empty</string>
+							<object class="NSDictionary" key="NSOptions">
+								<string key="NS.key.0">NSValueTransformerName</string>
+								<string key="NS.object.0">NSNegateBoolean</string>
+							</object>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1240</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: backwordStackEnable</string>
+						<reference key="source" ref="722745758"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="722745758"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: backwordStackEnable</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">backwordStackEnable</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1247</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: forwordStackEnable</string>
+						<reference key="source" ref="798085336"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="798085336"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: forwordStackEnable</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">forwordStackEnable</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1248</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -6794,7 +6864,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1225</int>
+			<int key="maxID">1248</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

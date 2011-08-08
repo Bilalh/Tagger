@@ -13,6 +13,7 @@
 
 #import "DDLog.h"
 static const int ddLogLevel = LOG_LEVEL_INFO;
+static const NSArray *fieldNames;
 
 @interface FileSystemNodeCollection()
 -(void) initfields;
@@ -20,27 +21,32 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 @end
 
 @implementation FileSystemNodeCollection
-@synthesize tagsArray, hasBasicMetadata, hasExtenedMetadata;
+@synthesize tagsArray, hasBasicMetadata, hasExtenedMetadata, empty;
 @synthesize title, artist, album, comment, genre, year, track, length;
 @synthesize albumArtist, composer, grouping, bpm, totalTracks, disc, totalDiscs, compilation, url, cover;
 
 #pragma mark -
 #pragma mark Init
 
++ (void)initialize
+{
+	fieldNames = [[NSArray alloc] initWithObjects:
+				  @"title", @"album" ,
+				  @"artist", @"albumArtist",
+				  @"genre", @"grouping",
+				  @"track", @"totalTracks",
+				  @"disc",  @"totalDiscs" ,
+				  @"compilation", @"year",
+				  @"composer", @"bpm",
+				  @"comment", @"cover",
+				  nil];
+}
+
 - (id)init
 {
     self = [super init];
     if (self) {
-		fieldNames = [[NSArray alloc] initWithObjects:
-		 @"title", @"album" ,
-		 @"artist", @"albumArtist",
-		 @"genre", @"grouping",
-		 @"track", @"totalTracks",
-		 @"disc",  @"totalDiscs" ,
-		 @"compilation", @"year",
-		 @"composer", @"bpm",
-		 @"comment", @"cover",
-		 nil];
+		self.empty = YES;
     }
 	
     return self;
@@ -116,9 +122,11 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 	tagsArray = newArray;
 	if (!tagsArray || [tagsArray count] ==0){
 		[self nilAllFields];
+		self.empty = YES;
 		return;
 	}
 	
+	self.empty = NO;
 	hasExtenedMetadata = hasBasicMetadata = YES;
 	
 	for (FileSystemNode *n in tagsArray) {

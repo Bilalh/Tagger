@@ -7,6 +7,7 @@ Version 0.14
 ### Features ###
 * Added a button for searching vgmdb.
 * Display the result if there is only one result from the search
+* Back/forward Reveal disable when not usable instead of doing nothing
 
 ### Bug fixes ###
 * Fixed a bug when vgmdb returns no results.

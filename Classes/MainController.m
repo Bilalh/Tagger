@@ -36,7 +36,17 @@ static const NSArray *predefinedDirectories;
 
 @implementation MainController
 @synthesize window, directoryStack, currentNodes,forwardStack, selectedNodeindex, parentNodes, table;
+@synthesize forwordStackEnable, backwordStackEnable;
 
+-(BOOL) forwordStackEnable
+{
+	return [forwardStack count ] != 0;
+}
+
+-(BOOL) backwordStackEnable
+{
+	return [directoryStack count ] >=2;
+}
 
 #pragma mark -
 #pragma mark Table Methods 
@@ -371,8 +381,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	return @"ERROR";
 }
 
-#pragma mark -
-#pragma mark Windows
+#pragma mark - Windows
 
 - (BOOL)windowShouldClose:(NSNotification *)notification
 {
@@ -387,8 +396,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[self showWindow:self];
 }
 
-#pragma mark -
-#pragma mark Alloc/init
+
+#pragma mark - Alloc/init
 
 - (void)awakeFromNib
 {	

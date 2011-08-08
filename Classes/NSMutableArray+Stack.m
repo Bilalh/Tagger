@@ -10,13 +10,6 @@
 
 @implementation NSMutableArray (NSArray_Stack)
 
-
-- (void)push:(id)inObject
-{
-	if(inObject) [self addObject:inObject];
-	
-}
-
 - (id)pop
 {
 	id theResult = nil;
@@ -26,6 +19,12 @@
 		[self removeLastObject];
 	}
 	return theResult;
+}
+
+- (void)push:(id)inObject
+{
+	if(inObject) [self addObject:inObject];
+	
 }
 
 @end
