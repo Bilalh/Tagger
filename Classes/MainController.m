@@ -187,7 +187,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (void)tableView:(NSTableView *)tableView didClickTableColumn:(NSTableColumn *)tableColumn
 {
-	DDLogInfo(@"headerClicked");
 	NSImage *indicatorImage;
 	NSString * identifer = [tableColumn identifier];
 	
@@ -196,12 +195,13 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}else{
 		currentColumnAscending = NO;
 		currentColumnKey = identifer;
-		for (NSTableColumn *c in [tableView tableColumns]) {
+		for (NSTableColumn *column in [tableView tableColumns]) {
 			[tableView setIndicatorImage: nil
-						   inTableColumn: tableColumn];
+						   inTableColumn: column];
 		}
 	}
 	
+	[tableView setHighlightedTableColumn:tableColumn];
 	[[directoryStack lastObject] sort:currentColumnKey
 							ascending:currentColumnAscending];
 	
@@ -465,12 +465,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	directoryStack = [[NSMutableArray alloc] init];
 	forwardStack   = [[NSMutableArray alloc] init];
 	
-	NSLog(@"url %@", [[NSUserDefaults standardUserDefaults] URLForKey:@"startUrl"]);
 	FileSystemNode *currentDirectory = [[FileSystemNode alloc] initWithURL:
 										[[NSUserDefaults standardUserDefaults] URLForKey:@"startUrl"]];
-//	FileSystemNode *currentDirectory = [[FileSystemNode alloc] initWithURL:
-//										[NSURL fileURLWithPath:[@"~/Movies/add/start/Atelier Meruru OST/" 
-//																stringByExpandingTildeInPath]]];
 	[directoryStack push:currentDirectory];
 	
 	currentNodes      = [[FileSystemNodeCollection alloc] init];

@@ -3,7 +3,6 @@ TODO
 
 FIXME
 -----
-* Table columns sorting 
 
 Deploy
 -------
@@ -47,3 +46,4 @@ Done
 * Defaults e.g path etc 
 * Turn of the hard code values in vgmdb auto tagger.
 * Disble buttons that can not be used.
+* Table columns sorting 

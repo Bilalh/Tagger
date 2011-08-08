@@ -230,13 +230,28 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 	ascending:(BOOL)ascending
 {
 	short mult = ascending ? 1 : -1;
-	
-	_children = [self.children sortedArrayWithOptions:NSSortStable usingComparator:
-	 ^NSComparisonResult(id obj1, id obj2) {
-		 const FileSystemNode *a = obj1, *b = obj2;
-		 return  mult *[[a.tags valueForKey:key] localizedStandardCompare:[b.tags valueForKey:key ]];
-	}];
+	if ([key isEqualToString:@"filename"]){
+		_children = [self.children sortedArrayWithOptions:NSSortStable usingComparator:
+			^NSComparisonResult(id obj1, id obj2) {
+				 const FileSystemNode *a = obj1, *b = obj2;
+				 return  mult *[a.displayName localizedStandardCompare:b.displayName ];
+			}];
+	}else if ([key isEqualToString:@"size"]){
+		_children = [self.children sortedArrayWithOptions:NSSortStable usingComparator:
+			 ^NSComparisonResult(id obj1, id obj2) {
+				 const FileSystemNode *a = obj1, *b = obj2;
+				 return  mult *[[a valueForKey:key] localizedStandardCompare:[b valueForKey:key ]];
+			 }];
+	}else{
+		key = [key stringByReplacingOccurrencesOfString:@"Pair" withString:@""];
+		
+		_children = [self.children sortedArrayWithOptions:NSSortStable usingComparator:
+			^NSComparisonResult(id obj1, id obj2) {
+				const FileSystemNode *a = obj1, *b = obj2;
+				 return  mult *[[a.tags valueForKey:key] localizedStandardCompare:[b.tags valueForKey:key ]];
+			}];
+	}		
 }
 
-
+ 
 @end
