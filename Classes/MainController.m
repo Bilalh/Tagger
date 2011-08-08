@@ -189,12 +189,30 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 {
 	DDLogInfo(@"headerClicked");
 	NSImage *indicatorImage;
-	[[directoryStack lastObject] sort:@"title" ];
-	indicatorImage = [NSImage imageNamed: @"NSDescendingSortIndicator"];
+	NSString * identifer = [tableColumn identifier];
+	
+	if ([currentColumnKey isEqualToString:identifer]){
+		currentColumnAscending = !currentColumnAscending;
+	}else{
+		currentColumnAscending = NO;
+		currentColumnKey = identifer;
+		for (NSTableColumn *c in [tableView tableColumns]) {
+			[tableView setIndicatorImage: nil
+						   inTableColumn: tableColumn];
+		}
+	}
+	
+	[[directoryStack lastObject] sort:currentColumnKey
+							ascending:currentColumnAscending];
+	
+	if (currentColumnAscending){
+		indicatorImage = [NSImage imageNamed: @"NSAscendingSortIndicator"];		
+	}else{
+		indicatorImage = [NSImage imageNamed: @"NSDescendingSortIndicator"];	
+	}
 	
 	[tableView setIndicatorImage: indicatorImage
                    inTableColumn: tableColumn];
-	
 	[table reloadData];
 }
 

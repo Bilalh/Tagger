@@ -28,6 +28,10 @@
 	
 	NSMutableArray *parentNodes;
 	BOOL _vgmdbEnable;
+	
+	NSString *currentColumnKey;
+	BOOL currentColumnAscending;
+	
 }
 
 /// @name properties

@@ -69,7 +69,7 @@
 		92C4466413E0BF830038F817 /* BWHyperlinkTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4466113E0BF830038F817 /* BWHyperlinkTitleButton.m */; };
 		92C4466513E0BF830038F817 /* BWHyperlinkButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4466313E0BF830038F817 /* BWHyperlinkButtonCell.m */; };
 		92C4466813E0C7880038F817 /* ButtonLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4466713E0C7870038F817 /* ButtonLabelCell.m */; };
-		92ED323313E797C700722635 /* FormatingAddictions.m in Sources */ = {isa = PBXBuildFile; fileRef = 92ED323213E797C700722635 /* FormatingAddictions.m */; };
+		92CEE60313F0830E00E4C5CE /* NSNumber+compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 92CEE60213F0830E00E4C5CE /* NSNumber+compare.m */; };
 		92F7A81F13E2F19000B3446B /* NSImage+bitmapData.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F7A81E13E2F19000B3446B /* NSImage+bitmapData.m */; };
 		92FCBF5413CE83D10011F744 /* FileSystemNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FCBF5313CE83D10011F744 /* FileSystemNode.m */; };
 /* End PBXBuildFile section */
@@ -162,8 +162,8 @@
 		92C4466713E0C7870038F817 /* ButtonLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonLabelCell.m; sourceTree = "<group>"; };
 		92CC309013DA386600BC78DC /* Fields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fields.h; sourceTree = "<group>"; };
 		92CC309113DA3F3A00BC78DC /* framelistmp4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = framelistmp4.cpp; sourceTree = "<group>"; };
-		92ED323113E797C700722635 /* FormatingAddictions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormatingAddictions.h; sourceTree = "<group>"; };
-		92ED323213E797C700722635 /* FormatingAddictions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormatingAddictions.m; sourceTree = "<group>"; };
+		92CEE60113F0830E00E4C5CE /* NSNumber+compare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+compare.h"; sourceTree = "<group>"; };
+		92CEE60213F0830E00E4C5CE /* NSNumber+compare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+compare.m"; sourceTree = "<group>"; };
 		92F7A81D13E2F19000B3446B /* NSImage+bitmapData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+bitmapData.h"; sourceTree = "<group>"; };
 		92F7A81E13E2F19000B3446B /* NSImage+bitmapData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+bitmapData.m"; sourceTree = "<group>"; };
 		92FCBF5213CE83D10011F744 /* FileSystemNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileSystemNode.h; sourceTree = "<group>"; };
@@ -410,8 +410,8 @@
 				92C4465313E0A5820038F817 /* NSAttributedString+Hyperlink.m */,
 				92F7A81D13E2F19000B3446B /* NSImage+bitmapData.h */,
 				92F7A81E13E2F19000B3446B /* NSImage+bitmapData.m */,
-				92ED323113E797C700722635 /* FormatingAddictions.h */,
-				92ED323213E797C700722635 /* FormatingAddictions.m */,
+				92CEE60113F0830E00E4C5CE /* NSNumber+compare.h */,
+				92CEE60213F0830E00E4C5CE /* NSNumber+compare.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -560,10 +560,10 @@
 				92F7A81F13E2F19000B3446B /* NSImage+bitmapData.m in Sources */,
 				926BDEBD13E4B4220050B45C /* FileSystemNodeCollection.m in Sources */,
 				92B38C5313E7610B00EDF45F /* RenamingFilesController.m in Sources */,
-				92ED323313E797C700722635 /* FormatingAddictions.m in Sources */,
 				92A6808913EC7B130067DD5F /* MASPreferencesWindowController.m in Sources */,
 				92A680A413EC7DAE0067DD5F /* AdvancedPreferencesViewController.m in Sources */,
 				92A680A613EC7DAF0067DD5F /* GeneralPreferencesViewController.m in Sources */,
+				92CEE60313F0830E00E4C5CE /* NSNumber+compare.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

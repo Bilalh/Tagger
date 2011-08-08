@@ -3,6 +3,7 @@
 #import "Tags.h"
 #import "MP4Tags.h"
 #import "MPEGTags.h"
+#import "NSNumber+compare.h"
 
 #import "DDLog.h"
 static const int ddLogLevel = LOG_LEVEL_INFO;
@@ -226,10 +227,14 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 }
 
 - (void) sort:(NSString*)key
+	ascending:(BOOL)ascending
 {
+	short mult = ascending ? 1 : -1;
+	
 	_children = [self.children sortedArrayWithOptions:NSSortStable usingComparator:
 	 ^NSComparisonResult(id obj1, id obj2) {
-		 return -[[obj1 displayName] compare:[obj2 displayName]];
+		 const FileSystemNode *a = obj1, *b = obj2;
+		 return  mult *[[a.tags valueForKey:key] localizedStandardCompare:[b.tags valueForKey:key ]];
 	}];
 }
 
