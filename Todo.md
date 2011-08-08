@@ -3,6 +3,7 @@ TODO
 
 FIXME
 -----
+* Table columns sorting 
 
 Deploy
 -------

@@ -187,7 +187,9 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (void)tableView:(NSTableView *)tableView didClickTableColumn:(NSTableColumn *)tableColumn
 {
-	DDLogVerbose(@"headerClicked");
+	DDLogInfo(@"headerClicked");
+	[[directoryStack lastObject] sort:@"title" ];
+	[table reloadData];
 }
 
 #pragma mark -

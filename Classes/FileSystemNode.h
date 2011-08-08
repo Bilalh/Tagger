@@ -46,6 +46,7 @@
 
 -(NSError*) filenameFromFormatArray:(NSArray*)formatStrings;
 
+- (void) sort:(NSString*)key;
 
 /// @name Finding metadata
 

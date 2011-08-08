@@ -198,7 +198,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 }
 
 
--(NSError*) filenameFromFormatArray:(NSArray*)formatStrings
+- (NSError*) filenameFromFormatArray:(NSArray*)formatStrings
 {
 	NSString *newName = [tags filenameFromFormatArray:formatStrings];
 	DDLogInfo(@"newName:%@", newName);
@@ -224,5 +224,14 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 	
 	return err;
 }
+
+- (void) sort:(NSString*)key
+{
+	_children = [self.children sortedArrayWithOptions:NSSortStable usingComparator:
+	 ^NSComparisonResult(id obj1, id obj2) {
+		 return -[[obj1 displayName] compare:[obj2 displayName]];
+	}];
+}
+
 
 @end
