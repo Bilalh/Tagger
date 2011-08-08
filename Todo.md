@@ -3,7 +3,6 @@ TODO
 
 FIXME
 -----
-* Disble buttons that can not be used.
 
 Deploy
 -------
@@ -46,3 +45,4 @@ Done
 * Better image equals method for NSImage (defualt just does pointer comparing).
 * Defaults e.g path etc 
 * Turn of the hard code values in vgmdb auto tagger.
+* Disble buttons that can not be used.

@@ -20,11 +20,14 @@
 	
 	IBOutlet NSPopUpButton *popup;
 	IBOutlet NSTableView *table;
+	IBOutlet NSToolbarItem *vgmdbItem;
+	
 	VgmdbController         *vgc;
 	DisplayController       *ssc;
 	RenamingFilesController *rfc;
 	
 	NSMutableArray *parentNodes;
+	BOOL _vgmdbEnable;
 }
 
 /// @name properties
@@ -46,8 +49,9 @@
 
 @property (assign) IBOutlet NSTableView *table;
 
-@property BOOL forwordStackEnable;
-@property BOOL backwordStackEnable;
+@property (readonly) BOOL forwordStackEnable;
+@property (readonly) BOOL backwordStackEnable;
+@property (readonly) BOOL vgmdbEnable;
 
 
 
@@ -71,7 +75,7 @@
 - (IBAction) backDirectories:(id)sender;
 - (IBAction) forwordDirectories:(id)sender;
 - (IBAction) goToParentMenu:(id)sender;
-
+- (IBAction) goToPredefinedDirectory:(id)sender;
 
 /// @name Files 
 

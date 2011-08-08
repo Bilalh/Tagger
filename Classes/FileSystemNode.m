@@ -142,13 +142,14 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 
 - (NSArray *)children {
     if (_children == nil || _childrenDirty) {
+		
         // This logic keeps the same pointers around, if possible.
         NSMutableArray *newChildren = [NSMutableArray array];
         
         CFURLEnumeratorRef enumerator = CFURLEnumeratorCreateForDirectoryURL(NULL, (CFURLRef)_url, kCFURLEnumeratorSkipInvisibles, (CFArrayRef)[NSArray array]);
         NSURL *childURL = nil;
-	CFURLEnumeratorResult enumeratorResult;
-	do {
+		CFURLEnumeratorResult enumeratorResult;
+		do {
             enumeratorResult = CFURLEnumeratorGetNextURL(enumerator, (CFURLRef *)&childURL, NULL);
             if (enumeratorResult == kCFURLEnumeratorSuccess) {
                 FileSystemNode *node = [[[FileSystemNode alloc] initWithURL:childURL] autorelease];
@@ -168,11 +169,11 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
 					[self isaDirectory:node.URL ] ){
 					[newChildren addObject:node];
 				}
-
+				
             } else if (enumeratorResult == kCFURLEnumeratorError) {
                 // A possible enhancement would be to present error-based items to the user.
             }
-	} while (enumeratorResult != kCFURLEnumeratorEnd);
+		} while (enumeratorResult != kCFURLEnumeratorEnd);
         
         [_children release];
         _childrenDirty = NO;
@@ -187,6 +188,7 @@ static const int ddLogLevel = LOG_LEVEL_INFO;
     
     return _children;
 }
+
 
 - (void)invalidateChildren {
     _childrenDirty = YES;

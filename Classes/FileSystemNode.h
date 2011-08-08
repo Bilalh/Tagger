@@ -32,7 +32,7 @@
 /// @name Finding Children and parent nodes 
 
 /**  
- * Finds all the parent nodes
+ * Finds all t/Users/bilalh/Programming/Projects/VGTagger/English.lproj/MainMenu.xibhe parent nodes
  * @return A array containing all the parent nodes 
  */
 - (NSMutableArray*)parentNodes;
@@ -73,7 +73,5 @@
 
 /// Size of the node
 @property(readonly)         NSNumber  *size;
-
-
 
 @end

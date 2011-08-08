@@ -1018,7 +1018,7 @@
 								<string key="NSToolbarItemMinSize">{31, 25}</string>
 								<string key="NSToolbarItemMaxSize">{42, 25}</string>
 								<bool key="NSToolbarItemEnabled">YES</bool>
-								<bool key="NSToolbarItemAutovalidates">YES</bool>
+								<bool key="NSToolbarItemAutovalidates">NO</bool>
 								<int key="NSToolbarItemTag">0</int>
 								<bool key="NSToolbarIsUserRemovable">YES</bool>
 								<int key="NSToolbarItemVisibilityPriority">0</int>
@@ -4378,26 +4378,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: currentNodes.empty</string>
-						<reference key="source" ref="630430531"/>
-						<reference key="destination" ref="588631224"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="630430531"/>
-							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: currentNodes.empty</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">currentNodes.empty</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSNegateBoolean</string>
-							</object>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">1240</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">enabled: backwordStackEnable</string>
 						<reference key="source" ref="722745758"/>
 						<reference key="destination" ref="588631224"/>
@@ -4427,6 +4407,62 @@
 						</object>
 					</object>
 					<int key="connectionID">1248</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: vgmdbEnable</string>
+						<reference key="source" ref="459541536"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="459541536"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: vgmdbEnable</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">vgmdbEnable</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1251</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: vgmdbEnable</string>
+						<reference key="source" ref="530263831"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="530263831"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: vgmdbEnable</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">vgmdbEnable</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1253</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: currentNodes.hasBasicMetadata</string>
+						<reference key="source" ref="630430531"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="630430531"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: currentNodes.hasBasicMetadata</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">currentNodes.hasBasicMetadata</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1256</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">vgmdbItem</string>
+						<reference key="source" ref="588631224"/>
+						<reference key="destination" ref="1019488414"/>
+					</object>
+					<int key="connectionID">1263</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -6864,7 +6900,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1248</int>
+			<int key="maxID">1263</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -6981,12 +7017,14 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>popup</string>
 							<string>table</string>
+							<string>vgmdbItem</string>
 							<string>window</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>NSPopUpButton</string>
 							<string>NSTableView</string>
+							<string>NSToolbarItem</string>
 							<string>NSWindow</string>
 						</object>
 					</object>
@@ -6996,6 +7034,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>popup</string>
 							<string>table</string>
+							<string>vgmdbItem</string>
 							<string>window</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -7007,6 +7046,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">table</string>
 								<string key="candidateClassName">NSTableView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">vgmdbItem</string>
+								<string key="candidateClassName">NSToolbarItem</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">window</string>

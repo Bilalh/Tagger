@@ -30,26 +30,44 @@ static const NSArray *predefinedDirectories;
 
 - (NSString *)stringFromFileSize:(NSInteger)size;
 
+/// Checks if there any music files
+- (void) _vgmdbEnable;
 /// Change the current directory to the clicked entries
 - (IBAction) onClick:(id)sender;
 @end
 
 @implementation MainController
 @synthesize window, directoryStack, currentNodes,forwardStack, selectedNodeindex, parentNodes, table;
-@synthesize forwordStackEnable, backwordStackEnable;
+@synthesize vgmdbEnable=_vgmdbEnable;
+@dynamic forwordStackEnable, backwordStackEnable;
 
--(BOOL) forwordStackEnable
+#pragma mark - Gui Bools
+
+- (BOOL) forwordStackEnable
 {
 	return [forwardStack count ] != 0;
 }
 
--(BOOL) backwordStackEnable
+- (BOOL) backwordStackEnable
 {
 	return [directoryStack count ] >=2;
 }
 
-#pragma mark -
-#pragma mark Table Methods 
+- (void) _vgmdbEnable
+{
+	for (FileSystemNode *n in [[directoryStack lastObject] children] ) {
+		if (!n.isDirectory) {
+			_vgmdbEnable = YES;
+			[vgmdbItem setEnabled:YES];
+			return;	
+		}
+	}
+	_vgmdbEnable = NO;	
+	[vgmdbItem setEnabled:NO];
+}
+
+
+#pragma mark - Table Methods 
 
 - (IBAction) onClick:(id)sender
 {
@@ -114,14 +132,14 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 	if ( [[aTableColumn identifier] isEqualToString:@"filename"] ){
 		return [node displayName];
+	}else if ([node isDirectory]){
+		return @"";
 	}else if ([[aTableColumn identifier] isEqualToString:@"size"]){
 		return [self stringFromFileSize:[[node size] integerValue]];
 	}else if ([[aTableColumn identifier] isEqualToString:@"trackPair"]){
 		return [NSString stringWithFormat:@"%@ of %@",node.tags.track, node.tags.totalTracks];
 	}else if ([[aTableColumn identifier] isEqualToString:@"discPair"]){
 		return [NSString stringWithFormat:@"%@ of %@",node.tags.disc, node.tags.totalDiscs];
-	}else if ([node isDirectory]){
-		return @"";
 	}
 	
 	return [node.tags valueForKey:[aTableColumn identifier]];
@@ -204,6 +222,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 	[directoryStack addObject:[parentNodes objectAtIndex:0]];
 	DDLogInfo(@"directoryStack %@", directoryStack);
+	[self _vgmdbEnable];
 	[table deselectAll:self];
 	[table reloadData];
 }
@@ -234,6 +253,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[parentNodes addObjectsFromArray:[node parentNodes] ];
 	
  	[directoryStack addObject:node];
+	[self _vgmdbEnable];
 	[table deselectAll:self];
 	[table reloadData];
 	
@@ -280,6 +300,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[self setPopupMenuIcons];
 	self.selectedNodeindex = [NSNumber numberWithInt:0];
 	DDLogVerbose (@"directoryStack %@", directoryStack);
+	[self _vgmdbEnable];
 	[table deselectAll:self];
 	[table reloadData];
 }
