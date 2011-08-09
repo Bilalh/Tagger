@@ -14,7 +14,6 @@ Images
 * find image metadata
   * 1200x1200, 200 KB (JPEG)
 * Don't allways use jpeg as the mine type.
-* Image dragging
 
 Renaming
 --------
@@ -27,10 +26,7 @@ VGMDB
 
 Later
 -----
-Add flac (should be easy).
-
-Prefs
------
+* Add flac (should be easy).
 * Disallow the user from changing the tab very quickly 
 
 ----
@@ -45,3 +41,4 @@ Done
 * Disble buttons that can not be used.
 * Table columns sorting 
 * Auto embed macruby.
+* Image dragging

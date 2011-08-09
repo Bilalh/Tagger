@@ -1,9 +1,9 @@
 Changelog
 =========
 
-------------
-Version 0.14
-------------
+-----------
+Version 1.0 (Tue Aug 09 2011 05:05:41 +0100)
+-----------
 ### Features ###
 * Added a button for searching vgmdb.
 * Display the result if there is only one result from the search.
@@ -15,6 +15,7 @@ Version 0.14
 * Table columns lengths
 * Shows the results straight away if there only one when searching Vgmdb
 * The cover art can be dragged to finder or any other place 
+* Pref for how cover art is dragged
 
 ### Bug fixes ###
 * Fixed a bug when vgmdb returns no results.

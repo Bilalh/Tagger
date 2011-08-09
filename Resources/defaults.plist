@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>startUrl</key>
-	<string>~/Movies/add/start/Atelier Meruru OST/</string>
+	<string>~/Music/</string>
 	<key>writeDraggedImageAsFile</key>
 	<true/>
 </dict>

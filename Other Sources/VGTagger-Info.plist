@@ -47,13 +47,13 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.12</string>
+	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
 	<array/>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>1.0-4-g4635b46</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.music</string>
 	<key>LSMinimumSystemVersion</key>
@@ -64,6 +64,10 @@
 	<string>NSApplication</string>
 	<key>NSServices</key>
 	<array/>
+	<key>NSHumanReadableCopyright</key>
+	<string>© Bilal Hussain, 2011</string>
+	<key>CFBundleGetInfoString</key>
+	<string></string>
 	<key>UTExportedTypeDeclarations</key>
 	<array/>
 	<key>UTImportedTypeDeclarations</key>

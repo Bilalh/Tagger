@@ -725,6 +725,7 @@
 					"$(SRCROOT)/Frameworks",
 				);
 				LLVM_LTO = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = "";
 				"OTHER_CPLUSPLUSFLAGS[arch=*]" = (
@@ -762,6 +763,7 @@
 					"$(SRCROOT)/Frameworks",
 				);
 				LLVM_LTO = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = "";
 				"OTHER_CPLUSPLUSFLAGS[arch=*]" = (
