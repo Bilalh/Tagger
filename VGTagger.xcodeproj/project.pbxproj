@@ -11,7 +11,7 @@
 			isa = PBXAggregateTarget;
 			buildConfigurationList = 9273E64313D6166C002BA3A0 /* Build configuration list for PBXAggregateTarget "Documentation" */;
 			buildPhases = (
-				9273E64513D61678002BA3A0 /* ShellScript */,
+				9273E64513D61678002BA3A0 /* Run Script */,
 			);
 			dependencies = (
 			);
@@ -31,21 +31,19 @@
 		920660E613C89845003A3803 /* Vgmdb.rb in Resources */ = {isa = PBXBuildFile; fileRef = 920660AC13C89845003A3803 /* Vgmdb.rb */; };
 		920660E713C89845003A3803 /* VgmdbController.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660AE13C89845003A3803 /* VgmdbController.m */; };
 		920660E813C89845003A3803 /* VGTaggerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660B013C89845003A3803 /* VGTaggerAppDelegate.m */; };
-		920660EC13C89845003A3803 /* libtag.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.dylib */; };
 		922D30C013CA77A1008EED70 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 922D30BF13CA77A1008EED70 /* Utility.m */; };
 		922E35D713C89BF3003C5913 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922E35D613C89BF3003C5913 /* Cocoa.framework */; };
 		922E35E213C89C51003C5913 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 922E35DC13C89C51003C5913 /* InfoPlist.strings */; };
 		922E35E313C89C51003C5913 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 922E35DE13C89C51003C5913 /* MainMenu.xib */; };
-		922E35E713C89FB9003C5913 /* libtag.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.dylib */; };
 		92364F7613C8DE5200044153 /* VgmdbSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92364F7413C8DE5200044153 /* VgmdbSearch.xib */; };
 		923FC13513DA117100B14A3E /* MPEGTags.mm in Sources */ = {isa = PBXBuildFile; fileRef = 923FC13413DA117100B14A3E /* MPEGTags.mm */; };
-		9259102813E10A6C0033CB7B /* tags.webloc in Resources */ = {isa = PBXBuildFile; fileRef = 9259102713E10A6C0033CB7B /* tags.webloc */; };
+		9254006713F0A82C0020C912 /* libtag.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.1.dylib */; };
+		9254007113F0AC8F0020C912 /* libtag.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.1.dylib */; };
 		9264488A13D773CE0035E693 /* arrowLeftBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */; };
 		9264488B13D773CE0035E693 /* arrowRightBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488913D773CE0035E693 /* arrowRightBlack16.tiff */; };
 		926BDEBD13E4B4220050B45C /* FileSystemNodeCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 926BDEBC13E4B4220050B45C /* FileSystemNodeCollection.m */; };
 		927F56B913DDCFA000274708 /* NumberToTimeTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 927F56B813DDCFA000274708 /* NumberToTimeTransformer.m */; };
 		928411AF13EB853600A92F3F /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 928411AE13EB853600A92F3F /* defaults.plist */; };
-		9285580013EF6352002C5112 /* Test Files in Resources */ = {isa = PBXBuildFile; fileRef = 928557FF13EF6352002C5112 /* Test Files */; };
 		9286164A13D65621001481E5 /* NSString+Numbers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9286164913D65621001481E5 /* NSString+Numbers.m */; };
 		929A4ACE13DA027C00244796 /* Changelog.md in Resources */ = {isa = PBXBuildFile; fileRef = 929A4ACD13DA027C00244796 /* Changelog.md */; };
 		929A4ADA13DA087D00244796 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD113DA087D00244796 /* DDAbstractDatabaseLogger.m */; };
@@ -74,6 +72,19 @@
 		92FCBF5413CE83D10011F744 /* FileSystemNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FCBF5313CE83D10011F744 /* FileSystemNode.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9254006613F0A80C0020C912 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9254006713F0A82C0020C912 /* libtag.1.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		9201935513CF6D050085E167 /* MP4Tags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MP4Tags.h; sourceTree = "<group>"; };
 		9201935613CF6D050085E167 /* MP4Tags.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MP4Tags.mm; sourceTree = "<group>"; };
@@ -93,7 +104,7 @@
 		920660AE13C89845003A3803 /* VgmdbController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VgmdbController.m; sourceTree = "<group>"; };
 		920660AF13C89845003A3803 /* VGTaggerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VGTaggerAppDelegate.h; sourceTree = "<group>"; };
 		920660B013C89845003A3803 /* VGTaggerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VGTaggerAppDelegate.m; sourceTree = "<group>"; };
-		920660B913C89845003A3803 /* libtag.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libtag.dylib; sourceTree = "<group>"; };
+		920660B913C89845003A3803 /* libtag.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtag.1.dylib; path = ../Frameworks/libtag.1.dylib; sourceTree = "<group>"; };
 		920660BB13C89845003A3803 /* VGTagger-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "VGTagger-Info.plist"; sourceTree = "<group>"; };
 		920660BC13C89845003A3803 /* VGTagger-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VGTagger-Prefix.pch"; sourceTree = "<group>"; };
 		922D30BE13CA77A1008EED70 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
@@ -153,7 +164,6 @@
 		92B65BF713D27BEC0018F988 /* ImageAndTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageAndTextCell.m; sourceTree = "<group>"; };
 		92C4465213E0A5820038F817 /* NSAttributedString+Hyperlink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Hyperlink.h"; sourceTree = "<group>"; };
 		92C4465313E0A5820038F817 /* NSAttributedString+Hyperlink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Hyperlink.m"; sourceTree = "<group>"; };
-		92C4465813E0BA8E0038F817 /* BWToolkitFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BWToolkitFramework.framework; sourceTree = "<group>"; };
 		92C4466013E0BF830038F817 /* BWHyperlinkTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWHyperlinkTitleButton.h; sourceTree = "<group>"; };
 		92C4466113E0BF830038F817 /* BWHyperlinkTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWHyperlinkTitleButton.m; sourceTree = "<group>"; };
 		92C4466213E0BF830038F817 /* BWHyperlinkButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWHyperlinkButtonCell.h; sourceTree = "<group>"; };
@@ -176,8 +186,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				92A3C49E13E2444A0024C7D3 /* MacRuby.framework in Frameworks */,
+				9254007113F0AC8F0020C912 /* libtag.1.dylib in Frameworks */,
 				922E35D713C89BF3003C5913 /* Cocoa.framework in Frameworks */,
-				920660EC13C89845003A3803 /* libtag.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,9 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				92A3C49B13E244200024C7D3 /* MacRuby.framework */,
-				92C4465813E0BA8E0038F817 /* BWToolkitFramework.framework */,
 				922E35D613C89BF3003C5913 /* Cocoa.framework */,
-				920660B913C89845003A3803 /* libtag.dylib */,
 			);
 			name = "Linked Frameworks";
 			path = ../Frameworks;
@@ -245,6 +253,7 @@
 				928411AE13EB853600A92F3F /* defaults.plist */,
 				9259102713E10A6C0033CB7B /* tags.webloc */,
 				9264488713D773CE0035E693 /* Images */,
+				9254006513F0A52F0020C912 /* Frameworks */,
 				920660B813C89845003A3803 /* Linked Frameworks */,
 			);
 			path = Resources;
@@ -295,6 +304,14 @@
 				920660B013C89845003A3803 /* VGTaggerAppDelegate.m */,
 			);
 			name = Main;
+			sourceTree = "<group>";
+		};
+		9254006513F0A52F0020C912 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				920660B913C89845003A3803 /* libtag.1.dylib */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		925CE81213C3BD6D009D6D94 = {
@@ -440,6 +457,23 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXLegacyTarget section */
+		92CEE64A13F0A23600E4C5CE /* Embed MacRuby */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "--compile --embed --gem nokogiri --gem htmlentities --stdlib open-uri --stdlib fileutils  --stdlib cgi";
+			buildConfigurationList = 92CEE64B13F0A23600E4C5CE /* Build configuration list for PBXLegacyTarget "Embed MacRuby" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/local/bin/macruby_deploy;
+			buildWorkingDirectory = "";
+			dependencies = (
+			);
+			name = "Embed MacRuby";
+			passBuildSettingsInEnvironment = 1;
+			productName = "Embed MacRuby";
+		};
+/* End PBXLegacyTarget section */
+
 /* Begin PBXNativeTarget section */
 		925CE81C13C3BD6D009D6D94 /* VGTagger */ = {
 			isa = PBXNativeTarget;
@@ -448,6 +482,7 @@
 				925CE81913C3BD6D009D6D94 /* Sources */,
 				925CE81A13C3BD6D009D6D94 /* Frameworks */,
 				925CE81B13C3BD6D009D6D94 /* Resources */,
+				9254006613F0A80C0020C912 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -481,6 +516,7 @@
 			targets = (
 				925CE81C13C3BD6D009D6D94 /* VGTagger */,
 				9273E64013D6166C002BA3A0 /* Documentation */,
+				92CEE64A13F0A23600E4C5CE /* Embed MacRuby */,
 			);
 		};
 /* End PBXProject section */
@@ -491,7 +527,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				920660E313C89845003A3803 /* VgmdbDisplay.xib in Resources */,
-				922E35E713C89FB9003C5913 /* libtag.dylib in Resources */,
 				920660E613C89845003A3803 /* Vgmdb.rb in Resources */,
 				922E35E213C89C51003C5913 /* InfoPlist.strings in Resources */,
 				922E35E313C89C51003C5913 /* MainMenu.xib in Resources */,
@@ -499,26 +534,25 @@
 				9264488A13D773CE0035E693 /* arrowLeftBlack16.tiff in Resources */,
 				9264488B13D773CE0035E693 /* arrowRightBlack16.tiff in Resources */,
 				929A4ACE13DA027C00244796 /* Changelog.md in Resources */,
-				9259102813E10A6C0033CB7B /* tags.webloc in Resources */,
 				92B38C5613E7804100EDF45F /* RenameDisplay.xib in Resources */,
 				928411AF13EB853600A92F3F /* defaults.plist in Resources */,
 				92A6808813EC7B130067DD5F /* MASPreferencesWindow.xib in Resources */,
 				92A680A313EC7DAE0067DD5F /* AdvancedPreferencesView.xib in Resources */,
 				92A680A513EC7DAE0067DD5F /* GeneralPreferencesView.xib in Resources */,
-				9285580013EF6352002C5112 /* Test Files in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9273E64513D61678002BA3A0 /* ShellScript */ = {
+		9273E64513D61678002BA3A0 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -659,8 +693,11 @@
 				GCC_USE_STANDARD_INCLUDE_SEARCHING = YES;
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "Other Sources/VGTagger-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Resources";
-				LIBRARY_SEARCH_PATHS = "";
+				LD_RUNPATH_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Frameworks",
+				);
 				LLVM_LTO = NO;
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = "";
@@ -668,7 +705,7 @@
 					"-I/usr/local/include/taglib",
 					"-L@executable_path/../Resources",
 				);
-				OTHER_LDFLAGS = "-ltag";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
@@ -693,8 +730,11 @@
 				GCC_USE_STANDARD_INCLUDE_SEARCHING = YES;
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "Other Sources/VGTagger-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Resources";
-				LIBRARY_SEARCH_PATHS = "";
+				LD_RUNPATH_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Frameworks",
+				);
 				LLVM_LTO = NO;
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = "";
@@ -702,7 +742,7 @@
 					"-I/usr/local/include/taglib",
 					"-L@executable_path/../Resources",
 				);
-				OTHER_LDFLAGS = "-ltag";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
@@ -719,6 +759,37 @@
 		9273E64213D6166C002BA3A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		92CEE64C13F0A23600E4C5CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DEBUGGING_SYMBOLS = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		92CEE64D13F0A23600E4C5CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -749,6 +820,15 @@
 			buildConfigurations = (
 				9273E64113D6166C002BA3A0 /* Debug */,
 				9273E64213D6166C002BA3A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92CEE64B13F0A23600E4C5CE /* Build configuration list for PBXLegacyTarget "Embed MacRuby" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92CEE64C13F0A23600E4C5CE /* Debug */,
+				92CEE64D13F0A23600E4C5CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

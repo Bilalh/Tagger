@@ -9,7 +9,9 @@ Version 0.14
 * Display the result if there is only one result from the search.
 * Back/forward/Reveal/Vgmdb disable when not usable instead of doing nothing.
 * Menu item and shortcut cmd-1 for going to the starting directory.
-* Table columns sorting and highligting on all columns
+* Table columns sorting and highligting on all columns.
+* Auto embed Macruby .
+* Embed  tablib and fixed build settings.
 
 ### Bug fixes ###
 * Fixed a bug when vgmdb returns no results.

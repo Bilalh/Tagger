@@ -4,10 +4,6 @@ TODO
 FIXME
 -----
 
-Deploy
--------
-* Auto embed macruby.
-
 
 FileNames
 ---------
@@ -47,3 +43,4 @@ Done
 * Turn of the hard code values in vgmdb auto tagger.
 * Disble buttons that can not be used.
 * Table columns sorting 
+* Auto embed macruby.
