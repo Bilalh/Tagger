@@ -72,6 +72,16 @@
 		92FCBF5413CE83D10011F744 /* FileSystemNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 92FCBF5313CE83D10011F744 /* FileSystemNode.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9254007213F0B4150020C912 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 925CE81413C3BD6D009D6D94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 925CE81C13C3BD6D009D6D94;
+			remoteInfo = VGTagger;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		9254006613F0A80C0020C912 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -467,6 +477,7 @@
 			buildToolPath = /usr/local/bin/macruby_deploy;
 			buildWorkingDirectory = "";
 			dependencies = (
+				9254007313F0B4150020C912 /* PBXTargetDependency */,
 			);
 			name = "Embed MacRuby";
 			passBuildSettingsInEnvironment = 1;
@@ -508,6 +519,7 @@
 			knownRegions = (
 				en,
 				English,
+				fr,
 			);
 			mainGroup = 925CE81213C3BD6D009D6D94;
 			productRefGroup = 925CE81E13C3BD6D009D6D94 /* Products */;
@@ -602,6 +614,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9254007313F0B4150020C912 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 925CE81C13C3BD6D009D6D94 /* VGTagger */;
+			targetProxy = 9254007213F0B4150020C912 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		922E35DC13C89C51003C5913 /* InfoPlist.strings */ = {

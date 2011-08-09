@@ -12,6 +12,7 @@ FileNames
 Images
 -------
 * find image metadata
+  * 1200x1200, 200 KB (JPEG)
 * Don't allways use jpeg as the mine type.
 * Image dragging
 
