@@ -2,6 +2,11 @@ Changelog
 =========
 
 -------------
+Version 1.1
+-------------
+* Images can not be dragged for directory.
+
+-------------
 Version 1.0.1 (Tue Aug 09 2011 16:52:14 +0100)
 -------------
 ### Features ###

@@ -55,8 +55,22 @@ struct FileData;
   */
 -(void) initFields;
 
+
+/** Compares the tag to another tag.
+ 
+ Order album, disc, then track
+ 
+ @param otherTag an tag instance.
+ @return a NSComparisonResult 
+ */
 -(NSComparisonResult)compare:(Tags *)otherTag;
 
+
+/** Returns a filename for the array of format strings
+ 
+ @param formatStrings If any of the strings is a name of a field it will be replaced by the value of that field (except cover)
+ @return The filename
+ */
 -(NSString*)filenameFromFormatArray:(NSArray*)formatStrings;
 
 
