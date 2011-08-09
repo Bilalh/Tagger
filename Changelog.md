@@ -12,6 +12,8 @@ Version 0.14
 * Table columns sorting and highligting on all columns.
 * Auto embed Macruby .
 * Embed  tablib and fixed build settings.
+* Table columns lengths
+* Shows the results straight away if there only one
 
 ### Bug fixes ###
 * Fixed a bug when vgmdb returns no results.

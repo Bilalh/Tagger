@@ -39,6 +39,7 @@
 		923FC13513DA117100B14A3E /* MPEGTags.mm in Sources */ = {isa = PBXBuildFile; fileRef = 923FC13413DA117100B14A3E /* MPEGTags.mm */; };
 		9254006713F0A82C0020C912 /* libtag.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.1.dylib */; };
 		9254007113F0AC8F0020C912 /* libtag.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.1.dylib */; };
+		9254008B13F0C6410020C912 /* DraggableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9254008A13F0C6410020C912 /* DraggableImageView.m */; };
 		9264488A13D773CE0035E693 /* arrowLeftBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */; };
 		9264488B13D773CE0035E693 /* arrowRightBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488913D773CE0035E693 /* arrowRightBlack16.tiff */; };
 		926BDEBD13E4B4220050B45C /* FileSystemNodeCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 926BDEBC13E4B4220050B45C /* FileSystemNodeCollection.m */; };
@@ -126,6 +127,8 @@
 		923FC13313DA117100B14A3E /* MPEGTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPEGTags.h; sourceTree = "<group>"; };
 		923FC13413DA117100B14A3E /* MPEGTags.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MPEGTags.mm; sourceTree = "<group>"; };
 		925093C813E39B2C00A20CA1 /* TagPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagPrivate.h; sourceTree = "<group>"; };
+		9254008913F0C6410020C912 /* DraggableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableImageView.h; sourceTree = "<group>"; };
+		9254008A13F0C6410020C912 /* DraggableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableImageView.m; sourceTree = "<group>"; };
 		9259102713E10A6C0033CB7B /* tags.webloc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tags.webloc; sourceTree = SOURCE_ROOT; };
 		925CE81D13C3BD6D009D6D94 /* VGTagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VGTagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9264486513D74DED0035E693 /* mp4 tag mapping */ = {isa = PBXFileReference; lastKnownFileType = text; name = "mp4 tag mapping"; path = "../Test Files/mp4 tag mapping"; sourceTree = "<group>"; };
@@ -450,6 +453,8 @@
 				92B65BF713D27BEC0018F988 /* ImageAndTextCell.m */,
 				92C4466613E0C7870038F817 /* ButtonLabelCell.h */,
 				92C4466713E0C7870038F817 /* ButtonLabelCell.m */,
+				9254008913F0C6410020C912 /* DraggableImageView.h */,
+				9254008A13F0C6410020C912 /* DraggableImageView.m */,
 			);
 			name = Gui;
 			sourceTree = "<group>";
@@ -610,6 +615,7 @@
 				92A680A413EC7DAE0067DD5F /* AdvancedPreferencesViewController.m in Sources */,
 				92A680A613EC7DAF0067DD5F /* GeneralPreferencesViewController.m in Sources */,
 				92CEE60313F0830E00E4C5CE /* NSNumber+compare.m in Sources */,
+				9254008B13F0C6410020C912 /* DraggableImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
