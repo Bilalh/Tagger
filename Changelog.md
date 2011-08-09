@@ -13,7 +13,8 @@ Version 0.14
 * Auto embed Macruby .
 * Embed  tablib and fixed build settings.
 * Table columns lengths
-* Shows the results straight away if there only one
+* Shows the results straight away if there only one when searching Vgmdb
+* The cover art can be dragged to finder or any other place 
 
 ### Bug fixes ###
 * Fixed a bug when vgmdb returns no results.

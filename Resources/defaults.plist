@@ -4,5 +4,7 @@
 <dict>
 	<key>startUrl</key>
 	<string>~/Movies/add/start/Atelier Meruru OST/</string>
+	<key>writeDraggedImageAsFile</key>
+	<true/>
 </dict>
 </plist>
