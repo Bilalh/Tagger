@@ -17,8 +17,10 @@
 #import "FileSystemNodeCollection.h"
 #import "RenamingFilesController.h"
 
-#import "DDLog.h"
-static const int ddLogLevel = LOG_LEVEL_INFO;
+#import "Logging.h"
+LOG_LEVEL(LOG_LEVEL_INFO);
+
+
 static const NSArray *predefinedDirectories;
 
 @interface MainController()  
@@ -437,7 +439,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (BOOL)windowShouldClose:(NSNotification *)notification
 {
-	NSLog(@"bye");
 	[window orderOut:self];
 	return NO;
 }

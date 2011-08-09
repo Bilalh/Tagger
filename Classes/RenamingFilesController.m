@@ -10,8 +10,10 @@
 #import "FileSystemNodeCollection.h"
 #import "FileSystemNode.h"
 
-#import "DDLog.h"
-static const int ddLogLevel = LOG_LEVEL_INFO;
+#import "Logging.h"
+LOG_LEVEL(LOG_LEVEL_INFO);
+
+
 static const NSSet *tokensSet;
 
 @implementation RenamingFilesController

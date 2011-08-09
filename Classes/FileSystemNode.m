@@ -5,8 +5,8 @@
 #import "MPEGTags.h"
 #import "NSNumber+compare.h"
 
-#import "DDLog.h"
-static const int ddLogLevel = LOG_LEVEL_INFO;
+#import "Logging.h"
+LOG_LEVEL(LOG_LEVEL_INFO);
 
 @interface FileSystemNode()
 - (BOOL) isaDirectory:(NSURL*)url;

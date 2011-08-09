@@ -19,8 +19,8 @@
 #include <attachedPictureFrame.h>
 #include <commentsframe.h>
 
-#import "DDLog.h"
-static const int ddLogLevel = LOG_LEVEL_ERROR;
+#import "Logging.h"
+LOG_LEVEL(LOG_LEVEL_ERROR);
 
 namespace MPEGFields {	// can not be put in the header for some reason
 	const char *ALBUM_ARTIST = "TPE2";

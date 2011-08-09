@@ -11,8 +11,9 @@
 #import "Tags.h"
 #import "NSImage+bitmapData.h"
 
-#import "DDLog.h"
-static const int ddLogLevel = LOG_LEVEL_INFO;
+#import "Logging.h"
+LOG_LEVEL(LOG_LEVEL_INFO);
+
 static const NSArray *fieldNames;
 
 @interface FileSystemNodeCollection()

@@ -7,8 +7,9 @@
 #import "MainController.h"
 #import "ImageAndTextCell.h"
 
-#import "DDLog.h"
-static const int ddLogLevel = LOG_LEVEL_INFO;
+#import "Logging.h"
+LOG_LEVEL(LOG_LEVEL_INFO);
+
 
 @implementation GeneralPreferencesViewController
 @synthesize tableColumns;

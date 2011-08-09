@@ -157,6 +157,7 @@
 		929A4AD913DA087D00244796 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
 		929B4E7D13DCB67F00E2FE54 /* PSDDFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDDFormatter.h; sourceTree = "<group>"; };
 		929B4E7E13DCB67F00E2FE54 /* PSDDFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDDFormatter.m; sourceTree = "<group>"; };
+		929FD79E13F1873300C4078A /* Logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
 		92A3C49B13E244200024C7D3 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = SDKROOT; };
 		92A6808413EC7B130067DD5F /* MASPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesViewController.h; sourceTree = "<group>"; };
 		92A6808513EC7B130067DD5F /* MASPreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASPreferencesWindow.xib; sourceTree = "<group>"; };
@@ -391,6 +392,7 @@
 			children = (
 				929B4E7D13DCB67F00E2FE54 /* PSDDFormatter.h */,
 				929B4E7E13DCB67F00E2FE54 /* PSDDFormatter.m */,
+				929FD79E13F1873300C4078A /* Logging.h */,
 			);
 			name = Logging;
 			sourceTree = "<group>";

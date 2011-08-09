@@ -13,9 +13,9 @@
 #import "Tags.h"
 #import "NSAttributedString+Hyperlink.h"
 
+#import "Logging.h"
+LOG_LEVEL(LOG_LEVEL_INFO);
 
-#import "DDLog.h"
-static const int ddLogLevel = LOG_LEVEL_INFO;
 
 @interface DisplayController() // private methdods
 - (id)   valuefromDetails:(NSString*)key;

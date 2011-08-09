@@ -12,8 +12,9 @@
 
 #include <tag.h>
 
-#import "DDLog.h"
-static const int ddLogLevel = LOG_LEVEL_ERROR;
+#import "Logging.h"
+LOG_LEVEL(LOG_LEVEL_ERROR);
+
 static const NSSet *tokensSet;
 
 @interface Tags() // private methdods

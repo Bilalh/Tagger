@@ -13,8 +13,9 @@
 #import "FileSystemNode.h"
 #import "Tags.h"
 
-#import "DDLog.h"
-static const int ddLogLevel = LOG_LEVEL_INFO;
+#import "Logging.h"
+LOG_LEVEL(LOG_LEVEL_INFO);
+
 
 @interface VgmdbController()
 - (IBAction)confirmSheet:sender;

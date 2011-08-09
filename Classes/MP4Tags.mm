@@ -16,8 +16,8 @@
 #include <mp4tag.h> 
 #include <mp4file.h>
 
-#import "DDLog.h"
-static const int ddLogLevel = LOG_LEVEL_ERROR;
+#import "Logging.h"
+LOG_LEVEL(LOG_LEVEL_ERROR);
 
 @interface MP4Tags()
 - (NSString*) getFieldWithString:(TagLib::String)field;
