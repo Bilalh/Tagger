@@ -11,7 +11,6 @@
 
 @interface DraggableImageView : NSImageView {
 @private
-	NSEvent* downEvent;
 }
 
 @property (assign) NSEvent* downEvent;

@@ -8,6 +8,9 @@
 
 #import "DraggableImageView.h"
 
+@interface DraggableImageView()
+- (void)startDrag:(NSEvent *)event;
+@end
 
 @implementation DraggableImageView
 @synthesize downEvent;
@@ -58,7 +61,6 @@
 
 - (BOOL)shouldDelayWindowOrderingForEvent:(NSEvent *)event
 {
-    // maybe make more discerning?!
     return YES;
 }
 
@@ -75,7 +77,7 @@
 - (void)mouseDragged:(NSEvent *)event
 {
     if ([self image]) {
-        [self startDrag:downEvent];
+        [self startDrag:self.downEvent];
 	}
 	self.downEvent = nil;
 }
