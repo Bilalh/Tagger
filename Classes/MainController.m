@@ -459,6 +459,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[[table tableColumnWithIdentifier:@"filename"] setEditable:false];
 	[[table tableColumnWithIdentifier:@"title"] setEditable:true];
 	[table setTarget:self];
+	[self _vgmdbEnable];
 }
 
 -(void) initDirectoryTable

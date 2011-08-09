@@ -1,6 +1,15 @@
 Changelog
 =========
 
+-------------
+Version 1.0.1
+-------------
+### Features ###
+* Debug statement do not appear in release version. 
+
+### Bug fixes ###
+* Fix a bug with the vgmdb menu item not been enable.
+
 -----------
 Version 1.0 (Tue Aug 09 2011 05:05:41 +0100)
 -----------
@@ -16,7 +25,6 @@ Version 1.0 (Tue Aug 09 2011 05:05:41 +0100)
 * Shows the results straight away if there only one when searching Vgmdb
 * The cover art can be dragged to finder or any other place 
 * Pref for how cover art is dragged
-* Debug statement do not appear in release version. 
 
 ### Bug fixes ###
 * Fixed a bug when vgmdb returns no results.
