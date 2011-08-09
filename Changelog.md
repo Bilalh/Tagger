@@ -2,7 +2,7 @@ Changelog
 =========
 
 -------------
-Version 1.0.1
+Version 1.0.1 (Tue Aug 09 2011 16:52:14 +0100)
 -------------
 ### Features ###
 * Debug statement do not appear in release version. 
