@@ -3,12 +3,13 @@
 //  VGTagger
 //
 //  Created by Bilal Syed Hussain on 09/08/2011.
-//  Copyright 2011 St. Andrews KY16 9XW. All rights reserved.
+//  Copyright 2011  All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-
+/// NSImageView where the image can be dragged to any 
+/// other image source as a file
 @interface DraggableImageView : NSImageView {
 @private
 }

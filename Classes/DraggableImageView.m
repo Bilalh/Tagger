@@ -3,7 +3,7 @@
 //  VGTagger
 //
 //  Created by Bilal Syed Hussain on 09/08/2011.
-//  Copyright 2011 St. Andrews KY16 9XW. All rights reserved.
+//  Copyright 2011  All rights reserved.
 //
 
 #import "DraggableImageView.h"
@@ -18,14 +18,14 @@
 - (void)startDrag:(NSEvent *)event
 {
 	NSPasteboard *pboard = [NSPasteboard pasteboardWithName:NSDragPboard];
-	
+	// Write the image data to clipboard
 	[pboard declareTypes:[NSArray arrayWithObject:NSFilenamesPboardType]
 				   owner:self];
 	[pboard setData:[[self image] TIFFRepresentation] 
 			forType:NSTIFFPboardType];
 	
+	// IF true write the data as a file as well which allows dragging the file e.g. to the desktop
 	BOOL writeAsFile = [[NSUserDefaults standardUserDefaults] boolForKey:@"writeDraggedImageAsFile"];
-	
 	if (writeAsFile){
 		NSString *tempFileName = @"/tmp/cover.jpg";
 		NSBitmapImageRep *bits= [[[self image] representations ] objectAtIndex:0];
