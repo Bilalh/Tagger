@@ -36,6 +36,8 @@ static const NSArray *predefinedRenameFormats;
 
 - (IBAction)renameWithPredefinedFormat:(id)sender;
 
+- (void) openDirectoryNode: (FileSystemNode *) node;
+
 /// Checks if there any music files
 - (void) _vgmdbEnable;
 
@@ -76,27 +78,21 @@ static const NSArray *predefinedRenameFormats;
 
 #pragma mark - Table Methods 
 
-- (IBAction) onClick:(id)sender
+- (IBAction) openDirectory:(id)sender
 {
-	// code to make cells that are editable go to edit
-	NSEvent *currentEvent = [NSApp currentEvent];
-	NSInteger column = [table clickedColumn];
-	NSInteger row = [table clickedRow];
-	NSCell *theCell = [table preparedCellAtColumn:column row:row];
-	NSRect cellFrame = [table frameOfCellAtColumn:column row:row];
-	NSUInteger hitTestResult = [theCell hitTestForEvent:currentEvent inRect:cellFrame ofView:table];
-	
-	if ( ( hitTestResult & NSCellHitEditableTextArea ) != NSCellHitEditableTextArea ) return;
-	if ([[[table tableColumns] objectAtIndex:column] isEditable]){
-		[table editColumn:column row:row withEvent:currentEvent select:YES];	
-		return;
-	}
+	NSInteger row = [table selectedRow];
+	if (row == -1) return;
 	
 	NSArray *children = [[directoryStack lastObject] children];
 	FileSystemNode *node = [children objectAtIndex:row];
-	DDLogVerbose(@"onClick selected %@", node);
 	if ([node isDirectory]){
-		[directoryStack addObject:node];
+		[self openDirectoryNode: node];
+	}
+}
+
+- (void) openDirectoryNode: (FileSystemNode *) node
+{
+  [directoryStack addObject:node];
 		[table reloadData];
 		[parentNodes insertObject:node atIndex:0];
 		[popup insertItemWithTitle:[node displayName] atIndex:0];
@@ -105,7 +101,31 @@ static const NSArray *predefinedRenameFormats;
 		// clear the forward stack since it would not make sense any more
 		[forwardStack removeAllObjects];
 		[table deselectAll:self];
-	}	
+
+}
+- (IBAction) onClick:(id)sender
+{
+	NSInteger row = [table clickedRow];
+	
+	NSArray *children = [[directoryStack lastObject] children];
+	FileSystemNode *node = [children objectAtIndex:row];
+	DDLogVerbose(@"onClick selected %@", node);
+	if ([node isDirectory]){
+		[self openDirectoryNode: node];
+	}else{
+		// code to make cells that are editable go to edit
+		NSEvent *currentEvent = [NSApp currentEvent];
+		NSInteger column = [table clickedColumn];
+		NSCell *theCell = [table preparedCellAtColumn:column row:row];
+		NSRect cellFrame = [table frameOfCellAtColumn:column row:row];
+		NSUInteger hitTestResult = [theCell hitTestForEvent:currentEvent inRect:cellFrame ofView:table];
+		
+		if ( ( hitTestResult & NSCellHitEditableTextArea ) != NSCellHitEditableTextArea ) return;
+		if ([[[table tableColumns] objectAtIndex:column] isEditable]){
+			[table editColumn:column row:row withEvent:currentEvent select:YES];	
+			return;
+		}
+	}
 }
 
 

@@ -9,6 +9,12 @@ FileNames
 ---------
 * Better message when names clash.
 
+
+GUI
+---
+* Disable Open Selected Fodler if the user has not selected a folder.
+At the moment it does nothing if the user tries to do this.
+
 Images
 -------
 * find image metadata

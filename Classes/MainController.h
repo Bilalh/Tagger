@@ -98,7 +98,10 @@
  */
 - (IBAction) search:(id)sender;
 
-- (IBAction)reopen:(id)sender;
+- (IBAction) reopen:(id)sender;
 
 - (IBAction) goToStartingDirectory:(id)sender;
+
+- (IBAction) openDirectory:(id)sender;
+
 @end

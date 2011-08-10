@@ -5,18 +5,20 @@ Changelog
 Version 1.1.5
 -------------
 ### Features ###
-* Adds formats for renaming. e.g. 01 - title
+* Adds formats for renaming. e.g. 01 - title .
   * Are stored in the plist for easy changing.
+* Can click any where on a directory row to go do it.
+* Can open a selected  directory with cmd-O.
 
 ### Bug fixes ###
-* highlighting When clicking on a directory
+* highlighting When clicking on a directory.
 
 -----------
 Version 1.1 (Wed Aug 10 2011 01:31:51 +0100)
 -----------
 * Images can not be dragged for directory.
 * The cover art is now named 'title - cover' which allows 
-multiple cover to be dragged to the desktop
+multiple cover to be dragged to the desktop/
   * Which can be changed in the prefs.
 
 -------------
