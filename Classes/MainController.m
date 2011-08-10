@@ -451,6 +451,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		newRow = (selected +1) % [table numberOfRows];
 	}
 	[table selectRowIndexes:[NSIndexSet indexSetWithIndex:newRow] byExtendingSelection:NO];
+	[table scrollRowToVisible:newRow];
 }
 
 - (IBAction)gotoPreviousRow:(id)sender
@@ -463,6 +464,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		newRow = (selected + [table numberOfRows] - 1 ) % [table numberOfRows];
 	}
 	[table selectRowIndexes:[NSIndexSet indexSetWithIndex:newRow] byExtendingSelection:NO];
+	[table scrollRowToVisible:newRow];
 }
 
 
