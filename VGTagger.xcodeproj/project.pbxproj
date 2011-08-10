@@ -255,15 +255,13 @@
 		920660BA13C89845003A3803 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				920660BB13C89845003A3803 /* VGTagger-Info.plist */,
 				929F152313F1E5420021F9FD /* BHDraggableImageView */,
-				922E35DC13C89C51003C5913 /* InfoPlist.strings */,
 				92C4465F13E0BF830038F817 /* BWToolKitEdits */,
 				92A6808313EC7B130067DD5F /* Preferences */,
 				927F56C313DDD24600274708 /* Unused */,
 				929A4ACF13DA087D00244796 /* Lumberjack */,
-				920660A413C89845003A3803 /* main.m */,
-				920660BB13C89845003A3803 /* VGTagger-Info.plist */,
-				920660BC13C89845003A3803 /* VGTagger-Prefix.pch */,
+				92CBDBA013F209D900B7F6C1 /* Main */,
 			);
 			path = "Other Sources";
 			sourceTree = "<group>";
@@ -489,6 +487,16 @@
 				92C4466313E0BF830038F817 /* BWHyperlinkButtonCell.m */,
 			);
 			path = BWToolKitEdits;
+			sourceTree = "<group>";
+		};
+		92CBDBA013F209D900B7F6C1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				922E35DC13C89C51003C5913 /* InfoPlist.strings */,
+				920660A413C89845003A3803 /* main.m */,
+				920660BC13C89845003A3803 /* VGTagger-Prefix.pch */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
