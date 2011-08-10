@@ -50,32 +50,6 @@ static const NSArray *predefinedRenameFormats;
 @synthesize vgmdbEnable=_vgmdbEnable;
 @dynamic forwordStackEnable, backwordStackEnable;
 
-#pragma mark - Gui Bools
-
-- (BOOL) forwordStackEnable
-{
-	return [forwardStack count ] != 0;
-}
-
-- (BOOL) backwordStackEnable
-{
-	return [directoryStack count ] >=2;
-}
-
-- (void) _vgmdbEnable
-{
-	for (FileSystemNode *n in [[directoryStack lastObject] children] ) {
-		if (!n.isDirectory) {
-			_vgmdbEnable = YES;
-			[vgmdbItem setEnabled:YES];
-			return;	
-		}
-	}
-	_vgmdbEnable = NO;	
-	[vgmdbItem setEnabled:NO];
-}
-
-
 #pragma mark - Table Methods 
 
 - (IBAction) openDirectory:(id)sender
@@ -467,11 +441,57 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}
 }
 
-//- (id)valueForUndefinedKey:(NSString *)key
-//{
-//	DDLogError(@"valueForUndefinedKey:%@",key);
-//	return @"ERROR";
-//}
+- (IBAction)gotoNextRow:(id)sender
+{
+	if ([table numberOfRows] == 0) return;
+	NSUInteger newRow, selected =  [table selectedRow];
+	if (selected == -1){
+		newRow = 0;	
+	}else{
+		newRow = (selected +1) % [table numberOfRows];
+	}
+	[table selectRowIndexes:[NSIndexSet indexSetWithIndex:newRow] byExtendingSelection:NO];
+}
+
+- (IBAction)gotoPreviousRow:(id)sender
+{
+	if ([table numberOfRows] == 0) return;
+	NSUInteger newRow, selected =  [table selectedRow];
+	if (selected == -1){
+		newRow = 0;	
+	}else{
+		newRow = (selected + [table numberOfRows] - 1 ) % [table numberOfRows];
+	}
+	[table selectRowIndexes:[NSIndexSet indexSetWithIndex:newRow] byExtendingSelection:NO];
+}
+
+
+#pragma mark - Gui Bools
+
+- (BOOL) forwordStackEnable
+{
+	return [forwardStack count ] != 0;
+}
+
+- (BOOL) backwordStackEnable
+{
+	return [directoryStack count ] >=2;
+}
+
+- (void) _vgmdbEnable
+{
+	for (FileSystemNode *n in [[directoryStack lastObject] children] ) {
+		if (!n.isDirectory) {
+			_vgmdbEnable = YES;
+			[vgmdbItem setEnabled:YES];
+			return;	
+		}
+	}
+	_vgmdbEnable = NO;	
+	[vgmdbItem setEnabled:NO];
+}
+
+
 
 #pragma mark - Windows
 
