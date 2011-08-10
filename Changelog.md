@@ -5,6 +5,9 @@ Changelog
 Version 1.1
 -------------
 * Images can not be dragged for directory.
+* The cover art is now named 'title - cover' which allows 
+multiple cover to be dragged to the desktop
+  * Which can be changed in the prefs.
 
 -------------
 Version 1.0.1 (Tue Aug 09 2011 16:52:14 +0100)

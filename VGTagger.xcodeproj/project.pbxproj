@@ -54,6 +54,8 @@
 		929A4ADE13DA087D00244796 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD913DA087D00244796 /* DDTTYLogger.m */; };
 		929B4E7F13DCB67F00E2FE54 /* PSDDFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 929B4E7E13DCB67F00E2FE54 /* PSDDFormatter.m */; };
 		929F152913F1E5F60021F9FD /* BHDraggableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 929F152813F1E5F60021F9FD /* BHDraggableImageView.m */; };
+		929F152F13F1F6120021F9FD /* CoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 929F152E13F1F6120021F9FD /* CoverViewController.m */; };
+		929F153113F1F6A50021F9FD /* CoverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 929F153013F1F6A40021F9FD /* CoverView.xib */; };
 		92A3C49E13E2444A0024C7D3 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A3C49B13E244200024C7D3 /* MacRuby.framework */; };
 		92A6808813EC7B130067DD5F /* MASPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A6808513EC7B130067DD5F /* MASPreferencesWindow.xib */; };
 		92A6808913EC7B130067DD5F /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A6808713EC7B130067DD5F /* MASPreferencesWindowController.m */; };
@@ -130,7 +132,6 @@
 		925093C813E39B2C00A20CA1 /* TagPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagPrivate.h; sourceTree = "<group>"; };
 		9254008913F0C6410020C912 /* DraggableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableImageView.h; sourceTree = "<group>"; };
 		9254008A13F0C6410020C912 /* DraggableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableImageView.m; sourceTree = "<group>"; };
-		9259102713E10A6C0033CB7B /* tags.webloc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = tags.webloc; sourceTree = SOURCE_ROOT; };
 		925CE81D13C3BD6D009D6D94 /* VGTagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VGTagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9264486513D74DED0035E693 /* mp4 tag mapping */ = {isa = PBXFileReference; lastKnownFileType = text; name = "mp4 tag mapping"; path = "../Test Files/mp4 tag mapping"; sourceTree = "<group>"; };
 		9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowLeftBlack16.tiff; sourceTree = "<group>"; };
@@ -160,6 +161,9 @@
 		929B4E7E13DCB67F00E2FE54 /* PSDDFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDDFormatter.m; sourceTree = "<group>"; };
 		929F152713F1E5F60021F9FD /* BHDraggableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BHDraggableImageView.h; path = BHDraggableImageView/BHDraggableImageView.h; sourceTree = "<group>"; };
 		929F152813F1E5F60021F9FD /* BHDraggableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BHDraggableImageView.m; path = BHDraggableImageView/BHDraggableImageView.m; sourceTree = "<group>"; };
+		929F152D13F1F6110021F9FD /* CoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoverViewController.h; sourceTree = "<group>"; };
+		929F152E13F1F6120021F9FD /* CoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoverViewController.m; sourceTree = "<group>"; };
+		929F153013F1F6A40021F9FD /* CoverView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CoverView.xib; sourceTree = "<group>"; };
 		929FD79E13F1873300C4078A /* Logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logging.h; sourceTree = "<group>"; };
 		92A3C49B13E244200024C7D3 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = SDKROOT; };
 		92A6808413EC7B130067DD5F /* MASPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesViewController.h; sourceTree = "<group>"; };
@@ -269,7 +273,6 @@
 			children = (
 				928557FF13EF6352002C5112 /* Test Files */,
 				928411AE13EB853600A92F3F /* defaults.plist */,
-				9259102713E10A6C0033CB7B /* tags.webloc */,
 				9264488713D773CE0035E693 /* Images */,
 				9254006513F0A52F0020C912 /* Frameworks */,
 				920660B813C89845003A3803 /* Linked Frameworks */,
@@ -430,6 +433,9 @@
 				92A680A013EC7DAE0067DD5F /* GeneralPreferencesView.xib */,
 				92A680A113EC7DAE0067DD5F /* GeneralPreferencesViewController.h */,
 				92A680A213EC7DAE0067DD5F /* GeneralPreferencesViewController.m */,
+				929F153013F1F6A40021F9FD /* CoverView.xib */,
+				929F152D13F1F6110021F9FD /* CoverViewController.h */,
+				929F152E13F1F6120021F9FD /* CoverViewController.m */,
 			);
 			name = Preferences;
 			sourceTree = "<group>";
@@ -571,6 +577,7 @@
 				92A6808813EC7B130067DD5F /* MASPreferencesWindow.xib in Resources */,
 				92A680A313EC7DAE0067DD5F /* AdvancedPreferencesView.xib in Resources */,
 				92A680A513EC7DAE0067DD5F /* GeneralPreferencesView.xib in Resources */,
+				929F153113F1F6A50021F9FD /* CoverView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +639,7 @@
 				92CEE60313F0830E00E4C5CE /* NSNumber+compare.m in Sources */,
 				9254008B13F0C6410020C912 /* DraggableImageView.m in Sources */,
 				929F152913F1E5F60021F9FD /* BHDraggableImageView.m in Sources */,
+				929F152F13F1F6120021F9FD /* CoverViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

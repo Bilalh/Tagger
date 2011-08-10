@@ -1,0 +1,3697 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="7.10">
+	<data>
+		<int key="IBDocument.SystemTarget">1060</int>
+		<string key="IBDocument.SystemVersion">10K549</string>
+		<string key="IBDocument.InterfaceBuilderVersion">1305</string>
+		<string key="IBDocument.AppKitVersion">1038.36</string>
+		<string key="IBDocument.HIToolboxVersion">461.00</string>
+		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
+			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
+			<string key="NS.object.0">1305</string>
+		</object>
+		<object class="NSArray" key="IBDocument.IntegratedClassDependencies">
+			<bool key="EncodedWithXMLCoder">YES</bool>
+			<string>NSTextField</string>
+			<string>NSTokenFieldCell</string>
+			<string>NSCustomObject</string>
+			<string>NSTokenField</string>
+			<string>NSCustomView</string>
+			<string>NSUserDefaultsController</string>
+			<string>NSTextFieldCell</string>
+		</object>
+		<object class="NSArray" key="IBDocument.PluginDependencies">
+			<bool key="EncodedWithXMLCoder">YES</bool>
+			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+		</object>
+		<object class="NSMutableDictionary" key="IBDocument.Metadata">
+			<bool key="EncodedWithXMLCoder">YES</bool>
+			<object class="NSArray" key="dict.sortedKeys" id="0">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+			</object>
+			<reference key="dict.values" ref="0"/>
+		</object>
+		<object class="NSMutableArray" key="IBDocument.RootObjects" id="1000">
+			<bool key="EncodedWithXMLCoder">YES</bool>
+			<object class="NSCustomObject" id="1001">
+				<string key="NSClassName">CoverViewController</string>
+			</object>
+			<object class="NSCustomObject" id="1003">
+				<string key="NSClassName">FirstResponder</string>
+			</object>
+			<object class="NSCustomObject" id="1004">
+				<string key="NSClassName">NSApplication</string>
+			</object>
+			<object class="NSCustomView" id="60725823">
+				<reference key="NSNextResponder"/>
+				<int key="NSvFlags">268</int>
+				<object class="NSMutableArray" key="NSSubviews">
+					<bool key="EncodedWithXMLCoder">YES</bool>
+					<object class="NSTextField" id="92492110">
+						<reference key="NSNextResponder" ref="60725823"/>
+						<int key="NSvFlags">268</int>
+						<string key="NSFrame">{{39, 150}, {354, 18}}</string>
+						<reference key="NSSuperview" ref="60725823"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="622677545"/>
+						<bool key="NSEnabled">YES</bool>
+						<object class="NSTextFieldCell" key="NSCell" id="135806925">
+							<int key="NSCellFlags">68288064</int>
+							<int key="NSCellFlags2">138413056</int>
+							<string key="NSContents">Format for dragged images</string>
+							<object class="NSFont" key="NSSupport">
+								<string key="NSName">LucidaGrande</string>
+								<double key="NSSize">14</double>
+								<int key="NSfFlags">16</int>
+							</object>
+							<reference key="NSControlView" ref="92492110"/>
+							<object class="NSColor" key="NSBackgroundColor">
+								<int key="NSColorSpace">6</int>
+								<string key="NSCatalogName">System</string>
+								<string key="NSColorName">controlColor</string>
+								<object class="NSColor" key="NSColor">
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
+								</object>
+							</object>
+							<object class="NSColor" key="NSTextColor" id="273362867">
+								<int key="NSColorSpace">6</int>
+								<string key="NSCatalogName">System</string>
+								<string key="NSColorName">controlTextColor</string>
+								<object class="NSColor" key="NSColor">
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MAA</bytes>
+								</object>
+							</object>
+						</object>
+					</object>
+					<object class="NSTokenField" id="965898730">
+						<reference key="NSNextResponder" ref="60725823"/>
+						<int key="NSvFlags">268</int>
+						<object class="NSMutableSet" key="NSDragTypes">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="NSArray" key="set.sortedObjects">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>NSStringPboardType</string>
+							</object>
+						</object>
+						<string key="NSFrame">{{34, 20}, {123, 22}}</string>
+						<reference key="NSSuperview" ref="60725823"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
+						<bool key="NSEnabled">YES</bool>
+						<object class="NSTokenFieldCell" key="NSCell" id="521357388">
+							<int key="NSCellFlags">69336577</int>
+							<int key="NSCellFlags2">4096</int>
+							<object class="NSMutableAttributedString" key="NSContents">
+								<object class="NSMutableString" key="NSString">
+									<bytes key="NS.bytes">77+8A</bytes>
+								</object>
+								<object class="NSDictionary" key="NSAttributes">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<object class="NSArray" key="dict.sortedKeys">
+										<bool key="EncodedWithXMLCoder">YES</bool>
+										<string>NSAttachment</string>
+										<string>NSColor</string>
+										<string>NSFont</string>
+										<string>NSOriginalFont</string>
+										<string>NSParagraphStyle</string>
+									</object>
+									<object class="NSMutableArray" key="dict.values">
+										<bool key="EncodedWithXMLCoder">YES</bool>
+										<object class="NSTokenAttachment">
+											<nil key="NSFileWrapper"/>
+											<object class="NSTokenAttachmentCell" key="NSCell">
+												<int key="NSCellFlags">67239488</int>
+												<int key="NSCellFlags2">134219776</int>
+												<string key="NSContents">albumArtist</string>
+												<object class="NSFont" key="NSSupport" id="953154039">
+													<string key="NSName">LucidaGrande</string>
+													<double key="NSSize">13</double>
+													<int key="NSfFlags">1044</int>
+												</object>
+												<string key="NSRepresentedObject">albumArtist</string>
+												<reference key="NSTextColor" ref="273362867"/>
+											</object>
+											<reference key="NS.delegate" ref="521357388"/>
+										</object>
+										<reference ref="273362867"/>
+										<reference ref="953154039"/>
+										<reference ref="953154039"/>
+										<object class="NSMutableParagraphStyle">
+											<nil key="NSTabStops"/>
+										</object>
+									</object>
+								</object>
+							</object>
+							<reference key="NSSupport" ref="953154039"/>
+							<reference key="NSControlView" ref="965898730"/>
+							<object class="NSColor" key="NSBackgroundColor" id="169382556">
+								<int key="NSColorSpace">6</int>
+								<string key="NSCatalogName">System</string>
+								<string key="NSColorName">textBackgroundColor</string>
+								<object class="NSColor" key="NSColor">
+									<int key="NSColorSpace">3</int>
+									<bytes key="NSWhite">MQA</bytes>
+								</object>
+							</object>
+							<reference key="NSTextColor" ref="273362867"/>
+							<object class="NSArray" key="NSAllowedInputLocales">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>sr_Latn_RS</string>
+								<string>zh</string>
+								<string>ro_RO</string>
+								<string>be_BY</string>
+								<string>si_LK</string>
+								<string>fa_IR</string>
+								<string>en_BW</string>
+								<string>en_JM</string>
+								<string>ka_GE</string>
+								<string>zh_Hans_SG</string>
+								<string>mk_MK</string>
+								<string>en_HK</string>
+								<string>ar_LB</string>
+								<string>ii_CN</string>
+								<string>ru_UA</string>
+								<string>zh_Hant_HK</string>
+								<string>af</string>
+								<string>kl_GL</string>
+								<string>az_Latn</string>
+								<string>ar_SA</string>
+								<string>en_BE</string>
+								<string>bn_BD</string>
+								<string>en_MH</string>
+								<string>be</string>
+								<string>nl_NL</string>
+								<string>el_CY</string>
+								<string>az_Cyrl_AZ</string>
+								<string>ca</string>
+								<string>sr_Latn</string>
+								<string>om_ET</string>
+								<string>es_CL</string>
+								<string>bg</string>
+								<string>en_VI</string>
+								<string>es_VE</string>
+								<string>uz_Cyrl_UZ</string>
+								<string>fr_MC</string>
+								<string>am</string>
+								<string>zh_Hant</string>
+								<string>uz_Arab</string>
+								<string>en_GB</string>
+								<string>da</string>
+								<string>mr_IN</string>
+								<string>es_MX</string>
+								<string>es_PR</string>
+								<string>sq_AL</string>
+								<string>ar</string>
+								<string>fi_FI</string>
+								<string>bn</string>
+								<string>en_NA</string>
+								<string>de</string>
+								<string>as</string>
+								<string>cy_GB</string>
+								<string>en_IE</string>
+								<string>en_BZ</string>
+								<string>de_CH</string>
+								<string>en_US</string>
+								<string>sr_Latn_BA</string>
+								<string>te_IN</string>
+								<string>ar_QA</string>
+								<string>ar_TN</string>
+								<string>zh_Hans_MO</string>
+								<string>de_LI</string>
+								<string>fa</string>
+								<string>kw_GB</string>
+								<string>cs_CZ</string>
+								<string>hu_HU</string>
+								<string>zh_Hant_TW</string>
+								<string>uz_Latn</string>
+								<string>ta_IN</string>
+								<string>az</string>
+								<string>ar_EG</string>
+								<string>ar_SD</string>
+								<string>cs</string>
+								<string>ga</string>
+								<string>ar_LY</string>
+								<string>af_ZA</string>
+								<string>el</string>
+								<string>es_PA</string>
+								<string>es_CO</string>
+								<string>fi</string>
+								<string>en</string>
+								<string>ha</string>
+								<string>eo</string>
+								<string>gl_ES</string>
+								<string>cy</string>
+								<string>es_GT</string>
+								<string>ms_BN</string>
+								<string>ne_IN</string>
+								<string>he_IL</string>
+								<string>he</string>
+								<string>es</string>
+								<string>fo</string>
+								<string>en_CA</string>
+								<string>et</string>
+								<string>hr_HR</string>
+								<string>haw</string>
+								<string>gl</string>
+								<string>ar_SY</string>
+								<string>fr_SN</string>
+								<string>eu</string>
+								<string>uz_Arab_AF</string>
+								<string>id</string>
+								<string>fr</string>
+								<string>az_Latn_AZ</string>
+								<string>hi</string>
+								<string>zh_Hans_HK</string>
+								<string>ja</string>
+								<string>es_ES</string>
+								<string>ar_AE</string>
+								<string>uz_Latn_UZ</string>
+								<string>ca_ES</string>
+								<string>fr_BE</string>
+								<string>hi_IN</string>
+								<string>is_IS</string>
+								<string>ii</string>
+								<string>ps_AF</string>
+								<string>ka</string>
+								<string>tr_TR</string>
+								<string>it_CH</string>
+								<string>kk_Cyrl_KZ</string>
+								<string>gu</string>
+								<string>es_US</string>
+								<string>gv</string>
+								<string>en_PH</string>
+								<string>es_HN</string>
+								<string>hr</string>
+								<string>sv_FI</string>
+								<string>es_CR</string>
+								<string>haw_US</string>
+								<string>ar_MA</string>
+								<string>hu</string>
+								<string>nl_BE</string>
+								<string>th_TH</string>
+								<string>en_ZA</string>
+								<string>kk_Cyrl</string>
+								<string>is</string>
+								<string>it</string>
+								<string>es_PE</string>
+								<string>hy</string>
+								<string>de_DE</string>
+								<string>en_NZ</string>
+								<string>kk</string>
+								<string>kl</string>
+								<string>en_AU</string>
+								<string>pa_Guru</string>
+								<string>el_GR</string>
+								<string>km</string>
+								<string>kn</string>
+								<string>ko</string>
+								<string>nb</string>
+								<string>ar_IQ</string>
+								<string>es_PY</string>
+								<string>es_EC</string>
+								<string>en_US_POSIX</string>
+								<string>vi_VN</string>
+								<string>lv_LV</string>
+								<string>ne</string>
+								<string>kn_IN</string>
+								<string>es_AR</string>
+								<string>mk</string>
+								<string>ml</string>
+								<string>bg_BG</string>
+								<string>hy_AM_REVISED</string>
+								<string>kw</string>
+								<string>uk_UA</string>
+								<string>en_PK</string>
+								<string>pa</string>
+								<string>lt</string>
+								<string>sk_SK</string>
+								<string>nl</string>
+								<string>ur_PK</string>
+								<string>de_BE</string>
+								<string>lv</string>
+								<string>as_IN</string>
+								<string>mr</string>
+								<string>nn</string>
+								<string>en_ZW</string>
+								<string>fr_CA</string>
+								<string>ne_NP</string>
+								<string>ms</string>
+								<string>pl_PL</string>
+								<string>ti_ER</string>
+								<string>ja_JP</string>
+								<string>mt</string>
+								<string>fr_LU</string>
+								<string>om</string>
+								<string>sr_Cyrl_ME</string>
+								<string>en_IN</string>
+								<string>ga_IE</string>
+								<string>sw_KE</string>
+								<string>pl</string>
+								<string>kok</string>
+								<string>ur_IN</string>
+								<string>or</string>
+								<string>it_IT</string>
+								<string>hy_AM</string>
+								<string>ml_IN</string>
+								<string>en_SG</string>
+								<string>es_SV</string>
+								<string>am_ET</string>
+								<string>pt_BR</string>
+								<string>bn_IN</string>
+								<string>mt_MT</string>
+								<string>ar_KW</string>
+								<string>es_DO</string>
+								<string>pa_Arab</string>
+								<string>gv_GB</string>
+								<string>so_KE</string>
+								<string>ti_ET</string>
+								<string>ps</string>
+								<string>ms_MY</string>
+								<string>sl_SI</string>
+								<string>es_UY</string>
+								<string>en_MT</string>
+								<string>pt</string>
+								<string>sw_TZ</string>
+								<string>ta</string>
+								<string>nn_NO</string>
+								<string>sr_Cyrl_RS</string>
+								<string>si</string>
+								<string>te</string>
+								<string>ro</string>
+								<string>so_SO</string>
+								<string>sk</string>
+								<string>az_Cyrl</string>
+								<string>or_IN</string>
+								<string>sl</string>
+								<string>pa_Arab_PK</string>
+								<string>ru_RU</string>
+								<string>th</string>
+								<string>ar_DZ</string>
+								<string>ti</string>
+								<string>so</string>
+								<string>sr_Cyrl</string>
+								<string>es_NI</string>
+								<string>ha_Latn_NG</string>
+								<string>ru</string>
+								<string>en_TT</string>
+								<string>sq</string>
+								<string>fr_FR</string>
+								<string>sr</string>
+								<string>da_DK</string>
+								<string>es_BO</string>
+								<string>nb_NO</string>
+								<string>de_LU</string>
+								<string>uk</string>
+								<string>eu_ES</string>
+								<string>ar_JO</string>
+								<string>sv</string>
+								<string>so_ET</string>
+								<string>tr</string>
+								<string>sw</string>
+								<string>vi</string>
+								<string>zh_Hans_CN</string>
+								<string>km_KH</string>
+								<string>fa_AF</string>
+								<string>et_EE</string>
+								<string>ko_KR</string>
+								<string>pa_Guru_IN</string>
+								<string>sr_Latn_ME</string>
+								<string>so_DJ</string>
+								<string>ur</string>
+								<string>kok_IN</string>
+								<string>uz_Cyrl</string>
+								<string>zh_Hant_MO</string>
+								<string>zh_Hans</string>
+								<string>ar_YE</string>
+								<string>fo_FO</string>
+								<string>sv_SE</string>
+								<string>ha_Latn</string>
+								<string>de_AT</string>
+								<string>lt_LT</string>
+								<string>ar_OM</string>
+								<string>sr_Cyrl_BA</string>
+								<string>uz</string>
+								<string>ar_BH</string>
+								<string>id_ID</string>
+								<string>pt_PT</string>
+								<string>af_NA</string>
+								<string>om_KE</string>
+								<string>fr_CH</string>
+								<string>gu_IN</string>
+							</object>
+							<reference key="NSDelegate" ref="965898730"/>
+							<double key="NSCompletionDelay">0.0</double>
+							<int key="NSTokenStyle">0</int>
+							<object class="NSArray" key="NS.representedObjects">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>albumArtist</string>
+							</object>
+						</object>
+						<int key="NSTokenFieldVersion">2</int>
+					</object>
+					<object class="NSTokenField" id="1069062941">
+						<reference key="NSNextResponder" ref="60725823"/>
+						<int key="NSvFlags">268</int>
+						<object class="NSMutableSet" key="NSDragTypes">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="NSArray" key="set.sortedObjects">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>NSStringPboardType</string>
+							</object>
+						</object>
+						<string key="NSFrame">{{295, 54}, {78, 22}}</string>
+						<reference key="NSSuperview" ref="60725823"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="965898730"/>
+						<bool key="NSEnabled">YES</bool>
+						<object class="NSTokenFieldCell" key="NSCell" id="478482992">
+							<int key="NSCellFlags">69336577</int>
+							<int key="NSCellFlags2">4096</int>
+							<object class="NSMutableAttributedString" key="NSContents">
+								<object class="NSMutableString" key="NSString">
+									<bytes key="NS.bytes">77+8A</bytes>
+								</object>
+								<object class="NSDictionary" key="NSAttributes">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<object class="NSArray" key="dict.sortedKeys">
+										<bool key="EncodedWithXMLCoder">YES</bool>
+										<string>NSAttachment</string>
+										<string>NSColor</string>
+										<string>NSFont</string>
+										<string>NSOriginalFont</string>
+										<string>NSParagraphStyle</string>
+									</object>
+									<object class="NSMutableArray" key="dict.values">
+										<bool key="EncodedWithXMLCoder">YES</bool>
+										<object class="NSTokenAttachment">
+											<nil key="NSFileWrapper"/>
+											<object class="NSTokenAttachmentCell" key="NSCell">
+												<int key="NSCellFlags">67239488</int>
+												<int key="NSCellFlags2">134219776</int>
+												<string key="NSContents">genre</string>
+												<reference key="NSSupport" ref="953154039"/>
+												<string key="NSRepresentedObject">genre</string>
+												<reference key="NSTextColor" ref="273362867"/>
+											</object>
+											<reference key="NS.delegate" ref="478482992"/>
+										</object>
+										<reference ref="273362867"/>
+										<reference ref="953154039"/>
+										<reference ref="953154039"/>
+										<object class="NSMutableParagraphStyle">
+											<nil key="NSTabStops"/>
+										</object>
+									</object>
+								</object>
+							</object>
+							<reference key="NSSupport" ref="953154039"/>
+							<reference key="NSControlView" ref="1069062941"/>
+							<reference key="NSBackgroundColor" ref="169382556"/>
+							<reference key="NSTextColor" ref="273362867"/>
+							<object class="NSArray" key="NSAllowedInputLocales">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>sr_Latn_RS</string>
+								<string>zh</string>
+								<string>ro_RO</string>
+								<string>be_BY</string>
+								<string>si_LK</string>
+								<string>fa_IR</string>
+								<string>en_BW</string>
+								<string>en_JM</string>
+								<string>ka_GE</string>
+								<string>zh_Hans_SG</string>
+								<string>mk_MK</string>
+								<string>en_HK</string>
+								<string>ar_LB</string>
+								<string>ii_CN</string>
+								<string>ru_UA</string>
+								<string>zh_Hant_HK</string>
+								<string>af</string>
+								<string>kl_GL</string>
+								<string>az_Latn</string>
+								<string>ar_SA</string>
+								<string>en_BE</string>
+								<string>bn_BD</string>
+								<string>en_MH</string>
+								<string>be</string>
+								<string>nl_NL</string>
+								<string>el_CY</string>
+								<string>az_Cyrl_AZ</string>
+								<string>ca</string>
+								<string>sr_Latn</string>
+								<string>om_ET</string>
+								<string>es_CL</string>
+								<string>bg</string>
+								<string>en_VI</string>
+								<string>es_VE</string>
+								<string>uz_Cyrl_UZ</string>
+								<string>fr_MC</string>
+								<string>am</string>
+								<string>zh_Hant</string>
+								<string>uz_Arab</string>
+								<string>en_GB</string>
+								<string>da</string>
+								<string>mr_IN</string>
+								<string>es_MX</string>
+								<string>es_PR</string>
+								<string>sq_AL</string>
+								<string>ar</string>
+								<string>fi_FI</string>
+								<string>bn</string>
+								<string>en_NA</string>
+								<string>de</string>
+								<string>as</string>
+								<string>cy_GB</string>
+								<string>en_IE</string>
+								<string>en_BZ</string>
+								<string>de_CH</string>
+								<string>en_US</string>
+								<string>sr_Latn_BA</string>
+								<string>te_IN</string>
+								<string>ar_QA</string>
+								<string>ar_TN</string>
+								<string>zh_Hans_MO</string>
+								<string>de_LI</string>
+								<string>fa</string>
+								<string>kw_GB</string>
+								<string>cs_CZ</string>
+								<string>hu_HU</string>
+								<string>zh_Hant_TW</string>
+								<string>uz_Latn</string>
+								<string>ta_IN</string>
+								<string>az</string>
+								<string>ar_EG</string>
+								<string>ar_SD</string>
+								<string>cs</string>
+								<string>ga</string>
+								<string>ar_LY</string>
+								<string>af_ZA</string>
+								<string>el</string>
+								<string>es_PA</string>
+								<string>es_CO</string>
+								<string>fi</string>
+								<string>en</string>
+								<string>ha</string>
+								<string>eo</string>
+								<string>gl_ES</string>
+								<string>cy</string>
+								<string>es_GT</string>
+								<string>ms_BN</string>
+								<string>ne_IN</string>
+								<string>he_IL</string>
+								<string>he</string>
+								<string>es</string>
+								<string>fo</string>
+								<string>en_CA</string>
+								<string>et</string>
+								<string>hr_HR</string>
+								<string>haw</string>
+								<string>gl</string>
+								<string>ar_SY</string>
+								<string>fr_SN</string>
+								<string>eu</string>
+								<string>uz_Arab_AF</string>
+								<string>id</string>
+								<string>fr</string>
+								<string>az_Latn_AZ</string>
+								<string>hi</string>
+								<string>zh_Hans_HK</string>
+								<string>ja</string>
+								<string>es_ES</string>
+								<string>ar_AE</string>
+								<string>uz_Latn_UZ</string>
+								<string>ca_ES</string>
+								<string>fr_BE</string>
+								<string>hi_IN</string>
+								<string>is_IS</string>
+								<string>ii</string>
+								<string>ps_AF</string>
+								<string>ka</string>
+								<string>tr_TR</string>
+								<string>it_CH</string>
+								<string>kk_Cyrl_KZ</string>
+								<string>gu</string>
+								<string>es_US</string>
+								<string>gv</string>
+								<string>en_PH</string>
+								<string>es_HN</string>
+								<string>hr</string>
+								<string>sv_FI</string>
+								<string>es_CR</string>
+								<string>haw_US</string>
+								<string>ar_MA</string>
+								<string>hu</string>
+								<string>nl_BE</string>
+								<string>th_TH</string>
+								<string>en_ZA</string>
+								<string>kk_Cyrl</string>
+								<string>is</string>
+								<string>it</string>
+								<string>es_PE</string>
+								<string>hy</string>
+								<string>de_DE</string>
+								<string>en_NZ</string>
+								<string>kk</string>
+								<string>kl</string>
+								<string>en_AU</string>
+								<string>pa_Guru</string>
+								<string>el_GR</string>
+								<string>km</string>
+								<string>kn</string>
+								<string>ko</string>
+								<string>nb</string>
+								<string>ar_IQ</string>
+								<string>es_PY</string>
+								<string>es_EC</string>
+								<string>en_US_POSIX</string>
+								<string>vi_VN</string>
+								<string>lv_LV</string>
+								<string>ne</string>
+								<string>kn_IN</string>
+								<string>es_AR</string>
+								<string>mk</string>
+								<string>ml</string>
+								<string>bg_BG</string>
+								<string>hy_AM_REVISED</string>
+								<string>kw</string>
+								<string>uk_UA</string>
+								<string>en_PK</string>
+								<string>pa</string>
+								<string>lt</string>
+								<string>sk_SK</string>
+								<string>nl</string>
+								<string>ur_PK</string>
+								<string>de_BE</string>
+								<string>lv</string>
+								<string>as_IN</string>
+								<string>mr</string>
+								<string>nn</string>
+								<string>en_ZW</string>
+								<string>fr_CA</string>
+								<string>ne_NP</string>
+								<string>ms</string>
+								<string>pl_PL</string>
+								<string>ti_ER</string>
+								<string>ja_JP</string>
+								<string>mt</string>
+								<string>fr_LU</string>
+								<string>om</string>
+								<string>sr_Cyrl_ME</string>
+								<string>en_IN</string>
+								<string>ga_IE</string>
+								<string>sw_KE</string>
+								<string>pl</string>
+								<string>kok</string>
+								<string>ur_IN</string>
+								<string>or</string>
+								<string>it_IT</string>
+								<string>hy_AM</string>
+								<string>ml_IN</string>
+								<string>en_SG</string>
+								<string>es_SV</string>
+								<string>am_ET</string>
+								<string>pt_BR</string>
+								<string>bn_IN</string>
+								<string>mt_MT</string>
+								<string>ar_KW</string>
+								<string>es_DO</string>
+								<string>pa_Arab</string>
+								<string>gv_GB</string>
+								<string>so_KE</string>
+								<string>ti_ET</string>
+								<string>ps</string>
+								<string>ms_MY</string>
+								<string>sl_SI</string>
+								<string>es_UY</string>
+								<string>en_MT</string>
+								<string>pt</string>
+								<string>sw_TZ</string>
+								<string>ta</string>
+								<string>nn_NO</string>
+								<string>sr_Cyrl_RS</string>
+								<string>si</string>
+								<string>te</string>
+								<string>ro</string>
+								<string>so_SO</string>
+								<string>sk</string>
+								<string>az_Cyrl</string>
+								<string>or_IN</string>
+								<string>sl</string>
+								<string>pa_Arab_PK</string>
+								<string>ru_RU</string>
+								<string>th</string>
+								<string>ar_DZ</string>
+								<string>ti</string>
+								<string>so</string>
+								<string>sr_Cyrl</string>
+								<string>es_NI</string>
+								<string>ha_Latn_NG</string>
+								<string>ru</string>
+								<string>en_TT</string>
+								<string>sq</string>
+								<string>fr_FR</string>
+								<string>sr</string>
+								<string>da_DK</string>
+								<string>es_BO</string>
+								<string>nb_NO</string>
+								<string>de_LU</string>
+								<string>uk</string>
+								<string>eu_ES</string>
+								<string>ar_JO</string>
+								<string>sv</string>
+								<string>so_ET</string>
+								<string>tr</string>
+								<string>sw</string>
+								<string>vi</string>
+								<string>zh_Hans_CN</string>
+								<string>km_KH</string>
+								<string>fa_AF</string>
+								<string>et_EE</string>
+								<string>ko_KR</string>
+								<string>pa_Guru_IN</string>
+								<string>sr_Latn_ME</string>
+								<string>so_DJ</string>
+								<string>ur</string>
+								<string>kok_IN</string>
+								<string>uz_Cyrl</string>
+								<string>zh_Hant_MO</string>
+								<string>zh_Hans</string>
+								<string>ar_YE</string>
+								<string>fo_FO</string>
+								<string>sv_SE</string>
+								<string>ha_Latn</string>
+								<string>de_AT</string>
+								<string>lt_LT</string>
+								<string>ar_OM</string>
+								<string>sr_Cyrl_BA</string>
+								<string>uz</string>
+								<string>ar_BH</string>
+								<string>id_ID</string>
+								<string>pt_PT</string>
+								<string>af_NA</string>
+								<string>om_KE</string>
+								<string>fr_CH</string>
+								<string>gu_IN</string>
+							</object>
+							<reference key="NSDelegate" ref="1069062941"/>
+							<double key="NSCompletionDelay">0.0</double>
+							<int key="NSTokenStyle">0</int>
+							<object class="NSArray" key="NS.representedObjects">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>genre</string>
+							</object>
+						</object>
+						<int key="NSTokenFieldVersion">2</int>
+					</object>
+					<object class="NSTokenField" id="336920532">
+						<reference key="NSNextResponder" ref="60725823"/>
+						<int key="NSvFlags">268</int>
+						<object class="NSMutableSet" key="NSDragTypes">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="NSArray" key="set.sortedObjects">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>NSStringPboardType</string>
+							</object>
+						</object>
+						<string key="NSFrame">{{206, 54}, {78, 22}}</string>
+						<reference key="NSSuperview" ref="60725823"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="1069062941"/>
+						<bool key="NSEnabled">YES</bool>
+						<object class="NSTokenFieldCell" key="NSCell" id="798901891">
+							<int key="NSCellFlags">69336577</int>
+							<int key="NSCellFlags2">4096</int>
+							<object class="NSMutableAttributedString" key="NSContents">
+								<object class="NSMutableString" key="NSString">
+									<bytes key="NS.bytes">77+8A</bytes>
+								</object>
+								<object class="NSDictionary" key="NSAttributes">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<object class="NSArray" key="dict.sortedKeys">
+										<bool key="EncodedWithXMLCoder">YES</bool>
+										<string>NSAttachment</string>
+										<string>NSColor</string>
+										<string>NSFont</string>
+										<string>NSOriginalFont</string>
+										<string>NSParagraphStyle</string>
+									</object>
+									<object class="NSMutableArray" key="dict.values">
+										<bool key="EncodedWithXMLCoder">YES</bool>
+										<object class="NSTokenAttachment">
+											<nil key="NSFileWrapper"/>
+											<object class="NSTokenAttachmentCell" key="NSCell">
+												<int key="NSCellFlags">67239488</int>
+												<int key="NSCellFlags2">134219776</int>
+												<string key="NSContents">disc</string>
+												<reference key="NSSupport" ref="953154039"/>
+												<string key="NSRepresentedObject">disc</string>
+												<reference key="NSTextColor" ref="273362867"/>
+											</object>
+											<reference key="NS.delegate" ref="798901891"/>
+										</object>
+										<reference ref="273362867"/>
+										<reference ref="953154039"/>
+										<reference ref="953154039"/>
+										<object class="NSMutableParagraphStyle">
+											<nil key="NSTabStops"/>
+										</object>
+									</object>
+								</object>
+							</object>
+							<reference key="NSSupport" ref="953154039"/>
+							<reference key="NSControlView" ref="336920532"/>
+							<reference key="NSBackgroundColor" ref="169382556"/>
+							<reference key="NSTextColor" ref="273362867"/>
+							<object class="NSArray" key="NSAllowedInputLocales">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>sr_Latn_RS</string>
+								<string>zh</string>
+								<string>ro_RO</string>
+								<string>be_BY</string>
+								<string>si_LK</string>
+								<string>fa_IR</string>
+								<string>en_BW</string>
+								<string>en_JM</string>
+								<string>ka_GE</string>
+								<string>zh_Hans_SG</string>
+								<string>mk_MK</string>
+								<string>en_HK</string>
+								<string>ar_LB</string>
+								<string>ii_CN</string>
+								<string>ru_UA</string>
+								<string>zh_Hant_HK</string>
+								<string>af</string>
+								<string>kl_GL</string>
+								<string>az_Latn</string>
+								<string>ar_SA</string>
+								<string>en_BE</string>
+								<string>bn_BD</string>
+								<string>en_MH</string>
+								<string>be</string>
+								<string>nl_NL</string>
+								<string>el_CY</string>
+								<string>az_Cyrl_AZ</string>
+								<string>ca</string>
+								<string>sr_Latn</string>
+								<string>om_ET</string>
+								<string>es_CL</string>
+								<string>bg</string>
+								<string>en_VI</string>
+								<string>es_VE</string>
+								<string>uz_Cyrl_UZ</string>
+								<string>fr_MC</string>
+								<string>am</string>
+								<string>zh_Hant</string>
+								<string>uz_Arab</string>
+								<string>en_GB</string>
+								<string>da</string>
+								<string>mr_IN</string>
+								<string>es_MX</string>
+								<string>es_PR</string>
+								<string>sq_AL</string>
+								<string>ar</string>
+								<string>fi_FI</string>
+								<string>bn</string>
+								<string>en_NA</string>
+								<string>de</string>
+								<string>as</string>
+								<string>cy_GB</string>
+								<string>en_IE</string>
+								<string>en_BZ</string>
+								<string>de_CH</string>
+								<string>en_US</string>
+								<string>sr_Latn_BA</string>
+								<string>te_IN</string>
+								<string>ar_QA</string>
+								<string>ar_TN</string>
+								<string>zh_Hans_MO</string>
+								<string>de_LI</string>
+								<string>fa</string>
+								<string>kw_GB</string>
+								<string>cs_CZ</string>
+								<string>hu_HU</string>
+								<string>zh_Hant_TW</string>
+								<string>uz_Latn</string>
+								<string>ta_IN</string>
+								<string>az</string>
+								<string>ar_EG</string>
+								<string>ar_SD</string>
+								<string>cs</string>
+								<string>ga</string>
+								<string>ar_LY</string>
+								<string>af_ZA</string>
+								<string>el</string>
+								<string>es_PA</string>
+								<string>es_CO</string>
+								<string>fi</string>
+								<string>en</string>
+								<string>ha</string>
+								<string>eo</string>
+								<string>gl_ES</string>
+								<string>cy</string>
+								<string>es_GT</string>
+								<string>ms_BN</string>
+								<string>ne_IN</string>
+								<string>he_IL</string>
+								<string>he</string>
+								<string>es</string>
+								<string>fo</string>
+								<string>en_CA</string>
+								<string>et</string>
+								<string>hr_HR</string>
+								<string>haw</string>
+								<string>gl</string>
+								<string>ar_SY</string>
+								<string>fr_SN</string>
+								<string>eu</string>
+								<string>uz_Arab_AF</string>
+								<string>id</string>
+								<string>fr</string>
+								<string>az_Latn_AZ</string>
+								<string>hi</string>
+								<string>zh_Hans_HK</string>
+								<string>ja</string>
+								<string>es_ES</string>
+								<string>ar_AE</string>
+								<string>uz_Latn_UZ</string>
+								<string>ca_ES</string>
+								<string>fr_BE</string>
+								<string>hi_IN</string>
+								<string>is_IS</string>
+								<string>ii</string>
+								<string>ps_AF</string>
+								<string>ka</string>
+								<string>tr_TR</string>
+								<string>it_CH</string>
+								<string>kk_Cyrl_KZ</string>
+								<string>gu</string>
+								<string>es_US</string>
+								<string>gv</string>
+								<string>en_PH</string>
+								<string>es_HN</string>
+								<string>hr</string>
+								<string>sv_FI</string>
+								<string>es_CR</string>
+								<string>haw_US</string>
+								<string>ar_MA</string>
+								<string>hu</string>
+								<string>nl_BE</string>
+								<string>th_TH</string>
+								<string>en_ZA</string>
+								<string>kk_Cyrl</string>
+								<string>is</string>
+								<string>it</string>
+								<string>es_PE</string>
+								<string>hy</string>
+								<string>de_DE</string>
+								<string>en_NZ</string>
+								<string>kk</string>
+								<string>kl</string>
+								<string>en_AU</string>
+								<string>pa_Guru</string>
+								<string>el_GR</string>
+								<string>km</string>
+								<string>kn</string>
+								<string>ko</string>
+								<string>nb</string>
+								<string>ar_IQ</string>
+								<string>es_PY</string>
+								<string>es_EC</string>
+								<string>en_US_POSIX</string>
+								<string>vi_VN</string>
+								<string>lv_LV</string>
+								<string>ne</string>
+								<string>kn_IN</string>
+								<string>es_AR</string>
+								<string>mk</string>
+								<string>ml</string>
+								<string>bg_BG</string>
+								<string>hy_AM_REVISED</string>
+								<string>kw</string>
+								<string>uk_UA</string>
+								<string>en_PK</string>
+								<string>pa</string>
+								<string>lt</string>
+								<string>sk_SK</string>
+								<string>nl</string>
+								<string>ur_PK</string>
+								<string>de_BE</string>
+								<string>lv</string>
+								<string>as_IN</string>
+								<string>mr</string>
+								<string>nn</string>
+								<string>en_ZW</string>
+								<string>fr_CA</string>
+								<string>ne_NP</string>
+								<string>ms</string>
+								<string>pl_PL</string>
+								<string>ti_ER</string>
+								<string>ja_JP</string>
+								<string>mt</string>
+								<string>fr_LU</string>
+								<string>om</string>
+								<string>sr_Cyrl_ME</string>
+								<string>en_IN</string>
+								<string>ga_IE</string>
+								<string>sw_KE</string>
+								<string>pl</string>
+								<string>kok</string>
+								<string>ur_IN</string>
+								<string>or</string>
+								<string>it_IT</string>
+								<string>hy_AM</string>
+								<string>ml_IN</string>
+								<string>en_SG</string>
+								<string>es_SV</string>
+								<string>am_ET</string>
+								<string>pt_BR</string>
+								<string>bn_IN</string>
+								<string>mt_MT</string>
+								<string>ar_KW</string>
+								<string>es_DO</string>
+								<string>pa_Arab</string>
+								<string>gv_GB</string>
+								<string>so_KE</string>
+								<string>ti_ET</string>
+								<string>ps</string>
+								<string>ms_MY</string>
+								<string>sl_SI</string>
+								<string>es_UY</string>
+								<string>en_MT</string>
+								<string>pt</string>
+								<string>sw_TZ</string>
+								<string>ta</string>
+								<string>nn_NO</string>
+								<string>sr_Cyrl_RS</string>
+								<string>si</string>
+								<string>te</string>
+								<string>ro</string>
+								<string>so_SO</string>
+								<string>sk</string>
+								<string>az_Cyrl</string>
+								<string>or_IN</string>
+								<string>sl</string>
+								<string>pa_Arab_PK</string>
+								<string>ru_RU</string>
+								<string>th</string>
+								<string>ar_DZ</string>
+								<string>ti</string>
+								<string>so</string>
+								<string>sr_Cyrl</string>
+								<string>es_NI</string>
+								<string>ha_Latn_NG</string>
+								<string>ru</string>
+								<string>en_TT</string>
+								<string>sq</string>
+								<string>fr_FR</string>
+								<string>sr</string>
+								<string>da_DK</string>
+								<string>es_BO</string>
+								<string>nb_NO</string>
+								<string>de_LU</string>
+								<string>uk</string>
+								<string>eu_ES</string>
+								<string>ar_JO</string>
+								<string>sv</string>
+								<string>so_ET</string>
+								<string>tr</string>
+								<string>sw</string>
+								<string>vi</string>
+								<string>zh_Hans_CN</string>
+								<string>km_KH</string>
+								<string>fa_AF</string>
+								<string>et_EE</string>
+								<string>ko_KR</string>
+								<string>pa_Guru_IN</string>
+								<string>sr_Latn_ME</string>
+								<string>so_DJ</string>
+								<string>ur</string>
+								<string>kok_IN</string>
+								<string>uz_Cyrl</string>
+								<string>zh_Hant_MO</string>
+								<string>zh_Hans</string>
+								<string>ar_YE</string>
+								<string>fo_FO</string>
+								<string>sv_SE</string>
+								<string>ha_Latn</string>
+								<string>de_AT</string>
+								<string>lt_LT</string>
+								<string>ar_OM</string>
+								<string>sr_Cyrl_BA</string>
+								<string>uz</string>
+								<string>ar_BH</string>
+								<string>id_ID</string>
+								<string>pt_PT</string>
+								<string>af_NA</string>
+								<string>om_KE</string>
+								<string>fr_CH</string>
+								<string>gu_IN</string>
+							</object>
+							<reference key="NSDelegate" ref="336920532"/>
+							<double key="NSCompletionDelay">0.0</double>
+							<int key="NSTokenStyle">0</int>
+							<object class="NSArray" key="NS.representedObjects">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>disc</string>
+							</object>
+						</object>
+						<int key="NSTokenFieldVersion">2</int>
+					</object>
+					<object class="NSTokenField" id="770005433">
+						<reference key="NSNextResponder" ref="60725823"/>
+						<int key="NSvFlags">268</int>
+						<object class="NSMutableSet" key="NSDragTypes">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="NSArray" key="set.sortedObjects">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>NSStringPboardType</string>
+							</object>
+						</object>
+						<string key="NSFrame">{{114, 54}, {86, 22}}</string>
+						<reference key="NSSuperview" ref="60725823"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="336920532"/>
+						<bool key="NSEnabled">YES</bool>
+						<object class="NSTokenFieldCell" key="NSCell" id="674544908">
+							<int key="NSCellFlags">69336577</int>
+							<int key="NSCellFlags2">4096</int>
+							<object class="NSMutableAttributedString" key="NSContents">
+								<object class="NSMutableString" key="NSString">
+									<bytes key="NS.bytes">77+8A</bytes>
+								</object>
+								<object class="NSDictionary" key="NSAttributes">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<object class="NSArray" key="dict.sortedKeys">
+										<bool key="EncodedWithXMLCoder">YES</bool>
+										<string>NSAttachment</string>
+										<string>NSColor</string>
+										<string>NSFont</string>
+										<string>NSOriginalFont</string>
+										<string>NSParagraphStyle</string>
+									</object>
+									<object class="NSMutableArray" key="dict.values">
+										<bool key="EncodedWithXMLCoder">YES</bool>
+										<object class="NSTokenAttachment">
+											<nil key="NSFileWrapper"/>
+											<object class="NSTokenAttachmentCell" key="NSCell">
+												<int key="NSCellFlags">67239488</int>
+												<int key="NSCellFlags2">134219776</int>
+												<string key="NSContents">track</string>
+												<reference key="NSSupport" ref="953154039"/>
+												<string key="NSRepresentedObject">track</string>
+												<reference key="NSTextColor" ref="273362867"/>
+											</object>
+											<reference key="NS.delegate" ref="674544908"/>
+										</object>
+										<reference ref="273362867"/>
+										<reference ref="953154039"/>
+										<reference ref="953154039"/>
+										<object class="NSMutableParagraphStyle">
+											<nil key="NSTabStops"/>
+										</object>
+									</object>
+								</object>
+							</object>
+							<reference key="NSSupport" ref="953154039"/>
+							<reference key="NSControlView" ref="770005433"/>
+							<reference key="NSBackgroundColor" ref="169382556"/>
+							<reference key="NSTextColor" ref="273362867"/>
+							<object class="NSArray" key="NSAllowedInputLocales">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>sr_Latn_RS</string>
+								<string>zh</string>
+								<string>ro_RO</string>
+								<string>be_BY</string>
+								<string>si_LK</string>
+								<string>fa_IR</string>
+								<string>en_BW</string>
+								<string>en_JM</string>
+								<string>ka_GE</string>
+								<string>zh_Hans_SG</string>
+								<string>mk_MK</string>
+								<string>en_HK</string>
+								<string>ar_LB</string>
+								<string>ii_CN</string>
+								<string>ru_UA</string>
+								<string>zh_Hant_HK</string>
+								<string>af</string>
+								<string>kl_GL</string>
+								<string>az_Latn</string>
+								<string>ar_SA</string>
+								<string>en_BE</string>
+								<string>bn_BD</string>
+								<string>en_MH</string>
+								<string>be</string>
+								<string>nl_NL</string>
+								<string>el_CY</string>
+								<string>az_Cyrl_AZ</string>
+								<string>ca</string>
+								<string>sr_Latn</string>
+								<string>om_ET</string>
+								<string>es_CL</string>
+								<string>bg</string>
+								<string>en_VI</string>
+								<string>es_VE</string>
+								<string>uz_Cyrl_UZ</string>
+								<string>fr_MC</string>
+								<string>am</string>
+								<string>zh_Hant</string>
+								<string>uz_Arab</string>
+								<string>en_GB</string>
+								<string>da</string>
+								<string>mr_IN</string>
+								<string>es_MX</string>
+								<string>es_PR</string>
+								<string>sq_AL</string>
+								<string>ar</string>
+								<string>fi_FI</string>
+								<string>bn</string>
+								<string>en_NA</string>
+								<string>de</string>
+								<string>as</string>
+								<string>cy_GB</string>
+								<string>en_IE</string>
+								<string>en_BZ</string>
+								<string>de_CH</string>
+								<string>en_US</string>
+								<string>sr_Latn_BA</string>
+								<string>te_IN</string>
+								<string>ar_QA</string>
+								<string>ar_TN</string>
+								<string>zh_Hans_MO</string>
+								<string>de_LI</string>
+								<string>fa</string>
+								<string>kw_GB</string>
+								<string>cs_CZ</string>
+								<string>hu_HU</string>
+								<string>zh_Hant_TW</string>
+								<string>uz_Latn</string>
+								<string>ta_IN</string>
+								<string>az</string>
+								<string>ar_EG</string>
+								<string>ar_SD</string>
+								<string>cs</string>
+								<string>ga</string>
+								<string>ar_LY</string>
+								<string>af_ZA</string>
+								<string>el</string>
+								<string>es_PA</string>
+								<string>es_CO</string>
+								<string>fi</string>
+								<string>en</string>
+								<string>ha</string>
+								<string>eo</string>
+								<string>gl_ES</string>
+								<string>cy</string>
+								<string>es_GT</string>
+								<string>ms_BN</string>
+								<string>ne_IN</string>
+								<string>he_IL</string>
+								<string>he</string>
+								<string>es</string>
+								<string>fo</string>
+								<string>en_CA</string>
+								<string>et</string>
+								<string>hr_HR</string>
+								<string>haw</string>
+								<string>gl</string>
+								<string>ar_SY</string>
+								<string>fr_SN</string>
+								<string>eu</string>
+								<string>uz_Arab_AF</string>
+								<string>id</string>
+								<string>fr</string>
+								<string>az_Latn_AZ</string>
+								<string>hi</string>
+								<string>zh_Hans_HK</string>
+								<string>ja</string>
+								<string>es_ES</string>
+								<string>ar_AE</string>
+								<string>uz_Latn_UZ</string>
+								<string>ca_ES</string>
+								<string>fr_BE</string>
+								<string>hi_IN</string>
+								<string>is_IS</string>
+								<string>ii</string>
+								<string>ps_AF</string>
+								<string>ka</string>
+								<string>tr_TR</string>
+								<string>it_CH</string>
+								<string>kk_Cyrl_KZ</string>
+								<string>gu</string>
+								<string>es_US</string>
+								<string>gv</string>
+								<string>en_PH</string>
+								<string>es_HN</string>
+								<string>hr</string>
+								<string>sv_FI</string>
+								<string>es_CR</string>
+								<string>haw_US</string>
+								<string>ar_MA</string>
+								<string>hu</string>
+								<string>nl_BE</string>
+								<string>th_TH</string>
+								<string>en_ZA</string>
+								<string>kk_Cyrl</string>
+								<string>is</string>
+								<string>it</string>
+								<string>es_PE</string>
+								<string>hy</string>
+								<string>de_DE</string>
+								<string>en_NZ</string>
+								<string>kk</string>
+								<string>kl</string>
+								<string>en_AU</string>
+								<string>pa_Guru</string>
+								<string>el_GR</string>
+								<string>km</string>
+								<string>kn</string>
+								<string>ko</string>
+								<string>nb</string>
+								<string>ar_IQ</string>
+								<string>es_PY</string>
+								<string>es_EC</string>
+								<string>en_US_POSIX</string>
+								<string>vi_VN</string>
+								<string>lv_LV</string>
+								<string>ne</string>
+								<string>kn_IN</string>
+								<string>es_AR</string>
+								<string>mk</string>
+								<string>ml</string>
+								<string>bg_BG</string>
+								<string>hy_AM_REVISED</string>
+								<string>kw</string>
+								<string>uk_UA</string>
+								<string>en_PK</string>
+								<string>pa</string>
+								<string>lt</string>
+								<string>sk_SK</string>
+								<string>nl</string>
+								<string>ur_PK</string>
+								<string>de_BE</string>
+								<string>lv</string>
+								<string>as_IN</string>
+								<string>mr</string>
+								<string>nn</string>
+								<string>en_ZW</string>
+								<string>fr_CA</string>
+								<string>ne_NP</string>
+								<string>ms</string>
+								<string>pl_PL</string>
+								<string>ti_ER</string>
+								<string>ja_JP</string>
+								<string>mt</string>
+								<string>fr_LU</string>
+								<string>om</string>
+								<string>sr_Cyrl_ME</string>
+								<string>en_IN</string>
+								<string>ga_IE</string>
+								<string>sw_KE</string>
+								<string>pl</string>
+								<string>kok</string>
+								<string>ur_IN</string>
+								<string>or</string>
+								<string>it_IT</string>
+								<string>hy_AM</string>
+								<string>ml_IN</string>
+								<string>en_SG</string>
+								<string>es_SV</string>
+								<string>am_ET</string>
+								<string>pt_BR</string>
+								<string>bn_IN</string>
+								<string>mt_MT</string>
+								<string>ar_KW</string>
+								<string>es_DO</string>
+								<string>pa_Arab</string>
+								<string>gv_GB</string>
+								<string>so_KE</string>
+								<string>ti_ET</string>
+								<string>ps</string>
+								<string>ms_MY</string>
+								<string>sl_SI</string>
+								<string>es_UY</string>
+								<string>en_MT</string>
+								<string>pt</string>
+								<string>sw_TZ</string>
+								<string>ta</string>
+								<string>nn_NO</string>
+								<string>sr_Cyrl_RS</string>
+								<string>si</string>
+								<string>te</string>
+								<string>ro</string>
+								<string>so_SO</string>
+								<string>sk</string>
+								<string>az_Cyrl</string>
+								<string>or_IN</string>
+								<string>sl</string>
+								<string>pa_Arab_PK</string>
+								<string>ru_RU</string>
+								<string>th</string>
+								<string>ar_DZ</string>
+								<string>ti</string>
+								<string>so</string>
+								<string>sr_Cyrl</string>
+								<string>es_NI</string>
+								<string>ha_Latn_NG</string>
+								<string>ru</string>
+								<string>en_TT</string>
+								<string>sq</string>
+								<string>fr_FR</string>
+								<string>sr</string>
+								<string>da_DK</string>
+								<string>es_BO</string>
+								<string>nb_NO</string>
+								<string>de_LU</string>
+								<string>uk</string>
+								<string>eu_ES</string>
+								<string>ar_JO</string>
+								<string>sv</string>
+								<string>so_ET</string>
+								<string>tr</string>
+								<string>sw</string>
+								<string>vi</string>
+								<string>zh_Hans_CN</string>
+								<string>km_KH</string>
+								<string>fa_AF</string>
+								<string>et_EE</string>
+								<string>ko_KR</string>
+								<string>pa_Guru_IN</string>
+								<string>sr_Latn_ME</string>
+								<string>so_DJ</string>
+								<string>ur</string>
+								<string>kok_IN</string>
+								<string>uz_Cyrl</string>
+								<string>zh_Hant_MO</string>
+								<string>zh_Hans</string>
+								<string>ar_YE</string>
+								<string>fo_FO</string>
+								<string>sv_SE</string>
+								<string>ha_Latn</string>
+								<string>de_AT</string>
+								<string>lt_LT</string>
+								<string>ar_OM</string>
+								<string>sr_Cyrl_BA</string>
+								<string>uz</string>
+								<string>ar_BH</string>
+								<string>id_ID</string>
+								<string>pt_PT</string>
+								<string>af_NA</string>
+								<string>om_KE</string>
+								<string>fr_CH</string>
+								<string>gu_IN</string>
+							</object>
+							<reference key="NSDelegate" ref="770005433"/>
+							<double key="NSCompletionDelay">0.0</double>
+							<int key="NSTokenStyle">0</int>
+							<object class="NSArray" key="NS.representedObjects">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>track</string>
+							</object>
+						</object>
+						<int key="NSTokenFieldVersion">2</int>
+					</object>
+					<object class="NSTokenField" id="622804477">
+						<reference key="NSNextResponder" ref="60725823"/>
+						<int key="NSvFlags">268</int>
+						<object class="NSMutableSet" key="NSDragTypes">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="NSArray" key="set.sortedObjects">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>NSStringPboardType</string>
+							</object>
+						</object>
+						<string key="NSFrame">{{34, 54}, {78, 22}}</string>
+						<reference key="NSSuperview" ref="60725823"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="770005433"/>
+						<bool key="NSEnabled">YES</bool>
+						<object class="NSTokenFieldCell" key="NSCell" id="128194219">
+							<int key="NSCellFlags">69336577</int>
+							<int key="NSCellFlags2">4096</int>
+							<object class="NSMutableAttributedString" key="NSContents">
+								<object class="NSMutableString" key="NSString">
+									<bytes key="NS.bytes">77+8A</bytes>
+								</object>
+								<object class="NSDictionary" key="NSAttributes">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<object class="NSArray" key="dict.sortedKeys">
+										<bool key="EncodedWithXMLCoder">YES</bool>
+										<string>NSAttachment</string>
+										<string>NSColor</string>
+										<string>NSFont</string>
+										<string>NSOriginalFont</string>
+										<string>NSParagraphStyle</string>
+									</object>
+									<object class="NSMutableArray" key="dict.values">
+										<bool key="EncodedWithXMLCoder">YES</bool>
+										<object class="NSTokenAttachment">
+											<nil key="NSFileWrapper"/>
+											<object class="NSTokenAttachmentCell" key="NSCell">
+												<int key="NSCellFlags">67239488</int>
+												<int key="NSCellFlags2">134219776</int>
+												<string key="NSContents">year</string>
+												<reference key="NSSupport" ref="953154039"/>
+												<string key="NSRepresentedObject">year</string>
+												<reference key="NSTextColor" ref="273362867"/>
+											</object>
+											<reference key="NS.delegate" ref="128194219"/>
+										</object>
+										<reference ref="273362867"/>
+										<reference ref="953154039"/>
+										<reference ref="953154039"/>
+										<object class="NSMutableParagraphStyle">
+											<nil key="NSTabStops"/>
+										</object>
+									</object>
+								</object>
+							</object>
+							<reference key="NSSupport" ref="953154039"/>
+							<reference key="NSControlView" ref="622804477"/>
+							<reference key="NSBackgroundColor" ref="169382556"/>
+							<reference key="NSTextColor" ref="273362867"/>
+							<object class="NSArray" key="NSAllowedInputLocales">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>sr_Latn_RS</string>
+								<string>zh</string>
+								<string>ro_RO</string>
+								<string>be_BY</string>
+								<string>si_LK</string>
+								<string>fa_IR</string>
+								<string>en_BW</string>
+								<string>en_JM</string>
+								<string>ka_GE</string>
+								<string>zh_Hans_SG</string>
+								<string>mk_MK</string>
+								<string>en_HK</string>
+								<string>ar_LB</string>
+								<string>ii_CN</string>
+								<string>ru_UA</string>
+								<string>zh_Hant_HK</string>
+								<string>af</string>
+								<string>kl_GL</string>
+								<string>az_Latn</string>
+								<string>ar_SA</string>
+								<string>en_BE</string>
+								<string>bn_BD</string>
+								<string>en_MH</string>
+								<string>be</string>
+								<string>nl_NL</string>
+								<string>el_CY</string>
+								<string>az_Cyrl_AZ</string>
+								<string>ca</string>
+								<string>sr_Latn</string>
+								<string>om_ET</string>
+								<string>es_CL</string>
+								<string>bg</string>
+								<string>en_VI</string>
+								<string>es_VE</string>
+								<string>uz_Cyrl_UZ</string>
+								<string>fr_MC</string>
+								<string>am</string>
+								<string>zh_Hant</string>
+								<string>uz_Arab</string>
+								<string>en_GB</string>
+								<string>da</string>
+								<string>mr_IN</string>
+								<string>es_MX</string>
+								<string>es_PR</string>
+								<string>sq_AL</string>
+								<string>ar</string>
+								<string>fi_FI</string>
+								<string>bn</string>
+								<string>en_NA</string>
+								<string>de</string>
+								<string>as</string>
+								<string>cy_GB</string>
+								<string>en_IE</string>
+								<string>en_BZ</string>
+								<string>de_CH</string>
+								<string>en_US</string>
+								<string>sr_Latn_BA</string>
+								<string>te_IN</string>
+								<string>ar_QA</string>
+								<string>ar_TN</string>
+								<string>zh_Hans_MO</string>
+								<string>de_LI</string>
+								<string>fa</string>
+								<string>kw_GB</string>
+								<string>cs_CZ</string>
+								<string>hu_HU</string>
+								<string>zh_Hant_TW</string>
+								<string>uz_Latn</string>
+								<string>ta_IN</string>
+								<string>az</string>
+								<string>ar_EG</string>
+								<string>ar_SD</string>
+								<string>cs</string>
+								<string>ga</string>
+								<string>ar_LY</string>
+								<string>af_ZA</string>
+								<string>el</string>
+								<string>es_PA</string>
+								<string>es_CO</string>
+								<string>fi</string>
+								<string>en</string>
+								<string>ha</string>
+								<string>eo</string>
+								<string>gl_ES</string>
+								<string>cy</string>
+								<string>es_GT</string>
+								<string>ms_BN</string>
+								<string>ne_IN</string>
+								<string>he_IL</string>
+								<string>he</string>
+								<string>es</string>
+								<string>fo</string>
+								<string>en_CA</string>
+								<string>et</string>
+								<string>hr_HR</string>
+								<string>haw</string>
+								<string>gl</string>
+								<string>ar_SY</string>
+								<string>fr_SN</string>
+								<string>eu</string>
+								<string>uz_Arab_AF</string>
+								<string>id</string>
+								<string>fr</string>
+								<string>az_Latn_AZ</string>
+								<string>hi</string>
+								<string>zh_Hans_HK</string>
+								<string>ja</string>
+								<string>es_ES</string>
+								<string>ar_AE</string>
+								<string>uz_Latn_UZ</string>
+								<string>ca_ES</string>
+								<string>fr_BE</string>
+								<string>hi_IN</string>
+								<string>is_IS</string>
+								<string>ii</string>
+								<string>ps_AF</string>
+								<string>ka</string>
+								<string>tr_TR</string>
+								<string>it_CH</string>
+								<string>kk_Cyrl_KZ</string>
+								<string>gu</string>
+								<string>es_US</string>
+								<string>gv</string>
+								<string>en_PH</string>
+								<string>es_HN</string>
+								<string>hr</string>
+								<string>sv_FI</string>
+								<string>es_CR</string>
+								<string>haw_US</string>
+								<string>ar_MA</string>
+								<string>hu</string>
+								<string>nl_BE</string>
+								<string>th_TH</string>
+								<string>en_ZA</string>
+								<string>kk_Cyrl</string>
+								<string>is</string>
+								<string>it</string>
+								<string>es_PE</string>
+								<string>hy</string>
+								<string>de_DE</string>
+								<string>en_NZ</string>
+								<string>kk</string>
+								<string>kl</string>
+								<string>en_AU</string>
+								<string>pa_Guru</string>
+								<string>el_GR</string>
+								<string>km</string>
+								<string>kn</string>
+								<string>ko</string>
+								<string>nb</string>
+								<string>ar_IQ</string>
+								<string>es_PY</string>
+								<string>es_EC</string>
+								<string>en_US_POSIX</string>
+								<string>vi_VN</string>
+								<string>lv_LV</string>
+								<string>ne</string>
+								<string>kn_IN</string>
+								<string>es_AR</string>
+								<string>mk</string>
+								<string>ml</string>
+								<string>bg_BG</string>
+								<string>hy_AM_REVISED</string>
+								<string>kw</string>
+								<string>uk_UA</string>
+								<string>en_PK</string>
+								<string>pa</string>
+								<string>lt</string>
+								<string>sk_SK</string>
+								<string>nl</string>
+								<string>ur_PK</string>
+								<string>de_BE</string>
+								<string>lv</string>
+								<string>as_IN</string>
+								<string>mr</string>
+								<string>nn</string>
+								<string>en_ZW</string>
+								<string>fr_CA</string>
+								<string>ne_NP</string>
+								<string>ms</string>
+								<string>pl_PL</string>
+								<string>ti_ER</string>
+								<string>ja_JP</string>
+								<string>mt</string>
+								<string>fr_LU</string>
+								<string>om</string>
+								<string>sr_Cyrl_ME</string>
+								<string>en_IN</string>
+								<string>ga_IE</string>
+								<string>sw_KE</string>
+								<string>pl</string>
+								<string>kok</string>
+								<string>ur_IN</string>
+								<string>or</string>
+								<string>it_IT</string>
+								<string>hy_AM</string>
+								<string>ml_IN</string>
+								<string>en_SG</string>
+								<string>es_SV</string>
+								<string>am_ET</string>
+								<string>pt_BR</string>
+								<string>bn_IN</string>
+								<string>mt_MT</string>
+								<string>ar_KW</string>
+								<string>es_DO</string>
+								<string>pa_Arab</string>
+								<string>gv_GB</string>
+								<string>so_KE</string>
+								<string>ti_ET</string>
+								<string>ps</string>
+								<string>ms_MY</string>
+								<string>sl_SI</string>
+								<string>es_UY</string>
+								<string>en_MT</string>
+								<string>pt</string>
+								<string>sw_TZ</string>
+								<string>ta</string>
+								<string>nn_NO</string>
+								<string>sr_Cyrl_RS</string>
+								<string>si</string>
+								<string>te</string>
+								<string>ro</string>
+								<string>so_SO</string>
+								<string>sk</string>
+								<string>az_Cyrl</string>
+								<string>or_IN</string>
+								<string>sl</string>
+								<string>pa_Arab_PK</string>
+								<string>ru_RU</string>
+								<string>th</string>
+								<string>ar_DZ</string>
+								<string>ti</string>
+								<string>so</string>
+								<string>sr_Cyrl</string>
+								<string>es_NI</string>
+								<string>ha_Latn_NG</string>
+								<string>ru</string>
+								<string>en_TT</string>
+								<string>sq</string>
+								<string>fr_FR</string>
+								<string>sr</string>
+								<string>da_DK</string>
+								<string>es_BO</string>
+								<string>nb_NO</string>
+								<string>de_LU</string>
+								<string>uk</string>
+								<string>eu_ES</string>
+								<string>ar_JO</string>
+								<string>sv</string>
+								<string>so_ET</string>
+								<string>tr</string>
+								<string>sw</string>
+								<string>vi</string>
+								<string>zh_Hans_CN</string>
+								<string>km_KH</string>
+								<string>fa_AF</string>
+								<string>et_EE</string>
+								<string>ko_KR</string>
+								<string>pa_Guru_IN</string>
+								<string>sr_Latn_ME</string>
+								<string>so_DJ</string>
+								<string>ur</string>
+								<string>kok_IN</string>
+								<string>uz_Cyrl</string>
+								<string>zh_Hant_MO</string>
+								<string>zh_Hans</string>
+								<string>ar_YE</string>
+								<string>fo_FO</string>
+								<string>sv_SE</string>
+								<string>ha_Latn</string>
+								<string>de_AT</string>
+								<string>lt_LT</string>
+								<string>ar_OM</string>
+								<string>sr_Cyrl_BA</string>
+								<string>uz</string>
+								<string>ar_BH</string>
+								<string>id_ID</string>
+								<string>pt_PT</string>
+								<string>af_NA</string>
+								<string>om_KE</string>
+								<string>fr_CH</string>
+								<string>gu_IN</string>
+							</object>
+							<reference key="NSDelegate" ref="622804477"/>
+							<double key="NSCompletionDelay">0.0</double>
+							<int key="NSTokenStyle">0</int>
+							<object class="NSArray" key="NS.representedObjects">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>year</string>
+							</object>
+						</object>
+						<int key="NSTokenFieldVersion">2</int>
+					</object>
+					<object class="NSTokenField" id="591778682">
+						<reference key="NSNextResponder" ref="60725823"/>
+						<int key="NSvFlags">268</int>
+						<object class="NSMutableSet" key="NSDragTypes">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="NSArray" key="set.sortedObjects">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>NSStringPboardType</string>
+							</object>
+						</object>
+						<string key="NSFrame">{{202, 84}, {86, 22}}</string>
+						<reference key="NSSuperview" ref="60725823"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="571887948"/>
+						<bool key="NSEnabled">YES</bool>
+						<object class="NSTokenFieldCell" key="NSCell" id="131437265">
+							<int key="NSCellFlags">69336577</int>
+							<int key="NSCellFlags2">4096</int>
+							<object class="NSMutableAttributedString" key="NSContents">
+								<object class="NSMutableString" key="NSString">
+									<bytes key="NS.bytes">77+8A</bytes>
+								</object>
+								<object class="NSDictionary" key="NSAttributes">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<object class="NSArray" key="dict.sortedKeys">
+										<bool key="EncodedWithXMLCoder">YES</bool>
+										<string>NSAttachment</string>
+										<string>NSColor</string>
+										<string>NSFont</string>
+										<string>NSOriginalFont</string>
+										<string>NSParagraphStyle</string>
+									</object>
+									<object class="NSMutableArray" key="dict.values">
+										<bool key="EncodedWithXMLCoder">YES</bool>
+										<object class="NSTokenAttachment">
+											<nil key="NSFileWrapper"/>
+											<object class="NSTokenAttachmentCell" key="NSCell">
+												<int key="NSCellFlags">67239488</int>
+												<int key="NSCellFlags2">134219776</int>
+												<string key="NSContents">artist</string>
+												<reference key="NSSupport" ref="953154039"/>
+												<string key="NSRepresentedObject">artist</string>
+												<reference key="NSTextColor" ref="273362867"/>
+											</object>
+											<reference key="NS.delegate" ref="131437265"/>
+										</object>
+										<reference ref="273362867"/>
+										<reference ref="953154039"/>
+										<reference ref="953154039"/>
+										<object class="NSMutableParagraphStyle">
+											<nil key="NSTabStops"/>
+										</object>
+									</object>
+								</object>
+							</object>
+							<reference key="NSSupport" ref="953154039"/>
+							<reference key="NSControlView" ref="591778682"/>
+							<reference key="NSBackgroundColor" ref="169382556"/>
+							<reference key="NSTextColor" ref="273362867"/>
+							<object class="NSArray" key="NSAllowedInputLocales">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>sr_Latn_RS</string>
+								<string>zh</string>
+								<string>ro_RO</string>
+								<string>be_BY</string>
+								<string>si_LK</string>
+								<string>fa_IR</string>
+								<string>en_BW</string>
+								<string>en_JM</string>
+								<string>ka_GE</string>
+								<string>zh_Hans_SG</string>
+								<string>mk_MK</string>
+								<string>en_HK</string>
+								<string>ar_LB</string>
+								<string>ii_CN</string>
+								<string>ru_UA</string>
+								<string>zh_Hant_HK</string>
+								<string>af</string>
+								<string>kl_GL</string>
+								<string>az_Latn</string>
+								<string>ar_SA</string>
+								<string>en_BE</string>
+								<string>bn_BD</string>
+								<string>en_MH</string>
+								<string>be</string>
+								<string>nl_NL</string>
+								<string>el_CY</string>
+								<string>az_Cyrl_AZ</string>
+								<string>ca</string>
+								<string>sr_Latn</string>
+								<string>om_ET</string>
+								<string>es_CL</string>
+								<string>bg</string>
+								<string>en_VI</string>
+								<string>es_VE</string>
+								<string>uz_Cyrl_UZ</string>
+								<string>fr_MC</string>
+								<string>am</string>
+								<string>zh_Hant</string>
+								<string>uz_Arab</string>
+								<string>en_GB</string>
+								<string>da</string>
+								<string>mr_IN</string>
+								<string>es_MX</string>
+								<string>es_PR</string>
+								<string>sq_AL</string>
+								<string>ar</string>
+								<string>fi_FI</string>
+								<string>bn</string>
+								<string>en_NA</string>
+								<string>de</string>
+								<string>as</string>
+								<string>cy_GB</string>
+								<string>en_IE</string>
+								<string>en_BZ</string>
+								<string>de_CH</string>
+								<string>en_US</string>
+								<string>sr_Latn_BA</string>
+								<string>te_IN</string>
+								<string>ar_QA</string>
+								<string>ar_TN</string>
+								<string>zh_Hans_MO</string>
+								<string>de_LI</string>
+								<string>fa</string>
+								<string>kw_GB</string>
+								<string>cs_CZ</string>
+								<string>hu_HU</string>
+								<string>zh_Hant_TW</string>
+								<string>uz_Latn</string>
+								<string>ta_IN</string>
+								<string>az</string>
+								<string>ar_EG</string>
+								<string>ar_SD</string>
+								<string>cs</string>
+								<string>ga</string>
+								<string>ar_LY</string>
+								<string>af_ZA</string>
+								<string>el</string>
+								<string>es_PA</string>
+								<string>es_CO</string>
+								<string>fi</string>
+								<string>en</string>
+								<string>ha</string>
+								<string>eo</string>
+								<string>gl_ES</string>
+								<string>cy</string>
+								<string>es_GT</string>
+								<string>ms_BN</string>
+								<string>ne_IN</string>
+								<string>he_IL</string>
+								<string>he</string>
+								<string>es</string>
+								<string>fo</string>
+								<string>en_CA</string>
+								<string>et</string>
+								<string>hr_HR</string>
+								<string>haw</string>
+								<string>gl</string>
+								<string>ar_SY</string>
+								<string>fr_SN</string>
+								<string>eu</string>
+								<string>uz_Arab_AF</string>
+								<string>id</string>
+								<string>fr</string>
+								<string>az_Latn_AZ</string>
+								<string>hi</string>
+								<string>zh_Hans_HK</string>
+								<string>ja</string>
+								<string>es_ES</string>
+								<string>ar_AE</string>
+								<string>uz_Latn_UZ</string>
+								<string>ca_ES</string>
+								<string>fr_BE</string>
+								<string>hi_IN</string>
+								<string>is_IS</string>
+								<string>ii</string>
+								<string>ps_AF</string>
+								<string>ka</string>
+								<string>tr_TR</string>
+								<string>it_CH</string>
+								<string>kk_Cyrl_KZ</string>
+								<string>gu</string>
+								<string>es_US</string>
+								<string>gv</string>
+								<string>en_PH</string>
+								<string>es_HN</string>
+								<string>hr</string>
+								<string>sv_FI</string>
+								<string>es_CR</string>
+								<string>haw_US</string>
+								<string>ar_MA</string>
+								<string>hu</string>
+								<string>nl_BE</string>
+								<string>th_TH</string>
+								<string>en_ZA</string>
+								<string>kk_Cyrl</string>
+								<string>is</string>
+								<string>it</string>
+								<string>es_PE</string>
+								<string>hy</string>
+								<string>de_DE</string>
+								<string>en_NZ</string>
+								<string>kk</string>
+								<string>kl</string>
+								<string>en_AU</string>
+								<string>pa_Guru</string>
+								<string>el_GR</string>
+								<string>km</string>
+								<string>kn</string>
+								<string>ko</string>
+								<string>nb</string>
+								<string>ar_IQ</string>
+								<string>es_PY</string>
+								<string>es_EC</string>
+								<string>en_US_POSIX</string>
+								<string>vi_VN</string>
+								<string>lv_LV</string>
+								<string>ne</string>
+								<string>kn_IN</string>
+								<string>es_AR</string>
+								<string>mk</string>
+								<string>ml</string>
+								<string>bg_BG</string>
+								<string>hy_AM_REVISED</string>
+								<string>kw</string>
+								<string>uk_UA</string>
+								<string>en_PK</string>
+								<string>pa</string>
+								<string>lt</string>
+								<string>sk_SK</string>
+								<string>nl</string>
+								<string>ur_PK</string>
+								<string>de_BE</string>
+								<string>lv</string>
+								<string>as_IN</string>
+								<string>mr</string>
+								<string>nn</string>
+								<string>en_ZW</string>
+								<string>fr_CA</string>
+								<string>ne_NP</string>
+								<string>ms</string>
+								<string>pl_PL</string>
+								<string>ti_ER</string>
+								<string>ja_JP</string>
+								<string>mt</string>
+								<string>fr_LU</string>
+								<string>om</string>
+								<string>sr_Cyrl_ME</string>
+								<string>en_IN</string>
+								<string>ga_IE</string>
+								<string>sw_KE</string>
+								<string>pl</string>
+								<string>kok</string>
+								<string>ur_IN</string>
+								<string>or</string>
+								<string>it_IT</string>
+								<string>hy_AM</string>
+								<string>ml_IN</string>
+								<string>en_SG</string>
+								<string>es_SV</string>
+								<string>am_ET</string>
+								<string>pt_BR</string>
+								<string>bn_IN</string>
+								<string>mt_MT</string>
+								<string>ar_KW</string>
+								<string>es_DO</string>
+								<string>pa_Arab</string>
+								<string>gv_GB</string>
+								<string>so_KE</string>
+								<string>ti_ET</string>
+								<string>ps</string>
+								<string>ms_MY</string>
+								<string>sl_SI</string>
+								<string>es_UY</string>
+								<string>en_MT</string>
+								<string>pt</string>
+								<string>sw_TZ</string>
+								<string>ta</string>
+								<string>nn_NO</string>
+								<string>sr_Cyrl_RS</string>
+								<string>si</string>
+								<string>te</string>
+								<string>ro</string>
+								<string>so_SO</string>
+								<string>sk</string>
+								<string>az_Cyrl</string>
+								<string>or_IN</string>
+								<string>sl</string>
+								<string>pa_Arab_PK</string>
+								<string>ru_RU</string>
+								<string>th</string>
+								<string>ar_DZ</string>
+								<string>ti</string>
+								<string>so</string>
+								<string>sr_Cyrl</string>
+								<string>es_NI</string>
+								<string>ha_Latn_NG</string>
+								<string>ru</string>
+								<string>en_TT</string>
+								<string>sq</string>
+								<string>fr_FR</string>
+								<string>sr</string>
+								<string>da_DK</string>
+								<string>es_BO</string>
+								<string>nb_NO</string>
+								<string>de_LU</string>
+								<string>uk</string>
+								<string>eu_ES</string>
+								<string>ar_JO</string>
+								<string>sv</string>
+								<string>so_ET</string>
+								<string>tr</string>
+								<string>sw</string>
+								<string>vi</string>
+								<string>zh_Hans_CN</string>
+								<string>km_KH</string>
+								<string>fa_AF</string>
+								<string>et_EE</string>
+								<string>ko_KR</string>
+								<string>pa_Guru_IN</string>
+								<string>sr_Latn_ME</string>
+								<string>so_DJ</string>
+								<string>ur</string>
+								<string>kok_IN</string>
+								<string>uz_Cyrl</string>
+								<string>zh_Hant_MO</string>
+								<string>zh_Hans</string>
+								<string>ar_YE</string>
+								<string>fo_FO</string>
+								<string>sv_SE</string>
+								<string>ha_Latn</string>
+								<string>de_AT</string>
+								<string>lt_LT</string>
+								<string>ar_OM</string>
+								<string>sr_Cyrl_BA</string>
+								<string>uz</string>
+								<string>ar_BH</string>
+								<string>id_ID</string>
+								<string>pt_PT</string>
+								<string>af_NA</string>
+								<string>om_KE</string>
+								<string>fr_CH</string>
+								<string>gu_IN</string>
+							</object>
+							<reference key="NSDelegate" ref="591778682"/>
+							<double key="NSCompletionDelay">0.0</double>
+							<int key="NSTokenStyle">0</int>
+							<object class="NSArray" key="NS.representedObjects">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>artist</string>
+							</object>
+						</object>
+						<int key="NSTokenFieldVersion">2</int>
+					</object>
+					<object class="NSTokenField" id="571887948">
+						<reference key="NSNextResponder" ref="60725823"/>
+						<int key="NSvFlags">268</int>
+						<object class="NSMutableSet" key="NSDragTypes">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="NSArray" key="set.sortedObjects">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>NSStringPboardType</string>
+							</object>
+						</object>
+						<string key="NSFrame">{{287, 84}, {106, 22}}</string>
+						<reference key="NSSuperview" ref="60725823"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="622804477"/>
+						<bool key="NSEnabled">YES</bool>
+						<object class="NSTokenFieldCell" key="NSCell" id="908441874">
+							<int key="NSCellFlags">69336577</int>
+							<int key="NSCellFlags2">4096</int>
+							<object class="NSMutableAttributedString" key="NSContents">
+								<object class="NSMutableString" key="NSString">
+									<bytes key="NS.bytes">77+8A</bytes>
+								</object>
+								<object class="NSDictionary" key="NSAttributes">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<object class="NSArray" key="dict.sortedKeys">
+										<bool key="EncodedWithXMLCoder">YES</bool>
+										<string>NSAttachment</string>
+										<string>NSColor</string>
+										<string>NSFont</string>
+										<string>NSOriginalFont</string>
+										<string>NSParagraphStyle</string>
+									</object>
+									<object class="NSMutableArray" key="dict.values">
+										<bool key="EncodedWithXMLCoder">YES</bool>
+										<object class="NSTokenAttachment">
+											<nil key="NSFileWrapper"/>
+											<object class="NSTokenAttachmentCell" key="NSCell">
+												<int key="NSCellFlags">67239488</int>
+												<int key="NSCellFlags2">134219776</int>
+												<string key="NSContents">composer</string>
+												<reference key="NSSupport" ref="953154039"/>
+												<string key="NSRepresentedObject">composer</string>
+												<reference key="NSTextColor" ref="273362867"/>
+											</object>
+											<reference key="NS.delegate" ref="908441874"/>
+										</object>
+										<reference ref="273362867"/>
+										<reference ref="953154039"/>
+										<reference ref="953154039"/>
+										<object class="NSMutableParagraphStyle">
+											<nil key="NSTabStops"/>
+										</object>
+									</object>
+								</object>
+							</object>
+							<reference key="NSSupport" ref="953154039"/>
+							<reference key="NSControlView" ref="571887948"/>
+							<reference key="NSBackgroundColor" ref="169382556"/>
+							<reference key="NSTextColor" ref="273362867"/>
+							<object class="NSArray" key="NSAllowedInputLocales">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>sr_Latn_RS</string>
+								<string>zh</string>
+								<string>ro_RO</string>
+								<string>be_BY</string>
+								<string>si_LK</string>
+								<string>fa_IR</string>
+								<string>en_BW</string>
+								<string>en_JM</string>
+								<string>ka_GE</string>
+								<string>zh_Hans_SG</string>
+								<string>mk_MK</string>
+								<string>en_HK</string>
+								<string>ar_LB</string>
+								<string>ii_CN</string>
+								<string>ru_UA</string>
+								<string>zh_Hant_HK</string>
+								<string>af</string>
+								<string>kl_GL</string>
+								<string>az_Latn</string>
+								<string>ar_SA</string>
+								<string>en_BE</string>
+								<string>bn_BD</string>
+								<string>en_MH</string>
+								<string>be</string>
+								<string>nl_NL</string>
+								<string>el_CY</string>
+								<string>az_Cyrl_AZ</string>
+								<string>ca</string>
+								<string>sr_Latn</string>
+								<string>om_ET</string>
+								<string>es_CL</string>
+								<string>bg</string>
+								<string>en_VI</string>
+								<string>es_VE</string>
+								<string>uz_Cyrl_UZ</string>
+								<string>fr_MC</string>
+								<string>am</string>
+								<string>zh_Hant</string>
+								<string>uz_Arab</string>
+								<string>en_GB</string>
+								<string>da</string>
+								<string>mr_IN</string>
+								<string>es_MX</string>
+								<string>es_PR</string>
+								<string>sq_AL</string>
+								<string>ar</string>
+								<string>fi_FI</string>
+								<string>bn</string>
+								<string>en_NA</string>
+								<string>de</string>
+								<string>as</string>
+								<string>cy_GB</string>
+								<string>en_IE</string>
+								<string>en_BZ</string>
+								<string>de_CH</string>
+								<string>en_US</string>
+								<string>sr_Latn_BA</string>
+								<string>te_IN</string>
+								<string>ar_QA</string>
+								<string>ar_TN</string>
+								<string>zh_Hans_MO</string>
+								<string>de_LI</string>
+								<string>fa</string>
+								<string>kw_GB</string>
+								<string>cs_CZ</string>
+								<string>hu_HU</string>
+								<string>zh_Hant_TW</string>
+								<string>uz_Latn</string>
+								<string>ta_IN</string>
+								<string>az</string>
+								<string>ar_EG</string>
+								<string>ar_SD</string>
+								<string>cs</string>
+								<string>ga</string>
+								<string>ar_LY</string>
+								<string>af_ZA</string>
+								<string>el</string>
+								<string>es_PA</string>
+								<string>es_CO</string>
+								<string>fi</string>
+								<string>en</string>
+								<string>ha</string>
+								<string>eo</string>
+								<string>gl_ES</string>
+								<string>cy</string>
+								<string>es_GT</string>
+								<string>ms_BN</string>
+								<string>ne_IN</string>
+								<string>he_IL</string>
+								<string>he</string>
+								<string>es</string>
+								<string>fo</string>
+								<string>en_CA</string>
+								<string>et</string>
+								<string>hr_HR</string>
+								<string>haw</string>
+								<string>gl</string>
+								<string>ar_SY</string>
+								<string>fr_SN</string>
+								<string>eu</string>
+								<string>uz_Arab_AF</string>
+								<string>id</string>
+								<string>fr</string>
+								<string>az_Latn_AZ</string>
+								<string>hi</string>
+								<string>zh_Hans_HK</string>
+								<string>ja</string>
+								<string>es_ES</string>
+								<string>ar_AE</string>
+								<string>uz_Latn_UZ</string>
+								<string>ca_ES</string>
+								<string>fr_BE</string>
+								<string>hi_IN</string>
+								<string>is_IS</string>
+								<string>ii</string>
+								<string>ps_AF</string>
+								<string>ka</string>
+								<string>tr_TR</string>
+								<string>it_CH</string>
+								<string>kk_Cyrl_KZ</string>
+								<string>gu</string>
+								<string>es_US</string>
+								<string>gv</string>
+								<string>en_PH</string>
+								<string>es_HN</string>
+								<string>hr</string>
+								<string>sv_FI</string>
+								<string>es_CR</string>
+								<string>haw_US</string>
+								<string>ar_MA</string>
+								<string>hu</string>
+								<string>nl_BE</string>
+								<string>th_TH</string>
+								<string>en_ZA</string>
+								<string>kk_Cyrl</string>
+								<string>is</string>
+								<string>it</string>
+								<string>es_PE</string>
+								<string>hy</string>
+								<string>de_DE</string>
+								<string>en_NZ</string>
+								<string>kk</string>
+								<string>kl</string>
+								<string>en_AU</string>
+								<string>pa_Guru</string>
+								<string>el_GR</string>
+								<string>km</string>
+								<string>kn</string>
+								<string>ko</string>
+								<string>nb</string>
+								<string>ar_IQ</string>
+								<string>es_PY</string>
+								<string>es_EC</string>
+								<string>en_US_POSIX</string>
+								<string>vi_VN</string>
+								<string>lv_LV</string>
+								<string>ne</string>
+								<string>kn_IN</string>
+								<string>es_AR</string>
+								<string>mk</string>
+								<string>ml</string>
+								<string>bg_BG</string>
+								<string>hy_AM_REVISED</string>
+								<string>kw</string>
+								<string>uk_UA</string>
+								<string>en_PK</string>
+								<string>pa</string>
+								<string>lt</string>
+								<string>sk_SK</string>
+								<string>nl</string>
+								<string>ur_PK</string>
+								<string>de_BE</string>
+								<string>lv</string>
+								<string>as_IN</string>
+								<string>mr</string>
+								<string>nn</string>
+								<string>en_ZW</string>
+								<string>fr_CA</string>
+								<string>ne_NP</string>
+								<string>ms</string>
+								<string>pl_PL</string>
+								<string>ti_ER</string>
+								<string>ja_JP</string>
+								<string>mt</string>
+								<string>fr_LU</string>
+								<string>om</string>
+								<string>sr_Cyrl_ME</string>
+								<string>en_IN</string>
+								<string>ga_IE</string>
+								<string>sw_KE</string>
+								<string>pl</string>
+								<string>kok</string>
+								<string>ur_IN</string>
+								<string>or</string>
+								<string>it_IT</string>
+								<string>hy_AM</string>
+								<string>ml_IN</string>
+								<string>en_SG</string>
+								<string>es_SV</string>
+								<string>am_ET</string>
+								<string>pt_BR</string>
+								<string>bn_IN</string>
+								<string>mt_MT</string>
+								<string>ar_KW</string>
+								<string>es_DO</string>
+								<string>pa_Arab</string>
+								<string>gv_GB</string>
+								<string>so_KE</string>
+								<string>ti_ET</string>
+								<string>ps</string>
+								<string>ms_MY</string>
+								<string>sl_SI</string>
+								<string>es_UY</string>
+								<string>en_MT</string>
+								<string>pt</string>
+								<string>sw_TZ</string>
+								<string>ta</string>
+								<string>nn_NO</string>
+								<string>sr_Cyrl_RS</string>
+								<string>si</string>
+								<string>te</string>
+								<string>ro</string>
+								<string>so_SO</string>
+								<string>sk</string>
+								<string>az_Cyrl</string>
+								<string>or_IN</string>
+								<string>sl</string>
+								<string>pa_Arab_PK</string>
+								<string>ru_RU</string>
+								<string>th</string>
+								<string>ar_DZ</string>
+								<string>ti</string>
+								<string>so</string>
+								<string>sr_Cyrl</string>
+								<string>es_NI</string>
+								<string>ha_Latn_NG</string>
+								<string>ru</string>
+								<string>en_TT</string>
+								<string>sq</string>
+								<string>fr_FR</string>
+								<string>sr</string>
+								<string>da_DK</string>
+								<string>es_BO</string>
+								<string>nb_NO</string>
+								<string>de_LU</string>
+								<string>uk</string>
+								<string>eu_ES</string>
+								<string>ar_JO</string>
+								<string>sv</string>
+								<string>so_ET</string>
+								<string>tr</string>
+								<string>sw</string>
+								<string>vi</string>
+								<string>zh_Hans_CN</string>
+								<string>km_KH</string>
+								<string>fa_AF</string>
+								<string>et_EE</string>
+								<string>ko_KR</string>
+								<string>pa_Guru_IN</string>
+								<string>sr_Latn_ME</string>
+								<string>so_DJ</string>
+								<string>ur</string>
+								<string>kok_IN</string>
+								<string>uz_Cyrl</string>
+								<string>zh_Hant_MO</string>
+								<string>zh_Hans</string>
+								<string>ar_YE</string>
+								<string>fo_FO</string>
+								<string>sv_SE</string>
+								<string>ha_Latn</string>
+								<string>de_AT</string>
+								<string>lt_LT</string>
+								<string>ar_OM</string>
+								<string>sr_Cyrl_BA</string>
+								<string>uz</string>
+								<string>ar_BH</string>
+								<string>id_ID</string>
+								<string>pt_PT</string>
+								<string>af_NA</string>
+								<string>om_KE</string>
+								<string>fr_CH</string>
+								<string>gu_IN</string>
+							</object>
+							<reference key="NSDelegate" ref="571887948"/>
+							<double key="NSCompletionDelay">0.0</double>
+							<int key="NSTokenStyle">0</int>
+							<object class="NSArray" key="NS.representedObjects">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>composer</string>
+							</object>
+						</object>
+						<int key="NSTokenFieldVersion">2</int>
+					</object>
+					<object class="NSTokenField" id="17311885">
+						<reference key="NSNextResponder" ref="60725823"/>
+						<int key="NSvFlags">268</int>
+						<object class="NSMutableSet" key="NSDragTypes">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="NSArray" key="set.sortedObjects">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>NSStringPboardType</string>
+							</object>
+						</object>
+						<string key="NSFrame">{{114, 84}, {86, 22}}</string>
+						<reference key="NSSuperview" ref="60725823"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="591778682"/>
+						<bool key="NSEnabled">YES</bool>
+						<object class="NSTokenFieldCell" key="NSCell" id="537037514">
+							<int key="NSCellFlags">69336577</int>
+							<int key="NSCellFlags2">4096</int>
+							<object class="NSMutableAttributedString" key="NSContents">
+								<object class="NSMutableString" key="NSString">
+									<bytes key="NS.bytes">77+8A</bytes>
+								</object>
+								<object class="NSDictionary" key="NSAttributes">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<object class="NSArray" key="dict.sortedKeys">
+										<bool key="EncodedWithXMLCoder">YES</bool>
+										<string>NSAttachment</string>
+										<string>NSColor</string>
+										<string>NSFont</string>
+										<string>NSOriginalFont</string>
+										<string>NSParagraphStyle</string>
+									</object>
+									<object class="NSMutableArray" key="dict.values">
+										<bool key="EncodedWithXMLCoder">YES</bool>
+										<object class="NSTokenAttachment">
+											<nil key="NSFileWrapper"/>
+											<object class="NSTokenAttachmentCell" key="NSCell">
+												<int key="NSCellFlags">67239488</int>
+												<int key="NSCellFlags2">134219776</int>
+												<string key="NSContents">album</string>
+												<reference key="NSSupport" ref="953154039"/>
+												<string key="NSRepresentedObject">album</string>
+												<reference key="NSTextColor" ref="273362867"/>
+											</object>
+											<reference key="NS.delegate" ref="537037514"/>
+										</object>
+										<reference ref="273362867"/>
+										<reference ref="953154039"/>
+										<reference ref="953154039"/>
+										<object class="NSMutableParagraphStyle">
+											<nil key="NSTabStops"/>
+										</object>
+									</object>
+								</object>
+							</object>
+							<reference key="NSSupport" ref="953154039"/>
+							<reference key="NSControlView" ref="17311885"/>
+							<reference key="NSBackgroundColor" ref="169382556"/>
+							<reference key="NSTextColor" ref="273362867"/>
+							<object class="NSArray" key="NSAllowedInputLocales">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>sr_Latn_RS</string>
+								<string>zh</string>
+								<string>ro_RO</string>
+								<string>be_BY</string>
+								<string>si_LK</string>
+								<string>fa_IR</string>
+								<string>en_BW</string>
+								<string>en_JM</string>
+								<string>ka_GE</string>
+								<string>zh_Hans_SG</string>
+								<string>mk_MK</string>
+								<string>en_HK</string>
+								<string>ar_LB</string>
+								<string>ii_CN</string>
+								<string>ru_UA</string>
+								<string>zh_Hant_HK</string>
+								<string>af</string>
+								<string>kl_GL</string>
+								<string>az_Latn</string>
+								<string>ar_SA</string>
+								<string>en_BE</string>
+								<string>bn_BD</string>
+								<string>en_MH</string>
+								<string>be</string>
+								<string>nl_NL</string>
+								<string>el_CY</string>
+								<string>az_Cyrl_AZ</string>
+								<string>ca</string>
+								<string>sr_Latn</string>
+								<string>om_ET</string>
+								<string>es_CL</string>
+								<string>bg</string>
+								<string>en_VI</string>
+								<string>es_VE</string>
+								<string>uz_Cyrl_UZ</string>
+								<string>fr_MC</string>
+								<string>am</string>
+								<string>zh_Hant</string>
+								<string>uz_Arab</string>
+								<string>en_GB</string>
+								<string>da</string>
+								<string>mr_IN</string>
+								<string>es_MX</string>
+								<string>es_PR</string>
+								<string>sq_AL</string>
+								<string>ar</string>
+								<string>fi_FI</string>
+								<string>bn</string>
+								<string>en_NA</string>
+								<string>de</string>
+								<string>as</string>
+								<string>cy_GB</string>
+								<string>en_IE</string>
+								<string>en_BZ</string>
+								<string>de_CH</string>
+								<string>en_US</string>
+								<string>sr_Latn_BA</string>
+								<string>te_IN</string>
+								<string>ar_QA</string>
+								<string>ar_TN</string>
+								<string>zh_Hans_MO</string>
+								<string>de_LI</string>
+								<string>fa</string>
+								<string>kw_GB</string>
+								<string>cs_CZ</string>
+								<string>hu_HU</string>
+								<string>zh_Hant_TW</string>
+								<string>uz_Latn</string>
+								<string>ta_IN</string>
+								<string>az</string>
+								<string>ar_EG</string>
+								<string>ar_SD</string>
+								<string>cs</string>
+								<string>ga</string>
+								<string>ar_LY</string>
+								<string>af_ZA</string>
+								<string>el</string>
+								<string>es_PA</string>
+								<string>es_CO</string>
+								<string>fi</string>
+								<string>en</string>
+								<string>ha</string>
+								<string>eo</string>
+								<string>gl_ES</string>
+								<string>cy</string>
+								<string>es_GT</string>
+								<string>ms_BN</string>
+								<string>ne_IN</string>
+								<string>he_IL</string>
+								<string>he</string>
+								<string>es</string>
+								<string>fo</string>
+								<string>en_CA</string>
+								<string>et</string>
+								<string>hr_HR</string>
+								<string>haw</string>
+								<string>gl</string>
+								<string>ar_SY</string>
+								<string>fr_SN</string>
+								<string>eu</string>
+								<string>uz_Arab_AF</string>
+								<string>id</string>
+								<string>fr</string>
+								<string>az_Latn_AZ</string>
+								<string>hi</string>
+								<string>zh_Hans_HK</string>
+								<string>ja</string>
+								<string>es_ES</string>
+								<string>ar_AE</string>
+								<string>uz_Latn_UZ</string>
+								<string>ca_ES</string>
+								<string>fr_BE</string>
+								<string>hi_IN</string>
+								<string>is_IS</string>
+								<string>ii</string>
+								<string>ps_AF</string>
+								<string>ka</string>
+								<string>tr_TR</string>
+								<string>it_CH</string>
+								<string>kk_Cyrl_KZ</string>
+								<string>gu</string>
+								<string>es_US</string>
+								<string>gv</string>
+								<string>en_PH</string>
+								<string>es_HN</string>
+								<string>hr</string>
+								<string>sv_FI</string>
+								<string>es_CR</string>
+								<string>haw_US</string>
+								<string>ar_MA</string>
+								<string>hu</string>
+								<string>nl_BE</string>
+								<string>th_TH</string>
+								<string>en_ZA</string>
+								<string>kk_Cyrl</string>
+								<string>is</string>
+								<string>it</string>
+								<string>es_PE</string>
+								<string>hy</string>
+								<string>de_DE</string>
+								<string>en_NZ</string>
+								<string>kk</string>
+								<string>kl</string>
+								<string>en_AU</string>
+								<string>pa_Guru</string>
+								<string>el_GR</string>
+								<string>km</string>
+								<string>kn</string>
+								<string>ko</string>
+								<string>nb</string>
+								<string>ar_IQ</string>
+								<string>es_PY</string>
+								<string>es_EC</string>
+								<string>en_US_POSIX</string>
+								<string>vi_VN</string>
+								<string>lv_LV</string>
+								<string>ne</string>
+								<string>kn_IN</string>
+								<string>es_AR</string>
+								<string>mk</string>
+								<string>ml</string>
+								<string>bg_BG</string>
+								<string>hy_AM_REVISED</string>
+								<string>kw</string>
+								<string>uk_UA</string>
+								<string>en_PK</string>
+								<string>pa</string>
+								<string>lt</string>
+								<string>sk_SK</string>
+								<string>nl</string>
+								<string>ur_PK</string>
+								<string>de_BE</string>
+								<string>lv</string>
+								<string>as_IN</string>
+								<string>mr</string>
+								<string>nn</string>
+								<string>en_ZW</string>
+								<string>fr_CA</string>
+								<string>ne_NP</string>
+								<string>ms</string>
+								<string>pl_PL</string>
+								<string>ti_ER</string>
+								<string>ja_JP</string>
+								<string>mt</string>
+								<string>fr_LU</string>
+								<string>om</string>
+								<string>sr_Cyrl_ME</string>
+								<string>en_IN</string>
+								<string>ga_IE</string>
+								<string>sw_KE</string>
+								<string>pl</string>
+								<string>kok</string>
+								<string>ur_IN</string>
+								<string>or</string>
+								<string>it_IT</string>
+								<string>hy_AM</string>
+								<string>ml_IN</string>
+								<string>en_SG</string>
+								<string>es_SV</string>
+								<string>am_ET</string>
+								<string>pt_BR</string>
+								<string>bn_IN</string>
+								<string>mt_MT</string>
+								<string>ar_KW</string>
+								<string>es_DO</string>
+								<string>pa_Arab</string>
+								<string>gv_GB</string>
+								<string>so_KE</string>
+								<string>ti_ET</string>
+								<string>ps</string>
+								<string>ms_MY</string>
+								<string>sl_SI</string>
+								<string>es_UY</string>
+								<string>en_MT</string>
+								<string>pt</string>
+								<string>sw_TZ</string>
+								<string>ta</string>
+								<string>nn_NO</string>
+								<string>sr_Cyrl_RS</string>
+								<string>si</string>
+								<string>te</string>
+								<string>ro</string>
+								<string>so_SO</string>
+								<string>sk</string>
+								<string>az_Cyrl</string>
+								<string>or_IN</string>
+								<string>sl</string>
+								<string>pa_Arab_PK</string>
+								<string>ru_RU</string>
+								<string>th</string>
+								<string>ar_DZ</string>
+								<string>ti</string>
+								<string>so</string>
+								<string>sr_Cyrl</string>
+								<string>es_NI</string>
+								<string>ha_Latn_NG</string>
+								<string>ru</string>
+								<string>en_TT</string>
+								<string>sq</string>
+								<string>fr_FR</string>
+								<string>sr</string>
+								<string>da_DK</string>
+								<string>es_BO</string>
+								<string>nb_NO</string>
+								<string>de_LU</string>
+								<string>uk</string>
+								<string>eu_ES</string>
+								<string>ar_JO</string>
+								<string>sv</string>
+								<string>so_ET</string>
+								<string>tr</string>
+								<string>sw</string>
+								<string>vi</string>
+								<string>zh_Hans_CN</string>
+								<string>km_KH</string>
+								<string>fa_AF</string>
+								<string>et_EE</string>
+								<string>ko_KR</string>
+								<string>pa_Guru_IN</string>
+								<string>sr_Latn_ME</string>
+								<string>so_DJ</string>
+								<string>ur</string>
+								<string>kok_IN</string>
+								<string>uz_Cyrl</string>
+								<string>zh_Hant_MO</string>
+								<string>zh_Hans</string>
+								<string>ar_YE</string>
+								<string>fo_FO</string>
+								<string>sv_SE</string>
+								<string>ha_Latn</string>
+								<string>de_AT</string>
+								<string>lt_LT</string>
+								<string>ar_OM</string>
+								<string>sr_Cyrl_BA</string>
+								<string>uz</string>
+								<string>ar_BH</string>
+								<string>id_ID</string>
+								<string>pt_PT</string>
+								<string>af_NA</string>
+								<string>om_KE</string>
+								<string>fr_CH</string>
+								<string>gu_IN</string>
+							</object>
+							<reference key="NSDelegate" ref="17311885"/>
+							<double key="NSCompletionDelay">0.0</double>
+							<int key="NSTokenStyle">0</int>
+							<object class="NSArray" key="NS.representedObjects">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>album</string>
+							</object>
+						</object>
+						<int key="NSTokenFieldVersion">2</int>
+					</object>
+					<object class="NSTokenField" id="438888169">
+						<reference key="NSNextResponder" ref="60725823"/>
+						<int key="NSvFlags">268</int>
+						<object class="NSMutableSet" key="NSDragTypes">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="NSArray" key="set.sortedObjects">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>NSStringPboardType</string>
+							</object>
+						</object>
+						<string key="NSFrame">{{34, 84}, {78, 22}}</string>
+						<reference key="NSSuperview" ref="60725823"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="17311885"/>
+						<bool key="NSEnabled">YES</bool>
+						<object class="NSTokenFieldCell" key="NSCell" id="677701985">
+							<int key="NSCellFlags">69336577</int>
+							<int key="NSCellFlags2">4096</int>
+							<object class="NSMutableAttributedString" key="NSContents">
+								<object class="NSMutableString" key="NSString">
+									<bytes key="NS.bytes">77+8A</bytes>
+								</object>
+								<object class="NSDictionary" key="NSAttributes">
+									<bool key="EncodedWithXMLCoder">YES</bool>
+									<object class="NSArray" key="dict.sortedKeys">
+										<bool key="EncodedWithXMLCoder">YES</bool>
+										<string>NSAttachment</string>
+										<string>NSColor</string>
+										<string>NSFont</string>
+										<string>NSOriginalFont</string>
+										<string>NSParagraphStyle</string>
+									</object>
+									<object class="NSMutableArray" key="dict.values">
+										<bool key="EncodedWithXMLCoder">YES</bool>
+										<object class="NSTokenAttachment">
+											<nil key="NSFileWrapper"/>
+											<object class="NSTokenAttachmentCell" key="NSCell">
+												<int key="NSCellFlags">67239488</int>
+												<int key="NSCellFlags2">134219776</int>
+												<string key="NSContents">title</string>
+												<reference key="NSSupport" ref="953154039"/>
+												<string key="NSRepresentedObject">title</string>
+												<reference key="NSTextColor" ref="273362867"/>
+											</object>
+											<reference key="NS.delegate" ref="677701985"/>
+										</object>
+										<reference ref="273362867"/>
+										<reference ref="953154039"/>
+										<reference ref="953154039"/>
+										<object class="NSMutableParagraphStyle">
+											<nil key="NSTabStops"/>
+										</object>
+									</object>
+								</object>
+							</object>
+							<reference key="NSSupport" ref="953154039"/>
+							<reference key="NSControlView" ref="438888169"/>
+							<reference key="NSBackgroundColor" ref="169382556"/>
+							<reference key="NSTextColor" ref="273362867"/>
+							<object class="NSArray" key="NSAllowedInputLocales">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>sr_Latn_RS</string>
+								<string>zh</string>
+								<string>ro_RO</string>
+								<string>be_BY</string>
+								<string>si_LK</string>
+								<string>fa_IR</string>
+								<string>en_BW</string>
+								<string>en_JM</string>
+								<string>ka_GE</string>
+								<string>zh_Hans_SG</string>
+								<string>mk_MK</string>
+								<string>en_HK</string>
+								<string>ar_LB</string>
+								<string>ii_CN</string>
+								<string>ru_UA</string>
+								<string>zh_Hant_HK</string>
+								<string>af</string>
+								<string>kl_GL</string>
+								<string>az_Latn</string>
+								<string>ar_SA</string>
+								<string>en_BE</string>
+								<string>bn_BD</string>
+								<string>en_MH</string>
+								<string>be</string>
+								<string>nl_NL</string>
+								<string>el_CY</string>
+								<string>az_Cyrl_AZ</string>
+								<string>ca</string>
+								<string>sr_Latn</string>
+								<string>om_ET</string>
+								<string>es_CL</string>
+								<string>bg</string>
+								<string>en_VI</string>
+								<string>es_VE</string>
+								<string>uz_Cyrl_UZ</string>
+								<string>fr_MC</string>
+								<string>am</string>
+								<string>zh_Hant</string>
+								<string>uz_Arab</string>
+								<string>en_GB</string>
+								<string>da</string>
+								<string>mr_IN</string>
+								<string>es_MX</string>
+								<string>es_PR</string>
+								<string>sq_AL</string>
+								<string>ar</string>
+								<string>fi_FI</string>
+								<string>bn</string>
+								<string>en_NA</string>
+								<string>de</string>
+								<string>as</string>
+								<string>cy_GB</string>
+								<string>en_IE</string>
+								<string>en_BZ</string>
+								<string>de_CH</string>
+								<string>en_US</string>
+								<string>sr_Latn_BA</string>
+								<string>te_IN</string>
+								<string>ar_QA</string>
+								<string>ar_TN</string>
+								<string>zh_Hans_MO</string>
+								<string>de_LI</string>
+								<string>fa</string>
+								<string>kw_GB</string>
+								<string>cs_CZ</string>
+								<string>hu_HU</string>
+								<string>zh_Hant_TW</string>
+								<string>uz_Latn</string>
+								<string>ta_IN</string>
+								<string>az</string>
+								<string>ar_EG</string>
+								<string>ar_SD</string>
+								<string>cs</string>
+								<string>ga</string>
+								<string>ar_LY</string>
+								<string>af_ZA</string>
+								<string>el</string>
+								<string>es_PA</string>
+								<string>es_CO</string>
+								<string>fi</string>
+								<string>en</string>
+								<string>ha</string>
+								<string>eo</string>
+								<string>gl_ES</string>
+								<string>cy</string>
+								<string>es_GT</string>
+								<string>ms_BN</string>
+								<string>ne_IN</string>
+								<string>he_IL</string>
+								<string>he</string>
+								<string>es</string>
+								<string>fo</string>
+								<string>en_CA</string>
+								<string>et</string>
+								<string>hr_HR</string>
+								<string>haw</string>
+								<string>gl</string>
+								<string>ar_SY</string>
+								<string>fr_SN</string>
+								<string>eu</string>
+								<string>uz_Arab_AF</string>
+								<string>id</string>
+								<string>fr</string>
+								<string>az_Latn_AZ</string>
+								<string>hi</string>
+								<string>zh_Hans_HK</string>
+								<string>ja</string>
+								<string>es_ES</string>
+								<string>ar_AE</string>
+								<string>uz_Latn_UZ</string>
+								<string>ca_ES</string>
+								<string>fr_BE</string>
+								<string>hi_IN</string>
+								<string>is_IS</string>
+								<string>ii</string>
+								<string>ps_AF</string>
+								<string>ka</string>
+								<string>tr_TR</string>
+								<string>it_CH</string>
+								<string>kk_Cyrl_KZ</string>
+								<string>gu</string>
+								<string>es_US</string>
+								<string>gv</string>
+								<string>en_PH</string>
+								<string>es_HN</string>
+								<string>hr</string>
+								<string>sv_FI</string>
+								<string>es_CR</string>
+								<string>haw_US</string>
+								<string>ar_MA</string>
+								<string>hu</string>
+								<string>nl_BE</string>
+								<string>th_TH</string>
+								<string>en_ZA</string>
+								<string>kk_Cyrl</string>
+								<string>is</string>
+								<string>it</string>
+								<string>es_PE</string>
+								<string>hy</string>
+								<string>de_DE</string>
+								<string>en_NZ</string>
+								<string>kk</string>
+								<string>kl</string>
+								<string>en_AU</string>
+								<string>pa_Guru</string>
+								<string>el_GR</string>
+								<string>km</string>
+								<string>kn</string>
+								<string>ko</string>
+								<string>nb</string>
+								<string>ar_IQ</string>
+								<string>es_PY</string>
+								<string>es_EC</string>
+								<string>en_US_POSIX</string>
+								<string>vi_VN</string>
+								<string>lv_LV</string>
+								<string>ne</string>
+								<string>kn_IN</string>
+								<string>es_AR</string>
+								<string>mk</string>
+								<string>ml</string>
+								<string>bg_BG</string>
+								<string>hy_AM_REVISED</string>
+								<string>kw</string>
+								<string>uk_UA</string>
+								<string>en_PK</string>
+								<string>pa</string>
+								<string>lt</string>
+								<string>sk_SK</string>
+								<string>nl</string>
+								<string>ur_PK</string>
+								<string>de_BE</string>
+								<string>lv</string>
+								<string>as_IN</string>
+								<string>mr</string>
+								<string>nn</string>
+								<string>en_ZW</string>
+								<string>fr_CA</string>
+								<string>ne_NP</string>
+								<string>ms</string>
+								<string>pl_PL</string>
+								<string>ti_ER</string>
+								<string>ja_JP</string>
+								<string>mt</string>
+								<string>fr_LU</string>
+								<string>om</string>
+								<string>sr_Cyrl_ME</string>
+								<string>en_IN</string>
+								<string>ga_IE</string>
+								<string>sw_KE</string>
+								<string>pl</string>
+								<string>kok</string>
+								<string>ur_IN</string>
+								<string>or</string>
+								<string>it_IT</string>
+								<string>hy_AM</string>
+								<string>ml_IN</string>
+								<string>en_SG</string>
+								<string>es_SV</string>
+								<string>am_ET</string>
+								<string>pt_BR</string>
+								<string>bn_IN</string>
+								<string>mt_MT</string>
+								<string>ar_KW</string>
+								<string>es_DO</string>
+								<string>pa_Arab</string>
+								<string>gv_GB</string>
+								<string>so_KE</string>
+								<string>ti_ET</string>
+								<string>ps</string>
+								<string>ms_MY</string>
+								<string>sl_SI</string>
+								<string>es_UY</string>
+								<string>en_MT</string>
+								<string>pt</string>
+								<string>sw_TZ</string>
+								<string>ta</string>
+								<string>nn_NO</string>
+								<string>sr_Cyrl_RS</string>
+								<string>si</string>
+								<string>te</string>
+								<string>ro</string>
+								<string>so_SO</string>
+								<string>sk</string>
+								<string>az_Cyrl</string>
+								<string>or_IN</string>
+								<string>sl</string>
+								<string>pa_Arab_PK</string>
+								<string>ru_RU</string>
+								<string>th</string>
+								<string>ar_DZ</string>
+								<string>ti</string>
+								<string>so</string>
+								<string>sr_Cyrl</string>
+								<string>es_NI</string>
+								<string>ha_Latn_NG</string>
+								<string>ru</string>
+								<string>en_TT</string>
+								<string>sq</string>
+								<string>fr_FR</string>
+								<string>sr</string>
+								<string>da_DK</string>
+								<string>es_BO</string>
+								<string>nb_NO</string>
+								<string>de_LU</string>
+								<string>uk</string>
+								<string>eu_ES</string>
+								<string>ar_JO</string>
+								<string>sv</string>
+								<string>so_ET</string>
+								<string>tr</string>
+								<string>sw</string>
+								<string>vi</string>
+								<string>zh_Hans_CN</string>
+								<string>km_KH</string>
+								<string>fa_AF</string>
+								<string>et_EE</string>
+								<string>ko_KR</string>
+								<string>pa_Guru_IN</string>
+								<string>sr_Latn_ME</string>
+								<string>so_DJ</string>
+								<string>ur</string>
+								<string>kok_IN</string>
+								<string>uz_Cyrl</string>
+								<string>zh_Hant_MO</string>
+								<string>zh_Hans</string>
+								<string>ar_YE</string>
+								<string>fo_FO</string>
+								<string>sv_SE</string>
+								<string>ha_Latn</string>
+								<string>de_AT</string>
+								<string>lt_LT</string>
+								<string>ar_OM</string>
+								<string>sr_Cyrl_BA</string>
+								<string>uz</string>
+								<string>ar_BH</string>
+								<string>id_ID</string>
+								<string>pt_PT</string>
+								<string>af_NA</string>
+								<string>om_KE</string>
+								<string>fr_CH</string>
+								<string>gu_IN</string>
+							</object>
+							<reference key="NSDelegate" ref="438888169"/>
+							<double key="NSCompletionDelay">0.0</double>
+							<int key="NSTokenStyle">0</int>
+							<object class="NSArray" key="NS.representedObjects">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>title</string>
+							</object>
+						</object>
+						<int key="NSTokenFieldVersion">2</int>
+					</object>
+					<object class="NSTokenField" id="622677545">
+						<reference key="NSNextResponder" ref="60725823"/>
+						<int key="NSvFlags">268</int>
+						<object class="NSMutableSet" key="NSDragTypes">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="NSArray" key="set.sortedObjects">
+								<bool key="EncodedWithXMLCoder">YES</bool>
+								<string>NSStringPboardType</string>
+							</object>
+						</object>
+						<string key="NSFrame">{{37, 114}, {353, 22}}</string>
+						<reference key="NSSuperview" ref="60725823"/>
+						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="438888169"/>
+						<bool key="NSEnabled">YES</bool>
+						<object class="NSTokenFieldCell" key="NSCell" id="429008269">
+							<int key="NSCellFlags">341966336</int>
+							<int key="NSCellFlags2">0</int>
+							<object class="NSFont" key="NSSupport">
+								<string key="NSName">LucidaGrande</string>
+								<double key="NSSize">12</double>
+								<int key="NSfFlags">16</int>
+							</object>
+							<reference key="NSControlView" ref="622677545"/>
+							<bool key="NSDrawsBackground">YES</bool>
+							<reference key="NSBackgroundColor" ref="169382556"/>
+							<reference key="NSTextColor" ref="273362867"/>
+							<reference key="NSDelegate" ref="622677545"/>
+							<double key="NSCompletionDelay">0.0</double>
+							<int key="NSTokenStyle">0</int>
+						</object>
+						<int key="NSTokenFieldVersion">2</int>
+					</object>
+				</object>
+				<string key="NSFrameSize">{426, 188}</string>
+				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
+				<reference key="NSNextKeyView" ref="92492110"/>
+				<string key="NSClassName">NSView</string>
+			</object>
+			<object class="NSUserDefaultsController" id="243936390">
+				<bool key="NSSharedInstance">YES</bool>
+			</object>
+		</object>
+		<object class="IBObjectContainer" key="IBDocument.Objects">
+			<object class="NSMutableArray" key="connectionRecords">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">view</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="60725823"/>
+					</object>
+					<int key="connectionID">9</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: values.coverFormat</string>
+						<reference key="source" ref="622677545"/>
+						<reference key="destination" ref="243936390"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="622677545"/>
+							<reference key="NSDestination" ref="243936390"/>
+							<string key="NSLabel">value: values.coverFormat</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">values.coverFormat</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">63</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">tokenField</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="622677545"/>
+					</object>
+					<int key="connectionID">64</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="622677545"/>
+						<reference key="destination" ref="1001"/>
+					</object>
+					<int key="connectionID">65</int>
+				</object>
+			</object>
+			<object class="IBMutableOrderedSet" key="objectRecords">
+				<object class="NSArray" key="orderedObjects">
+					<bool key="EncodedWithXMLCoder">YES</bool>
+					<object class="IBObjectRecord">
+						<int key="objectID">0</int>
+						<reference key="object" ref="0"/>
+						<reference key="children" ref="1000"/>
+						<nil key="parent"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">-2</int>
+						<reference key="object" ref="1001"/>
+						<reference key="parent" ref="0"/>
+						<string key="objectName">File's Owner</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">-1</int>
+						<reference key="object" ref="1003"/>
+						<reference key="parent" ref="0"/>
+						<string key="objectName">First Responder</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">-3</int>
+						<reference key="object" ref="1004"/>
+						<reference key="parent" ref="0"/>
+						<string key="objectName">Application</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">4</int>
+						<reference key="object" ref="60725823"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="622677545"/>
+							<reference ref="438888169"/>
+							<reference ref="17311885"/>
+							<reference ref="571887948"/>
+							<reference ref="591778682"/>
+							<reference ref="622804477"/>
+							<reference ref="770005433"/>
+							<reference ref="336920532"/>
+							<reference ref="1069062941"/>
+							<reference ref="965898730"/>
+							<reference ref="92492110"/>
+						</object>
+						<reference key="parent" ref="0"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">34</int>
+						<reference key="object" ref="622677545"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="429008269"/>
+						</object>
+						<reference key="parent" ref="60725823"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">37</int>
+						<reference key="object" ref="438888169"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="677701985"/>
+						</object>
+						<reference key="parent" ref="60725823"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">38</int>
+						<reference key="object" ref="17311885"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="537037514"/>
+						</object>
+						<reference key="parent" ref="60725823"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">39</int>
+						<reference key="object" ref="571887948"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="908441874"/>
+						</object>
+						<reference key="parent" ref="60725823"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">40</int>
+						<reference key="object" ref="591778682"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="131437265"/>
+						</object>
+						<reference key="parent" ref="60725823"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">41</int>
+						<reference key="object" ref="622804477"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="128194219"/>
+						</object>
+						<reference key="parent" ref="60725823"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">42</int>
+						<reference key="object" ref="770005433"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="674544908"/>
+						</object>
+						<reference key="parent" ref="60725823"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">43</int>
+						<reference key="object" ref="336920532"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="798901891"/>
+						</object>
+						<reference key="parent" ref="60725823"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">44</int>
+						<reference key="object" ref="1069062941"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="478482992"/>
+						</object>
+						<reference key="parent" ref="60725823"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">45</int>
+						<reference key="object" ref="965898730"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="521357388"/>
+						</object>
+						<reference key="parent" ref="60725823"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">46</int>
+						<reference key="object" ref="521357388"/>
+						<reference key="parent" ref="965898730"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">47</int>
+						<reference key="object" ref="478482992"/>
+						<reference key="parent" ref="1069062941"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">48</int>
+						<reference key="object" ref="798901891"/>
+						<reference key="parent" ref="336920532"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">49</int>
+						<reference key="object" ref="674544908"/>
+						<reference key="parent" ref="770005433"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">50</int>
+						<reference key="object" ref="128194219"/>
+						<reference key="parent" ref="622804477"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">51</int>
+						<reference key="object" ref="131437265"/>
+						<reference key="parent" ref="591778682"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">52</int>
+						<reference key="object" ref="908441874"/>
+						<reference key="parent" ref="571887948"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">53</int>
+						<reference key="object" ref="537037514"/>
+						<reference key="parent" ref="17311885"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">54</int>
+						<reference key="object" ref="677701985"/>
+						<reference key="parent" ref="438888169"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">57</int>
+						<reference key="object" ref="429008269"/>
+						<reference key="parent" ref="622677545"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">58</int>
+						<reference key="object" ref="92492110"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="135806925"/>
+						</object>
+						<reference key="parent" ref="60725823"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">59</int>
+						<reference key="object" ref="135806925"/>
+						<reference key="parent" ref="92492110"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">60</int>
+						<reference key="object" ref="243936390"/>
+						<reference key="parent" ref="0"/>
+					</object>
+				</object>
+			</object>
+			<object class="NSMutableDictionary" key="flattenedProperties">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<object class="NSArray" key="dict.sortedKeys">
+					<bool key="EncodedWithXMLCoder">YES</bool>
+					<string>-1.IBPluginDependency</string>
+					<string>-2.IBPluginDependency</string>
+					<string>-3.IBPluginDependency</string>
+					<string>34.IBPluginDependency</string>
+					<string>37.IBPluginDependency</string>
+					<string>38.IBPluginDependency</string>
+					<string>39.IBPluginDependency</string>
+					<string>4.IBEditorWindowLastContentRect</string>
+					<string>4.IBPluginDependency</string>
+					<string>4.IBUserGuides</string>
+					<string>4.WindowOrigin</string>
+					<string>4.editorWindowContentRectSynchronizationRect</string>
+					<string>40.IBPluginDependency</string>
+					<string>41.IBPluginDependency</string>
+					<string>42.IBPluginDependency</string>
+					<string>43.IBPluginDependency</string>
+					<string>44.IBPluginDependency</string>
+					<string>45.IBPluginDependency</string>
+					<string>46.IBPluginDependency</string>
+					<string>47.IBPluginDependency</string>
+					<string>48.IBPluginDependency</string>
+					<string>49.IBPluginDependency</string>
+					<string>50.IBPluginDependency</string>
+					<string>51.IBPluginDependency</string>
+					<string>52.IBPluginDependency</string>
+					<string>53.IBPluginDependency</string>
+					<string>54.IBPluginDependency</string>
+					<string>57.IBPluginDependency</string>
+					<string>58.IBPluginDependency</string>
+					<string>59.IBPluginDependency</string>
+				</object>
+				<object class="NSMutableArray" key="dict.values">
+					<bool key="EncodedWithXMLCoder">YES</bool>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>{{341, 676}, {360, 180}}</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<reference ref="0"/>
+					<string>{628, 654}</string>
+					<string>{{217, 442}, {480, 272}}</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+				</object>
+			</object>
+			<object class="NSMutableDictionary" key="unlocalizedProperties">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<reference key="dict.sortedKeys" ref="0"/>
+				<reference key="dict.values" ref="0"/>
+			</object>
+			<nil key="activeLocalization"/>
+			<object class="NSMutableDictionary" key="localizations">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<reference key="dict.sortedKeys" ref="0"/>
+				<reference key="dict.values" ref="0"/>
+			</object>
+			<nil key="sourceID"/>
+			<int key="maxID">65</int>
+		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<bool key="EncodedWithXMLCoder">YES</bool>
+				<object class="IBPartialClassDescription">
+					<string key="className">CoverViewController</string>
+					<string key="superclassName">NSViewController</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">tokenField</string>
+						<string key="NS.object.0">NSTokenField</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">tokenField</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">tokenField</string>
+							<string key="candidateClassName">NSTokenField</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/CoverViewController.h</string>
+					</object>
+				</object>
+			</object>
+		</object>
+		<int key="IBDocument.localizationMode">0</int>
+		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
+		<object class="NSMutableDictionary" key="IBDocument.PluginDeclaredDevelopmentDependencies">
+			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin.InterfaceBuilder3</string>
+			<integer value="3000" key="NS.object.0"/>
+		</object>
+		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
+		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+	</data>
+</archive>

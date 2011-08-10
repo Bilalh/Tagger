@@ -1,35 +1,30 @@
+
 //
-//  RenamingFiles.m
+//  CoverViewController.m
 //  VGTagger
 //
-//  Created by Bilal Syed Hussain on 01/08/2011.
-//  Copyright 2011  All rights reserved.
+//  Created by Bilal Syed Hussain on 10/08/2011.
+//  Copyright 2011 St. Andrews KY16 9XW. All rights reserved.
 //
 
-#import "RenamingFilesController.h"
-#import "FileSystemNodeCollection.h"
-#import "FileSystemNode.h"
+#import "CoverViewController.h"
+
 
 #import "Logging.h"
 LOG_LEVEL(LOG_LEVEL_INFO);
 
 static const NSSet *tokensSet;
 
-@implementation RenamingFilesController
+@implementation CoverViewController
 @synthesize tokenField;
 
-#pragma mark -
-#pragma mark init
+#pragma mark - Init
 
-- (id)initWithNodes:(FileSystemNodeCollection*)newNodes
+- (id)init
 {
-	self = [super initWithWindowNibName:@"RenameDisplay"];
-    if (self) {
-		nodes = newNodes;
-    }
-	
-    return self;
+    return [super initWithNibName:@"CoverView" bundle:nil];
 }
+
 
 + (void) initialize
 {
@@ -37,18 +32,6 @@ static const NSSet *tokensSet;
 				 @"title",  @"album",  @"artist", @"composer", @"year",
 				 @"track",  @"disc",   @"genre",  @"albumArtist",
 				 nil];
-}
-
-
-#pragma mark -
-#pragma mark Tagging
-
-- (IBAction)tagFiles:(id)sender
-{
-	DDLogInfo(@"Obj %@", [tokenField objectValue]);
-	NSError *res = [nodes renameWithFormatArray:[tokenField objectValue]];
-	DDLogInfo(@"res:%@", res ? [res localizedDescription] : nil);
-	[self confirmSheet:self];
 }
 
 #pragma mark -
@@ -86,31 +69,31 @@ static const NSSet *tokensSet;
 	return nil;
 }
 
+- (BOOL)control:(NSControl *)control textShouldEndEditing:(NSText *)fieldEditor
+{
+	if ([[fieldEditor string] isEqualToString:@""]){
+		return NO;
+	}
+	return YES;
+}
 
 #pragma mark -
-#pragma mark Sheet Methods
+#pragma mark MASPreferencesViewController
 
-- (void) didEndSheet:(NSWindow*)sheet 
-		  returnCode:(int)returnCode
-			  result:(FileSystemNode*)result
-{	
-	DDLogInfo(@"reanming End Sheet");
-	if (returnCode == NSOKButton){
-		[result invalidateChildren];
-	}
-	[sheet orderOut:self];
-}
-
-- (IBAction)cancelSheet:sender
-{	
-	DDLogInfo(@"Rename Cancel");
-	[NSApp endSheet:self.window returnCode:NSCancelButton];
-}
-
-- (IBAction)confirmSheet:sender
+- (NSString *)toolbarItemIdentifier
 {
-	DDLogInfo(@"Rename Comfirm");
-	[NSApp endSheet:self.window returnCode:NSOKButton];
+    return @"Cover";
 }
+
+- (NSImage *)toolbarItemImage
+{
+    return [NSImage imageNamed:NSImageNameAdvanced];
+}
+
+- (NSString *)toolbarItemLabel
+{
+    return NSLocalizedString(@"Cover", @"Toolbar item name for the Cover preference pane");
+}
+
 
 @end

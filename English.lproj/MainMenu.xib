@@ -2544,7 +2544,6 @@
 																<int key="NSvFlags">268</int>
 																<string key="NSFrame">{{124, 49}, {99, 18}}</string>
 																<reference key="NSSuperview" ref="10815081"/>
-																<reference key="NSNextKeyView"/>
 																<int key="NSViewLayerContentsRedrawPolicy">2</int>
 																<bool key="NSEnabled">YES</bool>
 																<object class="NSButtonCell" key="NSCell" id="725857653">
@@ -4472,6 +4471,14 @@
 						</object>
 					</object>
 					<int key="connectionID">1277</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">coverView</string>
+						<reference key="source" ref="588631224"/>
+						<reference key="destination" ref="245541821"/>
+					</object>
+					<int key="connectionID">1278</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -6893,14 +6900,22 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1277</int>
+			<int key="maxID">1278</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<bool key="EncodedWithXMLCoder">YES</bool>
 				<object class="IBPartialClassDescription">
-					<string key="className">DraggableImageView</string>
+					<string key="className">BHDraggableImageView</string>
 					<string key="superclassName">NSImageView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/BHDraggableImageView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">DraggableImageView</string>
+					<string key="superclassName">BHDraggableImageView</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/DraggableImageView.h</string>
@@ -7030,6 +7045,7 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>coverView</string>
 							<string>popup</string>
 							<string>table</string>
 							<string>vgmdbItem</string>
@@ -7037,6 +7053,7 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>NSImageView</string>
 							<string>NSPopUpButton</string>
 							<string>NSTableView</string>
 							<string>NSToolbarItem</string>
@@ -7047,6 +7064,7 @@
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>coverView</string>
 							<string>popup</string>
 							<string>table</string>
 							<string>vgmdbItem</string>
@@ -7054,6 +7072,10 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">coverView</string>
+								<string key="candidateClassName">NSImageView</string>
+							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">popup</string>
 								<string key="candidateClassName">NSPopUpButton</string>

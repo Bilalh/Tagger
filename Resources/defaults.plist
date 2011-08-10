@@ -6,5 +6,10 @@
 	<string>~/Music/</string>
 	<key>writeDraggedImageAsFile</key>
 	<true/>
+	<key>coverFormat</key>
+	<array>
+		<string>title</string>
+		<string> - cover</string>
+	</array>
 </dict>
 </plist>

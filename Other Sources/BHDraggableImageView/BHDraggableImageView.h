@@ -7,18 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BHDraggableImageView.h"
-
-@class FileSystemNode;
 
 /// NSImageView where the image can be dragged to any 
 /// other image source as a file
-@interface DraggableImageView : BHDraggableImageView  {
+@interface BHDraggableImageView : NSImageView {
 @private
-
+	NSEvent* downEvent;
 }
 
-@property (assign) FileSystemNode *current;
+@property (assign) NSEvent* downEvent;
 
+- (NSString*) makeFilename;
 
 @end

@@ -16,6 +16,7 @@
 #import "ImageAndTextCell.h"
 #import "FileSystemNodeCollection.h"
 #import "RenamingFilesController.h"
+#import "DraggableImageView.h"
 
 #import "Logging.h"
 LOG_LEVEL(LOG_LEVEL_INFO);
@@ -180,10 +181,11 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 	if (selectedRow == -1){
 		self.currentNodes.tagsArray = nil;
-		
+		coverView.current = nil;
 	}else{
 		self.currentNodes.tagsArray = [[[directoryStack lastObject] children] 
 									   objectsAtIndexes:[table selectedRowIndexes]];
+		coverView.current = [self.currentNodes.tagsArray objectAtIndex:0];
 	}
 }
 

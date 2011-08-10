@@ -13,6 +13,7 @@
 @class  FileSystemNode;
 @class  FileSystemNodeCollection;
 @class  RenamingFilesController;
+@class  DraggableImageView;
 
 /// The main controller creates the other controllers 
 @interface MainController : NSWindowController {
@@ -21,6 +22,7 @@
 	IBOutlet NSPopUpButton *popup;
 	IBOutlet NSTableView *table;
 	IBOutlet NSToolbarItem *vgmdbItem;
+	IBOutlet DraggableImageView *coverView;
 	
 	VgmdbController         *vgc;
 	DisplayController       *ssc;

@@ -7,79 +7,27 @@
 //
 
 #import "DraggableImageView.h"
+#import "FileSystemNode.h"
+#import "Tags.h"
 
 @interface DraggableImageView()
-- (void)startDrag:(NSEvent *)event;
+
 @end
 
 @implementation DraggableImageView
-@synthesize downEvent;
+@synthesize current;
 
-- (void)startDrag:(NSEvent *)event
+- (NSString*) makeFilename
 {
-	NSPasteboard *pboard = [NSPasteboard pasteboardWithName:NSDragPboard];
-	// Write the image data to clipboard
-	[pboard declareTypes:[NSArray arrayWithObject:NSFilenamesPboardType]
-				   owner:self];
-	[pboard setData:[[self image] TIFFRepresentation] 
-			forType:NSTIFFPboardType];
-	
-	// IF true write the data as a file as well which allows dragging the file e.g. to the desktop
-	BOOL writeAsFile = [[NSUserDefaults standardUserDefaults] boolForKey:@"writeDraggedImageAsFile"];
-	if (writeAsFile){
-		NSString *tempFileName = @"/tmp/cover.jpg";
-		NSBitmapImageRep *bits= [[[self image] representations ] objectAtIndex:0];
-		NSData *data = [bits representationUsingType: NSPNGFileType
-										  properties: nil];
-		[data writeToFile: tempFileName
-			   atomically: NO];
-		
-		[pboard addTypes:[NSArray arrayWithObject:NSFilenamesPboardType] owner:self];
-		[pboard setPropertyList:[NSArray arrayWithObject:tempFileName] 
-						forType:NSFilenamesPboardType];
+	if (current.tags){
+		NSString * name = [current.tags filenameFromFormatArray:  
+						   [[NSUserDefaults standardUserDefaults] 
+							arrayForKey:@"coverFormat"]];
+		return [name isEqualToString:@""]  ? @"cover" : name;
+	}else{
+		return @"cover";
 	}
-	
-	NSImage *scaledImage = [[self cell] objectValue];
-	NSImage *dragImage = [[[NSImage alloc] initWithSize: [scaledImage size]] autorelease];
-    [dragImage lockFocus];
-    [[[self cell] objectValue] dissolveToPoint: NSMakePoint(0,0)
-									  fraction: .5];
-    [dragImage unlockFocus];
-	
-	NSPoint dragPoint = NSMakePoint(
-									([self bounds].size.width - [scaledImage size].width) / 2,
-									([self bounds].size.height - [scaledImage size].height) / 2);
-	
-    [self dragImage:dragImage
-                 at:dragPoint
-             offset:NSZeroSize
-              event:event
-         pasteboard:pboard
-             source:self
-          slideBack:YES];
 }
 
-- (BOOL)shouldDelayWindowOrderingForEvent:(NSEvent *)event
-{
-    return YES;
-}
-
-- (BOOL)acceptsFirstMouse:(NSEvent *)event
-{
-    return YES;
-}
-
-- (void)mouseDown:(NSEvent *)event
-{
-	self.downEvent = event;
-}
-
-- (void)mouseDragged:(NSEvent *)event
-{
-    if ([self image]) {
-        [self startDrag:self.downEvent];
-	}
-	self.downEvent = nil;
-}
 
 @end
