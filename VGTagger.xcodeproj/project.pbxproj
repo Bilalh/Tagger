@@ -74,6 +74,7 @@
 		92E6EDD713F313230045679E /* VgmdbDisplay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92E6EDB513F313230045679E /* VgmdbDisplay.xib */; };
 		92E6EDD813F313230045679E /* VgmdbSearch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92E6EDB613F313230045679E /* VgmdbSearch.xib */; };
 		92E6EDDF13F314260045679E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92E6EDDD13F314260045679E /* InfoPlist.strings */; };
+		92E6EDE413F320540045679E /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E6EDE313F320540045679E /* ScriptingBridge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +199,8 @@
 		92E6EDB513F313230045679E /* VgmdbDisplay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VgmdbDisplay.xib; sourceTree = "<group>"; };
 		92E6EDB613F313230045679E /* VgmdbSearch.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VgmdbSearch.xib; sourceTree = "<group>"; };
 		92E6EDDE13F314260045679E /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		92E6EDE213F31A090045679E /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
+		92E6EDE313F320540045679E /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +208,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92E6EDE413F320540045679E /* ScriptingBridge.framework in Frameworks */,
 				92A3C49E13E2444A0024C7D3 /* MacRuby.framework in Frameworks */,
 				9254007113F0AC8F0020C912 /* libtag.1.dylib in Frameworks */,
 				922E35D713C89BF3003C5913 /* Cocoa.framework in Frameworks */,
@@ -217,6 +221,7 @@
 		920660B813C89845003A3803 /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92E6EDE313F320540045679E /* ScriptingBridge.framework */,
 				92A3C49B13E244200024C7D3 /* MacRuby.framework */,
 				922E35D613C89BF3003C5913 /* Cocoa.framework */,
 			);
@@ -448,6 +453,7 @@
 		92E6ED9B13F313230045679E /* Tagging */ = {
 			isa = PBXGroup;
 			children = (
+				92E6EDE213F31A090045679E /* iTunes.h */,
 				92E6ED9C13F313230045679E /* RenameDisplay.xib */,
 				92E6ED9D13F313230045679E /* RenamingFilesController.h */,
 				92E6ED9E13F313230045679E /* RenamingFilesController.m */,

@@ -105,6 +105,8 @@
 - (IBAction) openDirectory:(id)sender;
 
 - (IBAction) gotoNextRow:(id)sender;
-- (IBAction)gotoPreviousRow:(id)sender;
+- (IBAction) gotoPreviousRow:(id)sender;
+- (IBAction) addSelectedToItunes:(id)sender;
+
 
 @end
