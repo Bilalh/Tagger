@@ -450,20 +450,20 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 - (IBAction)confirmSheet:sender
 {
 	DDLogInfo(@"End Sheet Vars:");
-	NSLog(@"album        %@", [fieldValues objectForKey:@"album"       ]);
-	NSLog(@"artist       %@", [fieldValues objectForKey:@"artist"      ]);
-	NSLog(@"albumArtist  %@", [fieldValues objectForKey:@"albumArtist" ]);
-	NSLog(@"year         %@", [fieldValues objectForKey:@"year"        ]);
-	NSLog(@"genre        %@", [fieldValues objectForKey:@"genre"       ]);
-	NSLog(@"totalDiscs   %@", [fieldValues objectForKey:@"totalDiscs"  ]);
-	NSLog(@"catalog      %@", [fieldValues objectForKey:@"catalog"     ]);
+	DDLogInfo(@"album        %@", [fieldValues objectForKey:@"album"       ]);
+	DDLogInfo(@"artist       %@", [fieldValues objectForKey:@"artist"      ]);
+	DDLogInfo(@"albumArtist  %@", [fieldValues objectForKey:@"albumArtist" ]);
+	DDLogInfo(@"year         %@", [fieldValues objectForKey:@"year"        ]);
+	DDLogInfo(@"genre        %@", [fieldValues objectForKey:@"genre"       ]);
+	DDLogInfo(@"totalDiscs   %@", [fieldValues objectForKey:@"totalDiscs"  ]);
+	DDLogInfo(@"catalog      %@", [fieldValues objectForKey:@"catalog"     ]);
 	
-	NSLog(@"arranger     %@", [fieldValues objectForKey:@"arranger"    ]);  
-	NSLog(@"composer     %@", [fieldValues objectForKey:@"composer"    ]);  
-	NSLog(@"performer    %@", [fieldValues objectForKey:@"performer"   ]);
-	NSLog(@"products     %@", [fieldValues objectForKey:@"products"    ]);
-	NSLog(@"publisher    %@", [fieldValues objectForKey:@"publisher"   ]);
-	NSLog(@"comment      %@", [fieldValues objectForKey:@"comment"       ]);
+	DDLogInfo(@"arranger     %@", [fieldValues objectForKey:@"arranger"    ]);  
+	DDLogInfo(@"composer     %@", [fieldValues objectForKey:@"composer"    ]);  
+	DDLogInfo(@"performer    %@", [fieldValues objectForKey:@"performer"   ]);
+	DDLogInfo(@"products     %@", [fieldValues objectForKey:@"products"    ]);
+	DDLogInfo(@"publisher    %@", [fieldValues objectForKey:@"publisher"   ]);
+	DDLogInfo(@"comment      %@", [fieldValues objectForKey:@"comment"     ]);
 	
 	[self tagTracks ];
 	[NSApp endSheet:self.window returnCode:NSOKButton];
@@ -471,9 +471,11 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (void) didEndSheet:(NSWindow*)sheet 
 		  returnCode:(int)returnCode
-		 contextInfo:(void*)contextInfo
+		 contextInfo:(NSTableView*)mainTable
 {	
-	
+	if (returnCode == NSOKButton){		
+		[mainTable reloadData];
+	}
 	[sheet orderOut:self];
 }
 

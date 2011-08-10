@@ -9,6 +9,8 @@ Version 1.1.5 (Wed Aug 10 2011 03:41:38 +0100)
   * Are stored in the plist for easy changing.
 * Can click any where on a directory row to go do it.
 * Can open a selected  directory with cmd-O.
+* refreshes the table on auto tagging
+* Small size (15mb smaller)
 
 ### Bug fixes ###
 * highlighting When clicking on a directory.

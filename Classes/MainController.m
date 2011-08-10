@@ -392,7 +392,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 - (IBAction) search:(id)sender
 {
 	if (vgc == nil){
-		vgc = [[VgmdbController alloc] initWithFiles:[[directoryStack lastObject] children]];	
+		vgc = [[VgmdbController alloc] initWithFiles:[[directoryStack lastObject] children]
+											   table:table];	
 	}else{
 		[vgc reset:[[directoryStack lastObject] children]];	
 	}
@@ -414,7 +415,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}
 	
 	if (vgc == nil){
-		vgc = [[VgmdbController alloc] initWithFiles:nodes];	
+		vgc = [[VgmdbController alloc] initWithFiles:nodes
+											   table:table];	
 	}else{
 		[vgc reset:nodes];	
 	}

@@ -1,14 +1,10 @@
 #!/usr/bin/env ruby19 -KU
 # encoding: UTF-8
-require 'rubygems'
+#require 'rubygems'
 require 'htmlentities'
 require 'nokogiri'
-require 'pp'
 
 require 'open-uri'
-require 'fileutils'
-require 'cgi'
-
 
 # gets data from vgmdb 
 class Vgmdb
@@ -24,9 +20,16 @@ class Vgmdb
 		}
 	end
 	
+	# CGI::escape
+	def escape(string)
+	    string.gsub(/([^ a-zA-Z0-9_.-]+)/n) do
+	      '%' + $1.unpack('H2' * $1.size).join('%').upcase
+	    end.tr(' ', '+')
+	  end
+	
 	def search(string)
 		
-		url = "http://vgmdb.net/search?q=#{CGI.escape string}"
+		url = "http://vgmdb.net/search?q=#{escape string}"
 		# puts url
 		# FIXME hardcode
 		# url = File.expand_path("~/Desktop/search.html")
@@ -238,15 +241,16 @@ class Vgmdb
 end
 
 if $0 == __FILE__
+	#require 'pp'
 	vg = Vgmdb.new()
-	puts vg.search("Atelier Meruruggg");
+	# puts vg.search("Atelier Meruru");
 	
 	# url = "http://vgmdb.net/album/13192"
 	# url = 'http://vgmdb.net/album/3885'
 	
 	# url = File.expand_path("~/Desktop/meruru.html")
-	# hash = vg.get_data(url)	
-	# pp hash
+	hash = vg.get_data(url)	
+	#pp hash
 	# vg.get_tracks_array hash;
 	
 end

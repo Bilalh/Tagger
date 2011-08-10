@@ -5,9 +5,15 @@ Readme
 -------
 Install
 -------
-Build the release version of VGTagger then ran Embed MacRuby on it which does the follows 
+Build the release version of VGTagger.
 
-	macruby_deploy --compile --embed --verbose --gem nokogiri --gem htmlentities --stdlib open-uri --stdlib fileutils  --stdlib cgi
+Run Embed MacRuby on it which does the follows do embed MacRuby framework
+
+	macruby_deploy --compile --embed --verbose --gem nokogiri
+
+To save 15mb you can replace 
+  VGTagger.app/Contents/Frameworks/MacRuby.framework/Versions/0.10/usr/lib/ruby/1.9.2
+with 1.9.2 at the root of the project
 
 --------------
 Libraries Used
