@@ -6934,7 +6934,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1302</int>
+			<int key="maxID">1311</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -6945,6 +6945,85 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/BHDraggableImageView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">DisplayController</string>
+					<string key="superclassName">NSWindowController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>cancelSheet:</string>
+							<string>changeTableLanguage:</string>
+							<string>confirmSheet:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+							<string>id</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>cancelSheet:</string>
+							<string>changeTableLanguage:</string>
+							<string>confirmSheet:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBActionInfo">
+								<string key="name">cancelSheet:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">changeTableLanguage:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">confirmSheet:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="outlets">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>table</string>
+							<string>window</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>NSTableView</string>
+							<string>NSWindow</string>
+						</object>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>table</string>
+							<string>window</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<object class="IBToOneOutletInfo">
+								<string key="name">table</string>
+								<string key="candidateClassName">NSTableView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">window</string>
+								<string key="candidateClassName">NSWindow</string>
+							</object>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/DisplayController.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
@@ -6978,6 +7057,7 @@
 							<string>goToPredefinedDirectory:</string>
 							<string>goToStartingDirectory:</string>
 							<string>open:</string>
+							<string>openDirectory:</string>
 							<string>refresh:</string>
 							<string>rename:</string>
 							<string>reopen:</string>
@@ -6986,6 +7066,7 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -7013,6 +7094,7 @@
 							<string>goToPredefinedDirectory:</string>
 							<string>goToStartingDirectory:</string>
 							<string>open:</string>
+							<string>openDirectory:</string>
 							<string>refresh:</string>
 							<string>rename:</string>
 							<string>reopen:</string>
@@ -7054,6 +7136,10 @@
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
+								<string key="name">openDirectory:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
 								<string key="name">refresh:</string>
 								<string key="candidateClassName">id</string>
 							</object>
@@ -7082,6 +7168,7 @@
 							<string>coverView</string>
 							<string>popup</string>
 							<string>renameMenu</string>
+							<string>ssc</string>
 							<string>table</string>
 							<string>vgmdbItem</string>
 							<string>window</string>
@@ -7091,6 +7178,7 @@
 							<string>DraggableImageView</string>
 							<string>NSPopUpButton</string>
 							<string>NSMenu</string>
+							<string>DisplayController</string>
 							<string>NSTableView</string>
 							<string>NSToolbarItem</string>
 							<string>NSWindow</string>
@@ -7103,6 +7191,7 @@
 							<string>coverView</string>
 							<string>popup</string>
 							<string>renameMenu</string>
+							<string>ssc</string>
 							<string>table</string>
 							<string>vgmdbItem</string>
 							<string>window</string>
@@ -7120,6 +7209,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">renameMenu</string>
 								<string key="candidateClassName">NSMenu</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">ssc</string>
+								<string key="candidateClassName">DisplayController</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">table</string>

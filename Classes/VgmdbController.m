@@ -126,7 +126,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		   modalForWindow: mainWindow
 			modalDelegate: ssc 
 		   didEndSelector: @selector(didEndSheet:returnCode:contextInfo:)
-			  contextInfo: nil]; 		
+			  contextInfo: mainTable]; 		
 	}
 	
 }
@@ -163,6 +163,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 }
 
 - (id)initWithFiles:(NSArray*)newFiles
+			  table:(NSTableView*)aTable;
 {
 	self = [super initWithWindowNibName:@"VgmdbSearch"];
     if (self) {
@@ -174,6 +175,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 //		[[MacRuby sharedRuntime] evaluateFileAtPath:path];
 		vgmdb = [[MacRuby sharedRuntime] evaluateString:@"Vgmdb.new"];
 		[self reset:newFiles];
+		mainTable = aTable;
     }
     return self;
 }

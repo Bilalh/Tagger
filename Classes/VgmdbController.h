@@ -27,6 +27,7 @@
 	DisplayController *ssc;
 	id vgmdb; // macruby Vgmdb class
 	Tags *tags;
+	NSTableView *mainTable;
 }
 
 @property (assign) NSMutableArray *files;
@@ -34,7 +35,8 @@
 /// @name Init
 
 /// array of FileSystemNode
-- (id)initWithFiles:(NSArray*)newFiles;
+- (id)initWithFiles:(NSArray*)newFiles
+			  table:(NSTableView*)table;
 
 /// Reset all the fields to their default values
 - (void)reset:(NSArray*)newFiles;

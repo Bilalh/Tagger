@@ -504,7 +504,7 @@
 /* Begin PBXLegacyTarget section */
 		92CEE64A13F0A23600E4C5CE /* Embed MacRuby */ = {
 			isa = PBXLegacyTarget;
-			buildArgumentsString = "--compile --embed --gem nokogiri --gem htmlentities --stdlib open-uri --stdlib fileutils  --stdlib cgi";
+			buildArgumentsString = "--compile --embed --gem nokogiri --gem htmlentities";
 			buildConfigurationList = 92CEE64B13F0A23600E4C5CE /* Build configuration list for PBXLegacyTarget "Embed MacRuby" */;
 			buildPhases = (
 			);
