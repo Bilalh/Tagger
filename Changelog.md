@@ -2,7 +2,7 @@ Changelog
 =========
 
 -------------
-Version 1.1.5
+Version 1.1.5 (Wed Aug 10 2011 03:41:38 +0100)
 -------------
 ### Features ###
 * Adds formats for renaming. e.g. 01 - title .

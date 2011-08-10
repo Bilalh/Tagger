@@ -14,6 +14,7 @@ GUI
 ---
 * Disable Open Selected Fodler if the user has not selected a folder.
 At the moment it does nothing if the user tries to do this.
+* Disable the menu back forword button when they can not be used instead of doing nothing
 
 Images
 -------
