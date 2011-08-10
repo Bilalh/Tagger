@@ -6,6 +6,7 @@ Version 1.1.7
 -------------
 * When using using metadata to comments, the text aligns nicely in itunes
 * Allows going to the next/previous row using a keyboard (alt down/alt up).
+  * Updated to always show the selected row.  
 
 -------------
 Version 1.1.6 (Wed Aug 10 2011 05:34:41 +0100)
