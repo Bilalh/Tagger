@@ -755,9 +755,19 @@
 											<bool key="EncodedWithXMLCoder">YES</bool>
 											<object class="NSMenuItem" id="630430531">
 												<reference key="NSMenu" ref="695196038"/>
-												<string key="NSTitle">Using Format</string>
+												<string key="NSTitle">Using Custom Format</string>
 												<string key="NSKeyEquiv">F</string>
 												<int key="NSKeyEquivModMask">1048576</int>
+												<int key="NSMnemonicLoc">2147483647</int>
+												<reference key="NSOnImage" ref="35465992"/>
+												<reference key="NSMixedImage" ref="502551668"/>
+											</object>
+											<object class="NSMenuItem" id="266514056">
+												<reference key="NSMenu" ref="695196038"/>
+												<bool key="NSIsDisabled">YES</bool>
+												<bool key="NSIsSeparator">YES</bool>
+												<string key="NSTitle"/>
+												<string key="NSKeyEquiv"/>
 												<int key="NSMnemonicLoc">2147483647</int>
 												<reference key="NSOnImage" ref="35465992"/>
 												<reference key="NSMixedImage" ref="502551668"/>
@@ -4480,6 +4490,14 @@
 					</object>
 					<int key="connectionID">1278</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">renameMenu</string>
+						<reference key="source" ref="588631224"/>
+						<reference key="destination" ref="695196038"/>
+					</object>
+					<int key="connectionID">1301</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -5382,9 +5400,9 @@
 							<reference ref="952259628"/>
 							<reference ref="379814623"/>
 							<reference ref="713487014"/>
-							<reference ref="1036655123"/>
 							<reference ref="448692316"/>
 							<reference ref="923604819"/>
+							<reference ref="1036655123"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -5548,6 +5566,7 @@
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="630430531"/>
+							<reference ref="266514056"/>
 						</object>
 						<reference key="parent" ref="913636609"/>
 					</object>
@@ -6277,6 +6296,11 @@
 						<reference key="object" ref="256306844"/>
 						<reference key="parent" ref="701393838"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1281</int>
+						<reference key="object" ref="266514056"/>
+						<reference key="parent" ref="695196038"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -6318,6 +6342,7 @@
 					<string>1223.IBPluginDependency</string>
 					<string>1264.IBPluginDependency</string>
 					<string>1264.ImportedFromIB2</string>
+					<string>1281.IBPluginDependency</string>
 					<string>129.IBPluginDependency</string>
 					<string>129.ImportedFromIB2</string>
 					<string>130.IBPluginDependency</string>
@@ -6620,6 +6645,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
@@ -6900,7 +6926,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1278</int>
+			<int key="maxID">1301</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -7047,14 +7073,16 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>coverView</string>
 							<string>popup</string>
+							<string>renameMenu</string>
 							<string>table</string>
 							<string>vgmdbItem</string>
 							<string>window</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<string>NSImageView</string>
+							<string>DraggableImageView</string>
 							<string>NSPopUpButton</string>
+							<string>NSMenu</string>
 							<string>NSTableView</string>
 							<string>NSToolbarItem</string>
 							<string>NSWindow</string>
@@ -7066,6 +7094,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>coverView</string>
 							<string>popup</string>
+							<string>renameMenu</string>
 							<string>table</string>
 							<string>vgmdbItem</string>
 							<string>window</string>
@@ -7074,11 +7103,15 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBToOneOutletInfo">
 								<string key="name">coverView</string>
-								<string key="candidateClassName">NSImageView</string>
+								<string key="candidateClassName">DraggableImageView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">popup</string>
 								<string key="candidateClassName">NSPopUpButton</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">renameMenu</string>
+								<string key="candidateClassName">NSMenu</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">table</string>

@@ -23,6 +23,7 @@ LOG_LEVEL(LOG_LEVEL_INFO);
 
 
 static const NSArray *predefinedDirectories;
+static const NSArray *predefinedRenameFormats;
 
 @interface MainController()  
 
@@ -33,8 +34,11 @@ static const NSArray *predefinedDirectories;
 
 - (NSString *)stringFromFileSize:(NSInteger)size;
 
+- (IBAction)renameWithPredefinedFormat:(id)sender;
+
 /// Checks if there any music files
 - (void) _vgmdbEnable;
+
 /// Change the current directory to the clicked entries
 - (IBAction) onClick:(id)sender;
 @end
@@ -100,6 +104,7 @@ static const NSArray *predefinedDirectories;
 		self.selectedNodeindex = [NSNumber numberWithInteger:0];
 		// clear the forward stack since it would not make sense any more
 		[forwardStack removeAllObjects];
+		[table deselectAll:self];
 	}	
 }
 
@@ -420,7 +425,16 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		modalDelegate: rfc 
 	   didEndSelector: @selector(didEndSheet:returnCode:result:)
 		  contextInfo: [directoryStack lastObject]];
-	
+	//TODO 	put in didEndSheet
+	[table reloadData];
+}
+
+- (IBAction)renameWithPredefinedFormat:(id)sender
+{
+	DDLogVerbose(@"format array %@",[predefinedRenameFormats objectAtIndex:[sender tag]]);
+	[currentNodes renameWithFormatArray: [predefinedRenameFormats objectAtIndex:[sender tag]]];
+	[[directoryStack lastObject] invalidateChildren];
+	[table reloadData];
 }
 
 - (IBAction)revealInFinder:(id)sender
@@ -462,6 +476,21 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[[table tableColumnWithIdentifier:@"title"] setEditable:true];
 	[table setTarget:self];
 	[self _vgmdbEnable];
+	
+	NSArray *titles = [[NSUserDefaults standardUserDefaults] arrayForKey:@"predefinedRenameFormatsTitles"];
+	int i;
+	for (i =0; i < [titles count]; ++i) {
+		NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:[titles objectAtIndex:i] 
+													  action:@selector(renameWithPredefinedFormat:) 
+											   keyEquivalent:@""];
+		[item setTag:i];
+		[item bind:@"enabled" 
+		  toObject:self 
+	   withKeyPath:@"currentNodes.hasBasicMetadata" 
+		   options:nil];
+		[renameMenu addItem:item];
+	}
+	
 }
 
 -(void) initDirectoryTable
@@ -510,6 +539,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 							 [NSURL fileURLWithPath:[@"~/Movies"stringByExpandingTildeInPath]
 										isDirectory:YES],
 							 nil];
+	predefinedRenameFormats = [[NSUserDefaults standardUserDefaults] arrayForKey:@"predefinedRenameFormats"];
 }
 
 - (void)dealloc

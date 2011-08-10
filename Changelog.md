@@ -1,6 +1,16 @@
 Changelog
 =========
 
+-------------
+Version 1.1.5
+-------------
+### Features ###
+* Adds formats for renaming. e.g. 01 - title
+  * Are stored in the plist for easy changing.
+
+### Bug fixes ###
+* highlighting When clicking on a directory
+
 -----------
 Version 1.1 (Wed Aug 10 2011 01:31:51 +0100)
 -----------

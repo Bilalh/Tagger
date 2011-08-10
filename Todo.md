@@ -28,6 +28,7 @@ Later
 -----
 * Add flac (should be easy).
 * Disallow the user from changing the tab very quickly 
+* Adds another autotag e.g disc cogs freedb or musicbrainz
 
 ----
 Done
