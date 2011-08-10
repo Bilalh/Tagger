@@ -104,4 +104,7 @@
 
 - (IBAction) openDirectory:(id)sender;
 
+- (IBAction) gotoNextRow:(id)sender;
+- (IBAction)gotoPreviousRow:(id)sender;
+
 @end
