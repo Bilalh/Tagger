@@ -52,6 +52,33 @@ static const NSArray *predefinedRenameFormats;
 
 #pragma mark - Table Methods 
 
+
+- (IBAction)gotoNextRow:(id)sender
+{
+	if ([table numberOfRows] == 0) return;
+	NSUInteger newRow, selected =  [table selectedRow];
+	if (selected == -1){
+		newRow = 0;	
+	}else{
+		newRow = (selected +1) % [table numberOfRows];
+	}
+	[table selectRowIndexes:[NSIndexSet indexSetWithIndex:newRow] byExtendingSelection:NO];
+	[table scrollRowToVisible:newRow];
+}
+
+- (IBAction)gotoPreviousRow:(id)sender
+{
+	if ([table numberOfRows] == 0) return;
+	NSUInteger newRow, selected =  [table selectedRow];
+	if (selected == -1){
+		newRow = 0;	
+	}else{
+		newRow = (selected + [table numberOfRows] - 1 ) % [table numberOfRows];
+	}
+	[table selectRowIndexes:[NSIndexSet indexSetWithIndex:newRow] byExtendingSelection:NO];
+	[table scrollRowToVisible:newRow];
+}
+
 - (IBAction) openDirectory:(id)sender
 {
 	NSInteger row = [table selectedRow];
@@ -124,6 +151,7 @@ static const NSArray *predefinedRenameFormats;
 	return([NSString stringWithFormat:@"%1.1lf GB",floatSize]);
 }
 
+#pragma mark - Table Delegate
 - (id)          tableView:(NSTableView *)aTableView 
 objectValueForTableColumn:(NSTableColumn *)aTableColumn 
 					  row:(NSInteger)rowIndex 
@@ -440,33 +468,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 								inFileViewerRootedAtPath:nil];
 	}
 }
-
-- (IBAction)gotoNextRow:(id)sender
-{
-	if ([table numberOfRows] == 0) return;
-	NSUInteger newRow, selected =  [table selectedRow];
-	if (selected == -1){
-		newRow = 0;	
-	}else{
-		newRow = (selected +1) % [table numberOfRows];
-	}
-	[table selectRowIndexes:[NSIndexSet indexSetWithIndex:newRow] byExtendingSelection:NO];
-	[table scrollRowToVisible:newRow];
-}
-
-- (IBAction)gotoPreviousRow:(id)sender
-{
-	if ([table numberOfRows] == 0) return;
-	NSUInteger newRow, selected =  [table selectedRow];
-	if (selected == -1){
-		newRow = 0;	
-	}else{
-		newRow = (selected + [table numberOfRows] - 1 ) % [table numberOfRows];
-	}
-	[table selectRowIndexes:[NSIndexSet indexSetWithIndex:newRow] byExtendingSelection:NO];
-	[table scrollRowToVisible:newRow];
-}
-
 
 #pragma mark - Gui Bools
 

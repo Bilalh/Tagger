@@ -7,7 +7,7 @@ Install
 -------
 Build the release version of VGTagger.
 
-Run Embed MacRuby on it which does the follows do embed MacRuby framework
+Run Embed MacRuby on it which does the follows to embed the MacRuby framework
 
 	macruby_deploy --compile --embed --verbose --gem nokogiri
 
