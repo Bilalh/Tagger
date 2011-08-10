@@ -65,6 +65,8 @@
 /// YES if all the files has extend metadata info.
 @property (readonly) BOOL  hasExtenedMetadata;
 
+@property (readonly) NSArray *urls;
+
 /// The title of the file
 @property (assign) NSString *title; 
 /// The album of the file

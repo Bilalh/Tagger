@@ -18,6 +18,7 @@
 #import "RenamingFilesController.h"
 #import "DraggableImageView.h"
 
+#import "iTunes.h"
 #import "Logging.h"
 LOG_LEVEL(LOG_LEVEL_INFO);
 
@@ -79,7 +80,7 @@ static const NSArray *predefinedRenameFormats;
 	[table scrollRowToVisible:newRow];
 }
 
-- (IBAction) openDirectory:(id)sender
+- (IBAction)openDirectory:(id)sender
 {
 	NSInteger row = [table selectedRow];
 	if (row == -1) return;
@@ -91,7 +92,7 @@ static const NSArray *predefinedRenameFormats;
 	}
 }
 
-- (void) openDirectoryNode: (FileSystemNode *) node
+- (void)openDirectoryNode: (FileSystemNode *) node
 {
   [directoryStack addObject:node];
 		[table reloadData];
@@ -104,7 +105,7 @@ static const NSArray *predefinedRenameFormats;
 		[table deselectAll:self];
 
 }
-- (IBAction) onClick:(id)sender
+- (IBAction)onClick:(id)sender
 {
 	NSInteger row = [table clickedRow];
 	
@@ -250,7 +251,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 #pragma mark -
 #pragma mark Directory Manipulation Methods
 
--(IBAction) goToParentMenu:(id)sender
+-(IBAction)goToParentMenu:(id)sender
 {
 	if ([parentNodes count] >=2){
 		self.selectedNodeindex = [NSNumber numberWithInt:1];
@@ -259,7 +260,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 }
 
 
--(IBAction) goToParent:(id)sender
+-(IBAction)goToParent:(id)sender
 {
 	DDLogVerbose(@"i:%@ pN:%@", selectedNodeindex, [parentNodes objectAtIndex:[selectedNodeindex intValue]]);
 	int index = [selectedNodeindex intValue];
@@ -284,7 +285,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[table reloadData];
 }
 
-- (void) setPopupMenuIcons
+- (void)setPopupMenuIcons
 {
 	int i =0; 
 	for (i=0; i< [popup numberOfItems]; ++i) {
@@ -292,7 +293,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}
 }
 
-- (IBAction) open:(id)sender
+- (IBAction)open:(id)sender
 {
 	NSOpenPanel *op = [NSOpenPanel openPanel];
 	[op setCanChooseFiles:NO];
@@ -302,7 +303,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[self goToDirectory:[op URL]];
 }
 
-- (void) goToDirectory:(NSURL*)url
+- (void)goToDirectory:(NSURL*)url
 {
 	DDLogInfo(@"%@ selected", url);
 	FileSystemNode *node  = [[FileSystemNode alloc ] initWithURL:url];
@@ -335,7 +336,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}	
 }
 
-- (IBAction) backForwordDirectories:(id)sender
+- (IBAction)backForwordDirectories:(id)sender
 {
 	DDLogVerbose(@"backForwordDirectories");
     NSInteger tag = [[sender cell] tagForSegment:[sender selectedSegment]];
@@ -349,7 +350,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 }
 
-- (void) backForwordDirectoriesCommon
+- (void)backForwordDirectoriesCommon
 {
 	self.parentNodes = [[directoryStack lastObject] parentNodes];
 	DDLogVerbose(@"%@ bf parentNodes %@", [[directoryStack lastObject] displayName], parentNodes);
@@ -362,7 +363,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[table reloadData];
 }
 
-- (IBAction) backDirectories:(id)sender
+- (IBAction)backDirectories:(id)sender
 {
 	if ( [directoryStack count] >= 2){
 		[forwardStack addObject:[directoryStack pop]];
@@ -370,7 +371,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}
 }
 
-- (IBAction) forwordDirectories:(id)sender
+- (IBAction)forwordDirectories:(id)sender
 {
 	if ( [forwardStack count] >= 1){
 		[directoryStack addObject:[forwardStack pop]];
@@ -380,18 +381,25 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 #pragma mark -
 #pragma mark Gui Callback
+- (IBAction)addSelectedToItunes:(id)sender
+{	
+	iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+	iTunesTrack * track = [iTunes add:[NSArray arrayWithObject:currentNodes.urls] 
+								   to:nil];
+	NSLog(@"Added %@ to track: %@",currentNodes.urls,track);
+}
 
-- (IBAction) goToPredefinedDirectory:(id)sender
+- (IBAction)goToPredefinedDirectory:(id)sender
 {
 	[self goToDirectory:[predefinedDirectories objectAtIndex:[sender tag]]];
 }
 
-- (IBAction) goToStartingDirectory:(id)sender
+- (IBAction)goToStartingDirectory:(id)sender
 {
 	[self goToDirectory: [[NSUserDefaults standardUserDefaults] URLForKey:@"startUrl"]];
 }
 
-- (IBAction) search:(id)sender
+- (IBAction)search:(id)sender
 {
 	if (vgc == nil){
 		vgc = [[VgmdbController alloc] initWithFiles:[[directoryStack lastObject] children]
@@ -407,7 +415,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[table reloadData];
 }
 
-- (IBAction) searchWithSubDirectories:(id)sender
+- (IBAction)searchWithSubDirectories:(id)sender
 {
 	NSMutableArray *nodes = [[NSMutableArray alloc] init ];
 	for (FileSystemNode *n in [[directoryStack lastObject] children]) {
@@ -431,12 +439,12 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[table reloadData];
 }
 
-- (IBAction) refresh:(id)sender
+- (IBAction)refresh:(id)sender
 {
 	[[directoryStack lastObject] invalidateChildren];
 }
 
-- (IBAction) rename:(id)sender
+- (IBAction)rename:(id)sender
 {
 	if (!currentNodes.hasExtenedMetadata) return;
 	DDLogInfo(@"rename");
@@ -471,17 +479,17 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 #pragma mark - Gui Bools
 
-- (BOOL) forwordStackEnable
+- (BOOL)forwordStackEnable
 {
 	return [forwardStack count ] != 0;
 }
 
-- (BOOL) backwordStackEnable
+- (BOOL)backwordStackEnable
 {
 	return [directoryStack count ] >=2;
 }
 
-- (void) _vgmdbEnable
+- (void)_vgmdbEnable
 {
 	for (FileSystemNode *n in [[directoryStack lastObject] children] ) {
 		if (!n.isDirectory) {
@@ -538,7 +546,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 }
 
--(void) initDirectoryTable
+-(void)initDirectoryTable
 {
 	directoryStack = [[NSMutableArray alloc] init];
 	forwardStack   = [[NSMutableArray alloc] init];

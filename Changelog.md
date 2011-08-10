@@ -2,17 +2,18 @@ Changelog
 =========
 
 -------------
-Version 1.1.7 
+Version 1.2
 -------------
-* When using using metadata to comments, the text aligns nicely in itunes
+* When using using metadata to comments, the text aligns nicely in itunes.
 * Allows going to the next/previous row using a keyboard (alt down/alt up).
   * Updated to always show the selected row.  
+* Export to Itunes menu option (alt cmd E).
 
 -------------
 Version 1.1.6 (Wed Aug 10 2011 05:34:41 +0100)
 -------------
-* refreshes the table on auto tagging
-* Small size (15mb smaller)
+* refreshes the table on auto tagging.
+* Small size (15mb smaller).
 
 -------------
 Version 1.1.5 (Wed Aug 10 2011 03:41:38 +0100)
