@@ -46,6 +46,21 @@ static const NSArray *predefinedRenameFormats;
 - (IBAction) onClick:(id)sender;
 @end
 
+@implementation FileSystemNode (QLPreviewItem)
+
+- (NSURL *)previewItemURL
+{
+    return self.URL;
+}
+
+- (NSString *)previewItemTitle
+{
+    return self.displayName;
+}
+
+@end
+
+
 @implementation MainController
 @synthesize window, directoryStack, currentNodes,forwardStack, selectedNodeindex, parentNodes, table;
 @synthesize vgmdbEnable=_vgmdbEnable;
@@ -477,6 +492,15 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}
 }
 
+- (IBAction)togglePreviewPanel:(id)previewPanel
+{
+    if ([QLPreviewPanel sharedPreviewPanelExists] && [[QLPreviewPanel sharedPreviewPanel] isVisible]) {
+        [[QLPreviewPanel sharedPreviewPanel] orderOut:nil];
+    } else {
+        [[QLPreviewPanel sharedPreviewPanel] makeKeyAndOrderFront:nil];
+    }
+}
+
 #pragma mark - Gui Bools
 
 - (BOOL)forwordStackEnable
@@ -516,6 +540,32 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 - (IBAction)reopen:(id)sender
 {
 	[self showWindow:self];
+}
+
+#pragma mark - QuickLook
+- (NSInteger)numberOfPreviewItemsInPreviewPanel:(QLPreviewPanel *)panel
+{
+	return [currentNodes.tagsArray count]; 
+}
+
+- (id <QLPreviewItem>)previewPanel:(QLPreviewPanel *)panel 
+				previewItemAtIndex:(NSInteger)index
+{
+	return [currentNodes.tagsArray objectAtIndex:index];
+}
+
+- (BOOL)validateMenuItem:(NSMenuItem *)menuItem
+{
+    SEL action = [menuItem action];
+    if (action == @selector(togglePreviewPanel:)) {
+        if ([QLPreviewPanel sharedPreviewPanelExists] && [[QLPreviewPanel sharedPreviewPanel] isVisible]) {
+            [menuItem setTitle:@"Close Quick Look panel"];
+        } else {
+            [menuItem setTitle:@"Open Quick Look panel"];
+        }
+        return YES;
+    }
+    return NO;
 }
 
 

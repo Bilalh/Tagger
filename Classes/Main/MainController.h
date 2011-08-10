@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Quartz/Quartz.h>
 
 @class  VgmdbController;
 @class  DisplayController;
@@ -16,7 +17,7 @@
 @class  DraggableImageView;
 
 /// The main controller creates the other controllers 
-@interface MainController : NSWindowController {
+@interface MainController : NSWindowController <QLPreviewPanelDataSource, QLPreviewPanelDelegate> {
 @private
 	
 	IBOutlet NSPopUpButton *popup;
@@ -34,7 +35,7 @@
 	
 	NSString *currentColumnKey;
 	BOOL currentColumnAscending;
-	
+	QLPreviewPanel* previewPanel;
 }
 
 /// @name properties
