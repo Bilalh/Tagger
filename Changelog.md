@@ -2,7 +2,12 @@ Changelog
 =========
 
 -------------
-Version 1.1.6
+Version 1.1.7 
+-------------
+* When using using metadata to comments, the text aligns nicely in itunes
+
+-------------
+Version 1.1.6 (Wed Aug 10 2011 05:34:41 +0100)
 -------------
 * refreshes the table on auto tagging
 * Small size (15mb smaller)

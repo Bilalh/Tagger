@@ -47,9 +47,9 @@ LOG_LEVEL(LOG_LEVEL_INFO);
 	};
 	
 	add(@"catalog",   @"\t   ");
-	add(@"products",  @"\t   ");
+	add(@"products",  @"  ");
 	add(@"url",       @"\t\t   ");
-	add(@"arranger",  @"\t   ");
+	add(@"arranger",  @"   ");
 	add(@"performer", @" ");
 	add(@"publisher", @"  ");
 	
@@ -263,6 +263,9 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 					   hc(@"cover"      ), @"cover"       ,
 					   radio             , @"radio"       ,
 					   nil];
+
+	[fieldProperties setValue:[NSNumber numberWithBool:NO] forKeyPath:@"cover.write"];
+	
 }
 
 -(void)setAlbumUrl:(NSString *)url
