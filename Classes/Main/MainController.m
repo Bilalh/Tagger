@@ -493,15 +493,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}
 }
 
-- (IBAction)togglePreviewPanel:(id)previewPanel
-{
-    if ([QLPreviewPanel sharedPreviewPanelExists] && [[QLPreviewPanel sharedPreviewPanel] isVisible]) {
-        [[QLPreviewPanel sharedPreviewPanel] orderOut:nil];
-    } else {
-        [[QLPreviewPanel sharedPreviewPanel] makeKeyAndOrderFront:nil];
-    }
-}
-
 #pragma mark - Gui Bools
 
 - (BOOL)forwordStackEnable

@@ -9,10 +9,11 @@ Version 1.2
 * Allows going to the next/previous row using a keyboard (alt down/alt up).
   * Updated to always show the selected row.  
 * Export to Itunes menu option (alt cmd E).
-* QuickLook support (allows playing of audio files)
-  * Shortcut cmd-Y
-  * Allows multiple selection
+* QuickLook support (allows playing of audio files).
+  * Shortcut cmd-Y.
+  * Allows multiple selection.
   * Can use up down to go to next track
+  * Press space when on a selected track also does quicklook.
 
 ### Bug Fixes ###
 * Cover comparing with NSMultipleValuesMarker

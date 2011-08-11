@@ -76,6 +76,7 @@
 		92E6EDDF13F314260045679E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92E6EDDD13F314260045679E /* InfoPlist.strings */; };
 		92E6EDE413F320540045679E /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E6EDE313F320540045679E /* ScriptingBridge.framework */; };
 		92E6EDF713F32B3C0045679E /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E6EDF613F32B3C0045679E /* Quartz.framework */; };
+		92E6EE3213F35FD50045679E /* QuickLookTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E6EE3113F35FD50045679E /* QuickLookTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -203,6 +204,8 @@
 		92E6EDE213F31A090045679E /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
 		92E6EDE313F320540045679E /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
 		92E6EDF613F32B3C0045679E /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		92E6EE3013F35FD50045679E /* QuickLookTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickLookTableView.h; sourceTree = "<group>"; };
+		92E6EE3113F35FD50045679E /* QuickLookTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickLookTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -401,6 +404,8 @@
 				92E6ED7F13F313230045679E /* DraggableImageView.m */,
 				92E6ED8013F313230045679E /* ImageAndTextCell.h */,
 				92E6ED8113F313230045679E /* ImageAndTextCell.m */,
+				92E6EE3013F35FD50045679E /* QuickLookTableView.h */,
+				92E6EE3113F35FD50045679E /* QuickLookTableView.m */,
 			);
 			path = GUI;
 			sourceTree = "<group>";
@@ -656,6 +661,7 @@
 				92E6EDD313F313230045679E /* DisplayController.m in Sources */,
 				92E6EDD413F313230045679E /* Utility.m in Sources */,
 				92E6EDD613F313230045679E /* VgmdbController.m in Sources */,
+				92E6EE3213F35FD50045679E /* QuickLookTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
