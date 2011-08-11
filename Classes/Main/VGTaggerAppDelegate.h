@@ -20,6 +20,6 @@
 @property (nonatomic, readonly) NSWindowController *preferencesWindowController;
 
 - (IBAction)openPreferences:(id)sender;
-
+- (IBAction)togglePreviewPanel:(id)previewPanel;
 
 @end
