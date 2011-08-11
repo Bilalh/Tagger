@@ -246,8 +246,8 @@
 				929F152313F1E5420021F9FD /* BHDraggableImageView */,
 				92C4465F13E0BF830038F817 /* BWToolKitEdits */,
 				9239572C13F43D9E00A80074 /* CCTColorLabelMenuItemView */,
-				92A6808313EC7B130067DD5F /* Preferences */,
 				929A4ACF13DA087D00244796 /* Lumberjack */,
+				92A6808313EC7B130067DD5F /* MASPreferences */,
 				92CBDBA013F209D900B7F6C1 /* Main */,
 			);
 			path = "Other Sources";
@@ -340,7 +340,7 @@
 			name = BHDraggableImageView;
 			sourceTree = "<group>";
 		};
-		92A6808313EC7B130067DD5F /* Preferences */ = {
+		92A6808313EC7B130067DD5F /* MASPreferences */ = {
 			isa = PBXGroup;
 			children = (
 				92A6808413EC7B130067DD5F /* MASPreferencesViewController.h */,
@@ -348,7 +348,7 @@
 				92A6808613EC7B130067DD5F /* MASPreferencesWindowController.h */,
 				92A6808713EC7B130067DD5F /* MASPreferencesWindowController.m */,
 			);
-			path = Preferences;
+			path = MASPreferences;
 			sourceTree = "<group>";
 		};
 		92C4465F13E0BF830038F817 /* BWToolKitEdits */ = {
