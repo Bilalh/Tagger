@@ -69,7 +69,7 @@ static const NSArray *fieldNames;
 		
 		for (NSString *key in fieldNames) {
 			id mine = [self valueForKey:key];
-			if (!mine) continue;
+			if (mine == NSMultipleValuesMarker) continue;
 			
 			// Check if the images are equal
 			if ([key isEqualToString:@"cover"]){
