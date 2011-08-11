@@ -3,8 +3,8 @@ TODO
 
 FIXME
 -----
-* Don't allways use jpeg as the mine type. (needed for quicklook)
-
+* Don't allways use jpeg as the mine type. (needed for quicklook).
+* mp3 images sometimes don't work in quicklook but always work in the app and itunes.
 
 FileNames
 ---------
