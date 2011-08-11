@@ -14,6 +14,7 @@
 #import "Logging.h"
 LOG_LEVEL(LOG_LEVEL_INFO);
 
+static const NSArray *tagFieldNames;
 static const NSArray *fieldNames;
 
 @interface FileSystemNodeCollection()
@@ -23,7 +24,7 @@ static const NSArray *fieldNames;
 @end
 
 @implementation FileSystemNodeCollection
-@synthesize tagsArray, hasBasicMetadata, hasExtenedMetadata, empty, labelColor;
+@synthesize tagsArray, hasBasicMetadata, hasExtenedMetadata, empty, labelColor, labelIndex;
 @synthesize title, artist, album, comment, genre, year, track, length;
 @synthesize albumArtist, composer, grouping, bpm, totalTracks, disc, totalDiscs, compilation, url, cover;
 @dynamic urls;
@@ -33,7 +34,7 @@ static const NSArray *fieldNames;
 
 + (void)initialize
 {
-	fieldNames = [[NSArray alloc] initWithObjects:
+	tagFieldNames = [[NSArray alloc] initWithObjects:
 				  @"title", @"album" ,
 				  @"artist", @"albumArtist",
 				  @"genre", @"grouping",
@@ -42,6 +43,9 @@ static const NSArray *fieldNames;
 				  @"compilation", @"year",
 				  @"composer", @"bpm",
 				  @"comment", @"cover",
+				  nil];
+	fieldNames = [[NSArray alloc] initWithObjects:
+				  @"labelColor", @"labelIndex",
 				  nil];
 }
 
@@ -61,15 +65,17 @@ static const NSArray *fieldNames;
 {
 	writeToAll = false;
 	const Tags *tags0= [[tagsArray objectAtIndex:0] tags];
-	for (NSString *s in fieldNames) {
+	for (NSString *s in tagFieldNames) {
 		[self setValue:[tags0 valueForKey:s] forKey:s];
 	}
-	self.labelColor = [[tagsArray objectAtIndex:0] labelColor];
-
+	for (NSString *s in fieldNames) {
+		[self setValue:[[tagsArray objectAtIndex:0] valueForKey:s] forKey:s];
+	}
+	
 	for (FileSystemNode *n in tagsArray) {
 		const Tags *tags = n.tags;
 		
-		for (NSString *key in fieldNames) {
+		for (NSString *key in tagFieldNames) {
 			id mine = [self valueForKey:key];
 			if (mine == NSMultipleValuesMarker) continue;
 			
@@ -87,13 +93,14 @@ static const NSArray *fieldNames;
 			}
 		}
 		
-		
-		id mine = [self valueForKey:@"labelColor"];
-		if (mine != NSMultipleValuesMarker) {
-			if ([[n valueForKey:@"labelColor"] isNotEqualTo:mine]){
-				[self setValue:NSMultipleValuesMarker forKey:@"labelColor"];
-			}	
-		}		
+		for (NSString *key in fieldNames) {
+			id mine = [self valueForKey:key];
+			if (mine != NSMultipleValuesMarker) {
+				if ([[n valueForKey:key] isNotEqualTo:mine]){
+					[self setValue:NSMultipleValuesMarker forKey:key];
+				}	
+			}			
+		}
 	}
 	writeToAll = true;
 }
@@ -101,14 +108,18 @@ static const NSArray *fieldNames;
 - (void) initColor
 {
 	writeToAll = false;
-	self.labelColor = [[tagsArray objectAtIndex:0] labelColor];
+	for (NSString *s in fieldNames) {
+		[self setValue:[[tagsArray objectAtIndex:0] valueForKey:s] forKey:s];
+	}
 	for (FileSystemNode *n in tagsArray) {
-		id mine = [self valueForKey:@"labelColor"];	
-		if (mine != NSMultipleValuesMarker) {
-			if ([[n valueForKey:@"labelColor"] isNotEqualTo:mine]){
-				[self setValue:NSMultipleValuesMarker forKey:@"labelColor"];
-			}	
-		}	
+		for (NSString *key in fieldNames) {
+			id mine = [self valueForKey:key];
+			if (mine != NSMultipleValuesMarker) {
+				if ([[n valueForKey:key] isNotEqualTo:mine]){
+					[self setValue:NSMultipleValuesMarker forKey:key];
+				}	
+			}			
+		}
 	}
 	writeToAll = true;
 }
@@ -145,7 +156,7 @@ static const NSArray *fieldNames;
 {
 	writeToAll = NO;
 	hasBasicMetadata = hasExtenedMetadata = NO; 
-	for (NSString *key in fieldNames) {
+	for (NSString *key in tagFieldNames) {
 		[self setValue:nil forKey:key];
 	}
 	writeToAll = YES;
@@ -184,10 +195,10 @@ static const NSArray *fieldNames;
 {
 	labelColor = newValue;
 	if (!writeToAll) return;
-	DDLogInfo(@"fsnc:%s writeToAll:%d value:%@", @"labelColor", writeToAll,newValue);\
-	for (FileSystemNode *n in tagsArray) {		
-		n.labelColor = newValue;
-	}  
+//	DDLogInfo(@"fsnc:%s writeToAll:%d value:%@", @"labelColor", writeToAll,newValue);\
+//	for (FileSystemNode *n in tagsArray) {		
+//		n.labelColor = newValue;
+//	}  
 }
 
 #define SETTER_METHOD_FSN(field,newValue)                                 \

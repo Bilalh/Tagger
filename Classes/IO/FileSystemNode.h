@@ -64,8 +64,8 @@
 @property(readonly)         BOOL      isDirectory;
 
 /// The label colour of this node
-@property(readonly,retain) NSColor  *labelColor;
-- (void)setLabelColor:(int)colourNumber;
+@property(readonly,retain) NSColor   *labelColor;
+@property(assign)          NSNumber  *labelIndex;
 
 /// The audio tags such as the title.
 @property(readonly, assign) Tags      *tags;

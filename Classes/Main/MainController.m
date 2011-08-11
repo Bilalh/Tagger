@@ -17,6 +17,7 @@
 #import "FileSystemNodeCollection.h"
 #import "RenamingFilesController.h"
 #import "DraggableImageView.h"
+#import "CCTColorLabelMenuItemView.h"
 
 #import "iTunes.h"
 #import "Logging.h"
@@ -44,6 +45,9 @@ static const NSArray *predefinedRenameFormats;
 
 /// Change the current directory to the clicked entries
 - (IBAction) onClick:(id)sender;
+
+- (FileSystemNode*) nodeAtIndex:(NSInteger)row;
+- (NSArray*) children;
 @end
 
 @implementation FileSystemNode (QLPreviewItem)
@@ -64,10 +68,9 @@ static const NSArray *predefinedRenameFormats;
 @implementation MainController
 @synthesize window, directoryStack, currentNodes,forwardStack, selectedNodeindex, parentNodes, table;
 @synthesize vgmdbEnable=_vgmdbEnable;
-@dynamic forwordStackEnable, backwordStackEnable;
+@dynamic forwordStackEnable, backwordStackEnable, labelMenu, openEnable;
 
 #pragma mark - Table Methods 
-
 
 - (IBAction)gotoNextRow:(id)sender
 {
@@ -140,7 +143,6 @@ static const NSArray *predefinedRenameFormats;
 		if ( ( hitTestResult & NSCellHitEditableTextArea ) != NSCellHitEditableTextArea ) return;
 		if ([[[table tableColumns] objectAtIndex:column] isEditable]){
 			[table editColumn:column row:row withEvent:currentEvent select:YES];	
-			return;
 		}
 	}
 }
@@ -165,6 +167,67 @@ static const NSArray *predefinedRenameFormats;
 		return([NSString stringWithFormat:@"%1.1lf MB",floatSize]);
 	floatSize = floatSize / 1024;	
 	return([NSString stringWithFormat:@"%1.1lf GB",floatSize]);
+}
+
+#pragma mark - Table Menu (label)
+
+- (NSMenu *)labelMenu
+{
+	if (!labelMenu)
+	{
+		NSMenu *menu = [[NSMenu alloc] init];
+		
+		// set the first menu item to a gear image for the popup button
+		NSMenuItem *item;
+		[menu addItem:[NSMenuItem separatorItem]];
+		
+		// add our custom label picker view menu item
+		CCTColorLabelMenuItemView *labelTrackView = [[[CCTColorLabelMenuItemView alloc] initWithFrame:NSMakeRect(0, 0, 178, 50)] autorelease];
+		labelTrackView.delegate = self;
+		item = [[[NSMenuItem alloc] initWithTitle:@"Label" action:@selector(applyLabelToSelectedRows:) keyEquivalent:@""] autorelease];
+		[item setTarget:self];
+		[item setView:labelTrackView];
+		[menu addItem:item];
+		
+		labelMenu = [menu retain];
+		[menu release];
+	}
+	
+	return labelMenu;
+}
+
+- (void)applyLabelToSelectedRows:(CCTColorLabelMenuItemView *)labelView
+{
+	// first check to see if clickedRow is valid - the user may have right-clicked on a row that is not selected
+	
+//	NSInteger rowToUpdate = [tableView clickedRow];
+//	if (rowToUpdate < 0) {
+//		rowToUpdate = [tableView selectedRow];
+//	}
+//	
+//	if (rowToUpdate >= 0)
+//	{
+//		NSInteger label = labelView.selectedLabel;
+//		((CCTRowItem *)[rowItems objectAtIndex:rowToUpdate]).labelColor = label;
+//		[tableView setNeedsDisplayInRect:[tableView rectOfRow:rowToUpdate]];
+//	}
+}
+
+#pragma mark - CCTColorLabelMenuView Delegate
+
+- (NSInteger)currentlySelectedLabel:(CCTColorLabelMenuItemView *)colorLabelMenuItemView
+{
+	// first check to see if clickedRow is valid - the user may have right-clicked on a row that is not selected
+	NSInteger rowForMenu = [table clickedRow];
+	if (rowForMenu < 0) {
+		rowForMenu = [table selectedRow];
+	}
+	
+	if (rowForMenu < 0) {
+		return -1;
+	}
+
+	return [[[self nodeAtIndex:rowForMenu] labelIndex] integerValue];
 }
 
 #pragma mark - Table Delegate
@@ -217,7 +280,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		NSImage *icon = [node icon];
 		[icon setSize:NSMakeSize(16, 16)];
 		[(ImageAndTextCell*)cell setImage: icon];
-//		[cell setTextColor:[node labelColor]];
 	}
 }
 
@@ -603,6 +665,17 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
     return NO;
 }
 
+#pragma mark - Helper Methods
+- (FileSystemNode*) nodeAtIndex:(NSInteger)row
+{
+	return [[[directoryStack lastObject] children] objectAtIndex:row];
+}
+
+- (NSArray*) children
+{
+	return [[directoryStack lastObject] children];
+}
+
 
 #pragma mark - Alloc/init
 
@@ -628,7 +701,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		   options:nil];
 		[renameMenu addItem:item];
 	}
-	
+	[table setMenu:[self labelMenu]];
 }
 
 -(void)initDirectoryTable

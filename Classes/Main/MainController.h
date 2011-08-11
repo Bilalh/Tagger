@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Quartz/Quartz.h>
+#import "CCTColorLabelMenuItemView.h"
 
 @class  VgmdbController;
 @class  DisplayController;
@@ -15,9 +16,11 @@
 @class  FileSystemNodeCollection;
 @class  RenamingFilesController;
 @class  DraggableImageView;
+@class  CCTLabelPickerController;
 
 /// The main controller creates the other controllers 
-@interface MainController : NSWindowController <QLPreviewPanelDataSource, QLPreviewPanelDelegate> {
+@interface MainController : NSWindowController 
+<QLPreviewPanelDataSource, QLPreviewPanelDelegate, CCTColorLabelMenuItemViewDelegate> {
 @private
 	
 	IBOutlet NSPopUpButton *popup;
@@ -35,7 +38,9 @@
 	
 	NSString *currentColumnKey;
 	BOOL currentColumnAscending;
+	
 	QLPreviewPanel* previewPanel;
+	NSMenu *labelMenu;
 }
 
 /// @name properties
@@ -62,7 +67,7 @@
 @property (readonly) BOOL vgmdbEnable;
 @property (readonly) BOOL openEnable;
 
-
+@property (readonly) NSMenu* labelMenu;
 
 /// @name Directories 
 

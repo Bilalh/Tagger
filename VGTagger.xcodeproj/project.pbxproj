@@ -23,6 +23,7 @@
 /* Begin PBXBuildFile section */
 		920660E113C89845003A3803 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660A413C89845003A3803 /* main.m */; };
 		922E35D713C89BF3003C5913 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922E35D613C89BF3003C5913 /* Cocoa.framework */; };
+		9239573013F43EB100A80074 /* CCTColorLabelMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9239572F13F43EB100A80074 /* CCTColorLabelMenuItemView.m */; };
 		9254006713F0A82C0020C912 /* libtag.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.1.dylib */; };
 		9254007113F0AC8F0020C912 /* libtag.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.1.dylib */; };
 		9264488A13D773CE0035E693 /* arrowLeftBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */; };
@@ -108,6 +109,8 @@
 		920660BB13C89845003A3803 /* VGTagger-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "VGTagger-Info.plist"; sourceTree = "<group>"; };
 		920660BC13C89845003A3803 /* VGTagger-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VGTagger-Prefix.pch"; sourceTree = "<group>"; };
 		922E35D613C89BF3003C5913 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		9239572E13F43EB100A80074 /* CCTColorLabelMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTColorLabelMenuItemView.h; sourceTree = "<group>"; };
+		9239572F13F43EB100A80074 /* CCTColorLabelMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTColorLabelMenuItemView.m; sourceTree = "<group>"; };
 		925CE81D13C3BD6D009D6D94 /* VGTagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VGTagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowLeftBlack16.tiff; sourceTree = "<group>"; };
 		9264488913D773CE0035E693 /* arrowRightBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowRightBlack16.tiff; sourceTree = "<group>"; };
@@ -242,6 +245,7 @@
 				920660BB13C89845003A3803 /* VGTagger-Info.plist */,
 				929F152313F1E5420021F9FD /* BHDraggableImageView */,
 				92C4465F13E0BF830038F817 /* BWToolKitEdits */,
+				9239572C13F43D9E00A80074 /* CCTColorLabelMenuItemView */,
 				92A6808313EC7B130067DD5F /* Preferences */,
 				929A4ACF13DA087D00244796 /* Lumberjack */,
 				92CBDBA013F209D900B7F6C1 /* Main */,
@@ -259,6 +263,15 @@
 				920660B813C89845003A3803 /* Linked Frameworks */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		9239572C13F43D9E00A80074 /* CCTColorLabelMenuItemView */ = {
+			isa = PBXGroup;
+			children = (
+				9239572E13F43EB100A80074 /* CCTColorLabelMenuItemView.h */,
+				9239572F13F43EB100A80074 /* CCTColorLabelMenuItemView.m */,
+			);
+			path = CCTColorLabelMenuItemView;
 			sourceTree = "<group>";
 		};
 		9254006513F0A52F0020C912 /* Frameworks */ = {
@@ -662,6 +675,7 @@
 				92E6EDD413F313230045679E /* Utility.m in Sources */,
 				92E6EDD613F313230045679E /* VgmdbController.m in Sources */,
 				92E6EE3213F35FD50045679E /* QuickLookTableView.m in Sources */,
+				9239573013F43EB100A80074 /* CCTColorLabelMenuItemView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

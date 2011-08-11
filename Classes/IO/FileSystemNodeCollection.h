@@ -39,6 +39,7 @@
 	NSNumber *length;
 	
 	NSColor  *labelColor;
+	NSNumber *labelIndex;
 	BOOL writeToAll;
 	BOOL  empty;
 }
@@ -68,7 +69,9 @@
 
 @property (readonly) NSArray *urls;
 
-@property (assign) NSColor  *labelColor;
+@property (readonly) NSColor  *labelColor;
+@property (assign)   NSNumber *labelIndex;
+
 
 /// The title of the file
 @property (assign) NSString *title; 

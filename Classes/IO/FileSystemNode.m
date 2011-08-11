@@ -14,7 +14,7 @@ LOG_LEVEL(LOG_LEVEL_INFO);
 
 @implementation FileSystemNode
 @synthesize URL = _url, tags, hasBasicMetadata, hasExtenedMetadata, size;
-@dynamic displayName, children, isDirectory, icon, labelColor;
+@dynamic displayName, children, isDirectory, icon, labelColor, labelIndex;
 
 #pragma mark -
 #pragma mark Init
@@ -77,10 +77,16 @@ LOG_LEVEL(LOG_LEVEL_INFO);
     return value;
 }
 
-- (void)setLabelColor:(int)colourNumber
+- (void) setLabelIndex:(NSNumber *)labelIndex
 {
-	[_url setResourceValue:[NSNumber numberWithInt:colourNumber] forKey:NSURLLabelNumberKey error:nil];
-//	[_url setResourceValue:colour forKey:NSURLLabelColorKey error:nil];
+	[_url setResourceValue:labelIndex forKey:NSURLLabelNumberKey error:nil];
+}
+
+- (NSNumber*) labelIndex
+{
+	id value = nil;
+    [_url getResourceValue:&value forKey:NSURLLabelNumberKey error:nil];
+    return value;
 }
 
 #pragma mark -
