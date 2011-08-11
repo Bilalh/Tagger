@@ -518,7 +518,19 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[vgmdbItem setEnabled:NO];
 }
 
+- (BOOL)openEnable
+{
+	NSUInteger row =[table selectedRow];
+	if (row == -1) return false;
+	return [[[[directoryStack lastObject] children] objectAtIndex:row] isDirectory];
+}
 
+- (BOOL)hasSelected
+{
+	NSUInteger row =[table selectedRow];
+	if (row == -1) return false;
+	return [[[[directoryStack lastObject] children] objectAtIndex:row] isDirectory];
+}
 
 #pragma mark - Windows
 

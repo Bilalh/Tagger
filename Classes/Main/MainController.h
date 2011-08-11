@@ -60,6 +60,8 @@
 @property (readonly) BOOL forwordStackEnable;
 @property (readonly) BOOL backwordStackEnable;
 @property (readonly) BOOL vgmdbEnable;
+@property (readonly) BOOL hasSelected;
+@property (readonly) BOOL openEnable;
 
 
 
