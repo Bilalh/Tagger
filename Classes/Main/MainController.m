@@ -229,6 +229,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		self.currentNodes.tagsArray = [[[directoryStack lastObject] children] 
 									   objectsAtIndexes:[table selectedRowIndexes]];
 		coverView.current = [self.currentNodes.tagsArray objectAtIndex:0];
+		[previewPanel reloadData];
 	}
 }
 
@@ -577,15 +578,26 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	return [currentNodes.tagsArray objectAtIndex:index];
 }
 
-- (BOOL)validateMenuItem:(NSMenuItem *)menuItem
+- (BOOL)validateUserInterfaceItem:(id < NSValidatedUserInterfaceItem >)item
 {
-    SEL action = [menuItem action];
+    SEL action = [item action];
     if (action == @selector(togglePreviewPanel:)) {
         if ([QLPreviewPanel sharedPreviewPanelExists] && [[QLPreviewPanel sharedPreviewPanel] isVisible]) {
-            [menuItem setTitle:@"Close Quick Look panel"];
+            [(NSMenuItem*)item setTitle:@"Close Quick Look panel"];
         } else {
-            [menuItem setTitle:@"Open Quick Look panel"];
+            [(NSMenuItem*)item setTitle:@"Open Quick Look panel"];
         }
+        return YES;
+    }
+    return YES;
+}
+
+#pragma mark - Quicklook Delegate
+- (BOOL)previewPanel:(QLPreviewPanel *)panel handleEvent:(NSEvent *)event
+{
+    // redirect all key down events to the table view
+    if ([event type] == NSKeyDown) {
+        [table keyDown:event];
         return YES;
     }
     return NO;

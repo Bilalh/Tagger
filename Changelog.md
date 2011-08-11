@@ -9,6 +9,9 @@ Version 1.2
   * Updated to always show the selected row.  
 * Export to Itunes menu option (alt cmd E).
 * QuickLook support (allows playing of audio files)
+  * Shortcut cmd-Y
+  * Allows multiple selection
+  * Can use up down to go to next track
 
 -------------
 Version 1.1.6 (Wed Aug 10 2011 05:34:41 +0100)
