@@ -7,9 +7,11 @@ Install
 -------
 Build the release version of VGTagger.
 
+(When embeding make sure require 'rubygems'  is commented with a # before it)
+
 Run Embed MacRuby on it which does the follows to embed the MacRuby framework
 
-	macruby_deploy --compile --embed --verbose --gem nokogiri
+	macruby_deploy --compile --embed --gem nokogiri --gem htmlentities --verbose
 
 To save 15mb you can replace 
   VGTagger.app/Contents/Frameworks/MacRuby.framework/Versions/0.10/usr/lib/ruby/1.9.2
@@ -20,6 +22,8 @@ Libraries Used
 --------------
 * MacRuby
 * TagLib 
+*
 * BWHyperlinkButtonCell from BWToolKit
+* CCTColorLabelMenuItemView
 * Lumberjack
 * MASPreferencesViewController

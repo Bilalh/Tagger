@@ -182,7 +182,7 @@ static const NSArray *predefinedRenameFormats;
 		[menu addItem:[NSMenuItem separatorItem]];
 		
 		// add our custom label picker view menu item
-		CCTColorLabelMenuItemView *labelTrackView = [[[CCTColorLabelMenuItemView alloc] initWithFrame:NSMakeRect(0, 0, 178, 50)] autorelease];
+		CCTColorLabelMenuItemView *labelTrackView = [[[CCTColorLabelMenuItemView alloc] initWithFrame:NSMakeRect(0, 0, 190, 50)] autorelease];
 		labelTrackView.delegate = self;
 		item = [[[NSMenuItem alloc] initWithTitle:@"Label" action:@selector(applyLabelToSelectedRows:) keyEquivalent:@""] autorelease];
 		[item setTarget:self];
@@ -200,17 +200,16 @@ static const NSArray *predefinedRenameFormats;
 {
 	// first check to see if clickedRow is valid - the user may have right-clicked on a row that is not selected
 	
-//	NSInteger rowToUpdate = [tableView clickedRow];
-//	if (rowToUpdate < 0) {
-//		rowToUpdate = [tableView selectedRow];
-//	}
-//	
-//	if (rowToUpdate >= 0)
-//	{
-//		NSInteger label = labelView.selectedLabel;
-//		((CCTRowItem *)[rowItems objectAtIndex:rowToUpdate]).labelColor = label;
-//		[tableView setNeedsDisplayInRect:[tableView rectOfRow:rowToUpdate]];
-//	}
+	NSInteger rowToUpdate = [table clickedRow];
+	if (rowToUpdate < 0) {
+		rowToUpdate = [table selectedRow];
+	}
+	
+	if (rowToUpdate >= 0){
+		([self nodeAtIndex:rowToUpdate]).labelIndex = 
+			[NSNumber numberWithInteger:labelView.selectedLabel];
+		[table setNeedsDisplayInRect:[table rectOfRow:rowToUpdate]];
+	}
 }
 
 #pragma mark - CCTColorLabelMenuView Delegate
