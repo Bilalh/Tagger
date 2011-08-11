@@ -14,6 +14,7 @@ Version 1.2
   * Allows multiple selection.
   * Can use up down to go to next track
   * Press space when on a selected track also does quicklook.
+  * Quicklook toolbar button.
 
 ### Bug Fixes ###
 * Cover comparing with NSMultipleValuesMarker
