@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby19 -KU
 # encoding: UTF-8
 
-#comment the below line if embeding
-require 'rubygems'
+#comment the below line if embeding macruby
+#require 'rubygems'
 require 'htmlentities'
 require 'nokogiri'
 

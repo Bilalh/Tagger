@@ -46,7 +46,7 @@ LOG_LEVEL(LOG_LEVEL_INFO);
 		[buffer appendFormat:@"%@:%@%@\n",key, spacing, [fieldValues valueForKey:key]];
 	};
 	
-	add(@"catalog",   @"\t   ");
+	add(@"\ncatalog",   @"\t   ");
 	add(@"products",  @"  ");
 	add(@"url",       @"\t\t   ");
 	add(@"arranger",  @"   ");

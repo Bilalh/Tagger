@@ -204,6 +204,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[node.tags setValue:anObject forKey:[aTableColumn identifier]];
 }
 
+
 // Shows the icon for the file
 - (void)tableView:(NSTableView *)tableView 
   willDisplayCell:(id)cell 
@@ -212,9 +213,11 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 {
 	if ([[tableColumn identifier] isEqualToString:@"filename"]){
 		NSArray *children = [[directoryStack lastObject] children];
-		NSImage *icon = [[children objectAtIndex:rowIndex] icon];
+		FileSystemNode *node = [children objectAtIndex:rowIndex];
+		NSImage *icon = [node icon];
 		[icon setSize:NSMakeSize(16, 16)];
-		[(ImageAndTextCell*)cell setImage: icon];		
+		[(ImageAndTextCell*)cell setImage: icon];
+//		[cell setTextColor:[node labelColor]];
 	}
 }
 

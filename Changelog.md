@@ -15,6 +15,7 @@ Version 1.2
   * Can use up down to go to next track
   * Press space when on a selected track also does quicklook.
   * Quicklook toolbar button.
+* Label colours for files shown.
 
 ### Improvements ###
 * Disable Open Selected Fodler if the user has not selected a folder.
