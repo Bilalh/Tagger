@@ -19,6 +19,7 @@ static const NSArray *fieldNames;
 @interface FileSystemNodeCollection()
 - (void)initfields;
 - (void)nilAllFields;
+- (void)initColor;
 @end
 
 @implementation FileSystemNodeCollection
@@ -97,6 +98,21 @@ static const NSArray *fieldNames;
 	writeToAll = true;
 }
 
+- (void) initColor
+{
+	writeToAll = false;
+	self.labelColor = [[tagsArray objectAtIndex:0] labelColor];
+	for (FileSystemNode *n in tagsArray) {
+		id mine = [self valueForKey:@"labelColor"];	
+		if (mine != NSMultipleValuesMarker) {
+			if ([[n valueForKey:@"labelColor"] isNotEqualTo:mine]){
+				[self setValue:NSMultipleValuesMarker forKey:@"labelColor"];
+			}	
+		}	
+	}
+	writeToAll = true;
+}
+
 #pragma mark -
 #pragma mark General
 
@@ -132,7 +148,6 @@ static const NSArray *fieldNames;
 	for (NSString *key in fieldNames) {
 		[self setValue:nil forKey:key];
 	}
-	labelColor = nil;
 	writeToAll = YES;
 }
 
@@ -153,6 +168,7 @@ static const NSArray *fieldNames;
 	for (FileSystemNode *n in tagsArray) {
 		if (n.isDirectory){
 			[self nilAllFields];
+			[self initColor];
 			return;
 		}
 		hasBasicMetadata   &= n.hasBasicMetadata;

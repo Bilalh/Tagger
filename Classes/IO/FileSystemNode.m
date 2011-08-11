@@ -77,9 +77,10 @@ LOG_LEVEL(LOG_LEVEL_INFO);
     return value;
 }
 
-- (void)setLabelColor:(NSColor*)colour
+- (void)setLabelColor:(int)colourNumber
 {
-	[_url setResourceValue:[NSNumber numberWithInt:4] forKey:NSURLLabelNumberKey error:nil];
+	[_url setResourceValue:[NSNumber numberWithInt:colourNumber] forKey:NSURLLabelNumberKey error:nil];
+//	[_url setResourceValue:colour forKey:NSURLLabelColorKey error:nil];
 }
 
 #pragma mark -
