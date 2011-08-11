@@ -251,7 +251,6 @@ using namespace MPEGFields;
 	if(nil != cover) {
 		DDLogInfo(@"cover");
 		ID3v2::AttachedPictureFrame *frame = new ID3v2::AttachedPictureFrame();
-		
 		NSData *imageData = [cover bitmapDataForType:NSJPEGFileType];
 		frame->setMimeType("image/jpeg");
 		frame->setPicture(ByteVector((const char *)[imageData bytes], (uint)[imageData length]));

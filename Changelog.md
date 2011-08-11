@@ -16,6 +16,10 @@ Version 1.2
   * Press space when on a selected track also does quicklook.
   * Quicklook toolbar button.
 
+### Improvements ###
+* Disable Open Selected Fodler if the user has not selected a folder.
+* Disable QuickLook if the user has not selected a file.
+
 ### Bug Fixes ###
 * Cover comparing with NSMultipleValuesMarker
 
