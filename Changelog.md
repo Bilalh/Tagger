@@ -21,6 +21,7 @@ Version 1.2
 -------------
 Version 1.1.6 (Wed Aug 10 2011 05:34:41 +0100)
 -------------
+### Features ###
 * refreshes the table on auto tagging.
 * Small size (15mb smaller).
 
@@ -39,6 +40,7 @@ Version 1.1.5 (Wed Aug 10 2011 03:41:38 +0100)
 -----------
 Version 1.1 (Wed Aug 10 2011 01:31:51 +0100)
 -----------
+### Features ###
 * Images can not be dragged for directory.
 * The cover art is now named 'title - cover' which allows 
 multiple cover to be dragged to the desktop/
@@ -115,6 +117,7 @@ Version 0.12 (Fri Aug 05 2011 02:23:54 +0100)
 ------------
 Version 0.11 (Tue Aug 02 2011 03:21:21 +0100)
 ------------
+### Features ###
 * Better error handing. 
 * Allows batch renaming of files based on tags.
 * Gui for batch renaming of files based on tags.
@@ -123,6 +126,7 @@ Version 0.11 (Tue Aug 02 2011 03:21:21 +0100)
 ------------
 Version 0.10 (Sun Jul 31 2011 04:51:54 +0100)
 ------------
+### Features ###
 * Made comments tag iTunes compatible.
 * Muti-row editing.
 * Some bug fixes.
@@ -165,6 +169,7 @@ Version 0.8 (Mon Jul 25 2011 02:55:27 +0100)
 -----------
 Version 0.7 (Fri Jul 22 2011 20:06:13 +0100)
 -----------
+### Features ###
 * Complete mp4 tag read/write support.
 * File browser with previous and forward buttons.
 	* Allows user specified directory with a open dialog. 
@@ -174,6 +179,7 @@ Version 0.7 (Fri Jul 22 2011 20:06:13 +0100)
 --------------
 Older Versions
 --------------
+### Features ###
 * Allow editing of data directory in the table view
 * Able to search for albums on vgmdb and get the data for that album.
 	* Using a gui.
