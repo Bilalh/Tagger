@@ -22,7 +22,7 @@ static const NSArray *fieldNames;
 @end
 
 @implementation FileSystemNodeCollection
-@synthesize tagsArray, hasBasicMetadata, hasExtenedMetadata, empty;
+@synthesize tagsArray, hasBasicMetadata, hasExtenedMetadata, empty, labelColor;
 @synthesize title, artist, album, comment, genre, year, track, length;
 @synthesize albumArtist, composer, grouping, bpm, totalTracks, disc, totalDiscs, compilation, url, cover;
 @dynamic urls;
@@ -63,7 +63,8 @@ static const NSArray *fieldNames;
 	for (NSString *s in fieldNames) {
 		[self setValue:[tags0 valueForKey:s] forKey:s];
 	}
-	
+	self.labelColor = [[tagsArray objectAtIndex:0] labelColor];
+
 	for (FileSystemNode *n in tagsArray) {
 		const Tags *tags = n.tags;
 		
@@ -84,6 +85,14 @@ static const NSArray *fieldNames;
 				[self setValue:NSMultipleValuesMarker forKey:key];
 			}
 		}
+		
+		
+		id mine = [self valueForKey:@"labelColor"];
+		if (mine != NSMultipleValuesMarker) {
+			if ([[n valueForKey:@"labelColor"] isNotEqualTo:mine]){
+				[self setValue:NSMultipleValuesMarker forKey:@"labelColor"];
+			}	
+		}		
 	}
 	writeToAll = true;
 }
@@ -123,6 +132,7 @@ static const NSArray *fieldNames;
 	for (NSString *key in fieldNames) {
 		[self setValue:nil forKey:key];
 	}
+	labelColor = nil;
 	writeToAll = YES;
 }
 
@@ -152,6 +162,16 @@ static const NSArray *fieldNames;
 	DDLogVerbose(@"basic:%d extened %d", hasBasicMetadata, hasExtenedMetadata);
 	if (hasBasicMetadata) [self initfields];
 	else                  [self nilAllFields];
+}
+
+-(void) setLabelColor:(NSColor *)newValue
+{
+	labelColor = newValue;
+	if (!writeToAll) return;
+	DDLogInfo(@"fsnc:%s writeToAll:%d value:%@", @"labelColor", writeToAll,newValue);\
+	for (FileSystemNode *n in tagsArray) {		
+		n.labelColor = newValue;
+	}  
 }
 
 #define SETTER_METHOD_FSN(field,newValue)                                 \

@@ -38,6 +38,7 @@
 	NSNumber *track; 
 	NSNumber *length;
 	
+	NSColor  *labelColor;
 	BOOL writeToAll;
 	BOOL  empty;
 }
@@ -66,6 +67,8 @@
 @property (readonly) BOOL  hasExtenedMetadata;
 
 @property (readonly) NSArray *urls;
+
+@property (assign) NSColor  *labelColor;
 
 /// The title of the file
 @property (assign) NSString *title; 

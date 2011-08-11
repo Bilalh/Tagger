@@ -37,24 +37,34 @@
 	
 	[NSGraphicsContext saveGraphicsState];
 	NSRectClip(clipRect);
+	// draw over the alternating row colour.
+	[[NSColor whiteColor] setFill];
+	
 	NSRect rowRect = [self rectOfRow:row];
 	// colour only the filename column.
 	NSRect colRect = [self rectOfColumn: [self columnWithIdentifier:@"filename"]];
-	rowRect.size.width = colRect.size.width;
 	rowRect.origin.x   = colRect.origin.x;
-
 	
-	// draw over the alternating row colour
-	[[NSColor whiteColor] setFill];
-	NSRectFill(NSIntersectionRect(rowRect, clipRect));
-	// draw with rounded end caps
-	CGFloat radius = NSHeight(rowRect) / 2.0;
-	NSBezierPath *p = [NSBezierPath bezierPathWithRoundedRect:NSInsetRect(rowRect, 1.0, 0.0) 
-													  xRadius:radius 
-													  yRadius:radius];
+	// Only cover the background of the image.
+	NSBezierPath *p;
+	if (row ==[self selectedRow]){
+		rowRect.size.width = 21;
+		NSRectFill(NSIntersectionRect(rowRect, clipRect));
+		p  = [NSBezierPath bezierPathWithRect:rowRect];
+	}else{
+		rowRect.size.width = colRect.size.width;
+		NSRectFill(NSIntersectionRect(rowRect, clipRect));
+		// draw with rounded end caps
+		CGFloat radius = NSHeight(rowRect) / 2.0;
+		p = [NSBezierPath bezierPathWithRoundedRect:NSInsetRect(rowRect, 1.0, 0.0) 
+														  xRadius:radius 
+														  yRadius:radius];
+	}
+	
 	[colour setFill];
 	[p fill];
 	[NSGraphicsContext restoreGraphicsState];
+	
 	// draw cells on top of the new row background
 	[super drawRow:row clipRect:clipRect];
 }

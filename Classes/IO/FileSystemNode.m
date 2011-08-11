@@ -77,6 +77,11 @@ LOG_LEVEL(LOG_LEVEL_INFO);
     return value;
 }
 
+- (void)setLabelColor:(NSColor*)colour
+{
+	[_url setResourceValue:[NSNumber numberWithInt:4] forKey:NSURLLabelNumberKey error:nil];
+}
+
 #pragma mark -
 #pragma mark Metadata
 
@@ -115,7 +120,8 @@ LOG_LEVEL(LOG_LEVEL_INFO);
 #pragma mark -
 #pragma mark Finding Parent and child nodes
 
-- (NSMutableArray*)parentNodes{
+- (NSMutableArray*)parentNodes
+{
 
 	// FIXME parentNode does not cashe right
 //	if (_parentNodes){

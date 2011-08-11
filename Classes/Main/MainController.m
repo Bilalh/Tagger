@@ -528,12 +528,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	return [[[[directoryStack lastObject] children] objectAtIndex:row] isDirectory];
 }
 
-- (BOOL)hasSelected
-{
-	NSUInteger row =[table selectedRow];
-	if (row == -1) return false;
-	return [[[[directoryStack lastObject] children] objectAtIndex:row] isDirectory];
-}
 
 #pragma mark - Windows
 
