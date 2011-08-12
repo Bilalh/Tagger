@@ -48,6 +48,10 @@ static const NSArray *predefinedRenameFormats;
 
 - (FileSystemNode*) nodeAtIndex:(NSInteger)row;
 - (NSArray*) children;
+
+-(NSString*)formatPair:(NSNumber*)first
+				second:(NSNumber*)second;
+
 @end
 
 @implementation FileSystemNode (QLPreviewItem)
@@ -242,6 +246,20 @@ static const NSArray *predefinedRenameFormats;
 	return [[[self nodeAtIndex:rowForMenu] labelIndex] integerValue];
 }
 
+-(NSString*)formatPair:(NSNumber*)first
+				second:(NSNumber*)second
+{
+	if (first && second){
+		return [NSString stringWithFormat:@"%@ of %@",first, second];
+	}else if (first){
+		return [NSString stringWithFormat:@"%@", first];
+	}else if (second){
+		return [NSString stringWithFormat:@"- of %@", second];
+	}else{
+		return @"-";
+	}
+}
+
 #pragma mark - Table Delegate
 - (id)          tableView:(NSTableView *)aTableView 
 objectValueForTableColumn:(NSTableColumn *)aTableColumn 
@@ -258,9 +276,9 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}else if ([[aTableColumn identifier] isEqualToString:@"size"]){
 		return [self stringFromFileSize:[[node size] integerValue]];
 	}else if ([[aTableColumn identifier] isEqualToString:@"trackPair"]){
-		return [NSString stringWithFormat:@"%@ of %@",node.tags.track, node.tags.totalTracks];
+		return [self formatPair:node.tags.track second:node.tags.totalTracks];
 	}else if ([[aTableColumn identifier] isEqualToString:@"discPair"]){
-		return [NSString stringWithFormat:@"%@ of %@",node.tags.disc, node.tags.totalDiscs];
+		return [self formatPair:node.tags.disc second:node.tags.totalDiscs];		
 	}
 	
 	return [node.tags valueForKey:[aTableColumn identifier]];

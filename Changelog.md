@@ -14,6 +14,10 @@ Version 1.3
 ### Improvements ###
 * Shows the label colour as a dot when selecting a labeled row.
 * Can label multiple row at once.
+* Does not show the of in disc 1 of 2 if there is total number of discs, same for tracks
+
+### Bug Fixes ###
+* When editing the data of a selected row.
 
 -----------
 Version 1.2 (Thu Aug 11 2011 03:34:20 +0100)
