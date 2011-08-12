@@ -23,13 +23,13 @@ NSString* kTrackerKey = @"whichTracker";
 enum trackingAreaIDs
 {
 	kTrackingAreaNone = 0,
-	kTrackingAreaRed,
-	kTrackingAreaOrange,
-	kTrackingAreaYellow,
-	kTrackingAreaGreen,
-	kTrackingAreaBlue,
-	kTrackingAreaPurple,
-	kTrackingAreaGray
+	kTrackingAreaRed = 6,
+	kTrackingAreaOrange = 7,
+	kTrackingAreaYellow = 5,
+	kTrackingAreaGreen = 2,
+	kTrackingAreaBlue =4,
+	kTrackingAreaPurple = 3,
+	kTrackingAreaGray =1
 };
 
 

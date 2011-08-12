@@ -2,7 +2,14 @@ Changelog
 =========
 
 -----------
-Version 1.2
+Version 1.3
+-----------
+* Label colours for files shown.
+* Nicer display of label colour for selected row
+* Right click menu that allows labeling files
+
+-----------
+Version 1.2 (Thu Aug 11 2011 03:34:20 +0100)
 -----------
 ### Features ###
 * When using using metadata to comments, the text aligns nicely in itunes.
@@ -15,8 +22,6 @@ Version 1.2
   * Can use up down to go to next track
   * Press space when on a selected track also does quicklook.
   * Quicklook toolbar button.
-* Label colours for files shown.
-* Nicer display of label colour for selected row
 
 ### Improvements ###
 * Disable Open Selected Fodler if the user has not selected a folder.
