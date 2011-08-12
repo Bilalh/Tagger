@@ -31,6 +31,7 @@
 }
 
 @property (assign) NSMutableArray *files;
+@property (assign) NSString *query;
 
 /// @name Init
 

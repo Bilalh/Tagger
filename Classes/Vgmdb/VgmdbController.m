@@ -19,7 +19,7 @@ LOG_LEVEL(LOG_LEVEL_INFO);
 
 @interface VgmdbController()
 - (IBAction)confirmSheet:sender;
-@property (assign) NSString *query;
+- (IBAction) onClick:(id)sender;
 @end
 
 @implementation VgmdbController
@@ -104,12 +104,22 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSString *s= [Utility valueFromResult:
 				   [[searchResults objectAtIndex:rowIndex] 
 					objectForKey:[aTableColumn identifier]]
-				   selectedLanguage:selectedLanguage];
+						 selectedLanguage:selectedLanguage];
 	
 	
 	return s;
 }
 
+
+- (IBAction)onClick:(id)sender
+{
+	NSInteger row = [table clickedRow];
+	NSString *s= [Utility valueFromResult:
+				  [[searchResults objectAtIndex:row] 
+				   objectForKey:@"url"]
+						 selectedLanguage:selectedLanguage];
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:s]];
+}
 
 #pragma mark -
 #pragma mark Sheets 
@@ -145,7 +155,13 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 }
 
 #pragma mark -
-#pragma mark Alloc
+#pragma mark Init
+
+- (void) awakeFromNib
+{
+	[table setDoubleAction:@selector(onClick:)];
+	[table setTarget:self];
+}
 
 - (void)reset:(NSArray*)newFiles;
 {

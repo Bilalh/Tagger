@@ -11,6 +11,7 @@ Version 1.3
 * Right click menu item reveal in finder.
 * New 512x512 Icon 
 * Can rid of unused code.
+* When display search results, you can double click to go the albums webpage.
 
 ### Improvements ###
 * Shows the label colour as a dot when selecting a labeled row.
