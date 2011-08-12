@@ -22,6 +22,7 @@
 
 /* Begin PBXBuildFile section */
 		920660E113C89845003A3803 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660A413C89845003A3803 /* main.m */; };
+		922D866713F4E4EE0016B811 /* VgTagger.icns in Resources */ = {isa = PBXBuildFile; fileRef = 922D866613F4E4EE0016B811 /* VgTagger.icns */; };
 		922E35D713C89BF3003C5913 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922E35D613C89BF3003C5913 /* Cocoa.framework */; };
 		9239573013F43EB100A80074 /* CCTColorLabelMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9239572F13F43EB100A80074 /* CCTColorLabelMenuItemView.m */; };
 		923B846413F4B7A800524BFA /* BHFinderLabelColours.m in Sources */ = {isa = PBXBuildFile; fileRef = 923B846313F4B7A800524BFA /* BHFinderLabelColours.m */; };
@@ -110,12 +111,15 @@
 		920660B913C89845003A3803 /* libtag.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtag.1.dylib; path = ../Frameworks/libtag.1.dylib; sourceTree = "<group>"; };
 		920660BB13C89845003A3803 /* VGTagger-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "VGTagger-Info.plist"; sourceTree = "<group>"; };
 		920660BC13C89845003A3803 /* VGTagger-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VGTagger-Prefix.pch"; sourceTree = "<group>"; };
+		922D865F13F4E4430016B811 /* VgTagger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VgTagger.png; sourceTree = "<group>"; };
+		922D866613F4E4EE0016B811 /* VgTagger.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = VgTagger.icns; path = ../VgTagger.icns; sourceTree = "<group>"; };
+		922D866813F4E54B0016B811 /* VgTagger.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = VgTagger.svg; sourceTree = "<group>"; };
 		922E35D613C89BF3003C5913 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9239572E13F43EB100A80074 /* CCTColorLabelMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTColorLabelMenuItemView.h; sourceTree = "<group>"; };
 		9239572F13F43EB100A80074 /* CCTColorLabelMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTColorLabelMenuItemView.m; sourceTree = "<group>"; };
 		923B846213F4B7A800524BFA /* BHFinderLabelColours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHFinderLabelColours.h; sourceTree = "<group>"; };
 		923B846313F4B7A800524BFA /* BHFinderLabelColours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHFinderLabelColours.m; sourceTree = "<group>"; };
-		923B846D13F4BA0800524BFA /* NoHighlightImageAndTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; path = NoHighlightImageAndTextCell.h; sourceTree = "<group>"; };
+		923B846D13F4BA0800524BFA /* NoHighlightImageAndTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoHighlightImageAndTextCell.h; sourceTree = "<group>"; };
 		923B846E13F4BA0800524BFA /* NoHighlightImageAndTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoHighlightImageAndTextCell.m; sourceTree = "<group>"; };
 		925CE81D13C3BD6D009D6D94 /* VGTagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VGTagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowLeftBlack16.tiff; sourceTree = "<group>"; };
@@ -313,6 +317,9 @@
 		9264488713D773CE0035E693 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				922D866813F4E54B0016B811 /* VgTagger.svg */,
+				922D866613F4E4EE0016B811 /* VgTagger.icns */,
+				922D865F13F4E4430016B811 /* VgTagger.png */,
 				9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */,
 				9264488913D773CE0035E693 /* arrowRightBlack16.tiff */,
 			);
@@ -622,6 +629,7 @@
 				92E6EDD713F313230045679E /* VgmdbDisplay.xib in Resources */,
 				92E6EDD813F313230045679E /* VgmdbSearch.xib in Resources */,
 				92E6EDDF13F314260045679E /* InfoPlist.strings in Resources */,
+				922D866713F4E4EE0016B811 /* VgTagger.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

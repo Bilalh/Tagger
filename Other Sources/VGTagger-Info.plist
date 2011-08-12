@@ -39,7 +39,7 @@
 	<key>CFBundleGetInfoString</key>
 	<string></string>
 	<key>CFBundleIconFile</key>
-	<string></string>
+	<string>VgTagger.icns</string>
 	<key>CFBundleIdentifier</key>
 	<string>Bilal.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>

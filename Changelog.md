@@ -9,6 +9,7 @@ Version 1.3
 * Nicer display of label colour for selected row.
 * Right click menu that allows labeling files.
 * Right click menu item reveal in finder.
+* New 512x512 Icon 
 
 ### Improvements ###
 * Shows the label colour as a dot when selecting a labeled row.
