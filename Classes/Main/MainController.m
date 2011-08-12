@@ -169,6 +169,11 @@ static const NSArray *predefinedRenameFormats;
 	return([NSString stringWithFormat:@"%1.1lf GB",floatSize]);
 }
 
+- (NSInteger)labelColorForRow:(NSInteger)rowIndex
+{
+	return [([self nodeAtIndex:rowIndex]).labelIndex integerValue];
+}
+
 #pragma mark - Table Menu (label)
 
 - (NSMenu *)labelMenu

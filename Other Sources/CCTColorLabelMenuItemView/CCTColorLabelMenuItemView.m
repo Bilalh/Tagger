@@ -22,14 +22,14 @@ NSString* kTrackerKey = @"whichTracker";
 // I've left them seperate here so as not to create any dependancies between this view and the model
 enum trackingAreaIDs
 {
-	kTrackingAreaNone = 0,
-	kTrackingAreaRed = 6,
+	kTrackingAreaNone   = 0,
+	kTrackingAreaRed    = 6,
 	kTrackingAreaOrange = 7,
 	kTrackingAreaYellow = 5,
-	kTrackingAreaGreen = 2,
-	kTrackingAreaBlue =4,
+	kTrackingAreaGreen  = 2,
+	kTrackingAreaBlue   = 4,
 	kTrackingAreaPurple = 3,
-	kTrackingAreaGray =1
+	kTrackingAreaGray   = 1
 };
 
 

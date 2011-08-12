@@ -115,5 +115,6 @@
 - (IBAction) gotoPreviousRow:(id)sender;
 - (IBAction) addSelectedToItunes:(id)sender;
 
+- (NSInteger)labelColorForRow:(NSInteger)rowIndex;
 
 @end
