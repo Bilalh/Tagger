@@ -26,7 +26,6 @@
 		922E35D713C89BF3003C5913 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922E35D613C89BF3003C5913 /* Cocoa.framework */; };
 		9239573013F43EB100A80074 /* CCTColorLabelMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9239572F13F43EB100A80074 /* CCTColorLabelMenuItemView.m */; };
 		923B846413F4B7A800524BFA /* BHFinderLabelColours.m in Sources */ = {isa = PBXBuildFile; fileRef = 923B846313F4B7A800524BFA /* BHFinderLabelColours.m */; };
-		923B846F13F4BA0900524BFA /* NoHighlightImageAndTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 923B846E13F4BA0800524BFA /* NoHighlightImageAndTextCell.m */; };
 		9254006713F0A82C0020C912 /* libtag.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.1.dylib */; };
 		9254007113F0AC8F0020C912 /* libtag.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.1.dylib */; };
 		9264488A13D773CE0035E693 /* arrowLeftBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */; };
@@ -119,8 +118,6 @@
 		9239572F13F43EB100A80074 /* CCTColorLabelMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTColorLabelMenuItemView.m; sourceTree = "<group>"; };
 		923B846213F4B7A800524BFA /* BHFinderLabelColours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHFinderLabelColours.h; sourceTree = "<group>"; };
 		923B846313F4B7A800524BFA /* BHFinderLabelColours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHFinderLabelColours.m; sourceTree = "<group>"; };
-		923B846D13F4BA0800524BFA /* NoHighlightImageAndTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoHighlightImageAndTextCell.h; sourceTree = "<group>"; };
-		923B846E13F4BA0800524BFA /* NoHighlightImageAndTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoHighlightImageAndTextCell.m; sourceTree = "<group>"; };
 		925CE81D13C3BD6D009D6D94 /* VGTagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VGTagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowLeftBlack16.tiff; sourceTree = "<group>"; };
 		9264488913D773CE0035E693 /* arrowRightBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowRightBlack16.tiff; sourceTree = "<group>"; };
@@ -434,8 +431,6 @@
 				92E6EE3113F35FD50045679E /* QuickLookTableView.m */,
 				923B846213F4B7A800524BFA /* BHFinderLabelColours.h */,
 				923B846313F4B7A800524BFA /* BHFinderLabelColours.m */,
-				923B846D13F4BA0800524BFA /* NoHighlightImageAndTextCell.h */,
-				923B846E13F4BA0800524BFA /* NoHighlightImageAndTextCell.m */,
 			);
 			path = GUI;
 			sourceTree = "<group>";
@@ -695,7 +690,6 @@
 				92E6EE3213F35FD50045679E /* QuickLookTableView.m in Sources */,
 				9239573013F43EB100A80074 /* CCTColorLabelMenuItemView.m in Sources */,
 				923B846413F4B7A800524BFA /* BHFinderLabelColours.m in Sources */,
-				923B846F13F4BA0900524BFA /* NoHighlightImageAndTextCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

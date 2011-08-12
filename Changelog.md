@@ -10,6 +10,7 @@ Version 1.3
 * Right click menu that allows labeling files.
 * Right click menu item reveal in finder.
 * New 512x512 Icon 
+* Can rid of unused code.
 
 ### Improvements ###
 * Shows the label colour as a dot when selecting a labeled row.
