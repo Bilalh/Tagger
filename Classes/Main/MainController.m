@@ -208,18 +208,20 @@ static const NSArray *predefinedRenameFormats;
 }
 
 - (void)applyLabelToSelectedRows:(CCTColorLabelMenuItemView *)labelView
-{
-	// first check to see if clickedRow is valid - the user may have right-clicked on a row that is not selected
+{	
+	NSInteger clickedRow = [table clickedRow];
+	NSIndexSet *iset = [table selectedRowIndexes];
 	
-	NSInteger rowToUpdate = [table clickedRow];
-	if (rowToUpdate < 0) {
-		rowToUpdate = [table selectedRow];
-	}
+	[iset enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+		([self nodeAtIndex:idx]).labelIndex = 
+		[NSNumber numberWithInteger:labelView.selectedLabel];
+		[table setNeedsDisplayInRect:[table rectOfRow:idx]];
+	}];
 	
-	if (rowToUpdate >= 0){
-		([self nodeAtIndex:rowToUpdate]).labelIndex = 
-			[NSNumber numberWithInteger:labelView.selectedLabel];
-		[table setNeedsDisplayInRect:[table rectOfRow:rowToUpdate]];
+	if (![iset containsIndex:clickedRow]){
+		([self nodeAtIndex:clickedRow]).labelIndex = 
+		[NSNumber numberWithInteger:labelView.selectedLabel];
+		[table setNeedsDisplayInRect:[table rectOfRow:clickedRow]];
 	}
 }
 

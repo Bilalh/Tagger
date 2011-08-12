@@ -12,6 +12,7 @@ Version 1.3
 
 ### Improvements ###
 * Shows the label colour as a dot when selecting a labeled row.
+* Can label multiple row at once.
 
 -----------
 Version 1.2 (Thu Aug 11 2011 03:34:20 +0100)
