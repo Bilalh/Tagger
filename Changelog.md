@@ -5,8 +5,9 @@ Changelog
 Version 1.3
 -----------
 * Label colours for files shown.
-* Nicer display of label colour for selected row
-* Right click menu that allows labeling files
+* Nicer display of label colour for selected row.
+* Right click menu that allows labeling files.
+* Right click menu item reveal in finder.
 
 -----------
 Version 1.2 (Thu Aug 11 2011 03:34:20 +0100)

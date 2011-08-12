@@ -176,18 +176,24 @@ static const NSArray *predefinedRenameFormats;
 	if (!labelMenu)
 	{
 		NSMenu *menu = [[NSMenu alloc] init];
-		
-		// set the first menu item to a gear image for the popup button
 		NSMenuItem *item;
+		
+		item = [[[NSMenuItem alloc] initWithTitle:@"Reveal in Finder" 
+										   action:@selector(revealInFinder:) 
+									keyEquivalent:@""] autorelease];
+		[menu addItem:item];
 		[menu addItem:[NSMenuItem separatorItem]];
 		
 		// add our custom label picker view menu item
 		CCTColorLabelMenuItemView *labelTrackView = [[[CCTColorLabelMenuItemView alloc] initWithFrame:NSMakeRect(0, 0, 190, 50)] autorelease];
 		labelTrackView.delegate = self;
-		item = [[[NSMenuItem alloc] initWithTitle:@"Label" action:@selector(applyLabelToSelectedRows:) keyEquivalent:@""] autorelease];
+		item = [[[NSMenuItem alloc] initWithTitle:@"Label" 
+										   action:@selector(applyLabelToSelectedRows:) 
+									keyEquivalent:@""] autorelease];
 		[item setTarget:self];
 		[item setView:labelTrackView];
 		[menu addItem:item];
+		
 		
 		labelMenu = [menu retain];
 		[menu release];
