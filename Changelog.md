@@ -1,7 +1,6 @@
 Changelog
 =========
 
------------
 Version 1.3
 -----------
 ### Features ###
@@ -21,20 +20,19 @@ Version 1.3
 ### Bug Fixes ###
 * When editing the data of a selected row.
 
------------
 Version 1.2 (Thu Aug 11 2011 03:34:20 +0100)
 -----------
 ### Features ###
 * When using using metadata to comments, the text aligns nicely in itunes.
 * Allows going to the next/previous row using a keyboard (alt down/alt up).
-  * Updated to always show the selected row.  
+* Updated to always show the selected row.  
 * Export to Itunes menu option (alt cmd E).
 * QuickLook support (allows playing of audio files).
-  * Shortcut cmd-Y.
-  * Allows multiple selection.
-  * Can use up down to go to next track
-  * Press space when on a selected track also does quicklook.
-  * Quicklook toolbar button.
+* Shortcut cmd-Y.
+* Allows multiple selection.
+* Can use up down to go to next track
+* Press space when on a selected track also does quicklook.
+* Quicklook toolbar button.
 
 ### Improvements ###
 * Disable Open Selected Fodler if the user has not selected a folder.
@@ -43,35 +41,31 @@ Version 1.2 (Thu Aug 11 2011 03:34:20 +0100)
 ### Bug Fixes ###
 * Cover comparing with NSMultipleValuesMarker
 
--------------
 Version 1.1.6 (Wed Aug 10 2011 05:34:41 +0100)
 -------------
 ### Features ###
 * refreshes the table on auto tagging.
 * Small size (15mb smaller).
 
--------------
 Version 1.1.5 (Wed Aug 10 2011 03:41:38 +0100)
 -------------
 ### Features ###
 * Adds formats for renaming. e.g. 01 - title .
-  * Are stored in the plist for easy changing.
+* Are stored in the plist for easy changing.
 * Can click any where on a directory row to go do it.
 * Can open a selected  directory with cmd-O.
 
 ### Bug fixes ###
 * highlighting When clicking on a directory.
 
------------
 Version 1.1 (Wed Aug 10 2011 01:31:51 +0100)
 -----------
 ### Features ###
 * Images can not be dragged for directory.
 * The cover art is now named 'title - cover' which allows 
 multiple cover to be dragged to the desktop/
-  * Which can be changed in the prefs.
+* Which can be changed in the prefs.
 
--------------
 Version 1.0.1 (Tue Aug 09 2011 16:52:14 +0100)
 -------------
 ### Features ###
@@ -80,7 +74,6 @@ Version 1.0.1 (Tue Aug 09 2011 16:52:14 +0100)
 ### Bug fixes ###
 * Fix a bug with the vgmdb menu item not been enable.
 
------------
 Version 1.0 (Tue Aug 09 2011 05:05:41 +0100)
 -----------
 ### Features ###
@@ -99,7 +92,6 @@ Version 1.0 (Tue Aug 09 2011 05:05:41 +0100)
 ### Bug fixes ###
 * Fixed a bug when vgmdb returns no results.
 
-------------
 Version 0.13 (Sun Aug 07 2011 23:39:44 +0100)
 ------------
 ### Features ###
@@ -112,14 +104,13 @@ Version 0.13 (Sun Aug 07 2011 23:39:44 +0100)
 * Prefs for hiding columns.
 * Default values.
 * Prefs for setting start directory.
-  * Allows using the current directory as the start directory.
+* Allows using the current directory as the start directory.
 
 ### Bug fixes ###
 * Fixed Warnings about missing method.
 * Fixed a bug where no window was open.
 
 
-------------
 Version 0.12 (Fri Aug 05 2011 02:23:54 +0100)
 ------------
 ### Features ###
@@ -139,7 +130,6 @@ Version 0.12 (Fri Aug 05 2011 02:23:54 +0100)
 * Field are now not editable when selecting a directory.
 * Compares images properly which shows if the selected files has the same image.
 
-------------
 Version 0.11 (Tue Aug 02 2011 03:21:21 +0100)
 ------------
 ### Features ###
@@ -148,7 +138,6 @@ Version 0.11 (Tue Aug 02 2011 03:21:21 +0100)
 * Gui for batch renaming of files based on tags.
 
 
-------------
 Version 0.10 (Sun Jul 31 2011 04:51:54 +0100)
 ------------
 ### Features ###
@@ -157,13 +146,12 @@ Version 0.10 (Sun Jul 31 2011 04:51:54 +0100)
 * Some bug fixes.
 
 
------------
 Version 0.9 (Fri Jul 29 2011 15:05:00 +0100)
 -----------
 ### Features ###
 * The length of track can now be found using Tags.
 * Auto tagging for tracks names is done
-  * Allows choosing the language.
+* Allows choosing the language.
 * Auto tagging for other fields done.
 * Allows choosing which fields to update.
 * Show the url, which is clickable.
@@ -176,7 +164,6 @@ Version 0.9 (Fri Jul 29 2011 15:05:00 +0100)
 * Made length column uneditable since it should not be changed.
 
 
------------
 Version 0.8 (Mon Jul 25 2011 02:55:27 +0100)
 -----------
 ### Features ###
@@ -191,24 +178,22 @@ Version 0.8 (Mon Jul 25 2011 02:55:27 +0100)
 * Fixed a bug when trying to save a field with an empty string.
 
 
------------
 Version 0.7 (Fri Jul 22 2011 20:06:13 +0100)
 -----------
 ### Features ###
 * Complete mp4 tag read/write support.
 * File browser with previous and forward buttons.
-	* Allows user specified directory with a open dialog. 
-	* Allows going to parent directories easily.  
+* Allows user specified directory with a open dialog. 
+* Allows going to parent directories easily.  
 
 
---------------
 Older Versions
 --------------
 ### Features ###
 * Allow editing of data directory in the table view
 * Able to search for albums on vgmdb and get the data for that album.
-	* Using a gui.
-	* Allows searching three languages English, Romaji and Kanji.
+* Using a gui.
+* Allows searching three languages English, Romaji and Kanji.
 * Menu items for to Uppercase ^U, to Lowercase Shift ^U, Capitalise Command ^U
 * GUI
 * Classes 

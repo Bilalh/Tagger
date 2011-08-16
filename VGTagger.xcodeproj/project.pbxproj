@@ -643,7 +643,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/appledoc          \\\n--project-name VGTagger          \\\n--project-company \"Bilal\"        \\\n--company-id bilal               \\\n--exit-threshold 2               \\\n--output ~/Desktop/log/          \\\n--logformat xcode                \\\n--ignore .m                      \\\n--ignore .mm                     \\\n--ignore .rb                     \\\n\"$PROJECT_DIR\"/Classes";
+			shellScript = "/usr/local/bin/appledoc          \\\n--project-name VGTagger          \\\n--project-company \"Bilal\"        \\\n--company-id bilal               \\\n--exit-threshold 2               \\\n--output ~/Desktop/log/          \\\n--logformat xcode                \\\n--ignore .m                      \\\n--ignore .mm                     \\\n--ignore .rb                     \\\n--keep-undocumented-members      \\\n\"$PROJECT_DIR\"/Classes";
 		};
 /* End PBXShellScriptBuildPhase section */
 
