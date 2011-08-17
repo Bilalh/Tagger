@@ -40,7 +40,7 @@ class Vgmdb
 		album_results = doc.css 'div#albumresults tr'
 		if album_results.empty? then
 			return nil if doc.css('ul#tlnav').empty?
-			url  = doc.css('head>link:first-of-type').attr('href').text.gsub /feed/, ''
+			url  = doc.css('head>link:first-of-type').attr('href').text.gsub /\/feed/, ''
 			hash = get_data_with_doc(doc)
 			hash['url'] = url
 			return hash
