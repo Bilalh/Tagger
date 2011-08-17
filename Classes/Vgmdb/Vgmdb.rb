@@ -40,7 +40,10 @@ class Vgmdb
 		album_results = doc.css 'div#albumresults tr'
 		if album_results.empty? then
 			return nil if doc.css('ul#tlnav').empty?
-			return get_data_with_doc(doc)
+			url  = doc.css('head>link:first-of-type').attr('href').text.gsub /feed/, ''
+			hash = get_data_with_doc(doc)
+			hash['url'] = url
+			return hash
 		end
 		rows_tr = album_results[1..-1]
 		
@@ -67,7 +70,9 @@ class Vgmdb
 		# url = File.expand_path("~/Desktop/meruDa.html");
 		
 		doc = Nokogiri.HTML(open(url).read)
-		return get_data_with_doc doc
+		hash = get_data_with_doc doc
+		hash['url'] = url
+		return hash
 	end
 	
 	def get_data_with_doc(doc)
@@ -245,13 +250,13 @@ end
 if $0 == __FILE__
 	#require 'pp'
 	vg = Vgmdb.new()
-	# puts vg.search("Atelier Meruru");
+	puts vg.search("Atelier Meruru Original Soundtrack");
 	
 	# url = "http://vgmdb.net/album/13192"
 	# url = 'http://vgmdb.net/album/3885'
 	
 	# url = File.expand_path("~/Desktop/meruru.html")
-	hash = vg.get_data(url)	
+	# hash = vg.get_data(url)	
 	#pp hash
 	# vg.get_tracks_array hash;
 	

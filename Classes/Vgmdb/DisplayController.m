@@ -41,12 +41,12 @@ LOG_LEVEL(LOG_LEVEL_INFO);
 
 - (IBAction) metadataToComments
 {
-	NSMutableString *buffer = [[NSMutableString alloc] init];
+	NSMutableString *buffer = [[NSMutableString alloc] initWithString:@"\n"];
 	void (^add)(NSString*,NSString*) = ^(NSString *key,NSString *spacing){
 		[buffer appendFormat:@"%@:%@%@\n",key, spacing, [fieldValues valueForKey:key]];
 	};
 	
-	add(@"\ncatalog",   @"\t   ");
+	add(@"catalog",   @"\t   ");
 	add(@"products",  @"  ");
 	add(@"url",       @"\t\t   ");
 	add(@"arranger",  @"   ");
@@ -186,12 +186,13 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 			vgmdb:(id)vgmdbObject
 			files:(NSArray*)filesNodes
 {
-	vgmdb = vgmdbObject;
+	vgmdb  = vgmdbObject;
 	albumDetails = album;
 	tracks =  [vgmdb performRubySelector:@selector(get_tracks_array:)
 						   withArguments:albumDetails, 
 			   nil];
-	return [self initCommon:filesNodes];
+	id res = [self initCommon:filesNodes];
+	return res;
 }
 
 - (id)initWithUrl:(NSString*)url
@@ -200,7 +201,9 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 {
 	vgmdb = vgmdbObject;
 	[self setAlbumUrl:url];
-	return [self initCommon:filesNodes];
+	id res =[self initCommon:filesNodes];
+	[fieldValues setObject:url forKey:@"url"];
+	return res;
 } 
 
 - (void)dealloc
@@ -295,6 +298,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 							 @"products",
 							 @"publisher",
 							 @"comment",
+							 @"url",
 							 nil ];
 	NSMutableArray *values = [[NSMutableArray alloc] initWithCapacity:[keys count]+3];
 	
@@ -313,8 +317,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[values addObject:@""];
 	
 	fieldValues = [[NSMutableDictionary alloc] initWithObjects:values forKeys:keys];
-	[fieldValues setObject: @"http://vgmdb.net/album/25409" forKey:@"url"];		
-
 	DDLogInfo(@"fieldValues\n %@", fieldValues);	
 }
 

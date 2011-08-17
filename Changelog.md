@@ -1,6 +1,12 @@
 Changelog
 =========
 
+
+Version 1.3.1
+### Bug Fixes ###
+* Metadata to Comments newline.
+* Url when going directly to the results.
+
 Version 1.3
 -----------
 ### Features ###
