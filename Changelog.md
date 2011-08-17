@@ -3,11 +3,12 @@ Changelog
 
 
 Version 1.3.1
+-------------
 ### Bug Fixes ###
 * Metadata to Comments newline.
 * Url when going directly to the results.
 
-Version 1.3
+Version 1.3 (Fri Aug 12 2011 16:19:09 +0100)
 -----------
 ### Features ###
 * Label colours for files shown.
