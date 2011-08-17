@@ -242,24 +242,49 @@ using namespace MPEGFields;
 
 - (void) setCover:(NSImage *)newValue
 {
-	TAG_SETTER_START(cover);
-	
+//	TAG_SETTER_START(cover);
+	cover=newValue;
 	(TagLib::ID3v2::FrameFactory::instance())->setDefaultTextEncoding(TagLib::String::UTF8);
 	ID3v2::Tag *tag = data->f->mpeg->ID3v2Tag();	
-	tag->removeFrames(COVER);
+	if (cover == nil){
+		DDLogRelease(@"cover nil");
+		tag->removeFrames(COVER);	
+	}
+	
+	tag->removeFrames(TagLib::ByteVector("APIC"));
 	
 	if(nil != cover) {
-		ID3v2::CommentsFrame *cframe =  new ID3v2::CommentsFrame();
-		cframe->setText([@" 000005FA 0000074F 000026ED 00002BFD 000055E5 000055E5 00007C41 00007CFF 000003CF 0000F1FE" tagLibString]);
-		cframe->setLanguage("eng");
-		tag->addFrame(cframe);
+//		ID3v2::CommentsFrame *cframe =  new ID3v2::CommentsFrame();
+//		cframe->setText([@" 000005FA 0000074F 000026ED 00002BFD 000055E5 000055E5 00007C41 00007CFF 000003CF 0000F1FE" tagLibString]);
+//		cframe->setLanguage("eng");
+//		tag->addFrame(cframe);
+//		
+//		DDLogInfo(@"cover");
+//		ID3v2::AttachedPictureFrame *frame = new ID3v2::AttachedPictureFrame();
+//		NSData *imageData = [cover bitmapDataForType:NSJPEGFileType];
+//		frame->setMimeType("image/jpeg");
+//		frame->setPicture(ByteVector((const char *)[imageData bytes], (uint)[imageData length]));
+//		
+//		tag->addFrame(frame);
+		ID3v2::FrameList frames = tag->frameList("APIC");
+		ID3v2::AttachedPictureFrame *frame = 0;
+		if(frames.isEmpty()){
+			DDLogRelease(@"list empty");
+			frame = new TagLib::ID3v2::AttachedPictureFrame;
+		}else{
+			DDLogRelease(@"list not empty size:%d", frames.size());	
+			frame = new TagLib::ID3v2::AttachedPictureFrame;
+		}
 		
-		DDLogInfo(@"cover");
-		ID3v2::AttachedPictureFrame *frame = new ID3v2::AttachedPictureFrame();
 		NSData *imageData = [cover bitmapDataForType:NSJPEGFileType];
 		frame->setMimeType("image/jpeg");
-		frame->setPicture(ByteVector((const char *)[imageData bytes], (uint)[imageData length]));
+		frame->setType(ID3v2::AttachedPictureFrame::FrontCover);
 		
+		frame->setPicture(ByteVector((const char *)[imageData bytes], (uint)[imageData length]));
+//		ID3v2::CommentsFrame *cframe =  new ID3v2::CommentsFrame();
+//		cframe->setText([@" 000005FA 0000074F 000026ED 00002BFD 000055E5 000055E5 00007C41 00007CFF 000003CF 0000F1FE" tagLibString]);
+//		cframe->setLanguage("eng");
+//		tag->addFrame(cframe);
 		tag->addFrame(frame);
 	}	
 	data->file->save();

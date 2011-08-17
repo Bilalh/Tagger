@@ -507,7 +507,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
 	iTunesTrack * track = [iTunes add:[NSArray arrayWithObject:currentNodes.urls] 
 								   to:nil];
-	NSLog(@"Added %@ to track: %@",currentNodes.urls,track);
+	DDLogRelease(@"Added %@ to track: %@",currentNodes.urls,track);
 }
 
 - (IBAction)goToPredefinedDirectory:(id)sender
