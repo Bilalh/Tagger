@@ -28,6 +28,9 @@
 	id vgmdb; // macruby Vgmdb class
 	Tags *tags;
 	NSTableView *mainTable;
+	
+	NSString *currentColumnKey;
+	BOOL currentColumnAscending;
 }
 
 @property (assign) NSMutableArray *files;

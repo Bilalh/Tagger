@@ -110,6 +110,47 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	return s;
 }
 
+- (void)tableView:(NSTableView *)tableView didClickTableColumn:(NSTableColumn *)tableColumn
+{
+	NSImage *indicatorImage;
+	NSString * identifer = [tableColumn identifier];
+	
+	if ([currentColumnKey isEqualToString:identifer]){
+		currentColumnAscending = !currentColumnAscending;
+	}else{
+		currentColumnAscending = NO;
+		currentColumnKey = identifer;
+		for (NSTableColumn *column in [tableView tableColumns]) {
+			[tableView setIndicatorImage: nil
+						   inTableColumn: column];
+		}
+	}
+	
+	[tableView setHighlightedTableColumn:tableColumn];
+	short mult = currentColumnAscending ? 1 : -1;
+	NSArray *temp =
+	[searchResults sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+		id s1= [Utility valueFromResult:
+					  [obj1 objectForKey:[tableColumn identifier]]
+							 selectedLanguage:selectedLanguage];
+		id s2= [Utility valueFromResult:
+					   [obj2 objectForKey:[tableColumn identifier]]
+							  selectedLanguage:selectedLanguage];
+		return mult *[s1 localizedStandardCompare:s2];
+	}];
+	
+	if (currentColumnAscending){
+		indicatorImage = [NSImage imageNamed: @"NSAscendingSortIndicator"];		
+	}else{
+		indicatorImage = [NSImage imageNamed: @"NSDescendingSortIndicator"];	
+	}
+	
+	[tableView setIndicatorImage: indicatorImage
+                   inTableColumn: tableColumn];
+	searchResults = temp;
+	[table reloadData];
+}
+
 
 - (IBAction)onClick:(id)sender
 {

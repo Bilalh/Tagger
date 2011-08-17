@@ -4,6 +4,9 @@ Changelog
 
 Version 1.3.1
 -------------
+### Features ###
+* Results can be sorted when searching.
+
 ### Bug Fixes ###
 * Metadata to Comments newline.
 * Url when going directly to the results.
