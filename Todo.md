@@ -3,9 +3,13 @@ TODO
 
 FIXME
 -----
+
+* M4A files created from a flac source sometimes has problems with jpeg cover art. 
+* Bug when setting cover art  on multiple mpd3 file only when replacing artwork.  Added itunes comment fixed?
+
 * Don't allways use jpeg as the mine type. (needed for quicklook).
 * mp3 images sometimes don't work in quicklook but always work in the app and itunes.
-* Bug with m4a files using a some small jpegs? 
+
 
 FileNames
 ---------
@@ -28,25 +32,26 @@ VGMDB
 -----
 * Taggings when tracks missing (done, but can tag wrong).
 * Some kind of error handing when vgmdb returns no tracks.
+* Selected catlog when there are multiple printings.
+
 
 Later
 -----
 * Add flac (should be easy).
-* Disallow the user from changing the tab very quickly 
-* Adds another autotag e.g disc cogs freedb or musicbrainz
+* Disallow the user from changing the tab very quickly.
+* Adds another autotag e.g disc cogs, freedb or musicbrainz.
 
 ----
 Done
 ----
-* Allow muti row editing
+* Allow muti row editing.
 * Muti row selection can be non constive rows, handle this.
 * Some means of showing that the values for selected rows are different.
 * Better image equals method for NSImage (defualt just does pointer comparing).
-* Defaults e.g path etc 
+* Defaults e.g path etc.
 * Turn of the hard code values in vgmdb auto tagger.
 * Disble buttons that can not be used.
-* Table columns sorting 
+* Table columns sorting.
 * Auto embed macruby.
-* Image dragging
-* Disable Open Selected Fodler if the user has not selected a folder.
-At the moment it does nothing if the user tries to do this.
+* Image dragging.
+* Disable Open Selected Fodler if the user has not selected a folder. At the moment it does nothing if the user tries to do this.

@@ -249,6 +249,11 @@ using namespace MPEGFields;
 	tag->removeFrames(COVER);
 	
 	if(nil != cover) {
+		ID3v2::CommentsFrame *cframe =  new ID3v2::CommentsFrame();
+		cframe->setText([@" 000005FA 0000074F 000026ED 00002BFD 000055E5 000055E5 00007C41 00007CFF 000003CF 0000F1FE" tagLibString]);
+		cframe->setLanguage("eng");
+		tag->addFrame(cframe);
+		
 		DDLogInfo(@"cover");
 		ID3v2::AttachedPictureFrame *frame = new ID3v2::AttachedPictureFrame();
 		NSData *imageData = [cover bitmapDataForType:NSJPEGFileType];

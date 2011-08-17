@@ -19,6 +19,8 @@
 #import "DraggableImageView.h"
 #import "CCTColorLabelMenuItemView.h"
 
+
+#import <MacRuby/MacRuby.h>
 #import "iTunes.h"
 #import "Logging.h"
 LOG_LEVEL(LOG_LEVEL_INFO);
@@ -771,6 +773,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 + (void)initialize
 {
+	NSString *path = [[NSBundle mainBundle] pathForResource:@"Vgmdb" ofType:@"rb"];
+	[[MacRuby sharedRuntime] evaluateFileAtPath:path];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithContentsOfFile:
 															 [[NSBundle mainBundle] pathForResource:@"defaults" ofType:@"plist"]]];	
 	[[NSUserDefaults standardUserDefaults]  synchronize];

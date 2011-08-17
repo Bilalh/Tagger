@@ -2,6 +2,12 @@ Readme
 ======
 
 
+Requiments
+----------
+* Mac OS X 10.6+
+* Macruby 0.10+
+* 64 bit only
+
 Install From Source
 -------------------
 Build the release version of VGTagger.

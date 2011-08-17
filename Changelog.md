@@ -8,7 +8,10 @@ Version 1.3.1
 * Results can be sorted when searching.
 * Tooltips
 * Files can be dragged to the table
+* Cover art of multiple  mp3 files 
 
+### Improvements ###
+* Macruby loading
 
 ### Bug Fixes ###
 * Metadata to Comments newline.
