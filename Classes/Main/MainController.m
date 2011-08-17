@@ -553,6 +553,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 - (IBAction)refresh:(id)sender
 {
 	[[directoryStack lastObject] invalidateChildren];
+	[table reloadData];
 }
 
 - (IBAction)rename:(id)sender
