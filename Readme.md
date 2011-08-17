@@ -2,9 +2,8 @@ Readme
 ======
 
 
--------
-Install
--------
+Install From Source
+-------------------
 Build the release version of VGTagger.
 
 (When embeding make sure require 'rubygems'  is commented with a # before it)
@@ -17,7 +16,7 @@ To save 15mb you can replace
   VGTagger.app/Contents/Frameworks/MacRuby.framework/Versions/0.10/usr/lib/ruby/1.9.2
 with 1.9.2 at the root of the project
 
---------------
+
 Libraries Used
 --------------
 * MacRuby
@@ -27,3 +26,7 @@ Libraries Used
 * CCTColorLabelMenuItemView
 * Lumberjack
 * MASPreferencesViewController
+
+Issues
+------
+* M4A files created from a flac source sometimes has problems with jpeg cover art.
