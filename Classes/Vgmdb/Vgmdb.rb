@@ -111,7 +111,7 @@ class Vgmdb
 		hash['date']      = get_data[1]
 		hash['year']      = hash['date'][/\d{4}$/]
 		hash['publisher'] = get_spilt_data[6]
-		hash['composer']  = get_spilt_data[8]
+		hash['composer']  = get_spilt_data[7]
 		hash['arranger']  = get_spilt_data[8]
 		hash['performer'] = get_spilt_data[9]
 		
