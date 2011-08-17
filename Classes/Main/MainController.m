@@ -178,6 +178,14 @@ static const NSArray *predefinedRenameFormats;
 	return [([self nodeAtIndex:rowIndex]).labelIndex integerValue];
 }
 
+- (void) acceptFilenameDrag:(NSString *) filename
+{
+	if (![[filename lastPathComponent] isEqualToString:@"/"]){
+		filename = [filename stringByDeletingLastPathComponent];
+	}
+	[self goToDirectory:[NSURL URLWithString:filename]];
+}
+
 #pragma mark - Table Menu (label)
 
 - (NSMenu *)labelMenu

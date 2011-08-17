@@ -87,5 +87,54 @@
 }
 
 
+- (void) awakeFromNib
+{
+	// Register to accept filename drag/drop
+	[self registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, nil]];
+}
+
+- (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender
+{
+	// Need the delegate hooked up to accept the dragged item(s) into the model
+	if ([self delegate]==nil)
+	{
+		return NSDragOperationNone;
+	}
+	
+	if ([[[sender draggingPasteboard] types] containsObject:NSFilenamesPboardType])
+	{
+		return NSDragOperationCopy;
+	}
+	
+	return NSDragOperationNone;
+}
+
+
+// Stop the NSTableView implementation getting in the way
+- (NSDragOperation)draggingUpdated:(id <NSDraggingInfo>)sender
+{
+	return [self draggingEntered:sender];
+}
+
+- (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
+{
+	NSPasteboard *pboard;
+	pboard = [sender draggingPasteboard];
+	if ([[pboard types] containsObject:NSFilenamesPboardType])
+	{
+		id delegate = [self delegate];
+		NSArray *filenames = [pboard propertyListForType:NSFilenamesPboardType];
+		if ([delegate respondsToSelector:@selector(acceptFilenameDrag:)])
+		{
+			for (id name in filenames) {
+				[delegate performSelector:@selector(acceptFilenameDrag:) 
+							   withObject:name];
+			}
+		}
+		return YES;
+	}
+	return NO;
+}	
+
 
 @end

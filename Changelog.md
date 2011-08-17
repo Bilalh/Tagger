@@ -7,6 +7,7 @@ Version 1.3.1
 ### Features ###
 * Results can be sorted when searching.
 * Tooltips
+* Files can be dragged to the table
 
 ### Bug Fixes ###
 * Metadata to Comments newline.
@@ -14,6 +15,8 @@ Version 1.3.1
 * Refresh.
 * Fixed a bug where the composer was tothe arranger.
 * Made catlog field bigger since I found some rare long ids.
+
+
 
 Version 1.3 (Fri Aug 12 2011 16:19:09 +0100)
 -----------
