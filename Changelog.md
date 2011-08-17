@@ -6,6 +6,7 @@ Version 1.3.1
 -------------
 ### Features ###
 * Results can be sorted when searching.
+* Tooltips
 
 ### Bug Fixes ###
 * Metadata to Comments newline.
