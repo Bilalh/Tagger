@@ -35,4 +35,5 @@ Libraries Used
 
 Issues
 ------
-* M4A files created from a flac source sometimes has problems with jpeg cover art.
+* Bug in mp3 when replacing artwork on files who album art has *never* been edited in iTunes.
+* Bug in mp4 files when  replacing artwork on files who album art has *never* been edited in iTunes.

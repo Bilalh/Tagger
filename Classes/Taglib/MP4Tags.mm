@@ -197,6 +197,15 @@ using namespace std;
 	CoverArtList list = CoverArtList();
 	list.append(ca);
 	[self setField:COVER value:list];
+//	MP4::Tag *tag =  data->f->mp4->tag();
+//	tag->itemListMap().erase(TagLib::ByteVector("covr"));
+//	
+//	CoverArtList p = tag->itemListMap()["covr"].toCoverArtList();
+//	p.append(CoverArt(CoverArt::JPEG, 
+//					  ByteVector((const char*)[imageData bytes], (uint)[imageData length])));
+//	//found this in the test files
+//	tag->itemListMap()["covr"] = p;
+//	data->file->save();
 }
 
 

@@ -4,8 +4,8 @@ TODO
 FIXME
 -----
 
-* M4A files created from a flac source sometimes has problems with jpeg cover art. 
-* Bug when setting cover art  on multiple mpd3 file only when replacing artwork.  Added itunes comment fixed?
+* Bug in mp3 when replacing artwork on files who album art has *never* been edited in iTunes.
+* Bug in mp4 files when  replacing artwork on files who album art has *never* been edited in iTunes.
 
 * Don't allways use jpeg as the mine type. (needed for quicklook).
 * mp3 images sometimes don't work in quicklook but always work in the app and itunes.
