@@ -23,6 +23,11 @@ To save 15mb you can replace
 with 1.9.2 at the root of the project
 
 
+Issues
+------
+* Bug in mp3 files when *replacing* (not adding) artwork on files who album art has *never* been edited in iTunes, means the file can't be added to iTunes.
+* Bug in mp4 converted from flac using apps such XLD, when setting artwork, means the file can not be added to itunes.
+
 Libraries Used
 --------------
 * MacRuby
@@ -32,8 +37,3 @@ Libraries Used
 * CCTColorLabelMenuItemView
 * Lumberjack
 * MASPreferencesViewController
-
-Issues
-------
-* Bug in mp3 when replacing artwork on files who album art has *never* been edited in iTunes.
-* Bug in mp4 files when  replacing artwork on files who album art has *never* been edited in iTunes.

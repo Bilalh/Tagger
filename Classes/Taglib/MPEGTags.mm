@@ -266,26 +266,26 @@ using namespace MPEGFields;
 //		frame->setPicture(ByteVector((const char *)[imageData bytes], (uint)[imageData length]));
 //		
 //		tag->addFrame(frame);
-		ID3v2::FrameList frames = tag->frameList("APIC");
+//		ID3v2::FrameList frames = tag->frameList("APIC");
 		ID3v2::AttachedPictureFrame *frame = 0;
-		if(frames.isEmpty()){
-			DDLogRelease(@"list empty");
+//		if(frames.isEmpty()){
+//			DDLogRelease(@"list empty");
+//			frame = new TagLib::ID3v2::AttachedPictureFrame;
+//		}else{
+//			DDLogRelease(@"list not empty size:%d", frames.size());	
 			frame = new TagLib::ID3v2::AttachedPictureFrame;
-		}else{
-			DDLogRelease(@"list not empty size:%d", frames.size());	
-			frame = new TagLib::ID3v2::AttachedPictureFrame;
-		}
+//		}
 		
 		NSData *imageData = [cover bitmapDataForType:NSJPEGFileType];
-		frame->setMimeType("image/jpeg");
 		frame->setType(ID3v2::AttachedPictureFrame::FrontCover);
-		
+		frame->setMimeType("image/jpeg");
 		frame->setPicture(ByteVector((const char *)[imageData bytes], (uint)[imageData length]));
+		tag->addFrame(frame);
+
 //		ID3v2::CommentsFrame *cframe =  new ID3v2::CommentsFrame();
 //		cframe->setText([@" 000005FA 0000074F 000026ED 00002BFD 000055E5 000055E5 00007C41 00007CFF 000003CF 0000F1FE" tagLibString]);
 //		cframe->setLanguage("eng");
 //		tag->addFrame(cframe);
-		tag->addFrame(frame);
 	}	
 	data->file->save();
 }

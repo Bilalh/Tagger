@@ -4,8 +4,8 @@ TODO
 FIXME
 -----
 
-* Bug in mp3 when replacing artwork on files who album art has *never* been edited in iTunes.
-* Bug in mp4 files when  replacing artwork on files who album art has *never* been edited in iTunes.
+* Bug in mp3 files when *replacing* (not adding) artwork on files who album art has *never* been edited in iTunes, means the file can't be added to iTunes.
+* Bug in mp4 converted from flac using apps such XLD, when setting artwork, means the file can not be added to itunes.
 
 * Don't allways use jpeg as the mine type. (needed for quicklook).
 * mp3 images sometimes don't work in quicklook but always work in the app and itunes.

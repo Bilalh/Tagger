@@ -20,6 +20,7 @@ Version 1.3.1
 * Fixed a bug where the composer was tothe arranger.
 * Made catlog field bigger since I found some rare long ids.
 * Url when ending in a slash.
+* Use jpeg when the user want jpeg.
 
 
 Version 1.3 (Fri Aug 12 2011 16:19:09 +0100)
