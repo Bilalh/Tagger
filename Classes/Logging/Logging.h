@@ -24,5 +24,5 @@
 #ifdef DEBUG
 #define LOG_LEVEL(log_level) static const int ddLogLevel = log_level;
 #else
-#define LOG_LEVEL(log_level) static const int ddLogLevel = LOG_LEVEL_RELEASE;
+#define LOG_LEVEL(log_level) static const int ddLogLevel = LOG_LEVEL_ERROR;
 #endif
