@@ -20,9 +20,10 @@ static NSDictionary *languages;
 {
 	[super initialize];
 	languages = [[NSDictionary alloc] initWithObjectsAndKeys:
-				 [NSArray arrayWithObjects:@"@romaji",@"@kanji",   nil], @"@english",
-				 [NSArray arrayWithObjects:@"@kanji" ,@"@english", nil], @"@romaji",
-				 [NSArray arrayWithObjects:@"@romaji",@"@english", nil], @"@kanji",
+				 [NSArray arrayWithObjects:@"@romaji",  @"@kanji",   @"@latin", nil], @"@english",
+				 [NSArray arrayWithObjects:@"@kanji" ,  @"@english", @"@latin", nil], @"@romaji",
+				 [NSArray arrayWithObjects:@"@romaji",  @"@english", @"@latin", nil], @"@kanji",
+				 [NSArray arrayWithObjects:@"@english", @"@romaji",  @"@kanji", nil], @"@latin",
 				 nil];
 }
 

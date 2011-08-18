@@ -9,6 +9,7 @@ Version 1.3.1
 * Tooltips
 * Files can be dragged to the table
 * Cover art of multiple  mp3 files 
+* Added Latin as language since some soundtracks tracks are in [Latin](http://vgmdb.net/album/26335 "Puella Magi Madoka Magica Special CD 2 Original Soundtrack I")
 
 ### Improvements ###
 * Macruby loading

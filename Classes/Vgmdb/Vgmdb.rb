@@ -19,6 +19,7 @@ class Vgmdb
 			'English'  => '@english',
 			'Japanese' => '@kanji',
 			'Romaji'   => '@romaji',
+			'Latin'    => '@latin'
 		}
 	end
 	

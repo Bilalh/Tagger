@@ -167,7 +167,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSDictionary *title = [[tracks objectAtIndex:0] objectForKey:@"title"];
 	NSDictionary *radio = [fieldProperties objectForKey:@"radio"];
 	
-	NSString *l[] = {@"@english", @"@romaji",@"@kanji"};
+	NSString *l[] = {@"@english", @"@romaji",@"@kanji", @"@latin"};
 	
 	int i;
 	for (i =0; i < sizeof(l)/sizeof(size_t) ; ++i) {
@@ -244,6 +244,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[radio setObject:hd(@"@english") forKey:@"0"];
 	[radio setObject:hd(@"@romaji")  forKey:@"1"];
 	[radio setObject:hd(@"@kanji")   forKey:@"2"];
+	[radio setObject:hd(@"@latin")    forKey:@"3"];
 	
 	
 	fieldProperties = [[NSDictionary alloc] initWithObjectsAndKeys:
