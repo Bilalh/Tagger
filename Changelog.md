@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-Version 1.3.1
+Version 1.3.5
 -------------
 ### Features ###
 * Results can be sorted when searching.
@@ -10,6 +10,7 @@ Version 1.3.1
 * Files can be dragged to the table
 * Cover art of multiple  mp3 files 
 * Added Latin as language since some soundtracks tracks are in [Latin](http://vgmdb.net/album/26335 "Puella Magi Madoka Magica Special CD 2 Original Soundtrack I")
+* Arranges multiple catalog number nicely 
 
 ### Improvements ###
 * Macruby loading

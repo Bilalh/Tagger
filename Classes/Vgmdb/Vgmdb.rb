@@ -91,15 +91,11 @@ class Vgmdb
 		meta = doc.css('table#album_infobit_large')
 		
 		# get the data from the specific row
-		# old method
-		# get_data     = ->(id){  return meta.children[id].children[2].text.strip  }
 		get_data       = ->(id){ meta.children[id].children[2].text.strip  }
 		
 		# get the data from the specific row spilt into lang
 		get_spilt_data = ->(id){
 			arr = [] 
-			# old method
-			# meta.children[id].children[2].children.each do |e|
 			meta.children[id].children[2].children.each do |e|
 				if e.children.length > 0 then
 					arr << spilt_lang(e.children)
@@ -108,7 +104,15 @@ class Vgmdb
 			return arr
 		}
 		
-		hash['catalog']   = get_data[0]
+		catalog_ele = meta.children[0].children[2]
+		if catalog_ele.children.length > 1 then
+			text  = "";
+			catalog_ele.css('a').children.each { |e| text << e << "\n"  }
+			hash['catalog']   = text.strip
+		else
+			hash['catalog']   = catalog_ele.text.strip
+		end
+		
 		hash['date']      = get_data[1]
 		hash['year']      = hash['date'][/\d{4}$/]
 		hash['publisher'] = get_spilt_data[6]
@@ -152,9 +156,9 @@ class Vgmdb
 		notes = ""
 		# old notes
 		# puts notes_note = doc.css('div.page > table > tr > td > div > div > div > div.covertab  div.smallfont')
-		notes_note = doc.css('div.page > table > tr > td > div').children[-4]
-		# exit
 		# notes_note = doc.css('div.page > table > tr > td > div').children[64]
+		notes_note = doc.css('div.page > table > tr > td > div').children[-4]
+		
 		notes_note.children.each do |e|
 			notes <<  e.text  << "\n" if e.text != ""
 		end
@@ -249,15 +253,16 @@ class Vgmdb
 end
 
 if $0 == __FILE__
-	#require 'pp'
 	vg = Vgmdb.new()
-	puts vg.search("Atelier Meruru Original Soundtrack");
+	# vg.search("Atelier Meruru Original Soundtrack");
 	
 	# url = "http://vgmdb.net/album/13192"
 	# url = 'http://vgmdb.net/album/3885'
+	url = File.expand_path("~/Desktop/55")
+	# url = File.expand_path("~/Desktop/26704")
 	
-	# url = File.expand_path("~/Desktop/meruru.html")
-	# hash = vg.get_data(url)	
+	hash = vg.get_data(url)	
+	#require 'pp'
 	#pp hash
 	# vg.get_tracks_array hash;
 	
