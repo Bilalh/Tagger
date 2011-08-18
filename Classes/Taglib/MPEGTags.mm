@@ -240,6 +240,7 @@ using namespace MPEGFields;
 	[self setFieldWithString:URL data:newValue];
 }
 
+// need fixing?
 - (void) setCover:(NSImage *)newValue
 {
 //	TAG_SETTER_START(cover);

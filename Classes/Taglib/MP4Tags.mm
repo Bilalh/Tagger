@@ -187,6 +187,7 @@ using namespace std;
 	[self setFieldWithString:URL  value:newValue]; 
 }
 
+// need fixing?
 - (void) setCover:(NSImage *)newValue
 {
 	using namespace TagLib::MP4;
