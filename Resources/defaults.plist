@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>startUrl</key>
-	<string>~/Music/</string>
-	<key>writeDraggedImageAsFile</key>
-	<true/>
 	<key>coverFormat</key>
 	<array>
 		<string>title</string>
@@ -15,12 +11,12 @@
 	<array>
 		<array>
 			<string>track</string>
-			<string> - </string>
+			<string> </string>
 			<string>title</string>
 		</array>
 		<array>
 			<string>track</string>
-			<string> </string>
+			<string> - </string>
 			<string>title</string>
 		</array>
 		<array>
@@ -54,12 +50,16 @@
 	</array>
 	<key>predefinedRenameFormatsTitles</key>
 	<array>
-		<string>01 - Title</string>
 		<string>01 Title</string>
+		<string>01 - Title</string>
 		<string>1-01 Title</string>
 		<string>01 - Title - Artist</string>
 		<string>01 - Title - Album</string>
 		<string>Artist - 01 Title</string>
 	</array>
+	<key>startUrl</key>
+	<string>~/Music/</string>
+	<key>writeDraggedImageAsFile</key>
+	<true/>
 </dict>
 </plist>
