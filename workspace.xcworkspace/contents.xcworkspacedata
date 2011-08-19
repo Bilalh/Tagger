@@ -4,10 +4,4 @@
    <FileRef
       location = "container:VGTagger.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:../Small/BHDraggableImageView/BHDraggableImageView.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:../Small/TagsFromFileName/TagsFromFileName.xcodeproj">
-   </FileRef>
 </Workspace>

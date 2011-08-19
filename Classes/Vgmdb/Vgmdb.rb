@@ -121,7 +121,7 @@ class Vgmdb
 		hash['performer'] = get_spilt_data[9]
 		
 		# artist is composer
-		hash['artist']    = get_spilt_data[8]
+		hash['artist']    = get_spilt_data[7]
 		
 		stats     = doc.css('tr> td#rightcolumn > div > div.smallfont > div > b')
 		get_stats = ->(id){  return stats[id].next.next.text.strip  }
