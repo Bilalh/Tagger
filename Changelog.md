@@ -23,7 +23,7 @@ Version 1.3.5
 * Made catlog field bigger since I found some rare long ids.
 * Url when ending in a slash.
 * Use jpeg when the user want jpeg.
-
+* Chooses the correct language if english is not there when auto tagging.
 
 Version 1.3 (Fri Aug 12 2011 16:19:09 +0100)
 -----------

@@ -175,6 +175,23 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 			[[radio objectForKey:[NSString stringWithFormat:@"%d", i]] setObject:[NSNumber numberWithBool:YES ] forKey:@"enable"];
 		}
 	}	
+		
+	if ([title objectForKey:selectedLanguage] == nil){
+		for (NSString *newLanguage in [[Utility languagesDictionary] objectForKey:selectedLanguage] ) {
+			if ([title objectForKey:newLanguage]) {
+				selectedLanguage = newLanguage;
+				break;
+			}
+		}	
+	}	
+	NSLog(@"%@ %@", selectedLanguage, [title objectForKey:selectedLanguage]);
+	for (i =0; i < sizeof(l)/sizeof(size_t) ; ++i) {
+		if ([l[i] isEqualToString:selectedLanguage]){
+			[fieldProperties setValue:[NSNumber numberWithInt:i] forKeyPath:@"radio.selectedIndex"];
+			break;
+		}
+	}	
+	
 	
 	min = MIN([files count], [tracks count]);
 	DDLogInfo(@"min:%d", min);
