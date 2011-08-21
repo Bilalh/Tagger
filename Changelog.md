@@ -25,6 +25,7 @@ Version 1.3.5
 * Use jpeg when the user want jpeg.
 * Chooses the correct language if english is not there when auto tagging.
 * Fixed a bug with extension checking (now uses filepath instead of display name)
+* Fix nils when the album does not have a [platform](http://vgmdb.net/album/19776 "Neon Genesis Evangelion")
 
 Version 1.3 (Fri Aug 12 2011 16:19:09 +0100)
 -----------

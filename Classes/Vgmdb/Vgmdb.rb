@@ -137,8 +137,8 @@ class Vgmdb
 			end
 		}
 		
-		hash['products'] =  ps[3]
-		hash['platforms'] = ps[4]
+		hash['products'] =  ps[3] if stats[3]
+		hash['platforms'] = ps[4] if stats[4]
 		#puts
 	end
 	
@@ -258,12 +258,12 @@ if $0 == __FILE__
 	
 	# url = "http://vgmdb.net/album/13192"
 	# url = 'http://vgmdb.net/album/3885'
-	url = File.expand_path("~/Desktop/55")
-	# url = File.expand_path("~/Desktop/26704")
+	# url = File.expand_path("~/Desktop/55")
+	url = 'http://vgmdb.net/album/19776'
 	
 	hash = vg.get_data(url)	
-	#require 'pp'
-	#pp hash
+	require 'pp'
+	pp hash
 	# vg.get_tracks_array hash;
 	
 end
