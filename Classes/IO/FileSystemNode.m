@@ -174,12 +174,13 @@ LOG_LEVEL(LOG_LEVEL_INFO);
                         node = [_children objectAtIndex:oldIndex];
                     }
                 }
+				NSString *extension = [[node.URL path] pathExtension];
 				//TODO make user passable block
-				if ([[node displayName] hasSuffix:@"mp3"]  || 
-					[[node displayName] hasSuffix:@"m4a"]  || 
-//					[[node displayName] hasSuffix:@"flac"] || 
-//					[[node displayName] hasSuffix:@"ogg"]  || 
-//					[[node displayName] hasSuffix:@"wma"]  || 
+				if ([extension isEqualToString:@"mp3"]  || 
+					[extension isEqualToString:@"m4a"]  || 
+//					[extension isEqualToString:@"flac"] || 
+//					[extension isEqualToString:@"ogg"]  || 
+//					[extension isEqualToString:@"wma"]  || 
 					[self isaDirectory:node.URL ] ){
 					[newChildren addObject:node];
 				}

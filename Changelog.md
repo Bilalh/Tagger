@@ -24,6 +24,7 @@ Version 1.3.5
 * Url when ending in a slash.
 * Use jpeg when the user want jpeg.
 * Chooses the correct language if english is not there when auto tagging.
+* Fixed a bug with extension checking (now uses filepath instead of display name)
 
 Version 1.3 (Fri Aug 12 2011 16:19:09 +0100)
 -----------
