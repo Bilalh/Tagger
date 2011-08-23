@@ -832,7 +832,7 @@
 										</object>
 									</object>
 								</object>
-								<object class="NSMenuItem" id="1021472126">
+								<object class="NSMenuItem" id="1060733223">
 									<reference key="NSMenu" ref="397990970"/>
 									<string key="NSTitle">Tags From Filenames</string>
 									<string key="NSKeyEquiv"/>
@@ -840,12 +840,12 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 									<string key="NSAction">submenuAction:</string>
-									<object class="NSMenu" key="NSSubmenu" id="421178623">
+									<object class="NSMenu" key="NSSubmenu" id="713621248">
 										<string key="NSTitle">Tags From Filenames</string>
 										<object class="NSMutableArray" key="NSMenuItems">
 											<bool key="EncodedWithXMLCoder">YES</bool>
-											<object class="NSMenuItem" id="813518616">
-												<reference key="NSMenu" ref="421178623"/>
+											<object class="NSMenuItem" id="196299999">
+												<reference key="NSMenu" ref="713621248"/>
 												<string key="NSTitle">Using Custom Format</string>
 												<string key="NSKeyEquiv">g</string>
 												<int key="NSKeyEquivModMask">1310720</int>
@@ -853,8 +853,8 @@
 												<reference key="NSOnImage" ref="35465992"/>
 												<reference key="NSMixedImage" ref="502551668"/>
 											</object>
-											<object class="NSMenuItem" id="379993657">
-												<reference key="NSMenu" ref="421178623"/>
+											<object class="NSMenuItem" id="659930324">
+												<reference key="NSMenu" ref="713621248"/>
 												<bool key="NSIsDisabled">YES</bool>
 												<bool key="NSIsSeparator">YES</bool>
 												<string key="NSTitle"/>
@@ -4831,10 +4831,10 @@
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">enabled: currentNodes.hasBasicMetadata</string>
-						<reference key="source" ref="813518616"/>
+						<reference key="source" ref="196299999"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="813518616"/>
+							<reference key="NSSource" ref="196299999"/>
 							<reference key="NSDestination" ref="588631224"/>
 							<string key="NSLabel">enabled: currentNodes.hasBasicMetadata</string>
 							<string key="NSBinding">enabled</string>
@@ -4848,9 +4848,17 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">tagsFromFilename:</string>
 						<reference key="source" ref="588631224"/>
-						<reference key="destination" ref="813518616"/>
+						<reference key="destination" ref="196299999"/>
 					</object>
 					<int key="connectionID">1364</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">tagMenu</string>
+						<reference key="source" ref="588631224"/>
+						<reference key="destination" ref="713621248"/>
+					</object>
+					<int key="connectionID">1365</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -5843,7 +5851,7 @@
 							<reference ref="1031409048"/>
 							<reference ref="913636609"/>
 							<reference ref="530263831"/>
-							<reference ref="1021472126"/>
+							<reference ref="1060733223"/>
 						</object>
 						<reference key="parent" ref="1036655123"/>
 					</object>
@@ -6712,32 +6720,32 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1358</int>
-						<reference key="object" ref="1021472126"/>
+						<reference key="object" ref="1060733223"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="421178623"/>
+							<reference ref="713621248"/>
 						</object>
 						<reference key="parent" ref="397990970"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1359</int>
-						<reference key="object" ref="421178623"/>
+						<reference key="object" ref="713621248"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="379993657"/>
-							<reference ref="813518616"/>
+							<reference ref="659930324"/>
+							<reference ref="196299999"/>
 						</object>
-						<reference key="parent" ref="1021472126"/>
+						<reference key="parent" ref="1060733223"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1360</int>
-						<reference key="object" ref="379993657"/>
-						<reference key="parent" ref="421178623"/>
+						<reference key="object" ref="659930324"/>
+						<reference key="parent" ref="713621248"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1361</int>
-						<reference key="object" ref="813518616"/>
-						<reference key="parent" ref="421178623"/>
+						<reference key="object" ref="196299999"/>
+						<reference key="parent" ref="713621248"/>
 					</object>
 				</object>
 			</object>
@@ -7389,7 +7397,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1364</int>
+			<int key="maxID">1365</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -7573,6 +7581,7 @@
 							<string>popup</string>
 							<string>renameMenu</string>
 							<string>table</string>
+							<string>tagMenu</string>
 							<string>vgmdbItem</string>
 							<string>window</string>
 						</object>
@@ -7582,6 +7591,7 @@
 							<string>NSPopUpButton</string>
 							<string>NSMenu</string>
 							<string>NSTableView</string>
+							<string>NSMenu</string>
 							<string>NSToolbarItem</string>
 							<string>NSWindow</string>
 						</object>
@@ -7594,6 +7604,7 @@
 							<string>popup</string>
 							<string>renameMenu</string>
 							<string>table</string>
+							<string>tagMenu</string>
 							<string>vgmdbItem</string>
 							<string>window</string>
 						</object>
@@ -7614,6 +7625,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">table</string>
 								<string key="candidateClassName">NSTableView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">tagMenu</string>
+								<string key="candidateClassName">NSMenu</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">vgmdbItem</string>

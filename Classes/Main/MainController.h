@@ -28,6 +28,7 @@
 	IBOutlet NSToolbarItem *vgmdbItem;
 	IBOutlet DraggableImageView *coverView;
 	IBOutlet NSMenu *renameMenu;
+	IBOutlet NSMenu *tagMenu;
 	
 	VgmdbController         *vgc;
 	DisplayController       *ssc;

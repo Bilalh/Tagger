@@ -28,6 +28,8 @@ LOG_LEVEL(LOG_LEVEL_INFO);
 
 static const NSArray *predefinedDirectories;
 static const NSArray *predefinedRenameFormats;
+static const NSArray *predefinedTagFormats;
+
 
 @interface MainController()  
 
@@ -607,6 +609,14 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[table reloadData];
 }
 
+-(IBAction)tagWithPredefinedFormat:(id)sender
+{
+	DDLogVerbose(@"format array %@",[predefinedTagFormats objectAtIndex:[sender tag]]);
+	[currentNodes tagsWithFormatArrayFromFilename: [predefinedRenameFormats objectAtIndex:[sender tag]]];
+	[[directoryStack lastObject] invalidateChildren];
+	[table reloadData];
+}
+
 - (IBAction)revealInFinder:(id)sender
 {
 	for (FileSystemNode *n in currentNodes.tagsArray) {
@@ -744,21 +754,31 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[[table tableColumnWithIdentifier:@"title"] setEditable:true];
 	[table setTarget:self];
 	[self _vgmdbEnable];
-	
-	NSArray *titles = [[NSUserDefaults standardUserDefaults] arrayForKey:@"predefinedRenameFormatsTitles"];
-	int i;
-	for (i =0; i < [titles count]; ++i) {
-		NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:[titles objectAtIndex:i] 
-													  action:@selector(renameWithPredefinedFormat:) 
-											   keyEquivalent:@""];
-		[item setTag:i];
-		[item bind:@"enabled" 
-		  toObject:self 
-	   withKeyPath:@"currentNodes.hasBasicMetadata" 
-		   options:nil];
-		[renameMenu addItem:item];
-	}
 	[table setMenu:[self labelMenu]];
+	
+	void (^makeMenu)(NSArray*, NSMenu*, SEL) = ^(NSArray *titles, NSMenu *menu, SEL action){
+		int i;
+		for (i =0; i < [titles count]; ++i) {
+			NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:[titles objectAtIndex:i] 
+														  action:action
+												   keyEquivalent:@""];
+			[item setTag:i];
+			[item bind:@"enabled" 
+			  toObject:self 
+		   withKeyPath:@"currentNodes.hasBasicMetadata" 
+			   options:nil];
+			[menu addItem:item];
+		}
+	};
+	
+	makeMenu([[NSUserDefaults standardUserDefaults] arrayForKey:@"predefinedRenameFormatsTitles"],
+			 renameMenu,
+			 @selector(renameWithPredefinedFormat:));
+	
+	makeMenu([[NSUserDefaults standardUserDefaults] arrayForKey:@"predefinedTagFormatsTitles"],
+			 tagMenu,
+			 @selector(tagWithPredefinedFormat:));
+	
 }
 
 -(void)initDirectoryTable
@@ -810,6 +830,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 										isDirectory:YES],
 							 nil];
 	predefinedRenameFormats = [[NSUserDefaults standardUserDefaults] arrayForKey:@"predefinedRenameFormats"];
+	predefinedTagFormats    = [[NSUserDefaults standardUserDefaults] arrayForKey:@"predefinedTagFormats"];
+	NSLog(@"%@", predefinedTagFormats);
 }
 
 - (void)dealloc

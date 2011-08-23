@@ -13,6 +13,8 @@ Version 1.3.5
 * Arranges multiple catalog number nicely 
 * Tags From Files (works like renames with tags)
   * With error handing.
+  * and menus with predefined options
+
 ### Improvements ###
 * Macruby loading
 

@@ -57,6 +57,56 @@
 		<string>01 - Title - Album</string>
 		<string>Artist - 01 Title</string>
 	</array>
+	<key>predefinedTagFormats</key>
+	<array>
+		<array>
+			<string>track</string>
+			<string> </string>
+			<string>title</string>
+		</array>
+		<array>
+			<string>track</string>
+			<string> - </string>
+			<string>title</string>
+		</array>
+		<array>
+			<string>disc</string>
+			<string>-</string>
+			<string>track</string>
+			<string> </string>
+			<string>title</string>
+		</array>
+		<array>
+			<string>track</string>
+			<string> - </string>
+			<string>title</string>
+			<string> - </string>
+			<string>Artist</string>
+		</array>
+		<array>
+			<string>track</string>
+			<string> - </string>
+			<string>title</string>
+			<string> - </string>
+			<string>album</string>
+		</array>
+		<array>
+			<string>artist</string>
+			<string> - </string>
+			<string>track</string>
+			<string> </string>
+			<string>title</string>
+		</array>
+	</array>
+	<key>predefinedTagFormatsTitles</key>
+	<array>
+		<string>01 Title</string>
+		<string>01 - Title</string>
+		<string>1-01 Title</string>
+		<string>01 - Title - Artist</string>
+		<string>01 - Title - Album</string>
+		<string>Artist - 01 Title</string>
+	</array>
 	<key>startUrl</key>
 	<string>~/Music/</string>
 	<key>writeDraggedImageAsFile</key>

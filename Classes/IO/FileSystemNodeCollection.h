@@ -56,6 +56,8 @@
  @return NSError with the error data.
  */
 -(NSError*) renameWithFormatArray:(NSArray*)formatStrings;
+- (NSError*)tagsWithFormatArrayFromFilename:(NSArray*)formatStrings;
+
 
 /// @name Finding General metadata.
 
