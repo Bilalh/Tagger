@@ -84,20 +84,30 @@
  */
 - (IBAction) backForwordDirectories:(id)sender; 
 
-
 - (IBAction) open:(id)sender;
 - (IBAction) backDirectories:(id)sender;
 - (IBAction) forwordDirectories:(id)sender;
 - (IBAction) goToParentMenu:(id)sender;
 - (IBAction) goToPredefinedDirectory:(id)sender;
 
-/// @name Files 
+- (IBAction) goToStartingDirectory:(id)sender;
+- (IBAction) openDirectory:(id)sender;
 
-- (IBAction) refresh:(id)sender;
-
-- (IBAction) rename:(id)sender;
+/// @name External 
 
 - (IBAction) revealInFinder:(id)sender;
+- (IBAction) addSelectedToItunes:(id)sender;
+
+/// @name Table
+- (IBAction) gotoNextRow:(id)sender;
+- (IBAction) gotoPreviousRow:(id)sender;
+- (NSInteger)labelColorForRow:(NSInteger)rowIndex;
+- (IBAction) refresh:(id)sender;
+
+
+/// @name Callback
+
+- (IBAction) rename:(id)sender;
 
 /**  
  * Shows the sheet for searching for tags
@@ -107,14 +117,7 @@
 
 - (IBAction) reopen:(id)sender;
 
-- (IBAction) goToStartingDirectory:(id)sender;
 
-- (IBAction) openDirectory:(id)sender;
 
-- (IBAction) gotoNextRow:(id)sender;
-- (IBAction) gotoPreviousRow:(id)sender;
-- (IBAction) addSelectedToItunes:(id)sender;
-
-- (NSInteger)labelColorForRow:(NSInteger)rowIndex;
 
 @end

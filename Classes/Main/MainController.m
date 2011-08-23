@@ -572,13 +572,13 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	DDLogInfo(@"rename");
 	
 	if (rfc)  [rfc release];
-	rfc = [[RenamingFilesController alloc] initWithNodes:currentNodes];
+	rfc = [[RenamingFilesController alloc] initWithNodes:currentNodes selector:@selector(renameWithFormatArray:) ];
 		
 	[NSApp beginSheet: [rfc window]
 	   modalForWindow: self.window
 		modalDelegate: rfc 
 	   didEndSelector: @selector(didEndSheet:returnCode:result:)
-		  contextInfo: [directoryStack lastObject]];
+		  contextInfo: self];
 	//TODO 	put in didEndSheet
 	[table reloadData];
 }

@@ -11,6 +11,7 @@ Version 1.3.5
 * Cover art of multiple  mp3 files 
 * Added Latin as language since some soundtracks tracks are in [Latin](http://vgmdb.net/album/26335 "Puella Magi Madoka Magica Special CD 2 Original Soundtrack I")
 * Arranges multiple catalog number nicely 
+* Code for tags from filenames
 
 ### Improvements ###
 * Macruby loading
@@ -22,10 +23,11 @@ Version 1.3.5
 * Fixed a bug where the composer was tothe arranger.
 * Made catlog field bigger since I found some rare long ids.
 * Url when ending in a slash.
-* Use jpeg when the user want jpeg.
+* Use jpeg when the user want jpeg instead of using png.
 * Chooses the correct language if english is not there when auto tagging.
 * Fixed a bug with extension checking (now uses filepath instead of display name)
 * Fix nils when the album does not have a [platform](http://vgmdb.net/album/19776 "Neon Genesis Evangelion")
+* Refreshing the table on renaming with custom format
 
 Version 1.3 (Fri Aug 12 2011 16:19:09 +0100)
 -----------

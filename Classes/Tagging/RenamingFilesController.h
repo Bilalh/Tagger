@@ -16,12 +16,14 @@
 @private
 	IBOutlet NSWindow *window;
 	FileSystemNodeCollection  *nodes;
+	SEL tagSelector;
 }
 
 @property (assign) IBOutlet NSTokenField *tokenField;
 
 
-- (id)initWithNodes:(FileSystemNodeCollection*)newNodes;
+- (id)initWithNodes:(FileSystemNodeCollection*)newNodes
+		   selector:(SEL)selector;
 - (IBAction)cancelSheet:sender;
 - (IBAction)confirmSheet:sender;
 

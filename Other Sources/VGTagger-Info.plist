@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string></string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
@@ -40,6 +42,10 @@
 	<string></string>
 	<key>CFBundleIconFile</key>
 	<string>VgTagger.icns</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string></string>
+	</array>
 	<key>CFBundleIdentifier</key>
 	<string>Bilal.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -55,7 +61,7 @@
 	<key>CFBundleURLTypes</key>
 	<array/>
 	<key>CFBundleVersion</key>
-	<string>1.3-23-g5d70c07</string>
+	<string>1.3-24-gb47989e</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.music</string>
 	<key>LSMinimumSystemVersion</key>
@@ -64,10 +70,6 @@
 	<string>© Bilal Hussain, 2011</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
-	<key>CFBundleIconFiles</key>
-	<array>
-		<string></string>
-	</array>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>NSServices</key>
@@ -76,7 +78,5 @@
 	<array/>
 	<key>UTImportedTypeDeclarations</key>
 	<array/>
-	<key>CFBundleDisplayName</key>
-	<string></string>
 </dict>
 </plist>

@@ -9,6 +9,7 @@
 #import "RenamingFilesController.h"
 #import "FileSystemNodeCollection.h"
 #import "FileSystemNode.h"
+#import "MainController.h"
 
 #import "Logging.h"
 LOG_LEVEL(LOG_LEVEL_INFO);
@@ -22,10 +23,12 @@ static const NSSet *tokensSet;
 #pragma mark init
 
 - (id)initWithNodes:(FileSystemNodeCollection*)newNodes
+			  selector:(SEL)selector
 {
 	self = [super initWithWindowNibName:@"RenameDisplay"];
     if (self) {
 		nodes = newNodes;
+		tagSelector = selector;
     }
 	
     return self;
@@ -46,7 +49,7 @@ static const NSSet *tokensSet;
 - (IBAction)tagFiles:(id)sender
 {
 	DDLogInfo(@"Obj %@", [tokenField objectValue]);
-	NSError *res = [nodes renameWithFormatArray:[tokenField objectValue]];
+	NSError *res = [nodes performSelector:tagSelector withObject:[tokenField objectValue]];
 	DDLogInfo(@"res:%@", res ? [res localizedDescription] : nil);
 	[self confirmSheet:self];
 }
@@ -92,11 +95,11 @@ static const NSSet *tokensSet;
 
 - (void) didEndSheet:(NSWindow*)sheet 
 		  returnCode:(int)returnCode
-			  result:(FileSystemNode*)result
+			  result:(MainController*) mainController
 {	
 	DDLogInfo(@"reanming End Sheet");
 	if (returnCode == NSOKButton){
-		[result invalidateChildren];
+		[mainController refresh:self];
 	}
 	[sheet orderOut:self];
 }

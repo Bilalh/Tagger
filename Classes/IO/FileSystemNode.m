@@ -5,8 +5,12 @@
 #import "MPEGTags.h"
 #import "NSNumber+compare.h"
 
+#import "RegexKitLite.h"
 #import "Logging.h"
 LOG_LEVEL(LOG_LEVEL_INFO);
+
+static const NSDictionary *tokenDict;
+static const NSSet *tokensNumberSet;
 
 @interface FileSystemNode()
 - (BOOL) isaDirectory:(NSURL*)url;
@@ -18,6 +22,25 @@ LOG_LEVEL(LOG_LEVEL_INFO);
 
 #pragma mark -
 #pragma mark Init
+
++ (void) initialize
+{
+	const NSString *str = @"(.*)", *num = @"(\\d+)";
+	tokenDict = [[NSDictionary  alloc] initWithObjectsAndKeys:
+							   str, @"title",
+							   str, @"album",  
+							   str, @"artist", 
+							   str, @"composer", 
+							   str, @"year",
+							   str, @"genre",  
+							   str, @"albumArtist",
+							   num, @"track",  
+							   num, @"disc",   
+							   nil];
+	
+	tokensNumberSet = [[NSSet alloc ] initWithObjects: 
+				 @"album",  @"year", @"track",  @"disc", nil];
+}
 
 - (id)initWithURL:(NSURL *)url {
     if ((self = [super init])) {
@@ -239,6 +262,53 @@ LOG_LEVEL(LOG_LEVEL_INFO);
 	
 	return err;
 }
+
+
+-(NSError*) tagsWithFormatArrayFromFilename:(NSArray*)formatStrings
+{
+	NSError *err = nil;
+	if (!tags){
+		NSMutableDictionary *errorDetail = [NSMutableDictionary dictionary];
+		[errorDetail setValue:@"No Tags" forKey:NSLocalizedDescriptionKey];
+		return [NSError errorWithDomain:@"tagsWithFormatArrayFromFilename" code:100 userInfo:errorDetail];
+	}
+	
+	NSString *filename = [[self.URL path] stringByDeletingPathExtension];
+
+	NSMutableString *regex = [[NSMutableString alloc] init];
+	NSMutableArray *keys = [[NSMutableArray alloc] init];
+	
+	for (NSString *format in formatStrings) {
+		NSString *patten = [tokenDict objectForKey:format];
+		if (patten){
+			[regex appendString: patten];
+			[keys addObject:format];
+		}else{
+			[regex appendString: format];
+		}
+	}
+	
+	NSArray *captures =  [filename captureComponentsMatchedByRegex:regex];
+	NSLog(@"captures: %@", captures);
+	
+	if ([captures count] -1 != [keys count] ){
+		NSMutableDictionary *errorDetail = [NSMutableDictionary dictionary];
+		[errorDetail setValue:[@"Matching failed for Regex: " stringByAppendingString:regex] forKey:NSLocalizedDescriptionKey];
+		return [NSError errorWithDomain:@"tagsWithFormatArrayFromFilename" code:100 userInfo:errorDetail];
+	}
+	
+	int i;
+	for (i =1; i< [captures count]; ++i) {
+		DDLogInfo(@"%@ %@",[keys objectAtIndex:i-1], [captures objectAtIndex:i] );
+		id value = [captures objectAtIndex:i];
+		if ([tokensNumberSet containsObject:[keys objectAtIndex:i-1]]){
+			value= [NSNumber numberWithInt:[value intValue]];
+		}
+		[tags setValue: value forKey:[keys objectAtIndex:i-1]];
+	}
+	return err;
+}
+
 
 - (void) sort:(NSString*)key
 	ascending:(BOOL)ascending
