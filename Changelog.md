@@ -12,7 +12,7 @@ Version 1.3.5
 * Added Latin as language since some soundtracks tracks are in [Latin](http://vgmdb.net/album/26335 "Puella Magi Madoka Magica Special CD 2 Original Soundtrack I")
 * Arranges multiple catalog number nicely 
 * Tags From Files (works like renames with tags)
-
+  * With error handing.
 ### Improvements ###
 * Macruby loading
 

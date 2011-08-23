@@ -53,6 +53,19 @@ static const NSSet *tokensSet;
 	DDLogInfo(@"Obj %@", [tokenField objectValue]);
 	NSError *res = [nodes performSelector:tagSelector withObject:[tokenField objectValue]];
 	DDLogInfo(@"res:%@", res ? [res localizedDescription] : nil);
+	if (res){
+		NSBeginAlertSheet(@"Error",
+						  @"OK", 
+						  nil, 
+						  nil, 
+						  window,
+						  self, 
+						  NULL, 
+						  NULL, 
+						  nil, 
+						  [res localizedDescription]);
+	}
+	
 	[self confirmSheet:self];
 }
 
