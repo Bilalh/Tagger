@@ -11,7 +11,7 @@ Version 1.3.5
 * Cover art of multiple  mp3 files 
 * Added Latin as language since some soundtracks tracks are in [Latin](http://vgmdb.net/album/26335 "Puella Magi Madoka Magica Special CD 2 Original Soundtrack I")
 * Arranges multiple catalog number nicely 
-* Code for tags from filenames
+* Tags From Files (works like renames with tags)
 
 ### Improvements ###
 * Macruby loading

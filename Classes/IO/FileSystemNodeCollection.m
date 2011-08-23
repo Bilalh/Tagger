@@ -140,6 +140,19 @@ static const NSArray *fieldNames;
 	return err;
 }
 
+- (NSError*)tagsWithFormatArrayFromFilename:(NSArray*)formatStrings;
+{
+	NSError *err;
+	for (FileSystemNode *n in tagsArray) {
+		err = [n tagsWithFormatArrayFromFilename:formatStrings];
+		if (err) {
+			DDLogError(@"message %@", [err localizedDescription]);
+			return err;	
+		}
+	}
+	return err;
+}
+
 - (NSArray*)urls
 {
 	NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:[tagsArray count]+1];

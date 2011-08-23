@@ -45,6 +45,7 @@
 
 
 -(NSError*) filenameFromFormatArray:(NSArray*)formatStrings;
+-(NSError*) tagsWithFormatArrayFromFilename:(NSArray*)formatStrings;
 
 - (void) sort:(NSString*)key
 	ascending:(BOOL)ascending;

@@ -108,6 +108,7 @@
 /// @name Callback
 
 - (IBAction) rename:(id)sender;
+- (IBAction)tagsFromFilename:(id)sender;
 
 /**  
  * Shows the sheet for searching for tags

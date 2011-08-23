@@ -568,20 +568,36 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (IBAction)rename:(id)sender
 {
-	if (!currentNodes.hasExtenedMetadata) return;
 	DDLogInfo(@"rename");
 	
 	if (rfc)  [rfc release];
-	rfc = [[RenamingFilesController alloc] initWithNodes:currentNodes selector:@selector(renameWithFormatArray:) ];
+	rfc = [[RenamingFilesController alloc] initWithNodes:currentNodes 
+												selector:@selector(renameWithFormatArray:)
+											 buttonTitle:@"Reaname" ];
 		
 	[NSApp beginSheet: [rfc window]
 	   modalForWindow: self.window
 		modalDelegate: rfc 
 	   didEndSelector: @selector(didEndSheet:returnCode:result:)
 		  contextInfo: self];
-	//TODO 	put in didEndSheet
-	[table reloadData];
 }
+
+- (IBAction)tagsFromFilename:(id)sender
+{
+	DDLogInfo(@"tagsFromFileName");
+	
+	if (rfc)  [rfc release];
+	rfc = [[RenamingFilesController alloc] initWithNodes:currentNodes 
+												selector:@selector(tagsWithFormatArrayFromFilename:)
+											 buttonTitle:@"Tag" ];
+	
+	[NSApp beginSheet: [rfc window]
+	   modalForWindow: self.window
+		modalDelegate: rfc 
+	   didEndSelector: @selector(didEndSheet:returnCode:result:)
+		  contextInfo: self];
+}
+
 
 - (IBAction)renameWithPredefinedFormat:(id)sender
 {

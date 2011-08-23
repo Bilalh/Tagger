@@ -289,7 +289,7 @@ static const NSSet *tokensNumberSet;
 	}
 	
 	NSArray *captures =  [filename captureComponentsMatchedByRegex:regex];
-	NSLog(@"captures: %@", captures);
+	DDLogInfo(@"captures: %@", captures);
 	
 	if ([captures count] -1 != [keys count] ){
 		NSMutableDictionary *errorDetail = [NSMutableDictionary dictionary];

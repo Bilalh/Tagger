@@ -17,18 +17,20 @@ LOG_LEVEL(LOG_LEVEL_INFO);
 static const NSSet *tokensSet;
 
 @implementation RenamingFilesController
-@synthesize tokenField;
+@synthesize tokenField, buttonTitle;
 
 #pragma mark -
 #pragma mark init
 
 - (id)initWithNodes:(FileSystemNodeCollection*)newNodes
-			  selector:(SEL)selector
+		   selector:(SEL)selector
+		buttonTitle:(NSString*)title
 {
 	self = [super initWithWindowNibName:@"RenameDisplay"];
     if (self) {
 		nodes = newNodes;
 		tagSelector = selector;
+		self.buttonTitle = title;
     }
 	
     return self;

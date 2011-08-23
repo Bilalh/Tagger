@@ -20,10 +20,12 @@
 }
 
 @property (assign) IBOutlet NSTokenField *tokenField;
-
+@property (assign) NSString *buttonTitle;
 
 - (id)initWithNodes:(FileSystemNodeCollection*)newNodes
-		   selector:(SEL)selector;
+		   selector:(SEL)selector
+		buttonTitle:(NSString*)title;
+
 - (IBAction)cancelSheet:sender;
 - (IBAction)confirmSheet:sender;
 
