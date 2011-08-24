@@ -568,6 +568,16 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[table reloadData];
 }
 
+- (IBAction) renumberFiles:(id)sender
+{
+	if (currentNodes.empty) return;
+	int i = 1;
+	for (FileSystemNode *n in currentNodes.tagsArray) {
+		n.tags.track = [NSNumber numberWithInt:i];
+		i++;
+	}
+}
+
 - (IBAction)rename:(id)sender
 {
 	DDLogInfo(@"rename");
@@ -583,6 +593,23 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	   didEndSelector: @selector(didEndSheet:returnCode:result:)
 		  contextInfo: self];
 }
+
+- (IBAction)renameWithPredefinedFormat:(id)sender
+{
+	DDLogVerbose(@"format array %@",[predefinedRenameFormats objectAtIndex:[sender tag]]);
+	[currentNodes renameWithFormatArray: [predefinedRenameFormats objectAtIndex:[sender tag]]];
+	[[directoryStack lastObject] invalidateChildren];
+	[table reloadData];
+}
+
+- (IBAction)revealInFinder:(id)sender
+{
+	for (FileSystemNode *n in currentNodes.tagsArray) {
+		[[NSWorkspace sharedWorkspace] selectFile:[n.URL path] 
+						 inFileViewerRootedAtPath:nil];
+	}
+}
+
 
 - (IBAction)tagsFromFilename:(id)sender
 {
@@ -601,14 +628,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 }
 
 
-- (IBAction)renameWithPredefinedFormat:(id)sender
-{
-	DDLogVerbose(@"format array %@",[predefinedRenameFormats objectAtIndex:[sender tag]]);
-	[currentNodes renameWithFormatArray: [predefinedRenameFormats objectAtIndex:[sender tag]]];
-	[[directoryStack lastObject] invalidateChildren];
-	[table reloadData];
-}
-
 -(IBAction)tagWithPredefinedFormat:(id)sender
 {
 	DDLogVerbose(@"format array %@",[predefinedTagFormats objectAtIndex:[sender tag]]);
@@ -617,13 +636,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[table reloadData];
 }
 
-- (IBAction)revealInFinder:(id)sender
-{
-	for (FileSystemNode *n in currentNodes.tagsArray) {
-		[[NSWorkspace sharedWorkspace] selectFile:[n.URL path] 
-								inFileViewerRootedAtPath:nil];
-	}
-}
+
 
 #pragma mark - Gui Bools
 

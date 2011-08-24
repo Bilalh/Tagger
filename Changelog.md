@@ -2,18 +2,18 @@ Changelog
 =========
 
 
-Version 1.3.5
+Version 1.4
 -------------
 ### Features ###
 * Results can be sorted when searching.
 * Tooltips
 * Files can be dragged to the table
-* Cover art of multiple  mp3 files 
 * Added Latin as language since some soundtracks tracks are in [Latin](http://vgmdb.net/album/26335 "Puella Magi Madoka Magica Special CD 2 Original Soundtrack I")
 * Arranges multiple catalog number nicely 
 * Tags From Files (works like renames with tags)
   * With error handing.
   * and menus with predefined options
+* Renumbering of files.
 
 ### Improvements ###
 * Macruby loading
