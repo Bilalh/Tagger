@@ -37,3 +37,7 @@ Libraries Used
 * CCTColorLabelMenuItemView
 * Lumberjack
 * MASPreferencesViewController
+
+Authors
+-------
+* Bilal Hussain
