@@ -216,12 +216,13 @@ static const NSSet *tokensNumberSet;
         [_children release];
         _childrenDirty = NO;
         // Now sort them
-        _children = [[newChildren sortedArrayUsingComparator:^(id obj1, id obj2) {
+        [newChildren sortUsingComparator:^(id obj1, id obj2) {
             NSString *objName = [obj1 displayName];
             NSString *obj2Name = [obj2 displayName];
             NSComparisonResult result = [objName compare:obj2Name options:NSNumericSearch | NSCaseInsensitiveSearch | NSWidthInsensitiveSearch | NSForcedOrderingSearch range:NSMakeRange(0, [objName length]) locale:[NSLocale currentLocale]];
             return result;
-        }] retain];
+        }];
+		_children = [newChildren retain];
     }
     
     return _children;
@@ -313,29 +314,48 @@ static const NSSet *tokensNumberSet;
 - (void) sort:(NSString*)key
 	ascending:(BOOL)ascending
 {
+	NSArray *children = self.children;
+	[children count];
+	
 	short mult = ascending ? 1 : -1;
 	if ([key isEqualToString:@"filename"]){
-		_children = [self.children sortedArrayWithOptions:NSSortStable usingComparator:
-			^NSComparisonResult(id obj1, id obj2) {
-				 const FileSystemNode *a = obj1, *b = obj2;
-				 return  mult *[a.displayName localizedStandardCompare:b.displayName ];
-			}];
+		[_children sortWithOptions:NSSortStable usingComparator:
+		 ^NSComparisonResult(id obj1, id obj2) {
+			 const FileSystemNode *a = obj1, *b = obj2;
+			 return  mult *[a.displayName localizedStandardCompare:b.displayName ];
+		 }];
+		
 	}else if ([key isEqualToString:@"size"]){
-		_children = [self.children sortedArrayWithOptions:NSSortStable usingComparator:
-			 ^NSComparisonResult(id obj1, id obj2) {
-				 const FileSystemNode *a = obj1, *b = obj2;
-				 return  mult *[[a valueForKey:key] localizedStandardCompare:[b valueForKey:key ]];
-			 }];
+		[_children sortWithOptions:NSSortStable usingComparator:
+		 ^NSComparisonResult(id obj1, id obj2) {
+			 const FileSystemNode *a = obj1, *b = obj2;
+			 return  mult *[[a valueForKey:key] localizedStandardCompare:[b valueForKey:key ]];
+		 }];
+		
 	}else{
 		key = [key stringByReplacingOccurrencesOfString:@"Pair" withString:@""];
-		
-		_children = [self.children sortedArrayWithOptions:NSSortStable usingComparator:
-			^NSComparisonResult(id obj1, id obj2) {
-				const FileSystemNode *a = obj1, *b = obj2;
-				 return  mult *[[a.tags valueForKey:key] localizedStandardCompare:[b.tags valueForKey:key ]];
-			}];
+		[_children sortWithOptions:NSSortStable usingComparator:
+		 ^NSComparisonResult(id obj1, id obj2) {
+			 const FileSystemNode *a = obj1, *b = obj2;
+			 return  mult *[[a.tags valueForKey:key] localizedStandardCompare:[b.tags valueForKey:key ]];
+		 }];
 	}		
 }
 
+- (void)swapChildrenAtIndex:(NSInteger)index 
+					   from:(NSInteger)remove
+				removeFirst:(BOOL)removeFirst
+{
+	NSArray *children = self.children;
+	[children count];
+	if (removeFirst){
+		const id temp = [_children objectAtIndex:remove];
+		[_children removeObjectAtIndex:remove];
+		[_children insertObject:temp atIndex:index];
+	}else{
+		[_children insertObject:[_children objectAtIndex:remove] atIndex:index];
+		[_children removeObjectAtIndex:remove];
+	}
+}
  
 @end

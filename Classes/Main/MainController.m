@@ -22,9 +22,11 @@
 
 #import <MacRuby/MacRuby.h>
 #import "iTunes.h"
+
 #import "Logging.h"
 LOG_LEVEL(LOG_LEVEL_INFO);
 
+#define TABLE_VIEW_ROW_TYPE @"row"
 
 static const NSArray *predefinedDirectories;
 static const NSArray *predefinedRenameFormats;
@@ -369,6 +371,52 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[tableView setIndicatorImage: indicatorImage
                    inTableColumn: tableColumn];
 	[table reloadData];
+}
+
+// drag operation stuff
+- (BOOL)tableView:(NSTableView *)tv writeRowsWithIndexes:(NSIndexSet *)rowIndexes 
+	 toPasteboard:(NSPasteboard*)pboard
+{
+    // Copy the row numbers to the pasteboard.
+    NSData *zNSIndexSetData = [NSKeyedArchiver archivedDataWithRootObject:rowIndexes];
+    [pboard declareTypes:[NSArray arrayWithObject:TABLE_VIEW_ROW_TYPE] owner:self];
+    [pboard setData:zNSIndexSetData forType:TABLE_VIEW_ROW_TYPE];
+    return YES;
+}
+
+- (NSDragOperation)tableView:(NSTableView*)tv 
+				validateDrop:(id <NSDraggingInfo>)info 
+				 proposedRow:(NSInteger)row 
+	   proposedDropOperation:(NSTableViewDropOperation)op
+{
+    return NSDragOperationEvery;
+}
+
+- (BOOL)tableView:(NSTableView *)aTableView acceptDrop:(id <NSDraggingInfo>)info
+			  row:(NSInteger)row 
+	dropOperation:(NSTableViewDropOperation)operation
+{
+    NSPasteboard* pboard   = [info draggingPasteboard];
+    NSData* rowData        = [pboard dataForType:TABLE_VIEW_ROW_TYPE];
+    NSIndexSet* rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData:rowData];
+    NSInteger dragRow      = [rowIndexes firstIndex];
+	
+    // Move the specified row to its new location...
+	// if we remove a row then everything moves down by one
+	// so do an insert prior to the delete
+	if (dragRow < row) {
+		[[directoryStack lastObject] swapChildrenAtIndex:row from:dragRow removeFirst:NO];		
+		[self.table noteNumberOfRowsChanged];
+		[self.table reloadData];
+		
+		return YES;
+		
+	}
+	[[directoryStack lastObject] swapChildrenAtIndex:row from:dragRow removeFirst:YES];
+	[self.table noteNumberOfRowsChanged];
+	[self.table reloadData];
+	
+	return YES;
 }
 
 #pragma mark -
@@ -795,7 +843,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	makeMenu([[NSUserDefaults standardUserDefaults] arrayForKey:@"predefinedTagFormatsTitles"],
 			 tagMenu,
 			 @selector(tagWithPredefinedFormat:));
-	
+	[table registerForDraggedTypes:[[table registeredDraggedTypes ] arrayByAddingObject:TABLE_VIEW_ROW_TYPE]];
 }
 
 -(void)initDirectoryTable

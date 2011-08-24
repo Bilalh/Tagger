@@ -13,10 +13,12 @@ Version 1.4
 * Tags From Files (works like renames with tags)
   * With error handing.
   * and menus with predefined options
-* Renumbering of files.
+* Row can be rearranged.
+* Menu item for auto-Renumbering of files.
 
 ### Improvements ###
 * Macruby loading
+* QuickLookTableView works with delgate drag and drop now
 
 ### Bug Fixes ###
 * Metadata to Comments newline.

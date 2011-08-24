@@ -8,7 +8,7 @@
 @interface FileSystemNode : NSObject {
 @private
     NSURL *_url;
-    NSArray *_children;
+    NSMutableArray *_children;
     BOOL _childrenDirty;
 	NSMutableArray* _parentNodes;
 	
@@ -44,11 +44,15 @@
 - (void)invalidateChildren;
 
 
--(NSError*) filenameFromFormatArray:(NSArray*)formatStrings;
--(NSError*) tagsWithFormatArrayFromFilename:(NSArray*)formatStrings;
+-(NSError*)filenameFromFormatArray:(NSArray*)formatStrings;
+-(NSError*)tagsWithFormatArrayFromFilename:(NSArray*)formatStrings;
 
-- (void) sort:(NSString*)key
-	ascending:(BOOL)ascending;
+- (void)sort:(NSString*)key
+   ascending:(BOOL)ascending;
+
+- (void)swapChildrenAtIndex:(NSInteger)index 
+					   from:(NSInteger)remove
+				removeFirst:(BOOL)removeFirst;
 
 /// @name Finding metadata
 

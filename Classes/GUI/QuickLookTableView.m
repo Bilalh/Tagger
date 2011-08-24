@@ -90,7 +90,8 @@
 - (void) awakeFromNib
 {
 	// Register to accept filename drag/drop
-	[self registerForDraggedTypes:[NSArray arrayWithObjects:NSFilenamesPboardType, nil]];
+	[self registerForDraggedTypes:[[self registeredDraggedTypes ] arrayByAddingObject:NSFilenamesPboardType]];
+
 }
 
 - (NSDragOperation)draggingEntered:(id <NSDraggingInfo>)sender
@@ -113,7 +114,11 @@
 // Stop the NSTableView implementation getting in the way
 - (NSDragOperation)draggingUpdated:(id <NSDraggingInfo>)sender
 {
-	return [self draggingEntered:sender];
+	if ([[[sender draggingPasteboard] types] containsObject:NSFilenamesPboardType]){
+		return [self draggingEntered:sender];		
+	}else{
+		return [super draggingUpdated:sender];
+	}
 }
 
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
@@ -133,7 +138,7 @@
 		}
 		return YES;
 	}
-	return NO;
+	return [super performDragOperation:sender];
 }	
 
 
