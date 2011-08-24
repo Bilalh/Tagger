@@ -568,6 +568,17 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[table reloadData];
 }
 
+- (IBAction)revealInFinder:(id)sender
+{
+	for (FileSystemNode *n in currentNodes.tagsArray) {
+		[[NSWorkspace sharedWorkspace] selectFile:[n.URL path] 
+						 inFileViewerRootedAtPath:nil];
+	}
+}
+
+
+#pragma mark - Tag Manipulation
+
 - (IBAction) renumberFiles:(id)sender
 {
 	if (currentNodes.empty) return;
@@ -602,13 +613,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[table reloadData];
 }
 
-- (IBAction)revealInFinder:(id)sender
-{
-	for (FileSystemNode *n in currentNodes.tagsArray) {
-		[[NSWorkspace sharedWorkspace] selectFile:[n.URL path] 
-						 inFileViewerRootedAtPath:nil];
-	}
-}
 
 
 - (IBAction)tagsFromFilename:(id)sender

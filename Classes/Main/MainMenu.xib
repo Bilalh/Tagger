@@ -798,6 +798,34 @@
 							<string key="NSTitle">Tags</string>
 							<object class="NSMutableArray" key="NSMenuItems">
 								<bool key="EncodedWithXMLCoder">YES</bool>
+								<object class="NSMenuItem" id="459541536">
+									<reference key="NSMenu" ref="397990970"/>
+									<string key="NSTitle">Search Vgmdb</string>
+									<string key="NSKeyEquiv">t</string>
+									<int key="NSKeyEquivModMask">1048576</int>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="35465992"/>
+									<reference key="NSMixedImage" ref="502551668"/>
+								</object>
+								<object class="NSMenuItem" id="530263831">
+									<reference key="NSMenu" ref="397990970"/>
+									<string key="NSTitle">Search Vgmdb With sub-folders</string>
+									<string key="NSKeyEquiv">T</string>
+									<int key="NSKeyEquivModMask">1048576</int>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="35465992"/>
+									<reference key="NSMixedImage" ref="502551668"/>
+								</object>
+								<object class="NSMenuItem" id="1031409048">
+									<reference key="NSMenu" ref="397990970"/>
+									<bool key="NSIsDisabled">YES</bool>
+									<bool key="NSIsSeparator">YES</bool>
+									<string key="NSTitle"/>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="35465992"/>
+									<reference key="NSMixedImage" ref="502551668"/>
+								</object>
 								<object class="NSMenuItem" id="913636609">
 									<reference key="NSMenu" ref="397990970"/>
 									<string key="NSTitle">Rename Files</string>
@@ -866,7 +894,7 @@
 										</object>
 									</object>
 								</object>
-								<object class="NSMenuItem" id="1031409048">
+								<object class="NSMenuItem" id="754176893">
 									<reference key="NSMenu" ref="397990970"/>
 									<bool key="NSIsDisabled">YES</bool>
 									<bool key="NSIsSeparator">YES</bool>
@@ -876,35 +904,7 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
-								<object class="NSMenuItem" id="459541536">
-									<reference key="NSMenu" ref="397990970"/>
-									<string key="NSTitle">Search Vgmdb</string>
-									<string key="NSKeyEquiv">t</string>
-									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="35465992"/>
-									<reference key="NSMixedImage" ref="502551668"/>
-								</object>
-								<object class="NSMenuItem" id="530263831">
-									<reference key="NSMenu" ref="397990970"/>
-									<string key="NSTitle">Search Vgmdb With sub-folders</string>
-									<string key="NSKeyEquiv">T</string>
-									<int key="NSKeyEquivModMask">1048576</int>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="35465992"/>
-									<reference key="NSMixedImage" ref="502551668"/>
-								</object>
-								<object class="NSMenuItem" id="257993588">
-									<reference key="NSMenu" ref="397990970"/>
-									<bool key="NSIsDisabled">YES</bool>
-									<bool key="NSIsSeparator">YES</bool>
-									<string key="NSTitle"/>
-									<string key="NSKeyEquiv"/>
-									<int key="NSMnemonicLoc">2147483647</int>
-									<reference key="NSOnImage" ref="35465992"/>
-									<reference key="NSMixedImage" ref="502551668"/>
-								</object>
-								<object class="NSMenuItem" id="86888526">
+								<object class="NSMenuItem" id="420508456">
 									<reference key="NSMenu" ref="397990970"/>
 									<string key="NSTitle">Renumber Files</string>
 									<string key="NSKeyEquiv">1</string>
@@ -4876,10 +4876,10 @@
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">enabled: currentNodes.hasBasicMetadata</string>
-						<reference key="source" ref="86888526"/>
+						<reference key="source" ref="420508456"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="86888526"/>
+							<reference key="NSSource" ref="420508456"/>
 							<reference key="NSDestination" ref="588631224"/>
 							<string key="NSLabel">enabled: currentNodes.hasBasicMetadata</string>
 							<string key="NSBinding">enabled</string>
@@ -4893,7 +4893,7 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">renumberFiles:</string>
 						<reference key="source" ref="588631224"/>
-						<reference key="destination" ref="86888526"/>
+						<reference key="destination" ref="420508456"/>
 					</object>
 					<int key="connectionID">1372</int>
 				</object>
@@ -5884,13 +5884,13 @@
 						<reference key="object" ref="397990970"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="459541536"/>
-							<reference ref="1031409048"/>
 							<reference ref="913636609"/>
-							<reference ref="530263831"/>
 							<reference ref="1060733223"/>
-							<reference ref="257993588"/>
-							<reference ref="86888526"/>
+							<reference ref="754176893"/>
+							<reference ref="420508456"/>
+							<reference ref="459541536"/>
+							<reference ref="530263831"/>
+							<reference ref="1031409048"/>
 						</object>
 						<reference key="parent" ref="1036655123"/>
 					</object>
@@ -6788,12 +6788,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1366</int>
-						<reference key="object" ref="257993588"/>
+						<reference key="object" ref="754176893"/>
 						<reference key="parent" ref="397990970"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1367</int>
-						<reference key="object" ref="86888526"/>
+						<reference key="object" ref="420508456"/>
 						<reference key="parent" ref="397990970"/>
 					</object>
 				</object>
