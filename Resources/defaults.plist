@@ -31,7 +31,7 @@
 			<string> - </string>
 			<string>title</string>
 			<string> - </string>
-			<string>Artist</string>
+			<string>artist</string>
 		</array>
 		<array>
 			<string>track</string>
@@ -81,7 +81,7 @@
 			<string> - </string>
 			<string>title</string>
 			<string> - </string>
-			<string>Artist</string>
+			<string>artist</string>
 		</array>
 		<array>
 			<string>track</string>
