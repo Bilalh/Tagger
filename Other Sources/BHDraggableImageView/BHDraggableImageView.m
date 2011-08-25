@@ -31,7 +31,7 @@
 	if (writeAsFile){
 		NSString *tempFileName = [@"/tmp" stringByAppendingFormat:@"/%@.jpg", filename];		
 		NSBitmapImageRep *bits= [[[self image] representations ] objectAtIndex:0];
-		NSData *data = [bits representationUsingType: NSPNGFileType
+		NSData *data = [bits representationUsingType: NSJPEGFileType
 										  properties: nil];
 		[data writeToFile: tempFileName
 			   atomically: NO];
