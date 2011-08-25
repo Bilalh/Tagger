@@ -109,8 +109,12 @@ using namespace std;
 					  value:(NSString*)value
 {	
 	MP4::Tag * const t = data->f->mp4->tag();
-	MP4::ItemListMap &map =  t->itemListMap();	
-	map.insert(field,StringList([value tagLibString]));
+	MP4::ItemListMap &map =  t->itemListMap();
+	
+	// just remove the field if the value is null
+	if (value) map.insert(field,StringList([value tagLibString]));
+	else       map.erase(field);
+	
 	return data->file->save();
 }
 

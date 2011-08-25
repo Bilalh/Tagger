@@ -466,7 +466,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 						 @"title",  @"album",  @"artist", @"composer", @"year",
 						 @"track",  @"disc",   @"genre",  @"albumArtist", 
 						 @"comment", @"grouping", @"totalTracks", @"totalDiscs",
-						 @"compilation", @"url",
+						 @"compilation",@"url",
 						 nil];
 		
 		for (NSString *key in keys) {

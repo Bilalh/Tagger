@@ -6,20 +6,20 @@ Version 1.4
 -------------
 ### Features ###
 * Results can be sorted when searching.
-* Tooltips
-* Files can be dragged to the table
-* Added Latin as language since some soundtracks tracks are in [Latin](http://vgmdb.net/album/26335 "Puella Magi Madoka Magica Special CD 2 Original Soundtrack I")
-* Arranges multiple catalog number nicely 
-* Tags From Files (works like renames with tags)
+* Tooltips.
+* Files can be dragged to the table.
+* Added Latin as language since some soundtracks tracks are in [Latin](http://vgmdb.net/album/26335 "Puella Magi Madoka Magica Special CD 2 Original Soundtrack I").
+* Arranges multiple catalog number nicely.
+* Tags From Files (works like renames with tags).
   * With error handing.
-  * and menus with predefined options
+  * and menus with predefined options.
 * Row can be rearranged.
 * Menu item for auto-Renumbering of files.
 * Can drag a row ontop of another to copy tags.
 
 ### Improvements ###
-* Macruby loading
-* QuickLookTableView works with delgate drag and drop now
+* Macruby loading.
+* QuickLookTableView now works with delgate drag and drop now.
 
 ### Bug Fixes ###
 * Metadata to Comments newline.
@@ -30,9 +30,10 @@ Version 1.4
 * Url when ending in a slash.
 * Use jpeg when the user want jpeg instead of using png.
 * Chooses the correct language if english is not there when auto tagging.
-* Fixed a bug with extension checking (now uses filepath instead of display name)
-* Fix nils when the album does not have a [platform](http://vgmdb.net/album/19776 "Neon Genesis Evangelion")
-* Refreshing the table on renaming with custom format
+* Fixed a bug with extension checking (now uses filepath instead of display name).
+* Fix nils when the album does not have a [platform](http://vgmdb.net/album/19776 "Neon Genesis Evangelion").
+* Refreshing the table on renaming with custom format.
+* Fixed a bug where copying tags from a mp3 to a m4a file.
 
 Version 1.3 (Fri Aug 12 2011 16:19:09 +0100)
 -----------
