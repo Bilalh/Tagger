@@ -73,6 +73,7 @@ struct FileData;
  */
 -(NSString*)filenameFromFormatArray:(NSArray*)formatStrings;
 
+- (NSString*) displayName;
 
 /// @name Finding General metadata.
 

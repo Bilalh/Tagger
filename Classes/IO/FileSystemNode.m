@@ -12,6 +12,7 @@ LOG_LEVEL(LOG_LEVEL_INFO);
 static const NSDictionary *tokenDict;
 static const NSSet *tokensNumberSet;
 
+
 @interface FileSystemNode()
 - (BOOL) isaDirectory:(NSURL*)url;
 @end

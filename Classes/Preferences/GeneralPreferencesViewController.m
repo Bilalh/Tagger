@@ -14,6 +14,7 @@ LOG_LEVEL(LOG_LEVEL_INFO);
 @implementation GeneralPreferencesViewController
 @synthesize tableColumns;
 
+
 #pragma mark - init
 
 - (id)initWithMainController:(MainController*)aMainController

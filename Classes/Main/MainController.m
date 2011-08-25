@@ -17,6 +17,8 @@
 #import "FileSystemNodeCollection.h"
 #import "RenamingFilesController.h"
 #import "DraggableImageView.h"
+#import "IntPair.h"
+
 #import "CCTColorLabelMenuItemView.h"
 
 
@@ -57,6 +59,10 @@ static const NSArray *predefinedTagFormats;
 
 -(NSString*)formatPair:(NSNumber*)first
 				second:(NSNumber*)second;
+
+- (void) copyTags:(NSWindow *)sheet 
+	   returnCode:(int)returnCode 
+	  contextInfo:(IntPair*)pair;
 
 @end
 
@@ -392,14 +398,42 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
     return NSDragOperationEvery;
 }
 
+
 - (BOOL)tableView:(NSTableView *)aTableView acceptDrop:(id <NSDraggingInfo>)info
 			  row:(NSInteger)row 
 	dropOperation:(NSTableViewDropOperation)operation
 {
-    NSPasteboard* pboard   = [info draggingPasteboard];
+	
+	NSPasteboard* pboard   = [info draggingPasteboard];
     NSData* rowData        = [pboard dataForType:TABLE_VIEW_ROW_TYPE];
     NSIndexSet* rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData:rowData];
     NSInteger dragRow      = [rowIndexes firstIndex];
+	
+	FileSystemNode *from =  [self nodeAtIndex:dragRow] , *to =[self nodeAtIndex:row];
+	if (![to hasBasicMetadata] || ![from hasBasicMetadata]){
+		return NO;
+	}
+	
+	
+	
+	const IntPair *ip =[[IntPair alloc] initWithInts:dragRow second:row];
+	if (operation == NSTableViewDropOn){
+		NSBeginAlertSheet(@"Copy Tags?",
+						  @"Yes", 
+						  @"No", 
+						  nil, 
+						  window,
+						  self, 
+						  @selector(copyTags:returnCode:contextInfo:),
+						  NULL, 
+						  (void*)CFRetain(ip),  // CFRetain is need so ip does not get collected
+						  [NSString stringWithFormat:
+						   @"Copy Tags? (artwork is not copied) from \n%@ to \n%@",
+						   [from.tags displayName], [to.tags displayName]]
+						  );
+		
+		return NO;
+	}
 	
     // Move the specified row to its new location...
 	// if we remove a row then everything moves down by one
@@ -417,6 +451,30 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[self.table reloadData];
 	
 	return YES;
+}
+
+- (void) copyTags:(NSWindow *)sheet 
+	   returnCode:(int)returnCode 
+	  contextInfo:(IntPair*)pair;
+{
+	if (returnCode == NSAlertDefaultReturn){
+		DDLogInfo(@"selected yes %d %d",pair.first, pair.second);
+		
+		Tags *from = ([self nodeAtIndex:pair.first]).tags;
+		Tags *to   = ([self nodeAtIndex:pair.second]).tags;
+		const NSArray *keys = [[NSSet alloc ] initWithObjects:
+						 @"title",  @"album",  @"artist", @"composer", @"year",
+						 @"track",  @"disc",   @"genre",  @"albumArtist", 
+						 @"comment", @"grouping", @"totalTracks", @"totalDiscs",
+						 @"compilation", @"url",
+						 nil];
+		
+		for (NSString *key in keys) {
+			[to setValue:[from valueForKey:key] forKey:key];
+		}
+		[table setNeedsDisplayInRect:[table rectOfRow:pair.second]];
+	}
+	CFRelease(pair);
 }
 
 #pragma mark -
@@ -896,7 +954,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 							 nil];
 	predefinedRenameFormats = [[NSUserDefaults standardUserDefaults] arrayForKey:@"predefinedRenameFormats"];
 	predefinedTagFormats    = [[NSUserDefaults standardUserDefaults] arrayForKey:@"predefinedTagFormats"];
-	NSLog(@"%@", predefinedTagFormats);
 }
 
 - (void)dealloc

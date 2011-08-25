@@ -107,6 +107,15 @@ using namespace TagLib;
 }
 
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ %@", super.description, [self displayName]];
+}
+
+- (NSString*) displayName
+{
+	return [NSString stringWithFormat:@"%@-%@ by %@", self.track, self.title, self.artist];
+}
 
 #pragma mark -
 #pragma mark Setters
@@ -177,5 +186,6 @@ DDLogInfo(@"res:%d "#field":%u", b, t->field());
 	}
 	return res;
 }
+
 
 @end

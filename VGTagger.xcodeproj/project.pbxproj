@@ -43,6 +43,7 @@
 		92A6808913EC7B130067DD5F /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A6808713EC7B130067DD5F /* MASPreferencesWindowController.m */; };
 		92C4466413E0BF830038F817 /* BWHyperlinkTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4466113E0BF830038F817 /* BWHyperlinkTitleButton.m */; };
 		92C4466513E0BF830038F817 /* BWHyperlinkButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4466313E0BF830038F817 /* BWHyperlinkButtonCell.m */; };
+		92D30AC31405B1B600677B70 /* IntPair.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D30AC21405B1B600677B70 /* IntPair.m */; };
 		92E6EDB713F313230045679E /* NSAttributedString+Hyperlink.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E6ED7013F313230045679E /* NSAttributedString+Hyperlink.m */; };
 		92E6EDB813F313230045679E /* NSImage+bitmapData.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E6ED7213F313230045679E /* NSImage+bitmapData.m */; };
 		92E6EDB913F313230045679E /* NSMutableArray+Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E6ED7413F313230045679E /* NSMutableArray+Stack.m */; };
@@ -156,6 +157,8 @@
 		92C4466113E0BF830038F817 /* BWHyperlinkTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWHyperlinkTitleButton.m; sourceTree = "<group>"; };
 		92C4466213E0BF830038F817 /* BWHyperlinkButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWHyperlinkButtonCell.h; sourceTree = "<group>"; };
 		92C4466313E0BF830038F817 /* BWHyperlinkButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWHyperlinkButtonCell.m; sourceTree = "<group>"; };
+		92D30AC11405B1B600677B70 /* IntPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntPair.h; sourceTree = "<group>"; };
+		92D30AC21405B1B600677B70 /* IntPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntPair.m; sourceTree = "<group>"; };
 		92E6ED6F13F313230045679E /* NSAttributedString+Hyperlink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Hyperlink.h"; sourceTree = "<group>"; };
 		92E6ED7013F313230045679E /* NSAttributedString+Hyperlink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Hyperlink.m"; sourceTree = "<group>"; };
 		92E6ED7113F313230045679E /* NSImage+bitmapData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+bitmapData.h"; sourceTree = "<group>"; };
@@ -399,6 +402,15 @@
 			name = App;
 			sourceTree = "<group>";
 		};
+		92D30ABD1405B0F000677B70 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				92D30AC11405B1B600677B70 /* IntPair.h */,
+				92D30AC21405B1B600677B70 /* IntPair.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		92E6ED6D13F313230045679E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,6 +422,7 @@
 				92E6ED9B13F313230045679E /* Tagging */,
 				92E6ED9F13F313230045679E /* Taglib */,
 				92E6EDAA13F313230045679E /* Transformers */,
+				92D30ABD1405B0F000677B70 /* Utility */,
 				92E6EDAD13F313230045679E /* Vgmdb */,
 				92E6ED8B13F313230045679E /* Main */,
 			);
@@ -741,6 +754,7 @@
 				9239573013F43EB100A80074 /* CCTColorLabelMenuItemView.m in Sources */,
 				923B846413F4B7A800524BFA /* BHFinderLabelColours.m in Sources */,
 				92F16DB114041AC10031E4B4 /* RegexKitLite.m in Sources */,
+				92D30AC31405B1B600677B70 /* IntPair.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
