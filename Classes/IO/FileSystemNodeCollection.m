@@ -77,6 +77,7 @@ static const NSArray *fieldNames;
 		
 		for (NSString *key in tagFieldNames) {
 			id mine = [self valueForKey:key];
+			
 			if (mine == NSMultipleValuesMarker) continue;
 			
 			// Check if the images are equal
@@ -88,7 +89,7 @@ static const NSArray *fieldNames;
 				continue;
 			}
 			
-			if ([[tags valueForKey:key] isNotEqualTo:mine]){
+			if ([[tags valueForKey:key] isNotEqualTo:mine] || (![tags valueForKey:key] && mine ) ){
 				[self setValue:NSMultipleValuesMarker forKey:key];
 			}
 		}

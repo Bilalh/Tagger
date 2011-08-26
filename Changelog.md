@@ -20,6 +20,8 @@ Version 1.4
 ### Improvements ###
 * Macruby loading.
 * QuickLookTableView now works with delgate drag and drop now.
+* Multiple values with ints.
+
 
 ### Bug Fixes ###
 * Metadata to Comments newline.
