@@ -10,9 +10,9 @@ Version 1.4
 * Files can be dragged to the table.
 * Added Latin as language since some soundtracks tracks are in [Latin](http://vgmdb.net/album/26335 "Puella Magi Madoka Magica Special CD 2 Original Soundtrack I").
 * Arranges multiple catalog number nicely.
-* Tags From Files (works like renames with tags).
-  * With error handing.
-  * and menus with predefined options.
+* Tags From Files (works like renames with tags).  
+ 	With error handing.  
+ 	and menus with predefined options.
 * Row can be rearranged.
 * Menu item for auto-Renumbering of files.
 * Can drag a row ontop of another to copy tags.

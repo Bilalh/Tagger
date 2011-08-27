@@ -22,7 +22,7 @@
 
 /* Begin PBXBuildFile section */
 		920660E113C89845003A3803 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660A413C89845003A3803 /* main.m */; };
-		922D866713F4E4EE0016B811 /* VgTagger.icns in Resources */ = {isa = PBXBuildFile; fileRef = 922D866613F4E4EE0016B811 /* VgTagger.icns */; };
+		922D866713F4E4EE0016B811 /* Tagger.icns in Resources */ = {isa = PBXBuildFile; fileRef = 922D866613F4E4EE0016B811 /* Tagger.icns */; };
 		922E35D713C89BF3003C5913 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922E35D613C89BF3003C5913 /* Cocoa.framework */; };
 		9239573013F43EB100A80074 /* CCTColorLabelMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9239572F13F43EB100A80074 /* CCTColorLabelMenuItemView.m */; };
 		923B846413F4B7A800524BFA /* BHFinderLabelColours.m in Sources */ = {isa = PBXBuildFile; fileRef = 923B846313F4B7A800524BFA /* BHFinderLabelColours.m */; };
@@ -93,13 +93,6 @@
 			remoteGlobalIDString = 925CE81C13C3BD6D009D6D94;
 			remoteInfo = VGTagger;
 		};
-		92F16DAB1404167E0031E4B4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 92F16DA31404167D0031E4B4 /* TagsFromFileName.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 921785D013FDBAA000359C62;
-			remoteInfo = TagsFromFileName;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -120,15 +113,15 @@
 		920660B913C89845003A3803 /* libtag.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtag.1.dylib; path = ../Frameworks/libtag.1.dylib; sourceTree = "<group>"; };
 		920660BB13C89845003A3803 /* VGTagger-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "VGTagger-Info.plist"; sourceTree = "<group>"; };
 		920660BC13C89845003A3803 /* VGTagger-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VGTagger-Prefix.pch"; sourceTree = "<group>"; };
-		922D865F13F4E4430016B811 /* VgTagger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VgTagger.png; sourceTree = "<group>"; };
-		922D866613F4E4EE0016B811 /* VgTagger.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = VgTagger.icns; path = ../VgTagger.icns; sourceTree = "<group>"; };
-		922D866813F4E54B0016B811 /* VgTagger.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = VgTagger.svg; sourceTree = "<group>"; };
+		922D865F13F4E4430016B811 /* Tagger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tagger.png; sourceTree = "<group>"; };
+		922D866613F4E4EE0016B811 /* Tagger.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Tagger.icns; path = ../Tagger.icns; sourceTree = "<group>"; };
+		922D866813F4E54B0016B811 /* Tagger.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Tagger.svg; sourceTree = "<group>"; };
 		922E35D613C89BF3003C5913 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		9239572E13F43EB100A80074 /* CCTColorLabelMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTColorLabelMenuItemView.h; sourceTree = "<group>"; };
 		9239572F13F43EB100A80074 /* CCTColorLabelMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTColorLabelMenuItemView.m; sourceTree = "<group>"; };
 		923B846213F4B7A800524BFA /* BHFinderLabelColours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHFinderLabelColours.h; sourceTree = "<group>"; };
 		923B846313F4B7A800524BFA /* BHFinderLabelColours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHFinderLabelColours.m; sourceTree = "<group>"; };
-		925CE81D13C3BD6D009D6D94 /* VGTagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VGTagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		925CE81D13C3BD6D009D6D94 /* VGTagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = VGTagger.app; path = Tagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowLeftBlack16.tiff; sourceTree = "<group>"; };
 		9264488913D773CE0035E693 /* arrowRightBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowRightBlack16.tiff; sourceTree = "<group>"; };
 		927883BF13E06E5000063D28 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme.md; sourceTree = "<group>"; };
@@ -228,7 +221,6 @@
 		92E6EDF613F32B3C0045679E /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		92E6EE3013F35FD50045679E /* QuickLookTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickLookTableView.h; sourceTree = "<group>"; };
 		92E6EE3113F35FD50045679E /* QuickLookTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickLookTableView.m; sourceTree = "<group>"; };
-		92F16DA31404167D0031E4B4 /* TagsFromFileName.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TagsFromFileName.xcodeproj; path = "../ Small/TagsFromFileName/TagsFromFileName.xcodeproj"; sourceTree = "<group>"; };
 		92F16DAF14041AC10031E4B4 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
 		92F16DB014041AC10031E4B4 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		92F16DB214041D8B0031E4B4 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
@@ -319,7 +311,6 @@
 				927883BF13E06E5000063D28 /* Readme.md */,
 				929A4ACD13DA027C00244796 /* Changelog.md */,
 				927883C013E06EED00063D28 /* Todo.md */,
-				92F16DA31404167D0031E4B4 /* TagsFromFileName.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -334,9 +325,9 @@
 		9264488713D773CE0035E693 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				922D866813F4E54B0016B811 /* VgTagger.svg */,
-				922D866613F4E4EE0016B811 /* VgTagger.icns */,
-				922D865F13F4E4430016B811 /* VgTagger.png */,
+				922D866813F4E54B0016B811 /* Tagger.svg */,
+				922D866613F4E4EE0016B811 /* Tagger.icns */,
+				922D865F13F4E4430016B811 /* Tagger.png */,
 				9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */,
 				9264488913D773CE0035E693 /* arrowRightBlack16.tiff */,
 			);
@@ -567,14 +558,6 @@
 			path = Vgmdb;
 			sourceTree = "<group>";
 		};
-		92F16DA41404167D0031E4B4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				92F16DAC1404167E0031E4B4 /* TagsFromFileName.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		92F16DAE14041A780031E4B4 /* RegexKitLite */ = {
 			isa = PBXGroup;
 			children = (
@@ -605,9 +588,9 @@
 /* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
-		925CE81C13C3BD6D009D6D94 /* VGTagger */ = {
+		925CE81C13C3BD6D009D6D94 /* Tagger */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 925CE83B13C3BD6D009D6D94 /* Build configuration list for PBXNativeTarget "VGTagger" */;
+			buildConfigurationList = 925CE83B13C3BD6D009D6D94 /* Build configuration list for PBXNativeTarget "Tagger" */;
 			buildPhases = (
 				925CE81913C3BD6D009D6D94 /* Sources */,
 				925CE81A13C3BD6D009D6D94 /* Frameworks */,
@@ -618,7 +601,7 @@
 			);
 			dependencies = (
 			);
-			name = VGTagger;
+			name = Tagger;
 			productName = VGTagger;
 			productReference = 925CE81D13C3BD6D009D6D94 /* VGTagger.app */;
 			productType = "com.apple.product-type.application";
@@ -631,7 +614,7 @@
 			attributes = {
 				ORGANIZATIONNAME = "St. Andrews KY16 9XW";
 			};
-			buildConfigurationList = 925CE81713C3BD6D009D6D94 /* Build configuration list for PBXProject "VGTagger" */;
+			buildConfigurationList = 925CE81713C3BD6D009D6D94 /* Build configuration list for PBXProject "Tagger" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -643,30 +626,14 @@
 			mainGroup = 925CE81213C3BD6D009D6D94;
 			productRefGroup = 925CE81E13C3BD6D009D6D94 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 92F16DA41404167D0031E4B4 /* Products */;
-					ProjectRef = 92F16DA31404167D0031E4B4 /* TagsFromFileName.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
-				925CE81C13C3BD6D009D6D94 /* VGTagger */,
+				925CE81C13C3BD6D009D6D94 /* Tagger */,
 				9273E64013D6166C002BA3A0 /* Documentation */,
 				92CEE64A13F0A23600E4C5CE /* Embed MacRuby */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		92F16DAC1404167E0031E4B4 /* TagsFromFileName.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = TagsFromFileName.app;
-			remoteRef = 92F16DAB1404167E0031E4B4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		925CE81B13C3BD6D009D6D94 /* Resources */ = {
@@ -687,7 +654,7 @@
 				92E6EDD713F313230045679E /* VgmdbDisplay.xib in Resources */,
 				92E6EDD813F313230045679E /* VgmdbSearch.xib in Resources */,
 				92E6EDDF13F314260045679E /* InfoPlist.strings in Resources */,
-				922D866713F4E4EE0016B811 /* VgTagger.icns in Resources */,
+				922D866713F4E4EE0016B811 /* Tagger.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -763,7 +730,7 @@
 /* Begin PBXTargetDependency section */
 		9254007313F0B4150020C912 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 925CE81C13C3BD6D009D6D94 /* VGTagger */;
+			target = 925CE81C13C3BD6D009D6D94 /* Tagger */;
 			targetProxy = 9254007213F0B4150020C912 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -936,7 +903,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		925CE81713C3BD6D009D6D94 /* Build configuration list for PBXProject "VGTagger" */ = {
+		925CE81713C3BD6D009D6D94 /* Build configuration list for PBXProject "Tagger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				925CE83913C3BD6D009D6D94 /* Debug */,
@@ -945,7 +912,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		925CE83B13C3BD6D009D6D94 /* Build configuration list for PBXNativeTarget "VGTagger" */ = {
+		925CE83B13C3BD6D009D6D94 /* Build configuration list for PBXNativeTarget "Tagger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				925CE83C13C3BD6D009D6D94 /* Debug */,
