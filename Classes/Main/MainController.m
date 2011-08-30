@@ -621,6 +621,21 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}];
 }
 
+- (IBAction)uppercaseTags:(id)sender
+{
+	[self performBlockOnTags:sender block:^id (id value, NSString *tagName, Tags *tags) {
+		return [value uppercaseString];
+	}];
+}
+
+
+- (IBAction)lowercaseTags:(id)sender
+{
+	[self performBlockOnTags:sender block:^id (id value, NSString *tagName, Tags *tags) {
+		return [value lowercaseString];
+	}];
+}
+
 - (IBAction)performBlockOnTags:(id)sender
 						 block:(id (^)(id value, NSString *tagName, Tags *tags ))block
 {	
@@ -927,9 +942,10 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	makeMenu([[NSUserDefaults standardUserDefaults] arrayForKey:@"predefinedTagFormatsTitles"],
 			 tagMenu,
 			 @selector(tagWithPredefinedFormat:));
-	makeMenu(tagMenuValues,
-			 capitaliseMenu,
-			 @selector(capitalisedTags:));
+	
+	makeMenu(tagMenuValues, capitaliseMenu, @selector(capitalisedTags:));
+	makeMenu(tagMenuValues, uppercaseMenu,  @selector(uppercaseTags:));
+	makeMenu(tagMenuValues, lowercaseMenu, @selector(lowercaseTags:));
 }
 
 -(void)initDirectoryTable

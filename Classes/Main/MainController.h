@@ -33,6 +33,8 @@
 	IBOutlet NSMenu *tagMenu;
 	
 	IBOutlet NSMenu *capitaliseMenu;
+	IBOutlet NSMenu *uppercaseMenu;
+	IBOutlet NSMenu *lowercaseMenu;
 
 	
 	VgmdbController         *vgc;
@@ -117,6 +119,8 @@
 - (IBAction) tagsFromFilename:(id)sender;
 
 - (IBAction)capitalisedTags:(id)sender;
+- (IBAction)uppercaseTags:(id)sender;
+- (IBAction)lowercaseTags:(id)sender;
 - (IBAction)performBlockOnTags:(id)sender
 						 block:(id (^)(id value, NSString *tagName, Tags *tags ))block;
 
