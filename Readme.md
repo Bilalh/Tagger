@@ -3,14 +3,19 @@ Tagger {#readmeTitle}
 Tagger is application that auto tags audio files. It also supports batch tag editing See the [website](http://bilalh.github.com/projects/mplayer-last-fm-scrobbler/ "details") for details 
 {#description}
 
-Requiments
-----------
+Prerequisites
+-------------
 * Mac OS X 10.6+
-* Macruby 0.10+
 * 64 bit only
 
 Install From Source
 -------------------
+### Prerequisites
+* Mac OS X 10.6+
+* Macruby 0.10+
+* 64 bit only
+
+### Introductions
 Build the release version of VGTagger.
 
 (When embeding make sure require 'rubygems'  is commented with a # before it)
