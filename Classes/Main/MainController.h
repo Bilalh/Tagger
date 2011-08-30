@@ -35,7 +35,8 @@
 	IBOutlet NSMenu *capitaliseMenu;
 	IBOutlet NSMenu *uppercaseMenu;
 	IBOutlet NSMenu *lowercaseMenu;
-
+	IBOutlet NSMenu *whitespaceMenu;
+	
 	
 	VgmdbController         *vgc;
 	DisplayController       *ssc;
@@ -121,6 +122,8 @@
 - (IBAction)capitalisedTags:(id)sender;
 - (IBAction)uppercaseTags:(id)sender;
 - (IBAction)lowercaseTags:(id)sender;
+- (IBAction)trimWhitespace:(id)sender;
+
 - (IBAction)performBlockOnTags:(id)sender
 						 block:(id (^)(id value, NSString *tagName, Tags *tags ))block;
 

@@ -611,7 +611,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}
 }
 
-
 #pragma mark - Tag Manipulation
 
 - (IBAction)capitalisedTags:(id)sender
@@ -621,6 +620,14 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}];
 }
 
+- (IBAction)lowercaseTags:(id)sender
+{
+	[self performBlockOnTags:sender block:^id (id value, NSString *tagName, Tags *tags) {
+		return [value lowercaseString];
+	}];
+}
+
+
 - (IBAction)uppercaseTags:(id)sender
 {
 	[self performBlockOnTags:sender block:^id (id value, NSString *tagName, Tags *tags) {
@@ -628,11 +635,10 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}];
 }
 
-
-- (IBAction)lowercaseTags:(id)sender
+- (IBAction)trimWhitespace:(id)sender
 {
 	[self performBlockOnTags:sender block:^id (id value, NSString *tagName, Tags *tags) {
-		return [value lowercaseString];
+		return [value stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
 	}];
 }
 
@@ -651,6 +657,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[table selectRowIndexes:rows byExtendingSelection:NO];
 }
 
+#pragma mark - Tag Renaming/Finding
 
 - (IBAction) renumberFiles:(id)sender
 {
@@ -945,7 +952,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 	makeMenu(tagMenuValues, capitaliseMenu, @selector(capitalisedTags:));
 	makeMenu(tagMenuValues, uppercaseMenu,  @selector(uppercaseTags:));
-	makeMenu(tagMenuValues, lowercaseMenu, @selector(lowercaseTags:));
+	makeMenu(tagMenuValues, lowercaseMenu,  @selector(lowercaseTags:));
+	makeMenu(tagMenuValues, whitespaceMenu, @selector(trimWhitespace:));
 }
 
 -(void)initDirectoryTable

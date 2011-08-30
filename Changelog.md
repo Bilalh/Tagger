@@ -17,10 +17,11 @@ Version 1.4
 * Menu item for auto-Renumbering of files.
 * Can drag a row ontop of another to copy tags.
 * Genre and Grouping preferences.
-	Defaults genre can be selected
-	auto complete
-* Capitalise tags menu.
-	with all tags
+	Defaults genre can be selected.
+	auto complete.
+* Capitalise, uppercase and lowercase tags menu.
+	with all tags.
+* Trim whitespace.
 
 ### Improvements ###
 * Macruby loading.
