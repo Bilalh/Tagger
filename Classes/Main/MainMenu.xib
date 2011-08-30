@@ -2973,7 +2973,7 @@
 																<object class="NSTextFieldCell" key="NSCell" id="716193351">
 																	<int key="NSCellFlags">-1804468671</int>
 																	<int key="NSCellFlags2">272630784</int>
-																	<real value="434" key="NSContents"/>
+																	<real value="66" key="NSContents"/>
 																	<reference key="NSSupport" ref="677191051"/>
 																	<object class="NSNumberFormatter" key="NSFormatter" id="709882829">
 																		<object class="NSMutableDictionary" key="NS.attributes">
@@ -3307,14 +3307,14 @@
 																	<object class="NSComboTableView" key="NSTableView" id="216194615">
 																		<reference key="NSNextResponder"/>
 																		<int key="NSvFlags">274</int>
-																		<string key="NSFrameSize">{15, 0}</string>
+																		<string key="NSFrameSize">{13, 21}</string>
 																		<reference key="NSSuperview"/>
 																		<reference key="NSWindow"/>
 																		<bool key="NSEnabled">YES</bool>
 																		<object class="NSMutableArray" key="NSTableColumns">
 																			<bool key="EncodedWithXMLCoder">YES</bool>
 																			<object class="NSTableColumn">
-																				<double key="NSWidth">12</double>
+																				<double key="NSWidth">10</double>
 																				<double key="NSMinWidth">10</double>
 																				<double key="NSMaxWidth">1000</double>
 																				<object class="NSTableHeaderCell" key="NSHeaderCell">
@@ -3348,7 +3348,7 @@
 																		<reference key="NSGridColor" ref="933550490"/>
 																		<double key="NSRowHeight">19</double>
 																		<string key="NSAction">tableViewAction:</string>
-																		<int key="NSTvFlags">-767524864</int>
+																		<int key="NSTvFlags">-765427712</int>
 																		<reference key="NSDelegate" ref="469384931"/>
 																		<reference key="NSDataSource" ref="469384931"/>
 																		<reference key="NSTarget" ref="469384931"/>
@@ -3372,7 +3372,7 @@
 																<object class="NSComboBoxCell" key="NSCell" id="916441493">
 																	<int key="NSCellFlags">343014976</int>
 																	<int key="NSCellFlags2">272630784</int>
-																	<string key="NSContents">6</string>
+																	<string key="NSContents">88</string>
 																	<reference key="NSSupport" ref="677191051"/>
 																	<reference key="NSControlView" ref="607823338"/>
 																	<bool key="NSDrawsBackground">YES</bool>
@@ -4965,39 +4965,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">content: values.groupings</string>
-						<reference key="source" ref="860458761"/>
-						<reference key="destination" ref="81237474"/>
-						<object class="NSNibBindingConnector" key="connector" id="215892784">
-							<reference key="NSSource" ref="860458761"/>
-							<reference key="NSDestination" ref="81237474"/>
-							<string key="NSLabel">content: values.groupings</string>
-							<string key="NSBinding">content</string>
-							<string key="NSKeyPath">values.groupings</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">1393</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: currentNodes.grouping</string>
-						<reference key="source" ref="860458761"/>
-						<reference key="destination" ref="588631224"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="860458761"/>
-							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">value: currentNodes.grouping</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">currentNodes.grouping</string>
-							<reference key="NSPreviousConnector" ref="215892784"/>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">1395</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">enabled: currentNodes.hasBasicMetadata</string>
 						<reference key="source" ref="607823338"/>
 						<reference key="destination" ref="588631224"/>
@@ -5044,6 +5011,39 @@
 						</object>
 					</object>
 					<int key="connectionID">1405</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">content: values.groupings</string>
+						<reference key="source" ref="860458761"/>
+						<reference key="destination" ref="81237474"/>
+						<object class="NSNibBindingConnector" key="connector" id="215892784">
+							<reference key="NSSource" ref="860458761"/>
+							<reference key="NSDestination" ref="81237474"/>
+							<string key="NSLabel">content: values.groupings</string>
+							<string key="NSBinding">content</string>
+							<string key="NSKeyPath">values.groupings</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1415</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: currentNodes.grouping</string>
+						<reference key="source" ref="860458761"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="860458761"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">value: currentNodes.grouping</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">currentNodes.grouping</string>
+							<reference key="NSPreviousConnector" ref="215892784"/>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1416</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -7021,6 +7021,7 @@
 					<string>1367.IBPluginDependency</string>
 					<string>1367.ImportedFromIB2</string>
 					<string>1373.IBPluginDependency</string>
+					<string>1374.IBComboBoxObjectValuesKey.objectValues</string>
 					<string>1374.IBPluginDependency</string>
 					<string>1384.IBPluginDependency</string>
 					<string>1385.IBPluginDependency</string>
@@ -7337,6 +7338,10 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<object class="NSArray">
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<string>dfdf</string>
+					</object>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -7605,7 +7610,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1405</int>
+			<int key="maxID">1416</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

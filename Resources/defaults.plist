@@ -7,6 +7,34 @@
 		<string>title</string>
 		<string> - cover</string>
 	</array>
+	<key>genres</key>
+	<array>
+		<string>Alternative</string>
+		<string>Anime</string>
+		<string>Blues</string>
+		<string>Children’sMusic</string>
+		<string>Classical</string>
+		<string>Country</string>
+		<string>Dance</string>
+		<string>EasyListening</string>
+		<string>Electronic</string>
+		<string>Folk</string>
+		<string>Hip-Hop/Rap</string>
+		<string>Holiday</string>
+		<string>Instrumental</string>
+		<string>Jazz</string>
+		<string>Metal</string>
+		<string>NewAge</string>
+		<string>Opera</string>
+		<string>Pop</string>
+		<string>Reggae</string>
+		<string>R&amp;B</string>
+		<string>Rock</string>
+		<string>Soundtrack</string>
+		<string>World</string>
+	</array>
+	<key>groupings</key>
+	<array/>
 	<key>predefinedRenameFormats</key>
 	<array>
 		<array>
