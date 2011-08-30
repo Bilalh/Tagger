@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-Version 1.4
+Version 1.4 (Tue Aug 30 2011 23:43:54 +0100)
 -------------
 ### Features ###
 * Results can be sorted when searching.
