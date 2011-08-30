@@ -17,6 +17,7 @@
 @class  RenamingFilesController;
 @class  DraggableImageView;
 @class  CCTLabelPickerController;
+@class  Tags;
 
 /// The main controller creates the other controllers 
 @interface MainController : NSWindowController 
@@ -27,8 +28,12 @@
 	IBOutlet NSTableView *table;
 	IBOutlet NSToolbarItem *vgmdbItem;
 	IBOutlet DraggableImageView *coverView;
+
 	IBOutlet NSMenu *renameMenu;
 	IBOutlet NSMenu *tagMenu;
+	
+	IBOutlet NSMenu *capitaliseMenu;
+
 	
 	VgmdbController         *vgc;
 	DisplayController       *ssc;
@@ -110,6 +115,11 @@
 
 - (IBAction) rename:(id)sender;
 - (IBAction) tagsFromFilename:(id)sender;
+
+- (IBAction)capitalisedTags:(id)sender;
+- (IBAction)performBlockOnTags:(id)sender
+						 block:(id (^)(id value, NSString *tagName, Tags *tags ))block;
+
 
 /**  
  * Shows the sheet for searching for tags

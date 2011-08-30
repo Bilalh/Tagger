@@ -33,7 +33,7 @@ LOG_LEVEL(LOG_LEVEL_INFO);
 static const NSArray *predefinedDirectories;
 static const NSArray *predefinedRenameFormats;
 static const NSArray *predefinedTagFormats;
-
+static const NSArray *tagMenuValues;
 
 @interface MainController()  
 
@@ -611,8 +611,92 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}
 }
 
-#pragma mark -
-#pragma mark Gui Callback
+
+#pragma mark - Tag Manipulation
+
+- (IBAction)capitalisedTags:(id)sender
+{
+	[self performBlockOnTags:sender block:^id (id value, NSString *tagName, Tags *tags) {
+		return [value capitalizedString];
+	}];
+}
+
+- (IBAction)performBlockOnTags:(id)sender
+						 block:(id (^)(id value, NSString *tagName, Tags *tags ))block
+{	
+	if ([currentNodes empty]) return;
+	if ([sender tag] >=0){
+		[self.currentNodes performBlockOnTag:[tagMenuValues objectAtIndex:[sender tag]] block:block];	
+	}
+	[table reloadData];
+	NSIndexSet *rows = [table selectedRowIndexes];
+	[table selectRowIndexes:[NSIndexSet indexSet] byExtendingSelection:NO];
+	[table selectRowIndexes:rows byExtendingSelection:NO];
+}
+
+
+- (IBAction) renumberFiles:(id)sender
+{
+	if (currentNodes.empty) return;
+	int i = 1;
+	for (FileSystemNode *n in currentNodes.tagsArray) {
+		n.tags.track = [NSNumber numberWithInt:i];
+		i++;
+	}
+}
+
+- (IBAction)rename:(id)sender
+{
+	DDLogInfo(@"rename");
+	
+	if (rfc)  [rfc release];
+	rfc = [[RenamingFilesController alloc] initWithNodes:currentNodes 
+												selector:@selector(renameWithFormatArray:)
+											 buttonTitle:@"Reaname" ];
+		
+	[NSApp beginSheet: [rfc window]
+	   modalForWindow: self.window
+		modalDelegate: rfc 
+	   didEndSelector: @selector(didEndSheet:returnCode:result:)
+		  contextInfo: self];
+}
+
+- (IBAction)renameWithPredefinedFormat:(id)sender
+{
+	DDLogVerbose(@"format array %@",[predefinedRenameFormats objectAtIndex:[sender tag]]);
+	[currentNodes renameWithFormatArray: [predefinedRenameFormats objectAtIndex:[sender tag]]];
+	[[directoryStack lastObject] invalidateChildren];
+	[table reloadData];
+}
+
+
+
+- (IBAction)tagsFromFilename:(id)sender
+{
+	DDLogInfo(@"tagsFromFileName");
+	
+	if (rfc)  [rfc release];
+	rfc = [[RenamingFilesController alloc] initWithNodes:currentNodes 
+												selector:@selector(tagsWithFormatArrayFromFilename:)
+											 buttonTitle:@"Tag" ];
+	
+	[NSApp beginSheet: [rfc window]
+	   modalForWindow: self.window
+		modalDelegate: rfc 
+	   didEndSelector: @selector(didEndSheet:returnCode:result:)
+		  contextInfo: self];
+}
+
+
+- (IBAction)tagWithPredefinedFormat:(id)sender
+{
+	DDLogVerbose(@"format array %@",[predefinedTagFormats objectAtIndex:[sender tag]]);
+	[currentNodes tagsWithFormatArrayFromFilename: [predefinedRenameFormats objectAtIndex:[sender tag]]];
+	[[directoryStack lastObject] invalidateChildren];
+	[table reloadData];
+}
+
+#pragma mark - Gui Callback
 - (IBAction)addSelectedToItunes:(id)sender
 {	
 	iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
@@ -683,70 +767,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		[[NSWorkspace sharedWorkspace] selectFile:[n.URL path] 
 						 inFileViewerRootedAtPath:nil];
 	}
-}
-
-
-#pragma mark - Tag Manipulation
-
-- (IBAction) renumberFiles:(id)sender
-{
-	if (currentNodes.empty) return;
-	int i = 1;
-	for (FileSystemNode *n in currentNodes.tagsArray) {
-		n.tags.track = [NSNumber numberWithInt:i];
-		i++;
-	}
-}
-
-- (IBAction)rename:(id)sender
-{
-	DDLogInfo(@"rename");
-	
-	if (rfc)  [rfc release];
-	rfc = [[RenamingFilesController alloc] initWithNodes:currentNodes 
-												selector:@selector(renameWithFormatArray:)
-											 buttonTitle:@"Reaname" ];
-		
-	[NSApp beginSheet: [rfc window]
-	   modalForWindow: self.window
-		modalDelegate: rfc 
-	   didEndSelector: @selector(didEndSheet:returnCode:result:)
-		  contextInfo: self];
-}
-
-- (IBAction)renameWithPredefinedFormat:(id)sender
-{
-	DDLogVerbose(@"format array %@",[predefinedRenameFormats objectAtIndex:[sender tag]]);
-	[currentNodes renameWithFormatArray: [predefinedRenameFormats objectAtIndex:[sender tag]]];
-	[[directoryStack lastObject] invalidateChildren];
-	[table reloadData];
-}
-
-
-
-- (IBAction)tagsFromFilename:(id)sender
-{
-	DDLogInfo(@"tagsFromFileName");
-	
-	if (rfc)  [rfc release];
-	rfc = [[RenamingFilesController alloc] initWithNodes:currentNodes 
-												selector:@selector(tagsWithFormatArrayFromFilename:)
-											 buttonTitle:@"Tag" ];
-	
-	[NSApp beginSheet: [rfc window]
-	   modalForWindow: self.window
-		modalDelegate: rfc 
-	   didEndSelector: @selector(didEndSheet:returnCode:result:)
-		  contextInfo: self];
-}
-
-
--(IBAction)tagWithPredefinedFormat:(id)sender
-{
-	DDLogVerbose(@"format array %@",[predefinedTagFormats objectAtIndex:[sender tag]]);
-	[currentNodes tagsWithFormatArrayFromFilename: [predefinedRenameFormats objectAtIndex:[sender tag]]];
-	[[directoryStack lastObject] invalidateChildren];
-	[table reloadData];
 }
 
 
@@ -881,11 +901,12 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[table setTarget:self];
 	[self _vgmdbEnable];
 	[table setMenu:[self labelMenu]];
+	[table registerForDraggedTypes:[[table registeredDraggedTypes ] arrayByAddingObject:TABLE_VIEW_ROW_TYPE]];
 	
-	void (^makeMenu)(NSArray*, NSMenu*, SEL) = ^(NSArray *titles, NSMenu *menu, SEL action){
+	void (^makeMenu)(const NSArray*, NSMenu*, SEL) = ^(const NSArray *titles, NSMenu *menu, SEL action){
 		int i;
 		for (i =0; i < [titles count]; ++i) {
-			NSMenuItem *item = [[NSMenuItem alloc] initWithTitle:[titles objectAtIndex:i] 
+			NSMenuItem *item = [[NSMenuItem alloc] initWithTitle: [[titles objectAtIndex:i] capitalizedString]
 														  action:action
 												   keyEquivalent:@""];
 			[item setTag:i];
@@ -904,7 +925,9 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	makeMenu([[NSUserDefaults standardUserDefaults] arrayForKey:@"predefinedTagFormatsTitles"],
 			 tagMenu,
 			 @selector(tagWithPredefinedFormat:));
-	[table registerForDraggedTypes:[[table registeredDraggedTypes ] arrayByAddingObject:TABLE_VIEW_ROW_TYPE]];
+	makeMenu(tagMenuValues,
+			 capitaliseMenu,
+			 @selector(capitalisedTags:));
 }
 
 -(void)initDirectoryTable
@@ -957,6 +980,9 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 							 nil];
 	predefinedRenameFormats = [[NSUserDefaults standardUserDefaults] arrayForKey:@"predefinedRenameFormats"];
 	predefinedTagFormats    = [[NSUserDefaults standardUserDefaults] arrayForKey:@"predefinedTagFormats"];
+	tagMenuValues = [[NSArray alloc ] initWithObjects:
+					 @"title",  @"album",  @"artist",@"albumArtist", @"composer", @"genre",
+					 nil];
 }
 
 - (void)dealloc

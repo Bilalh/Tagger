@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class Tags;
+
 /// This provides a wrapper around a array of filesystem nodes
 /// It allows the tags to every node in the collection at the same time
 /// to allow muti-row editing.
@@ -55,9 +57,15 @@
  @param formatStrings An Array of strings 
  @return NSError with the error data.
  */
--(NSError*) renameWithFormatArray:(NSArray*)formatStrings;
+- (NSError*)renameWithFormatArray:(NSArray*)formatStrings;
 - (NSError*)tagsWithFormatArrayFromFilename:(NSArray*)formatStrings;
 
+
+- (void) performBlockOnTags:(NSArray*)tagsNames
+					  block:(id (^)(id value, NSString *tagName, Tags *tags ))block;
+
+- (void) performBlockOnTag:(NSString*)tagsName
+					 block:(id (^)(id value, NSString *tagName, Tags *tags ))block;
 
 /// @name Finding General metadata.
 

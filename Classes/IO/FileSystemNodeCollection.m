@@ -154,6 +154,28 @@ static const NSArray *fieldNames;
 	return err;
 }
 
+- (void) performBlockOnTag:(NSString*)tagName
+					  block:(id (^)(id value, NSString *tagName, Tags *tags ))block
+{
+	[self performBlockOnTags:[NSArray arrayWithObject:tagName] block:block];
+}
+
+- (void) performBlockOnTags:(NSArray*)tagsNames
+					  block:(id (^)(id value, NSString *tagName, Tags *tags ))block
+{
+	if (!self.hasBasicMetadata) return;
+	
+	for (FileSystemNode *n in tagsArray) {
+		for (NSString *tagName in tagsNames) {
+			DDLogRelease(@"-%@: %@", tagName, [n.tags valueForKey:tagName]);
+			[n.tags setValue:block([n.tags valueForKey:tagName], tagName, n.tags)
+					  forKey:tagName];
+			DDLogRelease(@"+%@: %@", tagName, [n.tags valueForKey:tagName]);
+		}
+	}
+	
+}
+
 - (NSArray*)urls
 {
 	NSMutableArray *arr = [[NSMutableArray alloc] initWithCapacity:[tagsArray count]+1];
