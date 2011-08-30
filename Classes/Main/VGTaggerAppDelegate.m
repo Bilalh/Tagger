@@ -12,6 +12,7 @@
 #import "GeneralPreferencesViewController.h"
 #import "AdvancedPreferencesViewController.h"
 #import "CoverViewController.h"
+#import "ArrayDefaultsPreferencesViewController.h"
 
 #import "DDLog.h"
 #import "DDASLLogger.h"
@@ -51,16 +52,20 @@
 {
     if (_preferencesWindowController == nil)
     {
-        NSViewController *generalViewController  = [[GeneralPreferencesViewController alloc] initWithMainController:mainController];
-        NSViewController *advancedViewController = [[AdvancedPreferencesViewController alloc] init];
-		NSViewController *coverViewController    = [[CoverViewController alloc] init];
+		NSViewController *gp, *cv, *ap, *gr, *ge;
+		gp = [[GeneralPreferencesViewController alloc] initWithMainController:mainController];
+		cv = [[CoverViewController alloc] init];
+		ap = [[AdvancedPreferencesViewController alloc] init];
+		gr = [[ArrayDefaultsPreferencesViewController alloc] initWithKey:@"groupings"];
+		ge = [[ArrayDefaultsPreferencesViewController alloc] initWithKey:@"genres"];
 		
         NSArray *controllers = [[NSArray alloc] initWithObjects:
-								generalViewController, coverViewController, advancedViewController,
+								gp, cv, gr,ge, ap,
 								nil];
-        [generalViewController release];
-        [advancedViewController release];
-        [coverViewController release];
+        [gp release];
+        [cv release];
+        [ap release];
+		[gr release];
 		
         NSString *title = NSLocalizedString(@"Preferences", @"Common title for Preferences window");
         _preferencesWindowController = [[MASPreferencesWindowController alloc] initWithViewControllers:controllers title:title];

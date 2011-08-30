@@ -164,11 +164,6 @@ static const NSArray *predefinedTagFormats;
 }
 
 
-- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView 
-{
-    return [[[directoryStack lastObject] children] count];
-}
-
 
 - (NSString *)stringFromFileSize:(NSInteger)size
 {
@@ -281,6 +276,14 @@ static const NSArray *predefinedTagFormats;
 }
 
 #pragma mark - Table Delegate
+
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView 
+{
+    return [[[directoryStack lastObject] children] count];
+}
+
+
 - (id)          tableView:(NSTableView *)aTableView 
 objectValueForTableColumn:(NSTableColumn *)aTableColumn 
 					  row:(NSInteger)rowIndex 

@@ -1,6 +1,9 @@
 //
-//  Created by Vadim Shpakovski on 4/22/11.
-//  Copyright 2011 Shpakovski. All rights reserved.
+//  GeneralPreferencesViewController.h
+//  VGTagger
+//
+//  Created by Bilal Syed Hussain on 10/08/2011.
+//  Copyright 2011 St. Andrews KY16 9XW. All rights reserved.
 //
 
 #import "MASPreferencesViewController.h"

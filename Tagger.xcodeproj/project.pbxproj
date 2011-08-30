@@ -22,6 +22,8 @@
 
 /* Begin PBXBuildFile section */
 		920660E113C89845003A3803 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660A413C89845003A3803 /* main.m */; };
+		921FBBEC140C682100D1CBE8 /* ArrayDefaultsPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 921FBBEB140C682100D1CBE8 /* ArrayDefaultsPreferencesViewController.m */; };
+		921FBBEE140C68AF00D1CBE8 /* ArrayDefaultsPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921FBBED140C68AF00D1CBE8 /* ArrayDefaultsPreferencesView.xib */; };
 		922D866713F4E4EE0016B811 /* Tagger.icns in Resources */ = {isa = PBXBuildFile; fileRef = 922D866613F4E4EE0016B811 /* Tagger.icns */; };
 		922E35D713C89BF3003C5913 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922E35D613C89BF3003C5913 /* Cocoa.framework */; };
 		9239573013F43EB100A80074 /* CCTColorLabelMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9239572F13F43EB100A80074 /* CCTColorLabelMenuItemView.m */; };
@@ -113,6 +115,9 @@
 		920660B913C89845003A3803 /* libtag.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtag.1.dylib; path = ../Frameworks/libtag.1.dylib; sourceTree = "<group>"; };
 		920660BB13C89845003A3803 /* VGTagger-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "VGTagger-Info.plist"; sourceTree = "<group>"; };
 		920660BC13C89845003A3803 /* VGTagger-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VGTagger-Prefix.pch"; sourceTree = "<group>"; };
+		921FBBE6140C641000D1CBE8 /* ArrayDefaultsPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = ArrayDefaultsPreferencesViewController.h; sourceTree = "<group>"; };
+		921FBBEB140C682100D1CBE8 /* ArrayDefaultsPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayDefaultsPreferencesViewController.m; sourceTree = "<group>"; };
+		921FBBED140C68AF00D1CBE8 /* ArrayDefaultsPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArrayDefaultsPreferencesView.xib; sourceTree = "<group>"; };
 		922D865F13F4E4430016B811 /* Tagger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tagger.png; sourceTree = "<group>"; };
 		922D866613F4E4EE0016B811 /* Tagger.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Tagger.icns; path = ../Tagger.icns; sourceTree = "<group>"; };
 		922D866813F4E54B0016B811 /* Tagger.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Tagger.svg; sourceTree = "<group>"; };
@@ -412,10 +417,10 @@
 				92E6ED9113F313230045679E /* Preferences */,
 				92E6ED9B13F313230045679E /* Tagging */,
 				92E6ED9F13F313230045679E /* Taglib */,
-				92E6EDAA13F313230045679E /* Transformers */,
 				92D30ABD1405B0F000677B70 /* Utility */,
 				92E6EDAD13F313230045679E /* Vgmdb */,
 				92E6ED8B13F313230045679E /* Main */,
+				92E6EDAA13F313230045679E /* Transformers */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -480,9 +485,9 @@
 		92E6ED8B13F313230045679E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				92E6ED8E13F313230045679E /* MainMenu.xib */,
 				92E6ED8C13F313230045679E /* MainController.h */,
 				92E6ED8D13F313230045679E /* MainController.m */,
-				92E6ED8E13F313230045679E /* MainMenu.xib */,
 				92E6ED8F13F313230045679E /* VGTaggerAppDelegate.h */,
 				92E6ED9013F313230045679E /* VGTaggerAppDelegate.m */,
 			);
@@ -501,6 +506,9 @@
 				92E6ED9813F313230045679E /* GeneralPreferencesView.xib */,
 				92E6ED9913F313230045679E /* GeneralPreferencesViewController.h */,
 				92E6ED9A13F313230045679E /* GeneralPreferencesViewController.m */,
+				921FBBED140C68AF00D1CBE8 /* ArrayDefaultsPreferencesView.xib */,
+				921FBBE6140C641000D1CBE8 /* ArrayDefaultsPreferencesViewController.h */,
+				921FBBEB140C682100D1CBE8 /* ArrayDefaultsPreferencesViewController.m */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -655,6 +663,7 @@
 				92E6EDD813F313230045679E /* VgmdbSearch.xib in Resources */,
 				92E6EDDF13F314260045679E /* InfoPlist.strings in Resources */,
 				922D866713F4E4EE0016B811 /* Tagger.icns in Resources */,
+				921FBBEE140C68AF00D1CBE8 /* ArrayDefaultsPreferencesView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,6 +731,7 @@
 				923B846413F4B7A800524BFA /* BHFinderLabelColours.m in Sources */,
 				92F16DB114041AC10031E4B4 /* RegexKitLite.m in Sources */,
 				92D30AC31405B1B600677B70 /* IntPair.m in Sources */,
+				921FBBEC140C682100D1CBE8 /* ArrayDefaultsPreferencesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,6 +16,7 @@ Version 1.4
 * Row can be rearranged.
 * Menu item for auto-Renumbering of files.
 * Can drag a row ontop of another to copy tags.
+* Genre and Grouping preferences.
 
 ### Improvements ###
 * Macruby loading.
