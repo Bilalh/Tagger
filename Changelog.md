@@ -21,13 +21,13 @@ Version 1.4
 	auto complete.
 * Capitalise, uppercase and lowercase tags menu.
 	with all tags.
-* Trim whitespace.
+* Trim whitespace menu.
 
 ### Improvements ###
 * Macruby loading.
 * QuickLookTableView now works with delgate drag and drop now.
 * Multiple values with ints.
-
+* grouping and genre grow on resize
 
 ### Bug Fixes ###
 * Metadata to Comments newline.
