@@ -1,6 +1,10 @@
 Changelog
 =========
 
+Version 1.4.1
+-------------
+### Improvements ###
+* Gnere list
 
 Version 1.4 (Tue Aug 30 2011 23:43:54 +0100)
 -------------
