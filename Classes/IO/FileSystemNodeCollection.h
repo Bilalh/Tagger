@@ -61,7 +61,7 @@
 - (NSError*)tagsWithFormatArrayFromFilename:(NSArray*)formatStrings;
 
 
-- (void) performBlockOnTags:(NSArray*)tagsNames
+- (void) performBlockOnTags:(const NSArray*)tagsNames
 					  block:(id (^)(id value, NSString *tagName, Tags *tags ))block;
 
 - (void) performBlockOnTag:(NSString*)tagsName

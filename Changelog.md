@@ -19,6 +19,8 @@ Version 1.4
 * Genre and Grouping preferences.
 	Defaults genre can be selected
 	auto complete
+* Capitalise tags menu.
+	with all tags
 
 ### Improvements ###
 * Macruby loading.

@@ -627,6 +627,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	if ([currentNodes empty]) return;
 	if ([sender tag] >=0){
 		[self.currentNodes performBlockOnTag:[tagMenuValues objectAtIndex:[sender tag]] block:block];	
+	}else{
+		[self.currentNodes performBlockOnTags:tagMenuValues block:block];
 	}
 	[table reloadData];
 	NSIndexSet *rows = [table selectedRowIndexes];

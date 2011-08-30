@@ -160,7 +160,7 @@ static const NSArray *fieldNames;
 	[self performBlockOnTags:[NSArray arrayWithObject:tagName] block:block];
 }
 
-- (void) performBlockOnTags:(NSArray*)tagsNames
+- (void) performBlockOnTags:(const NSArray*)tagsNames
 					  block:(id (^)(id value, NSString *tagName, Tags *tags ))block
 {
 	if (!self.hasBasicMetadata) return;
