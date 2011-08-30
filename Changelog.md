@@ -13,7 +13,7 @@ Version 1.4
 * Tags From Files (works like renames with tags).  
  	With error handing.  
  	and menus with predefined options.
-* Row can be rearranged.
+* Rows in main table can be rearranged.
 * Menu item for auto-Renumbering of files.
 * Can drag a row ontop of another to copy tags.
 * Genre and Grouping preferences.

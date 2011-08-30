@@ -27,5 +27,19 @@
 	
 }
 
+- (void)swapObjectAtIndex:(NSInteger)index 
+					 from:(NSInteger)remove
+			  removeFirst:(BOOL)removeFirst
+{
+	if (removeFirst){
+		const id temp = [self objectAtIndex:remove];
+		[self removeObjectAtIndex:remove];
+		[self insertObject:temp atIndex:index];
+	}else{
+		[self insertObject:[self objectAtIndex:remove] atIndex:index];
+		[self removeObjectAtIndex:remove];
+	}
+}
+
 @end
 

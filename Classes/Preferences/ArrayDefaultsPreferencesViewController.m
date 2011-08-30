@@ -7,9 +7,12 @@
 //
 
 #import "ArrayDefaultsPreferencesViewController.h"
+#import "NSMutableArray+Stack.h"
+#define ARRAY_TABLE_VIEW_ROW_TYPE @"aRow"
 
 @implementation ArrayDefaultsPreferencesViewController
 @synthesize table, title;
+
 
 #pragma mark - init
 
@@ -20,7 +23,12 @@
 	return [super initWithNibName:@"ArrayDefaultsPreferencesView" bundle:nil];
 }
 
-#pragma mark - Table
+- (void) awakeFromNib
+{
+	[table registerForDraggedTypes:[[table registeredDraggedTypes ] arrayByAddingObject:ARRAY_TABLE_VIEW_ROW_TYPE]];
+}
+
+#pragma mark - Table data source
 
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView 
@@ -47,6 +55,63 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	 replaceObjectAtIndex:rowIndex withObject:anObject];
 	[[NSUserDefaults standardUserDefaults] synchronize];
 }
+
+
+#pragma mark - Table delgate
+// drag operation stuff
+- (BOOL)tableView:(NSTableView *)tv writeRowsWithIndexes:(NSIndexSet *)rowIndexes 
+	 toPasteboard:(NSPasteboard*)pboard
+{
+    // Copy the row numbers to the pasteboard.
+    NSData *zNSIndexSetData = [NSKeyedArchiver archivedDataWithRootObject:rowIndexes];
+    [pboard declareTypes:[NSArray arrayWithObject:ARRAY_TABLE_VIEW_ROW_TYPE] owner:self];
+    [pboard setData:zNSIndexSetData forType:ARRAY_TABLE_VIEW_ROW_TYPE];
+    return YES;
+}
+
+- (NSDragOperation)tableView:(NSTableView*)tv 
+				validateDrop:(id <NSDraggingInfo>)info 
+				 proposedRow:(NSInteger)row 
+	   proposedDropOperation:(NSTableViewDropOperation)op
+{
+    return NSDragOperationEvery;
+}
+
+
+- (BOOL)tableView:(NSTableView *)aTableView acceptDrop:(id <NSDraggingInfo>)info
+			  row:(NSInteger)row 
+	dropOperation:(NSTableViewDropOperation)operation
+{
+	
+	NSPasteboard* pboard   = [info draggingPasteboard];
+    NSData* rowData        = [pboard dataForType:ARRAY_TABLE_VIEW_ROW_TYPE];
+    NSIndexSet* rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData:rowData];
+    NSInteger dragRow      = [rowIndexes firstIndex];
+	
+	
+    // Move the specified row to its new location...
+	// if we remove a row then everything moves down by one
+	// so do an insert prior to the delete
+	if (dragRow < row) {
+		[[[NSUserDefaults standardUserDefaults] mutableArrayValueForKey:key] 
+		 swapObjectAtIndex:row from:dragRow removeFirst:NO];
+		[self.table noteNumberOfRowsChanged];
+		[self.table reloadData];
+		
+		return YES;
+		
+	}
+	
+	[[[NSUserDefaults standardUserDefaults] mutableArrayValueForKey:key] 
+	 swapObjectAtIndex:row from:dragRow removeFirst:YES];
+	[self.table noteNumberOfRowsChanged];
+	[self.table reloadData];
+	
+	return YES;
+}
+
+
+#pragma mark - Table +/- row
 
 - (IBAction) removeRow:sender
 {

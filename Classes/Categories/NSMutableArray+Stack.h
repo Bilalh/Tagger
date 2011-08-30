@@ -16,4 +16,8 @@
 /// Removes the last items and retuns it
 - (id)pop;
 
+- (void)swapObjectAtIndex:(NSInteger)index 
+					 from:(NSInteger)remove
+			  removeFirst:(BOOL)removeFirst;
+
 @end
