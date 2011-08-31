@@ -4,11 +4,12 @@ Changelog
 Version 1.4.2
 -------------
 ### Features ###
-* Genre picker in auto tagger
+* Genre picker in auto tagger.
 
 ### Improvements ###
 * removed NSLogs.
 * vgmdb enable.
+* Fields alignment.
 
 Version 1.4.1 (Wed Aug 31 2011 22:01:34 +0100)
 -------------
