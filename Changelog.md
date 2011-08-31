@@ -5,6 +5,8 @@ Version 1.4.1
 -------------
 ### Improvements ###
 * Genre list.
+
+### Bug Fixes ###
 * Dragging files to table.
 * vgmdb enable.
 
