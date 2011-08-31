@@ -6,6 +6,7 @@ Version 1.4.1
 ### Improvements ###
 * Genre list.
 * Dragging files to table.
+* vgmdb enable.
 
 Version 1.4 (Tue Aug 30 2011 23:43:54 +0100)
 -------------

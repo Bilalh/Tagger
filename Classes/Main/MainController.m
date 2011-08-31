@@ -50,6 +50,8 @@ static const NSArray *tagMenuValues;
 
 /// Checks if there any music files
 - (void) _vgmdbEnable;
+- (void) _vgmdbEnableDir;
+
 
 /// Change the current directory to the clicked entries
 - (IBAction) onClick:(id)sender;
@@ -83,7 +85,7 @@ static const NSArray *tagMenuValues;
 
 @implementation MainController
 @synthesize window, directoryStack, currentNodes,forwardStack, selectedNodeindex, parentNodes, table;
-@synthesize vgmdbEnable=_vgmdbEnable;
+@synthesize vgmdbEnable=_vgmdbEnable, vgmdbEnableDir = _vgmdbEnableDir;
 @dynamic forwordStackEnable, backwordStackEnable, labelMenu, openEnable;
 
 #pragma mark - Table Methods 
@@ -513,9 +515,10 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 	[directoryStack addObject:[parentNodes objectAtIndex:0]];
 	DDLogInfo(@"directoryStack %@", directoryStack);
-	[self _vgmdbEnable];
 	[table deselectAll:self];
 	[table reloadData];
+	[self _vgmdbEnable];
+	[self _vgmdbEnableDir];
 }
 
 - (void)setPopupMenuIcons
@@ -544,7 +547,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[parentNodes addObjectsFromArray:[node parentNodes] ];
 	
  	[directoryStack addObject:node];
-	[self _vgmdbEnable];
 	[table deselectAll:self];
 	[table reloadData];
 	
@@ -568,6 +570,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		[[popup itemAtIndex:i] setImage:[[parentNodes objectAtIndex:i] icon]];
 	}	
 	[self _vgmdbEnable];
+	[self _vgmdbEnableDir];
 }
 
 - (IBAction)backForwordDirectories:(id)sender
@@ -592,9 +595,10 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[self setPopupMenuIcons];
 	self.selectedNodeindex = [NSNumber numberWithInt:0];
 	DDLogVerbose (@"directoryStack %@", directoryStack);
-	[self _vgmdbEnable];
 	[table deselectAll:self];
 	[table reloadData];
+	[self _vgmdbEnable];
+	[self _vgmdbEnableDir];
 }
 
 - (IBAction)backDirectories:(id)sender
@@ -815,11 +819,22 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		if (!n.isDirectory) {
 			_vgmdbEnable = YES;
 			[vgmdbItem setEnabled:YES];
-			return;	
+			return;
 		}
 	}
 	_vgmdbEnable = NO;	
 	[vgmdbItem setEnabled:NO];
+}
+
+- (void)_vgmdbEnableDir
+{
+	for (FileSystemNode *n in [[directoryStack lastObject] children] ) {
+		if (n.isDirectory) {
+			_vgmdbEnableDir = YES;
+			return;
+		}
+	}
+	_vgmdbEnableDir = NO;
 }
 
 - (BOOL)openEnable
@@ -926,6 +941,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[[table tableColumnWithIdentifier:@"title"] setEditable:true];
 	[table setTarget:self];
 	[self _vgmdbEnable];
+	[self _vgmdbEnableDir];
 	[table setMenu:[self labelMenu]];
 	[table registerForDraggedTypes:[[table registeredDraggedTypes ] arrayByAddingObject:TABLE_VIEW_ROW_TYPE]];
 	

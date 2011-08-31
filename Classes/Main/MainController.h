@@ -44,7 +44,7 @@
 	
 	NSMutableArray *parentNodes;
 	BOOL _vgmdbEnable;
-	
+	BOOL _vgmdbEnableDir;
 	NSString *currentColumnKey;
 	BOOL currentColumnAscending;
 	
@@ -74,6 +74,7 @@
 @property (readonly) BOOL forwordStackEnable;
 @property (readonly) BOOL backwordStackEnable;
 @property (readonly) BOOL vgmdbEnable;
+@property (readonly) BOOL vgmdbEnableDir;
 @property (readonly) BOOL openEnable;
 
 @property (readonly) NSMenu* labelMenu;
