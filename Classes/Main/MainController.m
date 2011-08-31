@@ -185,12 +185,13 @@ static const NSArray *tagMenuValues;
 	return [([self nodeAtIndex:rowIndex]).labelIndex integerValue];
 }
 
-- (void) acceptFilenameDrag:(NSString *) filename
+- (void) acceptFilenameDrag:(NSString *) path
 {
-	if (![[filename lastPathComponent] isEqualToString:@"/"]){
-		filename = [filename stringByDeletingLastPathComponent];
-	}
-	[self goToDirectory:[NSURL URLWithString:filename]];
+	NSString *dirPath = ([[path pathExtension ] isEqualToString:@""]) 
+	? path 
+	: [path stringByDeletingLastPathComponent];
+
+	[self goToDirectory:[[NSURL alloc] initFileURLWithPath:dirPath]];
 }
 
 #pragma mark - Table Menu (label)
@@ -566,6 +567,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		[[popup itemAtIndex:i] setTitle:[[parentNodes objectAtIndex:i] displayName]];
 		[[popup itemAtIndex:i] setImage:[[parentNodes objectAtIndex:i] icon]];
 	}	
+	[self _vgmdbEnable];
 }
 
 - (IBAction)backForwordDirectories:(id)sender

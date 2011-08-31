@@ -4,7 +4,8 @@ Changelog
 Version 1.4.1
 -------------
 ### Improvements ###
-* Gnere list
+* Genre list.
+* Dragging files to table.
 
 Version 1.4 (Tue Aug 30 2011 23:43:54 +0100)
 -------------

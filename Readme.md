@@ -24,9 +24,9 @@ Run Embed MacRuby on it which does the follows to embed the MacRuby framework
 
 	macruby_deploy --compile --embed --gem nokogiri --gem htmlentities --verbose
 
-To save 15mb you can replace 
+To save 15mb you can remove the unused .rb files in		
   `VGTagger.app/Contents/Frameworks/MacRuby.framework/Versions/0.10/usr/lib/ruby/1.9.2`
-with `1.9.2` from `MacRuby.framework/Versions/0.10/usr/lib/ruby/` in `/Library/Frameworks`
+
 
 
 Issues
