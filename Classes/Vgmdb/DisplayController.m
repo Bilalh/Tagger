@@ -184,7 +184,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 			}
 		}	
 	}	
-	NSLog(@"%@ %@", selectedLanguage, [title objectForKey:selectedLanguage]);
+
 	for (i =0; i < sizeof(l)/sizeof(size_t) ; ++i) {
 		if ([l[i] isEqualToString:selectedLanguage]){
 			[fieldProperties setValue:[NSNumber numberWithInt:i] forKeyPath:@"radio.selectedIndex"];

@@ -130,16 +130,17 @@ static const NSArray *tagMenuValues;
 
 - (void)openDirectoryNode: (FileSystemNode *) node
 {
-  [directoryStack addObject:node];
-		[table reloadData];
-		[parentNodes insertObject:node atIndex:0];
-		[popup insertItemWithTitle:[node displayName] atIndex:0];
-		[[popup itemAtIndex:0] setImage:[node icon]];
-		self.selectedNodeindex = [NSNumber numberWithInteger:0];
-		// clear the forward stack since it would not make sense any more
-		[forwardStack removeAllObjects];
-		[table deselectAll:self];
-
+	[directoryStack addObject:node];
+	[table reloadData];
+	[parentNodes insertObject:node atIndex:0];
+	[popup insertItemWithTitle:[node displayName] atIndex:0];
+	[[popup itemAtIndex:0] setImage:[node icon]];
+	self.selectedNodeindex = [NSNumber numberWithInteger:0];
+	// clear the forward stack since it would not make sense any more
+	[forwardStack removeAllObjects];
+	[table deselectAll:self];
+	[self _vgmdbEnable];
+	[self _vgmdbEnableDir];
 }
 - (IBAction)onClick:(id)sender
 {

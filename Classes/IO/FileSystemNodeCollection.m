@@ -167,10 +167,10 @@ static const NSArray *fieldNames;
 	
 	for (FileSystemNode *n in tagsArray) {
 		for (NSString *tagName in tagsNames) {
-			DDLogRelease(@"-%@: %@", tagName, [n.tags valueForKey:tagName]);
+			DDLogVerbose(@"-%@: %@", tagName, [n.tags valueForKey:tagName]);
 			[n.tags setValue:block([n.tags valueForKey:tagName], tagName, n.tags)
 					  forKey:tagName];
-			DDLogRelease(@"+%@: %@", tagName, [n.tags valueForKey:tagName]);
+			DDLogVerbose(@"+%@: %@", tagName, [n.tags valueForKey:tagName]);
 		}
 	}
 	
