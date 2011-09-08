@@ -34,6 +34,7 @@ static const NSArray *predefinedDirectories;
 static const NSArray *predefinedRenameFormats;
 static const NSArray *predefinedTagFormats;
 static const NSArray *tagMenuValues;
+static const NSArray *deleteMenuValues;
 
 @interface MainController()  
 
@@ -65,6 +66,8 @@ static const NSArray *tagMenuValues;
 - (void) copyTags:(NSWindow *)sheet 
 	   returnCode:(int)returnCode 
 	  contextInfo:(IntPair*)pair;
+
+- (void) initTagManipulationSubMenus;
 
 @end
 
@@ -618,18 +621,47 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}
 }
 
+- (IBAction)goToPredefinedDirectory:(id)sender
+{
+	[self goToDirectory:[predefinedDirectories objectAtIndex:[sender tag]]];
+}
+
+- (IBAction)goToStartingDirectory:(id)sender
+{
+	[self goToDirectory: [[NSUserDefaults standardUserDefaults] URLForKey:@"startUrl"]];
+}
+
+#pragma mark - External Applications
+
+- (IBAction)addSelectedToItunes:(id)sender
+{	
+	iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
+	iTunesTrack * track = [iTunes add:[NSArray arrayWithObject:currentNodes.urls] 
+								   to:nil];
+	DDLogRelease(@"Added %@ to track: %@",currentNodes.urls,track);
+}
+
+- (IBAction)revealInFinder:(id)sender
+{
+	for (FileSystemNode *n in currentNodes.tagsArray) {
+		[[NSWorkspace sharedWorkspace] selectFile:[n.URL path] 
+						 inFileViewerRootedAtPath:nil];
+	}
+}
+
+
 #pragma mark - Tag Manipulation
 
 - (IBAction)capitalisedTags:(id)sender
 {
-	[self performBlockOnTags:sender block:^id (id value, NSString *tagName, Tags *tags) {
+	[self performBlockOnTags:sender tagNames:tagMenuValues block:^id (id value, NSString *tagName, Tags *tags) {
 		return [value capitalizedString];
 	}];
 }
 
 - (IBAction)lowercaseTags:(id)sender
 {
-	[self performBlockOnTags:sender block:^id (id value, NSString *tagName, Tags *tags) {
+	[self performBlockOnTags:sender tagNames:tagMenuValues block:^id (id value, NSString *tagName, Tags *tags) {
 		return [value lowercaseString];
 	}];
 }
@@ -637,26 +669,34 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (IBAction)uppercaseTags:(id)sender
 {
-	[self performBlockOnTags:sender block:^id (id value, NSString *tagName, Tags *tags) {
+	[self performBlockOnTags:sender tagNames:tagMenuValues block:^id (id value, NSString *tagName, Tags *tags) {
 		return [value uppercaseString];
 	}];
 }
 
 - (IBAction)trimWhitespace:(id)sender
 {
-	[self performBlockOnTags:sender block:^id (id value, NSString *tagName, Tags *tags) {
+	[self performBlockOnTags:sender tagNames:tagMenuValues block:^id (id value, NSString *tagName, Tags *tags) {
 		return [value stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@" "]];
 	}];
 }
 
+- (IBAction)deleteTags:(id)sender
+{
+	[self performBlockOnTags:sender tagNames:deleteMenuValues block:^id (id value, NSString *tagName, Tags *tags) {
+		return nil;
+	}];
+}
+
 - (IBAction)performBlockOnTags:(id)sender
+					  tagNames:(const NSArray*)tagNames
 						 block:(id (^)(id value, NSString *tagName, Tags *tags ))block
 {	
 	if ([currentNodes empty]) return;
 	if ([sender tag] >=0){
-		[self.currentNodes performBlockOnTag:[tagMenuValues objectAtIndex:[sender tag]] block:block];	
+		[self.currentNodes performBlockOnTag:[tagNames objectAtIndex:[sender tag]] block:block];	
 	}else{
-		[self.currentNodes performBlockOnTags:tagMenuValues block:block];
+		[self.currentNodes performBlockOnTags:tagNames block:block];
 	}
 	[table reloadData];
 	NSIndexSet *rows = [table selectedRowIndexes];
@@ -726,24 +766,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[self refresh:sender];
 }
 
-#pragma mark - Gui Callback
-- (IBAction)addSelectedToItunes:(id)sender
-{	
-	iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier:@"com.apple.iTunes"];
-	iTunesTrack * track = [iTunes add:[NSArray arrayWithObject:currentNodes.urls] 
-								   to:nil];
-	DDLogRelease(@"Added %@ to track: %@",currentNodes.urls,track);
-}
-
-- (IBAction)goToPredefinedDirectory:(id)sender
-{
-	[self goToDirectory:[predefinedDirectories objectAtIndex:[sender tag]]];
-}
-
-- (IBAction)goToStartingDirectory:(id)sender
-{
-	[self goToDirectory: [[NSUserDefaults standardUserDefaults] URLForKey:@"startUrl"]];
-}
+#pragma mark - Vgmdb
 
 - (IBAction)search:(id)sender
 {
@@ -784,21 +807,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		  contextInfo: self.window];
 	[table reloadData];
 }
-
-- (IBAction)refresh:(id)sender
-{
-	[[directoryStack lastObject] invalidateChildren];
-	[table reloadData];
-}
-
-- (IBAction)revealInFinder:(id)sender
-{
-	for (FileSystemNode *n in currentNodes.tagsArray) {
-		[[NSWorkspace sharedWorkspace] selectFile:[n.URL path] 
-						 inFileViewerRootedAtPath:nil];
-	}
-}
-
 
 
 #pragma mark - Gui Bools
@@ -844,22 +852,13 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	return [[[[directoryStack lastObject] children] objectAtIndex:row] isDirectory];
 }
 
-
-#pragma mark - Windows
-
-- (BOOL)windowShouldClose:(NSNotification *)notification
-{
-	[window orderOut:self];
-	return NO;
-}
-
-
 - (IBAction)reopen:(id)sender
 {
 	[self showWindow:self];
 }
 
 #pragma mark - QuickLook
+
 - (BOOL)acceptsPreviewPanelControl:(QLPreviewPanel *)panel;
 {
     return YES;
@@ -919,6 +918,16 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
     return NO;
 }
 
+#pragma mark - Windows
+
+- (BOOL)windowShouldClose:(NSNotification *)notification
+{
+	[window orderOut:self];
+	return NO;
+}
+
+
+
 #pragma mark - Helper Methods
 - (FileSystemNode*) nodeAtIndex:(NSInteger)row
 {
@@ -930,6 +939,11 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	return [[directoryStack lastObject] children];
 }
 
+- (IBAction)refresh:(id)sender
+{
+	[[directoryStack lastObject] invalidateChildren];
+	[table reloadData];
+}
 
 #pragma mark - Alloc/init
 
@@ -945,6 +959,28 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[table setMenu:[self labelMenu]];
 	[table registerForDraggedTypes:[[table registeredDraggedTypes ] arrayByAddingObject:TABLE_VIEW_ROW_TYPE]];
 	
+	[self initTagManipulationSubMenus];
+
+}
+
+-(void)initDirectoryTable
+{
+	directoryStack = [[NSMutableArray alloc] init];
+	forwardStack   = [[NSMutableArray alloc] init];
+	
+	FileSystemNode *currentDirectory = [[FileSystemNode alloc] initWithURL:
+										[[NSUserDefaults standardUserDefaults] URLForKey:@"startUrl"]];
+	[directoryStack push:currentDirectory];
+	
+	currentNodes      = [[FileSystemNodeCollection alloc] init];
+	selectedNodeindex = [NSNumber numberWithInt:0];
+	parentNodes            = [currentDirectory parentNodes];
+	
+	DDLogVerbose(@"Staring parentNodes%@", parentNodes);
+}
+
+- (void) initTagManipulationSubMenus 
+{
 	void (^makeMenu)(const NSArray*, NSMenu*, SEL) = ^(const NSArray *titles, NSMenu *menu, SEL action){
 		int i;
 		for (i =0; i < [titles count]; ++i) {
@@ -972,22 +1008,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	makeMenu(tagMenuValues, uppercaseMenu,  @selector(uppercaseTags:));
 	makeMenu(tagMenuValues, lowercaseMenu,  @selector(lowercaseTags:));
 	makeMenu(tagMenuValues, whitespaceMenu, @selector(trimWhitespace:));
-}
-
--(void)initDirectoryTable
-{
-	directoryStack = [[NSMutableArray alloc] init];
-	forwardStack   = [[NSMutableArray alloc] init];
 	
-	FileSystemNode *currentDirectory = [[FileSystemNode alloc] initWithURL:
-										[[NSUserDefaults standardUserDefaults] URLForKey:@"startUrl"]];
-	[directoryStack push:currentDirectory];
-	
-	currentNodes      = [[FileSystemNodeCollection alloc] init];
-	selectedNodeindex = [NSNumber numberWithInt:0];
-	parentNodes            = [currentDirectory parentNodes];
-	
-	DDLogVerbose(@"Staring parentNodes%@", parentNodes);
 }
 
 - (id)init
@@ -1022,11 +1043,16 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 							 [NSURL fileURLWithPath:[@"~/Movies"stringByExpandingTildeInPath]
 										isDirectory:YES],
 							 nil];
+	
 	predefinedRenameFormats = [[NSUserDefaults standardUserDefaults] arrayForKey:@"predefinedRenameFormats"];
 	predefinedTagFormats    = [[NSUserDefaults standardUserDefaults] arrayForKey:@"predefinedTagFormats"];
 	tagMenuValues = [[NSArray alloc ] initWithObjects:
 					 @"title",  @"album",  @"artist",@"albumArtist", @"composer", @"genre",
 					 nil];
+	deleteMenuValues = [[NSArray alloc ] initWithObjects:
+					 @"title",  @"album",  @"artist",@"albumArtist", @"composer", @"genre", @"cover"
+					 nil];
+
 }
 
 - (void)dealloc

@@ -36,6 +36,7 @@
 	IBOutlet NSMenu *uppercaseMenu;
 	IBOutlet NSMenu *lowercaseMenu;
 	IBOutlet NSMenu *whitespaceMenu;
+	IBOutlet NSMenu *deleteMenu;
 	
 	
 	VgmdbController         *vgc;
@@ -109,23 +110,25 @@
 - (IBAction) addSelectedToItunes:(id)sender;
 
 /// @name Table
-- (IBAction) gotoNextRow:(id)sender;
-- (IBAction) gotoPreviousRow:(id)sender;
+- (IBAction)gotoNextRow:(id)sender;
+- (IBAction)gotoPreviousRow:(id)sender;
 - (NSInteger)labelColorForRow:(NSInteger)rowIndex;
-- (IBAction) refresh:(id)sender;
+- (IBAction)refresh:(id)sender;
 
 
 /// @name Callback
 
-- (IBAction) rename:(id)sender;
-- (IBAction) tagsFromFilename:(id)sender;
+- (IBAction)rename:(id)sender;
+- (IBAction)tagsFromFilename:(id)sender;
 
 - (IBAction)capitalisedTags:(id)sender;
 - (IBAction)uppercaseTags:(id)sender;
 - (IBAction)lowercaseTags:(id)sender;
 - (IBAction)trimWhitespace:(id)sender;
+- (IBAction)deleteTags:(id)sender;
 
 - (IBAction)performBlockOnTags:(id)sender
+					  tagNames:(const NSArray*)tagNames
 						 block:(id (^)(id value, NSString *tagName, Tags *tags ))block;
 
 
@@ -133,11 +136,18 @@
  * Shows the sheet for searching for tags
  * @param sender the object that called this method
  */
-- (IBAction) search:(id)sender;
+- (IBAction)search:(id)sender;
 
-- (IBAction) reopen:(id)sender;
+/**  
+ * Shows the sheet for searching for tags
+ * @param sender the object that called this method
+ */
+- (IBAction)searchWithSubDirectories:(id)sender;
 
-- (IBAction) renumberFiles:(id)sender;
+
+- (IBAction)reopen:(id)sender;
+
+- (IBAction)renumberFiles:(id)sender;
 
 
 
