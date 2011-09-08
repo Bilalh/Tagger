@@ -127,7 +127,7 @@ using namespace std;
 	return data->file->save();
 }
 
-
+ 
 #pragma mark -
 #pragma mark Setters
 
@@ -197,23 +197,22 @@ using namespace std;
 	using namespace TagLib::MP4;
 	TAG_SETTER_START(cover);
 	
-	NSData *imageData = [cover bitmapDataForType:NSJPEGFileType];
-	CoverArt ca = CoverArt(CoverArt::JPEG, ByteVector((const char *)[imageData bytes], (uint)[imageData length]));	
+	ByteVector bv;
+	if (!cover){
+		bv = ByteVector::null;
+	}else{
+		NSData *imageData = [cover bitmapDataForType:NSJPEGFileType];
+		bv.setData((const char *)[imageData bytes], (uint)[imageData length]);
+	}
+	
+	CoverArtList coverArtList;
 	CoverArtList list = CoverArtList();
-	list.append(ca);
-	[self setField:COVER value:list];
-//	MP4::Tag *tag =  data->f->mp4->tag();
-//	tag->itemListMap().erase(TagLib::ByteVector("covr"));
-//	
-//	CoverArtList p = tag->itemListMap()["covr"].toCoverArtList();
-//	p.append(CoverArt(CoverArt::JPEG, 
-//					  ByteVector((const char*)[imageData bytes], (uint)[imageData length])));
-//	//found this in the test files
-//	tag->itemListMap()["covr"] = p;
-//	data->file->save();
+	coverArtList.append(CoverArt(CoverArt::JPEG, bv));
+
+//	[self setField:COVER value:list];
+	MP4::Tag * const tag = data->f->mp4->tag();
+	tag->itemListMap()["covr"] = coverArtList;
+	tag->save();
 }
-
-
-
 
 @end
