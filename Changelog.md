@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Version 1.4.2
+Version 1.5
 -------------
 ### Features ###
 * Genre picker in auto tagger.
@@ -10,6 +10,9 @@ Version 1.4.2
 * removed NSLogs.
 * vgmdb enable.
 * Fields alignment.
+
+### Bug Fixes ### 
+* Fixed bug in mp3 files when *replacing* (not adding) artwork on files who album art has *never* been edited in iTunes, means the file can't be added to iTunes.
 
 Version 1.4.1 (Wed Aug 31 2011 22:01:34 +0100)
 -------------

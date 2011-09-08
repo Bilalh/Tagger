@@ -32,7 +32,7 @@ To save 15mb you can remove the unused .rb files in
 Issues
 ------
 * Bug in mp3 files when *replacing* (not adding) artwork on files who album art has *never* been edited in iTunes, means the file can't be added to iTunes.
-* Bug in mp4 converted from flac using apps such XLD, when setting artwork, means the file can not be added to itunes.
+* Bug in m4a converted from flac using apps such XLD, when setting artwork, means the file can not be added to itunes.
 
 Libraries Used
 --------------

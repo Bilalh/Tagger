@@ -46,6 +46,8 @@ namespace MPEGFields {	// can not be put in the header for some reason
 - (void) setNumberPair:(const char *)field
 			firstValue:(NSNumber*)firstValue
 		   secondValue:(NSNumber*)secondValue;
+- (BOOL) removeAllImagesMP3:(TagLib::ID3v2::Tag*) tag
+					 ofType:(TagLib::ID3v2::AttachedPictureFrame::Type) imageType;
 @end
 
 using namespace TagLib;
@@ -243,44 +245,57 @@ using namespace MPEGFields;
 // need fixing?
 - (void) setCover:(NSImage *)newValue
 {
-//	TAG_SETTER_START(cover);
 	cover=newValue;
-	(TagLib::ID3v2::FrameFactory::instance())->setDefaultTextEncoding(TagLib::String::UTF8);
 	ID3v2::Tag *tag = data->f->mpeg->ID3v2Tag();	
 	if (cover == nil){
 		DDLogRelease(@"cover nil");
 		tag->removeFrames(COVER);	
-	}
+	}else{
 	
-	tag->removeFrames(TagLib::ByteVector("APIC"));
-	
-	if(nil != cover) {
-//		DDLogInfo(@"cover");
-//		ID3v2::AttachedPictureFrame *frame = new ID3v2::AttachedPictureFrame();
-//		NSData *imageData = [cover bitmapDataForType:NSJPEGFileType];
-//		frame->setMimeType("image/jpeg");
-//		frame->setPicture(ByteVector((const char *)[imageData bytes], (uint)[imageData length]));
-//		
-//		tag->addFrame(frame);
-//		ID3v2::FrameList frames = tag->frameList("APIC");
-		ID3v2::AttachedPictureFrame *frame = 0;
-//		if(frames.isEmpty()){
-//			DDLogRelease(@"list empty");
-//			frame = new TagLib::ID3v2::AttachedPictureFrame;
-//		}else{
-//			DDLogRelease(@"list not empty size:%d", frames.size());	
-			frame = new TagLib::ID3v2::AttachedPictureFrame;
-//		}
-		
+		ID3v2::AttachedPictureFrame *frame = new TagLib::ID3v2::AttachedPictureFrame;
+		frame->setMimeType("image/jpeg");		
+
+		ID3v2::AttachedPictureFrame::Type type =ID3v2::AttachedPictureFrame::FrontCover;
+		frame->setType(type);
+
 		NSData *imageData = [cover bitmapDataForType:NSJPEGFileType];
-		frame->setType(ID3v2::AttachedPictureFrame::FrontCover);
-		frame->setMimeType("image/jpeg");
-		frame->setPicture(ByteVector((const char *)[imageData bytes], (uint)[imageData length]));
+		frame->setPicture(ByteVector((const char *)[imageData bytes], (uint)[imageData length]));	
+		
+		[self removeAllImagesMP3:tag ofType:type];
+		
 		tag->addFrame(frame);
 
 	}	
 	data->file->save();
 }
+
+
+
+
+- (BOOL) removeAllImagesMP3:(TagLib::ID3v2::Tag*) tag
+					 ofType:(TagLib::ID3v2::AttachedPictureFrame::Type) imageType
+{
+	if (tag) {
+		TagLib::ID3v2::FrameList frameList= tag->frameList("APIC");
+		if (!frameList.isEmpty()){
+			std::list<TagLib::ID3v2::Frame*>::const_iterator iter = frameList.begin();
+			while (iter != frameList.end()) {
+				TagLib::ID3v2::AttachedPictureFrame *frame =
+				static_cast<TagLib::ID3v2::AttachedPictureFrame *>( *iter );
+				std::list<TagLib::ID3v2::Frame*>::const_iterator nextIter = iter;
+				nextIter++;
+				if (frame && frame->type() == imageType){
+					// Remove and free the memory for this frame
+					tag->removeFrame(*iter, true);
+				}
+				iter = nextIter;
+			}
+		}
+	}
+	
+	return YES;
+}
+
 
 - (void) setComment:(NSString *)newValue
 {
