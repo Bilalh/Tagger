@@ -151,6 +151,7 @@ static const NSArray *fieldNames;
 			return err;	
 		}
 	}
+	[self initfields];
 	return err;
 }
 

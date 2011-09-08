@@ -10,6 +10,7 @@ Version 1.5
 * removed NSLogs.
 * vgmdb enable.
 * Fields alignment.
+* Tags from file names refreashing
 
 ### Bug Fixes ### 
 * Fixed bug in mp3 files when *replacing* (not adding) artwork on files who album art has *never* been edited in iTunes, means the file can't be added to iTunes for nealy all cases.

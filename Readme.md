@@ -31,7 +31,7 @@ To save 15mb you can remove the unused .rb files in
 
 Issues
 ------
-* Bug in mp3 files when *replacing* (not adding) artwork on files who album art has *never* been edited in iTunes, means the file can't be added to iTunes, happen rarely4.
+* Bug in mp3 files when *replacing* (not adding) artwork on files who album art has *never* been edited in iTunes, means the file can't be added to iTunes, happen rarely.
 
 Libraries Used
 --------------

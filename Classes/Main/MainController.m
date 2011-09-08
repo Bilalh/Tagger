@@ -723,8 +723,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 {
 	DDLogVerbose(@"format array %@",[predefinedTagFormats objectAtIndex:[sender tag]]);
 	[currentNodes tagsWithFormatArrayFromFilename: [predefinedRenameFormats objectAtIndex:[sender tag]]];
-	[[directoryStack lastObject] invalidateChildren];
-	[table reloadData];
+	[self refresh:sender];
 }
 
 #pragma mark - Gui Callback
