@@ -245,10 +245,10 @@ using namespace MPEGFields;
 // need fixing?
 - (void) setCover:(NSImage *)newValue
 {
-	DDLogInfo(@"Setting %s", @"cover");
-	cover=newValue;
+	TAG_SETTER_START(cover);
 	
-	ID3v2::Tag *tag = data->f->mpeg->ID3v2Tag();	
+	ID3v2::Tag *tag = data->f->mpeg->ID3v2Tag();
+	tag->removeFrames(COVER);
 	if (cover == nil){
 		tag->removeFrames(COVER);	
 	}else{
