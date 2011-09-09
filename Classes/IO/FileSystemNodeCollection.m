@@ -201,7 +201,6 @@ static const NSArray *fieldNames;
 
 - (void)deleteAllTags
 {
-	DDLogRelease(@"removing tags from %@",  tagsArray);
 	for (FileSystemNode *n in tagsArray) {
 		[n.tags removeAllTags];
 	}

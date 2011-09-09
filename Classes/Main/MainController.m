@@ -686,12 +686,13 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[self performBlockOnTags:sender tagNames:deleteMenuValues block:^id (id value, NSString *tagName, Tags *tags) {
 		return nil;
 	}];
-
+	[self refresh:sender];
 }
 
 - (IBAction)deleteAllTags:(id)sender;
 {
 	[currentNodes deleteAllTags];
+	[self refresh:sender];
 }
 
 - (IBAction)performBlockOnTags:(id)sender

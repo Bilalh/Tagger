@@ -184,7 +184,6 @@ using namespace MPEGFields;
 
 - (void) removeAllTags
 {
-	DDLogRelease(@"removing tags");
 	data->f->mpeg->strip(MPEG::File::ID3v1);
 	data->f->mpeg->save(MPEG::File::NoTags, true);
 }

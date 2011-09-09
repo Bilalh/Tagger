@@ -1,6 +1,15 @@
 Changelog
 =========
 
+Version 1.4.3
+-------------
+### Improvements ###
+* removed NSLogs.
+* Deleting Tags
+
+### Bug Fixes ### 
+* m4a delete all tags
+
 Version 1.4.2 (Fri 9 Sep 2011 04:09:19 +0100)
 -------------
 ### Features ###

@@ -131,6 +131,15 @@ using namespace std;
 #pragma mark -
 #pragma mark Setters
 
+- (void) removeAllTags
+{
+	MP4::Tag * const t = data->f->mp4->tag();
+	MP4::ItemListMap &map =  t->itemListMap();
+	map.clear();
+	
+	data->f->mp4->save();
+}
+
 - (void) setAlbumArtist:(NSString *)newValue
 { 
 	TAG_SETTER_START(albumArtist);
