@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Version 1.4.2
+Version 1.4.2 (Fri 9 Sep 2011 04:09:19 +0100)
 -------------
 ### Features ###
 * Genre picker in auto tagger.
