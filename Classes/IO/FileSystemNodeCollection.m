@@ -42,7 +42,7 @@ static const NSArray *fieldNames;
 				  @"disc",  @"totalDiscs" ,
 				  @"compilation", @"year",
 				  @"composer", @"bpm",
-				  @"comment", @"cover",
+				  @"comment", @"cover", @"url",
 				  nil];
 	fieldNames = [[NSArray alloc] initWithObjects:
 				  @"labelColor", @"labelIndex",
@@ -201,8 +201,9 @@ static const NSArray *fieldNames;
 
 - (void)deleteAllTags
 {
-	for (NSString *key in tagFieldNames) {
-		[self setValue:nil forKey:key];
+	DDLogRelease(@"removing tags from %@",  tagsArray);
+	for (FileSystemNode *n in tagsArray) {
+		[n.tags removeAllTags];
 	}
 }
 

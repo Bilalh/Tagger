@@ -31,7 +31,12 @@ To save 15mb you can remove the unused .rb files in
 
 Issues
 ------
-* Bug in mp3 files when *replacing* (not adding) artwork on files who album art has *never* been edited in iTunes, means the file can't be added to iTunes, happen rarely.
+* Bug in mp3 files somtimes when *replacing* (not adding) artwork on files who album art has *never* been edited in iTunes, means the file can't be added to iTunes. This happens sometimes happens after replacing the all work twice.
+
+*Work around*
+To replace a mp3 cover art a second time use `refresh`(⌘R) then `Parent Folder`(⌘↑) then `Back`(⌘[) menus items then replace the cover.
+
+* Bug in malformed m4a files somtimes when *replacing* (not adding) artwork, means the file can't be played in iTunes.
 
 Libraries Used
 --------------

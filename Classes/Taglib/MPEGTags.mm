@@ -48,6 +48,7 @@ namespace MPEGFields {	// can not be put in the header for some reason
 		   secondValue:(NSNumber*)secondValue;
 - (BOOL) removeAllImagesMP3:(TagLib::ID3v2::Tag*) tag
 					 ofType:(TagLib::ID3v2::AttachedPictureFrame::Type) imageType;
+- (BOOL) removeAllImagesMP3:(TagLib::ID3v2::Tag*) tag;
 @end
 
 using namespace TagLib;
@@ -181,6 +182,12 @@ using namespace MPEGFields;
 #pragma mark -
 #pragma mark Setters
 
+- (void) removeAllTags
+{
+	DDLogRelease(@"removing tags");
+	data->f->mpeg->strip(MPEG::File::ID3v1);
+	data->f->mpeg->save(MPEG::File::NoTags, true);
+}
 
 - (void) setAlbumArtist:(NSString *)newValue
 { 
@@ -249,9 +256,9 @@ using namespace MPEGFields;
 	
 	ID3v2::Tag *tag = data->f->mpeg->ID3v2Tag();
 	tag->removeFrames(COVER);
-	if (cover == nil){
-		tag->removeFrames(COVER);	
-	}else{
+	data->f->mpeg->save();
+//	[self removeAllImagesMP3:tag];
+	if (cover){
 	
 		ID3v2::AttachedPictureFrame *frame = new TagLib::ID3v2::AttachedPictureFrame;
 		frame->setMimeType("image/jpeg");		
@@ -262,16 +269,32 @@ using namespace MPEGFields;
 		NSData *imageData = [cover bitmapDataForType:NSJPEGFileType];
 		frame->setPicture(ByteVector((const char *)[imageData bytes], (uint)[imageData length]));	
 		
-		[self removeAllImagesMP3:tag ofType:type];
+//		[self removeAllImagesMP3:tag ofType:type];
 		
 		tag->addFrame(frame);
 
 	}	
-	data->file->save();
+	data->f->mpeg->save();
 }
 
 
-
+- (BOOL) removeAllImagesMP3:(TagLib::ID3v2::Tag*) tag
+{
+	if (tag) {
+		TagLib::ID3v2::FrameList frameList= tag->frameList("APIC");
+		if (!frameList.isEmpty()){
+			std::list<TagLib::ID3v2::Frame*>::const_iterator iter = frameList.begin();
+			while (iter != frameList.end()) {
+				std::list<TagLib::ID3v2::Frame*>::const_iterator nextIter = iter;
+				nextIter++;
+				tag->removeFrame(*iter);
+				iter = nextIter;
+			}
+		}
+	}
+	
+	return YES;
+}
 
 - (BOOL) removeAllImagesMP3:(TagLib::ID3v2::Tag*) tag
 					 ofType:(TagLib::ID3v2::AttachedPictureFrame::Type) imageType
@@ -286,8 +309,7 @@ using namespace MPEGFields;
 				std::list<TagLib::ID3v2::Frame*>::const_iterator nextIter = iter;
 				nextIter++;
 				if (frame && frame->type() == imageType){
-					// Remove and free the memory for this frame
-					tag->removeFrame(*iter, true);
+					tag->removeFrame(*iter);
 				}
 				iter = nextIter;
 			}
@@ -303,7 +325,7 @@ using namespace MPEGFields;
 	TAG_SETTER_START(comment);
 	(TagLib::ID3v2::FrameFactory::instance())->setDefaultTextEncoding(TagLib::String::UTF8);
 	ID3v2::Tag *tag = data->f->mpeg->ID3v2Tag();	
-	tag->removeFrames(COMMENT);
+	tag->removeFrames("COMM");
 	if(nil != newValue) {
 		ID3v2::CommentsFrame *frame =  new ID3v2::CommentsFrame();
 		frame->setText([newValue tagLibString]);

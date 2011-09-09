@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Version 1.5
+Version 1.4.2
 -------------
 ### Features ###
 * Genre picker in auto tagger.
@@ -14,8 +14,8 @@ Version 1.5
 * Tags from file names refreashing
 
 ### Bug Fixes ### 
-* Fixed bug in mp3 files when *replacing* (not adding) artwork on files who album art has *never* been edited in iTunes, means the file can't be added to iTunes for nealy all cases.
-* Fixed bug in mp4 files converted from flac using apps such XLD, when setting artwork, means the file can not be added to itunes.
+* Fixed most bugs in mp3 files when *replacing* (not adding) artwork on files who album art has *never* been edited in iTunes, means the file can't be added to iTunes for nealy all cases.
+* Fixed  most bugs in mp4 files conve1rted from flac using apps such XLD, when setting artwork, means the file can not be added to itunes.
 
 
 Version 1.4.1 (Wed Aug 31 2011 22:01:34 +0100)

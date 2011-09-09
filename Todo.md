@@ -4,7 +4,8 @@ TODO
 FIXME
 -----
 
-* Bug in mp3 files when *replacing* (not adding) artwork on files who album art has *never* been edited in iTunes, means the file can't be added to iTunes happens rarly.
+* Bug in mp3 files somtimes when *replacing* (not adding) artwork on files who album art has *never* been edited in iTunes, means the file can't be added to iTunes. This happens sometimes happens after replacing the all work twice.
+* Bug in malformed m4a files somtimes when *replacing* (not adding) artwork, means the file can't be played in iTunes.
 * Renaming of files only seems to work onces, have to go to a different dir and back to rename again.
 
 Images

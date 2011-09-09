@@ -75,6 +75,8 @@ struct FileData;
 
 - (NSString*) displayName;
 
+- (void) removeAllTags;
+
 /// @name Finding General metadata.
 
 /// The title of the file
