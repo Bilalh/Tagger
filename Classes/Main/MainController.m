@@ -681,11 +681,17 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}];
 }
 
-- (IBAction)deleteTags:(id)sender
+- (IBAction)deleteTag:(id)sender
 {
 	[self performBlockOnTags:sender tagNames:deleteMenuValues block:^id (id value, NSString *tagName, Tags *tags) {
 		return nil;
 	}];
+
+}
+
+- (IBAction)deleteAllTags:(id)sender;
+{
+	[currentNodes deleteAllTags];
 }
 
 - (IBAction)performBlockOnTags:(id)sender
@@ -1008,6 +1014,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	makeMenu(tagMenuValues, uppercaseMenu,  @selector(uppercaseTags:));
 	makeMenu(tagMenuValues, lowercaseMenu,  @selector(lowercaseTags:));
 	makeMenu(tagMenuValues, whitespaceMenu, @selector(trimWhitespace:));
+	makeMenu(deleteMenuValues, deleteMenu,  @selector(deleteTag:));
 	
 }
 
@@ -1050,7 +1057,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 					 @"title",  @"album",  @"artist",@"albumArtist", @"composer", @"genre",
 					 nil];
 	deleteMenuValues = [[NSArray alloc ] initWithObjects:
-					 @"title",  @"album",  @"artist",@"albumArtist", @"composer", @"genre", @"cover"
+					 @"title",  @"album",  @"artist",@"albumArtist", @"composer", @"genre", @"cover",
 					 nil];
 
 }

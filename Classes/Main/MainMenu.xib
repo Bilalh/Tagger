@@ -1063,7 +1063,7 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
-								<object class="NSMenuItem" id="191775143">
+								<object class="NSMenuItem" id="265538809">
 									<reference key="NSMenu" ref="397990970"/>
 									<string key="NSTitle">Delete Tags</string>
 									<string key="NSKeyEquiv"/>
@@ -1071,21 +1071,21 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 									<string key="NSAction">submenuAction:</string>
-									<object class="NSMenu" key="NSSubmenu" id="294493129">
+									<object class="NSMenu" key="NSSubmenu" id="542121918">
 										<string key="NSTitle">Delete Tags</string>
 										<object class="NSMutableArray" key="NSMenuItems">
 											<bool key="EncodedWithXMLCoder">YES</bool>
-											<object class="NSMenuItem" id="327206521">
-												<reference key="NSMenu" ref="294493129"/>
-												<string key="NSTitle">All Below</string>
+											<object class="NSMenuItem" id="1059475605">
+												<reference key="NSMenu" ref="542121918"/>
+												<string key="NSTitle">All Tags</string>
 												<string key="NSKeyEquiv"/>
 												<int key="NSMnemonicLoc">2147483647</int>
 												<reference key="NSOnImage" ref="35465992"/>
 												<reference key="NSMixedImage" ref="502551668"/>
 												<int key="NSTag">-1</int>
 											</object>
-											<object class="NSMenuItem" id="312343687">
-												<reference key="NSMenu" ref="294493129"/>
+											<object class="NSMenuItem" id="280224911">
+												<reference key="NSMenu" ref="542121918"/>
 												<bool key="NSIsDisabled">YES</bool>
 												<bool key="NSIsSeparator">YES</bool>
 												<string key="NSTitle"/>
@@ -1097,7 +1097,7 @@
 										</object>
 									</object>
 								</object>
-								<object class="NSMenuItem" id="6877114">
+								<object class="NSMenuItem" id="550712622">
 									<reference key="NSMenu" ref="397990970"/>
 									<bool key="NSIsDisabled">YES</bool>
 									<bool key="NSIsSeparator">YES</bool>
@@ -2905,7 +2905,7 @@
 																		</object>
 																		<object class="NSAttributedString" key="NS.nan">
 																			<string key="NSString">NaN</string>
-																			<object class="NSDictionary" key="NSAttributes" id="580391278">
+																			<object class="NSDictionary" key="NSAttributes" id="644973052">
 																				<bool key="EncodedWithXMLCoder">YES</bool>
 																				<object class="NSArray" key="dict.sortedKeys" id="0">
 																					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -2987,7 +2987,7 @@
 																		</object>
 																		<object class="NSAttributedString" key="NS.nan">
 																			<string key="NSString">NaN</string>
-																			<reference key="NSAttributes" ref="580391278"/>
+																			<reference key="NSAttributes" ref="644973052"/>
 																		</object>
 																		<real value="1" key="NS.min"/>
 																		<real value="999" key="NS.max"/>
@@ -3063,7 +3063,7 @@
 																		</object>
 																		<object class="NSAttributedString" key="NS.nan">
 																			<string key="NSString">NaN</string>
-																			<reference key="NSAttributes" ref="580391278"/>
+																			<reference key="NSAttributes" ref="644973052"/>
 																		</object>
 																		<real value="1" key="NS.min"/>
 																		<real value="999" key="NS.max"/>
@@ -3139,7 +3139,7 @@
 																		</object>
 																		<object class="NSAttributedString" key="NS.nan">
 																			<string key="NSString">NaN</string>
-																			<reference key="NSAttributes" ref="580391278"/>
+																			<reference key="NSAttributes" ref="644973052"/>
 																		</object>
 																		<real value="1" key="NS.min"/>
 																		<real value="999" key="NS.max"/>
@@ -3215,7 +3215,7 @@
 																		</object>
 																		<object class="NSAttributedString" key="NS.nan">
 																			<string key="NSString">NaN</string>
-																			<reference key="NSAttributes" ref="580391278"/>
+																			<reference key="NSAttributes" ref="644973052"/>
 																		</object>
 																		<real value="1" key="NS.min"/>
 																		<real value="9999" key="NS.max"/>
@@ -3291,7 +3291,7 @@
 																		</object>
 																		<object class="NSAttributedString" key="NS.nan">
 																			<string key="NSString">NaN</string>
-																			<reference key="NSAttributes" ref="580391278"/>
+																			<reference key="NSAttributes" ref="644973052"/>
 																		</object>
 																		<real value="100" key="NS.min"/>
 																		<real value="9999" key="NS.max"/>
@@ -5376,10 +5376,10 @@
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">enabled: currentNodes.hasBasicMetadata</string>
-						<reference key="source" ref="327206521"/>
+						<reference key="source" ref="1059475605"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="327206521"/>
+							<reference key="NSSource" ref="1059475605"/>
 							<reference key="NSDestination" ref="588631224"/>
 							<string key="NSLabel">enabled: currentNodes.hasBasicMetadata</string>
 							<string key="NSBinding">enabled</string>
@@ -5390,20 +5390,20 @@
 					<int key="connectionID">1464</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">trimWhitespace:</string>
-						<reference key="source" ref="588631224"/>
-						<reference key="destination" ref="327206521"/>
-					</object>
-					<int key="connectionID">1465</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">deleteMenu</string>
 						<reference key="source" ref="588631224"/>
-						<reference key="destination" ref="294493129"/>
+						<reference key="destination" ref="542121918"/>
 					</object>
 					<int key="connectionID">1466</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">deleteAllTags:</string>
+						<reference key="source" ref="588631224"/>
+						<reference key="destination" ref="1059475605"/>
+					</object>
+					<int key="connectionID">1469</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -6377,8 +6377,8 @@
 							<reference ref="1014365400"/>
 							<reference ref="935620755"/>
 							<reference ref="1030081110"/>
-							<reference ref="6877114"/>
-							<reference ref="191775143"/>
+							<reference ref="550712622"/>
+							<reference ref="265538809"/>
 						</object>
 						<reference key="parent" ref="1036655123"/>
 					</object>
@@ -7445,37 +7445,37 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1459</int>
-						<reference key="object" ref="6877114"/>
+						<reference key="object" ref="550712622"/>
 						<reference key="parent" ref="397990970"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1460</int>
-						<reference key="object" ref="191775143"/>
+						<reference key="object" ref="265538809"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="294493129"/>
+							<reference ref="542121918"/>
 						</object>
 						<reference key="parent" ref="397990970"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1461</int>
-						<reference key="object" ref="294493129"/>
+						<reference key="object" ref="542121918"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="312343687"/>
-							<reference ref="327206521"/>
+							<reference ref="280224911"/>
+							<reference ref="1059475605"/>
 						</object>
-						<reference key="parent" ref="191775143"/>
+						<reference key="parent" ref="265538809"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1462</int>
-						<reference key="object" ref="312343687"/>
-						<reference key="parent" ref="294493129"/>
+						<reference key="object" ref="280224911"/>
+						<reference key="parent" ref="542121918"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1463</int>
-						<reference key="object" ref="327206521"/>
-						<reference key="parent" ref="294493129"/>
+						<reference key="object" ref="1059475605"/>
+						<reference key="parent" ref="542121918"/>
 					</object>
 				</object>
 			</object>
@@ -8174,7 +8174,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1466</int>
+			<int key="maxID">1469</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -8214,7 +8214,8 @@
 							<string>backDirectories:</string>
 							<string>backForwordDirectories:</string>
 							<string>capitalisedTags:</string>
-							<string>deleteTags:</string>
+							<string>deleteAllTags:</string>
+							<string>deleteTag:</string>
 							<string>forwordDirectories:</string>
 							<string>goToParent:</string>
 							<string>goToParentMenu:</string>
@@ -8231,12 +8232,15 @@
 							<string>reopen:</string>
 							<string>revealInFinder:</string>
 							<string>search:</string>
+							<string>searchWithSubDirectories:</string>
 							<string>tagsFromFilename:</string>
 							<string>trimWhitespace:</string>
 							<string>uppercaseTags:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -8271,7 +8275,8 @@
 							<string>backDirectories:</string>
 							<string>backForwordDirectories:</string>
 							<string>capitalisedTags:</string>
-							<string>deleteTags:</string>
+							<string>deleteAllTags:</string>
+							<string>deleteTag:</string>
 							<string>forwordDirectories:</string>
 							<string>goToParent:</string>
 							<string>goToParentMenu:</string>
@@ -8288,6 +8293,7 @@
 							<string>reopen:</string>
 							<string>revealInFinder:</string>
 							<string>search:</string>
+							<string>searchWithSubDirectories:</string>
 							<string>tagsFromFilename:</string>
 							<string>trimWhitespace:</string>
 							<string>uppercaseTags:</string>
@@ -8311,7 +8317,11 @@
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
-								<string key="name">deleteTags:</string>
+								<string key="name">deleteAllTags:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">deleteTag:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
@@ -8376,6 +8386,10 @@
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">search:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">searchWithSubDirectories:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">

@@ -5,6 +5,7 @@ Version 1.5
 -------------
 ### Features ###
 * Genre picker in auto tagger.
+* Delete specifed tags or all tags of selected tracks menu
 
 ### Improvements ###
 * removed NSLogs.

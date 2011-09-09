@@ -67,6 +67,8 @@
 - (void) performBlockOnTag:(NSString*)tagsName
 					 block:(id (^)(id value, NSString *tagName, Tags *tags ))block;
 
+- (void)deleteAllTags;
+
 /// @name Finding General metadata.
 
 // YES if empty

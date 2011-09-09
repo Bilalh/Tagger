@@ -125,7 +125,8 @@
 - (IBAction)uppercaseTags:(id)sender;
 - (IBAction)lowercaseTags:(id)sender;
 - (IBAction)trimWhitespace:(id)sender;
-- (IBAction)deleteTags:(id)sender;
+- (IBAction)deleteTag:(id)sender;
+- (IBAction)deleteAllTags:(id)sender;
 
 - (IBAction)performBlockOnTags:(id)sender
 					  tagNames:(const NSArray*)tagNames

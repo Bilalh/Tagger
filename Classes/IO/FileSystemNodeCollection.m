@@ -199,6 +199,13 @@ static const NSArray *fieldNames;
 	writeToAll = YES;
 }
 
+- (void)deleteAllTags
+{
+	for (NSString *key in tagFieldNames) {
+		[self setValue:nil forKey:key];
+	}
+}
+
 /// set the new array and finds the metdata for each tag
 - (void)setTagsArray:(NSArray *)newArray
 {
@@ -226,16 +233,6 @@ static const NSArray *fieldNames;
 	DDLogVerbose(@"basic:%d extened %d", hasBasicMetadata, hasExtenedMetadata);
 	if (hasBasicMetadata) [self initfields];
 	else                  [self nilAllFields];
-}
-
--(void) setLabelColor:(NSColor *)newValue
-{
-	labelColor = newValue;
-	if (!writeToAll) return;
-//	DDLogInfo(@"fsnc:%s writeToAll:%d value:%@", @"labelColor", writeToAll,newValue);\
-//	for (FileSystemNode *n in tagsArray) {		
-//		n.labelColor = newValue;
-//	}  
 }
 
 #define SETTER_METHOD_FSN(field,newValue)                                 \
