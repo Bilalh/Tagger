@@ -4,13 +4,15 @@ TODO
 FIXME
 -----
 
-* Bug in mp3 files somtimes when *replacing* (not adding) artwork on files who album art has *never* been edited in iTunes, means the file can't be added to iTunes. This happens sometimes happens after replacing the all work twice.
-* Bug in malformed m4a files somtimes when *replacing* (not adding) artwork, means the file can't be played in iTunes.
-* Renaming of files only seems to work onces, have to go to a different dir and back to rename again.
+* Bug in mp3 files sometimes when *replacing* (not adding) artwork on files who album art has *never* been edited in iTunes, means the file can't be added to iTunes. This happens sometimes happens after replacing the all work twice.
+	* **Work around**
+	To replace a mp3 cover art a second time use `refresh`(⌘R) then `Parent Folder`(⌘↑) then `Back`(⌘\[) menus items then replace the cover.
+* Bug in malformed m4a files sometimes when *replacing* (not adding) artwork, means the file can't be played in iTunes.
+* Renaming of files only seems to work once, have to go to a different dir and back to rename again.
 
 Images
 ------
-* Don't allways use jpeg as the mine type. (needed for quicklook).
+* Don't always use jpeg as the mine type. (needed for quicklook).
 * mp3 images sometimes don't work in quicklook but always work in the app and itunes.
 
 
@@ -20,7 +22,7 @@ Filenames
 
 GUI
 ---
-* Disable the menu back forword button when they can not be used instead of doing nothing.
+* Disable the menu back forward button when they can not be used instead of doing nothing.
 
 Images
 -------
@@ -29,7 +31,7 @@ Images
 
 Renaming
 --------
-* tags from filename.
+* Error message when invalid characters in filenames. 
 
 VGMDB
 -----
@@ -60,4 +62,5 @@ Done
 * Auto embed macruby.
 * Image dragging.
 * Disable Open Selected Fodler if the user has not selected a folder. At the moment it does nothing if the user tries to do this.
-* Added latin as a language. 
+* Added latin as a language.
+* tags from filename.

@@ -4,27 +4,27 @@ Changelog
 Version 1.4.3
 -------------
 ### Improvements ###
-* removed NSLogs.
-* Deleting Tags
+* Removed NSLogs.
+* Deleting Tags from select files
 
 ### Bug Fixes ### 
-* m4a delete all tags
+* m4a delete all tags.
 
 Version 1.4.2 (Fri 9 Sep 2011 04:09:19 +0100)
 -------------
 ### Features ###
 * Genre picker in auto tagger.
-* Delete specifed tags or all tags of selected tracks menu
+* Delete specified tags or all tags of selected tracks menu
 
 ### Improvements ###
 * removed NSLogs.
 * vgmdb enable.
 * Fields alignment.
-* Tags from file names refreashing
+* Tags from file names refreshing
 
 ### Bug Fixes ### 
-* Fixed most bugs in mp3 files when *replacing* (not adding) artwork on files who album art has *never* been edited in iTunes, means the file can't be added to iTunes for nealy all cases.
-* Fixed  most bugs in mp4 files conve1rted from flac using apps such XLD, when setting artwork, means the file can not be added to itunes.
+* Fixed most bugs in mp3 files when *replacing* (not adding) artwork on files who album art has *never* been edited in iTunes, means the file can't be added to iTunes for nearly all cases.
+* Fixed  most bugs in mp4 files converted from flac using apps such XLD, when setting artwork, means the file can not be added to itunes.
 
 
 Version 1.4.1 (Wed Aug 31 2011 22:01:34 +0100)
@@ -59,7 +59,7 @@ Version 1.4 (Tue Aug 30 2011 23:43:54 +0100)
 
 ### Improvements ###
 * Macruby loading.
-* QuickLookTableView now works with delgate drag and drop now.
+* QuickLookTableView now works with delegate drag and drop now.
 * Multiple values with ints.
 * grouping and genre grow on resize
 
@@ -67,8 +67,8 @@ Version 1.4 (Tue Aug 30 2011 23:43:54 +0100)
 * Metadata to Comments newline.
 * Url when going directly to the results.
 * Refresh.
-* Fixed a bug where the composer was tothe arranger.
-* Made catlog field bigger since I found some rare long ids.
+* Fixed a bug where the composer was to the arranger.
+* Made catalog field bigger since I found some rare long ids.
 * Url when ending in a slash.
 * Use jpeg when the user want jpeg instead of using png.
 * Chooses the correct language if english is not there when auto tagging.
@@ -82,7 +82,7 @@ Version 1.3 (Fri Aug 12 2011 16:19:09 +0100)
 ### Features ###
 * Label colours for files shown.
 * Nicer display of label colour for selected row.
-* Right click menu that allows labeling files.
+* Right click menu that allows labelling files.
 * Right click menu item reveal in finder.
 * New 512x512 Icon 
 * Can rid of unused code.
@@ -111,7 +111,7 @@ Version 1.2 (Thu Aug 11 2011 03:34:20 +0100)
 * Quicklook toolbar button.
 
 ### Improvements ###
-* Disable Open Selected Fodler if the user has not selected a folder.
+* Disable Open Selected Folder if the user has not selected a folder.
 * Disable QuickLook if the user has not selected a file.
 
 ### Bug Fixes ###
@@ -157,7 +157,7 @@ Version 1.0 (Tue Aug 09 2011 05:05:41 +0100)
 * Display the result if there is only one result from the search.
 * Back/forward/Reveal/Vgmdb disable when not usable instead of doing nothing.
 * Menu item and shortcut cmd-1 for going to the starting directory.
-* Table columns sorting and highligting on all columns.
+* Table columns sorting and highlighting on all columns.
 * Auto embed Macruby .
 * Embed  tablib and fixed build settings.
 * Table columns lengths
@@ -192,13 +192,13 @@ Version 0.12 (Fri Aug 05 2011 02:23:54 +0100)
 ### Features ###
 * Pad the track number when renaming.
 * Batch renaming using sub directories.
-* Shortcuts for back and forword.
+* Shortcuts for back and forward.
 * Shortcuts for parent directory.
 * Menu and shortcuts for common directories.
 * Refresh menu item.
 * Reveal in Finder menu item.
 * Reopen menu item which opens the last open window.
-* Shows that the selcted tracks have different values.
+* Shows that the selected tracks have different values.
 
 ### Bug fixes ###
 * Fixed a bug where selection was not consecutive.
