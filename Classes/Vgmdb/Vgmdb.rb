@@ -2,7 +2,7 @@
 # encoding: UTF-8
 
 #comment the below line if embeding macruby
-#require 'rubygems'
+require 'rubygems'
 require 'htmlentities'
 require 'nokogiri'
 

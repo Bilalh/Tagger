@@ -186,6 +186,20 @@ static const NSArray *deleteMenuValues;
 	return([NSString stringWithFormat:@"%1.1lf GB",floatSize]);
 }
 
+-(NSString*)formatPair:(NSNumber*)first
+				second:(NSNumber*)second
+{
+	if (first && second){
+		return [NSString stringWithFormat:@"%@ of %@",first, second];
+	}else if (first){
+		return [NSString stringWithFormat:@"%@", first];
+	}else if (second){
+		return [NSString stringWithFormat:@"- of %@", second];
+	}else{
+		return @"-";
+	}
+}
+
 - (NSInteger)labelColorForRow:(NSInteger)rowIndex
 {
 	return [([self nodeAtIndex:rowIndex]).labelIndex integerValue];
@@ -268,19 +282,6 @@ static const NSArray *deleteMenuValues;
 	return [[[self nodeAtIndex:rowForMenu] labelIndex] integerValue];
 }
 
--(NSString*)formatPair:(NSNumber*)first
-				second:(NSNumber*)second
-{
-	if (first && second){
-		return [NSString stringWithFormat:@"%@ of %@",first, second];
-	}else if (first){
-		return [NSString stringWithFormat:@"%@", first];
-	}else if (second){
-		return [NSString stringWithFormat:@"- of %@", second];
-	}else{
-		return @"-";
-	}
-}
 
 #pragma mark - Table Delegate
 

@@ -6,6 +6,7 @@ Version 1.4.3
 ### Improvements ###
 * Removed NSLogs.
 * Deleting Tags from select files
+* Sort by date in when searching vgmdb
 
 ### Bug Fixes ### 
 * m4a delete all tags.

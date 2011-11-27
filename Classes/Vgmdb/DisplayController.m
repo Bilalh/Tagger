@@ -1,9 +1,9 @@
 //
-//  SettingsSheetController.m
-//  SheetFromOtherNib
+//  DisplayController.m
+//  VGTagger
 //
-//  Created by grady player on 6/21/11.
-//  Copyright 2011 Objectively Better, LLC. All rights reserved.
+//  Created by Bilal Syed Hussain on 11/07/2011.
+//  Copyright 2011  All rights reserved.
 //
 
 #import <MacRuby/MacRuby.h>

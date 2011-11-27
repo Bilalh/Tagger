@@ -1,9 +1,9 @@
 //
-//  SettingsSheetController.h
-//  SheetFromOtherNib
+//  DisplayController.h
+//  VGTagger
 //
-//  Created by grady player on 6/21/11.
-//  Copyright 2011 Objectively Better, LLC. All rights reserved.
+//  Created by Bilal Syed Hussain on 11/07/2011.
+//  Copyright 2011  All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>

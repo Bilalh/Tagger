@@ -16,10 +16,13 @@
 #import "Logging.h"
 LOG_LEVEL(LOG_LEVEL_INFO);
 
+static NSArray *dateFormats;
+static NSMutableDictionary *dates;
 
 @interface VgmdbController()
 - (IBAction)confirmSheet:sender;
 - (IBAction) onClick:(id)sender;
+- (void) makeDates;
 @end
 
 @implementation VgmdbController
@@ -37,6 +40,21 @@ LOG_LEVEL(LOG_LEVEL_INFO);
 	 [table rectOfColumn:
 	  [table columnWithIdentifier:@"album"]]];
 	
+}
+
+- (void) makeDates
+{
+	for (NSDictionary *i in searchResults) {
+		NSString *s=  [i valueForKey:@"released"];
+//		DDLogVerbose(@"%@",s);
+		NSDate *date;
+		for (NSDateFormatter *formatter in dateFormats) {
+			date = [formatter dateFromString:s];
+			if (date) break;
+		}
+//		DDLogVerbose(@"%@",date);
+		[dates setValue:date forKey:s];
+	}
 }
 
 - (IBAction) searchForAlbums:(id)sender
@@ -58,6 +76,7 @@ LOG_LEVEL(LOG_LEVEL_INFO);
 		[self confirmSheet:nil];
 	}else{
 		searchResults = temp;
+		[self makeDates];
 	}
 	
 	DDLogVerbose(@"result %@", searchResults);
@@ -128,16 +147,35 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 	[tableView setHighlightedTableColumn:tableColumn];
 	short mult = currentColumnAscending ? 1 : -1;
-	NSArray *temp =
-	[searchResults sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-		id s1= [Utility valueFromResult:
-					  [obj1 objectForKey:[tableColumn identifier]]
-							 selectedLanguage:selectedLanguage];
-		id s2= [Utility valueFromResult:
-					   [obj2 objectForKey:[tableColumn identifier]]
-							  selectedLanguage:selectedLanguage];
-		return mult *[s1 localizedStandardCompare:s2];
-	}];
+	
+	NSArray *temp;
+	if ([[tableColumn identifier] isEqualTo:@"released"]){
+		temp = [searchResults sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+			
+			id s1= [Utility valueFromResult:
+					[obj1 objectForKey:[tableColumn identifier]]
+						   selectedLanguage:selectedLanguage];
+			id s2= [Utility valueFromResult:
+					[obj2 objectForKey:[tableColumn identifier]]
+						   selectedLanguage:selectedLanguage];
+			
+			NSDate *d1 = [dates valueForKey:s1];
+			NSDate *d2 = [dates valueForKey:s2];
+			
+			return mult * [d1 compare:d2];
+		}];
+	}else{
+		temp =
+		[searchResults sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+			id s1= [Utility valueFromResult:
+					[obj1 objectForKey:[tableColumn identifier]]
+						   selectedLanguage:selectedLanguage];
+			id s2= [Utility valueFromResult:
+					[obj2 objectForKey:[tableColumn identifier]]
+						   selectedLanguage:selectedLanguage];
+			return mult *[s1 localizedStandardCompare:s2];
+		}];
+	}
 	
 	if (currentColumnAscending){
 		indicatorImage = [NSImage imageNamed: @"NSAscendingSortIndicator"];		
@@ -197,6 +235,21 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 #pragma mark -
 #pragma mark Init
+
+
++ (void)initialize
+{
+	NSDateFormatter *dateFormat1 = [[NSDateFormatter alloc] init];
+	[dateFormat1 setDateFormat:@"LLL dd, yyyy"];
+	
+	NSDateFormatter *dateFormat2 = [[NSDateFormatter alloc] init];
+	[dateFormat2 setDateFormat:@"LLL, yyyy"];
+	
+	NSDateFormatter *dateFormat3 = [[NSDateFormatter alloc] init];
+	[dateFormat3 setDateFormat:@"yyyy"];
+	dateFormats = [[NSArray alloc] initWithObjects:dateFormat1,dateFormat2, dateFormat3, nil];
+	dates = [[NSMutableDictionary alloc] init]; 
+}
 
 - (void) awakeFromNib
 {

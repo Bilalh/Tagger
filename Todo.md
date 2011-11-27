@@ -18,7 +18,7 @@ Images
 
 Filenames
 ---------
-* Better message when names clash.
+* Better error message when names clash.
 
 GUI
 ---
@@ -26,7 +26,7 @@ GUI
 
 Images
 -------
-* find image metadata.
+* find image metadata like:
   * 1200x1200, 200 KB (JPEG)
 
 Renaming
@@ -37,8 +37,7 @@ VGMDB
 -----
 * Taggings when tracks missing (done, but can tag wrong).
 * Some kind of error handing when vgmdb returns no tracks.
-* Selected catlog when there are multiple printings.
-
+* Selected catalog when there are multiple printings.
 
 Later
 -----
@@ -64,3 +63,4 @@ Done
 * Disable Open Selected Fodler if the user has not selected a folder. At the moment it does nothing if the user tries to do this.
 * Added latin as a language.
 * tags from filename.
+* Sort by date sort by the string instead of date
