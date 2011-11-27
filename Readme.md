@@ -1,6 +1,6 @@
 Tagger {#readmeTitle}
 =====
-Tagger is application that auto tags audio files. It also supports batch tag editing See the [website](http://bilalh.github.com/projects/mplayer-last-fm-scrobbler/ "details") for details 
+Tagger is application that auto tags audio files. It also supports batch tag editing See the [website](http://bilalh.github.com/projects/tagger/ "details") for details 
 {#description}
 
 Prerequisites
