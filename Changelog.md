@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Version 1.4.3
+Version 1.4.3 (Sun 27 Nov 2011 05:33:51 +0000)
 -------------
 ### Improvements ###
 * Removed NSLogs.
