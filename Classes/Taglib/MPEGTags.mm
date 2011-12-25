@@ -49,6 +49,7 @@ namespace MPEGFields {	// can not be put in the header for some reason
 - (BOOL) removeAllImagesMP3:(TagLib::ID3v2::Tag*) tag
 					 ofType:(TagLib::ID3v2::AttachedPictureFrame::Type) imageType;
 - (BOOL) removeAllImagesMP3:(TagLib::ID3v2::Tag*) tag;
+- (void) initCover;
 @end
 
 using namespace TagLib;
@@ -115,6 +116,11 @@ using namespace MPEGFields;
 	}	
 	
 	url = [self getFieldWithString:URL];
+	[self initCover];
+}
+
+- (void) initCover
+{
 	const ID3v2::Tag *tag = data->f->mpeg->ID3v2Tag();
 	ID3v2::FrameList listOfMp3Frames = tag->frameListMap()[COVER];
 	if (!listOfMp3Frames.isEmpty()){
@@ -124,7 +130,6 @@ using namespace MPEGFields;
 			cover = [[[NSImage alloc] initWithData: [NSData dataWithBytes:bv.data() length:bv.size()]] autorelease];	
 		}
 	}
-	
 }
 
 - (void)dealloc
@@ -256,7 +261,6 @@ using namespace MPEGFields;
 	ID3v2::Tag *tag = data->f->mpeg->ID3v2Tag();
 	tag->removeFrames(COVER);
 	data->f->mpeg->save();
-//	[self removeAllImagesMP3:tag];
 	if (cover){
 	
 		ID3v2::AttachedPictureFrame *frame = new TagLib::ID3v2::AttachedPictureFrame;
@@ -268,15 +272,16 @@ using namespace MPEGFields;
 		NSData *imageData = [cover bitmapDataForType:NSJPEGFileType];
 		frame->setPicture(ByteVector((const char *)[imageData bytes], (uint)[imageData length]));	
 		
-//		[self removeAllImagesMP3:tag ofType:type];
-		
 		tag->addFrame(frame);
 
 	}	
 	data->f->mpeg->save();
+	
+//	Needed otherwise replacing the cover again does not work
+	[self initCover];
 }
 
-
+// Unused
 - (BOOL) removeAllImagesMP3:(TagLib::ID3v2::Tag*) tag
 {
 	if (tag) {
@@ -295,6 +300,7 @@ using namespace MPEGFields;
 	return YES;
 }
 
+// Unused
 - (BOOL) removeAllImagesMP3:(TagLib::ID3v2::Tag*) tag
 					 ofType:(TagLib::ID3v2::AttachedPictureFrame::Type) imageType
 {
