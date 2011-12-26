@@ -3484,8 +3484,8 @@
 															</object>
 															<object class="NSComboBox" id="860458761">
 																<reference key="NSNextResponder" ref="10815081"/>
-																<int key="NSvFlags">267</int>
-																<string key="NSFrame">{{134, 179}, {276, 26}}</string>
+																<int key="NSvFlags">270</int>
+																<string key="NSFrame">{{126, 179}, {284, 26}}</string>
 																<reference key="NSSuperview" ref="10815081"/>
 																<reference key="NSWindow"/>
 																<reference key="NSNextKeyView" ref="829859210"/>
@@ -3562,8 +3562,8 @@
 															</object>
 															<object class="NSComboBox" id="607823338">
 																<reference key="NSNextResponder" ref="10815081"/>
-																<int key="NSvFlags">267</int>
-																<string key="NSFrame">{{134, 150}, {276, 26}}</string>
+																<int key="NSvFlags">270</int>
+																<string key="NSFrame">{{126, 150}, {284, 26}}</string>
 																<reference key="NSSuperview" ref="10815081"/>
 																<reference key="NSWindow"/>
 																<reference key="NSNextKeyView" ref="198770580"/>

@@ -6,6 +6,7 @@ Version 1.4.4
 -------------
 ### Improvements ###
 * Fix on missing data from vgmdb.
+* Gui Improvements on grouping and Genre
 
 ### Bug Fixes ### 
 * Mp3 cover art
