@@ -23,8 +23,7 @@
 	}
 	
 	id delgate = [self delegate];
-	if ([delgate respondsToSelector:@selector(tableView:willKeyDown:)]){
-		[delgate tableView:self willKeyDown:theEvent];
+	if ([delgate respondsToSelector:@selector(tableView:willKeyDown:)] && [delgate tableView:self willKeyDown:theEvent]){
 		return;
 	}
 	[super keyDown:theEvent];
