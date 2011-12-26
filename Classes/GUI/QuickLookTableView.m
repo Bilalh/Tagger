@@ -12,6 +12,9 @@
 #import "FileSystemNode.h"
 #import "BHFinderLabelColours.h"
 
+#import "Logging.h"
+LOG_LEVEL(LOG_LEVEL_INFO);
+
 @implementation QuickLookTableView
 
 - (void)keyDown:(NSEvent *)theEvent
@@ -19,9 +22,15 @@
     NSString* key = [theEvent charactersIgnoringModifiers];
     if([key isEqual:@" "]) {
         [[NSApp delegate] togglePreviewPanel:self];
-    } else {
-        [super keyDown:theEvent];
-    }
+		return;
+	}
+	
+	id delgate = [self delegate];
+	if ([delgate respondsToSelector:@selector(tableView:willKeyDown:)]){
+		[delgate tableView:self willKeyDown:theEvent];
+		return;
+	}
+	[super keyDown:theEvent];
 }
 
 

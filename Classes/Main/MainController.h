@@ -51,6 +51,9 @@
 	
 	QLPreviewPanel* previewPanel;
 	NSMenu *labelMenu;
+	
+	NSTimeInterval lastKeyPress;
+	NSString *currentEventString;
 }
 
 /// @name properties

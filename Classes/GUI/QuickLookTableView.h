@@ -15,3 +15,10 @@
 }
 
 @end
+
+@protocol QuickLookTableViewDelgate <NSObject>
+@optional
+// Return True if the event was handled
+- (BOOL)tableView:(NSTableView *)tableView willKeyDown:(NSEvent *)event;
+
+@end

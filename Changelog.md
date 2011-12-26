@@ -2,8 +2,11 @@ Changelog
 =========
 
 
-Version 1.4.4
+Version 1.5
 -------------
+### Features ###
+* Scroll to specified row on keypress (like iTunes) 
+
 ### Improvements ###
 * Fix on missing data from vgmdb.
 * Gui Improvements on grouping and Genre
