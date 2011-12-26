@@ -13,6 +13,7 @@ Version 1.5
 
 ### Bug Fixes ### 
 * Mp3 cover art
+* Spelling
 
 Version 1.4.3 (Sun 27 Nov 2011 05:33:51 +0000)
 -------------

@@ -299,7 +299,7 @@
 								</object>
 								<object class="NSMenuItem" id="725037099">
 									<reference key="NSMenu" ref="720053764"/>
-									<string key="NSTitle">Add to Itunes</string>
+									<string key="NSTitle">Add to iTunes</string>
 									<string key="NSKeyEquiv">e</string>
 									<int key="NSKeyEquivModMask">1572864</int>
 									<int key="NSMnemonicLoc">2147483647</int>
