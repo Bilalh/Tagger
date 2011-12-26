@@ -69,6 +69,8 @@ static const NSArray *deleteMenuValues;
 
 - (void) initTagManipulationSubMenus;
 
+- (void) splitViewWillResizeSubviewsHandler:(id)object;
+
 @end
 
 @implementation FileSystemNode (QLPreviewItem)
@@ -523,8 +525,32 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	return NO;
 }
 
-#pragma mark -
-#pragma mark Directory Manipulation Methods
+#pragma mark - SplitView
+
+// this is the handler the above snippet refers to
+- (void) splitViewWillResizeSubviewsHandler:(id)object
+{
+    lastSplitViewSubViewRightWidth = [rightSplitView frame].size.width;
+}
+
+// expanded/collapsed the right SplitView
+- (IBAction) toggleRightSubView:(id)sender
+{
+    if ([splitView isSubviewCollapsed:rightSplitView]){
+		DDLogVerbose(@"");
+		[rightSplitView setHidden:NO];
+        [splitView setPosition:lastSplitViewSubViewRightWidth
+			  ofDividerAtIndex:0];
+    }else{
+		DDLogVerbose(@"");
+		[splitView setPosition:[splitView maxPossiblePositionOfDividerAtIndex:0]
+			  ofDividerAtIndex:0];
+		[rightSplitView setHidden:YES];
+	}
+}
+
+
+#pragma mark - Directory Manipulation Methods
 
 -(IBAction)goToParentMenu:(id)sender
 {
@@ -1004,6 +1030,13 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 	[self initTagManipulationSubMenus];
 
+//	Splitview stuff
+	lastSplitViewSubViewRightWidth = [rightSplitView frame].size.width;
+	[[NSNotificationCenter defaultCenter]
+	 addObserver:self
+	 selector:@selector(splitViewWillResizeSubviewsHandler:)
+	 name:NSSplitViewWillResizeSubviewsNotification
+	 object:splitView];	
 }
 
 -(void)initDirectoryTable

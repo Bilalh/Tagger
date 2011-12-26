@@ -287,6 +287,15 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
+								<object class="NSMenuItem" id="452924518">
+									<reference key="NSMenu" ref="720053764"/>
+									<string key="NSTitle">Toggle Spreadsheet View</string>
+									<string key="NSKeyEquiv">m</string>
+									<int key="NSKeyEquivModMask">1048576</int>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="35465992"/>
+									<reference key="NSMixedImage" ref="502551668"/>
+								</object>
 								<object class="NSMenuItem" id="1056251715">
 									<reference key="NSMenu" ref="720053764"/>
 									<bool key="NSIsDisabled">YES</bool>
@@ -3450,7 +3459,6 @@
 																		<string key="NSFrame">{{339, 1}, {15, 57}}</string>
 																		<reference key="NSSuperview" ref="527193921"/>
 																		<reference key="NSWindow"/>
-																		<reference key="NSNextKeyView"/>
 																		<int key="NSViewLayerContentsRedrawPolicy">2</int>
 																		<reference key="NSTarget" ref="527193921"/>
 																		<string key="NSAction">_doScroller:</string>
@@ -5405,6 +5413,38 @@
 					</object>
 					<int key="connectionID">1469</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">splitView</string>
+						<reference key="source" ref="588631224"/>
+						<reference key="destination" ref="698248889"/>
+					</object>
+					<int key="connectionID">1470</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">leftSplitView</string>
+						<reference key="source" ref="588631224"/>
+						<reference key="destination" ref="479247737"/>
+					</object>
+					<int key="connectionID">1472</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">toggleRightSubView:</string>
+						<reference key="source" ref="588631224"/>
+						<reference key="destination" ref="452924518"/>
+					</object>
+					<int key="connectionID">1476</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">rightSplitView</string>
+						<reference key="source" ref="588631224"/>
+						<reference key="destination" ref="95219740"/>
+					</object>
+					<int key="connectionID">1478</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -6506,6 +6546,7 @@
 							<reference ref="725037099"/>
 							<reference ref="749254083"/>
 							<reference ref="617839301"/>
+							<reference ref="452924518"/>
 						</object>
 						<reference key="parent" ref="379814623"/>
 					</object>
@@ -7477,6 +7518,11 @@
 						<reference key="object" ref="1059475605"/>
 						<reference key="parent" ref="542121918"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1474</int>
+						<reference key="object" ref="452924518"/>
+						<reference key="parent" ref="720053764"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -7577,6 +7623,7 @@
 					<string>1460.IBPluginDependency</string>
 					<string>1461.IBPluginDependency</string>
 					<string>1462.IBPluginDependency</string>
+					<string>1474.IBPluginDependency</string>
 					<string>149.IBPluginDependency</string>
 					<string>149.ImportedFromIB2</string>
 					<string>150.IBPluginDependency</string>
@@ -7916,6 +7963,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
@@ -8174,7 +8222,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1469</int>
+			<int key="maxID">1478</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -8234,11 +8282,13 @@
 							<string>search:</string>
 							<string>searchWithSubDirectories:</string>
 							<string>tagsFromFilename:</string>
+							<string>toggleRightSubView:</string>
 							<string>trimWhitespace:</string>
 							<string>uppercaseTags:</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -8295,6 +8345,7 @@
 							<string>search:</string>
 							<string>searchWithSubDirectories:</string>
 							<string>tagsFromFilename:</string>
+							<string>toggleRightSubView:</string>
 							<string>trimWhitespace:</string>
 							<string>uppercaseTags:</string>
 						</object>
@@ -8397,6 +8448,10 @@
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
+								<string key="name">toggleRightSubView:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
 								<string key="name">trimWhitespace:</string>
 								<string key="candidateClassName">id</string>
 							</object>
@@ -8413,9 +8468,12 @@
 							<string>capitaliseMenu</string>
 							<string>coverView</string>
 							<string>deleteMenu</string>
+							<string>leftSplitView</string>
 							<string>lowercaseMenu</string>
 							<string>popup</string>
 							<string>renameMenu</string>
+							<string>rightSplitView</string>
+							<string>splitView</string>
 							<string>table</string>
 							<string>tagMenu</string>
 							<string>uppercaseMenu</string>
@@ -8428,9 +8486,12 @@
 							<string>NSMenu</string>
 							<string>DraggableImageView</string>
 							<string>NSMenu</string>
+							<string>NSView</string>
 							<string>NSMenu</string>
 							<string>NSPopUpButton</string>
 							<string>NSMenu</string>
+							<string>NSView</string>
+							<string>NSSplitView</string>
 							<string>NSTableView</string>
 							<string>NSMenu</string>
 							<string>NSMenu</string>
@@ -8446,9 +8507,12 @@
 							<string>capitaliseMenu</string>
 							<string>coverView</string>
 							<string>deleteMenu</string>
+							<string>leftSplitView</string>
 							<string>lowercaseMenu</string>
 							<string>popup</string>
 							<string>renameMenu</string>
+							<string>rightSplitView</string>
+							<string>splitView</string>
 							<string>table</string>
 							<string>tagMenu</string>
 							<string>uppercaseMenu</string>
@@ -8471,6 +8535,10 @@
 								<string key="candidateClassName">NSMenu</string>
 							</object>
 							<object class="IBToOneOutletInfo">
+								<string key="name">leftSplitView</string>
+								<string key="candidateClassName">NSView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
 								<string key="name">lowercaseMenu</string>
 								<string key="candidateClassName">NSMenu</string>
 							</object>
@@ -8481,6 +8549,14 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">renameMenu</string>
 								<string key="candidateClassName">NSMenu</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">rightSplitView</string>
+								<string key="candidateClassName">NSView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">splitView</string>
+								<string key="candidateClassName">NSSplitView</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">table</string>

@@ -28,7 +28,7 @@
 	IBOutlet NSTableView *table;
 	IBOutlet NSToolbarItem *vgmdbItem;
 	IBOutlet DraggableImageView *coverView;
-
+	
 	IBOutlet NSMenu *renameMenu;
 	IBOutlet NSMenu *tagMenu;
 	
@@ -37,6 +37,12 @@
 	IBOutlet NSMenu *lowercaseMenu;
 	IBOutlet NSMenu *whitespaceMenu;
 	IBOutlet NSMenu *deleteMenu;
+	
+	
+	IBOutlet NSSplitView *splitView;
+	IBOutlet NSView *leftSplitView;
+	IBOutlet NSView *rightSplitView;
+	CGFloat lastSplitViewSubViewRightWidth;
 	
 	
 	VgmdbController         *vgc;
@@ -154,5 +160,7 @@
 - (IBAction)renumberFiles:(id)sender;
 
 
+// expanded/collapsed the right SplitView
+- (IBAction) toggleRightSubView:(id)sender;
 
 @end

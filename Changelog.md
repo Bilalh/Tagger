@@ -5,8 +5,9 @@ Changelog
 Version 1.5
 -------------
 ### Features ###
-* Scroll to specified row on keypress (like iTunes) 
+* Scroll to specified row on keypress (like iTunes).
 * Tabbing now goes the first cell of the next row upon reaching the end of a row.
+* Spreadsheet View.
 
 ### Improvements ###
 * Handles  missing data from vgmdb.
