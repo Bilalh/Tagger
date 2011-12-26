@@ -124,7 +124,7 @@ class Vgmdb
 		hash['artist']    = get_spilt_data[7]
 		
 		stats     = doc.css('tr> td#rightcolumn > div > div.smallfont > div > b')
-		get_stats = ->(id){  return stats[id].next.next.text.strip  }
+		get_stats = ->(id){ return stats[id] ? stats[id].next.next.text.strip : "" }
 		
 		# genre is category
 		hash['genre'] = get_stats[2]
@@ -254,13 +254,15 @@ end
 
 if $0 == __FILE__
 	vg = Vgmdb.new()
-	# vg.search("Atelier Meruru Original Soundtrack");
-	
+	# vg.search("Atelier");
+	                                     
+	# url = File.expand_path("~/Desktop/55")
 	# url = "http://vgmdb.net/album/13192"
 	# url = 'http://vgmdb.net/album/3885'
-	# url = File.expand_path("~/Desktop/55")
-	url = 'http://vgmdb.net/album/19776'
-	
+	# url = 'http://vgmdb.net/album/19776'
+	# url = 'http://vgmdb.net/album/26335'  # latin
+	# url = 'http://vgmdb.net/album/10310'  # No Genre 
+
 	hash = vg.get_data(url)	
 	require 'pp'
 	pp hash

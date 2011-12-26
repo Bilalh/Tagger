@@ -2,8 +2,11 @@ Changelog
 =========
 
 
-Version 1.4.4 (Sun 25 Dec 2011 23:45:25 +0000)
+Version 1.4.4
 -------------
+### Improvements ###
+* Fix on missing data from vgmdb.
+
 ### Bug Fixes ### 
 * Mp3 cover art
 
@@ -11,8 +14,8 @@ Version 1.4.3 (Sun 27 Nov 2011 05:33:51 +0000)
 -------------
 ### Improvements ###
 * Removed NSLogs.
-* Deleting Tags from select files
-* Sort by date in when searching vgmdb
+* Deleting Tags from select files.
+* Sort by date in when searching vgmdb.
 
 ### Bug Fixes ### 
 * m4a delete all tags.

@@ -14,7 +14,7 @@
 #import "NSAttributedString+Hyperlink.h"
 
 #import "Logging.h"
-LOG_LEVEL(LOG_LEVEL_INFO);
+LOG_LEVEL(LOG_LEVEL_VERBOSE);
 
 
 @interface DisplayController() // private methdods
@@ -74,8 +74,8 @@ LOG_LEVEL(LOG_LEVEL_INFO);
 	id newValue =[self valuefromDetails:[properties objectForKey:@"name"]];
 	[fieldValues setObject:newValue forKey:[properties objectForKey:@"name"]];
 	
-	DDLogInfo(@"fieldProperties \n%@ ", properties);
-	DDLogInfo(@"buttonProperties \n%@ ", buttonProperties);
+	DDLogVerbose(@"fieldProperties \n%@ ", properties);
+	DDLogVerbose(@"buttonProperties \n%@ ", buttonProperties);
 
 	
 }
@@ -158,8 +158,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		return res;
 	}];
 	
+	DDLogVerbose(@"files %@", files);
 	selectedLanguage = @"@english";
-	
 	[self initFieldProperties];
 	[self initFieldValues];	
 	[self initButtonsState];
@@ -286,7 +286,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 					   nil];
 
 	[fieldProperties setValue:[NSNumber numberWithBool:NO] forKeyPath:@"cover.write"];
-	
+	DDLogVerbose(@"finished");
 }
 
 -(void)setAlbumUrl:(NSString *)url
@@ -298,11 +298,14 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	tracks =  [vgmdb performRubySelector:@selector(get_tracks_array:)
 						   withArguments:albumDetails, 
 			   nil];
+//	DDLogVerbose(@"vgmdb.rb result tracks %@", tracks);
+	DDLogVerbose(@"vgmdb.rb result albumDetails %@", albumDetails);
 }
 
 
 - (void) initFieldValues 
 {	
+	DDLogVerbose(@"Started");	
 	NSMutableArray  *keys = [[NSMutableArray alloc] initWithObjects: 
 							 @"composer",
 							 @"album",
@@ -321,11 +324,11 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSMutableArray *values = [[NSMutableArray alloc] initWithCapacity:[keys count]+3];
 	
 	for (NSString *key in keys) {
-		
+//		DDLogVerbose(@"key %@", key);	
 		NSString *s = [[fieldProperties objectForKey:key] objectForKey:@"language"];
 		id obj =  [Utility valueFromResult:[albumDetails objectForKey:key] 
 					   selectedLanguagePtr:&s];
-
+//		DDLogVerbose(@"key %@ object %@", key, obj);
 		[[fieldProperties objectForKey:key] setObject:s forKey:@"language"];
 		
 		[values addObject:obj];
@@ -378,7 +381,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		}
 		
 	}
-	
+	DDLogVerbose(@"finished");
 }
 
 

@@ -68,7 +68,9 @@ static NSDictionary *languages;
 + (id) valueFromResult:(id)result
 	  selectedLanguagePtr:(NSString**)selectedLanguage
 {
-	if ([result isKindOfClass:[NSDictionary class]]){
+	if (!result){
+		return @"";
+	}else if ([result isKindOfClass:[NSDictionary class]]){
 		return [Utility valueFromResult:[Utility  stringFromLanguages:result selectedLanguage:selectedLanguage] 
 					   selectedLanguagePtr:selectedLanguage];
 		
