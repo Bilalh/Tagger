@@ -6,14 +6,15 @@ Version 1.5
 -------------
 ### Features ###
 * Scroll to specified row on keypress (like iTunes) 
+* Tabbing now goes the first cell of the next row upon reaching the end of a row.
 
 ### Improvements ###
-* Fix on missing data from vgmdb.
-* Gui Improvements on grouping and Genre
+* Handles  missing data from vgmdb.
+* Gui Improvements on Grouping and Genre field.
 
 ### Bug Fixes ### 
-* Mp3 cover art
-* Spelling
+* Mp3 cover art.
+* Spelling.
 
 Version 1.4.3 (Sun 27 Nov 2011 05:33:51 +0000)
 -------------

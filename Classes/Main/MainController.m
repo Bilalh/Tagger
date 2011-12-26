@@ -493,7 +493,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 // Jump to the corrent row in the table based on the keypress
 - (BOOL) tableView:(NSTableView *)tableView
 	   willKeyDown:(NSEvent *)event{
-	
 	if ( [event timestamp] - lastKeyPress > 0.4 ){
 		[currentEventString release];
 		currentEventString  = [event charactersIgnoringModifiers];

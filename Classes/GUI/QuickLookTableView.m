@@ -147,4 +147,39 @@
 }	
 
 
+// Goes to the next cell of the row when the last row is reached
+- (void) textDidEndEditing: (NSNotification *) notification 
+{
+
+    NSInteger editedRow = [self editedRow];
+	NSInteger editedColumn = [self editedColumn];
+    NSInteger lastColumn = [[self tableColumns] count] - 1, i;
+	
+	for (i = lastColumn; i> 0; --i){
+		if (![[[self tableColumns] objectAtIndex:i] isHidden]){
+			lastColumn = i;
+			break;
+		}
+	}
+		
+    NSDictionary *userInfo = [notification userInfo];
+	
+    int textMovement = [[userInfo valueForKey:@"NSTextMovement"] intValue];
+	
+    [super textDidEndEditing: notification];
+	
+	
+    if ( (editedColumn == lastColumn)
+        && (textMovement == NSTabTextMovement)
+        && editedRow < ([self numberOfRows] - 1)
+        )
+    {
+        // the tab key was hit while in the last column, 
+        // so go to the left most cell in the next row
+        [self selectRowIndexes:[NSIndexSet indexSetWithIndex:(editedRow+1)] byExtendingSelection:NO];
+        [self editColumn: 0 row: (editedRow + 1)  withEvent: nil select: YES];
+    }
+	
+}
+
 @end
