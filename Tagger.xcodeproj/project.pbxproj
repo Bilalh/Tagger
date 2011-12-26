@@ -410,6 +410,7 @@
 		92E6ED6D13F313230045679E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				92E6ED6E13F313230045679E /* Categories */,
 				92E6ED7B13F313230045679E /* GUI */,
 				92E6ED8213F313230045679E /* IO */,
 				92E6ED8713F313230045679E /* Logging */,
@@ -440,14 +441,12 @@
 				92E6ED7913F313230045679E /* NSString+Numbers.h */,
 				92E6ED7A13F313230045679E /* NSString+Numbers.m */,
 			);
-			name = Categories;
-			path = ../Categories;
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		92E6ED7B13F313230045679E /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				92E6ED6E13F313230045679E /* Categories */,
 				92E6ED7C13F313230045679E /* ButtonLabelCell.h */,
 				92E6ED7D13F313230045679E /* ButtonLabelCell.m */,
 				92E6ED7E13F313230045679E /* DraggableImageView.h */,

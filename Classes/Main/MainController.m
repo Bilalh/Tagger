@@ -503,7 +503,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	lastKeyPress = [event timestamp];
 	
 	if (isalnum([currentEventString characterAtIndex:0 ])) {
-		DDLogRelease(@"key %@", currentEventString);
+		DDLogVerbose(@"currentEventString %@", currentEventString);
 		NSObject <NSTableViewDataSource> *source = [tableView dataSource];
 		NSUInteger len = [tableView numberOfRows];
 		NSTableColumn *first = [[table tableColumns] objectAtIndex:0];

@@ -12,9 +12,6 @@
 #import "FileSystemNode.h"
 #import "BHFinderLabelColours.h"
 
-#import "Logging.h"
-LOG_LEVEL(LOG_LEVEL_INFO);
-
 @implementation QuickLookTableView
 
 - (void)keyDown:(NSEvent *)theEvent
