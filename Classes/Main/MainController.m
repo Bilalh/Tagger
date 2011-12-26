@@ -1096,7 +1096,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 					 @"title",  @"album",  @"artist",@"albumArtist", @"composer", @"genre",
 					 nil];
 	deleteMenuValues = [[NSArray alloc ] initWithObjects:
-					 @"title",  @"album",  @"artist",@"albumArtist", @"composer", @"genre", @"cover",
+					 @"title",  @"album",  @"artist",@"albumArtist", @"composer", @"genre", @"cover", @"url",
 					 nil];
 
 }
