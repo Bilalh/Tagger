@@ -8,7 +8,7 @@ Version 1.5
 * Scroll to specified row on keypress (like iTunes).
 * Tabbing now goes the first cell of the next row upon reaching the end of a row.
 * Spreadsheet View.
-* Swapping artist's first and last name menuitem
+* Swapping first and last name menuitem for artist and other fields
 
 
 ### Improvements ###

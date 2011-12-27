@@ -18,7 +18,7 @@ Install From Source
 ### Introductions
 Build the release version of VGTagger.
 
-(When embedding make sure require 'rubygems'  is commented with a # before it)
+(When embedding make sure `require 'rubygems'` in `Vgmdb.rb`  is commented with a # before it)
 
 Run Embed MacRuby on it which does the follows to embed the MacRuby framework
 
@@ -28,7 +28,6 @@ To save 15mb you can remove the unused .rb files in
   `VGTagger.app/Contents/Frameworks/MacRuby.framework/Versions/0.10/usr/lib/ruby/1.9.2`
 
 
-
 Issues
 ------
 * Bug in mp3 files sometimes when *replacing* (not adding) artwork on files who album art has *never* been edited in iTunes, means the file can't be added to iTunes. This happens sometimes happens after replacing the arkwork twice (when using vbr files).
@@ -36,9 +35,11 @@ Issues
 *Work around*
 To replace a mp3 cover art a second time use `refresh`(⌘R) then `Parent Folder`(⌘↑) then `Back`(⌘\[) menus items then replace the cover.
 
-* If you did not follow the adivce use `mp3val -f  name.mp3` to fix the mp3 with the tags intact.
+* If you did not follow the advice use `mp3val -f name.mp3` to fix the mp3 with the tags intact, see 
+[this blog post](http://bilalh.github.com/2011/12/24/fixing-corrupt-mp3s/ "Fixing corrupt mp3s"). 
 
 * Bug in malformed m4a files sometimes when *replacing* (not adding) artwork, means the file can't be played in iTunes.
+
 
 Libraries Used
 --------------
@@ -49,6 +50,7 @@ Libraries Used
 * CCTColorLabelMenuItemView
 * Lumberjack
 * MASPreferencesViewController
+* RegexkitLite
 
 Licence
 -------

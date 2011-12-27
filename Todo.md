@@ -37,15 +37,15 @@ VGMDB
 -----
 * Taggings when tracks missing (done, but can tag wrong).
 * Some kind of error handing when vgmdb returns no tracks.
-* Selected catalog when there are multiple printings.
+* Select correct catalog printing when there are multiple printings.
 
 Later
 -----
 * Add flac (should be easy).
 * Disallow the user from changing the preferences tab very quickly.
-* Butons with icons for capitalization, labelsing and renaming.
+* Butons with icons for capitalization, labelling and renaming.
 * Icon for cover preferences. 
-* Adds another autotag e.g disc cogs, freedb or musicbrainz.
+* Adds another autotager e.g discogs, freedb or musicbrainz.
 
 ----
 Done
