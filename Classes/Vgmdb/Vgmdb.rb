@@ -100,8 +100,9 @@ class Vgmdb
 			meta.children[id].children[2].children.each do |e|
 				if e.children.length > 0 then
 					arr << spilt_lang(e.children)
-				elsif e.kind_of? Nokogiri::XML::Text then
-					arr << {"@english" => e.to_s.strip}
+				elsif e.kind_of?(Nokogiri::XML::Text) then
+					s =e.to_s.strip
+					arr << {"@english" =>s} if s.length >0
 				end
 			end
 			return arr
@@ -277,7 +278,8 @@ if $0 == __FILE__
 	# url = 'http://vgmdb.net/album/26335'  # latin
 	# url = 'http://vgmdb.net/album/10310'  # No Genre 
 	# url = 'http://vgmdb.net/album/30880'  # Different format for Performer 
-	url = 'http://vgmdb.net/album/30881'    # No genre
+	# url = 'http://vgmdb.net/album/30881'  # No genre
+	url = 'http://vgmdb.net/album/27827'
 	hash = vg.get_data(url)	
 	require 'pp'
 	pp hash

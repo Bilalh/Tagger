@@ -504,18 +504,16 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	lastKeyPress = [event timestamp];
 	
 	if (isalnum([currentEventString characterAtIndex:0 ])) {
-		DDLogRelease(@"currentEventString %@", currentEventString);
 		NSObject <NSTableViewDataSource> *source = [tableView dataSource];
 		NSUInteger len = [tableView numberOfRows];
 		NSTableColumn *first = [tableView tableColumnWithIdentifier:@"filename"];
 		
+		DDLogVerbose(@"currentEventString %@", currentEventString);
 		NSUInteger i;
 		for(i = 0; i < len; ++i){
 			id  obj = [source tableView:tableView  objectValueForTableColumn:first row:i];
 			if ([obj isKindOfClass:[NSString class]]){
-				DDLogRelease(@"string %@",obj );
 				if ([[obj lowercaseString] hasPrefix:currentEventString]){
-					DDLogRelease(@"selecting %zu", i);
 					[tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:i] byExtendingSelection:NO];
 					[tableView scrollRowToVisible:i];
 					return YES;
