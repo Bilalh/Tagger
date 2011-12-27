@@ -12,6 +12,7 @@ Version 1.5
 ### Improvements ###
 * Handles  missing data from vgmdb.
 * Gui Improvements on Grouping and Genre field.
+* Handles the different format for Performer in vgmdb that happens for some albums
 
 ### Bug Fixes ### 
 * Mp3 cover art.

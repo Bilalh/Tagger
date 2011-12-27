@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby19 -KU
 # encoding: UTF-8
+# Bilal Hussain
 
 #comment the below line if embeding macruby
 #require 'rubygems'
@@ -99,6 +100,8 @@ class Vgmdb
 			meta.children[id].children[2].children.each do |e|
 				if e.children.length > 0 then
 					arr << spilt_lang(e.children)
+				elsif e.kind_of? Nokogiri::XML::Text then
+					arr <<  e.to_s.strip
 				end
 			end
 			return arr
@@ -119,7 +122,7 @@ class Vgmdb
 		hash['composer']  = get_spilt_data[7]
 		hash['arranger']  = get_spilt_data[8]
 		hash['performer'] = get_spilt_data[9]
-		
+				
 		# artist is composer
 		hash['artist']    = get_spilt_data[7]
 		
@@ -262,10 +265,10 @@ if $0 == __FILE__
 	# url = 'http://vgmdb.net/album/19776'
 	# url = 'http://vgmdb.net/album/26335'  # latin
 	# url = 'http://vgmdb.net/album/10310'  # No Genre 
-
+	url = 'http://vgmdb.net/album/30880'  # Different format for Performer 
 	hash = vg.get_data(url)	
 	require 'pp'
-	pp hash
+	# pp hash
 	# vg.get_tracks_array hash;
 	
 end
