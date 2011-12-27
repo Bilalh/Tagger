@@ -773,6 +773,15 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[table selectRowIndexes:rows byExtendingSelection:NO];
 }
 
+- (IBAction) swapArtistFirstAndLastName:(id)sender
+{
+	if (currentNodes.empty) return;
+	[currentNodes swapArtistFirstAndLastName];
+	self.currentNodes.tagsArray = [[[directoryStack lastObject] children] 
+								   objectsAtIndexes:[table selectedRowIndexes]];
+	[table reloadData];
+}
+
 #pragma mark - Tag Renaming/Finding
 
 - (IBAction) renumberFiles:(id)sender

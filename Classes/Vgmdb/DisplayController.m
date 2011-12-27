@@ -47,6 +47,7 @@ LOG_LEVEL(LOG_LEVEL_INFO);
 	};
 	
 	add(@"catalog",   @"\t   ");
+	add(@"category",  @"  ");
 	add(@"products",  @"  ");
 	add(@"url",       @"\t\t   ");
 	add(@"arranger",  @"   ");
@@ -340,6 +341,9 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[keys addObject:@"classification"];
 	[values addObject:[Utility valueFromResult:[albumDetails objectForKey:@"classification"] 
 						   selectedLanguage:@"@english"]];
+	[keys addObject:@"category"];
+	[values addObject:[Utility valueFromResult:[albumDetails objectForKey:@"category"] 
+							  selectedLanguage:@"@english"]];	
 	
 	fieldValues = [[NSMutableDictionary alloc] initWithObjects:values forKeys:keys];
 	DDLogInfo(@"fieldValues\n %@", fieldValues);	

@@ -163,4 +163,6 @@
 // expanded/collapsed the right SplitView
 - (IBAction) toggleRightSubView:(id)sender;
 
+- (IBAction) swapArtistFirstAndLastName:(id)sender;
+
 @end

@@ -358,5 +358,47 @@ static const NSSet *tokensNumberSet;
 		[_children removeObjectAtIndex:remove];
 	}
 }
- 
+
+
+
+- (void)swapArtistFirstAndLastName
+{
+	if (!tags) return;
+	
+	DDLogRelease(@"artist %@  title %@", tags.artist, tags.title);
+	NSString *artist = tags.artist;
+	if (!artist || [artist length] == 0) return;
+	
+	
+	NSArray *arr = [artist componentsSeparatedByRegex:@"[&,] ?"]; 
+	
+	NSMutableArray  *dst = [[NSMutableArray alloc] init];
+	
+	for (NSString *s in arr) {
+		NSArray *cap = [s captureComponentsMatchedByRegex:@"^(\\w+) (\\w+)$"];
+		DDLogRelease(@"Captures %@", cap);
+		if ([cap count] != 3){
+			[dst addObject:s];
+		}else{
+			[dst addObject:[[NSString alloc] 
+							initWithFormat:@"%@ %@",
+							[cap objectAtIndex:2], [cap objectAtIndex:1]]];
+		}
+	}
+	
+	DDLogRelease(@"Results %@", dst);
+	
+	if ([dst count] == 2){
+	 	tags.artist =  [[NSString alloc]  initWithFormat:@"%@ %@",
+						[dst objectAtIndex:0], [dst objectAtIndex:1]];
+	}else if ([dst count] > 2){
+		tags.artist = [dst componentsJoinedByString:@", "];
+	}else{
+		tags.artist = [dst objectAtIndex:0];
+	}
+	
+}
+
+
+
 @end

@@ -54,6 +54,8 @@
 					   from:(NSInteger)remove
 				removeFirst:(BOOL)removeFirst;
 
+- (void)swapArtistFirstAndLastName;
+
 /// @name Finding metadata
 
 /// The url of this node

@@ -164,7 +164,7 @@ DDLogInfo(@"res:%d "#field":%u", b, t->field());
 -(void) setUrl:(NSString *)newText{}
 -(void) setCover:(NSImage*)newValue{}
 
-- (void) removeAllTags {	DDLogRelease(@"removing tags");}
+- (void) removeAllTags { DDLogInfo(@"removing tags");}
 
 -(NSString*)formatKey:(NSString*)key
 {
@@ -188,6 +188,5 @@ DDLogInfo(@"res:%d "#field":%u", b, t->field());
 	}
 	return res;
 }
-
 
 @end

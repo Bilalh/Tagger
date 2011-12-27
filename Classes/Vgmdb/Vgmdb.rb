@@ -152,7 +152,7 @@ class Vgmdb
 		
 		hash['classification'] = get_data[5]
 		if hash['classification'] then 
-			hash['classification'] = hash['classification'].split ','
+			hash['classification'] = hash['classification'].split /[,&]/
 		end
 		
 		# artist is composer
@@ -164,8 +164,8 @@ class Vgmdb
 		hash['rating'] = stats[0].parent.previous.previous.css('br + span').text
 		
 		# genre is category
-		hash['genre'] = get_stats[2]
-		
+		hash['genre']    = get_stats[2]
+				
 		ps = ->(id){ 
 			if stats[id].next.next.children.length > 0 then
 				spilt_lang(stats[id].next.next.children)
@@ -181,7 +181,12 @@ class Vgmdb
 			all.css('a').collect do |e|
 				  results << spilt_lang(e.children)
 			end
-			hash['products'] = results unless results.length == 0
+			hash['products'] = 
+			if results.length == 0 then
+				ps[3]
+			else
+				results
+			end
 		end
 		
 		
@@ -190,9 +195,15 @@ class Vgmdb
 			hash.delete 'platforms'
 		end
 		
-		if hash.has_key?('genre') &&  ! hash.has_key?('products') && ! @genres.include?(hash['genre']) then
-			hash['products'] =  {"@english" => hash['genre']}
-			hash.delete 'genre'
+		# if hash.has_key?('genre') &&  ! hash.has_key?('products') && ! @genres.include?(hash['genre']) then
+		# 	hash['products'] =  {"@english" => hash['genre']}
+		# 	hash.delete 'genre'
+		# end
+		
+		if  hash.has_key?('genre') then 
+				hash['genre'] = hash['genre'].split /[,&]/
+				
+			 hash['category']  = Marshal.load(Marshal.dump(hash['genre']))
 		end
 		
 		#puts
@@ -316,14 +327,15 @@ if $0 == __FILE__
 	# url = "http://vgmdb.net/album/13192"
 	# url = 'http://vgmdb.net/album/3885'
 	# url = 'http://vgmdb.net/album/19776'
+	# url = 'http://vgmdb.net/album/27827'  # 10 disks
 	# url = 'http://vgmdb.net/album/26335'  # latin
 	# url = 'http://vgmdb.net/album/10310'  # No Genre 
 	# url = 'http://vgmdb.net/album/30880'  # Different format for Performer 
 	# url = 'http://vgmdb.net/album/30881'  # No genre
 	# url ='http://vgmdb.net/album/19090'
-	# url = 'http://vgmdb.net/album/9767'   # Products 
 	# url ='http://vgmdb.net/album/22124'   # Multiple classifications
-	url ='http://vgmdb.net/album/10306'   # Multiple Products 
+	# url ='http://vgmdb.net/album/10306'   # Multiple Products 
+	url = 'http://vgmdb.net/album/22125'    # Different format fior Products
 	hash = vg.get_data(url)	
 	require 'pp'
 	pp hash

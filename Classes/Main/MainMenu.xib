@@ -1062,6 +1062,15 @@
 										</object>
 									</object>
 								</object>
+								<object class="NSMenuItem" id="420508456">
+									<reference key="NSMenu" ref="397990970"/>
+									<string key="NSTitle">Swap Artists First and Last Name</string>
+									<string key="NSKeyEquiv">P</string>
+									<int key="NSKeyEquivModMask">1048576</int>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="35465992"/>
+									<reference key="NSMixedImage" ref="502551668"/>
+								</object>
 								<object class="NSMenuItem" id="935620755">
 									<reference key="NSMenu" ref="397990970"/>
 									<bool key="NSIsDisabled">YES</bool>
@@ -1116,7 +1125,7 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
-								<object class="NSMenuItem" id="420508456">
+								<object class="NSMenuItem" id="121247879">
 									<reference key="NSMenu" ref="397990970"/>
 									<string key="NSTitle">Renumber Files</string>
 									<string key="NSKeyEquiv">1</string>
@@ -1636,7 +1645,7 @@
 															<string key="NSFrameSize">{641, 402}</string>
 															<reference key="NSSuperview" ref="271199575"/>
 															<reference key="NSWindow"/>
-															<reference key="NSNextKeyView" ref="95219740"/>
+															<reference key="NSNextKeyView" ref="367438659"/>
 															<bool key="NSEnabled">YES</bool>
 															<object class="NSTableHeaderView" key="NSHeaderView" id="310651733">
 																<reference key="NSNextResponder" ref="211658329"/>
@@ -2410,7 +2419,7 @@
 											<string key="NSFrameSize">{645, 423}</string>
 											<reference key="NSSuperview" ref="479247737"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="367438659"/>
+											<reference key="NSNextKeyView" ref="271199575"/>
 											<int key="NSsFlags">563</int>
 											<reference key="NSVScroller" ref="367438659"/>
 											<reference key="NSHScroller" ref="795071022"/>
@@ -3361,7 +3370,7 @@
 																				<string key="NSFrame">{{0, 32}, {280, 14}}</string>
 																				<reference key="NSSuperview" ref="326375348"/>
 																				<reference key="NSWindow"/>
-																				<reference key="NSNextKeyView" ref="622853686"/>
+																				<reference key="NSNextKeyView" ref="673949500"/>
 																				<int key="NSViewLayerContentsRedrawPolicy">2</int>
 																				<object class="NSTextContainer" key="NSTextContainer" id="195259803">
 																					<object class="NSLayoutManager" key="NSLayoutManager">
@@ -3483,7 +3492,7 @@
 																<string key="NSFrame">{{126, 17}, {281, 104}}</string>
 																<reference key="NSSuperview" ref="10815081"/>
 																<reference key="NSWindow"/>
-																<reference key="NSNextKeyView" ref="673949500"/>
+																<reference key="NSNextKeyView" ref="326375348"/>
 																<int key="NSViewLayerContentsRedrawPolicy">2</int>
 																<int key="NSsFlags">658</int>
 																<reference key="NSVScroller" ref="622853686"/>
@@ -5132,14 +5141,6 @@
 					<int key="connectionID">1371</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">renumberFiles:</string>
-						<reference key="source" ref="588631224"/>
-						<reference key="destination" ref="420508456"/>
-					</object>
-					<int key="connectionID">1372</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">enabled: currentNodes.hasBasicMetadata</string>
 						<reference key="source" ref="860458761"/>
@@ -5444,6 +5445,38 @@
 						<reference key="destination" ref="95219740"/>
 					</object>
 					<int key="connectionID">1478</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">renumberFiles:</string>
+						<reference key="source" ref="588631224"/>
+						<reference key="destination" ref="121247879"/>
+					</object>
+					<int key="connectionID">1480</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: currentNodes.hasBasicMetadata</string>
+						<reference key="source" ref="121247879"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="121247879"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: currentNodes.hasBasicMetadata</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">currentNodes.hasBasicMetadata</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1481</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">swapArtistFirstAndLastName:</string>
+						<reference key="source" ref="588631224"/>
+						<reference key="destination" ref="420508456"/>
+					</object>
+					<int key="connectionID">1482</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -6407,7 +6440,6 @@
 							<reference ref="913636609"/>
 							<reference ref="1060733223"/>
 							<reference ref="754176893"/>
-							<reference ref="420508456"/>
 							<reference ref="459541536"/>
 							<reference ref="530263831"/>
 							<reference ref="1031409048"/>
@@ -6419,6 +6451,8 @@
 							<reference ref="1030081110"/>
 							<reference ref="550712622"/>
 							<reference ref="265538809"/>
+							<reference ref="121247879"/>
+							<reference ref="420508456"/>
 						</object>
 						<reference key="parent" ref="1036655123"/>
 					</object>
@@ -7523,6 +7557,11 @@
 						<reference key="object" ref="452924518"/>
 						<reference key="parent" ref="720053764"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1479</int>
+						<reference key="object" ref="121247879"/>
+						<reference key="parent" ref="397990970"/>
+					</object>
 				</object>
 			</object>
 			<object class="NSMutableDictionary" key="flattenedProperties">
@@ -7624,6 +7663,8 @@
 					<string>1461.IBPluginDependency</string>
 					<string>1462.IBPluginDependency</string>
 					<string>1474.IBPluginDependency</string>
+					<string>1479.IBPluginDependency</string>
+					<string>1479.ImportedFromIB2</string>
 					<string>149.IBPluginDependency</string>
 					<string>149.ImportedFromIB2</string>
 					<string>150.IBPluginDependency</string>
@@ -7979,6 +8020,8 @@
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<integer value="1"/>
 					<string>{{753, 187}, {275, 113}}</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
@@ -8222,7 +8265,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1478</int>
+			<int key="maxID">1482</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -8281,6 +8324,7 @@
 							<string>revealInFinder:</string>
 							<string>search:</string>
 							<string>searchWithSubDirectories:</string>
+							<string>swapArtistFirstAndLastName:</string>
 							<string>tagsFromFilename:</string>
 							<string>toggleRightSubView:</string>
 							<string>trimWhitespace:</string>
@@ -8288,6 +8332,7 @@
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
 							<string>id</string>
 							<string>id</string>
 							<string>id</string>
@@ -8344,6 +8389,7 @@
 							<string>revealInFinder:</string>
 							<string>search:</string>
 							<string>searchWithSubDirectories:</string>
+							<string>swapArtistFirstAndLastName:</string>
 							<string>tagsFromFilename:</string>
 							<string>toggleRightSubView:</string>
 							<string>trimWhitespace:</string>
@@ -8441,6 +8487,10 @@
 							</object>
 							<object class="IBActionInfo">
 								<string key="name">searchWithSubDirectories:</string>
+								<string key="candidateClassName">id</string>
+							</object>
+							<object class="IBActionInfo">
+								<string key="name">swapArtistFirstAndLastName:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">

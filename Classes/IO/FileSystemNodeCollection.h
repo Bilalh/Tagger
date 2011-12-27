@@ -69,6 +69,9 @@
 
 - (void)deleteAllTags;
 
+
+- (void)swapArtistFirstAndLastName;
+
 /// @name Finding General metadata.
 
 // YES if empty
