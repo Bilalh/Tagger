@@ -93,7 +93,7 @@ static NSDictionary *languages;
 				break;
 			default:
 			{
-				return [array componentsJoinedByString:@","];
+				return [array componentsJoinedByString:@", "];
 				break;	
 			}
 		}
