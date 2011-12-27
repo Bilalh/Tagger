@@ -52,6 +52,7 @@ LOG_LEVEL(LOG_LEVEL_INFO);
 	add(@"arranger",  @"   ");
 	add(@"performer", @" ");
 	add(@"publisher", @"  ");
+	add(@"classification",   @"  ");
 	
 	[fieldValues setValue:buffer forKey:@"comment"];
 }
@@ -336,6 +337,9 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 	[keys addObject:@"albumArtist"];
 	[values addObject:@""];
+	[keys addObject:@"classification"];
+	[values addObject:[Utility valueFromResult:[albumDetails objectForKey:@"classification"] 
+						   selectedLanguage:@"@english"]];
 	
 	fieldValues = [[NSMutableDictionary alloc] initWithObjects:values forKeys:keys];
 	DDLogInfo(@"fieldValues\n %@", fieldValues);	

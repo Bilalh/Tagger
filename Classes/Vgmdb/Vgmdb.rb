@@ -321,8 +321,9 @@ if $0 == __FILE__
 	# url = 'http://vgmdb.net/album/30880'  # Different format for Performer 
 	# url = 'http://vgmdb.net/album/30881'  # No genre
 	# url ='http://vgmdb.net/album/19090'
-	url = 'http://vgmdb.net/album/9767'   # Products 
+	# url = 'http://vgmdb.net/album/9767'   # Products 
 	# url ='http://vgmdb.net/album/22124'   # Multiple classifications
+	url ='http://vgmdb.net/album/10306'   # Multiple Products 
 	hash = vg.get_data(url)	
 	require 'pp'
 	pp hash
