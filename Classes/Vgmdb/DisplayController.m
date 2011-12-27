@@ -14,7 +14,7 @@
 #import "NSAttributedString+Hyperlink.h"
 
 #import "Logging.h"
-LOG_LEVEL(LOG_LEVEL_VERBOSE);
+LOG_LEVEL(LOG_LEVEL_INFO);
 
 
 @interface DisplayController() // private methdods
@@ -439,7 +439,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSMutableArray  *fieldKeys = [[NSMutableArray alloc] initWithObjects: 
 							 @"album", @"artist", @"albumArtist",
 							 @"year" , @"genre" , @"composer",
-							 @"cover", @"url"   , @"comment", @"totalDiscs",
+							 @"url"   , @"comment", @"totalDiscs",
 							 nil ];
 	
 	NSArray  *nodeKeys = [[NSArray alloc] initWithObjects: 
@@ -468,7 +468,14 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		for (NSString *key in nodeKeys) {
 			newValue = [data objectForKey:key];
 			[tags setValue:newValue forKey:key];
-		}		
+		}	
+
+		NSString *key = @"cover";
+		if ([[[fieldProperties valueForKey:key] valueForKey:@"write"] boolValue]){
+			[tags setValue:[fieldValues objectForKey:key]  
+					forKey:key];	
+		}
+		
 	}
 	
 	

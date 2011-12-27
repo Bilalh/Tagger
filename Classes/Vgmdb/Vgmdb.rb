@@ -102,7 +102,7 @@ class Vgmdb
 					arr << spilt_lang(e.children)
 				elsif e.kind_of?(Nokogiri::XML::Text) then
 					s =e.to_s.strip
-					arr << {"@english" =>s} if s.length >0
+					arr << {"@english" =>s} if s.length >0 and  ! s =~ '[,&]'
 				end
 			end
 			return arr
@@ -279,7 +279,8 @@ if $0 == __FILE__
 	# url = 'http://vgmdb.net/album/10310'  # No Genre 
 	# url = 'http://vgmdb.net/album/30880'  # Different format for Performer 
 	# url = 'http://vgmdb.net/album/30881'  # No genre
-	url = 'http://vgmdb.net/album/27827'
+	# url = 'http://vgmdb.net/album/27827'    # extra track 4-16
+	url ='http://vgmdb.net/album/19090'
 	hash = vg.get_data(url)	
 	require 'pp'
 	pp hash
