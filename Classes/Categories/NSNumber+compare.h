@@ -11,6 +11,8 @@
 
 @interface NSNumber (NSNumber_compare)
 
-- (NSComparisonResult)localizedStandardCompare:(NSNumber *)number;
+- (NSComparisonResult)localizedStandardCompare:(NSNumber *)otherNumber;
+- (NSComparisonResult)compareMaybeNill:(NSNumber *)otherNumber;
+
 
 @end

@@ -9,6 +9,7 @@
 #import "Tags.h"
 #import "TagStructs.h"
 #import "NSString+Convert.h"
+#import "NSNumber+compare.h"
 
 #include <tag.h>
 
@@ -100,8 +101,8 @@ using namespace TagLib;
 - (NSComparisonResult)compare:(Tags *)otherTag
 {
 	NSComparisonResult res = [self.album compare:otherTag.album];
-	if (res == NSOrderedSame) res = [self.disc compare:otherTag.disc]; 
-	if (res == NSOrderedSame) res = [self.track compare:otherTag.track];
+	if (res == NSOrderedSame) res = [self.disc compareMaybeNill:otherTag.disc]; 
+	if (res == NSOrderedSame) res = [self.track compareMaybeNill:otherTag.track];
 //	if (res == NSOrderedSame) res = [self.length compare:otherTag.length];
 	return res;
 }

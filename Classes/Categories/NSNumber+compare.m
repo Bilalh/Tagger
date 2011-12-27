@@ -11,9 +11,15 @@
 
 @implementation NSNumber (NSNumber_compare)
 
-- (NSComparisonResult)localizedStandardCompare:(NSNumber *)number
+- (NSComparisonResult)localizedStandardCompare:(NSNumber *)otherNumber
 {
-	return [self compare:number];
+	return [self compareMaybeNill:otherNumber];
+}
+
+- (NSComparisonResult)compareMaybeNill:(NSNumber *)otherNumber
+{
+	if (otherNumber == nil) return -1;
+	else return [self compare:otherNumber];
 }
 
 @end
