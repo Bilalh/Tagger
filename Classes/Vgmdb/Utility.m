@@ -51,7 +51,7 @@ static NSDictionary *languages;
 		}
 	}
 	
-	// if we can find it just return the first language
+	// if we can't find it just return the first language
 	return [[field allValues ] objectAtIndex:0];
 }
 

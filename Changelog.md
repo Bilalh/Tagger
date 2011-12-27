@@ -13,6 +13,7 @@ Version 1.5
 * Handles  missing data from vgmdb.
 * Gui Improvements on Grouping and Genre field.
 * Handles the different format for Performer in vgmdb that happens for some albums
+* Comparing number where one of the number might be null
 
 ### Bug Fixes ### 
 * Mp3 cover art.
