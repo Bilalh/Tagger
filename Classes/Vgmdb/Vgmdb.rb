@@ -22,6 +22,27 @@ class Vgmdb
 			'Romaji'   => '@romaji',
 			'Latin'    => '@latin'
 		}
+		
+		@genres = [
+				"Original Soundtrack",
+				"Arrangement"        ,
+				"Vocal"              ,
+				"Drama"              ,
+				"Live Event"         ,
+				"Remix"              ,
+				"Original Work"      ,
+				"Talk"               ,
+				"Remaster"           ,
+				"Prototype/Unused"   ,
+				"Sound Effect"       ,
+				"Data"               ,
+				"Video",
+				"Game"        ,
+				"Animation"   ,
+				"Publication" ,
+				"Radio/Drama" ,
+				"Demo Scene"  ,      
+			]
 	end
 	
 	# CGI::escape
@@ -35,7 +56,6 @@ class Vgmdb
 		
 		url = "http://vgmdb.net/search?q=#{escape string}"
 		# puts url
-		# FIXME hardcode
 		# url = File.expand_path("~/Desktop/search.html")
 		
 		doc = Nokogiri.HTML(open(url).read)
@@ -117,18 +137,31 @@ class Vgmdb
 			hash['catalog']   = catalog_ele.text.strip
 		end
 		
-		hash['date']      = get_data[1]
-		hash['year']      = hash['date'][/\d{4}$/]
+		hash['date'] = get_data[1]
+		hash['year'] = hash['date'][/\d{4}$/]
+
+		hash['publishedFormat'] = get_data[2]
+		hash['price']           = get_data[3]
+		hash['mediaFormat']     = get_data[4]
+
 		hash['publisher'] = get_spilt_data[6]
 		hash['composer']  = get_spilt_data[7]
 		hash['arranger']  = get_spilt_data[8]
 		hash['performer'] = get_spilt_data[9]
+		
+		
+		hash['classification'] = get_data[5]
+		if hash['classification'] then 
+			hash['classification'] = hash['classification'].split ','
+		end
 		
 		# artist is composer
 		hash['artist']    = get_spilt_data[7]
 		
 		stats     = doc.css('tr> td#rightcolumn > div > div.smallfont > div > b')
 		get_stats = ->(id){ return stats[id] ? stats[id].next.next.text.strip : "" }
+
+		hash['rating'] = stats[0].parent.previous.previous.css('br + span').text
 		
 		# genre is category
 		hash['genre'] = get_stats[2]
@@ -141,15 +174,23 @@ class Vgmdb
 			end
 		}
 		
-		hash['products'] =  ps[3] if stats[3]
 		hash['platforms'] = ps[4] if stats[4]
+		
+		if  stats[3] && (all = stats[3].parent.children) then
+			results = []
+			all.css('a').collect do |e|
+				  results << spilt_lang(e.children)
+			end
+			hash['products'] = results unless results.length == 0
+		end
+		
 		
 		if hash['products'] == hash['platforms']  then
 			hash.delete 'products'
 			hash.delete 'platforms'
 		end
 		
-		if hash.has_key?('genre') && ! hash.has_key?('products') then
+		if hash.has_key?('genre') &&  ! hash.has_key?('products') && ! @genres.include?(hash['genre']) then
 			hash['products'] =  {"@english" => hash['genre']}
 			hash.delete 'genre'
 		end
@@ -279,8 +320,9 @@ if $0 == __FILE__
 	# url = 'http://vgmdb.net/album/10310'  # No Genre 
 	# url = 'http://vgmdb.net/album/30880'  # Different format for Performer 
 	# url = 'http://vgmdb.net/album/30881'  # No genre
-	# url = 'http://vgmdb.net/album/27827'    # extra track 4-16
-	url ='http://vgmdb.net/album/19090'
+	# url ='http://vgmdb.net/album/19090'
+	url = 'http://vgmdb.net/album/9767'   # Products 
+	# url ='http://vgmdb.net/album/22124'   # Multiple classifications
 	hash = vg.get_data(url)	
 	require 'pp'
 	pp hash
