@@ -495,7 +495,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 // Jump to the corrent row in the table based on the keypress
 - (BOOL) tableView:(NSTableView *)tableView
 	   willKeyDown:(NSEvent *)event{
-	if ( [event timestamp] - lastKeyPress > 0.4 ){
+	if ( [event timestamp] - lastKeyPress > 0.3 ){
 		[currentEventString release];
 		currentEventString  = [event charactersIgnoringModifiers];
 	}else{
@@ -504,16 +504,18 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	lastKeyPress = [event timestamp];
 	
 	if (isalnum([currentEventString characterAtIndex:0 ])) {
-		DDLogVerbose(@"currentEventString %@", currentEventString);
+		DDLogRelease(@"currentEventString %@", currentEventString);
 		NSObject <NSTableViewDataSource> *source = [tableView dataSource];
 		NSUInteger len = [tableView numberOfRows];
-		NSTableColumn *first = [[table tableColumns] objectAtIndex:0];
+		NSTableColumn *first = [tableView tableColumnWithIdentifier:@"filename"];
 		
 		NSUInteger i;
 		for(i = 0; i < len; ++i){
 			id  obj = [source tableView:tableView  objectValueForTableColumn:first row:i];
 			if ([obj isKindOfClass:[NSString class]]){
+				DDLogRelease(@"string %@",obj );
 				if ([[obj lowercaseString] hasPrefix:currentEventString]){
+					DDLogRelease(@"selecting %zu", i);
 					[tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:i] byExtendingSelection:NO];
 					[tableView scrollRowToVisible:i];
 					return YES;

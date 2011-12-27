@@ -101,7 +101,7 @@ class Vgmdb
 				if e.children.length > 0 then
 					arr << spilt_lang(e.children)
 				elsif e.kind_of? Nokogiri::XML::Text then
-					arr <<  e.to_s.strip
+					arr << {"@english" => e.to_s.strip}
 				end
 			end
 			return arr
@@ -122,7 +122,7 @@ class Vgmdb
 		hash['composer']  = get_spilt_data[7]
 		hash['arranger']  = get_spilt_data[8]
 		hash['performer'] = get_spilt_data[9]
-				
+		
 		# artist is composer
 		hash['artist']    = get_spilt_data[7]
 		
@@ -142,6 +142,17 @@ class Vgmdb
 		
 		hash['products'] =  ps[3] if stats[3]
 		hash['platforms'] = ps[4] if stats[4]
+		
+		if hash['products'] == hash['platforms']  then
+			hash.delete 'products'
+			hash.delete 'platforms'
+		end
+		
+		if hash.has_key?('genre') && ! hash.has_key?('products') then
+			hash['products'] =  {"@english" => hash['genre']}
+			hash.delete 'genre'
+		end
+		
 		#puts
 	end
 	
@@ -265,10 +276,11 @@ if $0 == __FILE__
 	# url = 'http://vgmdb.net/album/19776'
 	# url = 'http://vgmdb.net/album/26335'  # latin
 	# url = 'http://vgmdb.net/album/10310'  # No Genre 
-	url = 'http://vgmdb.net/album/30880'  # Different format for Performer 
+	# url = 'http://vgmdb.net/album/30880'  # Different format for Performer 
+	url = 'http://vgmdb.net/album/30881'    # No genre
 	hash = vg.get_data(url)	
 	require 'pp'
-	# pp hash
+	pp hash
 	# vg.get_tracks_array hash;
 	
 end
