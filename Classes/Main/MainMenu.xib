@@ -1062,14 +1062,20 @@
 										</object>
 									</object>
 								</object>
-								<object class="NSMenuItem" id="420508456">
+								<object class="NSMenuItem" id="377484196">
 									<reference key="NSMenu" ref="397990970"/>
-									<string key="NSTitle">Swap Artists First and Last Name</string>
-									<string key="NSKeyEquiv">P</string>
-									<int key="NSKeyEquivModMask">1048576</int>
+									<string key="NSTitle">Swap First and Last Name</string>
+									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
+									<string key="NSAction">submenuAction:</string>
+									<object class="NSMenu" key="NSSubmenu" id="552315727">
+										<string key="NSTitle">Swap First and Last Name</string>
+										<object class="NSMutableArray" key="NSMenuItems">
+											<bool key="EncodedWithXMLCoder">YES</bool>
+										</object>
+									</object>
 								</object>
 								<object class="NSMenuItem" id="935620755">
 									<reference key="NSMenu" ref="397990970"/>
@@ -1125,7 +1131,7 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
-								<object class="NSMenuItem" id="121247879">
+								<object class="NSMenuItem" id="420508456">
 									<reference key="NSMenu" ref="397990970"/>
 									<string key="NSTitle">Renumber Files</string>
 									<string key="NSKeyEquiv">1</string>
@@ -1645,7 +1651,7 @@
 															<string key="NSFrameSize">{641, 402}</string>
 															<reference key="NSSuperview" ref="271199575"/>
 															<reference key="NSWindow"/>
-															<reference key="NSNextKeyView" ref="367438659"/>
+															<reference key="NSNextKeyView" ref="95219740"/>
 															<bool key="NSEnabled">YES</bool>
 															<object class="NSTableHeaderView" key="NSHeaderView" id="310651733">
 																<reference key="NSNextResponder" ref="211658329"/>
@@ -2419,7 +2425,7 @@
 											<string key="NSFrameSize">{645, 423}</string>
 											<reference key="NSSuperview" ref="479247737"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="271199575"/>
+											<reference key="NSNextKeyView" ref="367438659"/>
 											<int key="NSsFlags">563</int>
 											<reference key="NSVScroller" ref="367438659"/>
 											<reference key="NSHScroller" ref="795071022"/>
@@ -3370,7 +3376,7 @@
 																				<string key="NSFrame">{{0, 32}, {280, 14}}</string>
 																				<reference key="NSSuperview" ref="326375348"/>
 																				<reference key="NSWindow"/>
-																				<reference key="NSNextKeyView" ref="673949500"/>
+																				<reference key="NSNextKeyView" ref="622853686"/>
 																				<int key="NSViewLayerContentsRedrawPolicy">2</int>
 																				<object class="NSTextContainer" key="NSTextContainer" id="195259803">
 																					<object class="NSLayoutManager" key="NSLayoutManager">
@@ -3468,6 +3474,7 @@
 																		<string key="NSFrame">{{339, 1}, {15, 57}}</string>
 																		<reference key="NSSuperview" ref="527193921"/>
 																		<reference key="NSWindow"/>
+																		<reference key="NSNextKeyView"/>
 																		<int key="NSViewLayerContentsRedrawPolicy">2</int>
 																		<reference key="NSTarget" ref="527193921"/>
 																		<string key="NSAction">_doScroller:</string>
@@ -3492,7 +3499,7 @@
 																<string key="NSFrame">{{126, 17}, {281, 104}}</string>
 																<reference key="NSSuperview" ref="10815081"/>
 																<reference key="NSWindow"/>
-																<reference key="NSNextKeyView" ref="326375348"/>
+																<reference key="NSNextKeyView" ref="673949500"/>
 																<int key="NSViewLayerContentsRedrawPolicy">2</int>
 																<int key="NSsFlags">658</int>
 																<reference key="NSVScroller" ref="622853686"/>
@@ -5127,22 +5134,6 @@
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">enabled: currentNodes.hasBasicMetadata</string>
-						<reference key="source" ref="420508456"/>
-						<reference key="destination" ref="588631224"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="420508456"/>
-							<reference key="NSDestination" ref="588631224"/>
-							<string key="NSLabel">enabled: currentNodes.hasBasicMetadata</string>
-							<string key="NSBinding">enabled</string>
-							<string key="NSKeyPath">currentNodes.hasBasicMetadata</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">1371</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">enabled: currentNodes.hasBasicMetadata</string>
 						<reference key="source" ref="860458761"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
@@ -5450,17 +5441,17 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">renumberFiles:</string>
 						<reference key="source" ref="588631224"/>
-						<reference key="destination" ref="121247879"/>
+						<reference key="destination" ref="420508456"/>
 					</object>
 					<int key="connectionID">1480</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">enabled: currentNodes.hasBasicMetadata</string>
-						<reference key="source" ref="121247879"/>
+						<reference key="source" ref="420508456"/>
 						<reference key="destination" ref="588631224"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="121247879"/>
+							<reference key="NSSource" ref="420508456"/>
 							<reference key="NSDestination" ref="588631224"/>
 							<string key="NSLabel">enabled: currentNodes.hasBasicMetadata</string>
 							<string key="NSBinding">enabled</string>
@@ -5471,12 +5462,12 @@
 					<int key="connectionID">1481</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">swapArtistFirstAndLastName:</string>
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">swapMenu</string>
 						<reference key="source" ref="588631224"/>
-						<reference key="destination" ref="420508456"/>
+						<reference key="destination" ref="552315727"/>
 					</object>
-					<int key="connectionID">1482</int>
+					<int key="connectionID">1489</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -6451,8 +6442,8 @@
 							<reference ref="1030081110"/>
 							<reference ref="550712622"/>
 							<reference ref="265538809"/>
-							<reference ref="121247879"/>
 							<reference ref="420508456"/>
+							<reference ref="377484196"/>
 						</object>
 						<reference key="parent" ref="1036655123"/>
 					</object>
@@ -7355,11 +7346,6 @@
 						<reference key="parent" ref="397990970"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">1367</int>
-						<reference key="object" ref="420508456"/>
-						<reference key="parent" ref="397990970"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">1373</int>
 						<reference key="object" ref="860458761"/>
 						<object class="NSMutableArray" key="children">
@@ -7559,8 +7545,27 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">1479</int>
-						<reference key="object" ref="121247879"/>
+						<reference key="object" ref="420508456"/>
 						<reference key="parent" ref="397990970"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1483</int>
+						<reference key="object" ref="377484196"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="552315727"/>
+						</object>
+						<reference key="parent" ref="397990970"/>
+						<string key="objectName">Menu Item - Swap First and Last Name</string>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1484</int>
+						<reference key="object" ref="552315727"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+						</object>
+						<reference key="parent" ref="377484196"/>
+						<string key="objectName">Menu -  Swap First and Last Name</string>
 					</object>
 				</object>
 			</object>
@@ -7631,8 +7636,6 @@
 					<string>136.ImportedFromIB2</string>
 					<string>1360.IBPluginDependency</string>
 					<string>1366.IBPluginDependency</string>
-					<string>1367.IBPluginDependency</string>
-					<string>1367.ImportedFromIB2</string>
 					<string>1373.IBPluginDependency</string>
 					<string>1374.IBComboBoxObjectValuesKey.objectValues</string>
 					<string>1374.IBPluginDependency</string>
@@ -7665,6 +7668,8 @@
 					<string>1474.IBPluginDependency</string>
 					<string>1479.IBPluginDependency</string>
 					<string>1479.ImportedFromIB2</string>
+					<string>1483.IBPluginDependency</string>
+					<string>1484.IBPluginDependency</string>
 					<string>149.IBPluginDependency</string>
 					<string>149.ImportedFromIB2</string>
 					<string>150.IBPluginDependency</string>
@@ -7970,8 +7975,6 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
-					<integer value="1"/>
-					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<object class="NSArray">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<string>dfdf</string>
@@ -8006,6 +8009,8 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -8265,7 +8270,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">1482</int>
+			<int key="maxID">1489</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -8324,7 +8329,7 @@
 							<string>revealInFinder:</string>
 							<string>search:</string>
 							<string>searchWithSubDirectories:</string>
-							<string>swapArtistFirstAndLastName:</string>
+							<string>swapFirstAndLastName:</string>
 							<string>tagsFromFilename:</string>
 							<string>toggleRightSubView:</string>
 							<string>trimWhitespace:</string>
@@ -8389,7 +8394,7 @@
 							<string>revealInFinder:</string>
 							<string>search:</string>
 							<string>searchWithSubDirectories:</string>
-							<string>swapArtistFirstAndLastName:</string>
+							<string>swapFirstAndLastName:</string>
 							<string>tagsFromFilename:</string>
 							<string>toggleRightSubView:</string>
 							<string>trimWhitespace:</string>
@@ -8490,7 +8495,7 @@
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
-								<string key="name">swapArtistFirstAndLastName:</string>
+								<string key="name">swapFirstAndLastName:</string>
 								<string key="candidateClassName">id</string>
 							</object>
 							<object class="IBActionInfo">
@@ -8524,6 +8529,7 @@
 							<string>renameMenu</string>
 							<string>rightSplitView</string>
 							<string>splitView</string>
+							<string>swapMenu</string>
 							<string>table</string>
 							<string>tagMenu</string>
 							<string>uppercaseMenu</string>
@@ -8542,6 +8548,7 @@
 							<string>NSMenu</string>
 							<string>NSView</string>
 							<string>NSSplitView</string>
+							<string>NSMenu</string>
 							<string>NSTableView</string>
 							<string>NSMenu</string>
 							<string>NSMenu</string>
@@ -8563,6 +8570,7 @@
 							<string>renameMenu</string>
 							<string>rightSplitView</string>
 							<string>splitView</string>
+							<string>swapMenu</string>
 							<string>table</string>
 							<string>tagMenu</string>
 							<string>uppercaseMenu</string>
@@ -8607,6 +8615,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">splitView</string>
 								<string key="candidateClassName">NSSplitView</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">swapMenu</string>
+								<string key="candidateClassName">NSMenu</string>
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">table</string>

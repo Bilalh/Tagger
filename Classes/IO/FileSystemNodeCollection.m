@@ -206,12 +206,11 @@ static const NSArray *fieldNames;
 	}
 }
 
-- (void)swapArtistFirstAndLastName
+- (void)swapFirstAndLastName:(NSString*)key;
 {
 	for (FileSystemNode *n in tagsArray) {
-		[n swapArtistFirstAndLastName];
+		[n swapFirstAndLastName:key];
 	}
-	
 }
 
 /// set the new array and finds the metdata for each tag

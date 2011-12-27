@@ -37,7 +37,8 @@
 	IBOutlet NSMenu *lowercaseMenu;
 	IBOutlet NSMenu *whitespaceMenu;
 	IBOutlet NSMenu *deleteMenu;
-	
+	IBOutlet NSMenu *swapMenu;
+
 	
 	IBOutlet NSSplitView *splitView;
 	IBOutlet NSView *leftSplitView;
@@ -163,6 +164,6 @@
 // expanded/collapsed the right SplitView
 - (IBAction) toggleRightSubView:(id)sender;
 
-- (IBAction) swapArtistFirstAndLastName:(id)sender;
+- (IBAction) swapFirstAndLastName:(id)sender;
 
 @end

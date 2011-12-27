@@ -70,7 +70,7 @@
 - (void)deleteAllTags;
 
 
-- (void)swapArtistFirstAndLastName;
+- (void)swapFirstAndLastName:(NSString*)key;
 
 /// @name Finding General metadata.
 

@@ -35,6 +35,8 @@ static const NSArray *predefinedRenameFormats;
 static const NSArray *predefinedTagFormats;
 static const NSArray *tagMenuValues;
 static const NSArray *deleteMenuValues;
+static const NSArray *swapMenuValues;
+
 
 @interface MainController()  
 
@@ -773,10 +775,11 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[table selectRowIndexes:rows byExtendingSelection:NO];
 }
 
-- (IBAction) swapArtistFirstAndLastName:(id)sender
+- (IBAction) swapFirstAndLastName:(id)sender
 {
+	
 	if (currentNodes.empty) return;
-	[currentNodes swapArtistFirstAndLastName];
+	[currentNodes swapFirstAndLastName:[swapMenuValues objectAtIndex: [sender tag]]];
 	self.currentNodes.tagsArray = [[[directoryStack lastObject] children] 
 								   objectsAtIndexes:[table selectedRowIndexes]];
 	[table reloadData];
@@ -1094,6 +1097,11 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	makeMenu(tagMenuValues, lowercaseMenu,  @selector(lowercaseTags:));
 	makeMenu(tagMenuValues, whitespaceMenu, @selector(trimWhitespace:));
 	makeMenu(deleteMenuValues, deleteMenu,  @selector(deleteTag:));
+	makeMenu(swapMenuValues, swapMenu,  @selector(swapFirstAndLastName:));
+	
+	NSMenuItem *item = [swapMenu itemAtIndex:0];
+	[item setKeyEquivalent:@"p"];
+	[item setKeyEquivalentModifierMask:NSCommandKeyMask | NSShiftKeyMask];
 	
 }
 
@@ -1137,10 +1145,15 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	tagMenuValues = [[NSArray alloc ] initWithObjects:
 					 @"title",  @"album",  @"artist",@"albumArtist", @"composer", @"genre",
 					 nil];
+	
 	deleteMenuValues = [[NSArray alloc ] initWithObjects:
 					 @"title",  @"album",  @"artist",@"albumArtist", @"composer", @"genre", @"cover", @"url",
 					 nil];
 
+	swapMenuValues = [[NSArray alloc ] initWithObjects:
+					  @"artist",@"albumArtist", @"composer",
+					  nil];
+	
 }
 
 - (void)dealloc

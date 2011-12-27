@@ -361,22 +361,23 @@ static const NSSet *tokensNumberSet;
 
 
 
-- (void)swapArtistFirstAndLastName
+- (void)swapFirstAndLastName:(NSString*)key
 {
 	if (!tags) return;
 	
-	DDLogRelease(@"artist %@  title %@", tags.artist, tags.title);
-	NSString *artist = tags.artist;
-	if (!artist || [artist length] == 0) return;
+
+	NSString *val = [tags valueForKey:key];
+	DDLogInfo(@"key %@  value %@  --  title %@", key, val, tags.title);
+	if (!val || [val length] == 0) return;
 	
 	
-	NSArray *arr = [artist componentsSeparatedByRegex:@"[&,] ?"]; 
+	NSArray *arr = [val componentsSeparatedByRegex:@"[&,] ?"]; 
 	
 	NSMutableArray  *dst = [[NSMutableArray alloc] init];
 	
 	for (NSString *s in arr) {
 		NSArray *cap = [s captureComponentsMatchedByRegex:@"^(\\w+) (\\w+)$"];
-		DDLogRelease(@"Captures %@", cap);
+		DDLogVerbose(@"Captures %@", cap);
 		if ([cap count] != 3){
 			[dst addObject:s];
 		}else{
@@ -386,15 +387,16 @@ static const NSSet *tokensNumberSet;
 		}
 	}
 	
-	DDLogRelease(@"Results %@", dst);
+	DDLogInfo(@"Results key %@ value %@ title %@ -- %@", dst);
 	
 	if ([dst count] == 2){
-	 	tags.artist =  [[NSString alloc]  initWithFormat:@"%@ %@",
-						[dst objectAtIndex:0], [dst objectAtIndex:1]];
+	 	[tags setValue:[[NSString alloc]  initWithFormat:@"%@ %@",
+						[dst objectAtIndex:0], [dst objectAtIndex:1]] 
+				forKey:key];
 	}else if ([dst count] > 2){
-		tags.artist = [dst componentsJoinedByString:@", "];
+		[tags setValue:[dst componentsJoinedByString:@", "] forKey:key];
 	}else{
-		tags.artist = [dst objectAtIndex:0];
+		[tags setValue:[dst objectAtIndex:0] forKey:key];
 	}
 	
 }

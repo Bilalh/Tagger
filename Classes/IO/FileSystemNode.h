@@ -54,7 +54,8 @@
 					   from:(NSInteger)remove
 				removeFirst:(BOOL)removeFirst;
 
-- (void)swapArtistFirstAndLastName;
+- (void)swapFirstAndLastName:(NSString*)key;
+
 
 /// @name Finding metadata
 
