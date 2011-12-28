@@ -9,7 +9,7 @@ Version 1.5
 * Tabbing now goes the first cell of the next row upon reaching the end of a row.
 * Spreadsheet View.
 * Swapping first and last name menuitem for artist and other fields
-* Go menu icons
+* Go menu icons.
 
 ### Improvements ###
 * Handles  missing data from vgmdb.
