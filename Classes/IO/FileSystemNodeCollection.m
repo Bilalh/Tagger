@@ -24,7 +24,7 @@ static const NSArray *fieldNames;
 @end
 
 @implementation FileSystemNodeCollection
-@synthesize tagsArray, hasBasicMetadata, hasExtenedMetadata, empty, labelColor, labelIndex;
+@synthesize tagsArray, hasBasicMetadata, hasExtenedMetadata, containsMP4Files, empty, labelColor, labelIndex;
 @synthesize title, artist, album, comment, genre, year, track, length;
 @synthesize albumArtist, composer, grouping, bpm, totalTracks, disc, totalDiscs, compilation, url, cover;
 @dynamic urls;
@@ -66,6 +66,7 @@ static const NSArray *fieldNames;
 
 - (void)initfields
 {
+	containsMP4Files = false;
 	writeToAll = false;
 	const Tags *tags0= [[tagsArray objectAtIndex:0] tags];
 	for (NSString *s in tagFieldNames) {
@@ -74,6 +75,8 @@ static const NSArray *fieldNames;
 	for (NSString *s in fieldNames) {
 		[self setValue:[[tagsArray objectAtIndex:0] valueForKey:s] forKey:s];
 	}
+	
+	containsMP4Files = false;
 	
 	for (FileSystemNode *n in tagsArray) {
 		const Tags *tags = n.tags;
@@ -104,6 +107,9 @@ static const NSArray *fieldNames;
 					[self setValue:NSMultipleValuesMarker forKey:key];
 				}	
 			}			
+		}
+		if ([tags.kind isEqualToString:@"MP4"]){
+			containsMP4Files = true;
 		}
 	}
 	writeToAll = true;

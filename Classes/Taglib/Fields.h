@@ -32,7 +32,7 @@ namespace Fields {
 		String const COVER        = "covr";
 		String const URL          = "----:com.apple.iTunes:URL_OFFICIAL_RELEASE_SITE";
 		
-		const String ARTIST_SORT  = "soar";
+		String const ARTIST_SORT  = "soar";
 	}
 	
 	namespace MPEG {

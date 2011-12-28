@@ -9,6 +9,7 @@ FIXME
 	To replace a mp3 cover art a second time use `refresh`(⌘R) then `Parent Folder`(⌘↑) then `Back`(⌘\[) menus items then replace the cover.
 * Bug in malformed m4a files sometimes when *replacing* (not adding) artwork, means the file can't be played in iTunes.
 * Renaming of files only seems to work once, have to go to a different dir and back to rename again.
+* Adding m4a without quiting Tagger.
 
 Images
 ------

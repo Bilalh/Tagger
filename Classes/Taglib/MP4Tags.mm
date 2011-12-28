@@ -74,6 +74,8 @@ using namespace std;
 		cover = [[[NSImage alloc] initWithData: [NSData dataWithBytes:bv.data() length:bv.size()]] autorelease];
 	}
 	
+	//	Sort by
+	artistSort = [self getFieldWithString:ARTIST_SORT];
 }
 
 - (void)dealloc
@@ -199,6 +201,13 @@ using namespace std;
 	TAG_SETTER_START(url);
 	[self setFieldWithString:URL  value:newValue]; 
 }
+
+- (void) setArtistSort:(NSString *)newValue
+{
+	TAG_SETTER_START(artistSort);
+	[self setFieldWithString:ARTIST_SORT  value:newValue]; 
+}
+
 
 // need fixing?
 - (void) setCover:(NSImage *)newValue

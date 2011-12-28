@@ -19,6 +19,7 @@
 	BOOL hasBasicMetadata;
 	BOOL hasExtenedMetadata;
 	
+	BOOL containsMP4Files;
 	NSString *albumArtist;
 	NSString *composer;
 	NSString *grouping;
@@ -85,6 +86,8 @@
 @property (readonly) BOOL  hasBasicMetadata;
 /// YES if all the files has extend metadata info.
 @property (readonly) BOOL  hasExtenedMetadata;
+
+@property (readonly) BOOL  containsMP4Files;
 
 @property (readonly) NSArray *urls;
 
