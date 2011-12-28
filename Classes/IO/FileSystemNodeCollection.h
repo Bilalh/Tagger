@@ -47,7 +47,11 @@
 	BOOL  empty;
 	
 	// Tags  -- sort by	
+	NSString *albumSort;
 	NSString *artistSort;
+	NSString *titleSort;
+	NSString *composerSort;
+	NSString *albumArtistSort;
 	
 }
 
@@ -138,6 +142,10 @@
 
 /// @name Finding Sort by  Metadata 
 
+@property (assign) NSString *albumSort;
 @property (assign) NSString *artistSort;
+@property (assign) NSString *titleSort;
+@property (assign) NSString *composerSort;
+@property (assign) NSString *albumArtistSort;
 
 @end

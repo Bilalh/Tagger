@@ -28,7 +28,7 @@ using namespace TagLib;
 @synthesize title, artist, album, comment, genre, year, track;
 @synthesize albumArtist, composer, grouping, bpm, totalTracks, disc, totalDiscs, compilation, url, cover;
 @synthesize length, bitrate, channels, sampleRate, kind;
-@synthesize artistSort;
+@synthesize albumSort, artistSort, titleSort, composerSort, albumArtistSort;
 
 #pragma mark -
 #pragma mark Init
@@ -165,7 +165,12 @@ DDLogInfo(@"res:%d "#field":%u", b, t->field());
 -(void) setUrl:(NSString *)newText{}
 -(void) setCover:(NSImage*)newValue{}
 
--(void) setArtistSort:(NSString*)newValue{}
+- (void)setAlbumSort: (NSString *)newValue {}
+- (void)setArtistSort:(NSString *)newValue {}
+- (void)setTitleSort: (NSString *)newValue {}
+
+- (void)setComposerSort:   (NSString *)newValue {}
+- (void)setAlbumArtistSort:(NSString *)newValue {}
 
 
 - (void) removeAllTags { DDLogInfo(@"removing tags");}

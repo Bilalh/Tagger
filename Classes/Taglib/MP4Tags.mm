@@ -75,8 +75,12 @@ using namespace std;
 	}
 	
 	//	Sort by
+	albumSort  = [self getFieldWithString:ALBUM_SORT];
 	artistSort = [self getFieldWithString:ARTIST_SORT];
-}
+	titleSort  = [self getFieldWithString:TITLE_SORT];
+	
+	composerSort    = [self getFieldWithString:COMPOSER_SORT];
+	albumArtistSort = [self getFieldWithString:ALBUM_ARTIST_SORT];}
 
 - (void)dealloc
 {
@@ -205,7 +209,31 @@ using namespace std;
 - (void) setArtistSort:(NSString *)newValue
 {
 	TAG_SETTER_START(artistSort);
-	[self setFieldWithString:ARTIST_SORT  value:newValue]; 
+	[self setFieldWithString:ARTIST_SORT value:newValue];
+}
+
+- (void) setAlbumSort:(NSString *)newValue
+{
+	TAG_SETTER_START(albumSort);
+	[self setFieldWithString:ALBUM_SORT value:newValue];
+}
+
+- (void) setTitleSort:(NSString *)newValue
+{
+	TAG_SETTER_START(titleSort);
+	[self setFieldWithString:TITLE_SORT value:newValue];
+}
+
+- (void) setComposerSort:(NSString *)newValue
+{
+	TAG_SETTER_START(composerSort);
+	[self setFieldWithString:COMPOSER_SORT value:newValue];
+}
+
+- (void) setAlbumArtistSort:(NSString *)newValue
+{
+	TAG_SETTER_START(albumArtistSort);
+	[self setFieldWithString:ALBUM_ARTIST_SORT value:newValue];
 }
 
 

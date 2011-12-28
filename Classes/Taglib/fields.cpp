@@ -27,6 +27,10 @@ namespace Fields {
 		const char *URL          = "WXXX";
 		const char *COMMENT      = "COMM";
 		
-		const char* ARTIST_SORT  = "TSOP";
+		const char* ALBUM_SORT    = "TSOA";
+		const char* ARTIST_SORT   = "TSOP";
+		const char* TITLE_SORT    = "TSOT";
+		const char* COMPOSER_SORT = "TSOC";
+		const char* ALBUM_ARTIST_SORT ="TSO2";
 	}
 }

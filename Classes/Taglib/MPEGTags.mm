@@ -102,7 +102,14 @@ using namespace Fields::MPEG;
 	
 	
 	// Sort by
+	
+	albumSort  = [self getFieldWithString:ALBUM_SORT];
 	artistSort = [self getFieldWithString:ARTIST_SORT];
+	titleSort  = [self getFieldWithString:TITLE_SORT];
+	
+	composerSort    = [self getFieldWithString:COMPOSER_SORT];
+	albumArtistSort = [self getFieldWithString:ALBUM_ARTIST_SORT];
+
 	
 	[self initCover];
 }
@@ -246,6 +253,31 @@ using namespace Fields::MPEG;
 	TAG_SETTER_START(artistSort);
 	[self setFieldWithString:ARTIST_SORT data:newValue];
 }
+
+- (void) setAlbumSort:(NSString *)newValue
+{
+	TAG_SETTER_START(albumSort);
+	[self setFieldWithString:ALBUM_SORT data:newValue];
+}
+
+- (void) setTitleSort:(NSString *)newValue
+{
+	TAG_SETTER_START(titleSort);
+	[self setFieldWithString:TITLE_SORT data:newValue];
+}
+
+- (void) setComposerSort:(NSString *)newValue
+{
+	TAG_SETTER_START(composerSort);
+	[self setFieldWithString:COMPOSER_SORT data:newValue];
+}
+
+- (void) setAlbumArtistSort:(NSString *)newValue
+{
+	TAG_SETTER_START(albumArtistSort);
+	[self setFieldWithString:ALBUM_ARTIST_SORT data:newValue];
+}
+
 
 - (void) setComment:(NSString *)newValue
 {

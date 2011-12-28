@@ -10,7 +10,7 @@ Version 1.5
 * Spreadsheet View.
 * Swapping first and last name menuitem for artist and other fields
 * Go menu icons.
-* Artist Sort field can be edited
+* albumSort, artistSort, titleSort, composerSort, albumArtistSort field can now be edited.
 
 ### Improvements ###
 * Handles  missing data from vgmdb.

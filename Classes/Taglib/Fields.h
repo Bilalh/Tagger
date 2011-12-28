@@ -32,7 +32,13 @@ namespace Fields {
 		String const COVER        = "covr";
 		String const URL          = "----:com.apple.iTunes:URL_OFFICIAL_RELEASE_SITE";
 		
-		String const ARTIST_SORT  = "soar";
+		String const ALBUM_SORT    = "soal";
+		String const ARTIST_SORT   = "soar";
+		String const TITLE_SORT    = "sonm";
+		String const COMPOSER_SORT = "soco";
+		
+		String const ALBUM_ARTIST_SORT    = "soaa";
+
 	}
 	
 	namespace MPEG {
@@ -53,8 +59,11 @@ namespace Fields {
 		extern const char *COMMENT     ;
 		extern const char *URL         ;
 		
+		extern const char* ALBUM_SORT;
 		extern const char* ARTIST_SORT;
-
+		extern const char* TITLE_SORT;
+		extern const char* COMPOSER_SORT;
+		extern const char* ALBUM_ARTIST_SORT;
 	}	
 }
 
