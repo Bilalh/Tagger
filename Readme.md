@@ -40,7 +40,7 @@ To replace a mp3 cover art a second time use `refresh`(⌘R) then `Parent Folder
 
 * Bug in malformed m4a files sometimes when *replacing* (not adding) artwork, means the file can't be played in iTunes.
 
-* Quit Tagger before adding m4a (happen mostly with lossless m4a's) to iTunes that were edited in Tagger, otherwise the metadata does not change. If did added before Tagger was quit, remove them from iTunes and add them again.
+* Quit Tagger before adding m4a (happen mostly with lossless m4a's and when 'Copy files to iTunes Media Folder' is unchecked in iTunes) to iTunes that were edited in Tagger, otherwise the metadata does not change. If you  added the mp4 before Tagger was quit, remove them from iTunes and add them again.
 
 Infomation
 ----------
