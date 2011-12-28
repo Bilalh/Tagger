@@ -70,6 +70,8 @@ static const NSArray *swapMenuValues;
 	  contextInfo:(IntPair*)pair;
 
 - (void) initTagManipulationSubMenus;
+- (void) initGoMenuItems;
+
 
 - (void) splitViewWillResizeSubviewsHandler:(id)object;
 
@@ -1041,7 +1043,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[table registerForDraggedTypes:[[table registeredDraggedTypes ] arrayByAddingObject:TABLE_VIEW_ROW_TYPE]];
 	
 	[self initTagManipulationSubMenus];
-
+	[self initGoMenuItems];
+	
 //	Splitview stuff
 	lastSplitViewSubViewRightWidth = [rightSplitView frame].size.width;
 	[[NSNotificationCenter defaultCenter]
@@ -1102,7 +1105,24 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSMenuItem *item = [swapMenu itemAtIndex:0];
 	[item setKeyEquivalent:@"p"];
 	[item setKeyEquivalentModifierMask:NSCommandKeyMask | NSShiftKeyMask];
-	
+
+
+}
+
+- (void) initGoMenuItems
+{
+	void (^setIcon)(NSMenuItem*, OSType) = ^(NSMenuItem* item, OSType type){
+		NSString *fileType = NSFileTypeForHFSTypeCode(type);
+		NSImage *icon = [[NSWorkspace sharedWorkspace] iconForFileType:fileType];
+		[icon setSize:NSMakeSize(16, 16)];
+		[item setImage:icon];
+	};
+	setIcon(computerMenuItem, kComputerIcon);
+	setIcon(desktopMenuItem,  kToolbarDesktopFolderIcon);
+	setIcon(downloadMenuItem, kToolbarDownloadsFolderIcon);
+	setIcon(homeMenuItem,     kToolbarHomeIcon);
+	setIcon(musicMenuItem,    kToolbarMusicFolderIcon);
+	setIcon(movieMenuItem,    kToolbarMovieFolderIcon);
 }
 
 - (id)init

@@ -33,6 +33,10 @@ Renaming
 --------
 * Error message when invalid characters in filenames. 
 
+MacRuby
+-------
+* Either find faster way to use it or rewrite Vgmdb in Objective C/C++
+
 VGMDB
 -----
 * Taggings when tracks missing (done, but can tag wrong).
@@ -64,3 +68,4 @@ Done
 * Added latin as a language.
 * tags from filename.
 * Sort by date sort by the string instead of date
+* Go menu icons

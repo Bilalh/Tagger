@@ -45,6 +45,13 @@
 	IBOutlet NSView *rightSplitView;
 	CGFloat lastSplitViewSubViewRightWidth;
 	
+	IBOutlet NSMenuItem *computerMenuItem;
+	IBOutlet NSMenuItem *homeMenuItem;
+	IBOutlet NSMenuItem *desktopMenuItem;
+	IBOutlet NSMenuItem *downloadMenuItem;
+	IBOutlet NSMenuItem *musicMenuItem;
+	IBOutlet NSMenuItem *movieMenuItem;
+
 	
 	VgmdbController         *vgc;
 	DisplayController       *ssc;
