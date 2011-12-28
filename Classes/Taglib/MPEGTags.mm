@@ -11,6 +11,7 @@
 #import "NSString+Convert.h"
 #import "NSImage+bitmapData.h"
 #include "TagPrivate.h"
+#include "Fields.h"
 
 #include <mpegfile.h>
 #include <id3v2tag.h> 
@@ -22,24 +23,6 @@
 #import "Logging.h"
 LOG_LEVEL(LOG_LEVEL_ERROR);
 
-namespace MPEGFields {	// can not be put in the header for some reason
-	const char *ALBUM_ARTIST = "TPE2";
-	const char *COMPOSER     = "TCOM";
-	const char *GROUPING     = "TIT1";
-	
-	const char *COMPILATION  = "TCMP";
-	const char *BPM          = "TBPM";
-	
-	const char *TRACK_NUMBER = "TRCK";
-	const char *TOTAL_TRACKS = "TRCK";
-	const char *DISK_NUMBER  = "TPOS";
-	const char *TOTAL_DISKS  = "TPOS";
-	
-	const char *ENCODER      = "TENC";
-	const char *COVER        = "APIC";
-	const char *URL          = "WXXX";
-	const char *COMMENT      = "COMM";
-}
 
 @interface MPEGTags()
 - (NSString*) getFieldWithString:(const char*)field;
@@ -53,7 +36,7 @@ namespace MPEGFields {	// can not be put in the header for some reason
 @end
 
 using namespace TagLib;
-using namespace MPEGFields;
+using namespace Fields::MPEG;
 @implementation MPEGTags
 
 #pragma mark -
@@ -116,6 +99,11 @@ using namespace MPEGFields;
 	}	
 	
 	url = [self getFieldWithString:URL];
+	
+	
+	// Sort by
+	artistSort = [self getFieldWithString:ARTIST_SORT];
+	
 	[self initCover];
 }
 
@@ -253,7 +241,30 @@ using namespace MPEGFields;
 	[self setFieldWithString:URL data:newValue];
 }
 
-// need fixing?
+- (void) setArtistSort:(NSString *)newValue
+{
+	TAG_SETTER_START(artistSort);
+	[self setFieldWithString:ARTIST_SORT data:newValue];
+}
+
+- (void) setComment:(NSString *)newValue
+{
+	TAG_SETTER_START(comment);
+	(TagLib::ID3v2::FrameFactory::instance())->setDefaultTextEncoding(TagLib::String::UTF8);
+	ID3v2::Tag *tag = data->f->mpeg->ID3v2Tag();	
+	tag->removeFrames("COMM");
+	if(nil != newValue) {
+		ID3v2::CommentsFrame *frame =  new ID3v2::CommentsFrame();
+		frame->setText([newValue tagLibString]);
+		frame->setLanguage("eng");
+		tag->addFrame(frame);
+	}
+	data->file->save();
+}
+
+#pragma mark - Cover
+
+// need fixing for vbr?
 - (void) setCover:(NSImage *)newValue
 {
 	TAG_SETTER_START(cover);
@@ -324,20 +335,5 @@ using namespace MPEGFields;
 	return YES;
 }
 
-
-- (void) setComment:(NSString *)newValue
-{
-	TAG_SETTER_START(comment);
-	(TagLib::ID3v2::FrameFactory::instance())->setDefaultTextEncoding(TagLib::String::UTF8);
-	ID3v2::Tag *tag = data->f->mpeg->ID3v2Tag();	
-	tag->removeFrames("COMM");
-	if(nil != newValue) {
-		ID3v2::CommentsFrame *frame =  new ID3v2::CommentsFrame();
-		frame->setText([newValue tagLibString]);
-		frame->setLanguage("eng");
-		tag->addFrame(frame);
-	}
-	data->file->save();
-}
 
 @end

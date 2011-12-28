@@ -10,6 +10,7 @@ Version 1.5
 * Spreadsheet View.
 * Swapping first and last name menuitem for artist and other fields
 * Go menu icons.
+* Artist Sort field can be edited
 
 ### Improvements ###
 * Handles  missing data from vgmdb.
@@ -18,8 +19,7 @@ Version 1.5
 * Comparing number where one of the number might be null
 
 ### Bug Fixes ### 
-* Mp3 cover art.
-* Spelling.
+* MP3 cover art.
 
 Version 1.4.3 (Sun 27 Nov 2011 05:33:51 +0000)
 -------------

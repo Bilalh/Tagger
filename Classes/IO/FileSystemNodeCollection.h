@@ -44,6 +44,10 @@
 	NSNumber *labelIndex;
 	BOOL writeToAll;
 	BOOL  empty;
+	
+	// Tags  -- sort by	
+	NSString *artistSort;
+	
 }
 
 /// @name General
@@ -128,5 +132,9 @@
 @property (assign) NSString *url;
 // The album cover of the file
 @property (assign) NSImage *cover;
+
+/// @name Finding Sort by  Metadata 
+
+@property (assign) NSString *artistSort;
 
 @end

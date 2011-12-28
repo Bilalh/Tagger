@@ -40,6 +40,9 @@ To replace a mp3 cover art a second time use `refresh`(⌘R) then `Parent Folder
 
 * Bug in malformed m4a files sometimes when *replacing* (not adding) artwork, means the file can't be played in iTunes.
 
+Infomation
+----------
+* Write 2.3/2.4 id3 tags.
 
 Libraries Used
 --------------

@@ -32,8 +32,13 @@ struct FileData;
 	
 	// Tracks may be handed by the subclass
 	NSNumber *track;
-	// MP3 comment need to be handled the subclass
+	// MP3 comment need to be handled by the subclass
 	NSString *comment;
+	
+	//	Sort by
+	
+	NSString *artistSort;
+	
 }
 
 /// @name Initializing an Tags Object
@@ -127,5 +132,9 @@ struct FileData;
 @property (assign) NSString *url;
 // The album cover of the file
 @property (assign) NSImage *cover;
+
+/// @name Finding Sort by  Metadata 
+
+@property (assign) NSString *artistSort;
 
 @end

@@ -27,7 +27,7 @@ LOG_LEVEL(LOG_LEVEL_ERROR);
 @end
 
 using namespace TagLib;
-using namespace MP4Fields;
+using namespace Fields::MP4;
 using namespace std;
 @implementation MP4Tags
 
