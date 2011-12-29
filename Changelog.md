@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-Version 1.5
+Version 1.5 (28 Dec 2011 19:14:59 +0000)
 -------------
 ### Features ###
 * Scroll to specified row on keypress (like iTunes).
@@ -10,7 +10,7 @@ Version 1.5
 * Spreadsheet View.
 * Swapping first and last name menuitem for artist and other fields
 * Go menu icons.
-* albumSort, artistSort, titleSort, composerSort, albumArtistSort field can now be edited.
+* albumSort, artistSort, titleSort, composerSort and albumArtistSort field can now be edited.
 
 ### Improvements ###
 * Handles  missing data from vgmdb.
