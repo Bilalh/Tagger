@@ -47,6 +47,7 @@
 		92C4466513E0BF830038F817 /* BWHyperlinkButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4466313E0BF830038F817 /* BWHyperlinkButtonCell.m */; };
 		92D30AC31405B1B600677B70 /* IntPair.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D30AC21405B1B600677B70 /* IntPair.m */; };
 		92DBDEAD14AAB99A009434DB /* fields.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92DBDEAC14AAB99A009434DB /* fields.cpp */; };
+		92DECF1214ABFBAC00A956E8 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 92DECF1114ABFBAC00A956E8 /* Credits.html */; };
 		92E6EDB713F313230045679E /* NSAttributedString+Hyperlink.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E6ED7013F313230045679E /* NSAttributedString+Hyperlink.m */; };
 		92E6EDB813F313230045679E /* NSImage+bitmapData.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E6ED7213F313230045679E /* NSImage+bitmapData.m */; };
 		92E6EDB913F313230045679E /* NSMutableArray+Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E6ED7413F313230045679E /* NSMutableArray+Stack.m */; };
@@ -159,6 +160,7 @@
 		92D30AC11405B1B600677B70 /* IntPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntPair.h; sourceTree = "<group>"; };
 		92D30AC21405B1B600677B70 /* IntPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntPair.m; sourceTree = "<group>"; };
 		92DBDEAC14AAB99A009434DB /* fields.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fields.cpp; sourceTree = "<group>"; };
+		92DECF1114ABFBAC00A956E8 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		92E6ED6F13F313230045679E /* NSAttributedString+Hyperlink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Hyperlink.h"; sourceTree = "<group>"; };
 		92E6ED7013F313230045679E /* NSAttributedString+Hyperlink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Hyperlink.m"; sourceTree = "<group>"; };
 		92E6ED7113F313230045679E /* NSImage+bitmapData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+bitmapData.h"; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				9264488713D773CE0035E693 /* Images */,
 				9254006513F0A52F0020C912 /* Frameworks */,
 				920660B813C89845003A3803 /* Linked Frameworks */,
+				92DECF1114ABFBAC00A956E8 /* Credits.html */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -667,6 +670,7 @@
 				92E6EDDF13F314260045679E /* InfoPlist.strings in Resources */,
 				922D866713F4E4EE0016B811 /* Tagger.icns in Resources */,
 				921FBBEE140C68AF00D1CBE8 /* ArrayDefaultsPreferencesView.xib in Resources */,
+				92DECF1214ABFBAC00A956E8 /* Credits.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -715,6 +715,10 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}
 }
 
+- (IBAction)openHomePage:(id)sender
+{
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://bilalh.github.com/projects/tagger/"]]; 	
+}
 
 #pragma mark - Tag Manipulation
 

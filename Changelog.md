@@ -12,11 +12,13 @@ Version 1.5 (28 Dec 2011 19:14:59 +0000)
 * Go menu icons.
 * albumSort, artistSort, titleSort, composerSort and albumArtistSort field can now be edited.
 
+
 ### Improvements ###
-* Handles  missing data from vgmdb.
+* Handles missing data from vgmdb.
 * Gui Improvements on Grouping and Genre field.
 * Handles the different format for Performer in vgmdb that happens for some albums
 * Comparing number where one of the number might be null
+* About dialog and homepage link
 
 ### Bug Fixes ### 
 * MP3 cover art.
