@@ -30,6 +30,8 @@ To save 15mb you can remove the unused .rb files in
 
 Issues
 ------
+* To report issues go to the [issues tracker](https://github.com/Bilalh/Tagger/issues "Issues") on Github
+
 * Bug in mp3 files sometimes when *replacing* (not adding) artwork on files who album art has *never* been edited in iTunes, means the file can't be added to iTunes. This happens sometimes happens after replacing the artwork twice (when using vbr files).
 
 *Work around*
@@ -42,9 +44,9 @@ To replace a mp3 cover art a second time use `refresh`(⌘R) then `Parent Folder
 
 * Quit Tagger before adding m4a (happen mostly with lossless m4a's and when 'Copy files to iTunes Media Folder' is unchecked in iTunes) to iTunes that were edited in Tagger, otherwise the metadata does not change. If you  added the mp4 before Tagger was quit, remove them from iTunes and add them again.
 
-Infomation
+Information
 ----------
-* Write 2.3/2.4 id3 tags.
+* Writes 2.3/2.4 id3 tags.
 
 Libraries Used
 --------------
