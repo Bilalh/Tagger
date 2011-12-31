@@ -1,0 +1,12 @@
+---
+build_now:               'YES'  
+download_base_url:       'http://bilalh.github.com/sparkle/tagger/'  
+appcast_basefolder:      '/Users/bilalh/Programming/Projects/Release/Tagger/' 
+appcast_xml_name:        'appcast.xml'  
+keychain_privkey_name:   'Sparkle Private Key'  
+css_file_name:           'rnotes.css'
+
+github_hosted_downloads:  true
+github_username:          'Bilalh'
+
+markdown_changelog:       'Changelog.md'

@@ -5,7 +5,9 @@ Changelog
 Version 1.5.1 
 -------------
 ### Features ###
-* Automatic updates using sparkle
+* Automatic updates using sparkle.
+* Scripts to automatically make a release version, sign its dsa and make the appcast. 
+
 
 Version 1.5 (28 Dec 2011 19:14:59 +0000)
 -------------
@@ -13,7 +15,7 @@ Version 1.5 (28 Dec 2011 19:14:59 +0000)
 * Scroll to specified row on keypress (like iTunes).
 * Tabbing now goes the first cell of the next row upon reaching the end of a row.
 * Spreadsheet View.
-* Swapping first and last name menuitem for artist and other fields
+* Swapping first and last name menuitem for artist and other fields.
 * Go menu icons.
 * albumSort, artistSort, titleSort, composerSort and albumArtistSort field can now be edited.
 
@@ -22,7 +24,7 @@ Version 1.5 (28 Dec 2011 19:14:59 +0000)
 * Handles missing data from vgmdb.
 * Gui Improvements on Grouping and Genre field.
 * Handles the different format for Performer in vgmdb that happens for some albums
-* Comparing number where one of the number might be null
+* Comparing number where one of the number might be null.
 * About dialog and homepage link
 
 ### Bug Fixes ### 
