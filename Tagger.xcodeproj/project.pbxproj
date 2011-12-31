@@ -224,7 +224,6 @@
 		92E6ED9D13F313230045679E /* RenamingFilesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenamingFilesController.h; sourceTree = "<group>"; };
 		92E6ED9E13F313230045679E /* RenamingFilesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenamingFilesController.m; sourceTree = "<group>"; };
 		92E6EDA013F313230045679E /* Fields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fields.h; sourceTree = "<group>"; };
-		92E6EDA113F313230045679E /* framelistmp4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = framelistmp4.cpp; sourceTree = "<group>"; };
 		92E6EDA213F313230045679E /* MP4Tags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MP4Tags.h; sourceTree = "<group>"; };
 		92E6EDA313F313230045679E /* MP4Tags.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MP4Tags.mm; sourceTree = "<group>"; };
 		92E6EDA413F313230045679E /* MPEGTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPEGTags.h; sourceTree = "<group>"; };
@@ -559,7 +558,6 @@
 			children = (
 				92E6EDA013F313230045679E /* Fields.h */,
 				92DBDEAC14AAB99A009434DB /* fields.cpp */,
-				92E6EDA113F313230045679E /* framelistmp4.cpp */,
 				92E6EDA213F313230045679E /* MP4Tags.h */,
 				92E6EDA313F313230045679E /* MP4Tags.mm */,
 				92E6EDA413F313230045679E /* MPEGTags.h */,
@@ -1034,6 +1032,7 @@
 				9293B85414AF8E55006D96E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		92CEE64B13F0A23600E4C5CE /* Build configuration list for PBXLegacyTarget "Embed MacRuby" */ = {
 			isa = XCConfigurationList;

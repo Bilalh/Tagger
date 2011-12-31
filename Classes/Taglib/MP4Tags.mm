@@ -21,9 +21,13 @@ LOG_LEVEL(LOG_LEVEL_ERROR);
 
 @interface MP4Tags()
 - (NSString*) getFieldWithString:(TagLib::String)field;
-- (TagLib::MP4::Item) getField:(TagLib::String)field;
 - (bool) setFieldWithString:(TagLib::String)field
 					  value:(NSString*)value;
+
+- (bool) setField:(TagLib::String)field
+			value:(TagLib::MP4::Item)valueItem;
+
+- (TagLib::MP4::Item) getField:(TagLib::String)field;
 @end
 
 using namespace TagLib;
@@ -125,7 +129,7 @@ using namespace std;
 }
 
 - (bool) setField:(TagLib::String)field
-					  value:(MP4::Item)valueItem
+			value:(MP4::Item)valueItem
 {	
 	MP4::Tag * const t = data->f->mp4->tag();
 	MP4::ItemListMap &map =  t->itemListMap();	
