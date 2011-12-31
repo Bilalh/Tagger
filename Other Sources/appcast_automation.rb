@@ -148,28 +148,28 @@ class AppCast
 
 	def create_appcast_xml
 		appcast_xml = <<-HTML 
-		<?xml version="1.0" encoding="utf-8"?>
-		<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
-			<channel>
-				<title>#{@proj_name}</title>
-				<link>#{@appcast_download_url}</link>
-				<description>Most recent changes with links to updates.</description>
-				<language>en</language>
-				<item>
-					<title>Version #{@version.chomp}</title>
-					<sparkle:releaseNotesLink>
-						#{@releasenotes_url}
-					</sparkle:releaseNotesLink>
-					<pubDate>#{@pubdate.chomp}</pubDate>
-					<enclosure url="#{@download_url.chomp}"
-					length="#{@size}"
-					type="application/octet-stream"
-					sparkle:version="#{@build_number.chomp}"
-					sparkle:shortVersionString="#{@version.chomp}"
-					sparkle:dsaSignature="#{@signature.chomp}"/>
-				</item>
-			</channel>
-		</rss>
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>#{@proj_name}</title>
+		<link>#{@appcast_download_url}</link>
+		<description>Most recent changes with links to updates.</description>
+		<language>en</language>
+		<item>
+			<title>Version #{@version.chomp}</title>
+			<sparkle:releaseNotesLink>
+				#{@releasenotes_url}
+			</sparkle:releaseNotesLink>
+			<pubDate>#{@pubdate.chomp}</pubDate>
+			<enclosure url="#{@download_url.chomp}"
+			length="#{@size}"
+			type="application/octet-stream"
+			sparkle:version="#{@build_number.chomp}"
+			sparkle:shortVersionString="#{@version.chomp}"
+			sparkle:dsaSignature="#{@signature.chomp}"/>
+		</item>
+	</channel>
+</rss>
 		HTML
 
 		File.open(@appcast_xml_path, 'w') { |f| f.puts appcast_xml }
