@@ -76,5 +76,11 @@
 	<array/>
 	<key>UTExportedTypeDeclarations</key>
 	<array/>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
+	<key>SUEnableSystemProfiling</key>
+	<false/>
+	<key>SUFeedURL</key>
+	<string>http://bilalh.github.com/sparkle/taggersparkle.xml</string>
 </dict>
 </plist>

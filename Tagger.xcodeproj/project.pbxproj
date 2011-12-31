@@ -33,6 +33,9 @@
 		9264488A13D773CE0035E693 /* arrowLeftBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */; };
 		9264488B13D773CE0035E693 /* arrowRightBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488913D773CE0035E693 /* arrowRightBlack16.tiff */; };
 		928411AF13EB853600A92F3F /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 928411AE13EB853600A92F3F /* defaults.plist */; };
+		9293B84814AF7C7B006D96E7 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9293B84614AF7C71006D96E7 /* Sparkle.framework */; };
+		9293B84914AF7CA2006D96E7 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9293B84614AF7C71006D96E7 /* Sparkle.framework */; };
+		9293B84B14AF7DFA006D96E7 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 9293B84A14AF7DFA006D96E7 /* dsa_pub.pem */; };
 		929A4ACE13DA027C00244796 /* Changelog.md in Resources */ = {isa = PBXBuildFile; fileRef = 929A4ACD13DA027C00244796 /* Changelog.md */; };
 		929A4ADA13DA087D00244796 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD113DA087D00244796 /* DDAbstractDatabaseLogger.m */; };
 		929A4ADB13DA087D00244796 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD313DA087D00244796 /* DDASLLogger.m */; };
@@ -107,6 +110,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				9254006713F0A82C0020C912 /* libtag.1.dylib in CopyFiles */,
+				9293B84914AF7CA2006D96E7 /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,13 +132,15 @@
 		9239572F13F43EB100A80074 /* CCTColorLabelMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTColorLabelMenuItemView.m; sourceTree = "<group>"; };
 		923B846213F4B7A800524BFA /* BHFinderLabelColours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHFinderLabelColours.h; sourceTree = "<group>"; };
 		923B846313F4B7A800524BFA /* BHFinderLabelColours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHFinderLabelColours.m; sourceTree = "<group>"; };
-		925CE81D13C3BD6D009D6D94 /* VGTagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = VGTagger.app; path = Tagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		925CE81D13C3BD6D009D6D94 /* Tagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowLeftBlack16.tiff; sourceTree = "<group>"; };
 		9264488913D773CE0035E693 /* arrowRightBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowRightBlack16.tiff; sourceTree = "<group>"; };
 		927883BF13E06E5000063D28 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.md; sourceTree = "<group>"; };
 		927883C013E06EED00063D28 /* Todo.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = Todo.md; sourceTree = "<group>"; };
 		928411AE13EB853600A92F3F /* defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaults.plist; sourceTree = "<group>"; };
 		928557FF13EF6352002C5112 /* Test Files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Test Files"; sourceTree = SOURCE_ROOT; };
+		9293B84614AF7C71006D96E7 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		9293B84A14AF7DFA006D96E7 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		929A4ACD13DA027C00244796 /* Changelog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Changelog.md; sourceTree = "<group>"; };
 		929A4AD013DA087D00244796 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
 		929A4AD113DA087D00244796 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
@@ -246,6 +252,7 @@
 				92A3C49E13E2444A0024C7D3 /* MacRuby.framework in Frameworks */,
 				9254007113F0AC8F0020C912 /* libtag.1.dylib in Frameworks */,
 				922E35D713C89BF3003C5913 /* Cocoa.framework in Frameworks */,
+				9293B84814AF7C7B006D96E7 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +290,7 @@
 		920660BD13C89845003A3803 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9293B84A14AF7DFA006D96E7 /* dsa_pub.pem */,
 				928557FF13EF6352002C5112 /* Test Files */,
 				928411AE13EB853600A92F3F /* defaults.plist */,
 				9264488713D773CE0035E693 /* Images */,
@@ -305,6 +313,7 @@
 		9254006513F0A52F0020C912 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9293B84614AF7C71006D96E7 /* Sparkle.framework */,
 				920660B913C89845003A3803 /* libtag.1.dylib */,
 			);
 			name = Frameworks;
@@ -327,7 +336,7 @@
 		925CE81E13C3BD6D009D6D94 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				925CE81D13C3BD6D009D6D94 /* VGTagger.app */,
+				925CE81D13C3BD6D009D6D94 /* Tagger.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -610,6 +619,7 @@
 				925CE81A13C3BD6D009D6D94 /* Frameworks */,
 				925CE81B13C3BD6D009D6D94 /* Resources */,
 				9254006613F0A80C0020C912 /* CopyFiles */,
+				9293B84C14AF7F93006D96E7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -617,7 +627,7 @@
 			);
 			name = Tagger;
 			productName = VGTagger;
-			productReference = 925CE81D13C3BD6D009D6D94 /* VGTagger.app */;
+			productReference = 925CE81D13C3BD6D009D6D94 /* Tagger.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -671,6 +681,7 @@
 				922D866713F4E4EE0016B811 /* Tagger.icns in Resources */,
 				921FBBEE140C68AF00D1CBE8 /* ArrayDefaultsPreferencesView.xib in Resources */,
 				92DECF1214ABFBAC00A956E8 /* Credits.html in Resources */,
+				9293B84B14AF7DFA006D96E7 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,6 +701,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/appledoc          \\\n--project-name VGTagger          \\\n--project-company \"Bilal\"        \\\n--company-id bilal               \\\n--exit-threshold 2               \\\n--output ~/Desktop/log/          \\\n--logformat xcode                \\\n--ignore .m                      \\\n--ignore .mm                     \\\n--ignore .rb                     \\\n--keep-undocumented-members      \\\n\"$PROJECT_DIR\"/Classes";
+		};
+		9293B84C14AF7F93006D96E7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -803,7 +827,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -842,7 +869,10 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Frameworks\"",
+				);
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_ENABLE_OBJC_GC = required;
