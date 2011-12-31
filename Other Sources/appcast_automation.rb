@@ -3,7 +3,7 @@
 # appcast_automation.rb 
 # Bilal Syed Hussain
 #
-# based off 'https://github.com/CraigWilliams/appcastautomation/blob/SnowLeopard/appcast_automation.rb'
+# based off https://github.com/CraigWilliams/appcastautomation/blob/SnowLeopard/appcast_automation.rb
 # Licensed under GNU General Public License
 class AppCast
 	require 'rubygems'
@@ -15,8 +15,8 @@ class AppCast
 	require 'base64'
 	require "maruku"
 	
-	MESSAGE_HEADER		= 'RUN SCRIPT DURING BUILD MESSAGE'
-	YAML_FOLDER_PATH		= "#{ENV['PROJECT_DIR']}/Resources"
+	MESSAGE_HEADER          = 'RUN SCRIPT DURING BUILD MESSAGE'
+	YAML_FOLDER_PATH        = "#{ENV['PROJECT_DIR']}/Resources"
 	def initialize
 		@signature = ''
 		require_release_build
