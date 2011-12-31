@@ -2,6 +2,11 @@ Changelog
 =========
 
 
+Version 1.5.1 
+-------------
+### Features ###
+* Automatic updates using sparkle
+
 Version 1.5 (28 Dec 2011 19:14:59 +0000)
 -------------
 ### Features ###
