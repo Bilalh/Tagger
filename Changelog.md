@@ -2,14 +2,14 @@ Changelog
 =========
 
 
-Version 1.5.1 
+Version 1.5.1 (Sat 31 Dec 2011 21:18:29 +0000)
 -------------
 ### Features ###
 * Automatic updates using sparkle.
 * Scripts to automatically make a release version, sign its dsa and make the appcast. 
 
 
-Version 1.5 (28 Dec 2011 19:14:59 +0000)
+Version 1.5 (Wed 28 Dec 2011 19:14:59 +0000)
 -------------
 ### Features ###
 * Scroll to specified row on keypress (like iTunes).
