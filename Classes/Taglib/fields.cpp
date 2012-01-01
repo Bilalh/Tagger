@@ -50,7 +50,7 @@ namespace Fields {
 		const char* REMIXER                       = "TPE4";
 		const char* MOOD                          = "TMOO";
 		const char* MEDIA                         = "TMED";
-		const char* URL                           = "WXXX:OFFICIAL_RELEASE";
+		const char* URL                           = "WXXX";
 		const char* DISCOGS_RELEASE_SITE_URL      = "WXXX:DISCOGS_RELEASE";
 		const char* WIKIPEDIA_RELEASE_SITE_URL    = "WXXX:WIKIPEDIA_RELEASE";
 		const char* OFFICIAL_ARTIST_SITE_URL      = "WOAR";

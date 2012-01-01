@@ -82,16 +82,18 @@ using namespace std;
 	albumArtist                = [self getFieldWithString:ALBUM_ARTIST];
 	composer                   = [self getFieldWithString:COMPOSER];
 	grouping                   = [self getFieldWithString:GROUPING];
-	musicbrainzArtistid        = [self getFieldWithString:MUSICBRAINZ_ARTISTID];
-	musicbrainzReleaseid       = [self getFieldWithString:MUSICBRAINZ_RELEASEID];
-	musicbrainzReleaseArtistid = [self getFieldWithString:MUSICBRAINZ_RELEASE_ARTISTID];
-	musicbrainzTrackId         = [self getFieldWithString:MUSICBRAINZ_TRACK_ID];
-	musicbrainzDiscId          = [self getFieldWithString:MUSICBRAINZ_DISC_ID];
-	musicipId                  = [self getFieldWithString:MUSICIP_ID];
-	amazonId                   = [self getFieldWithString:AMAZON_ID];
-	musicbrainzReleaseStatus   = [self getFieldWithString:MUSICBRAINZ_RELEASE_STATUS];
-	musicbrainzReleaseType     = [self getFieldWithString:MUSICBRAINZ_RELEASE_TYPE];
-	musicbrainzReleaseCountry  = [self getFieldWithString:MUSICBRAINZ_RELEASE_COUNTRY];
+//	Commented for speed and because they are unused
+	
+//	musicbrainzArtistid        = [self getFieldWithString:MUSICBRAINZ_ARTISTID];
+//	musicbrainzReleaseid       = [self getFieldWithString:MUSICBRAINZ_RELEASEID];
+//	musicbrainzReleaseArtistid = [self getFieldWithString:MUSICBRAINZ_RELEASE_ARTISTID];
+//	musicbrainzTrackId         = [self getFieldWithString:MUSICBRAINZ_TRACK_ID];
+//	musicbrainzDiscId          = [self getFieldWithString:MUSICBRAINZ_DISC_ID];
+//	musicipId                  = [self getFieldWithString:MUSICIP_ID];
+//	amazonId                   = [self getFieldWithString:AMAZON_ID];
+//	musicbrainzReleaseStatus   = [self getFieldWithString:MUSICBRAINZ_RELEASE_STATUS];
+//	musicbrainzReleaseType     = [self getFieldWithString:MUSICBRAINZ_RELEASE_TYPE];
+//	musicbrainzReleaseCountry  = [self getFieldWithString:MUSICBRAINZ_RELEASE_COUNTRY];
 	lyrics                     = [self getFieldWithString:LYRICS];
 	artistSort                 = [self getFieldWithString:ARTIST_SORT];
 	albumArtistSort            = [self getFieldWithString:ALBUM_ARTIST_SORT];
@@ -109,14 +111,13 @@ using namespace std;
 	mood                       = [self getFieldWithString:MOOD];
 	media                      = [self getFieldWithString:MEDIA];
 	url                        = [self getFieldWithString:URL];
-	discogsReleaseSiteUrl      = [self getFieldWithString:DISCOGS_RELEASE_SITE_URL];
-	wikipediaReleaseSiteUrl    = [self getFieldWithString:WIKIPEDIA_RELEASE_SITE_URL];
-	officialArtistSiteUrl      = [self getFieldWithString:OFFICIAL_ARTIST_SITE_URL];
-	discogsArtistSiteUrl       = [self getFieldWithString:DISCOGS_ARTIST_SITE_URL];
-	wikipediaArtistSiteUrl     = [self getFieldWithString:WIKIPEDIA_ARTIST_SITE_URL];
+//	discogsReleaseSiteUrl      = [self getFieldWithString:DISCOGS_RELEASE_SITE_URL];
+//	wikipediaReleaseSiteUrl    = [self getFieldWithString:WIKIPEDIA_RELEASE_SITE_URL];
+//	officialArtistSiteUrl      = [self getFieldWithString:OFFICIAL_ARTIST_SITE_URL];
+//	discogsArtistSiteUrl       = [self getFieldWithString:DISCOGS_ARTIST_SITE_URL];
+//	wikipediaArtistSiteUrl     = [self getFieldWithString:WIKIPEDIA_ARTIST_SITE_URL];
+//	lyricsSiteUrl              = [self getFieldWithString:LYRICS_SITE_URL];
 	language                   = [self getFieldWithString:LANGUAGE];
-	lyricsSiteUrl              = [self getFieldWithString:LYRICS_SITE_URL];
-
 }
 
 - (void)dealloc
