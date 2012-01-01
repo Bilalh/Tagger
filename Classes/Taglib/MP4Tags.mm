@@ -108,7 +108,7 @@ using namespace std;
 	lyricist                   = [self getFieldWithString:LYRICIST];
 	conductor                  = [self getFieldWithString:CONDUCTOR];
 	remixer                    = [self getFieldWithString:REMIXER];
-	mood                       = [self getFieldWithString:MOOD];
+//	mood                       = [self getFieldWithString:MOOD];
 	media                      = [self getFieldWithString:MEDIA];
 	url                        = [self getFieldWithString:URL];
 //	discogsReleaseSiteUrl      = [self getFieldWithString:DISCOGS_RELEASE_SITE_URL];
