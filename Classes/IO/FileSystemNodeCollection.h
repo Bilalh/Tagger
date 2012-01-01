@@ -98,54 +98,110 @@
 @property (readonly) NSColor  *labelColor;
 @property (assign)   NSNumber *labelIndex;
 
-
-/// The title of the file
-@property (assign) NSString *title; 
-/// The album of the file
-@property (assign) NSString *album; 
-/// The artist of the file
-@property (assign) NSString *artist; 
-/// The comment of the file
-@property (assign) NSString *comment;
-/// The genre of the file
-@property (assign) NSString *genre;
-/// The year of the file
-@property (assign) NSNumber *year;
-/// The track# of the file
-@property (assign) NSNumber *track; 
 /// The length of the file in seconds
 @property (assign,readonly) NSNumber *length; 
 
-/// @name Finding Extra Metadata 
 
-/// The album artist of the file
+/// The Artist of the file
+@property (assign) NSString *artist;
+/// The Album of the file
+@property (assign) NSString *album;
+/// The Title of the file
+@property (assign) NSString *title;
+/// The Track Number of the file
+@property (assign) NSNumber *track;
+/// The Year of the file
+@property (assign) NSNumber *year;
+/// The Genre of the file
+@property (assign) NSString *genre;
+/// The Comment of the file
+@property (assign) NSString *comment;
+/// The Album Artist of the file
 @property (assign) NSString *albumArtist;
-/// The composer of the file
+/// The Composer of the file
 @property (assign) NSString *composer;
-/// The grouping of the file
+/// The Grouping of the file
 @property (assign) NSString *grouping;
-/// The grouping of the file
-@property (assign) NSNumber *bpm;
-/// The total number of tracks in the album
-@property (assign) NSNumber *totalTracks;
-/// The disc# of the file
+/// The Disc Number of the file
 @property (assign) NSNumber *disc;
-/// The total number of discs in the album
-@property (assign) NSNumber *totalDiscs;
-/// YES if the track is part of a compilation.
-@property (assign) NSNumber *compilation;
-
-// The url associated with the file
-@property (assign) NSString *url;
-// The album cover of the file
+/// The Cover of the file
 @property (assign) NSImage *cover;
-
-/// @name Finding Sort by  Metadata 
-
-@property (assign) NSString *albumSort;
+/// The Bpm of the file
+@property (assign) NSNumber *bpm;
+/// The Musicbrainz Artistid of the file
+@property (assign) NSString *musicbrainzArtistid;
+/// The Musicbrainz Releaseid of the file
+@property (assign) NSString *musicbrainzReleaseid;
+/// The Musicbrainz Release artistid of the file
+@property (assign) NSString *musicbrainzReleaseArtistid;
+/// The Musicbrainz Track Id of the file
+@property (assign) NSString *musicbrainzTrackId;
+/// The Musicbrainz Disc Id of the file
+@property (assign) NSString *musicbrainzDiscId;
+/// The Musicip Id of the file
+@property (assign) NSString *musicipId;
+/// The Amazon Id of the file
+@property (assign) NSString *amazonId;
+/// The Musicbrainz Release Status of the file
+@property (assign) NSString *musicbrainzReleaseStatus;
+/// The Musicbrainz Release Type of the file
+@property (assign) NSString *musicbrainzReleaseType;
+/// The Musicbrainz Release Country of the file
+@property (assign) NSString *musicbrainzReleaseCountry;
+/// The Lyrics of the file
+@property (assign) NSString *lyrics;
+/// The Compilation of the file
+@property (assign) NSNumber *compilation;
+/// The Artist Sort of the file
 @property (assign) NSString *artistSort;
-@property (assign) NSString *titleSort;
-@property (assign) NSString *composerSort;
+/// The Album Artist Sort of the file
 @property (assign) NSString *albumArtistSort;
+/// The Album Sort of the file
+@property (assign) NSString *albumSort;
+/// The Title Sort of the file
+@property (assign) NSString *titleSort;
+/// The Composer Sort of the file
+@property (assign) NSString *composerSort;
+/// The Encoder of the file
+@property (assign) NSString *encoder;
+/// The Isrc of the file
+@property (assign) NSString *isrc;
+/// The Barcode of the file
+@property (assign) NSString *barcode;
+/// The Catalog No of the file
+@property (assign) NSString *catalogNo;
+/// The Record Label of the file
+@property (assign) NSString *recordLabel;
+/// The Lyricist of the file
+@property (assign) NSString *lyricist;
+/// The Conductor of the file
+@property (assign) NSString *conductor;
+/// The Remixer of the file
+@property (assign) NSString *remixer;
+/// The Mood of the file
+@property (assign) NSString *mood;
+/// The Media of the file
+@property (assign) NSString *media;
+/// The URL of the file
+@property (assign) NSString *url;
+/// The Discogs Release Site Url of the file
+@property (assign) NSString *discogsReleaseSiteUrl;
+/// The Wikipedia Release Site Url of the file
+@property (assign) NSString *wikipediaReleaseSiteUrl;
+/// The Official Artist Site Url of the file
+@property (assign) NSString *officialArtistSiteUrl;
+/// The Discogs Artist Site Url of the file
+@property (assign) NSString *discogsArtistSiteUrl;
+/// The Wikipedia Artist Site Url of the file
+@property (assign) NSString *wikipediaArtistSiteUrl;
+/// The Language of the file
+@property (assign) NSString *language;
+/// The Lyrics Site Url of the file
+@property (assign) NSString *lyricsSiteUrl;
+/// The Total Tracks of the file
+@property (assign) NSNumber *totalTracks;
+/// The Total Discs of the file
+@property (assign) NSNumber *totalDiscs;
+
 
 @end

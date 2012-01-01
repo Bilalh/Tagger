@@ -25,28 +25,37 @@ static const NSArray *fieldNames;
 
 @implementation FileSystemNodeCollection
 @dynamic urls;
-@synthesize tagsArray, hasBasicMetadata, hasExtenedMetadata, containsMP4Files, empty, labelColor, labelIndex;
-@synthesize title, artist, album, comment, genre, year, track, length;
-@synthesize albumArtist, composer, grouping, bpm, totalTracks, disc, totalDiscs, compilation, url, cover;
-@synthesize albumSort, artistSort, titleSort, composerSort, albumArtistSort;
+@synthesize tagsArray, hasBasicMetadata, hasExtenedMetadata, containsMP4Files, empty, labelColor, labelIndex, length;
+
+@synthesize artist, album, title, track, year;
+@synthesize genre, comment, albumArtist, composer, grouping;
+@synthesize disc, cover, bpm, musicbrainzArtistid, musicbrainzReleaseid;
+@synthesize musicbrainzReleaseArtistid, musicbrainzTrackId, musicbrainzDiscId, musicipId, amazonId;
+@synthesize musicbrainzReleaseStatus, musicbrainzReleaseType, musicbrainzReleaseCountry, lyrics, compilation;
+@synthesize artistSort, albumArtistSort, albumSort, titleSort, composerSort;
+@synthesize encoder, isrc, barcode, catalogNo, recordLabel;
+@synthesize lyricist, conductor, remixer, mood, media;
+@synthesize url, discogsReleaseSiteUrl, wikipediaReleaseSiteUrl, officialArtistSiteUrl, discogsArtistSiteUrl;
+@synthesize wikipediaArtistSiteUrl, language, lyricsSiteUrl, totalTracks, totalDiscs;
+
+
 
 #pragma mark -
 #pragma mark Init
 
 + (void)initialize
 {
-	tagFieldNames = [[NSArray alloc] initWithObjects:
-				  @"title", @"album" ,
-				  @"artist", @"albumArtist",
-				  @"genre", @"grouping",
-				  @"track", @"totalTracks",
-				  @"disc",  @"totalDiscs" ,
-				  @"compilation", @"year",
-				  @"composer", @"bpm",
-				  @"comment", @"cover", @"url",
-			      @"artistSort", @"albumSort", @"titleSort",
-				  @"composerSort", @"albumArtistSort",
-				  nil];
+	tagFieldNames =  [[NSArray alloc] initWithObjects:
+					  @"artist", @"album", @"title", @"track", @"year",
+					  @"genre", @"comment", @"albumArtist", @"composer", @"grouping",
+					  @"disc", @"cover", @"bpm", @"musicbrainzArtistid", @"musicbrainzReleaseid",
+					  @"musicbrainzReleaseArtistid", @"musicbrainzTrackId", @"musicbrainzDiscId", @"musicipId", @"amazonId",
+					  @"musicbrainzReleaseStatus", @"musicbrainzReleaseType", @"musicbrainzReleaseCountry", @"lyrics", @"compilation",
+					  @"artistSort", @"albumArtistSort", @"albumSort", @"titleSort", @"composerSort",
+					  @"encoder", @"isrc", @"barcode", @"catalogNo", @"recordLabel",
+					  @"lyricist", @"conductor", @"remixer", @"mood", @"media",
+					  @"url", @"discogsReleaseSiteUrl", @"wikipediaReleaseSiteUrl", @"officialArtistSiteUrl", @"discogsArtistSiteUrl",
+					  @"wikipediaArtistSiteUrl", @"language", @"lyricsSiteUrl", @"totalTracks", @"totalDiscs", nil];
 	fieldNames = [[NSArray alloc] initWithObjects:
 				  @"labelColor", @"labelIndex",
 				  nil];
@@ -252,7 +261,7 @@ static const NSArray *fieldNames;
 	else                  [self nilAllFields];
 }
 
-#define SETTER_METHOD_FSN(field,newValue)                                 \
+#define SETTER_METHOD_FSN(newValue,field)                                 \
 field = newValue;                                                         \
 if (!writeToAll) return;                                                  \
 DDLogInfo(@"fsnc:%s writeToAll:%d value:%@", #field, writeToAll,newValue);\
@@ -260,33 +269,56 @@ for (FileSystemNode *n in tagsArray) {                                    \
 	n.tags.field = newValue;                                              \
 }                                                                    
 
-- (void)setAlbum:  (NSString*)newValue { SETTER_METHOD_FSN(album,   newValue );}
-- (void)setTitle:  (NSString*)newValue { SETTER_METHOD_FSN(title,   newValue );}
-- (void)setArtist: (NSString*)newValue { SETTER_METHOD_FSN(artist,  newValue );}
-- (void)setComment:(NSString*)newValue { SETTER_METHOD_FSN(comment, newValue );}
-- (void)setGenre:  (NSString*)newValue { SETTER_METHOD_FSN(genre,   newValue );}
-        
-- (void)setYear: (NSNumber*)newValue  { SETTER_METHOD_FSN(year,    newValue );}
-- (void)setTrack:(NSNumber*)newValue  { SETTER_METHOD_FSN(track,   newValue );}
-- (void)setBpm:  (NSNumber*)newValue  { SETTER_METHOD_FSN(bpm,     newValue );}
-- (void)setDisc: (NSNumber*)newValue  { SETTER_METHOD_FSN(disc,    newValue );}
-- (void)setCover:(NSImage *)newValue  { SETTER_METHOD_FSN(cover,   newValue );}
-        
-        
-- (void)setAlbumArtist:(NSString *)newValue { SETTER_METHOD_FSN(albumArtist, newValue );}
-- (void)setComposer:(NSString *)newValue    { SETTER_METHOD_FSN(composer,    newValue );}
-- (void)setGrouping:(NSString *)newValue    { SETTER_METHOD_FSN(grouping,    newValue );}
-        
-- (void)setTotalTracks:(NSNumber *)newValue { SETTER_METHOD_FSN(totalTracks, newValue );}
-- (void)setTotalDiscs: (NSNumber *)newValue { SETTER_METHOD_FSN(totalDiscs,  newValue );}
-- (void)setCompilation:(NSNumber *)newValue { SETTER_METHOD_FSN(compilation, newValue );}
-
-- (void)setAlbumSort: (NSString *)newValue { SETTER_METHOD_FSN(albumSort,  newValue );}
-- (void)setArtistSort:(NSString *)newValue { SETTER_METHOD_FSN(artistSort,  newValue );}
-- (void)setTitleSort: (NSString *)newValue { SETTER_METHOD_FSN(titleSort,  newValue );}
-
-- (void)setComposerSort:   (NSString *)newValue { SETTER_METHOD_FSN(composerSort,  newValue );}
-- (void)setAlbumArtistSort:(NSString *)newValue { SETTER_METHOD_FSN(albumArtistSort,  newValue );}
+- (void) setArtist                    :(NSString*)newValue {SETTER_METHOD_FSN(newValue, artist)}
+- (void) setAlbum                     :(NSString*)newValue {SETTER_METHOD_FSN(newValue, album)}
+- (void) setTitle                     :(NSString*)newValue {SETTER_METHOD_FSN(newValue, title)}
+- (void) setTrack                     :(NSNumber*)newValue {SETTER_METHOD_FSN(newValue, track)}
+- (void) setYear                      :(NSNumber*)newValue {SETTER_METHOD_FSN(newValue, year)}
+- (void) setGenre                     :(NSString*)newValue {SETTER_METHOD_FSN(newValue, genre)}
+- (void) setComment                   :(NSString*)newValue {SETTER_METHOD_FSN(newValue, comment)}
+- (void) setAlbumArtist               :(NSString*)newValue {SETTER_METHOD_FSN(newValue, albumArtist)}
+- (void) setComposer                  :(NSString*)newValue {SETTER_METHOD_FSN(newValue, composer)}
+- (void) setGrouping                  :(NSString*)newValue {SETTER_METHOD_FSN(newValue, grouping)}
+- (void) setDisc                      :(NSNumber*)newValue {SETTER_METHOD_FSN(newValue, disc)}
+- (void) setCover                     :(NSImage*)newValue  {SETTER_METHOD_FSN(newValue, cover)}
+- (void) setBpm                       :(NSNumber*)newValue {SETTER_METHOD_FSN(newValue, bpm)}
+- (void) setMusicbrainzArtistid       :(NSString*)newValue {SETTER_METHOD_FSN(newValue, musicbrainzArtistid)}
+- (void) setMusicbrainzReleaseid      :(NSString*)newValue {SETTER_METHOD_FSN(newValue, musicbrainzReleaseid)}
+- (void) setMusicbrainzReleaseArtistid:(NSString*)newValue {SETTER_METHOD_FSN(newValue, musicbrainzReleaseArtistid)}
+- (void) setMusicbrainzTrackId        :(NSString*)newValue {SETTER_METHOD_FSN(newValue, musicbrainzTrackId)}
+- (void) setMusicbrainzDiscId         :(NSString*)newValue {SETTER_METHOD_FSN(newValue, musicbrainzDiscId)}
+- (void) setMusicipId                 :(NSString*)newValue {SETTER_METHOD_FSN(newValue, musicipId)}
+- (void) setAmazonId                  :(NSString*)newValue {SETTER_METHOD_FSN(newValue, amazonId)}
+- (void) setMusicbrainzReleaseStatus  :(NSString*)newValue {SETTER_METHOD_FSN(newValue, musicbrainzReleaseStatus)}
+- (void) setMusicbrainzReleaseType    :(NSString*)newValue {SETTER_METHOD_FSN(newValue, musicbrainzReleaseType)}
+- (void) setMusicbrainzReleaseCountry :(NSString*)newValue {SETTER_METHOD_FSN(newValue, musicbrainzReleaseCountry)}
+- (void) setLyrics                    :(NSString*)newValue {SETTER_METHOD_FSN(newValue, lyrics)}
+- (void) setCompilation               :(NSNumber*)newValue {SETTER_METHOD_FSN(newValue, compilation)}
+- (void) setArtistSort                :(NSString*)newValue {SETTER_METHOD_FSN(newValue, artistSort)}
+- (void) setAlbumArtistSort           :(NSString*)newValue {SETTER_METHOD_FSN(newValue, albumArtistSort)}
+- (void) setAlbumSort                 :(NSString*)newValue {SETTER_METHOD_FSN(newValue, albumSort)}
+- (void) setTitleSort                 :(NSString*)newValue {SETTER_METHOD_FSN(newValue, titleSort)}
+- (void) setComposerSort              :(NSString*)newValue {SETTER_METHOD_FSN(newValue, composerSort)}
+- (void) setEncoder                   :(NSString*)newValue {SETTER_METHOD_FSN(newValue, encoder)}
+- (void) setIsrc                      :(NSString*)newValue {SETTER_METHOD_FSN(newValue, isrc)}
+- (void) setBarcode                   :(NSString*)newValue {SETTER_METHOD_FSN(newValue, barcode)}
+- (void) setCatalogNo                 :(NSString*)newValue {SETTER_METHOD_FSN(newValue, catalogNo)}
+- (void) setRecordLabel               :(NSString*)newValue {SETTER_METHOD_FSN(newValue, recordLabel)}
+- (void) setLyricist                  :(NSString*)newValue {SETTER_METHOD_FSN(newValue, lyricist)}
+- (void) setConductor                 :(NSString*)newValue {SETTER_METHOD_FSN(newValue, conductor)}
+- (void) setRemixer                   :(NSString*)newValue {SETTER_METHOD_FSN(newValue, remixer)}
+- (void) setMood                      :(NSString*)newValue {SETTER_METHOD_FSN(newValue, mood)}
+- (void) setMedia                     :(NSString*)newValue {SETTER_METHOD_FSN(newValue, media)}
+- (void) setUrl                       :(NSString*)newValue {SETTER_METHOD_FSN(newValue, url)}
+- (void) setDiscogsReleaseSiteUrl     :(NSString*)newValue {SETTER_METHOD_FSN(newValue, discogsReleaseSiteUrl)}
+- (void) setWikipediaReleaseSiteUrl   :(NSString*)newValue {SETTER_METHOD_FSN(newValue, wikipediaReleaseSiteUrl)}
+- (void) setOfficialArtistSiteUrl     :(NSString*)newValue {SETTER_METHOD_FSN(newValue, officialArtistSiteUrl)}
+- (void) setDiscogsArtistSiteUrl      :(NSString*)newValue {SETTER_METHOD_FSN(newValue, discogsArtistSiteUrl)}
+- (void) setWikipediaArtistSiteUrl    :(NSString*)newValue {SETTER_METHOD_FSN(newValue, wikipediaArtistSiteUrl)}
+- (void) setLanguage                  :(NSString*)newValue {SETTER_METHOD_FSN(newValue, language)}
+- (void) setLyricsSiteUrl             :(NSString*)newValue {SETTER_METHOD_FSN(newValue, lyricsSiteUrl)}
+- (void) setTotalTracks               :(NSNumber*)newValue {SETTER_METHOD_FSN(newValue, totalTracks)}
+- (void) setTotalDiscs                :(NSNumber*)newValue {SETTER_METHOD_FSN(newValue, totalDiscs)}
 
 @end
 

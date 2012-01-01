@@ -98,7 +98,7 @@ arr.each_with_index do |values,j|
 end
 puts
 
-puts "\n// Tags functions"
+puts "\n// Tags methods"
 arr.each do |values|
 	next if  Basic.include? values[:Name]
 	puts <<-OBJC
@@ -107,7 +107,7 @@ OBJC
 end
 puts
 
-puts "// MP3/Mp4 functions"
+puts "// MP3/Mp4 methods"
 arr.each do |values|
 	next if NotStringFields.include? values[:Name] or Basic.include? values[:Name]
 	puts <<-OBJC
@@ -128,7 +128,17 @@ arr.each_with_index do |values,j|
 	print "\n " if i % 5 == 0
 	print %{@"#{values[:ObjcName]}"} 
 	i+=1;
-	print ', ' if  j != arr.length-1 && i % 5 != 0
+	print ', ' if  j != arr.length-1
 end
 puts ", nil];"
 puts
+
+
+puts "\n// file sys node methods"
+arr.each do |values|
+	puts <<-OBJC
+- (void) #{"%-#{setter_length}s" % values[:Setter]}:(#{get_type values[:Name]}*)newValue {SETTER_METHOD_FSN(newValue, #{values[:ObjcName]} )}
+OBJC
+end
+puts
+
