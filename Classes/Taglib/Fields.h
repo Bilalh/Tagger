@@ -72,30 +72,59 @@ namespace Fields {
 	}
 	
 	namespace MPEG {
-		extern const char *ALBUM_ARTIST;
-		extern const char *COMPOSER    ;
-		extern const char *GROUPING    ;
-		
-		extern const char *COMPILATION ;
-		extern const char *BPM         ;
-		
-		extern const char *TRACK_NUMBER;
-		extern const char *TOTAL_TRACKS;
-		extern const char *DISK_NUMBER ;
-		extern const char *TOTAL_DISKS ;
-		
-		extern const char *ENCODER     ;
-		extern const char *COVER       ;
-		extern const char *COMMENT     ;
-		extern const char *URL         ;
-		
-		extern const char* ALBUM_SORT;
+		// MP3 (:ID3v24) Fields declarations
+		extern const char* ARTIST;
+		extern const char* ALBUM;
+		extern const char* TITLE;
+		extern const char* TRACK_NUMBER;
+		extern const char* YEAR;
+		extern const char* GENRE;
+		extern const char* COMMENT;
+		extern const char* ALBUM_ARTIST;
+		extern const char* COMPOSER;
+		extern const char* GROUPING;
+		extern const char* DISK_NUMBER;
+		extern const char* COVER;
+		extern const char* BPM;
+		extern const char* MUSICBRAINZ_ARTISTID;
+		extern const char* MUSICBRAINZ_RELEASEID;
+		extern const char* MUSICBRAINZ_RELEASEARTISTID;
+		extern const char* MUSICBRAINZ_TRACK_ID;
+		extern const char* MUSICBRAINZ_DISC_ID;
+		extern const char* MUSICIP_ID;
+		extern const char* AMAZON_ID;
+		extern const char* MUSICBRAINZ_RELEASE_STATUS;
+		extern const char* MUSICBRAINZ_RELEASE_TYPE;
+		extern const char* MUSICBRAINZ_RELEASE_COUNTRY;
+		extern const char* LYRICS;
+		extern const char* COMPILATION;
 		extern const char* ARTIST_SORT;
+		extern const char* ALBUM_ARTIST_SORT;
+		extern const char* ALBUM_SORT;
 		extern const char* TITLE_SORT;
 		extern const char* COMPOSER_SORT;
-		extern const char* ALBUM_ARTIST_SORT;
-		
-		extern const char* LYRICS;
+		extern const char* ENCODER;
+		extern const char* ISRC;
+		extern const char* BARCODE;
+		extern const char* CATALOG_NO;
+		extern const char* RECORD_LABEL;
+		extern const char* LYRICIST;
+		extern const char* CONDUCTOR;
+		extern const char* REMIXER;
+		extern const char* MOOD;
+		extern const char* MEDIA;
+		extern const char* URL;
+		extern const char* DISCOGS_RELEASE_SITE_URL;
+		extern const char* WIKIPEDIA_RELEASE_SITE_URL;
+		extern const char* OFFICIAL_ARTIST_SITE_URL;
+		extern const char* DISCOGS_ARTIST_SITE_URL;
+		extern const char* WIKIPEDIA_ARTIST_SITE_URL;
+		extern const char* LANGUAGE;
+		extern const char* KEY;
+		extern const char* LYRICS_SITE_URL;
+		extern const char* TOTAL_TRACKS;
+		extern const char* TOTAL_DISCS;
+
 		
 	}	
 }
