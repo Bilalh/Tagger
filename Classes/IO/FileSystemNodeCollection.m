@@ -24,10 +24,10 @@ static const NSArray *fieldNames;
 @end
 
 @implementation FileSystemNodeCollection
+@dynamic urls;
 @synthesize tagsArray, hasBasicMetadata, hasExtenedMetadata, containsMP4Files, empty, labelColor, labelIndex;
 @synthesize title, artist, album, comment, genre, year, track, length;
 @synthesize albumArtist, composer, grouping, bpm, totalTracks, disc, totalDiscs, compilation, url, cover;
-@dynamic urls;
 @synthesize albumSort, artistSort, titleSort, composerSort, albumArtistSort;
 
 #pragma mark -
@@ -287,13 +287,6 @@ for (FileSystemNode *n in tagsArray) {                                    \
 
 - (void)setComposerSort:   (NSString *)newValue { SETTER_METHOD_FSN(composerSort,  newValue );}
 - (void)setAlbumArtistSort:(NSString *)newValue { SETTER_METHOD_FSN(albumArtistSort,  newValue );}
-
-
-//NSString *albumSort;
-//NSString *artistSort;
-//NSString *titleSort;
-//NSString *composerSort;
-//NSString *albumArtistSort;
 
 @end
 

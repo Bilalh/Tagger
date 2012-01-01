@@ -145,6 +145,8 @@
 		923B846213F4B7A800524BFA /* BHFinderLabelColours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHFinderLabelColours.h; sourceTree = "<group>"; };
 		923B846313F4B7A800524BFA /* BHFinderLabelColours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHFinderLabelColours.m; sourceTree = "<group>"; };
 		925CE81D13C3BD6D009D6D94 /* Tagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9263D28514AFE59E0098A179 /* make_fields.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = make_fields.rb; sourceTree = "<group>"; };
+		9263D28614AFE59E0098A179 /* fields.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = fields.txt; sourceTree = "<group>"; };
 		9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowLeftBlack16.tiff; sourceTree = "<group>"; };
 		9264488913D773CE0035E693 /* arrowRightBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowRightBlack16.tiff; sourceTree = "<group>"; };
 		927883BF13E06E5000063D28 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.md; sourceTree = "<group>"; };
@@ -556,6 +558,8 @@
 		92E6ED9F13F313230045679E /* Taglib */ = {
 			isa = PBXGroup;
 			children = (
+				9263D28514AFE59E0098A179 /* make_fields.rb */,
+				9263D28614AFE59E0098A179 /* fields.txt */,
 				92E6EDA013F313230045679E /* Fields.h */,
 				92DBDEAC14AAB99A009434DB /* fields.cpp */,
 				92E6EDA213F313230045679E /* MP4Tags.h */,

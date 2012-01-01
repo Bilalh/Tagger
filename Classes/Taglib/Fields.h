@@ -36,9 +36,10 @@ namespace Fields {
 		String const ARTIST_SORT   = "soar";
 		String const TITLE_SORT    = "sonm";
 		String const COMPOSER_SORT = "soco";
-		
-		String const ALBUM_ARTIST_SORT    = "soaa";
+		String const ALBUM_ARTIST_SORT  = "soaa";
 
+		String const LYRICS = "\251lyr";
+		
 	}
 	
 	namespace MPEG {
@@ -64,6 +65,9 @@ namespace Fields {
 		extern const char* TITLE_SORT;
 		extern const char* COMPOSER_SORT;
 		extern const char* ALBUM_ARTIST_SORT;
+		
+		extern const char* LYRICS;
+		
 	}	
 }
 

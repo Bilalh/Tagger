@@ -1,6 +1,4 @@
-
-#include <iostream>
-#include <stdlib.h>
+#include <iostream> #include <stdlib.h>
 
 #include <tbytevector.h>
 

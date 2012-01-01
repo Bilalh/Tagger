@@ -32,5 +32,9 @@ namespace Fields {
 		const char* TITLE_SORT    = "TSOT";
 		const char* COMPOSER_SORT = "TSOC";
 		const char* ALBUM_ARTIST_SORT ="TSO2";
+		
+		const char* LYRICS = "USLT:description";
+		
+		
 	}
 }

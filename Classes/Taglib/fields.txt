@@ -1,0 +1,52 @@
+Attribute 	Generic Key 	ID3v22 	ID3v23 	ID3v24 	Mp4 	OggVorbis 	Flac 	Wma
+Artist 	ARTIST 	TP1 	TPE1 	TPE1 	©ART 	ARTIST 	ARTIST 	AUTHOR
+Album 	ALBUM 	TAL 	TALB 	TALB 	©alb 	ALBUM 	ALBUM 	WM/AlbumTitle
+Title 	TITLE 	TT2 	TIT2 	TIT2 	©nam 	TITLE 	TITLE 	TITLE
+Track 	TRACK 	TRK 	TRCK 	TRCK 	trkn 	TRACKNUMBER 	TRACKNUMBER 	WM/TrackNumber
+Year 	YEAR 	TYE 	TYER 	TDRC 	©day 	DATE 	DATE 	WM/Year
+Genre 	GENRE 	TCO 	TCON 	TCON 	©gen 	GENRE 	GENRE 	WM/Genre OR WM/GenreID
+Comment 	COMMENT 	COM:description 	COMM:description 	COMM 	©cmt 	COMMENT 	COMMENT 	DESCRIPTION
+Album Artist 	ALBUM_ARTIST 	TP2 	TPE2 	TPE2 	aART 	ALBUMARTIST 	ALBUMARTIST 	WM/AlbumArtist
+Composer 	COMPOSER 	TCM 	TCOM 	TCOM 	©wrt 	COMPOSER 	COMPOSER 	WM/Composer
+Grouping 	GROUPING 	TT1 	TIT1 	TIT1 	©grp 	GROUPING 	GROUPING 	WM/ContentGroupDescription
+Disc No 	DISC_NO 	TPA 	TPOS 	TPOS 	disk 	DISCNUMBER 	DISCNUMBER 	WM/PartOfSet
+Cover Art 	COVER_ART 	PIC 	APIC 	APIC 	covr 	COVERART and COVERARTMIME 	MetadataBlockDataPicture 	WM/Picture
+Bpm 	BPM 	TBP 	TBPM 	TBPM 	tmpo 	BPM 	BPM 	WM/BeatsPerMinute
+Musicbrainz Artistid 	MUSICBRAINZ_ARTISTID 	TXX:MusicBrainz Artist Id 	TXXX:MusicBrainz Artist Id 	TXXX:MusicBrainz Artist Id 	----:com.apple.iTunes:MusicBrainz Artist Id 	MUSICBRAINZ_ARTISTID 	MUSICBRAINZ_ARTISTID 	MusicBrainz/Artist Id
+Musicbrainz Releaseid 	MUSICBRAINZ_RELEASEID 	TXX:MusicBrainz Album Id 	TXXX:MusicBrainz Album Id 	TXXX:MusicBrainz Album Id 	----:com.apple.iTunes:MusicBrainz Album Id 	MUSICBRAINZ_ALBUMID 	MUSICBRAINZ_ALBUMID 	MusicBrainz/Album Id
+Musicbrainz Releaseartistid 	MUSICBRAINZ_RELEASEARTISTID 	TXX:MusicBrainz Album Artist Id 	TXXX:MusicBrainz Album Artist Id 	TXXX:MusicBrainz Album Artist Id 	----:com.apple.iTunes:MusicBrainz Album Artist Id 	MUSICBRAINZ_ALBUMARTISTID 	MUSICBRAINZ_ALBUMARTISTID 	MusicBrainz/Album Artist Id
+Musicbrainz Track Id 	MUSICBRAINZ_TRACK_ID 	UFI:http://musicbrainz.org 	UFID:http://musicbrainz.org 	UFID:http://musicbrainz.org 	----:com.apple.iTunes:MusicBrainz Track Id 	MUSICBRAINZ_TRACKID 	MUSICBRAINZ_TRACKID 	MusicBrainz/Track Id
+Musicbrainz Disc Id 	MUSICBRAINZ_DISC_ID 	TXX:MusicBrainz Disc Id 	TXXX:MusicBrainz Disc Id 	TXXX:MusicBrainz Disc Id 	----:com.apple.iTunes:MusicBrainz Disc Id 	MUSICBRAINZ_DISCID 	MUSICBRAINZ_DISCID 	MusicBrainz/Disc Id
+Musicip Id 	MUSICIP_ID 	TXX:MusicIP PUID 	TXXX:MusicIP PUID 	TXXX:MusicIP PUID 	----:com.apple.iTunes:MusicIP PUID 	MUSICIP_PUID 	MUSICIP_PUID 	MusicIP/PUID
+Amazon Id 	AMAZON_ID 	TXX:ASIN 	TXXX:ASIN 	TXXX:ASIN 	----:com.apple.iTunes:ASIN 	ASIN 	ASIN 	ASIN
+Musicbrainz Release Status 	MUSICBRAINZ_RELEASE_STATUS 	TXX:MusicBrainz Album Status 	TXXX:MusicBrainz Album Status 	TXXX:MusicBrainz Album Status 	----:com.apple.iTunes:MusicBrainz Album Status 	MUSICBRAINZ_ALBUMSTATUS 	MUSICBRAINZ_ALBUMSTATUS 	MusicBrainz/Album Status
+Musicbrainz Release Type 	MUSICBRAINZ_RELEASE_TYPE 	TXX:MusicBrainz Album Type 	TXXX:MusicBrainz Album Type 	TXXX:MusicBrainz Album Type 	----:com.apple.iTunes:MusicBrainz Album Type 	MUSICBRAINZ_ALBUMTYPE 	MUSICBRAINZ_ALBUMTYPE 	MusicBrainz/Album Type
+Musicbrainz Release Country 	MUSICBRAINZ_RELEASE_COUNTRY 	TXX:MusicBrainz Album Release Country 	TXXX:MusicBrainz Album Release Country 	TXXX:MusicBrainz Album Release Country 	----:com.apple.iTunes:MusicBrainz Album Release Country 	RELEASECOUNTRY 	RELEASECOUNTRY 	MusicBrainz/Album Release Country
+Lyrics 	LYRICS 	ULT:description 	USLT:description 	USLT:description 	©lyr 	LYRICS 	LYRICS 	WM/Lyrics
+Is Compilation 	IS_COMPILATION 	TCP 	TCMP 	TCMP 	cpil 	COMPILATION 	COMPILATION 	WM/IsCompilation
+Artist Sort 	ARTIST_SORT 	TSP 	TSOP 	TSOP 	soar 	ARTISTSORT 	ARTISTSORT 	WM/ArtistSortOrder
+Album Artist Sort 	ALBUM_ARTIST_SORT 	TS2 	TSO2 	TSO2 	soaa 	ALBUMARTISTSORT 	ALBUMARTISTSORT 	WM/AlbumArtistSortOrder
+Album Sort 	ALBUM_SORT 	TSA 	TSOA 	TSOA 	soal 	ALBUMSORT 	ALBUMSORT 	WM/AlbumSortOrder
+Title Sort 	TITLE_SORT 	TST 	TSOT 	TSOT 	sonm 	TITLESORT 	TITLESORT 	WM/TitleSortOrder
+Composer Sort 	COMPOSER_SORT 	TSC 	TSOC 	TSOC 	soco 	COMPOSERSORT 	COMPOSERSORT 	WM/ComposerSort
+Encoder 	ENCODER 	TEN 	TENC 	TENC 	©too 	VENDOR 	VENDOR 	WM/ToolName
+Isrc 	ISRC 	TRC 	TSRC 	TSRC 	----:com.apple.iTunes:ISRC 	ISRC 	ISRC 	WM/ISRC
+Barcode 	BARCODE 	TXX:BARCODE 	TXXX:BARCODE 	TXXX:BARCODE 	----:com.apple.iTunes:BARCODE 	BARCODE 	BARCODE 	WM/Barcode
+Catalog No 	CATALOG_NO 	TXX:CATALOGNUMBER 	TXXX:CATALOGNUMBER 	TXXX:CATALOGNUMBER 	----:com.apple.iTunes:CATALOGNUMBER 	CATALOGNUMBER 	CATALOGNUMBER 	WM/CatalogNo
+Record Label 	RECORD_LABEL 	TPB 	TPUB 	TPUB 	----:com.apple.iTunes:LABEL 	LABEL 	LABEL 	WM/Publisher
+Lyricist 	LYRICIST 	TXT 	TEXT 	TEXT 	----:com.apple.iTunes:LYRICIST 	LYRICIST 	LYRICIST 	WM/Writer
+Conductor 	CONDUCTOR 	TP3 	TPE3 	TPE3 	----:com.apple.iTunes:CONDUCTOR 	CONDUCTOR 	CONDUCTOR 	WM/Conductor
+Remixer 	REMIXER 	TP4 	TPE4 	TPE4 	----:com.apple.iTunes:REMIXER 	REMIXER 	REMIXER 	WM/ModifiedBy
+Mood 	MOOD 	TXX:MOOD 	TXXX:MOOD 	TMOO 	----:com.apple.iTunes:MOOD 	MOOD 	MOOD 	WM/Mood
+Media 	MEDIA 	TMT 	TMED 	TMED 	----:com.apple.iTunes:MEDIA 	MEDIA 	MEDIA 	WM/Media
+Official Release Site Url 	URL_OFFICIAL_RELEASE_SITE 	WXX:OFFICIAL_RELEASE 	WXXX:OFFICIAL_RELEASE 	WXXX:OFFICIAL_RELEASE 	----:com.apple.iTunes:URL_OFFICIAL_RELEASE_SITE 	URL_OFFICIAL_RELEASE_SITE 	URL_OFFICIAL_RELEASE_SITE 	WM/OfficialReleaseUrl
+Discogs Release Site Url 	URL_DISCOGS_RELEASE_SITE 	WXX:DISCOGS_RELEASE 	WXXX:DISCOGS_RELEASE 	WXXX:DISCOGS_RELEASE 	----:com.apple.iTunes:URL_DISCOGS_RELEASE_SITE 	URL_DISCOGS_RELEASE_SITE 	URL_DISCOGS_RELEASE_SITE 	WM/DiscogsReleaseUrl
+Wikipedia Release Site Url 	URL_WIKIPEDIA_RELEASE_SITE 	WXX:WIKIPEDIA_RELEASE 	WXXX:WIKIPEDIA_RELEASE 	WXXX:WIKIPEDIA_RELEASE 	----:com.apple.iTunes:URL_WIKIPEDIA_RELEASE_SITE 	URL_WIKIPEDIA_RELEASE_SITE 	URL_WIKIPEDIA_RELEASE_SITE 	WM/WikipediaReleaseUrl
+Official Artist Site Url 	URL_OFFICIAL_ARTIST_SITE 	WAR 	WOAR 	WOAR 	----:com.apple.iTunes:URL_OFFICIAL_ARTIST_SITE 	URL_OFFICIAL_ARTIST_SITE 	URL_OFFICIAL_ARTIST_SITE 	WM/AuthorURL
+Discogs Artist Site Url 	URL_DISCOGS_ARTIST_SITE 	WXX:DISCOGS_ARTIST 	WXXX:DISCOGS_ARTIST 	WXXX:DISCOGS_ARTIST 	----:com.apple.iTunes:URL_DISCOGS_ARTIST_SITE 	URL_DISCOGS_ARTIST_SITE 	URL_DISCOGS_ARTIST_SITE 	WM/DiscogsArtistUrl
+Wikipedia Artist Site Url 	URL_WIKIPEDIA_ARTIST_SITE 	WXX:WIKIPEDIA_ARTIST 	WXXX:WIKIPEDIA_ARTIST 	WXXX:WIKIPEDIA_ARTIST 	----:com.apple.iTunes:URL_WIKIPEDIA_ARTIST_SITE 	URL_WIKIPEDIA_ARTIST_SITE 	URL_WIKIPEDIA_ARTIST_SITE 	WM/WikipediaArtistUrl
+Language 	LANGUAGE 	TLA 	TLAN 	TLAN 	----:com.apple.iTunes:LANGUAGE 	LANGUAGE 	LANGUAGE 	WM/Language
+Key 	KEY 	TKE 	TKEY 	TKEY 	----:com.apple.iTunes:KEY 	KEY 	KEY 	WM/InitialKey
+Lyrics Site Url 	LYRICS_SITE 	WXX:LYRICS_SITE 	WXXX:LYRICS_SITE 	WXXX:LYRICS_SITE 	----:com.apple.iTunes:URL_LYRICS_SITE 	URL_LYRICS_SITE 	URL_LYRICS_SITE 	WM/LyricsUrl
+Total Tracks 	TRACK_TOTAL 	TRK 	TRCK 	TRCK 	trkn 	TRACKTOTAL 	TRACKTOTAL 	WM/TrackTotal
+Total Discs 	DISC_TOTAL 	TPA 	TPOS 	TPOS 	disk 	DISCTOTAL 	DISCTOTAL 	WM/DiscTotal
