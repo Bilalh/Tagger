@@ -22,7 +22,8 @@ lines = IO.read("fields.txt").split "\n"
 
 # Gets the fields names in CamaelCase
 fields = lines[0].split("\t").map { |e| e.strip.gsub(/ (.)/,'\1'.upcase).to_sym }
-p  fields +[:Name,:ObjcName,:Setter ] 
+print "// "
+ p  fields +[:Name,:ObjcName,:Setter ] 
 
 setter_length = 0
 
