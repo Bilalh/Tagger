@@ -5,7 +5,8 @@ Changelog
 Version 1.6 
 -----------
 ### Features ###
-* Just about every field in mp3 and mp4 is supported
+* Just about every field in mp3 is supported and editable in the gui.
+* Just about every field in mp4 is supported and editable in the gui.
 
 Version 1.5.1 (Sat 31 Dec 2011 21:18:29 +0000) 
 -------------

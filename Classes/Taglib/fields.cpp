@@ -33,7 +33,7 @@ namespace Fields {
 		const char* MUSICBRAINZ_RELEASE_STATUS    = "TXXX:MusicBrainz Album Status";
 		const char* MUSICBRAINZ_RELEASE_TYPE      = "TXXX:MusicBrainz Album Type";
 		const char* MUSICBRAINZ_RELEASE_COUNTRY   = "TXXX:MusicBrainz Album Release Country";
-		const char* LYRICS                        = "USLT:description";
+		const char* LYRICS                        = "USLT";
 		const char* COMPILATION                   = "TCMP";
 		const char* ARTIST_SORT                   = "TSOP";
 		const char* ALBUM_ARTIST_SORT             = "TSO2";
