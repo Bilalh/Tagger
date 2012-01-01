@@ -87,6 +87,17 @@ struct FileData;
 
 /// @name Finding General metadata.
 
+/// The length of the file in seconds
+@property (readonly) NSNumber *length; 
+/// The bitrate of the file in kb/s
+@property (readonly) NSNumber *bitrate; 
+/// The sample rate of the file
+@property (readonly) NSNumber *sampleRate;
+/// The bitrate of the file in kb/s
+@property (readonly) NSNumber *channels;
+/// The kind of the file
+@property (assign) NSString *kind;
+
 /// The title of the file
 @property (assign) NSString *title; 
 /// The album of the file
@@ -101,16 +112,8 @@ struct FileData;
 @property (assign) NSNumber *year;
 /// The track# of the file
 @property (assign) NSNumber *track; 
-/// The length of the file in seconds
-@property (readonly) NSNumber *length; 
-/// The bitrate of the file in kb/s
-@property (readonly) NSNumber *bitrate; 
-/// The sample rate of the file
-@property (readonly) NSNumber *sampleRate;
-/// The bitrate of the file in kb/s
-@property (readonly) NSNumber *channels;
-/// The kind of the file
-@property (assign) NSString *kind;
+
+
 
 /// @name Finding Extra Metadata 
 

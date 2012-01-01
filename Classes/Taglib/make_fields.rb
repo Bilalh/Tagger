@@ -4,11 +4,12 @@
 require "pp"
 
 #  Fields which are not strings
-NotStringFields = %w{
-	TRACK YEAR GENRE 	TOTAL_TRACKS TOTALS_DISCS
-	DISC_NO COVER_ART BPM MUSICBRAINZ_ARTISTID
-	MUSICBRAINZ_RELEASEID MUSICBRAINZ_RELEASEARTISTID MUSICBRAINZ_TRACK_ID MUSICBRAINZ_DISC_ID MUSICIP_ID AMAZON_ID
+NumberFields = %w{
+	TRACK_NUMBER TOTAL_TRACKS TOTALS_DISCS
+	DISK_NUMBER  BPM YEAR GENRE COMPILATION
 }
+
+NotStringFields = NumberFields + ["COVER"]
 
 Basic = %w{
 	ARTIST
@@ -17,6 +18,14 @@ Basic = %w{
 	YEAR
 	GENRE
 }
+
+def get_type(val)
+	type = case 
+		when (NumberFields.include? val); "NSNumber"
+		when val =="Cover"; "NSImage"
+		else "NSString"
+	end
+end
 
 lines = IO.read("fields.txt").split "\n"
 
@@ -32,9 +41,9 @@ arr = lines[1..-1].map do |line|
 	line.split("\t").each_with_index do |value, i|
 		values[fields[i]] = value.strip
 	end
-	values[:Name]     = values[:Attribute].gsub( / /, '_').upcase
-	values[:ObjcName] = values[:Name].downcase.gsub /_(.)/ do |e|  e[1].upcase end
-	values[:Setter]   = "set" + values[:ObjcName].gsub(/^(.)/) do |e|  e[0].upcase end
+	values[:Name] = values[:Attribute].gsub( / /, '_').upcase
+	values[:ObjcName]  = values[:Name].downcase.gsub /_(.)/ do |e|  e[1].upcase end
+	values[:Setter]    = "set" + values[:ObjcName].gsub(/^(.)/) do |e|  e[0].upcase end
 	# puts "#{values[:Attribute]}, #{values[:Name]}, #{values[:ObjcName]}, #{values[:Setter]}"
 	
 	setter_length = values[:Setter].length if values[:Setter].length > setter_length
@@ -62,14 +71,17 @@ arr.each do |values|
 end
 puts
 
-
+puts "// vars"
+arr.each do |values|	
+	puts %{ #{get_type values[:Name]} *#{values[:Name]};}
+end
+puts
 
 puts "// @property"
 arr.each do |values|
-	next if NotStringFields.include? values[:Name]
 	puts <<-OBJC
 /// The #{values[:Attribute]} of the file
-@property (assign) NSString *#{values[:ObjcName]}
+@property (assign) #{get_type values[:Name]} *#{values[:ObjcName]}
 OBJC
 end
 puts
@@ -78,7 +90,6 @@ puts "// @synthesize"
 i =0;
 arr.each_with_index { |e, i|  }
 arr.each_with_index do |values,j|
-	next if NotStringFields.include? values[:Name]
 	print "\n@synthesize " if i % 5 == 0
 	print values[:ObjcName] 
 	i+=1;
@@ -88,9 +99,9 @@ puts
 
 puts "\n// Tags functions"
 arr.each do |values|
-	next if NotStringFields.include? values[:Name] or Basic.include? values[:Name]
+	next if  Basic.include? values[:Name]
 	puts <<-OBJC
-- (void) #{"%-#{setter_length}s" % values[:Setter]}:(NSString*)newValue {}
+- (void) #{"%-#{setter_length}s" % values[:Setter]}:(#{get_type values[:Name]}*)newValue {}
 OBJC
 end
 puts
@@ -99,7 +110,7 @@ puts "// MP3/Mp4 functions"
 arr.each do |values|
 	next if NotStringFields.include? values[:Name] or Basic.include? values[:Name]
 	puts <<-OBJC
-- (void) #{values[:Setter]}:(NSString*)newValue
+- (void) #{values[:Setter]}:(#{get_type values[:Name]}*)newValue
 {
 	TAG_SETTER_START(#{values[:ObjcName]});
 	[self setFieldWithString:#{values[:Name]} value:newValue];
@@ -113,7 +124,6 @@ puts "//tagFieldNames\n [[NSArray alloc] initWithObjects:"
 i =0;
 arr.each_with_index { |e, i|  }
 arr.each_with_index do |values,j|
-	next if NotStringFields.include? values[:Name]
 	print "\n " if i % 5 == 0
 	print %{@"#{values[:ObjcName]}"} 
 	i+=1;
