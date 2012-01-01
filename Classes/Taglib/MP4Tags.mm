@@ -60,9 +60,6 @@ using namespace std;
 	int i;
 	
 	
-	albumArtist  = [self getFieldWithString:ALBUM_ARTIST];
-	composer     = [self getFieldWithString:COMPOSER];
-	grouping     = [self getFieldWithString:GROUPING];
 	compilation  = [NSNumber numberWithBool:[self getField:COMPILATION].toBool()];
 	i            = [self getField:BPM].toInt();
 	bpm          = i ?  [NSNumber numberWithInt: i] : nil;
@@ -71,20 +68,56 @@ using namespace std;
 	totalDiscs   = discs.second  ? [NSNumber numberWithInt:discs.second]  : nil;
 	totalTracks  = tracks.second ? [NSNumber numberWithInt:tracks.second] : nil;
 	
-	url          = [self getFieldWithString:URL];
 	coverList    = [self getField:COVER].toCoverArtList();
 	if (!coverList.isEmpty()){
 		TagLib::ByteVector bv = coverList.front().data();
 		cover = [[[NSImage alloc] initWithData: [NSData dataWithBytes:bv.data() length:bv.size()]] autorelease];
 	}
 	
-	//	Sort by
-	albumSort  = [self getFieldWithString:ALBUM_SORT];
-	artistSort = [self getFieldWithString:ARTIST_SORT];
-	titleSort  = [self getFieldWithString:TITLE_SORT];
-	
-	composerSort    = [self getFieldWithString:COMPOSER_SORT];
-	albumArtistSort = [self getFieldWithString:ALBUM_ARTIST_SORT];}
+	artist                     = [self getFieldWithString:ARTIST];
+	album                      = [self getFieldWithString:ALBUM];
+	title                      = [self getFieldWithString:TITLE];
+	genre                      = [self getFieldWithString:GENRE];
+	comment                    = [self getFieldWithString:COMMENT];
+	albumArtist                = [self getFieldWithString:ALBUM_ARTIST];
+	composer                   = [self getFieldWithString:COMPOSER];
+	grouping                   = [self getFieldWithString:GROUPING];
+	musicbrainzArtistid        = [self getFieldWithString:MUSICBRAINZ_ARTISTID];
+	musicbrainzReleaseid       = [self getFieldWithString:MUSICBRAINZ_RELEASEID];
+	musicbrainzReleaseArtistid = [self getFieldWithString:MUSICBRAINZ_RELEASE_ARTISTID];
+	musicbrainzTrackId         = [self getFieldWithString:MUSICBRAINZ_TRACK_ID];
+	musicbrainzDiscId          = [self getFieldWithString:MUSICBRAINZ_DISC_ID];
+	musicipId                  = [self getFieldWithString:MUSICIP_ID];
+	amazonId                   = [self getFieldWithString:AMAZON_ID];
+	musicbrainzReleaseStatus   = [self getFieldWithString:MUSICBRAINZ_RELEASE_STATUS];
+	musicbrainzReleaseType     = [self getFieldWithString:MUSICBRAINZ_RELEASE_TYPE];
+	musicbrainzReleaseCountry  = [self getFieldWithString:MUSICBRAINZ_RELEASE_COUNTRY];
+	lyrics                     = [self getFieldWithString:LYRICS];
+	artistSort                 = [self getFieldWithString:ARTIST_SORT];
+	albumArtistSort            = [self getFieldWithString:ALBUM_ARTIST_SORT];
+	albumSort                  = [self getFieldWithString:ALBUM_SORT];
+	titleSort                  = [self getFieldWithString:TITLE_SORT];
+	composerSort               = [self getFieldWithString:COMPOSER_SORT];
+	encoder                    = [self getFieldWithString:ENCODER];
+	isrc                       = [self getFieldWithString:ISRC];
+	barcode                    = [self getFieldWithString:BARCODE];
+	catalogNo                  = [self getFieldWithString:CATALOG_NO];
+	recordLabel                = [self getFieldWithString:RECORD_LABEL];
+	lyricist                   = [self getFieldWithString:LYRICIST];
+	conductor                  = [self getFieldWithString:CONDUCTOR];
+	remixer                    = [self getFieldWithString:REMIXER];
+	mood                       = [self getFieldWithString:MOOD];
+	media                      = [self getFieldWithString:MEDIA];
+	url                        = [self getFieldWithString:URL];
+	discogsReleaseSiteUrl      = [self getFieldWithString:DISCOGS_RELEASE_SITE_URL];
+	wikipediaReleaseSiteUrl    = [self getFieldWithString:WIKIPEDIA_RELEASE_SITE_URL];
+	officialArtistSiteUrl      = [self getFieldWithString:OFFICIAL_ARTIST_SITE_URL];
+	discogsArtistSiteUrl       = [self getFieldWithString:DISCOGS_ARTIST_SITE_URL];
+	wikipediaArtistSiteUrl     = [self getFieldWithString:WIKIPEDIA_ARTIST_SITE_URL];
+	language                   = [self getFieldWithString:LANGUAGE];
+	lyricsSiteUrl              = [self getFieldWithString:LYRICS_SITE_URL];
+
+}
 
 - (void)dealloc
 {

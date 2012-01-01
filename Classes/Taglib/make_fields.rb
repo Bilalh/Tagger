@@ -142,3 +142,10 @@ OBJC
 end
 puts
 
+
+puts "// init fields"
+arr.each do |values|	
+	next if NotStringFields.include? values[:Name]
+	puts %{ #{"%-#{names_length}s" % values[:ObjcName]} = [self getFieldWithString:#{values[:Name]}];}
+end
+puts
