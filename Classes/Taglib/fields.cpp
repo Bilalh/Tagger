@@ -20,12 +20,12 @@ namespace Fields {
 		const char* ALBUM_ARTIST                  = "TPE2";
 		const char* COMPOSER                      = "TCOM";
 		const char* GROUPING                      = "TIT1";
-		const char* DISK_NUMBER                   = "TPOS";
+		const char* DISC_NUMBER                   = "TPOS";
 		const char* COVER                         = "APIC";
 		const char* BPM                           = "TBPM";
 		const char* MUSICBRAINZ_ARTISTID          = "TXXX:MusicBrainz Artist Id";
 		const char* MUSICBRAINZ_RELEASEID         = "TXXX:MusicBrainz Album Id";
-		const char* MUSICBRAINZ_RELEASEARTISTID   = "TXXX:MusicBrainz Album Artist Id";
+		const char* MUSICBRAINZ_RELEASE_ARTISTID  = "TXXX:MusicBrainz Album Artist Id";
 		const char* MUSICBRAINZ_TRACK_ID          = "UFID:http://musicbrainz.org";
 		const char* MUSICBRAINZ_DISC_ID           = "TXXX:MusicBrainz Disc Id";
 		const char* MUSICIP_ID                    = "TXXX:MusicIP PUID";
@@ -57,11 +57,9 @@ namespace Fields {
 		const char* DISCOGS_ARTIST_SITE_URL       = "WXXX:DISCOGS_ARTIST";
 		const char* WIKIPEDIA_ARTIST_SITE_URL     = "WXXX:WIKIPEDIA_ARTIST";
 		const char* LANGUAGE                      = "TLAN";
-		const char* KEY                           = "TKEY";
 		const char* LYRICS_SITE_URL               = "WXXX:LYRICS_SITE";
 		const char* TOTAL_TRACKS                  = "TRCK";
 		const char* TOTAL_DISCS                   = "TPOS";
-		
 		
 	}
 }

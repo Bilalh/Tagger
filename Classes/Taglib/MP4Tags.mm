@@ -55,7 +55,7 @@ using namespace std;
 {	
 	[super initFields];	
 	const MP4::Item::IntPair tracks = [self getField:TRACK_NUMBER].toIntPair();
-	const MP4::Item::IntPair discs  = [self getField:DISK_NUMBER].toIntPair();
+	const MP4::Item::IntPair discs  = [self getField:DISC_NUMBER].toIntPair();
 	MP4::CoverArtList coverList;
 	int i;
 	
@@ -150,24 +150,6 @@ using namespace std;
 	data->f->mp4->save();
 }
 
-- (void) setAlbumArtist:(NSString *)newValue
-{ 
-	TAG_SETTER_START(albumArtist);
-	[self setFieldWithString:ALBUM_ARTIST  value:newValue]; 
-}
-
-- (void) setComposer:(NSString *)newValue
-{
-	TAG_SETTER_START(composer);
-	[self setFieldWithString:COMPOSER  value:newValue]; 
-}
-
-- (void) setGrouping:(NSString *)newValue
-{
-	TAG_SETTER_START(grouping);
-	[self setFieldWithString:GROUPING  value:newValue]; 
-}
-
 - (void) setBpm:(NSNumber *)newValue
 {
 	TAG_SETTER_START(bpm);
@@ -189,13 +171,13 @@ using namespace std;
 - (void) setDisc:(NSNumber *)newValue
 {
 	TAG_SETTER_START(disc);
-	[self setField:DISK_NUMBER value:MP4::Item([newValue intValue], [totalDiscs intValue])];
+	[self setField:DISC_NUMBER value:MP4::Item([newValue intValue], [totalDiscs intValue])];
 }
 
 - (void) setTotalDiscs:(NSNumber *)newValue
 {
 	TAG_SETTER_START(totalDiscs);
-	[self setField:DISK_NUMBER value:MP4::Item([disc intValue], [newValue intValue])];
+	[self setField:DISC_NUMBER value:MP4::Item([disc intValue], [newValue intValue])];
 }
 
 - (void) setCompilation:(NSNumber *)newValue
@@ -204,40 +186,228 @@ using namespace std;
 	[self setField:COMPILATION value:MP4::Item([newValue boolValue] )];
 }
 
-- (void) setUrl:(NSString *)newValue
+
+
+- (void) setAlbumArtist:(NSString*)newValue
 {
-	TAG_SETTER_START(url);
-	[self setFieldWithString:URL  value:newValue]; 
+	TAG_SETTER_START(albumArtist);
+	[self setFieldWithString:ALBUM_ARTIST value:newValue];
 }
 
-- (void) setArtistSort:(NSString *)newValue
+- (void) setComposer:(NSString*)newValue
+{
+	TAG_SETTER_START(composer);
+	[self setFieldWithString:COMPOSER value:newValue];
+}
+
+- (void) setGrouping:(NSString*)newValue
+{
+	TAG_SETTER_START(grouping);
+	[self setFieldWithString:GROUPING value:newValue];
+}
+
+- (void) setMusicbrainzArtistid:(NSString*)newValue
+{
+	TAG_SETTER_START(musicbrainzArtistid);
+	[self setFieldWithString:MUSICBRAINZ_ARTISTID value:newValue];
+}
+
+- (void) setMusicbrainzReleaseid:(NSString*)newValue
+{
+	TAG_SETTER_START(musicbrainzReleaseid);
+	[self setFieldWithString:MUSICBRAINZ_RELEASEID value:newValue];
+}
+
+- (void) setMusicbrainzReleaseArtistid:(NSString*)newValue
+{
+	TAG_SETTER_START(musicbrainzReleaseArtistid);
+	[self setFieldWithString:MUSICBRAINZ_RELEASE_ARTISTID value:newValue];
+}
+
+- (void) setMusicbrainzTrackId:(NSString*)newValue
+{
+	TAG_SETTER_START(musicbrainzTrackId);
+	[self setFieldWithString:MUSICBRAINZ_TRACK_ID value:newValue];
+}
+
+- (void) setMusicbrainzDiscId:(NSString*)newValue
+{
+	TAG_SETTER_START(musicbrainzDiscId);
+	[self setFieldWithString:MUSICBRAINZ_DISC_ID value:newValue];
+}
+
+- (void) setMusicipId:(NSString*)newValue
+{
+	TAG_SETTER_START(musicipId);
+	[self setFieldWithString:MUSICIP_ID value:newValue];
+}
+
+- (void) setAmazonId:(NSString*)newValue
+{
+	TAG_SETTER_START(amazonId);
+	[self setFieldWithString:AMAZON_ID value:newValue];
+}
+
+- (void) setMusicbrainzReleaseStatus:(NSString*)newValue
+{
+	TAG_SETTER_START(musicbrainzReleaseStatus);
+	[self setFieldWithString:MUSICBRAINZ_RELEASE_STATUS value:newValue];
+}
+
+- (void) setMusicbrainzReleaseType:(NSString*)newValue
+{
+	TAG_SETTER_START(musicbrainzReleaseType);
+	[self setFieldWithString:MUSICBRAINZ_RELEASE_TYPE value:newValue];
+}
+
+- (void) setMusicbrainzReleaseCountry:(NSString*)newValue
+{
+	TAG_SETTER_START(musicbrainzReleaseCountry);
+	[self setFieldWithString:MUSICBRAINZ_RELEASE_COUNTRY value:newValue];
+}
+
+- (void) setLyrics:(NSString*)newValue
+{
+	TAG_SETTER_START(lyrics);
+	[self setFieldWithString:LYRICS value:newValue];
+}
+
+- (void) setArtistSort:(NSString*)newValue
 {
 	TAG_SETTER_START(artistSort);
 	[self setFieldWithString:ARTIST_SORT value:newValue];
 }
 
-- (void) setAlbumSort:(NSString *)newValue
+- (void) setAlbumArtistSort:(NSString*)newValue
+{
+	TAG_SETTER_START(albumArtistSort);
+	[self setFieldWithString:ALBUM_ARTIST_SORT value:newValue];
+}
+
+- (void) setAlbumSort:(NSString*)newValue
 {
 	TAG_SETTER_START(albumSort);
 	[self setFieldWithString:ALBUM_SORT value:newValue];
 }
 
-- (void) setTitleSort:(NSString *)newValue
+- (void) setTitleSort:(NSString*)newValue
 {
 	TAG_SETTER_START(titleSort);
 	[self setFieldWithString:TITLE_SORT value:newValue];
 }
 
-- (void) setComposerSort:(NSString *)newValue
+- (void) setComposerSort:(NSString*)newValue
 {
 	TAG_SETTER_START(composerSort);
 	[self setFieldWithString:COMPOSER_SORT value:newValue];
 }
 
-- (void) setAlbumArtistSort:(NSString *)newValue
+- (void) setEncoder:(NSString*)newValue
 {
-	TAG_SETTER_START(albumArtistSort);
-	[self setFieldWithString:ALBUM_ARTIST_SORT value:newValue];
+	TAG_SETTER_START(encoder);
+	[self setFieldWithString:ENCODER value:newValue];
+}
+
+- (void) setIsrc:(NSString*)newValue
+{
+	TAG_SETTER_START(isrc);
+	[self setFieldWithString:ISRC value:newValue];
+}
+
+- (void) setBarcode:(NSString*)newValue
+{
+	TAG_SETTER_START(barcode);
+	[self setFieldWithString:BARCODE value:newValue];
+}
+
+- (void) setCatalogNo:(NSString*)newValue
+{
+	TAG_SETTER_START(catalogNo);
+	[self setFieldWithString:CATALOG_NO value:newValue];
+}
+
+- (void) setRecordLabel:(NSString*)newValue
+{
+	TAG_SETTER_START(recordLabel);
+	[self setFieldWithString:RECORD_LABEL value:newValue];
+}
+
+- (void) setLyricist:(NSString*)newValue
+{
+	TAG_SETTER_START(lyricist);
+	[self setFieldWithString:LYRICIST value:newValue];
+}
+
+- (void) setConductor:(NSString*)newValue
+{
+	TAG_SETTER_START(conductor);
+	[self setFieldWithString:CONDUCTOR value:newValue];
+}
+
+- (void) setRemixer:(NSString*)newValue
+{
+	TAG_SETTER_START(remixer);
+	[self setFieldWithString:REMIXER value:newValue];
+}
+
+- (void) setMood:(NSString*)newValue
+{
+	TAG_SETTER_START(mood);
+	[self setFieldWithString:MOOD value:newValue];
+}
+
+- (void) setMedia:(NSString*)newValue
+{
+	TAG_SETTER_START(media);
+	[self setFieldWithString:MEDIA value:newValue];
+}
+
+- (void) setUrl:(NSString*)newValue
+{
+	TAG_SETTER_START(url);
+	[self setFieldWithString:URL value:newValue];
+}
+
+- (void) setDiscogsReleaseSiteUrl:(NSString*)newValue
+{
+	TAG_SETTER_START(discogsReleaseSiteUrl);
+	[self setFieldWithString:DISCOGS_RELEASE_SITE_URL value:newValue];
+}
+
+- (void) setWikipediaReleaseSiteUrl:(NSString*)newValue
+{
+	TAG_SETTER_START(wikipediaReleaseSiteUrl);
+	[self setFieldWithString:WIKIPEDIA_RELEASE_SITE_URL value:newValue];
+}
+
+- (void) setOfficialArtistSiteUrl:(NSString*)newValue
+{
+	TAG_SETTER_START(officialArtistSiteUrl);
+	[self setFieldWithString:OFFICIAL_ARTIST_SITE_URL value:newValue];
+}
+
+- (void) setDiscogsArtistSiteUrl:(NSString*)newValue
+{
+	TAG_SETTER_START(discogsArtistSiteUrl);
+	[self setFieldWithString:DISCOGS_ARTIST_SITE_URL value:newValue];
+}
+
+- (void) setWikipediaArtistSiteUrl:(NSString*)newValue
+{
+	TAG_SETTER_START(wikipediaArtistSiteUrl);
+	[self setFieldWithString:WIKIPEDIA_ARTIST_SITE_URL value:newValue];
+}
+
+- (void) setLanguage:(NSString*)newValue
+{
+	TAG_SETTER_START(language);
+	[self setFieldWithString:LANGUAGE value:newValue];
+}
+
+- (void) setLyricsSiteUrl:(NSString*)newValue
+{
+	TAG_SETTER_START(lyricsSiteUrl);
+	[self setFieldWithString:LYRICS_SITE_URL value:newValue];
 }
 
 

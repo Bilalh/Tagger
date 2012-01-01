@@ -5,8 +5,8 @@ require "pp"
 
 #  Fields which are not strings
 NumberFields = %w{
-	TRACK_NUMBER TOTAL_TRACKS TOTALS_DISCS
-	DISK_NUMBER  BPM YEAR GENRE COMPILATION
+	TRACK_NUMBER TOTAL_TRACKS TOTAL_DISCS
+	DISC_NUMBER  BPM YEAR COMPILATION
 }
 
 NotStringFields = NumberFields + ["COVER"]
@@ -17,12 +17,13 @@ Basic = %w{
 	TITLE
 	YEAR
 	GENRE
+	COMMENT
 }
 
 def get_type(val)
 	type = case 
 		when (NumberFields.include? val); "NSNumber"
-		when val =="Cover"; "NSImage"
+		when val =="COVER"; "NSImage"
 		else "NSString"
 	end
 end
@@ -42,7 +43,7 @@ arr = lines[1..-1].map do |line|
 		values[fields[i]] = value.strip
 	end
 	values[:Name] = values[:Attribute].gsub( / /, '_').upcase
-	values[:ObjcName]  = values[:Name].downcase.gsub /_(.)/ do |e|  e[1].upcase end
+	values[:ObjcName]  = values[:Name].downcase.gsub(/_number/,'').gsub /_(.)/ do |e|  e[1].upcase end
 	values[:Setter]    = "set" + values[:ObjcName].gsub(/^(.)/) do |e|  e[0].upcase end
 	# puts "#{values[:Attribute]}, #{values[:Name]}, #{values[:ObjcName]}, #{values[:Setter]}"
 	
@@ -73,7 +74,7 @@ puts
 
 puts "// vars"
 arr.each do |values|	
-	puts %{ #{get_type values[:Name]} *#{values[:Name]};}
+	puts %{ #{get_type values[:Name]} *#{values[:ObjcName]};}
 end
 puts
 
@@ -81,7 +82,7 @@ puts "// @property"
 arr.each do |values|
 	puts <<-OBJC
 /// The #{values[:Attribute]} of the file
-@property (assign) #{get_type values[:Name]} *#{values[:ObjcName]}
+@property (assign) #{get_type values[:Name]} *#{values[:ObjcName]};
 OBJC
 end
 puts
@@ -93,7 +94,7 @@ arr.each_with_index do |values,j|
 	print "\n@synthesize " if i % 5 == 0
 	print values[:ObjcName] 
 	i+=1;
-	print ', ' if  j != arr.length-1 && i % 5 != 0
+	print (j != arr.length-1 && i % 5 != 0) ? ', ' : ";"
 end
 puts
 

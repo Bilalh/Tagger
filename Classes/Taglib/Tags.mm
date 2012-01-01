@@ -25,10 +25,20 @@ static const NSSet *tokensSet;
 
 using namespace TagLib;
 @implementation Tags
-@synthesize title, artist, album, comment, genre, year, track;
-@synthesize albumArtist, composer, grouping, bpm, totalTracks, disc, totalDiscs, compilation, url, cover;
 @synthesize length, bitrate, channels, sampleRate, kind;
-@synthesize albumSort, artistSort, titleSort, composerSort, albumArtistSort;
+
+@synthesize artist, album, title, track, year;
+@synthesize genre, comment, albumArtist, composer, grouping;
+@synthesize disc, cover, bpm, musicbrainzArtistid, musicbrainzReleaseid;
+@synthesize musicbrainzReleaseArtistid, musicbrainzTrackId, musicbrainzDiscId, musicipId, amazonId;
+@synthesize musicbrainzReleaseStatus, musicbrainzReleaseType, musicbrainzReleaseCountry, lyrics, compilation;
+@synthesize artistSort, albumArtistSort, albumSort, titleSort, composerSort;
+@synthesize encoder, isrc, barcode, catalogNo, recordLabel;
+@synthesize lyricist, conductor, remixer, mood, media;
+@synthesize url, discogsReleaseSiteUrl, wikipediaReleaseSiteUrl, officialArtistSiteUrl, discogsArtistSiteUrl;
+@synthesize wikipediaArtistSiteUrl, language, lyricsSiteUrl, totalTracks, totalDiscs;
+
+
 
 #pragma mark -
 #pragma mark Init
@@ -147,30 +157,54 @@ DDLogInfo(@"res:%d "#field":%u", b, t->field());
 -(void) setArtist:(NSString *)newText { setMetadata(newText,artist,setArtist); }
 -(void) setAlbum:(NSString *)newText  { setMetadata(newText,album,setAlbum); }
 -(void) setComment:(NSString *)newText{ setMetadata(newText,comment,setComment); }
--(void) setGenre:(NSString *)newText  { setMetadata(newText,genre,setGenre); }
+-(void) setGenre:(NSString *)newText  { setMetadata(newText, genre,setGenre); }
 
 -(void) setYear:(NSNumber*)newNumber  { setNumberMetadata(newNumber,year,setYear);}
 -(void) setTrack:(NSNumber*)newNumber { setNumberMetadata(newNumber,track,setTrack); }
 
--(void) setAlbumArtist:(NSString *)newText{}
--(void) setComposer:(NSString *)newText{}
--(void) setGrouping:(NSString *)newText{}
-
--(void) setBpm:(NSNumber *)newValue{}
--(void) setDisc:(NSNumber *)newValue{}
--(void) setTotalTracks:(NSNumber *)newValue{}
--(void) setTotalDiscs:(NSNumber *)newValue{}
--(void) setCompilation:(NSNumber *)newValue{}
-
--(void) setUrl:(NSString *)newText{}
--(void) setCover:(NSImage*)newValue{}
-
-- (void)setAlbumSort: (NSString *)newValue {}
-- (void)setArtistSort:(NSString *)newValue {}
-- (void)setTitleSort: (NSString *)newValue {}
-
-- (void)setComposerSort:   (NSString *)newValue {}
-- (void)setAlbumArtistSort:(NSString *)newValue {}
+- (void) setAlbumArtist               :(NSString*)newValue {}
+- (void) setComposer                  :(NSString*)newValue {}
+- (void) setGrouping                  :(NSString*)newValue {}
+- (void) setDisc                      :(NSNumber*)newValue {}
+- (void) setCover                     :(NSImage*)newValue  {}
+- (void) setBpm                       :(NSNumber*)newValue {}
+- (void) setMusicbrainzArtistid       :(NSString*)newValue {}
+- (void) setMusicbrainzReleaseid      :(NSString*)newValue {}
+- (void) setMusicbrainzReleaseArtistid:(NSString*)newValue {}
+- (void) setMusicbrainzTrackId        :(NSString*)newValue {}
+- (void) setMusicbrainzDiscId         :(NSString*)newValue {}
+- (void) setMusicipId                 :(NSString*)newValue {}
+- (void) setAmazonId                  :(NSString*)newValue {}
+- (void) setMusicbrainzReleaseStatus  :(NSString*)newValue {}
+- (void) setMusicbrainzReleaseType    :(NSString*)newValue {}
+- (void) setMusicbrainzReleaseCountry :(NSString*)newValue {}
+- (void) setLyrics                    :(NSString*)newValue {}
+- (void) setCompilation               :(NSNumber*)newValue {}
+- (void) setArtistSort                :(NSString*)newValue {}
+- (void) setAlbumArtistSort           :(NSString*)newValue {}
+- (void) setAlbumSort                 :(NSString*)newValue {}
+- (void) setTitleSort                 :(NSString*)newValue {}
+- (void) setComposerSort              :(NSString*)newValue {}
+- (void) setEncoder                   :(NSString*)newValue {}
+- (void) setIsrc                      :(NSString*)newValue {}
+- (void) setBarcode                   :(NSString*)newValue {}
+- (void) setCatalogNo                 :(NSString*)newValue {}
+- (void) setRecordLabel               :(NSString*)newValue {}
+- (void) setLyricist                  :(NSString*)newValue {}
+- (void) setConductor                 :(NSString*)newValue {}
+- (void) setRemixer                   :(NSString*)newValue {}
+- (void) setMood                      :(NSString*)newValue {}
+- (void) setMedia                     :(NSString*)newValue {}
+- (void) setUrl                       :(NSString*)newValue {}
+- (void) setDiscogsReleaseSiteUrl     :(NSString*)newValue {}
+- (void) setWikipediaReleaseSiteUrl   :(NSString*)newValue {}
+- (void) setOfficialArtistSiteUrl     :(NSString*)newValue {}
+- (void) setDiscogsArtistSiteUrl      :(NSString*)newValue {}
+- (void) setWikipediaArtistSiteUrl    :(NSString*)newValue {}
+- (void) setLanguage                  :(NSString*)newValue {}
+- (void) setLyricsSiteUrl             :(NSString*)newValue {}
+- (void) setTotalTracks               :(NSNumber*)newValue {}
+- (void) setTotalDiscs                :(NSNumber*)newValue {}
 
 
 - (void) removeAllTags { DDLogInfo(@"removing tags");}

@@ -26,12 +26,12 @@ namespace Fields {
 		String const ALBUM_ARTIST                  = "aART";
 		String const COMPOSER                      = "\251wrt";
 		String const GROUPING                      = "\251grp";
-		String const DISK_NUMBER                   = "disk";
+		String const DISC_NUMBER                   = "disk";
 		String const COVER                         = "covr";
 		String const BPM                           = "tmpo";
 		String const MUSICBRAINZ_ARTISTID          = "----:com.apple.iTunes:MusicBrainz Artist Id";
 		String const MUSICBRAINZ_RELEASEID         = "----:com.apple.iTunes:MusicBrainz Album Id";
-		String const MUSICBRAINZ_RELEASEARTISTID   = "----:com.apple.iTunes:MusicBrainz Album Artist Id";
+		String const MUSICBRAINZ_RELEASE_ARTISTID  = "----:com.apple.iTunes:MusicBrainz Album Artist Id";
 		String const MUSICBRAINZ_TRACK_ID          = "----:com.apple.iTunes:MusicBrainz Track Id";
 		String const MUSICBRAINZ_DISC_ID           = "----:com.apple.iTunes:MusicBrainz Disc Id";
 		String const MUSICIP_ID                    = "----:com.apple.iTunes:MusicIP PUID";
@@ -63,11 +63,9 @@ namespace Fields {
 		String const DISCOGS_ARTIST_SITE_URL       = "----:com.apple.iTunes:URL_DISCOGS_ARTIST_SITE";
 		String const WIKIPEDIA_ARTIST_SITE_URL     = "----:com.apple.iTunes:URL_WIKIPEDIA_ARTIST_SITE";
 		String const LANGUAGE                      = "----:com.apple.iTunes:LANGUAGE";
-		String const KEY                           = "----:com.apple.iTunes:KEY";
 		String const LYRICS_SITE_URL               = "----:com.apple.iTunes:URL_LYRICS_SITE";
 		String const TOTAL_TRACKS                  = "trkn";
 		String const TOTAL_DISCS                   = "disk";
-
 		
 	}
 	
@@ -83,12 +81,12 @@ namespace Fields {
 		extern const char* ALBUM_ARTIST;
 		extern const char* COMPOSER;
 		extern const char* GROUPING;
-		extern const char* DISK_NUMBER;
+		extern const char* DISC_NUMBER;
 		extern const char* COVER;
 		extern const char* BPM;
 		extern const char* MUSICBRAINZ_ARTISTID;
 		extern const char* MUSICBRAINZ_RELEASEID;
-		extern const char* MUSICBRAINZ_RELEASEARTISTID;
+		extern const char* MUSICBRAINZ_RELEASE_ARTISTID;
 		extern const char* MUSICBRAINZ_TRACK_ID;
 		extern const char* MUSICBRAINZ_DISC_ID;
 		extern const char* MUSICIP_ID;
@@ -120,11 +118,9 @@ namespace Fields {
 		extern const char* DISCOGS_ARTIST_SITE_URL;
 		extern const char* WIKIPEDIA_ARTIST_SITE_URL;
 		extern const char* LANGUAGE;
-		extern const char* KEY;
 		extern const char* LYRICS_SITE_URL;
 		extern const char* TOTAL_TRACKS;
 		extern const char* TOTAL_DISCS;
-
 		
 	}	
 }
