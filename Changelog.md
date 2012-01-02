@@ -1,9 +1,11 @@
 Changelog
 =========
 
-Version 1.5.2
+Version 1.5.2 (Mon 02 Jan 2012  1:10:13 +0000)
 -------------
-
+### Features ###
+* Poxy Icons.
+* Batch Delete comments.
 
 
 Version 1.5.1 (Sat 31 Dec 2011 21:18:29 +0000)
