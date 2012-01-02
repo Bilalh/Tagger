@@ -150,6 +150,7 @@ static const NSArray *swapMenuValues;
 	[table deselectAll:self];
 	[self _vgmdbEnable];
 	[self _vgmdbEnableDir];
+	[window setTitleWithRepresentedFilename:[[[directoryStack lastObject] URL ] path]];
 }
 - (IBAction)onClick:(id)sender
 {
@@ -589,6 +590,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[table reloadData];
 	[self _vgmdbEnable];
 	[self _vgmdbEnableDir];
+	[window setTitleWithRepresentedFilename:[[[directoryStack lastObject] URL ] path]];
 }
 
 - (void)setPopupMenuIcons
@@ -641,6 +643,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}	
 	[self _vgmdbEnable];
 	[self _vgmdbEnableDir];
+	[window setTitleWithRepresentedFilename:[url path]];
 }
 
 - (IBAction)backForwordDirectories:(id)sender
@@ -669,6 +672,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[table reloadData];
 	[self _vgmdbEnable];
 	[self _vgmdbEnableDir];
+	[window setTitleWithRepresentedFilename:[[[directoryStack lastObject] URL ] path]];
 }
 
 - (IBAction)backDirectories:(id)sender
