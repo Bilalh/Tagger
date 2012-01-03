@@ -16,7 +16,7 @@ Install From Source
 * 64 bit only
 
 ### Introductions
-Build the release version of VGTagger.
+Build the release version of Tagger.
 
 (When embedding make sure `require 'rubygems'` in `Vgmdb.rb`  is commented with a # before it)
 
@@ -24,9 +24,9 @@ Run Embed MacRuby on it which does the follows to embed the MacRuby framework
 
 	macruby_deploy --compile --embed --gem nokogiri --gem htmlentities --verbose
 
-To save 15mb you can remove the unused .rb files in		
-  `VGTagger.app/Contents/Frameworks/MacRuby.framework/Versions/0.10/usr/lib/ruby/1.9.2`
-
+To save 15mb you can either  remove the unused .rb files in 
+  `Tagger.app/Contents/Frameworks/MacRuby.framework/Versions/0.10/usr/lib/ruby/1.9.2`
+or replace it with [bilalh.github.com/files/1.9.2.zip](bilalh.github.com/files/1.9.2.zip)
 
 Issues
 ------
@@ -65,4 +65,4 @@ Licence
 
 Authors
 -------
-* Bilal Hussain
+* Bilal Syed Hussain
