@@ -241,6 +241,8 @@ static const NSSet *tokensNumberSet;
 - (NSError*) filenameFromFormatArray:(NSArray*)formatStrings
 {
 	NSString *newName = [tags filenameFromFormatArray:formatStrings];
+	newName = [newName stringByReplacingOccurrencesOfString:@"/" withString:@":"];
+	
 	DDLogInfo(@"newName:%@", newName);
 	if (!newName || [newName isEqualToString:@""]){
 		NSMutableDictionary *errorDetail = [NSMutableDictionary dictionary];
@@ -255,7 +257,11 @@ static const NSSet *tokensNumberSet;
 	 stringByAppendingPathComponent:newName] stringByAppendingPathExtension:ext];
 	DDLogVerbose(@"path:%@\n ext:%@\n newPath:%@ \n", path, ext, newPath);
 	
-	if ([newPath isEqualToString:path]) return nil;
+	if ([newPath isEqualToString:path]){
+		NSMutableDictionary *errorDetail = [NSMutableDictionary dictionary];
+		[errorDetail setValue:@"Moving to the same location" forKey:NSLocalizedDescriptionKey];
+		return [NSError errorWithDomain:@"filenameFromFormatArray" code:101 userInfo:errorDetail];
+	}
 	
 	NSError *err =nil;
 	[[NSFileManager defaultManager] moveItemAtPath:path 
