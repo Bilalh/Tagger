@@ -174,5 +174,6 @@
 - (IBAction) swapFirstAndLastName:(id)sender;
 
 - (IBAction)openHomePage:(id)sender;
+- (IBAction)openIssues:(id)sender;
 
 @end

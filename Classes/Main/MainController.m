@@ -724,6 +724,11 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://bilalh.github.com/projects/tagger/"]]; 	
 }
 
+- (IBAction)openIssues:(id)sender
+{
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/Bilalh/Tagger/issues"]]; 	
+}
+
 #pragma mark - Tag Manipulation
 
 - (IBAction)capitalisedTags:(id)sender
