@@ -131,7 +131,7 @@
 /* Begin PBXFileReference section */
 		920660A413C89845003A3803 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		920660B913C89845003A3803 /* libtag.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtag.1.dylib; path = ../Frameworks/libtag.1.dylib; sourceTree = "<group>"; };
-		920660BB13C89845003A3803 /* VGTagger-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "VGTagger-Info.plist"; path = "../Other Sources/VGTagger-Info.plist"; sourceTree = "<group>"; };
+		920660BB13C89845003A3803 /* Tagger-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Tagger-Info.plist"; path = "../Other Sources/Tagger-Info.plist"; sourceTree = "<group>"; };
 		920660BC13C89845003A3803 /* VGTagger-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "VGTagger-Prefix.pch"; sourceTree = "<group>"; };
 		921FBBE6140C641000D1CBE8 /* ArrayDefaultsPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrayDefaultsPreferencesViewController.h; sourceTree = "<group>"; };
 		921FBBEB140C682100D1CBE8 /* ArrayDefaultsPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayDefaultsPreferencesViewController.m; sourceTree = "<group>"; };
@@ -304,7 +304,7 @@
 		920660BD13C89845003A3803 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				920660BB13C89845003A3803 /* VGTagger-Info.plist */,
+				920660BB13C89845003A3803 /* Tagger-Info.plist */,
 				928411AE13EB853600A92F3F /* defaults.plist */,
 				9293B84D14AF870D006D96E7 /* config.yaml */,
 				9293B84A14AF7DFA006D96E7 /* dsa_pub.pem */,
@@ -872,7 +872,7 @@
 				GCC_PREFIX_HEADER = "Other Sources/VGTagger-Prefix.pch";
 				GCC_USE_STANDARD_INCLUDE_SEARCHING = YES;
 				GCC_VERSION = "";
-				INFOPLIST_FILE = "Other Sources/VGTagger-Info.plist";
+				INFOPLIST_FILE = "Other Sources/Tagger-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -913,7 +913,7 @@
 				GCC_PREFIX_HEADER = "Other Sources/VGTagger-Prefix.pch";
 				GCC_USE_STANDARD_INCLUDE_SEARCHING = YES;
 				GCC_VERSION = "";
-				INFOPLIST_FILE = "Other Sources/VGTagger-Info.plist";
+				INFOPLIST_FILE = "Other Sources/Tagger-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1034,6 +1034,7 @@
 				9293B85414AF8E55006D96E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		92CEE64B13F0A23600E4C5CE /* Build configuration list for PBXLegacyTarget "Embed MacRuby" */ = {
 			isa = XCConfigurationList;

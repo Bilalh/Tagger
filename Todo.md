@@ -65,5 +65,5 @@ Done
 * Added latin as a language.
 * tags from filename.
 * Sort by date sort by the string instead of date
-* Go menu icons
+* Go menu icons 
 * Error message when invalid characters in filenames. 
