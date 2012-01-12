@@ -30,10 +30,6 @@ Images
 * find image metadata like:
   * 1200x1200, 200 KB (JPEG)
 
-Renaming
---------
-* Error message when invalid characters in filenames. 
-
 MacRuby
 -------
 * Either find faster way to use it or rewrite Vgmdb in Objective C/C++
@@ -70,3 +66,4 @@ Done
 * tags from filename.
 * Sort by date sort by the string instead of date
 * Go menu icons
+* Error message when invalid characters in filenames. 
