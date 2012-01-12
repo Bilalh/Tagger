@@ -32,6 +32,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		9202AEDC14BE7FCE00B24CE6 /* Tagger Help in Resources */ = {isa = PBXBuildFile; fileRef = 9202AEDB14BE7FCE00B24CE6 /* Tagger Help */; };
 		920660E113C89845003A3803 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 920660A413C89845003A3803 /* main.m */; };
 		921FBBEC140C682100D1CBE8 /* ArrayDefaultsPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 921FBBEB140C682100D1CBE8 /* ArrayDefaultsPreferencesViewController.m */; };
 		921FBBEE140C68AF00D1CBE8 /* ArrayDefaultsPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921FBBED140C68AF00D1CBE8 /* ArrayDefaultsPreferencesView.xib */; };
@@ -129,6 +130,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9202AEDB14BE7FCE00B24CE6 /* Tagger Help */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Tagger Help"; sourceTree = "<group>"; };
 		920660A413C89845003A3803 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		920660B913C89845003A3803 /* libtag.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtag.1.dylib; path = ../Frameworks/libtag.1.dylib; sourceTree = "<group>"; };
 		920660BB13C89845003A3803 /* Tagger-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Tagger-Info.plist"; path = "../Other Sources/Tagger-Info.plist"; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				9293B84D14AF870D006D96E7 /* config.yaml */,
 				9293B84A14AF7DFA006D96E7 /* dsa_pub.pem */,
 				92DECF1114ABFBAC00A956E8 /* Credits.html */,
+				9202AEDB14BE7FCE00B24CE6 /* Tagger Help */,
 				928557FF13EF6352002C5112 /* Test Files */,
 				9264488713D773CE0035E693 /* Images */,
 				9254006513F0A52F0020C912 /* Frameworks */,
@@ -700,6 +703,7 @@
 				92DECF1214ABFBAC00A956E8 /* Credits.html in Resources */,
 				9293B84B14AF7DFA006D96E7 /* dsa_pub.pem in Resources */,
 				9293B84E14AF870D006D96E7 /* config.yaml in Resources */,
+				9202AEDC14BE7FCE00B24CE6 /* Tagger Help in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

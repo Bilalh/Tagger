@@ -3,7 +3,8 @@ Changelog
 
 Version 1.5.3
 -------------
-* Renaming files from tags with a '/' in it, fixed
+* Renaming files from tags with a '/' in it, fixed.
+* Help Menu.
 
 
 Version 1.5.2 (Mon 02 Jan 2012  1:10:13 +0000)

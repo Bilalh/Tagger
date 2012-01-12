@@ -83,6 +83,8 @@
 	<key>UTExportedTypeDeclarations</key>
 	<array/>
 	<key>CFBundleHelpBookName</key>
-	<string>Tagger-Help</string>
+	<string>Tagger Help</string>
+	<key>CFBundleHelpBookFolder</key>
+	<string>Tagger Help</string>
 </dict>
 </plist>
