@@ -78,7 +78,7 @@ using namespace TagLib;
 	int i = t->year();
 	year    =  i ? [NSNumber numberWithUnsignedInt:i] :nil;
 	i = t->track();
-	track   = i ? [NSNumber numberWithUnsignedInt:i] :nil;
+	track   =  i ? [NSNumber numberWithUnsignedInt:i] :nil;
 	
 	
 	length     = [NSNumber numberWithInt: data->file->audioProperties()->length()];

@@ -38,10 +38,10 @@ using namespace std;
 {
     self = [super initWithFilename:filename];
     if (self) {
+		kind = @"MP4";
 		data->f->mp4 = new MP4::File([filename UTF8String]);
 		data->file = data->f->mp4;
 		[self initFields];
-		kind = @"MP4";
     }
     
     return self;	

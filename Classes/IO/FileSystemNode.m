@@ -188,9 +188,11 @@ static const NSSet *tokensNumberSet;
         NSURL *childURL = nil;
 		CFURLEnumeratorResult enumeratorResult;
 		do {
+			
             enumeratorResult = CFURLEnumeratorGetNextURL(enumerator, (CFURLRef *)&childURL, NULL);
             if (enumeratorResult == kCFURLEnumeratorSuccess) {
                 FileSystemNode *node = [[[FileSystemNode alloc] initWithURL:childURL] autorelease];
+				if (!node) continue;
                 if (_children != nil) {
                     NSInteger oldIndex = [_children indexOfObject:childURL];
                     if (oldIndex != NSNotFound) {
@@ -211,6 +213,7 @@ static const NSSet *tokensNumberSet;
 				
             } else if (enumeratorResult == kCFURLEnumeratorError) {
                 // A possible enhancement would be to present error-based items to the user.
+				DDLogError("errror in children %@");
             }
 		} while (enumeratorResult != kCFURLEnumeratorEnd);
         
