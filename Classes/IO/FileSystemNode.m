@@ -213,7 +213,7 @@ static const NSSet *tokensNumberSet;
 				
             } else if (enumeratorResult == kCFURLEnumeratorError) {
                 // A possible enhancement would be to present error-based items to the user.
-				DDLogError("errror in children %@");
+				DDLogError("errror in children");
             }
 		} while (enumeratorResult != kCFURLEnumeratorEnd);
         

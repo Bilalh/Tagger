@@ -1,7 +1,11 @@
 Changelog
 =========
 
-Version 1.5.3
+Version 1.5.4
+-------------
+* 'Renumber Files' populates a null disc track count.
+
+Version 1.5.3 (Saturday Jan 14 2012 20:05:45 +0000)
 -------------
 * Renaming files from tags with a '/' in it, fixed.
 * Help Menu.

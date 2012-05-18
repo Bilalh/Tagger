@@ -805,11 +805,22 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 - (IBAction) renumberFiles:(id)sender
 {
 	if (currentNodes.empty) return;
-	int i = 1;
+	int i = 0;
+	
+	BOOL hasTrackTotal = NO;
+	
 	for (FileSystemNode *n in currentNodes.tagsArray) {
-		n.tags.track = [NSNumber numberWithInt:i];
 		i++;
+		n.tags.track = [NSNumber numberWithInt:i];
+		if (n.tags.totalTracks) hasTrackTotal = YES;
 	}
+	
+	if (!hasTrackTotal){
+		for (FileSystemNode *n in currentNodes.tagsArray) {
+			n.tags.totalTracks = [NSNumber numberWithInt:i];
+		}
+	}
+	
 }
 
 - (IBAction)rename:(id)sender
