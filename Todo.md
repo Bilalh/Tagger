@@ -1,5 +1,8 @@
 TODO
 ====
+* Reduce min size
+* Test on 10.7 
+* Test on 10.8 (inculding signing the app) 
 
 FIXME
 -----

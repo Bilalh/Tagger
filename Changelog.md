@@ -4,6 +4,7 @@ Changelog
 Version 1.5.4
 -------------
 * 'Renumber Files' populates a null disc track count.
+*  Fixes issue #12 - Tags From Filenames > Using Custom Format : Uses the file's full path for the first tag!
 
 Version 1.5.3 (Saturday Jan 14 2012 20:05:45 +0000)
 -------------

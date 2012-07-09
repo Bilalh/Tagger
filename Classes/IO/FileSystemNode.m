@@ -284,7 +284,7 @@ static const NSSet *tokensNumberSet;
 		return [NSError errorWithDomain:@"tagsWithFormatArrayFromFilename" code:100 userInfo:errorDetail];
 	}
 	
-	NSString *filename = [[self.URL path] stringByDeletingPathExtension];
+	NSString *filename = [[[self.URL path] lastPathComponent] stringByDeletingPathExtension];
 
 	NSMutableString *regex = [[NSMutableString alloc] init];
 	NSMutableArray *keys = [[NSMutableArray alloc] init];
