@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Version 1.5.4
+Version 1.5.4 (Wed 18 Jul 2012 21:55:06 +0100)
 -------------
 * 'Renumber Files' populates a null disc track count.
 * Fixes issue #12 - Tags From Filenames > Using Custom Format : Uses the file's full path for the first tag!
@@ -9,7 +9,7 @@ Version 1.5.4
 * Update project to Xcode 4.3
 * First version to built on 10.7
 
-Version 1.5.3 (Saturday Jan 14 2012 20:05:45 +0000)
+Version 1.5.3 (Sat Jan 14 2012 20:05:45 +0000)
 -------------
 * Renaming files from tags with a '/' in it, fixed.
 * Help Menu.
