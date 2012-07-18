@@ -136,7 +136,7 @@
 		<string>Artist - 01 Title</string>
 	</array>
 	<key>startUrl</key>
-	<string>~/Music/</string>
+	<string>~/</string>
 	<key>writeDraggedImageAsFile</key>
 	<true/>
 </dict>
