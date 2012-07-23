@@ -275,6 +275,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		languages = [[NSArray alloc] initWithObjects:@"@english", @"@romaji",@"@kanji" , nil];
 		selectedLanguage = [languages objectAtIndex:0];
 		
+        vgmdb = [Vgmdb new];
 //		NSString *path = [[NSBundle mainBundle] pathForResource:@"Vgmdb" ofType:@"rb"];
 //		[[MacRuby sharedRuntime] evaluateFileAtPath:path];
 //		vgmdb = [[MacRuby sharedRuntime] evaluateString:@"Vgmdb.new"];

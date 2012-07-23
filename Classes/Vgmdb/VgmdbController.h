@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+#import "Vgmdb.h"
 
 @class DisplayController;
 @class FileSystemNode;
@@ -25,12 +25,14 @@
 	NSString *selectedLanguage;
 	
 	DisplayController *ssc;
-	id vgmdb; // macruby Vgmdb class
 	Tags *tags;
 	NSTableView *mainTable;
 	
 	NSString *currentColumnKey;
+    
 	BOOL currentColumnAscending;
+    
+    Vgmdb *vgmdb;
 }
 
 @property (strong) NSMutableArray *files;
