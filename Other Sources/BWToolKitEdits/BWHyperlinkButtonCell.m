@@ -16,7 +16,7 @@
 
 - (NSDictionary *)_textAttributes
 {
-	NSMutableDictionary *attributes = [[[NSMutableDictionary alloc] init] autorelease];
+	NSMutableDictionary *attributes = [[NSMutableDictionary alloc] init];
 	[attributes addEntriesFromDictionary:[super _textAttributes]];
 	[attributes setObject:[NSColor blueColor] forKey:NSForegroundColorAttributeName];
 	[attributes setObject:[NSNumber numberWithInt:NSSingleUnderlineStyle] forKey:NSUnderlineStyleAttributeName];

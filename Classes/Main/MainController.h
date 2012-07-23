@@ -73,21 +73,21 @@
 /// @name properties
 
 /// The main window
-@property (assign) IBOutlet NSWindow *window;
+@property  IBOutlet NSWindow *window;
 /// The stack of previous directories.
-@property (assign) NSMutableArray *directoryStack;
+@property (strong) NSMutableArray *directoryStack;
 /// The stack of directories to allow the user to go back.
-@property (assign) NSMutableArray *forwardStack;
+@property (strong) NSMutableArray *forwardStack;
 
 /// The node of the selected row, nil if no row selected.
-@property (assign) FileSystemNodeCollection *currentNodes;
+@property (strong) FileSystemNodeCollection *currentNodes;
 
 /// The selected node in the popup.
-@property (assign) NSNumber *selectedNodeindex;
+@property  NSNumber *selectedNodeindex;
 /// The parent nodes of the current directory.
-@property (assign) NSMutableArray *parentNodes;
+@property  NSMutableArray *parentNodes;
 
-@property (assign) IBOutlet NSTableView *table;
+@property  IBOutlet NSTableView *table;
 
 @property (readonly) BOOL forwordStackEnable;
 @property (readonly) BOOL backwordStackEnable;

@@ -53,7 +53,6 @@ using namespace TagLib;
 	self = [super init];
 	if(self) {
 		if(filename == nil) {
-			[self release];
 			return nil;
 		} else {
 			data = new FileData;
@@ -68,7 +67,6 @@ using namespace TagLib;
 - (void) initFields
 {
 	const Tag *t = data->file->tag();
-	title   = [[NSString  alloc] initWithTagString:t->title()  ];
 	title   = [[NSString  alloc] initWithTagString:t->title()  ];
 	artist  = [[NSString  alloc] initWithTagString:t->artist() ];
 	album   = [[NSString  alloc] initWithTagString:t->album()  ];
@@ -91,7 +89,6 @@ using namespace TagLib;
 
 - (void)dealloc
 {
-    [super dealloc];
 	delete data;
 }
 

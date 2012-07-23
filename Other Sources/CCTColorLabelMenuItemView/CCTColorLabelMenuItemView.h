@@ -28,7 +28,7 @@ Version: 1.0
 	int				blink;
 }
 
-@property (nonatomic, assign)   id<CCTColorLabelMenuItemViewDelegate> delegate;
+@property (nonatomic)   id<CCTColorLabelMenuItemViewDelegate> delegate;
 @property (nonatomic, readonly) NSInteger selectedLabel;
 
 - (void)setupTrackingAreas;

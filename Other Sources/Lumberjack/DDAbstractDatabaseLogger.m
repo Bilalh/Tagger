@@ -1,4 +1,45 @@
 #import "DDAbstractDatabaseLogger.h"
+#import <math.h>
+
+/**
+ * Welcome to Cocoa Lumberjack!
+ * 
+ * The project page has a wealth of documentation if you have any questions.
+ * https://github.com/robbiehanson/CocoaLumberjack
+ * 
+ * If you're new to the project you may wish to read the "Getting Started" wiki.
+ * https://github.com/robbiehanson/CocoaLumberjack/wiki/GettingStarted
+**/
+
+#if ! __has_feature(objc_arc)
+#warning This file must be compiled with ARC. Use -fobjc-arc flag (or convert project to ARC).
+#endif
+
+/**
+ * Does ARC support support GCD objects?
+ * It does if the minimum deployment target is iOS 6+ or Mac OS X 10.8+
+**/
+#if TARGET_OS_IPHONE
+
+  // Compiling for iOS
+
+  #if __IPHONE_OS_VERSION_MIN_REQUIRED >= 60000 // iOS 6.0 or later
+    #define NEEDS_DISPATCH_RETAIN_RELEASE 0
+  #else                                         // iOS 5.X or earlier
+    #define NEEDS_DISPATCH_RETAIN_RELEASE 1
+  #endif
+
+#else
+
+  // Compiling for Mac OS X
+
+  #if MAC_OS_X_VERSION_MIN_REQUIRED >= 1080     // Mac OS X 10.8 or later
+    #define NEEDS_DISPATCH_RETAIN_RELEASE 0
+  #else
+    #define NEEDS_DISPATCH_RETAIN_RELEASE 1     // Mac OS X 10.7 or earlier
+  #endif
+
+#endif
 
 @interface DDAbstractDatabaseLogger ()
 - (void)destroySaveTimer;
@@ -26,7 +67,6 @@
 	[self destroySaveTimer];
 	[self destroyDeleteTimer];
 	
-    [super dealloc];
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -101,7 +141,15 @@
 	if (saveTimer)
 	{
 		dispatch_source_cancel(saveTimer);
+		if (saveTimerSuspended)
+		{
+			// Must resume a timer before releasing it (or it will crash)
+			dispatch_resume(saveTimer);
+			saveTimerSuspended = NO;
+		}
+		#if NEEDS_DISPATCH_RETAIN_RELEASE
 		dispatch_release(saveTimer);
+		#endif
 		saveTimer = NULL;
 	}
 }
@@ -129,13 +177,11 @@
 	{
 		saveTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, loggerQueue);
 		
-		dispatch_source_set_event_handler(saveTimer, ^{
-			NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+		dispatch_source_set_event_handler(saveTimer, ^{ @autoreleasepool {
 			
 			[self performSaveAndSuspendSaveTimer];
 			
-			[pool drain];
-		});
+		}});
 		
 		saveTimerSuspended = YES;
 	}
@@ -146,7 +192,9 @@
 	if (deleteTimer)
 	{
 		dispatch_source_cancel(deleteTimer);
+		#if NEEDS_DISPATCH_RETAIN_RELEASE
 		dispatch_release(deleteTimer);
+		#endif
 		deleteTimer = NULL;
 	}
 }
@@ -173,13 +221,11 @@
 	{
 		deleteTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, loggerQueue);
 		
-		dispatch_source_set_event_handler(deleteTimer, ^{
-			NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+		dispatch_source_set_event_handler(deleteTimer, ^{ @autoreleasepool {
 			
 			[self performDelete];
 			
-			[pool drain];
-		});
+		}});
 		
 		[self updateDeleteTimer];
 		
@@ -224,11 +270,11 @@
 			
 			if ((unsavedCount >= saveThreshold) && (saveThreshold > 0))
 			{
-				NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+				@autoreleasepool {
+					
+					[self performSaveAndSuspendSaveTimer];
 				
-				[self performSaveAndSuspendSaveTimer];
-				
-				[pool drain];
+				}
 			}
 		}
 	};
@@ -261,7 +307,10 @@
 {
 	dispatch_block_t block = ^{
 	
-		if (saveInterval != interval)
+		// C99 recommended floating point comparison macro
+		// Read: isLessThanOrGreaterThan(floatA, floatB)
+		
+		if (/* saveInterval != interval */ islessgreater(saveInterval, interval))
 		{
 			saveInterval = interval;
 			
@@ -280,30 +329,29 @@
 			
 			if (saveInterval > 0.0)
 			{
-				NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-				
-				if (saveTimer == NULL)
+				@autoreleasepool
 				{
-					// Handles #2
-					// 
-					// Since the saveTimer uses the unsavedTime to calculate it's first fireDate,
-					// if a save is needed the timer will fire immediately.
-					
-					[self createSuspendedSaveTimer];
-					[self updateAndResumeSaveTimer];
+					if (saveTimer == NULL)
+					{
+						// Handles #2
+						// 
+						// Since the saveTimer uses the unsavedTime to calculate it's first fireDate,
+						// if a save is needed the timer will fire immediately.
+						
+						[self createSuspendedSaveTimer];
+						[self updateAndResumeSaveTimer];
+					}
+					else
+					{
+						// Handles #3
+						// Handles #4
+						// 
+						// Since the saveTimer uses the unsavedTime to calculate it's first fireDate,
+						// if a save is needed the timer will fire immediately.
+						
+						[self updateAndResumeSaveTimer];
+					}
 				}
-				else
-				{
-					// Handles #3
-					// Handles #4
-					// 
-					// Since the saveTimer uses the unsavedTime to calculate it's first fireDate,
-					// if a save is needed the timer will fire immediately.
-					
-					[self updateAndResumeSaveTimer];
-				}
-				
-				[pool drain];
 			}
 			else if (saveTimer)
 			{
@@ -342,7 +390,10 @@
 {
 	dispatch_block_t block = ^{
 		
-		if (maxAge != interval)
+		// C99 recommended floating point comparison macro
+		// Read: isLessThanOrGreaterThan(floatA, floatB)
+		
+		if (/* maxAge != interval */ islessgreater(maxAge, interval))
 		{
 			NSTimeInterval oldMaxAge = maxAge;
 			NSTimeInterval newMaxAge = interval;
@@ -387,16 +438,15 @@
 			
 			if (shouldDeleteNow)
 			{
-				NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-				
-				[self performDelete];
-				
-				if (deleteTimer)
-					[self updateDeleteTimer];
-				else
-					[self createAndStartDeleteTimer];
-				
-				[pool drain];
+				@autoreleasepool
+				{
+					[self performDelete];
+					
+					if (deleteTimer)
+						[self updateDeleteTimer];
+					else
+						[self createAndStartDeleteTimer];
+				}
 			}
 		}
 	};
@@ -429,7 +479,10 @@
 {
 	dispatch_block_t block = ^{
 		
-		if (deleteInterval != interval)
+		// C99 recommended floating point comparison macro
+		// Read: isLessThanOrGreaterThan(floatA, floatB)
+		
+		if (/* deleteInterval != interval */ islessgreater(deleteInterval, interval))
 		{
 			deleteInterval = interval;
 			
@@ -448,29 +501,28 @@
 			
 			if (deleteInterval > 0.0)
 			{
-				NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-				
-				if (deleteTimer == NULL)
+				@autoreleasepool
 				{
-					// Handles #2
-					// 
-					// Since the deleteTimer uses the lastDeleteTime to calculate it's first fireDate,
-					// if a delete is needed the timer will fire immediately.
-					
-					[self createAndStartDeleteTimer];
+					if (deleteTimer == NULL)
+					{
+						// Handles #2
+						// 
+						// Since the deleteTimer uses the lastDeleteTime to calculate it's first fireDate,
+						// if a delete is needed the timer will fire immediately.
+						
+						[self createAndStartDeleteTimer];
+					}
+					else
+					{
+						// Handles #3
+						// Handles #4
+						// 
+						// Since the deleteTimer uses the lastDeleteTime to calculate it's first fireDate,
+						// if a save is needed the timer will fire immediately.
+						
+						[self updateDeleteTimer];
+					}
 				}
-				else
-				{
-					// Handles #3
-					// Handles #4
-					// 
-					// Since the deleteTimer uses the lastDeleteTime to calculate it's first fireDate,
-					// if a save is needed the timer will fire immediately.
-					
-					[self updateDeleteTimer];
-				}
-				
-				[pool drain];
 			}
 			else if (deleteTimer)
 			{
@@ -524,13 +576,10 @@
 
 - (void)savePendingLogEntries
 {
-	dispatch_block_t block = ^{
-		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	dispatch_block_t block = ^{ @autoreleasepool {
 		
 		[self performSaveAndSuspendSaveTimer];
-		
-		[pool drain];
-	};
+	}};
 	
 	if (dispatch_get_current_queue() == loggerQueue)
 		block();
@@ -540,13 +589,10 @@
 
 - (void)deleteOldLogEntries
 {
-	dispatch_block_t block = ^{
-		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	dispatch_block_t block = ^{ @autoreleasepool {
 		
 		[self performDelete];
-		
-		[pool drain];
-	};
+	}};
 	
 	if (dispatch_get_current_queue() == loggerQueue)
 		block();

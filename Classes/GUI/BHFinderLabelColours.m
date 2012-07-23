@@ -46,7 +46,7 @@
 			break;
 	}
 	
-	return [gradient autorelease];
+	return gradient;
 }
 
 @end

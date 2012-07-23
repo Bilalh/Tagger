@@ -1,6 +1,6 @@
 /*
 	ImageAndTextCell.m
-	Copyright © 2006, Apple Computer, Inc., all rights reserved.
+	Copyright ï¿½ 2006, Apple Computer, Inc., all rights reserved.
 
 	Subclass of NSTextFieldCell which can display text and an image simultaneously.
 */
@@ -10,15 +10,13 @@
 @implementation ImageAndTextCell
 
 - (void)dealloc {
-    [image release];
     image = nil;
-    [super dealloc];
 }
 
 - copyWithZone:(NSZone *)zone
 {
     ImageAndTextCell *cell = (ImageAndTextCell *)[super copyWithZone:zone];
-    cell->image = [image retain];
+    cell->image = image;
     return cell;
 }
 
@@ -26,8 +24,7 @@
 {
     if (anImage != image)
 	{
-        [image release];
-        image = [anImage retain];
+        image = anImage;
     }
 }
 

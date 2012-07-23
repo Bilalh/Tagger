@@ -12,6 +12,6 @@
 @private
     
 }
-@property (assign) IBOutlet NSTokenField *tokenField;
+@property  IBOutlet NSTokenField *tokenField;
 
 @end

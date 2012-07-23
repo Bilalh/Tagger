@@ -52,11 +52,6 @@ enum trackingAreaIDs
 // -------------------------------------------------------------------------------
 //	dealloc:
 // -------------------------------------------------------------------------------
--(void)dealloc
-{
-	[trackingAreas release];
-	[super dealloc];
-}
 
 
 // -------------------------------------------------------------------------------
@@ -164,7 +159,7 @@ enum trackingAreaIDs
 			break;
 	}
 	
-	return [gradient autorelease];
+	return gradient;
 }
 
 
@@ -304,7 +299,6 @@ enum trackingAreaIDs
 				[fontAtts setObject:[NSColor colorWithCalibratedWhite:0.5 alpha:1.0] forKey:NSForegroundColorAttributeName];
 				NSString *colorName = [NSString stringWithFormat:@"“%@”",[self colorNameForIndex:index]];
 				[colorName drawAtPoint:NSMakePoint(70.0, 32.0) withAttributes:fontAtts];
-				[fontAtts release];
 			}
 		}
 		
@@ -326,7 +320,6 @@ enum trackingAreaIDs
 		[circlePath appendBezierPath:[NSBezierPath bezierPathWithOvalInRect:NSMakeRect(dotRect.origin.x+1.0, dotRect.origin.y-2.0, dotRect.size.width-2.0, dotRect.size.height)]];
 		[circlePath setWindingRule:NSEvenOddWindingRule];
 		[gradient drawInBezierPath:circlePath angle:-90.0];
-		[gradient release];
 		
 		// top center gloss
 		gradient = [[NSGradient alloc] initWithStartingColor:[NSColor colorWithCalibratedWhite:1.0 alpha:0.18] 
@@ -336,7 +329,6 @@ enum trackingAreaIDs
 						toCenter:NSMakePoint(NSMidX(dotRect), NSMaxY(dotRect) - 2.0)
 						  radius:4.0
 						 options:0];
-		[gradient release];
 		
 		// draw a dark outline
 		circlePath = [NSBezierPath bezierPathWithOvalInRect:dotRect];
@@ -345,7 +337,6 @@ enum trackingAreaIDs
 		[circlePath appendBezierPath:[NSBezierPath bezierPathWithOvalInRect:NSInsetRect(dotRect, 1.0, 1.0)]];
 		[circlePath setWindingRule:NSEvenOddWindingRule];
 		[gradient drawInBezierPath:circlePath angle:-90.0];
-		[gradient release];
 		
 	}
 	
@@ -355,7 +346,6 @@ enum trackingAreaIDs
 	[fontAtts setObject: [NSFont menuFontOfSize:14.0] forKey: NSFontAttributeName];
 	NSString *labelTitle = @"Label:";
 	[labelTitle drawAtPoint:NSMakePoint(20.0, 32.0) withAttributes:fontAtts];
-	[fontAtts release];
 }
 
 

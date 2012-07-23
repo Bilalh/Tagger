@@ -1,6 +1,6 @@
 //
 //  FileSystemCollection.h
-//  VGTagger
+//  Tagger
 //
 //  Created by Bilal Syed Hussain on 30/07/2011.
 //  Copyright 2011  All rights reserved.
@@ -58,7 +58,7 @@
 /// @name General
 
 /// Array of FileSystemNodes.
-@property (assign) NSArray *tagsArray;
+@property  (nonatomic) NSArray *tagsArray;
 
 
 /** Renames each selected node with the specifed format 
@@ -96,56 +96,56 @@
 @property (readonly) NSArray *urls;
 
 @property (readonly) NSColor  *labelColor;
-@property (assign)   NSNumber *labelIndex;
+@property  (nonatomic)   NSNumber *labelIndex;
 
 
 /// The title of the file
-@property (assign) NSString *title; 
+@property  (nonatomic) NSString *title; 
 /// The album of the file
-@property (assign) NSString *album; 
+@property  (nonatomic) NSString *album; 
 /// The artist of the file
-@property (assign) NSString *artist; 
+@property  (nonatomic) NSString *artist; 
 /// The comment of the file
-@property (assign) NSString *comment;
+@property  (nonatomic) NSString *comment;
 /// The genre of the file
-@property (assign) NSString *genre;
+@property  (nonatomic) NSString *genre;
 /// The year of the file
-@property (assign) NSNumber *year;
+@property  (nonatomic) NSNumber *year;
 /// The track# of the file
-@property (assign) NSNumber *track; 
+@property  (nonatomic) NSNumber *track; 
 /// The length of the file in seconds
-@property (assign,readonly) NSNumber *length; 
+@property (readonly) NSNumber *length; 
 
 /// @name Finding Extra Metadata 
 
 /// The album artist of the file
-@property (assign) NSString *albumArtist;
+@property  (nonatomic) NSString *albumArtist;
 /// The composer of the file
-@property (assign) NSString *composer;
+@property  (nonatomic) NSString *composer;
 /// The grouping of the file
-@property (assign) NSString *grouping;
+@property  (nonatomic) NSString *grouping;
 /// The grouping of the file
-@property (assign) NSNumber *bpm;
+@property  (nonatomic) NSNumber *bpm;
 /// The total number of tracks in the album
-@property (assign) NSNumber *totalTracks;
+@property  (nonatomic) NSNumber *totalTracks;
 /// The disc# of the file
-@property (assign) NSNumber *disc;
+@property  (nonatomic) NSNumber *disc;
 /// The total number of discs in the album
-@property (assign) NSNumber *totalDiscs;
+@property  (nonatomic) NSNumber *totalDiscs;
 /// YES if the track is part of a compilation.
-@property (assign) NSNumber *compilation;
+@property  (nonatomic) NSNumber *compilation;
 
 // The url associated with the file
-@property (assign) NSString *url;
+@property  (nonatomic) NSString *url;
 // The album cover of the file
-@property (assign) NSImage *cover;
+@property  (nonatomic) NSImage *cover;
 
 /// @name Finding Sort by  Metadata 
 
-@property (assign) NSString *albumSort;
-@property (assign) NSString *artistSort;
-@property (assign) NSString *titleSort;
-@property (assign) NSString *composerSort;
-@property (assign) NSString *albumArtistSort;
+@property  (nonatomic) NSString *albumSort;
+@property  (nonatomic) NSString *artistSort;
+@property  (nonatomic) NSString *titleSort;
+@property  (nonatomic) NSString *composerSort;
+@property  (nonatomic) NSString *albumArtistSort;
 
 @end

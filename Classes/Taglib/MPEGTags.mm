@@ -122,15 +122,11 @@ using namespace Fields::MPEG;
 		ID3v2::AttachedPictureFrame *picture = static_cast<ID3v2::AttachedPictureFrame *>(listOfMp3Frames.front());
 		if (picture){
 			TagLib::ByteVector bv = picture->picture();
-			cover = [[[NSImage alloc] initWithData: [NSData dataWithBytes:bv.data() length:bv.size()]] autorelease];	
+			cover = [[NSImage alloc] initWithData: [NSData dataWithBytes:bv.data() length:bv.size()]];	
 		}
 	}
 }
 
-- (void)dealloc
-{
-    [super dealloc];
-}
 
 #pragma mark -
 #pragma mark Fields helpers

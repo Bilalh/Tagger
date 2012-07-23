@@ -45,7 +45,7 @@ static const NSSet *tokensNumberSet;
 
 - (id)initWithURL:(NSURL *)url {
     if ((self = [super init])) {
-        _url = [url retain];
+        _url = url;
 		if (! [self isDirectory] ){
 			NSString *path = [url path];
 			
@@ -67,12 +67,6 @@ static const NSSet *tokensNumberSet;
     return self;
 }
 
-- (void)dealloc {
-    // We have to release the underlying ivars associated with our properties
-    [_url release];
-    [_children release];
-    [super dealloc];
-}
 
 #pragma mark -
 #pragma mark Display
@@ -85,7 +79,7 @@ static const NSSet *tokensNumberSet;
     id value = nil;
     NSError *error;
     if ([_url getResourceValue:&value forKey:NSURLLocalizedNameKey error:&error]) {
-        return [value retain]; // hack work around the crash
+        return value; // hack work around the crash
     } else {
         return [error localizedDescription];
     }
@@ -162,15 +156,13 @@ static const NSSet *tokensNumberSet;
 	NSString *path = [[_url path] stringByStandardizingPath];
 	_parentNodes = [[NSMutableArray alloc] init];
 	
-	[_parentNodes addObject:[[[FileSystemNode alloc] initWithURL:
-							 [[NSURL alloc]initFileURLWithPath:path ]] 
-							autorelease]];
+	[_parentNodes addObject:[[FileSystemNode alloc] initWithURL:
+							 [[NSURL alloc]initFileURLWithPath:path ]]];
 	while (![path isEqualToString:@"/"] ){
 		path = [path stringByDeletingLastPathComponent];
 		if ([path isEqualToString:@""]) break;
-		[_parentNodes addObject:[[[FileSystemNode alloc] initWithURL:
-								 [[NSURL alloc]initFileURLWithPath:path ]] 
-								autorelease]];
+		[_parentNodes addObject:[[FileSystemNode alloc] initWithURL:
+								 [[NSURL alloc]initFileURLWithPath:path ]]];
 	}
 
 	return _parentNodes;	
@@ -180,19 +172,18 @@ static const NSSet *tokensNumberSet;
 
 - (NSArray *)children {
     if (_children == nil || _childrenDirty) {
-		
         // This logic keeps the same pointers around, if possible.
         NSMutableArray *newChildren = [NSMutableArray array];
         
-        CFURLEnumeratorRef enumerator = CFURLEnumeratorCreateForDirectoryURL(NULL, (CFURLRef)_url, kCFURLEnumeratorSkipInvisibles, (CFArrayRef)[NSArray array]);
+        CFURLEnumeratorRef enumerator = CFURLEnumeratorCreateForDirectoryURL(NULL, (__bridge CFURLRef)_url, kCFURLEnumeratorSkipInvisibles, (__bridge CFArrayRef)[NSArray array]);
         NSURL *childURL = nil;
-		CFURLEnumeratorResult enumeratorResult;
-		do {
-			
-            enumeratorResult = CFURLEnumeratorGetNextURL(enumerator, (CFURLRef *)&childURL, NULL);
+        CFURLEnumeratorResult enumeratorResult;
+        do {
+            CFURLRef a = (__bridge CFURLRef) childURL;
+            enumeratorResult = CFURLEnumeratorGetNextURL(enumerator, &a, NULL);
+            childURL = (__bridge NSURL*) a;
             if (enumeratorResult == kCFURLEnumeratorSuccess) {
-                FileSystemNode *node = [[[FileSystemNode alloc] initWithURL:childURL] autorelease];
-				if (!node) continue;
+                FileSystemNode *node = [[FileSystemNode alloc] initWithURL:childURL];
                 if (_children != nil) {
                     NSInteger oldIndex = [_children indexOfObject:childURL];
                     if (oldIndex != NSNotFound) {
@@ -204,29 +195,26 @@ static const NSSet *tokensNumberSet;
 				//TODO make user passable block
 				if ([extension isEqualToString:@"mp3"]  || 
 					[extension isEqualToString:@"m4a"]  || 
-//					[extension isEqualToString:@"flac"] || 
-//					[extension isEqualToString:@"ogg"]  || 
-//					[extension isEqualToString:@"wma"]  || 
+                    //					[extension isEqualToString:@"flac"] || 
+                    //					[extension isEqualToString:@"ogg"]  || 
+                    //					[extension isEqualToString:@"wma"]  || 
 					[self isaDirectory:node.URL ] ){
 					[newChildren addObject:node];
 				}
-				
             } else if (enumeratorResult == kCFURLEnumeratorError) {
                 // A possible enhancement would be to present error-based items to the user.
-				DDLogError(@"errror in children");
             }
-		} while (enumeratorResult != kCFURLEnumeratorEnd);
+        } while (enumeratorResult != kCFURLEnumeratorEnd);
         
-        [_children release];
+        CFRelease(enumerator);
         _childrenDirty = NO;
         // Now sort them
-        [newChildren sortUsingComparator:^(id obj1, id obj2) {
+        _children = [[newChildren sortedArrayUsingComparator:^(id obj1, id obj2) {
             NSString *objName = [obj1 displayName];
             NSString *obj2Name = [obj2 displayName];
             NSComparisonResult result = [objName compare:obj2Name options:NSNumericSearch | NSCaseInsensitiveSearch | NSWidthInsensitiveSearch | NSForcedOrderingSearch range:NSMakeRange(0, [objName length]) locale:[NSLocale currentLocale]];
             return result;
-        }];
-		_children = [newChildren retain];
+        }] mutableCopy];
     }
     
     return _children;
@@ -382,6 +370,7 @@ static const NSSet *tokensNumberSet;
 	
 	NSArray *arr = [val componentsSeparatedByRegex:@"[&,] ?"]; 
 	
+    
 	NSMutableArray  *dst = [[NSMutableArray alloc] init];
 	
 	for (NSString *s in arr) {

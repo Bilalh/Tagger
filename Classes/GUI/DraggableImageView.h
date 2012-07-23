@@ -18,7 +18,7 @@
 
 }
 
-@property (assign) FileSystemNode *current;
+@property  FileSystemNode *current;
 
 
 @end

@@ -15,7 +15,7 @@
 	NSWindowController *_preferencesWindowController;
 }
 
-@property (assign) IBOutlet NSWindow *window;
+@property  IBOutlet NSWindow *window;
 @property (readonly) IBOutlet MainController *mainController;
 @property (nonatomic, readonly) NSWindowController *preferencesWindowController;
 

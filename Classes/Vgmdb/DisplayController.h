@@ -25,7 +25,7 @@
 	NSInteger min;
 }
 
-@property (assign) NSArray *files;
+@property  NSArray *files;
  
 /// @name Initializing an DisplayController Object
 

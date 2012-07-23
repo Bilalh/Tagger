@@ -225,10 +225,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	return res;
 } 
 
-- (void)dealloc
-{
-    [super dealloc];
-}
 	
 
 #pragma mark -

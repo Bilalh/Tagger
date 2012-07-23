@@ -71,7 +71,7 @@ using namespace std;
 	coverList    = [self getField:COVER].toCoverArtList();
 	if (!coverList.isEmpty()){
 		TagLib::ByteVector bv = coverList.front().data();
-		cover = [[[NSImage alloc] initWithData: [NSData dataWithBytes:bv.data() length:bv.size()]] autorelease];
+		cover = [[NSImage alloc] initWithData: [NSData dataWithBytes:bv.data() length:bv.size()]];
 	}
 	
 	//	Sort by
@@ -82,10 +82,6 @@ using namespace std;
 	composerSort    = [self getFieldWithString:COMPOSER_SORT];
 	albumArtistSort = [self getFieldWithString:ALBUM_ARTIST_SORT];}
 
-- (void)dealloc
-{
-    [super dealloc];
-}
 
 #pragma mark -
 #pragma mark Fields helpers

@@ -56,7 +56,6 @@
 		929A4ADD13DA087D00244796 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD713DA087D00244796 /* DDLog.m */; };
 		929A4ADE13DA087D00244796 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD913DA087D00244796 /* DDTTYLogger.m */; };
 		929F152913F1E5F60021F9FD /* BHDraggableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 929F152813F1E5F60021F9FD /* BHDraggableImageView.m */; };
-		92A3C49E13E2444A0024C7D3 /* MacRuby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A3C49B13E244200024C7D3 /* MacRuby.framework */; };
 		92A6808813EC7B130067DD5F /* MASPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A6808513EC7B130067DD5F /* MASPreferencesWindow.xib */; };
 		92A6808913EC7B130067DD5F /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A6808713EC7B130067DD5F /* MASPreferencesWindowController.m */; };
 		92C4466413E0BF830038F817 /* BWHyperlinkTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4466113E0BF830038F817 /* BWHyperlinkTitleButton.m */; };
@@ -101,8 +100,9 @@
 		92E6EDE413F320540045679E /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E6EDE313F320540045679E /* ScriptingBridge.framework */; };
 		92E6EDF713F32B3C0045679E /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E6EDF613F32B3C0045679E /* Quartz.framework */; };
 		92E6EE3213F35FD50045679E /* QuickLookTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E6EE3113F35FD50045679E /* QuickLookTableView.m */; };
-		92F16DB114041AC10031E4B4 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F16DB014041AC10031E4B4 /* RegexKitLite.m */; };
+		92F16DB114041AC10031E4B4 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F16DB014041AC10031E4B4 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		92F16DB314041D8B0031E4B4 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F16DB214041D8B0031E4B4 /* libicucore.dylib */; };
+		92F2C1E615BC75DF00AF9D78 /* libhcxselect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F2C1E515BC75DF00AF9D78 /* libhcxselect.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,7 +170,6 @@
 		929A4AD913DA087D00244796 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
 		929F152713F1E5F60021F9FD /* BHDraggableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BHDraggableImageView.h; path = BHDraggableImageView/BHDraggableImageView.h; sourceTree = "<group>"; };
 		929F152813F1E5F60021F9FD /* BHDraggableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BHDraggableImageView.m; path = BHDraggableImageView/BHDraggableImageView.m; sourceTree = "<group>"; };
-		92A3C49B13E244200024C7D3 /* MacRuby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MacRuby.framework; path = Library/Frameworks/MacRuby.framework; sourceTree = SDKROOT; };
 		92A6808413EC7B130067DD5F /* MASPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesViewController.h; sourceTree = "<group>"; };
 		92A6808513EC7B130067DD5F /* MASPreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASPreferencesWindow.xib; sourceTree = "<group>"; };
 		92A6808613EC7B130067DD5F /* MASPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesWindowController.h; sourceTree = "<group>"; };
@@ -255,6 +254,7 @@
 		92F16DAF14041AC10031E4B4 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
 		92F16DB014041AC10031E4B4 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		92F16DB214041D8B0031E4B4 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		92F2C1E515BC75DF00AF9D78 /* libhcxselect.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libhcxselect.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,10 +265,10 @@
 				92F16DB314041D8B0031E4B4 /* libicucore.dylib in Frameworks */,
 				92E6EDF713F32B3C0045679E /* Quartz.framework in Frameworks */,
 				92E6EDE413F320540045679E /* ScriptingBridge.framework in Frameworks */,
-				92A3C49E13E2444A0024C7D3 /* MacRuby.framework in Frameworks */,
 				9254007113F0AC8F0020C912 /* libtag.1.dylib in Frameworks */,
 				922E35D713C89BF3003C5913 /* Cocoa.framework in Frameworks */,
 				9293B84814AF7C7B006D96E7 /* Sparkle.framework in Frameworks */,
+				92F2C1E615BC75DF00AF9D78 /* libhcxselect.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,7 +281,6 @@
 				92F16DB214041D8B0031E4B4 /* libicucore.dylib */,
 				92E6EDF613F32B3C0045679E /* Quartz.framework */,
 				92E6EDE313F320540045679E /* ScriptingBridge.framework */,
-				92A3C49B13E244200024C7D3 /* MacRuby.framework */,
 				922E35D613C89BF3003C5913 /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -332,6 +331,7 @@
 		9254006513F0A52F0020C912 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92F2C1E515BC75DF00AF9D78 /* libhcxselect.a */,
 				9293B84614AF7C71006D96E7 /* Sparkle.framework */,
 				920660B913C89845003A3803 /* libtag.1.dylib */,
 			);
@@ -654,6 +654,7 @@
 		925CE81413C3BD6D009D6D94 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "St. Andrews KY16 9XW";
 			};
 			buildConfigurationList = 925CE81713C3BD6D009D6D94 /* Build configuration list for PBXProject "Tagger" */;
@@ -847,6 +848,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -856,13 +858,13 @@
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_OBJC_GC = required;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_ENABLE_PASCAL_STRINGS = YES;
 				GCC_FORCE_CPU_SUBTYPE_ALL = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/VGTagger-Prefix.pch";
 				GCC_USE_STANDARD_INCLUDE_SEARCHING = YES;
-				GCC_VERSION = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Other Sources/Tagger-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS = (
@@ -876,6 +878,7 @@
 				"OTHER_CPLUSPLUSFLAGS[arch=*]" = (
 					"-I/usr/local/include/taglib",
 					"-L@executable_path/../Resources",
+					"-I/usr/local/include/htmlcxx",
 				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -889,6 +892,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -898,13 +902,13 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_OBJC_GC = required;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_ENABLE_PASCAL_STRINGS = YES;
 				GCC_FORCE_CPU_SUBTYPE_ALL = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/VGTagger-Prefix.pch";
 				GCC_USE_STANDARD_INCLUDE_SEARCHING = YES;
-				GCC_VERSION = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "Other Sources/Tagger-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "";
 				LIBRARY_SEARCH_PATHS = (
@@ -918,6 +922,7 @@
 				"OTHER_CPLUSPLUSFLAGS[arch=*]" = (
 					"-I/usr/local/include/taglib",
 					"-L@executable_path/../Resources",
+					"-I/usr/local/include/htmlcxx",
 				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";

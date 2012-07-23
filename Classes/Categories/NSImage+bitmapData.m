@@ -31,8 +31,8 @@
 	if(nil == bitmapRep) {
 		size = [self size];
 		[self lockFocus];
-		bitmapRep = [[[NSBitmapImageRep alloc] initWithFocusedViewRect:
-					  NSMakeRect(0, 0, size.width, size.height)] autorelease];
+		bitmapRep = [[NSBitmapImageRep alloc] initWithFocusedViewRect:
+					  NSMakeRect(0, 0, size.width, size.height)];
 		[self unlockFocus];
 	}
 	

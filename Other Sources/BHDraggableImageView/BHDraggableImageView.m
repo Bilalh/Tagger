@@ -42,7 +42,7 @@
 	}
 	
 	NSImage *scaledImage = [[self cell] objectValue];
-	NSImage *dragImage = [[[NSImage alloc] initWithSize: [scaledImage size]] autorelease];
+	NSImage *dragImage = [[NSImage alloc] initWithSize: [scaledImage size]];
     [dragImage lockFocus];
     [[[self cell] objectValue] dissolveToPoint: NSMakePoint(0,0)
 									  fraction: .5];

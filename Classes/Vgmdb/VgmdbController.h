@@ -33,8 +33,8 @@
 	BOOL currentColumnAscending;
 }
 
-@property (assign) NSMutableArray *files;
-@property (assign) NSString *query;
+@property (strong) NSMutableArray *files;
+@property  NSString *query;
 
 /// @name Init
 

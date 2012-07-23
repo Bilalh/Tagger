@@ -25,6 +25,6 @@
 - (IBAction) open:(id)sender;
 
 
-@property (assign) NSDictionary *tableColumns;
+@property  NSDictionary *tableColumns;
 
 @end

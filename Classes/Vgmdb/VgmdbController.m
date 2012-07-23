@@ -6,7 +6,7 @@
 //  Copyright 2011  All rights reserved.
 //
 
-#import <MacRuby/MacRuby.h>
+//#import <MacRuby/MacRuby.h>
 #import "VgmdbController.h"
 #import "DisplayController.h"
 #import "Utility.h"
@@ -60,16 +60,13 @@ static NSMutableDictionary *dates;
 - (IBAction) searchForAlbums:(id)sender
 {
 	DDLogInfo(@"Search button pressed");
-	id temp = [vgmdb performRubySelector:@selector(search:)
-								 withArguments:query, 
-					 nil];
-
+//	id temp = [vgmdb performRubySelector:@selector(search:)
+//								 withArguments:query, 
+//					 nil];
+    id temp = [NSNull null];
 	if (temp == [NSNull null]){
 		searchResults = nil;
 	}else if ([temp isKindOfClass:[NSDictionary class]]) {
-		if (ssc != nil){
-			[ssc release];
-		}
 		ssc = [[DisplayController alloc] initWithAlbum:temp 
 												 vgmdb:vgmdb 
 												 files:files];
@@ -85,9 +82,6 @@ static NSMutableDictionary *dates;
 
 - (IBAction) selectAlbum:(id)sender{
 	
-	if (ssc != nil){
-		[ssc release];
-	}
 	
 	ssc = [[DisplayController alloc] 
 		   initWithUrl:[[searchResults objectAtIndex:[table selectedRow]] 
@@ -215,7 +209,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		   modalForWindow: mainWindow
 			modalDelegate: ssc 
 		   didEndSelector: @selector(didEndSheet:returnCode:contextInfo:)
-			  contextInfo: mainTable]; 		
+			  contextInfo: (__bridge_retained void*) mainTable ]; 		
 	}
 	
 }
@@ -283,7 +277,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		
 //		NSString *path = [[NSBundle mainBundle] pathForResource:@"Vgmdb" ofType:@"rb"];
 //		[[MacRuby sharedRuntime] evaluateFileAtPath:path];
-		vgmdb = [[MacRuby sharedRuntime] evaluateString:@"Vgmdb.new"];
+//		vgmdb = [[MacRuby sharedRuntime] evaluateString:@"Vgmdb.new"];
 		[self reset:newFiles];
 		mainTable = aTable;
     }
@@ -291,9 +285,5 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 }
 
 
-- (void)dealloc
-{
-    [super dealloc];
-}
 
 @end

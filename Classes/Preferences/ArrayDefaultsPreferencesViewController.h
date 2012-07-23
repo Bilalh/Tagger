@@ -18,7 +18,7 @@
 - (IBAction) addRow:sender;
 - (IBAction) removeRow:sender;
 
-@property (assign) IBOutlet NSTableView *table;
-@property (assign) IBOutlet NSString *title;
+@property  IBOutlet NSTableView *table;
+@property  IBOutlet NSString *title;
 
 @end

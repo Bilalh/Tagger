@@ -32,7 +32,7 @@ NSString *const kMASPreferencesWindowControllerDidChangeViewNotification = @"MAS
 {
     if ((self = [super initWithWindowNibName:@"MASPreferencesWindow"]))
     {
-        _viewControllers = [viewControllers retain];
+        _viewControllers = viewControllers;
         _title = [title copy];
     }
     return self;
@@ -42,10 +42,7 @@ NSString *const kMASPreferencesWindowControllerDidChangeViewNotification = @"MAS
 {
     [[self window] setDelegate:nil];
     
-    [_viewControllers release];
-    [_title release];
     
-    [super dealloc];
 }
 
 #pragma mark -
@@ -149,7 +146,7 @@ NSString *const kMASPreferencesWindowControllerDidChangeViewNotification = @"MAS
         toolbarItem.target = self;
         toolbarItem.action = @selector(toolbarItemDidClick:);
     }
-    return [toolbarItem autorelease];
+    return toolbarItem;
 }
 
 #pragma mark -
@@ -214,10 +211,9 @@ NSString *const kMASPreferencesWindowControllerDidChangeViewNotification = @"MAS
     windowFrame.origin.y += heightChange;
     
     // Place the view into window and perform reposition
-    NSArray *subviews = [contentView.subviews retain];
-    for (NSView *subview in contentView.subviews)
+    NSArray *subviews = contentView.subviews;
+    for (NSView *subview in subviews)
         [subview removeFromSuperviewWithoutNeedingDisplay];
-    [subviews release];
     [self.window setFrame:windowFrame display:YES animate:animate];
     
     if ([_lastSelectedController respondsToSelector:@selector(viewDidDisappear)])

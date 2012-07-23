@@ -26,7 +26,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {	 
-	[[DDTTYLogger sharedInstance ] setLogFormatter:	[[[PSDDFormatter alloc ] init ] autorelease]];
+	[[DDTTYLogger sharedInstance ] setLogFormatter:	[[PSDDFormatter alloc ] init ]];
 	[DDLog addLogger:[DDASLLogger sharedInstance]];
 	[DDLog addLogger:[DDTTYLogger sharedInstance]];
 	
@@ -62,14 +62,9 @@
         NSArray *controllers = [[NSArray alloc] initWithObjects:
 								gp, cv, gr,ge, ap,
 								nil];
-        [gp release];
-        [cv release];
-        [ap release];
-		[gr release];
 		
         NSString *title = NSLocalizedString(@"Preferences", @"Common title for Preferences window");
         _preferencesWindowController = [[MASPreferencesWindowController alloc] initWithViewControllers:controllers title:title];
-        [controllers release];
     }
     return _preferencesWindowController;
 }

@@ -15,7 +15,7 @@
 	NSEvent* downEvent;
 }
 
-@property (assign) NSEvent* downEvent;
+@property  NSEvent* downEvent;
 
 - (NSString*) makeFilename;
 

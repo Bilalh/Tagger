@@ -19,8 +19,8 @@
 	SEL tagSelector;
 }
 
-@property (assign) IBOutlet NSTokenField *tokenField;
-@property (assign) NSString *buttonTitle;
+@property  IBOutlet NSTokenField *tokenField;
+@property  NSString *buttonTitle;
 
 - (id)initWithNodes:(FileSystemNodeCollection*)newNodes
 		   selector:(SEL)selector

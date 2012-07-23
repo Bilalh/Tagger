@@ -38,7 +38,7 @@
 - (NSMutableArray*)parentNodes;
 
 /// All the child nodes of this node 
-@property(readonly, retain) NSArray  *children;
+@property(readonly) NSArray  *children;
 
 /// Recalucates all the children on call to children
 - (void)invalidateChildren;
@@ -60,23 +60,23 @@
 /// @name Finding metadata
 
 /// The url of this node
-@property(readonly, assign) NSURL    *URL;
+@property(readonly) NSURL    *URL;
 
 /// The localised name of the node 
 @property(readonly, copy)   NSString *displayName;
 
 /// The node's icon
-@property(readonly, retain) NSImage  *icon;
+@property(readonly) NSImage  *icon;
 
 /// YES if a directory
 @property(readonly)         BOOL      isDirectory;
 
 /// The label colour of this node
-@property(readonly,retain) NSColor   *labelColor;
-@property(assign)          NSNumber  *labelIndex;
+@property(readonly) NSColor   *labelColor;
+@property          NSNumber  *labelIndex;
 
 /// The audio tags such as the title.
-@property(readonly, assign) Tags      *tags;
+@property(readonly, strong) Tags      *tags;
 /// YES if the file has basic metadata info.
 @property(readonly)         BOOL      hasBasicMetadata;
 /// YES if the file has extend metadata info.

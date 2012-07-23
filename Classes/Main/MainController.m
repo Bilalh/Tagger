@@ -22,7 +22,7 @@
 #import "CCTColorLabelMenuItemView.h"
 
 
-#import <MacRuby/MacRuby.h>
+//#import <MacRuby/MacRuby.h>
 #import "iTunes.h"
 
 #import "Logging.h"
@@ -230,25 +230,24 @@ static const NSArray *swapMenuValues;
 		NSMenu *menu = [[NSMenu alloc] init];
 		NSMenuItem *item;
 		
-		item = [[[NSMenuItem alloc] initWithTitle:@"Reveal in Finder" 
+		item = [[NSMenuItem alloc] initWithTitle:@"Reveal in Finder" 
 										   action:@selector(revealInFinder:) 
-									keyEquivalent:@""] autorelease];
+									keyEquivalent:@""];
 		[menu addItem:item];
 		[menu addItem:[NSMenuItem separatorItem]];
 		
 		// add our custom label picker view menu item
-		CCTColorLabelMenuItemView *labelTrackView = [[[CCTColorLabelMenuItemView alloc] initWithFrame:NSMakeRect(0, 0, 190, 50)] autorelease];
+		CCTColorLabelMenuItemView *labelTrackView = [[CCTColorLabelMenuItemView alloc] initWithFrame:NSMakeRect(0, 0, 190, 50)];
 		labelTrackView.delegate = self;
-		item = [[[NSMenuItem alloc] initWithTitle:@"Label" 
+		item = [[NSMenuItem alloc] initWithTitle:@"Label" 
 										   action:@selector(applyLabelToSelectedRows:) 
-									keyEquivalent:@""] autorelease];
+									keyEquivalent:@""];
 		[item setTarget:self];
 		[item setView:labelTrackView];
 		[menu addItem:item];
 		
 		
-		labelMenu = [menu retain];
-		[menu release];
+		labelMenu = menu;
 	}
 	
 	return labelMenu;
@@ -444,7 +443,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 						  self, 
 						  @selector(copyTags:returnCode:contextInfo:),
 						  NULL, 
-						  (void*)CFRetain(ip),  // CFRetain is need so ip does not get collected
+						  (__bridge_retained void*)ip,
 						  [NSString stringWithFormat:
 						   @"Copy Tags? (artwork is not copied) from \n%@ to \n%@",
 						   [from.tags displayName], [to.tags displayName]]
@@ -480,7 +479,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		
 		Tags *from = ([self nodeAtIndex:pair.first]).tags;
 		Tags *to   = ([self nodeAtIndex:pair.second]).tags;
-		const NSArray *keys = [[NSSet alloc ] initWithObjects:
+		const NSSet *keys = [[NSSet alloc ] initWithObjects:
 						 @"title",  @"album",  @"artist", @"composer", @"year",
 						 @"track",  @"disc",   @"genre",  @"albumArtist", 
 						 @"comment", @"grouping", @"totalTracks", @"totalDiscs",
@@ -492,7 +491,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		}
 		[table setNeedsDisplayInRect:[table rectOfRow:pair.second]];
 	}
-	CFRelease(pair);
+	//CFRelease(pair);
 }
 
 
@@ -501,7 +500,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 - (BOOL) tableView:(NSTableView *)tableView
 	   willKeyDown:(NSEvent *)event{
 	if ( [event timestamp] - lastKeyPress > 0.3 ){
-		[currentEventString release];
 		currentEventString  = [event charactersIgnoringModifiers];
 	}else{
 		currentEventString  = [currentEventString stringByAppendingString:[event charactersIgnoringModifiers]];
@@ -827,7 +825,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 {
 	DDLogInfo(@"rename");
 	
-	if (rfc)  [rfc release];
 	rfc = [[RenamingFilesController alloc] initWithNodes:currentNodes 
 												selector:@selector(renameWithFormatArray:)
 											 buttonTitle:@"Reaname" ];
@@ -836,7 +833,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	   modalForWindow: self.window
 		modalDelegate: rfc 
 	   didEndSelector: @selector(didEndSheet:returnCode:result:)
-		  contextInfo: self];
+		  contextInfo: (__bridge void *)(self)];
 }
 
 - (IBAction)renameWithPredefinedFormat:(id)sender
@@ -853,7 +850,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 {
 	DDLogInfo(@"tagsFromFileName");
 	
-	if (rfc)  [rfc release];
 	rfc = [[RenamingFilesController alloc] initWithNodes:currentNodes 
 												selector:@selector(tagsWithFormatArrayFromFilename:)
 											 buttonTitle:@"Tag" ];
@@ -862,7 +858,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	   modalForWindow: self.window
 		modalDelegate: rfc 
 	   didEndSelector: @selector(didEndSheet:returnCode:result:)
-		  contextInfo: self];
+		  contextInfo: (__bridge void *)(self)];
 }
 
 
@@ -887,7 +883,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	   modalForWindow: self.window
 		modalDelegate: vgc 
 	   didEndSelector: @selector(didEndSheet:returnCode:mainWindow:)
-		  contextInfo: self.window];
+		  contextInfo: (__bridge void *)(self.window)];
 	[table reloadData];
 }
 
@@ -911,7 +907,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	   modalForWindow: self.window
 		modalDelegate: vgc 
 	   didEndSelector: @selector(didEndSheet:returnCode:mainWindow:)
-		  contextInfo: self.window];
+		  contextInfo: (__bridge void *)(self.window)];
 	[table reloadData];
 }
 
@@ -975,7 +971,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 {
     // This document is now responsible of the preview panel
     // It is allowed to set the delegate, data source and refresh panel.
-    previewPanel = [panel retain];
+    previewPanel = panel;
     panel.delegate = self;
     panel.dataSource = self;
 }
@@ -985,7 +981,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
     // This document loses its responsisibility on the preview panel
     // Until the next call to -beginPreviewPanelControl: it must not
     // change the panel's delegate, data source or refresh it.
-    [previewPanel release];
     previewPanel = nil;
 }
 
@@ -1163,8 +1158,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 + (void)initialize
 {
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"Vgmdb" ofType:@"rb"];
-	[[MacRuby sharedRuntime] evaluateFileAtPath:path];
+//	NSString *path = [[NSBundle mainBundle] pathForResource:@"Vgmdb" ofType:@"rb"];
+//	[[MacRuby sharedRuntime] evaluateFileAtPath:path];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithContentsOfFile:
 															 [[NSBundle mainBundle] pathForResource:@"defaults" ofType:@"plist"]]];	
 	[[NSUserDefaults standardUserDefaults]  synchronize];
@@ -1200,10 +1195,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 }
 
-- (void)dealloc
-{
-    [super dealloc];
-}
 
 
 @end
