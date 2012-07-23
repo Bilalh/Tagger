@@ -13,7 +13,6 @@
 
 
 struct _Vgmdb{
-    htmlcxx::HTML::ParserDom parser;
 };
 
 

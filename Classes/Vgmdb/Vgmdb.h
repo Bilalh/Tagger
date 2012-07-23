@@ -14,4 +14,6 @@ struct _Vgmdb;
 
     struct _Vgmdb;
 
+- (NSDictionary*) searchResults:(NSString*)search;
+
 @end

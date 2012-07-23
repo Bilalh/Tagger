@@ -59,6 +59,7 @@
 		92A6808813EC7B130067DD5F /* MASPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A6808513EC7B130067DD5F /* MASPreferencesWindow.xib */; };
 		92A6808913EC7B130067DD5F /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A6808713EC7B130067DD5F /* MASPreferencesWindowController.m */; };
 		92A96F2D15BCD2DC004A320E /* Vgmdb.mm in Sources */ = {isa = PBXBuildFile; fileRef = 92A96F2C15BCD2DC004A320E /* Vgmdb.mm */; };
+		92A96F3315BCEB25004A320E /* libhtmlcxx.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A96F3215BCEB25004A320E /* libhtmlcxx.3.dylib */; };
 		92C4466413E0BF830038F817 /* BWHyperlinkTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4466113E0BF830038F817 /* BWHyperlinkTitleButton.m */; };
 		92C4466513E0BF830038F817 /* BWHyperlinkButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4466313E0BF830038F817 /* BWHyperlinkButtonCell.m */; };
 		92D30AC31405B1B600677B70 /* IntPair.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D30AC21405B1B600677B70 /* IntPair.m */; };
@@ -179,6 +180,7 @@
 		92A96F2C15BCD2DC004A320E /* Vgmdb.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Vgmdb.mm; sourceTree = "<group>"; };
 		92A96F2E15BCD82B004A320E /* VgmdbStruct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VgmdbStruct.h; sourceTree = "<group>"; };
 		92A96F3115BCDD73004A320E /* hcxselect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hcxselect.h; sourceTree = "<group>"; };
+		92A96F3215BCEB25004A320E /* libhtmlcxx.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libhtmlcxx.3.dylib; path = ../../../../usr/local/Cellar/htmlcxx/0.84/lib/libhtmlcxx.3.dylib; sourceTree = "<group>"; };
 		92C4466013E0BF830038F817 /* BWHyperlinkTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWHyperlinkTitleButton.h; sourceTree = "<group>"; };
 		92C4466113E0BF830038F817 /* BWHyperlinkTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWHyperlinkTitleButton.m; sourceTree = "<group>"; };
 		92C4466213E0BF830038F817 /* BWHyperlinkButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWHyperlinkButtonCell.h; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A96F3315BCEB25004A320E /* libhtmlcxx.3.dylib in Frameworks */,
 				92F16DB314041D8B0031E4B4 /* libicucore.dylib in Frameworks */,
 				92E6EDF713F32B3C0045679E /* Quartz.framework in Frameworks */,
 				92E6EDE413F320540045679E /* ScriptingBridge.framework in Frameworks */,
@@ -348,6 +351,7 @@
 		925CE81213C3BD6D009D6D94 = {
 			isa = PBXGroup;
 			children = (
+				92A96F3215BCEB25004A320E /* libhtmlcxx.3.dylib */,
 				92E6ED6D13F313230045679E /* Classes */,
 				920660BD13C89845003A3803 /* Resources */,
 				920660BA13C89845003A3803 /* Other Sources */,
@@ -888,6 +892,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Frameworks",
+					/usr/local/Cellar/htmlcxx/0.84/lib,
 				);
 				LLVM_LTO = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
@@ -933,6 +938,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Frameworks",
+					/usr/local/Cellar/htmlcxx/0.84/lib,
 				);
 				LLVM_LTO = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
