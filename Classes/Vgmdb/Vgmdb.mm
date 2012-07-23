@@ -93,13 +93,16 @@ using namespace hcxselect;
             
             [self printNode:*it inHtml:html];
             
-            Node catalog_td = *(*it)->first_child;
+            Node *catalog_td = (*it)->first_child;
+            string catalog = catalog_td->first_child->first_child->data.text();
             
-//            Node a = *(*it)->first_child->first_child->first_child;
+            Node *title_td = catalog_td->next_sibling->next_sibling;
+            
+            Node *year_td = title_td->next_sibling;
+            
 //           map<string, string> att= a.first_child->data.attributes();
 //            cout << att.size();
             
-            Node title = *(*it)->first_child->next_sibling->next_sibling->first_child->first_child;
         }
         
     }else {
