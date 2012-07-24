@@ -59,7 +59,13 @@ using namespace hcxselect;
 {
     
     namesMap = [NSDictionary dictionaryWithObjectsAndKeys:
-                @"@english",@"en",
+                @"@english", @"en",
+                @"@kanji",   @"ja",
+                @"@romaji",  @"ja-Latn",
+                @"@english", @"English",
+                @"@kanji",   @"Japanese ",
+                @"@romaji",  @"Romaji",
+                @"latin",    @"",
                 nil];
 }
 
@@ -86,42 +92,41 @@ using namespace hcxselect;
         htmlcxx::HTML::ParserDom parser;
         tree<htmlcxx::HTML::Node> dom = parser.parseTree(html);
         Selector s(dom);
-    
-//        map<string, string> att= b.attributes();
-//        cout << att["url"];
-//        cout << att["album"];
-//        cout << att.size() ;
-        
-//        
-//        std::map<std::string, std::string>::iterator i = att.begin();
-//        for( ; i != att.end(); ++i )
-//        {
-//            cout << i->first << " -> " << i->second << endl;
-//            
-//        }
-        
+            
         NSMutableArray *rows = [[NSMutableArray alloc] init];
         
         Selector res = s.select("div#albumresults tbody > tr");
-        Selector::iterator it = res.begin();    
         cout << "Selector num:" << res.size() << "\n";
         
+        Selector::iterator it = res.begin();    
         for (; it != res.end(); ++it) {
-            
 //            [self printNode:*it inHtml:html];
             
             Node *catalog_td = (*it)->first_child;
-            string catalog = catalog_td->first_child->first_child->data.text();
+            string _catalog = catalog_td->first_child->first_child->data.text();
+            NSString *catalog = [[NSString alloc] initWithCppString:&_catalog];
             
             Node *title_td = catalog_td->next_sibling->next_sibling;
             Node *first_title = title_td->first_child->first_child;
-            [self splitLanguagesInNodes:first_title];
+            NSDictionary *album =[self splitLanguagesInNodes:first_title];
+            
+            Node *url_a = title_td->first_child;
+            url_a->data.parseAttributes();
+            map<string, string> att= url_a->data.attributes();
+            string _url = att["href"];
+            NSString *url = [[NSString alloc] initWithCppString:&_url];
             
             Node *year_td = title_td->next_sibling;
-            string year = year_td->first_child->first_child->data.text();
+            string _year = year_td->first_child->first_child->data.text();
+            NSString *year = [[NSString alloc] initWithCppString:&_year];
+
             
-//           map<string, string> att= a.first_child->data.attributes();
-//            cout << att.size();
+            [rows addObject:[NSDictionary dictionaryWithObjectsAndKeys:
+                             catalog, @"catalog" ,
+                             year,    @"released",
+                             album,   @"album",
+                             url,     @"url",
+                             nil]];
             
         }
         
@@ -138,20 +143,39 @@ using namespace hcxselect;
 
 - (NSDictionary*)splitLanguagesInNodes:(Node*)node
 {
-    NSMutableDictionary *d = [NSMutableDictionary new];
+    NSMutableDictionary *titles= [NSMutableDictionary new];
     while (node) {
-        string title = node->first_child->data.text();
         
         node->data.parseAttributes();
         map<string, string> att= node->data.attributes();
         cout << att.size();
-        //TODO check for nothing?
-        string _lang  = att["lang"];
-        NSString *lang = [namesMap objectForKey:
-                          [[NSString alloc] initWithCppString:&_lang] ];
+        map<string, string>::iterator itLang= att.find("lang");
+        
+        NSString *lang;
+        if (att.end() != itLang){
+            string _lang  = itLang->second;
+            lang = [[NSString alloc] initWithCppString:&_lang];
+            lang = [namesMap valueForKey:lang];
+        }else{
+            lang = @"@english";
+        }
+        
+        Node *titleNode = node->first_child;
+        while(titleNode->data.isTag()){
+            if (!titleNode->next_sibling){
+                titleNode = titleNode->first_child;
+            }else{
+                 titleNode = titleNode->next_sibling;   
+            }
+        }
+        
+        string _title = titleNode->data.text();
+        NSString *title = [[NSString alloc] initWithCppString:&_title];
+        
+        [titles setValue: title forKey:lang];
         node = node->next_sibling;
     }
-    return d;
+    return titles;
 }
 
 #pragma mark -
