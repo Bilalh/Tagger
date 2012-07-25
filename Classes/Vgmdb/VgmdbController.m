@@ -1,17 +1,18 @@
 //
 //  VgmdbController.m
-//  VGTagger
+//  Tagger
 //
 //  Created by Bilal Syed Hussain on 08/07/2011.
 //  Copyright 2011  All rights reserved.
 //
 
-//#import <MacRuby/MacRuby.h>
 #import "VgmdbController.h"
 #import "DisplayController.h"
 #import "Utility.h"
 #import "FileSystemNode.h"
 #import "Tags.h"
+
+#import "Vgmdb.h"
 
 #import "Logging.h"
 LOG_LEVEL(LOG_LEVEL_INFO);
@@ -60,10 +61,8 @@ static NSMutableDictionary *dates;
 - (IBAction) searchForAlbums:(id)sender
 {
 	DDLogInfo(@"Search button pressed");
-//	id temp = [vgmdb performRubySelector:@selector(search:)
-//								 withArguments:query, 
-//					 nil];
-    id temp = [NSNull null];
+
+    id temp = [vgmdb searchResults:query];
 	if (temp == [NSNull null]){
 		searchResults = nil;
 	}else if ([temp isKindOfClass:[NSDictionary class]]) {
@@ -230,6 +229,25 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 #pragma mark -
 #pragma mark Init
 
+- (id)initWithFiles:(NSArray*)newFiles
+			  table:(NSTableView*)aTable;
+{
+	self = [super initWithWindowNibName:@"VgmdbSearch"];
+    if (self) {
+		
+		languages = [[NSArray alloc] initWithObjects:@"@english", @"@romaji",@"@kanji" , nil];
+		selectedLanguage = [languages objectAtIndex:0];
+		
+        //		NSString *path = [[NSBundle mainBundle] pathForResource:@"Vgmdb" ofType:@"rb"];
+        //		[[MacRuby sharedRuntime] evaluateFileAtPath:path];
+        //		vgmdb = [[MacRuby sharedRuntime] evaluateString:@"Vgmdb.new"];
+        
+        vgmdb = [Vgmdb new];
+        [self reset:newFiles];
+		mainTable = aTable;
+    }
+    return self;
+}
 
 + (void)initialize
 {
@@ -265,26 +283,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[table reloadData];
 	tags = 	[[files objectAtIndex:0 ] tags];
 }
-
-- (id)initWithFiles:(NSArray*)newFiles
-			  table:(NSTableView*)aTable;
-{
-	self = [super initWithWindowNibName:@"VgmdbSearch"];
-    if (self) {
-		
-		languages = [[NSArray alloc] initWithObjects:@"@english", @"@romaji",@"@kanji" , nil];
-		selectedLanguage = [languages objectAtIndex:0];
-		
-        vgmdb = [Vgmdb new];
-//		NSString *path = [[NSBundle mainBundle] pathForResource:@"Vgmdb" ofType:@"rb"];
-//		[[MacRuby sharedRuntime] evaluateFileAtPath:path];
-//		vgmdb = [[MacRuby sharedRuntime] evaluateString:@"Vgmdb.new"];
-		[self reset:newFiles];
-		mainTable = aTable;
-    }
-    return self;
-}
-
 
 
 @end

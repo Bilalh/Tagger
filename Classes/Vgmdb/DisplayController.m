@@ -88,7 +88,7 @@ LOG_LEVEL(LOG_LEVEL_INFO);
 	NSMutableDictionary *radio = [fieldProperties objectForKey:@"radio"];
 	
 	[radio setObject: 
-	 [[radio objectForKey: [NSString stringWithFormat:@"%d",tag ]] 
+	 [[radio objectForKey: [NSString stringWithFormat:@"%zd",tag ]] 
 	  objectForKey: @"language"] forKey:@"language"]; 
 	
 	[table setNeedsDisplayInRect:
@@ -196,7 +196,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 	
 	min = MIN([files count], [tracks count]);
-	DDLogInfo(@"min:%d", min);
+	DDLogInfo(@"min:%zd", min);
 	
 	return[self initWithWindowNibName:@"VgmdbDisplay"];	
 }

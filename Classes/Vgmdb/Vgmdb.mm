@@ -7,10 +7,10 @@
 //
 
 #import "Vgmdb.h"
-#import "Logging.h"
 
 #import "NSString+Convert.h"
 
+#import "Logging.h"
 LOG_LEVEL(LOG_LEVEL_VERBOSE);
 
 #include <string>
@@ -48,8 +48,8 @@ using namespace hcxselect;
 {
     self = [super init];
     if (self) {
-        NSLog(@"ddd");
-        [self searchResults:@"Rorona"];
+        DDLogVerbose(@"ddd");
+//        [self searchResults:@"Rorona"];
         
     }
     return self;
@@ -72,8 +72,9 @@ using namespace hcxselect;
 #pragma mark -
 #pragma mark searching 
 
-- (NSDictionary*) searchResults:(NSString*)search
+- (NSArray*) searchResults:(NSString*)search
 {
+    
     
     NSString *baseUrl = @"http://vgmdb.net/search?q=";
     
@@ -127,15 +128,15 @@ using namespace hcxselect;
                              album,   @"album",
                              url,     @"url",
                              nil]];
-            
         }
+        
+        return rows; 
         
     }else {
         DDLogInfo(@"%@", [err localizedFailureReason]);
-        
     }
     
-    return [NSDictionary new];
+    return [NSArray new];
 }
 
 #pragma mark -

@@ -475,7 +475,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	  contextInfo:(IntPair*)pair;
 {
 	if (returnCode == NSAlertDefaultReturn){
-		DDLogInfo(@"selected yes %d %d",pair.first, pair.second);
+		DDLogInfo(@"selected yes %zd %zd",pair.first, pair.second);
 		
 		Tags *from = ([self nodeAtIndex:pair.first]).tags;
 		Tags *to   = ([self nodeAtIndex:pair.second]).tags;

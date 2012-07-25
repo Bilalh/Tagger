@@ -180,7 +180,7 @@
 		92A96F2C15BCD2DC004A320E /* Vgmdb.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Vgmdb.mm; sourceTree = "<group>"; };
 		92A96F2E15BCD82B004A320E /* VgmdbStruct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VgmdbStruct.h; sourceTree = "<group>"; };
 		92A96F3115BCDD73004A320E /* hcxselect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hcxselect.h; sourceTree = "<group>"; };
-		92A96F3215BCEB25004A320E /* libhtmlcxx.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libhtmlcxx.3.dylib; path = ../../../../usr/local/Cellar/htmlcxx/0.84/lib/libhtmlcxx.3.dylib; sourceTree = "<group>"; };
+		92A96F3215BCEB25004A320E /* libhtmlcxx.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libhtmlcxx.3.dylib; path = /usr/local/Cellar/htmlcxx/0.84/lib/libhtmlcxx.3.dylib; sourceTree = "<absolute>"; };
 		92C4466013E0BF830038F817 /* BWHyperlinkTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWHyperlinkTitleButton.h; sourceTree = "<group>"; };
 		92C4466113E0BF830038F817 /* BWHyperlinkTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWHyperlinkTitleButton.m; sourceTree = "<group>"; };
 		92C4466213E0BF830038F817 /* BWHyperlinkButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWHyperlinkButtonCell.h; sourceTree = "<group>"; };
@@ -340,6 +340,7 @@
 		9254006513F0A52F0020C912 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92A96F3215BCEB25004A320E /* libhtmlcxx.3.dylib */,
 				92F2C1E515BC75DF00AF9D78 /* libhcxselect.a */,
 				9293B84614AF7C71006D96E7 /* Sparkle.framework */,
 				920660B913C89845003A3803 /* libtag.1.dylib */,
@@ -351,7 +352,6 @@
 		925CE81213C3BD6D009D6D94 = {
 			isa = PBXGroup;
 			children = (
-				92A96F3215BCEB25004A320E /* libhtmlcxx.3.dylib */,
 				92E6ED6D13F313230045679E /* Classes */,
 				920660BD13C89845003A3803 /* Resources */,
 				920660BA13C89845003A3803 /* Other Sources */,
@@ -675,7 +675,7 @@
 		925CE81413C3BD6D009D6D94 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "St. Andrews KY16 9XW";
 			};
 			buildConfigurationList = 925CE81713C3BD6D009D6D94 /* Build configuration list for PBXProject "Tagger" */;
@@ -871,6 +871,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -917,6 +918,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -961,6 +963,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -969,6 +972,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -977,6 +981,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -985,6 +990,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -994,6 +1000,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUGGING_SYMBOLS = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1011,6 +1018,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
