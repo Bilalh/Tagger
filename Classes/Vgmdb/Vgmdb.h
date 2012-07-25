@@ -14,6 +14,17 @@ struct _Vgmdb;
 
     struct _Vgmdb;
 
-- (NSDictionary*) searchResults:(NSString*)search;
+
+/// Returns array of results for the string
+//{
+//    album = {
+//        "@english" = "Atelier Rorona ~The Alchemist of Arland~ Arland of Music";
+//    },
+//    catalog = "N/A",
+//    released = "Sep 28, 2010",
+//    url = "http://vgmdb.net/album/21270"
+//}
+
+- (NSArray*) searchResults:(NSString*)search;
 
 @end

@@ -150,6 +150,31 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 #pragma mark -
 #pragma mark Init
 
+- (id)initWithAlbum:(NSDictionary*)album
+              vgmdb:(id)vgmdbObject
+              files:(NSArray*)filesNodes
+{
+	vgmdb  = vgmdbObject;
+	albumDetails = album;
+	tracks =  [vgmdb performRubySelector:@selector(get_tracks_array:)
+						   withArguments:albumDetails,
+			   nil];
+	id res = [self initCommon:filesNodes];
+	return res;
+}
+
+- (id)initWithUrl:(NSString*)url
+			vgmdb:(id)vgmdbObject
+			files:(NSArray*)filesNodes;
+{
+	vgmdb = vgmdbObject;
+	[self setAlbumUrl:url];
+	id res =[self initCommon:filesNodes];
+	[fieldValues setObject:url forKey:@"url"];
+	return res;
+} 
+
+
 - (id)initCommon:(NSArray*)filesNodes
 {
 	files = [filesNodes sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
@@ -199,33 +224,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	DDLogInfo(@"min:%zd", min);
 	
 	return[self initWithWindowNibName:@"VgmdbDisplay"];	
-}
-
-- (id)initWithAlbum:(NSDictionary*)album
-			vgmdb:(id)vgmdbObject
-			files:(NSArray*)filesNodes
-{
-	vgmdb  = vgmdbObject;
-	albumDetails = album;
-	tracks =  [vgmdb performRubySelector:@selector(get_tracks_array:)
-						   withArguments:albumDetails, 
-			   nil];
-	id res = [self initCommon:filesNodes];
-	return res;
-}
-
-- (id)initWithUrl:(NSString*)url
-			vgmdb:(id)vgmdbObject
-			files:(NSArray*)filesNodes;
-{
-	vgmdb = vgmdbObject;
-	[self setAlbumUrl:url];
-	id res =[self initCommon:filesNodes];
-	[fieldValues setObject:url forKey:@"url"];
-	return res;
-} 
-
-	
+}	
 
 #pragma mark -
 #pragma mark Setup

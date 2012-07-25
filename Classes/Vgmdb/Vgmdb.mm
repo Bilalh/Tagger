@@ -70,7 +70,7 @@ using namespace hcxselect;
 }
 
 #pragma mark -
-#pragma mark searching 
+#pragma mark Searching 
 
 - (NSArray*) searchResults:(NSString*)search
 {
@@ -80,16 +80,10 @@ using namespace hcxselect;
     
     NSString *tmp = [baseUrl stringByAppendingString:search];
     NSString *_url = [tmp stringByAddingPercentEscapesUsingEncoding:NSUnicodeStringEncoding];
-    NSURL *url = [NSURL URLWithString:_url];
-    
     NSError *err = nil;
-    NSString *_html = [NSString stringWithContentsOfURL: url
-                                               encoding:NSISOLatin1StringEncoding
-                                                  error:&err];
-    
+    string html  = [self cppstringWithContentsOfURL:_url
+                                              error:&err];
     if (!err){
-        string html  = std::string([_html UTF8String]);
-        
         htmlcxx::HTML::ParserDom parser;
         tree<htmlcxx::HTML::Node> dom = parser.parseTree(html);
         Selector s(dom);
@@ -97,7 +91,7 @@ using namespace hcxselect;
         NSMutableArray *rows = [[NSMutableArray alloc] init];
         
         Selector res = s.select("div#albumresults tbody > tr");
-        cout << "Selector num:" << res.size() << "\n";
+//        cout << "Selector num:" << res.size() << "\n";
         
         Selector::iterator it = res.begin();    
         for (; it != res.end(); ++it) {
@@ -118,7 +112,12 @@ using namespace hcxselect;
             NSString *url = [[NSString alloc] initWithCppString:&_url];
             
             Node *year_td = title_td->next_sibling;
-            string _year = year_td->first_child->first_child->data.text();
+            Node *year_t = year_td;
+            while(year_t->data.isTag()){
+                year_t = year_t->first_child;
+            }
+            
+            string _year = year_t->data.text();
             NSString *year = [[NSString alloc] initWithCppString:&_year];
 
             
@@ -140,7 +139,18 @@ using namespace hcxselect;
 }
 
 #pragma mark -
-#pragma mark vgmdb common
+#pragma mark Album data
+
+- (NSDictionary*)getAlbumData:(NSString*) url
+{
+    ;
+//    htmlcxx::HTML::ParserDom parser;
+//    tree<htmlcxx::HTML::Node> dom = parser.parseTree(html);
+//    Selector s(dom);
+}
+
+#pragma mark -
+#pragma mark Common
 
 - (NSDictionary*)splitLanguagesInNodes:(Node*)node
 {
@@ -149,7 +159,7 @@ using namespace hcxselect;
         
         node->data.parseAttributes();
         map<string, string> att= node->data.attributes();
-        cout << att.size();
+//        cout << att.size();
         map<string, string>::iterator itLang= att.find("lang");
         
         NSString *lang;
@@ -183,10 +193,22 @@ using namespace hcxselect;
 #pragma mark Html helpers  
 
 - (void)printNode:(Node*)node
-          inHtml:(std::string)html
+           inHtml:(std::string)html
 {
-    std::cout << html.substr(node->data.offset(), node->data.length()) << "\n\n\n";
+    cout << html.substr(node->data.offset(), node->data.length()) << "\n\n\n";
 }
 
+- (std::string) cppstringWithContentsOfURL:(NSString*)_url
+                                     error:(NSError**)error
+{
+    NSURL *url = [NSURL URLWithString:_url];
+    NSString *_html = [NSString stringWithContentsOfURL: url
+                                               encoding:NSISOLatin1StringEncoding
+                                                  error:error];
+    if (!(*error)){
+        return string([_html UTF8String]);
+    }
+    return nil;
+}
 
 @end
