@@ -54,21 +54,22 @@ using namespace hcxselect;
         DDLogVerbose(@"ddd");
 //        [self searchResults:@"Rorona"];
         
-        NSString *s=  [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://vgmdb.net/album/13192"]
-                                               encoding:NSUTF8StringEncoding
-                                                  error:nil];
-        [s writeToFile:[@"~/ar.html" stringByExpandingTildeInPath]
-            atomically:NO
-              encoding:NSUTF8StringEncoding
-                 error:nil];
+//        NSString *s=  [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://vgmdb.net/album/13192"]
+//                                               encoding:NSUTF8StringEncoding
+//                                                  error:nil];
+//        [s writeToFile:[@"~/ar.html" stringByExpandingTildeInPath]
+//            atomically:NO
+//              encoding:NSUTF8StringEncoding
+//                 error:nil];
         
+        NSDictionary *d =[self getAlbumData:[[NSURL alloc] initFileURLWithPath:[@"~/ar.html" stringByExpandingTildeInPath] ]];
+        DDLogInfo(@"%@ ", d);
     }
     return self;
 }
 
 + (void)initialize
 {
-    
     namesMap = [NSDictionary dictionaryWithObjectsAndKeys:
                 @"@english", @"en",
                 @"@kanji",   @"ja",
@@ -85,8 +86,6 @@ using namespace hcxselect;
 
 - (NSArray*) searchResults:(NSString*)search
 {
-    
-    
     NSString *baseUrl = @"http://vgmdb.net/search?q=";
     
     NSString *tmp = [baseUrl stringByAppendingString:search];
@@ -152,15 +151,36 @@ using namespace hcxselect;
 #pragma mark -
 #pragma mark Album data
 
+// 
+- (NSDictionary*) getAlbumTitles:(const tree<htmlcxx::HTML::Node>&)dom
+                         forHtml:(const std::string&)html
+{
+    Selector s(dom);
+    Selector res = s.select("h1>span.albumtitle");
+    Node *n = *res.begin();
+//    [self printNode:n inHtml:html];
+    NSDictionary *titles = [self splitLanguagesInNodes:n];
+    return titles;
+}
+
 - (NSDictionary*)getAlbumData:(NSURL*) url
 {
+    NSMutableDictionary *data = [NSMutableDictionary new];
+    
     NSError *err;
     string html = [self cppstringWithContentsOfURL:url error:&err];
     
     htmlcxx::HTML::ParserDom parser;
     tree<htmlcxx::HTML::Node> dom = parser.parseTree(html);
     Selector s(dom);
+    
+    [data setValue:[self getAlbumTitles:dom forHtml:html]
+            forKey:@"album"];
+    
+    [data setValue:url forKey:@"url"];
+    return data;
 }
+
 
 #pragma mark -
 #pragma mark Common
@@ -184,19 +204,22 @@ using namespace hcxselect;
             lang = @"@english";
         }
         
-        Node *titleNode = node->first_child;
-        while(titleNode->data.isTag()){
-            if (!titleNode->next_sibling){
-                titleNode = titleNode->first_child;
-            }else{
-                 titleNode = titleNode->next_sibling;   
+        if (node->next_sibling){
+            Node *titleNode = node->first_child;
+            while(titleNode->data.isTag()){
+                if (!titleNode->next_sibling){
+                    titleNode = titleNode->first_child;
+                }else{
+                    titleNode = titleNode->next_sibling;
+                }
             }
+            
+            string _title = titleNode->data.text();
+            NSString *title = [[NSString alloc] initWithCppString:&_title];
+            
+            [titles setValue: title forKey:lang];
         }
         
-        string _title = titleNode->data.text();
-        NSString *title = [[NSString alloc] initWithCppString:&_title];
-        
-        [titles setValue: title forKey:lang];
         node = node->next_sibling;
     }
     return titles;
