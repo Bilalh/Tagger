@@ -36,6 +36,9 @@ using namespace hcxselect;
 
 - (NSDictionary*)splitLanguagesInNodes:(Node*)node;
 
+- (std::string) cppstringWithContentsOfURL:(NSURL*)url
+ error:(NSError**)error;
+
 @end
 
 
@@ -50,6 +53,14 @@ using namespace hcxselect;
     if (self) {
         DDLogVerbose(@"ddd");
 //        [self searchResults:@"Rorona"];
+        
+        NSString *s=  [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://vgmdb.net/album/13192"]
+                                               encoding:NSUTF8StringEncoding
+                                                  error:nil];
+        [s writeToFile:[@"~/ar.html" stringByExpandingTildeInPath]
+            atomically:NO
+              encoding:NSUTF8StringEncoding
+                 error:nil];
         
     }
     return self;
@@ -81,7 +92,7 @@ using namespace hcxselect;
     NSString *tmp = [baseUrl stringByAppendingString:search];
     NSString *_url = [tmp stringByAddingPercentEscapesUsingEncoding:NSUnicodeStringEncoding];
     NSError *err = nil;
-    string html  = [self cppstringWithContentsOfURL:_url
+    string html  = [self cppstringWithContentsOfURL:[NSURL URLWithString:_url]
                                               error:&err];
     if (!err){
         htmlcxx::HTML::ParserDom parser;
@@ -141,12 +152,14 @@ using namespace hcxselect;
 #pragma mark -
 #pragma mark Album data
 
-- (NSDictionary*)getAlbumData:(NSString*) url
+- (NSDictionary*)getAlbumData:(NSURL*) url
 {
-    ;
-//    htmlcxx::HTML::ParserDom parser;
-//    tree<htmlcxx::HTML::Node> dom = parser.parseTree(html);
-//    Selector s(dom);
+    NSError *err;
+    string html = [self cppstringWithContentsOfURL:url error:&err];
+    
+    htmlcxx::HTML::ParserDom parser;
+    tree<htmlcxx::HTML::Node> dom = parser.parseTree(html);
+    Selector s(dom);
 }
 
 #pragma mark -
@@ -198,12 +211,11 @@ using namespace hcxselect;
     cout << html.substr(node->data.offset(), node->data.length()) << "\n\n\n";
 }
 
-- (std::string) cppstringWithContentsOfURL:(NSString*)_url
+- (std::string) cppstringWithContentsOfURL:(NSURL*)url
                                      error:(NSError**)error
 {
-    NSURL *url = [NSURL URLWithString:_url];
     NSString *_html = [NSString stringWithContentsOfURL: url
-                                               encoding:NSISOLatin1StringEncoding
+                                               encoding:NSUTF8StringEncoding
                                                   error:error];
     if (!(*error)){
         return string([_html UTF8String]);

@@ -81,7 +81,6 @@ static NSMutableDictionary *dates;
 
 - (IBAction) selectAlbum:(id)sender{
 	
-	
 	ssc = [[DisplayController alloc] 
 		   initWithUrl:[[searchResults objectAtIndex:[table selectedRow]] 
 						objectForKey:@"url"]
@@ -90,6 +89,9 @@ static NSMutableDictionary *dates;
 	
 	[self confirmSheet:nil];
 }
+
+#pragma mark -
+#pragma mark Query Setting
 
 - (IBAction) useAlbumForQuery:(id)sender   { self.query = tags.album; }
 - (IBAction) useArtistForQuery:(id)sender  { self.query = tags.artist; }
