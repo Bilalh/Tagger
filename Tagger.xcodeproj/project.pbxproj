@@ -43,7 +43,7 @@
 		9252929815C359C300C8CD9E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9252929715C359C300C8CD9E /* SenTestingKit.framework */; };
 		9252929A15C359C300C8CD9E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9252929915C359C300C8CD9E /* Cocoa.framework */; };
 		925292A415C359C300C8CD9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 925292A215C359C300C8CD9E /* InfoPlist.strings */; };
-		925292A715C359C300C8CD9E /* VgmdbTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 925292A615C359C300C8CD9E /* VgmdbTests.m */; };
+		925292A715C359C300C8CD9E /* VgmdbTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 925292A615C359C300C8CD9E /* VgmdbTests.mm */; };
 		925292AD15C359EA00C8CD9E /* Vgmdb.mm in Sources */ = {isa = PBXBuildFile; fileRef = 92A96F2C15BCD2DC004A320E /* Vgmdb.mm */; };
 		925292B115C35C8900C8CD9E /* PSDDFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E6ED8A13F313230045679E /* PSDDFormatter.m */; };
 		925292B315C35CAB00C8CD9E /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD113DA087D00244796 /* DDAbstractDatabaseLogger.m */; };
@@ -169,7 +169,7 @@
 		9252929E15C359C300C8CD9E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		925292A115C359C300C8CD9E /* VgmdbTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VgmdbTests-Info.plist"; sourceTree = "<group>"; };
 		925292A315C359C300C8CD9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		925292A615C359C300C8CD9E /* VgmdbTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VgmdbTests.m; sourceTree = "<group>"; };
+		925292A615C359C300C8CD9E /* VgmdbTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = VgmdbTests.mm; sourceTree = "<group>"; };
 		925292A815C359C300C8CD9E /* VgmdbTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VgmdbTests-Prefix.pch"; sourceTree = "<group>"; };
 		925CE81D13C3BD6D009D6D94 /* Tagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowLeftBlack16.tiff; sourceTree = "<group>"; };
@@ -394,7 +394,7 @@
 		9252929F15C359C300C8CD9E /* VgmdbTests */ = {
 			isa = PBXGroup;
 			children = (
-				925292A615C359C300C8CD9E /* VgmdbTests.m */,
+				925292A615C359C300C8CD9E /* VgmdbTests.mm */,
 				925292A015C359C300C8CD9E /* Supporting Files */,
 			);
 			path = VgmdbTests;
@@ -888,7 +888,7 @@
 				925292BB15C35CAB00C8CD9E /* DDTTYLogger.m in Sources */,
 				925292B115C35C8900C8CD9E /* PSDDFormatter.m in Sources */,
 				925292AD15C359EA00C8CD9E /* Vgmdb.mm in Sources */,
-				925292A715C359C300C8CD9E /* VgmdbTests.m in Sources */,
+				925292A715C359C300C8CD9E /* VgmdbTests.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -996,11 +996,19 @@
 					"$(inherited)",
 				);
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Frameworks",
+					/usr/local/Cellar/htmlcxx/0.84/lib,
+					/usr/local/Cellar/htmlcxx/0.84/include/,
+					"$(SRCROOT)/Classes/",
+					"\"$(SRCROOT)/Other Sources/Headers/\"",
+				);
 				INFOPLIST_FILE = "VgmdbTests/VgmdbTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Frameworks",
-					/usr/local/Cellar/htmlcxx/0.84/lib,
+					/usr/local/Cellar/htmlcxx/0.84/lib/,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CPLUSPLUSFLAGS = (
@@ -1035,11 +1043,19 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VgmdbTests/VgmdbTests-Prefix.pch";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Frameworks",
+					/usr/local/Cellar/htmlcxx/0.84/lib,
+					/usr/local/Cellar/htmlcxx/0.84/include/,
+					"$(SRCROOT)/Classes/",
+					"\"$(SRCROOT)/Other Sources/Headers/\"",
+				);
 				INFOPLIST_FILE = "VgmdbTests/VgmdbTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Frameworks",
-					/usr/local/Cellar/htmlcxx/0.84/lib,
+					/usr/local/Cellar/htmlcxx/0.84/lib/,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CPLUSPLUSFLAGS = (

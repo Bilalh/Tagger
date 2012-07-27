@@ -6,10 +6,14 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import <hcxselect.h>
+#import <vgmdb/Vgmdb.h>
 
 @interface VgmdbTests : SenTestCase
 
+
 @end
+
 
 @implementation VgmdbTests
 
