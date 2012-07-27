@@ -163,6 +163,35 @@ using namespace hcxselect;
     return titles;
 }
 
+- (Node*) getNodeFrom:(std::string) selector
+        usingSelector:(Selector) s
+{
+    Selector res = s.select("h1>span.albumtitle");
+    Node *n = *res.begin();
+    return n;
+}
+
+
+- (void) storeMetadata:(const tree<htmlcxx::HTML::Node>&)dom
+               forHtml:(const std::string&)html
+                in:(NSDictionary*)data
+{
+    Node *n;
+    Selector s(dom);
+    Selector meta = s.select("table#album_infobit_large");
+    
+    Selector catalogElem = meta.select("tr td[width='100%']");
+    n = *catalogElem.begin();
+    
+    string _catalog = n->first_child->data.text();
+    NSString *catalog = [[NSString alloc] initWithCppString:&_catalog];
+    catalog =  [catalog stringByTrimmingCharactersInSet:
+                [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    [data setValue:catalog forKey:@"catalog"];
+    
+    
+}
+
 - (NSDictionary*)getAlbumData:(NSURL*) url
 {
     NSMutableDictionary *data = [NSMutableDictionary new];
@@ -176,6 +205,8 @@ using namespace hcxselect;
     
     [data setValue:[self getAlbumTitles:dom forHtml:html]
             forKey:@"album"];
+    
+    [self storeMetadata:dom forHtml:html in:data];
     
     [data setValue:url forKey:@"url"];
     return data;

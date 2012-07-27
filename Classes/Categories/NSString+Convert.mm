@@ -31,6 +31,7 @@
 	return [[NSString alloc] initWithUTF8String:cppString->c_str() ];
 }
 
+
 - (std::string*) cppString
 {
 	std::string *s  = new std::string([self UTF8String]);
