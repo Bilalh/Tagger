@@ -40,6 +40,19 @@
 		922E35D713C89BF3003C5913 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922E35D613C89BF3003C5913 /* Cocoa.framework */; };
 		9239573013F43EB100A80074 /* CCTColorLabelMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9239572F13F43EB100A80074 /* CCTColorLabelMenuItemView.m */; };
 		923B846413F4B7A800524BFA /* BHFinderLabelColours.m in Sources */ = {isa = PBXBuildFile; fileRef = 923B846313F4B7A800524BFA /* BHFinderLabelColours.m */; };
+		9252929815C359C300C8CD9E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9252929715C359C300C8CD9E /* SenTestingKit.framework */; };
+		9252929A15C359C300C8CD9E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9252929915C359C300C8CD9E /* Cocoa.framework */; };
+		925292A415C359C300C8CD9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 925292A215C359C300C8CD9E /* InfoPlist.strings */; };
+		925292A715C359C300C8CD9E /* VgmdbTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 925292A615C359C300C8CD9E /* VgmdbTests.m */; };
+		925292AD15C359EA00C8CD9E /* Vgmdb.mm in Sources */ = {isa = PBXBuildFile; fileRef = 92A96F2C15BCD2DC004A320E /* Vgmdb.mm */; };
+		925292B115C35C8900C8CD9E /* PSDDFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E6ED8A13F313230045679E /* PSDDFormatter.m */; };
+		925292B315C35CAB00C8CD9E /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD113DA087D00244796 /* DDAbstractDatabaseLogger.m */; };
+		925292B515C35CAB00C8CD9E /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD313DA087D00244796 /* DDASLLogger.m */; };
+		925292B715C35CAB00C8CD9E /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD513DA087D00244796 /* DDFileLogger.m */; };
+		925292B915C35CAB00C8CD9E /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD713DA087D00244796 /* DDLog.m */; };
+		925292BB15C35CAB00C8CD9E /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD913DA087D00244796 /* DDTTYLogger.m */; };
+		925292BC15C35CD100C8CD9E /* libhcxselect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F2C1E515BC75DF00AF9D78 /* libhcxselect.a */; };
+		925292BD15C35D5900C8CD9E /* libhtmlcxx.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A96F3215BCEB25004A320E /* libhtmlcxx.3.dylib */; };
 		9254006713F0A82C0020C912 /* libtag.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.1.dylib */; };
 		9254007113F0AC8F0020C912 /* libtag.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.1.dylib */; };
 		9264488A13D773CE0035E693 /* arrowLeftBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */; };
@@ -148,6 +161,16 @@
 		9239572F13F43EB100A80074 /* CCTColorLabelMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTColorLabelMenuItemView.m; sourceTree = "<group>"; };
 		923B846213F4B7A800524BFA /* BHFinderLabelColours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHFinderLabelColours.h; sourceTree = "<group>"; };
 		923B846313F4B7A800524BFA /* BHFinderLabelColours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHFinderLabelColours.m; sourceTree = "<group>"; };
+		9252929515C359C300C8CD9E /* VgmdbTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VgmdbTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9252929715C359C300C8CD9E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		9252929915C359C300C8CD9E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		9252929C15C359C300C8CD9E /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		9252929D15C359C300C8CD9E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9252929E15C359C300C8CD9E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		925292A115C359C300C8CD9E /* VgmdbTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VgmdbTests-Info.plist"; sourceTree = "<group>"; };
+		925292A315C359C300C8CD9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		925292A615C359C300C8CD9E /* VgmdbTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VgmdbTests.m; sourceTree = "<group>"; };
+		925292A815C359C300C8CD9E /* VgmdbTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VgmdbTests-Prefix.pch"; sourceTree = "<group>"; };
 		925CE81D13C3BD6D009D6D94 /* Tagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowLeftBlack16.tiff; sourceTree = "<group>"; };
 		9264488913D773CE0035E693 /* arrowRightBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowRightBlack16.tiff; sourceTree = "<group>"; };
@@ -265,6 +288,17 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9252929115C359C300C8CD9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				925292BD15C35D5900C8CD9E /* libhtmlcxx.3.dylib in Frameworks */,
+				925292BC15C35CD100C8CD9E /* libhcxselect.a in Frameworks */,
+				9252929815C359C300C8CD9E /* SenTestingKit.framework in Frameworks */,
+				9252929A15C359C300C8CD9E /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		925CE81A13C3BD6D009D6D94 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -337,6 +371,45 @@
 			path = CCTColorLabelMenuItemView;
 			sourceTree = "<group>";
 		};
+		9252929615C359C300C8CD9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9252929715C359C300C8CD9E /* SenTestingKit.framework */,
+				9252929915C359C300C8CD9E /* Cocoa.framework */,
+				9252929B15C359C300C8CD9E /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9252929B15C359C300C8CD9E /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9252929C15C359C300C8CD9E /* AppKit.framework */,
+				9252929D15C359C300C8CD9E /* CoreData.framework */,
+				9252929E15C359C300C8CD9E /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		9252929F15C359C300C8CD9E /* VgmdbTests */ = {
+			isa = PBXGroup;
+			children = (
+				925292A615C359C300C8CD9E /* VgmdbTests.m */,
+				925292A015C359C300C8CD9E /* Supporting Files */,
+			);
+			path = VgmdbTests;
+			sourceTree = "<group>";
+		};
+		925292A015C359C300C8CD9E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				925292A115C359C300C8CD9E /* VgmdbTests-Info.plist */,
+				925292A215C359C300C8CD9E /* InfoPlist.strings */,
+				925292A815C359C300C8CD9E /* VgmdbTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		9254006513F0A52F0020C912 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +428,8 @@
 				92E6ED6D13F313230045679E /* Classes */,
 				920660BD13C89845003A3803 /* Resources */,
 				920660BA13C89845003A3803 /* Other Sources */,
+				9252929F15C359C300C8CD9E /* VgmdbTests */,
+				9252929615C359C300C8CD9E /* Frameworks */,
 				925CE81E13C3BD6D009D6D94 /* Products */,
 				927883BF13E06E5000063D28 /* Readme.md */,
 				929A4ACD13DA027C00244796 /* Changelog.md */,
@@ -366,6 +441,7 @@
 			isa = PBXGroup;
 			children = (
 				925CE81D13C3BD6D009D6D94 /* Tagger.app */,
+				9252929515C359C300C8CD9E /* VgmdbTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -651,6 +727,24 @@
 /* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
+		9252929415C359C300C8CD9E /* VgmdbTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 925292AB15C359C300C8CD9E /* Build configuration list for PBXNativeTarget "VgmdbTests" */;
+			buildPhases = (
+				9252929015C359C300C8CD9E /* Sources */,
+				9252929115C359C300C8CD9E /* Frameworks */,
+				9252929215C359C300C8CD9E /* Resources */,
+				9252929315C359C300C8CD9E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VgmdbTests;
+			productName = VgmdbTests;
+			productReference = 9252929515C359C300C8CD9E /* VgmdbTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		925CE81C13C3BD6D009D6D94 /* Tagger */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 925CE83B13C3BD6D009D6D94 /* Build configuration list for PBXNativeTarget "Tagger" */;
@@ -696,11 +790,20 @@
 				9273E64013D6166C002BA3A0 /* Documentation */,
 				92CEE64A13F0A23600E4C5CE /* Embed MacRuby */,
 				9293B85114AF8E55006D96E7 /* Sparkle */,
+				9252929415C359C300C8CD9E /* VgmdbTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9252929215C359C300C8CD9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				925292A415C359C300C8CD9E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		925CE81B13C3BD6D009D6D94 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -731,6 +834,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		9252929315C359C300C8CD9E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
 		9273E64513D61678002BA3A0 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -761,6 +877,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9252929015C359C300C8CD9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				925292B315C35CAB00C8CD9E /* DDAbstractDatabaseLogger.m in Sources */,
+				925292B515C35CAB00C8CD9E /* DDASLLogger.m in Sources */,
+				925292B715C35CAB00C8CD9E /* DDFileLogger.m in Sources */,
+				925292B915C35CAB00C8CD9E /* DDLog.m in Sources */,
+				925292BB15C35CAB00C8CD9E /* DDTTYLogger.m in Sources */,
+				925292B115C35C8900C8CD9E /* PSDDFormatter.m in Sources */,
+				925292AD15C359EA00C8CD9E /* Vgmdb.mm in Sources */,
+				925292A715C359C300C8CD9E /* VgmdbTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		925CE81913C3BD6D009D6D94 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -822,6 +953,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		925292A215C359C300C8CD9E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				925292A315C359C300C8CD9E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		92E6EDDD13F314260045679E /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -833,6 +972,88 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		925292A915C359C300C8CD9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/Frameworks\"",
+					"/Library/Frameworks/**",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VgmdbTests/VgmdbTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "VgmdbTests/VgmdbTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Frameworks",
+					/usr/local/Cellar/htmlcxx/0.84/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-I/usr/local/include/taglib",
+					"-L@executable_path/../Resources",
+					"-I/usr/local/include/",
+					"-I/usr/local/include/hcxselect",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		925292AA15C359C300C8CD9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/Frameworks\"",
+					"/Library/Frameworks/**",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VgmdbTests/VgmdbTests-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "VgmdbTests/VgmdbTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Frameworks",
+					/usr/local/Cellar/htmlcxx/0.84/lib,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-I/usr/local/include/taglib",
+					"-L@executable_path/../Resources",
+					"-I/usr/local/include/",
+					"-I/usr/local/include/hcxselect",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		925CE83913C3BD6D009D6D94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1031,6 +1252,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		925292AB15C359C300C8CD9E /* Build configuration list for PBXNativeTarget "VgmdbTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				925292A915C359C300C8CD9E /* Debug */,
+				925292AA15C359C300C8CD9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		925CE81713C3BD6D009D6D94 /* Build configuration list for PBXProject "Tagger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
