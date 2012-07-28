@@ -10,22 +10,6 @@
 
 @implementation NSString (NSString_Convert)
 
-- (NSString*) initWithTagString:(TagLib::String) cppString
-{
-	return [[NSString alloc] initWithUTF8String:cppString.toCString(true)];
-}
-
-+ (NSString*) stringWithTagString:(TagLib::String) cppString
-{
-	return [NSString stringWithUTF8String: cppString.toCString(true)];
-}
-
-- (TagLib::String) tagLibString
-{
-	TagLib::String s = TagLib::String([self UTF8String], TagLib::String::UTF8);
-	return s;
-}
-
 - (NSString*) initWithCppString:(std::string*) cppString
 {
 	return [[NSString alloc] initWithUTF8String:cppString->c_str() ];

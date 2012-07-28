@@ -9,6 +9,7 @@
 #import "Tags.h"
 #import "TagStructs.h"
 #import "NSString+Convert.h"
+#import "NSString+Tag.h"
 #import "NSNumber+compare.h"
 
 #include <tag.h>

@@ -7,6 +7,7 @@
 //
 
 #import "Vgmdb.h"
+#import "Vgmdb+private.h"
 
 #import "NSString+Convert.h"
 
@@ -28,24 +29,15 @@ static const NSDictionary *namesMap;
 using namespace std;
 using namespace hcxselect;
 
-@interface Vgmdb()
-
-- (void)printNode:(Node*)node
-          inHtml:(std::string)html;
 
 
-- (NSDictionary*)splitLanguagesInNodes:(Node*)node;
 
-- (std::string) cppstringWithContentsOfURL:(NSURL*)url
- error:(NSError**)error;
-
-@end
-
-
+//static const NSString const *testFolder = @"/Users/bilalh/Projects/Tagger/Test Files/Albums/muti-disk";
 @implementation Vgmdb
 
 #pragma mark -
 #pragma mark init
+
 
 - (id)init
 {
@@ -62,8 +54,9 @@ using namespace hcxselect;
 //              encoding:NSUTF8StringEncoding
 //                 error:nil];
         
-        NSDictionary *d =[self getAlbumData:[[NSURL alloc] initFileURLWithPath:[@"~/ar.html" stringByExpandingTildeInPath] ]];
-        DDLogInfo(@"%@ ", d);
+//        NSDictionary *d =[self getAlbumData:[[NSURL alloc]
+//                                             initFileURLWithPath:[ @"/Users/bilalh/Projects/Tagger/Test Files/Albums/muti-disk.html"stringByExpandingTildeInPath] ]];
+//        DDLogInfo(@"%@ ", d);
     }
     return self;
 }
@@ -87,17 +80,16 @@ using namespace hcxselect;
 - (NSArray*) searchResults:(NSString*)search
 {
     NSString *baseUrl = @"http://vgmdb.net/search?q=";
-    
     NSString *tmp = [baseUrl stringByAppendingString:search];
     NSString *_url = [tmp stringByAddingPercentEscapesUsingEncoding:NSUnicodeStringEncoding];
     NSError *err = nil;
-    string html  = [self cppstringWithContentsOfURL:[NSURL URLWithString:_url]
+    string *html  = [self cppstringWithContentsOfURL:[NSURL URLWithString:_url]
                                               error:&err];
     if (!err){
         htmlcxx::HTML::ParserDom parser;
-        tree<htmlcxx::HTML::Node> dom = parser.parseTree(html);
+        tree<htmlcxx::HTML::Node> dom = parser.parseTree(*html);
         Selector s(dom);
-            
+        
         NSMutableArray *rows = [[NSMutableArray alloc] init];
         
         Selector res = s.select("div#albumresults tbody > tr");
@@ -130,7 +122,6 @@ using namespace hcxselect;
             string _year = year_t->data.text();
             NSString *year = [[NSString alloc] initWithCppString:&_year];
 
-            
             [rows addObject:[NSDictionary dictionaryWithObjectsAndKeys:
                              catalog, @"catalog" ,
                              year,    @"released",
@@ -197,16 +188,21 @@ using namespace hcxselect;
     NSMutableDictionary *data = [NSMutableDictionary new];
     
     NSError *err;
-    string html = [self cppstringWithContentsOfURL:url error:&err];
+    string *html = [self cppstringWithContentsOfURL:url error:&err];
+    
+    if (html == NULL){
+        NSLog(@"Error %@", [err localizedDescription]);
+        return data;
+    }
     
     htmlcxx::HTML::ParserDom parser;
-    tree<htmlcxx::HTML::Node> dom = parser.parseTree(html);
+    tree<htmlcxx::HTML::Node> dom = parser.parseTree(*html);
     Selector s(dom);
     
-    [data setValue:[self getAlbumTitles:dom forHtml:html]
+    [data setValue:[self getAlbumTitles:dom forHtml:*html]
             forKey:@"album"];
     
-    [self storeMetadata:dom forHtml:html in:data];
+    [self storeMetadata:dom forHtml:*html in:data];
     
     [data setValue:url forKey:@"url"];
     return data;
@@ -265,16 +261,16 @@ using namespace hcxselect;
     cout << html.substr(node->data.offset(), node->data.length()) << "\n\n\n";
 }
 
-- (std::string) cppstringWithContentsOfURL:(NSURL*)url
+- (std::string*) cppstringWithContentsOfURL:(NSURL*)url
                                      error:(NSError**)error
 {
     NSString *_html = [NSString stringWithContentsOfURL: url
                                                encoding:NSUTF8StringEncoding
                                                   error:error];
     if (!(*error)){
-        return string([_html UTF8String]);
+        return new string([_html UTF8String]);
     }
-    return nil;
+    return NULL;
 }
 
 @end

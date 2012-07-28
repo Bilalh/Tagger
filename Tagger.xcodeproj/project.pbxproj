@@ -41,7 +41,6 @@
 		9239573013F43EB100A80074 /* CCTColorLabelMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9239572F13F43EB100A80074 /* CCTColorLabelMenuItemView.m */; };
 		923B846413F4B7A800524BFA /* BHFinderLabelColours.m in Sources */ = {isa = PBXBuildFile; fileRef = 923B846313F4B7A800524BFA /* BHFinderLabelColours.m */; };
 		9252929815C359C300C8CD9E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9252929715C359C300C8CD9E /* SenTestingKit.framework */; };
-		9252929A15C359C300C8CD9E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9252929915C359C300C8CD9E /* Cocoa.framework */; };
 		925292A415C359C300C8CD9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 925292A215C359C300C8CD9E /* InfoPlist.strings */; };
 		925292A715C359C300C8CD9E /* VgmdbTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 925292A615C359C300C8CD9E /* VgmdbTests.mm */; };
 		925292AD15C359EA00C8CD9E /* Vgmdb.mm in Sources */ = {isa = PBXBuildFile; fileRef = 92A96F2C15BCD2DC004A320E /* Vgmdb.mm */; };
@@ -55,6 +54,9 @@
 		925292BD15C35D5900C8CD9E /* libhtmlcxx.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A96F3215BCEB25004A320E /* libhtmlcxx.3.dylib */; };
 		9254006713F0A82C0020C912 /* libtag.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.1.dylib */; };
 		9254007113F0AC8F0020C912 /* libtag.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.1.dylib */; };
+		9254094915C367330074A280 /* NSString+Tag.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9254094815C367330074A280 /* NSString+Tag.mm */; };
+		9254094A15C36BFB0074A280 /* NSString+Convert.mm in Sources */ = {isa = PBXBuildFile; fileRef = 92E6ED7813F313230045679E /* NSString+Convert.mm */; };
+		9254094B15C36CC00074A280 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922E35D613C89BF3003C5913 /* Cocoa.framework */; };
 		9264488A13D773CE0035E693 /* arrowLeftBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */; };
 		9264488B13D773CE0035E693 /* arrowRightBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488913D773CE0035E693 /* arrowRightBlack16.tiff */; };
 		928411AF13EB853600A92F3F /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 928411AE13EB853600A92F3F /* defaults.plist */; };
@@ -128,6 +130,13 @@
 			remoteGlobalIDString = 925CE81C13C3BD6D009D6D94;
 			remoteInfo = VGTagger;
 		};
+		925CC63D15C37DA700820B4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 925CE81413C3BD6D009D6D94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 925CE81C13C3BD6D009D6D94;
+			remoteInfo = Tagger;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -171,6 +180,9 @@
 		925292A315C359C300C8CD9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		925292A615C359C300C8CD9E /* VgmdbTests.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = VgmdbTests.mm; sourceTree = "<group>"; };
 		925292A815C359C300C8CD9E /* VgmdbTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VgmdbTests-Prefix.pch"; sourceTree = "<group>"; };
+		9254094715C367330074A280 /* NSString+Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Tag.h"; sourceTree = "<group>"; };
+		9254094815C367330074A280 /* NSString+Tag.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+Tag.mm"; sourceTree = "<group>"; };
+		9254095015C3702A0074A280 /* Vgmdb+private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Vgmdb+private.h"; sourceTree = "<group>"; };
 		925CE81D13C3BD6D009D6D94 /* Tagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowLeftBlack16.tiff; sourceTree = "<group>"; };
 		9264488913D773CE0035E693 /* arrowRightBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowRightBlack16.tiff; sourceTree = "<group>"; };
@@ -292,10 +304,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9254094B15C36CC00074A280 /* Cocoa.framework in Frameworks */,
 				925292BD15C35D5900C8CD9E /* libhtmlcxx.3.dylib in Frameworks */,
 				925292BC15C35CD100C8CD9E /* libhcxselect.a in Frameworks */,
 				9252929815C359C300C8CD9E /* SenTestingKit.framework in Frameworks */,
-				9252929A15C359C300C8CD9E /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,7 +366,6 @@
 				9293B84A14AF7DFA006D96E7 /* dsa_pub.pem */,
 				92DECF1114ABFBAC00A956E8 /* Credits.html */,
 				9202AEDB14BE7FCE00B24CE6 /* Tagger Help */,
-				928557FF13EF6352002C5112 /* Test Files */,
 				9264488713D773CE0035E693 /* Images */,
 				9254006513F0A52F0020C912 /* Frameworks */,
 				920660B813C89845003A3803 /* Linked Frameworks */,
@@ -431,6 +442,7 @@
 				9252929F15C359C300C8CD9E /* VgmdbTests */,
 				9252929615C359C300C8CD9E /* Frameworks */,
 				925CE81E13C3BD6D009D6D94 /* Products */,
+				928557FF13EF6352002C5112 /* Test Files */,
 				927883BF13E06E5000063D28 /* Readme.md */,
 				929A4ACD13DA027C00244796 /* Changelog.md */,
 				927883C013E06EED00063D28 /* Todo.md */,
@@ -567,6 +579,8 @@
 				92E6ED7813F313230045679E /* NSString+Convert.mm */,
 				92E6ED7913F313230045679E /* NSString+Numbers.h */,
 				92E6ED7A13F313230045679E /* NSString+Numbers.m */,
+				9254094715C367330074A280 /* NSString+Tag.h */,
+				9254094815C367330074A280 /* NSString+Tag.mm */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -693,6 +707,7 @@
 				92A96F2B15BCD2DC004A320E /* Vgmdb.h */,
 				92A96F2C15BCD2DC004A320E /* Vgmdb.mm */,
 				92A96F2E15BCD82B004A320E /* VgmdbStruct.h */,
+				9254095015C3702A0074A280 /* Vgmdb+private.h */,
 			);
 			path = Vgmdb;
 			sourceTree = "<group>";
@@ -739,6 +754,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				925CC63E15C37DA700820B4F /* PBXTargetDependency */,
 			);
 			name = VgmdbTests;
 			productName = VgmdbTests;
@@ -881,6 +897,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9254094A15C36BFB0074A280 /* NSString+Convert.mm in Sources */,
 				925292B315C35CAB00C8CD9E /* DDAbstractDatabaseLogger.m in Sources */,
 				925292B515C35CAB00C8CD9E /* DDASLLogger.m in Sources */,
 				925292B715C35CAB00C8CD9E /* DDFileLogger.m in Sources */,
@@ -939,6 +956,7 @@
 				921FBBEC140C682100D1CBE8 /* ArrayDefaultsPreferencesViewController.m in Sources */,
 				92DBDEAD14AAB99A009434DB /* fields.cpp in Sources */,
 				92A96F2D15BCD2DC004A320E /* Vgmdb.mm in Sources */,
+				9254094915C367330074A280 /* NSString+Tag.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -949,6 +967,11 @@
 			isa = PBXTargetDependency;
 			target = 925CE81C13C3BD6D009D6D94 /* Tagger */;
 			targetProxy = 9254007213F0B4150020C912 /* PBXContainerItemProxy */;
+		};
+		925CC63E15C37DA700820B4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 925CE81C13C3BD6D009D6D94 /* Tagger */;
+			targetProxy = 925CC63D15C37DA700820B4F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1275,6 +1298,7 @@
 				925292AA15C359C300C8CD9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		925CE81713C3BD6D009D6D94 /* Build configuration list for PBXProject "Tagger" */ = {
 			isa = XCConfigurationList;

@@ -9,8 +9,9 @@
 #import "MP4Tags.h"
 #import "TagStructs.h"
 #import "NSString+Convert.h"
-#import "Fields.h"
+#import "NSString+Tag.h"
 #import "NSImage+bitmapData.h"
+#import "Fields.h"
 #include "TagPrivate.h"
 
 #include <mp4tag.h> 

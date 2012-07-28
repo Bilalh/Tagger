@@ -8,6 +8,7 @@
 
 #import "MPEGTags.h"
 #import "TagStructs.h"
+#import "NSString+Tag.h"
 #import "NSString+Convert.h"
 #import "NSImage+bitmapData.h"
 #include "TagPrivate.h"
