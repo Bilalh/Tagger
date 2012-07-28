@@ -32,7 +32,7 @@ using namespace hcxselect;
 
 
 
-//static const NSString const *testFolder = @"/Users/bilalh/Projects/Tagger/Test Files/Albums/muti-disk";
+static const NSString const *testFolder = @"/Users/bilalh/Projects/Tagger/Test Files/Albums/";
 @implementation Vgmdb
 
 #pragma mark -
@@ -54,8 +54,11 @@ using namespace hcxselect;
 //              encoding:NSUTF8StringEncoding
 //                 error:nil];
         
-//        NSDictionary *d =[self getAlbumData:[[NSURL alloc]
-//                                             initFileURLWithPath:[ @"/Users/bilalh/Projects/Tagger/Test Files/Albums/muti-disk.html"stringByExpandingTildeInPath] ]];
+        NSString *name = @"muti-disk.html";
+        NSString *_url = [testFolder stringByAppendingPathComponent:name];
+        NSURL *url = [[NSURL alloc] initFileURLWithPath:_url];
+        
+//        NSDictionary *d =[self getAlbumData:url];
 //        DDLogInfo(@"%@ ", d);
     }
     return self;
@@ -85,6 +88,7 @@ using namespace hcxselect;
     NSError *err = nil;
     string *html  = [self cppstringWithContentsOfURL:[NSURL URLWithString:_url]
                                               error:&err];
+    
     if (!err){
         htmlcxx::HTML::ParserDom parser;
         tree<htmlcxx::HTML::Node> dom = parser.parseTree(*html);
@@ -118,6 +122,7 @@ using namespace hcxselect;
             while(year_t->data.isTag()){
                 year_t = year_t->first_child;
             }
+            
             
             string _year = year_t->data.text();
             NSString *year = [[NSString alloc] initWithCppString:&_year];
@@ -171,6 +176,7 @@ using namespace hcxselect;
     Selector s(dom);
     Selector meta = s.select("table#album_infobit_large");
     
+    /* Catalog */
     Selector catalogElem = meta.select("tr td[width='100%']");
     n = *catalogElem.begin();
     
@@ -179,6 +185,26 @@ using namespace hcxselect;
     catalog =  [catalog stringByTrimmingCharactersInSet:
                 [NSCharacterSet whitespaceAndNewlineCharacterSet]];
     [data setValue:catalog forKey:@"catalog"];
+    
+    Node *m = *meta.begin();
+    
+    // Get the text value of the specifed node
+    NSString* (^get_data)(Node*) = ^(Node *n){
+        Node *m = n->last_child;
+        while (m->data.isTag()) {
+            m = m ->first_child;
+        }
+        string temp =  m->data.text();
+        return [NSString stringWithCppStringTrimmed:&temp];
+	};
+    
+    Node *ndate = m->first_child->next_sibling->next_sibling->next_sibling;
+    NSString *date = get_data(ndate);
+    [data setValue:date forKey:@"date"];
+    
+    Node *npub = ndate->next_sibling->next_sibling;
+    [data setValue:get_data(npub) forKey:@"publishedFormat"];
+    
     
     
 }

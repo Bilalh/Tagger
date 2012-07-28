@@ -33,23 +33,28 @@ Vgmdb *vgmdb;
  
     NSURL *url = [correct valueForKey:@"url"];
     
+    NSString *name = [url lastPathComponent];
+    
     NSDictionary *results =[vgmdb getAlbumData:url];
     
-    NSArray *fields = @[@"catalog", @"album", @"url"];
+    NSArray *fields = @[
+    @"album", @"url",@"catalog",
+    @"date",@"publishedFormat"
+    ];
     
     for (NSString *field in fields) {
                 NSLog(@"\n\n\n");
-        NSLog(@"%@",field);
+        NSLog(@"%@ - %@",field, name);
         STAssertEqualObjects(
                              [results valueForKey:field],
                              [correct valueForKey:field],
-                             field);
+                             @"%@ - %@",field, name);
     }
     
     STAssertEqualObjects(
                          results,
                          correct,
-                         @"Everything");
+                         @"Everything - %@",name);
 }
 
 -(NSURL*)getUrlForName:(NSString*)name
@@ -72,14 +77,16 @@ Vgmdb *vgmdb;
     };
     
     NSDictionary *correct = @{
-        @"catalog" : @"KDSD-10038~9",
-        @"album":album,
-        @"url": url
+    @"album":album,
+    @"url": url,
+    @"catalog" : @"KDSD-10038~9",
+    @"date" : @"Jun 24, 2009",
+    @"publishedFormat": @"Commercial"
     };
     
     
     [self testUsingTestData:correct];
-    NSLog(@"done\n\n");
+    NSLog(@"done - %@\n\n", name);
 }
 
 

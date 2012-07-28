@@ -14,7 +14,10 @@
 
 
 - (std::string*) cppString;
-/// Converts a std::string* to a NSString 
+
+/// Converts a std::string* to a NSString
 - (NSString*) initWithCppString:(std::string*) cppString;
+
++ (NSString*) stringWithCppStringTrimmed:(std::string*) cppString;
 
 @end
