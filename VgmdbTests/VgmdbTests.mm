@@ -28,23 +28,14 @@ Vgmdb *vgmdb;
 
 @implementation VgmdbTests
 
-
-- (void)testmutiDisk
+- (void) testUsingTestData:(NSDictionary*)correct
 {
-    NSString *_url = [testFolder stringByAppendingPathComponent:@"muti-disk.html"];
-    NSURL *url = [[NSURL alloc] initFileURLWithPath:_url];
-
+ 
+    NSURL *url = [correct valueForKey:@"url"];
+    
     NSLog(@"%@", vgmdb);
     NSDictionary *results =[vgmdb getAlbumData:url];
     
-    NSDictionary *correct = @{
-        @"catalog" : @"KDSD-10038~9",
-        @"url": @"file://localhost/Users/bilalh/Projects/Tagger/Test%20Files/Albums/muti-disk.html"
-    };
-
-    
-    [correct valueForKey:@"catalog"];
-
     NSArray *fields = @[@"catalog", @"album", @"url"];
     
     for (NSString *field in fields) {
@@ -54,11 +45,37 @@ Vgmdb *vgmdb;
                              field);
         NSLog(@"\n\n\n");
     }
-
+    
     STAssertEqualObjects(
                          results,
                          correct,
                          @"Everything");
+}
+
+-(NSURL*)getUrlForName:(NSString*)name
+{
+    NSString *_url = [testFolder stringByAppendingPathComponent:name];
+    NSURL *url = [[NSURL alloc] initFileURLWithPath:_url];
+    return url;
+}
+
+- (void)testMutiDisk
+{
+    NSURL *url = [self getUrlForName:@"muti-disk.html"];
+    
+    NSDictionary *album =@{
+        @"@english": @"Atelier Rorona Original Sound Track",
+        @"@kanji": @"ロロナのアトリエ～アーランドの錬金術士～ オリジナルサウンドトラック",
+        @"@romaji": @"Rorona no Atelier: Arland no Renkinjutsushi Original Sound Track"
+    };
+    
+    NSDictionary *correct = @{
+        @"catalog" : @"KDSD-10038~9",
+        @"album":album,
+        @"url": url
+    };
+    
+    [self testUsingTestData:correct];
 }
 
 
