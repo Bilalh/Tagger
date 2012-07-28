@@ -5,7 +5,7 @@
 //  Created by Bilal Syed Hussain on 28/07/2012.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 #import <SenTestingKit/SenTestingKit.h>
 
 #import <vgmdb/Vgmdb.h>
@@ -33,17 +33,17 @@ Vgmdb *vgmdb;
  
     NSURL *url = [correct valueForKey:@"url"];
     
-    NSLog(@"%@", vgmdb);
     NSDictionary *results =[vgmdb getAlbumData:url];
     
     NSArray *fields = @[@"catalog", @"album", @"url"];
     
     for (NSString *field in fields) {
+                NSLog(@"\n\n\n");
+        NSLog(@"%@",field);
         STAssertEqualObjects(
                              [results valueForKey:field],
                              [correct valueForKey:field],
                              field);
-        NSLog(@"\n\n\n");
     }
     
     STAssertEqualObjects(
@@ -61,7 +61,9 @@ Vgmdb *vgmdb;
 
 - (void)testMutiDisk
 {
-    NSURL *url = [self getUrlForName:@"muti-disk.html"];
+    NSString *name = @"muti-disk.html";
+    NSLog(@"%@",name);
+    NSURL *url = [self getUrlForName:name];
     
     NSDictionary *album =@{
         @"@english": @"Atelier Rorona Original Sound Track",
@@ -75,7 +77,9 @@ Vgmdb *vgmdb;
         @"url": url
     };
     
+    
     [self testUsingTestData:correct];
+    NSLog(@"done\n\n");
 }
 
 
