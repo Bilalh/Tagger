@@ -202,13 +202,23 @@ static const NSString const *testFolder = @"/Users/bilalh/Projects/Tagger/Test F
     NSString *date = get_data(ndate);
     [data setValue:date forKey:@"date"];
     
+    NSRegularExpression* dateRegex = [NSRegularExpression regularExpressionWithPattern:@"\\d{4}$"
+                                                                               options:0
+                                                                                 error:nil];
+    NSTextCheckingResult *result =[dateRegex firstMatchInString:date
+                                                    options:0
+                                                      range:NSMakeRange(0, [date length])];
+    NSString *year = [date substringWithRange:result.range];
+    [data setValue:year forKey:@"year"];
+    
+    
     Node *npub = ndate->next_sibling->next_sibling;
     [data setValue:get_data(npub) forKey:@"publishedFormat"];
     
     
     
 }
-
+ 
 - (NSDictionary*)getAlbumData:(NSURL*) url
 {
     NSMutableDictionary *data = [NSMutableDictionary new];

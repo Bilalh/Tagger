@@ -39,11 +39,12 @@ Vgmdb *vgmdb;
     
     NSArray *fields = @[
     @"album", @"url",@"catalog",
-    @"date",@"publishedFormat"
+    @"date",@"publishedFormat",
+    @"year"
     ];
     
     for (NSString *field in fields) {
-                NSLog(@"\n\n\n");
+        NSLog(@"\n\n\n");
         NSLog(@"%@ - %@",field, name);
         STAssertEqualObjects(
                              [results valueForKey:field],
@@ -81,7 +82,8 @@ Vgmdb *vgmdb;
     @"url": url,
     @"catalog" : @"KDSD-10038~9",
     @"date" : @"Jun 24, 2009",
-    @"publishedFormat": @"Commercial"
+    @"publishedFormat": @"Commercial",
+    @"year":@"2009"
     };
     
     
