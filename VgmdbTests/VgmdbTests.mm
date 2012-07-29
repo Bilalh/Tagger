@@ -10,14 +10,14 @@
 
 #import <vgmdb/Vgmdb.h>
 #import <vgmdb/Vgmdb+private.h>
+
+
 #import <Logging/Logging.h>
-
-#include <hcxselect.h>
-
 #import "Logging.h"
 LOG_LEVEL(LOG_LEVEL_VERBOSE);
 
 
+#include <hcxselect.h>
 NSString  *testFolder = @"/Users/bilalh/Projects/Tagger/Test Files/Albums/";
 
 @interface VgmdbTests : SenTestCase
@@ -40,7 +40,7 @@ Vgmdb *vgmdb;
     NSArray *fields = @[
     @"album", @"url",@"catalog",
     @"date",@"publishedFormat",
-    @"year"
+    @"year",@"classification"
     ];
     
     for (NSString *field in fields) {
@@ -77,6 +77,8 @@ Vgmdb *vgmdb;
         @"@romaji": @"Rorona no Atelier: Arland no Renkinjutsushi Original Sound Track"
     };
     
+    NSArray *classification = @[@"Original Soundtrack"];
+    
     NSDictionary *correct = @{
     @"album":album,
     @"url": url,
@@ -85,7 +87,8 @@ Vgmdb *vgmdb;
     @"publishedFormat": @"Commercial",
     @"year": @"2009",
     @"price": @"3360",
-    @"mediaFormat": @"2 CD"
+    @"mediaFormat": @"2 CD",
+    @"classification": classification
     }; 
     
     

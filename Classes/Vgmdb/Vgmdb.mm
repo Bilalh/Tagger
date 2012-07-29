@@ -10,6 +10,7 @@
 #import "Vgmdb+private.h"
 
 #import "NSString+Convert.h"
+#import "RegexKitLite.h"
 
 #import "Logging.h"
 LOG_LEVEL(LOG_LEVEL_VERBOSE);
@@ -220,6 +221,13 @@ static const NSString const *testFolder = @"/Users/bilalh/Projects/Tagger/Test F
 
     Node *nfor = nprice->next_sibling->next_sibling;
     [data setValue:get_data(nfor) forKey:@"mediaFormat"];
+    
+    Node *nclas = nfor->next_sibling->next_sibling;
+    NSString *clas = get_data(nclas);
+    if (clas){
+        NSArray *arr = [clas componentsSeparatedByRegex:@"[&,] ?"];
+        [data setValue:arr forKey:@"classification"];
+    }
     
     
     

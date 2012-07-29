@@ -75,6 +75,7 @@
 		92A6808913EC7B130067DD5F /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A6808713EC7B130067DD5F /* MASPreferencesWindowController.m */; };
 		92A96F2D15BCD2DC004A320E /* Vgmdb.mm in Sources */ = {isa = PBXBuildFile; fileRef = 92A96F2C15BCD2DC004A320E /* Vgmdb.mm */; };
 		92A96F3315BCEB25004A320E /* libhtmlcxx.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A96F3215BCEB25004A320E /* libhtmlcxx.3.dylib */; };
+		92B615D515C5EFEB002E048B /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F16DB014041AC10031E4B4 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		92C4466413E0BF830038F817 /* BWHyperlinkTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4466113E0BF830038F817 /* BWHyperlinkTitleButton.m */; };
 		92C4466513E0BF830038F817 /* BWHyperlinkButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4466313E0BF830038F817 /* BWHyperlinkButtonCell.m */; };
 		92D30AC31405B1B600677B70 /* IntPair.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D30AC21405B1B600677B70 /* IntPair.m */; };
@@ -897,6 +898,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92B615D515C5EFEB002E048B /* RegexKitLite.m in Sources */,
 				9254094A15C36BFB0074A280 /* NSString+Convert.mm in Sources */,
 				925292B315C35CAB00C8CD9E /* DDAbstractDatabaseLogger.m in Sources */,
 				925292B515C35CAB00C8CD9E /* DDASLLogger.m in Sources */,
@@ -1025,6 +1027,7 @@
 					/usr/local/Cellar/htmlcxx/0.84/include/,
 					"$(SRCROOT)/Classes/",
 					"\"$(SRCROOT)/Other Sources/Headers/\"",
+					"\"$(SRCROOT)/Other Sources/RegexKitLite/\"",
 				);
 				INFOPLIST_FILE = "VgmdbTests/VgmdbTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -1040,6 +1043,7 @@
 					"-I/usr/local/include/",
 					"-I/usr/local/include/hcxselect",
 				);
+				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -1071,6 +1075,7 @@
 					/usr/local/Cellar/htmlcxx/0.84/include/,
 					"$(SRCROOT)/Classes/",
 					"\"$(SRCROOT)/Other Sources/Headers/\"",
+					"\"$(SRCROOT)/Other Sources/RegexKitLite/\"",
 				);
 				INFOPLIST_FILE = "VgmdbTests/VgmdbTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -1086,6 +1091,7 @@
 					"-I/usr/local/include/",
 					"-I/usr/local/include/hcxselect",
 				);
+				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
