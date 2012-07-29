@@ -215,6 +215,12 @@ static const NSString const *testFolder = @"/Users/bilalh/Projects/Tagger/Test F
     Node *npub = ndate->next_sibling->next_sibling;
     [data setValue:get_data(npub) forKey:@"publishedFormat"];
     
+    Node *nprice = npub->next_sibling->next_sibling;
+    [data setValue:get_data(nprice) forKey:@"price"];
+
+    Node *nfor = nprice->next_sibling->next_sibling;
+    [data setValue:get_data(nfor) forKey:@"mediaFormat"];
+    
     
     
 }

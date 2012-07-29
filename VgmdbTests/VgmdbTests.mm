@@ -83,8 +83,10 @@ Vgmdb *vgmdb;
     @"catalog" : @"KDSD-10038~9",
     @"date" : @"Jun 24, 2009",
     @"publishedFormat": @"Commercial",
-    @"year":@"2009"
-    };
+    @"year": @"2009",
+    @"price": @"3360",
+    @"mediaFormat": @"2 CD"
+    }; 
     
     
     [self testUsingTestData:correct];
