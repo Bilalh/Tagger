@@ -173,15 +173,15 @@ static const NSString const *testFolder = @"/Users/bilalh/Projects/Tagger/Test F
                forHtml:(const std::string&)html
                 in:(NSDictionary*)data
 {
-    Node *n;
+
     Selector s(dom);
     Selector meta = s.select("table#album_infobit_large");
     
     /* Catalog */
     Selector catalogElem = meta.select("tr td[width='100%']");
-    n = *catalogElem.begin();
+    Node *ncat = *catalogElem.begin();
     
-    string _catalog = n->first_child->data.text();
+    string _catalog = ncat->first_child->data.text();
     NSString *catalog = [[NSString alloc] initWithCppString:&_catalog];
     catalog =  [catalog stringByTrimmingCharactersInSet:
                 [NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -206,10 +206,10 @@ static const NSString const *testFolder = @"/Users/bilalh/Projects/Tagger/Test F
     NSRegularExpression* dateRegex = [NSRegularExpression regularExpressionWithPattern:@"\\d{4}$"
                                                                                options:0
                                                                                  error:nil];
-    NSTextCheckingResult *result =[dateRegex firstMatchInString:date
+    NSTextCheckingResult *yresult =[dateRegex firstMatchInString:date
                                                     options:0
                                                       range:NSMakeRange(0, [date length])];
-    NSString *year = [date substringWithRange:result.range];
+    NSString *year = [date substringWithRange:yresult.range];
     [data setValue:year forKey:@"year"];
     
     
@@ -229,7 +229,35 @@ static const NSString const *testFolder = @"/Users/bilalh/Projects/Tagger/Test F
         [data setValue:arr forKey:@"classification"];
     }
     
+    Node *npubl = nclas->next_sibling->next_sibling;
     
+    //get_spilt_data[6]
+    NSMutableArray *arr = [NSMutableArray new];
+    Node *current = npubl->first_child;
+    while (current) {
+        Node *m = current->first_child;
+        if (!m) {
+            current = current->next_sibling;
+            continue;
+        }
+        
+        if (!m->next_sibling) { // Only Text
+            while (m->data.isTag()) {
+                m = m ->first_child;
+            }
+            string _text = m->data.text();
+            NSString *text = [NSString stringWithCppStringTrimmed:&_text];
+            if ([text length] >0 && ![text isMatchedByRegex:@"^[,& ]+$"]){
+                [arr addObject:@{ @"@english" : text }];
+            }
+        }else{
+            Node *first_lang = current->first_child->first_child;
+            NSDictionary *results = [self splitLanguagesInNodes:first_lang];
+            [arr addObject:results];
+        }
+        current = current->next_sibling;
+    }
+    [data setValue:arr forKey:@"publisher"];
     
 }
  
@@ -281,7 +309,7 @@ static const NSString const *testFolder = @"/Users/bilalh/Projects/Tagger/Test F
             lang = @"@english";
         }
         
-        if (node->next_sibling){
+        if (node->first_child){
             Node *titleNode = node->first_child;
             while(titleNode->data.isTag()){
                 if (!titleNode->next_sibling){

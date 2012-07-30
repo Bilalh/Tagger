@@ -40,7 +40,8 @@ Vgmdb *vgmdb;
     NSArray *fields = @[
     @"album", @"url",@"catalog",
     @"date",@"publishedFormat",
-    @"year",@"classification"
+    @"year",@"classification",
+    @"publisher"
     ];
     
     for (NSString *field in fields) {
@@ -79,6 +80,15 @@ Vgmdb *vgmdb;
     
     NSArray *classification = @[@"Original Soundtrack"];
     
+    NSArray *publisher =@[
+        @{ @"@english" : @"Published by" },
+        @{
+            @"@english" : @"TEAM Entertainment",
+            @"@kanji":     @"株式会社ティームエンタテインメント",
+            @"@romaji":    @"TEAM Entertainment"
+        }
+    ];
+    
     NSDictionary *correct = @{
     @"album":album,
     @"url": url,
@@ -88,7 +98,8 @@ Vgmdb *vgmdb;
     @"year": @"2009",
     @"price": @"3360",
     @"mediaFormat": @"2 CD",
-    @"classification": classification
+    @"classification": classification,
+    @"publisher": publisher
     }; 
     
     
