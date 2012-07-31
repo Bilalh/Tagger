@@ -157,6 +157,7 @@ static const NSString const *testFolder = @"/Users/bilalh/Projects/Tagger/Test F
     Node *n = *res.begin();
 //    [self printNode:n inHtml:html];
     NSDictionary *titles = [self splitLanguagesInNodes:n];
+    
     return titles;
 }
 
@@ -169,11 +170,14 @@ static const NSString const *testFolder = @"/Users/bilalh/Projects/Tagger/Test F
 }
 
 
+string _html;
+
 - (void) storeMetadata:(const tree<htmlcxx::HTML::Node>&)dom
                forHtml:(const std::string&)html
                 in:(NSDictionary*)data
 {
 
+    _html = html;
     Selector s(dom);
     Selector meta = s.select("table#album_infobit_large");
     
@@ -225,54 +229,59 @@ static const NSString const *testFolder = @"/Users/bilalh/Projects/Tagger/Test F
     Node *nclas = nfor->next_sibling->next_sibling;
     NSString *clas = get_data(nclas);
     if (clas){
-        NSArray *arr = [clas componentsSeparatedByRegex:@"[&,] ?"];
+        NSArray *arr = [clas componentsSeparatedByRegex:@"[&,(){}.-~] ?"];
         [data setValue:arr forKey:@"classification"];
     }
-        
-    NSArray* (^get_spilt_data)(Node* n) = ^(Node *n){
-        NSMutableArray *arr = [NSMutableArray new];
-        Node *current = n->last_child;
-        
-        while (current) {
-            Node *m = current->first_child;
-            if (!m) {
-                current = current->next_sibling;
-                continue;
-            }
-            
-            if (!m->next_sibling) { // Only Text
-                while (m->data.isTag()) {
-                    m = m ->first_child;
-                }
-                string _text = m->data.text();
-                NSString *text = [NSString stringWithCppStringTrimmed:&_text];
-                if ([text length] >0 && ![text isMatchedByRegex:@"^[,& ]+$"]){
-                    [arr addObject:@{ @"@english" : text }];
-                }
-            }else{
-                Node *first_lang = current->first_child->first_child;
-                NSDictionary *results = [self splitLanguagesInNodes:first_lang];
-                [arr addObject:results];
-            }
-            current = current->next_sibling;
-        }
-        return arr;
-    };
     
     Node *npubl = nclas->next_sibling->next_sibling;
-    [data setValue:get_spilt_data(npubl) forKey:@"publisher"];
+    [data setValue: [self get_spilt_data:npubl] forKey:@"publisher"];
     
     Node *ncom = npubl->next_sibling->next_sibling;
-    [data setValue:get_spilt_data(ncom) forKey:@"composer"];
+    [data setValue: [self get_spilt_data:ncom] forKey:@"composer"];
     
     Node *narr = ncom->next_sibling->next_sibling;
-    [data setValue:get_spilt_data(narr) forKey:@"arranger"];
+    [data setValue: [self get_spilt_data:narr] forKey:@"arranger"];
     
     Node *nper = narr->next_sibling->next_sibling;
-    [data setValue:get_spilt_data(nper) forKey:@"performer"];
+    [data setValue: [self get_spilt_data:nper] forKey:@"performer"];
     
 }
  
+- (NSArray*)get_spilt_data:(Node *)n
+{
+    NSMutableArray *arr = [NSMutableArray new];
+    Node *current = n->last_child->first_child;
+    
+    while (current) {
+        if (!current) {
+            current = current->next_sibling;
+            continue;
+        }
+        
+        if (!current->next_sibling) { // Only Text
+            Node *m = current;
+            while (m->data.isTag()) {
+                m = m ->first_child;
+            }
+            string _text = m->data.text();
+            NSString *text = [NSString stringWithCppStringTrimmed:&_text];
+            if ([text length] >0 && ![text isMatchedByRegex:@"^[,& ]+$"]){
+                [arr addObject:@{ @"@english" : text }];
+            }
+        }else{
+            Node *first_lang = current->first_child;
+            NSDictionary *results = [self splitLanguagesInNodes:first_lang];
+            if ([results count] != 0){
+                [arr addObject:results];
+            }
+        }
+        current = current->next_sibling;
+    }
+    return arr;
+    
+};
+
+
 - (NSDictionary*)getAlbumData:(NSURL*) url
 {
     NSMutableDictionary *data = [NSMutableDictionary new];
