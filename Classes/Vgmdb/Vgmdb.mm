@@ -187,8 +187,7 @@ string _html;
     
     string _catalog = ncat->first_child->data.text();
     NSString *catalog = [[NSString alloc] initWithCppString:&_catalog];
-    catalog =  [catalog stringByTrimmingCharactersInSet:
-                [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    catalog =  [catalog trimWhiteSpace];
     [data setValue:catalog forKey:@"catalog"];
     
     Node *m = *meta.begin();
@@ -229,21 +228,30 @@ string _html;
     Node *nclas = nfor->next_sibling->next_sibling;
     NSString *clas = get_data(nclas);
     if (clas){
-        NSArray *arr = [clas componentsSeparatedByRegex:@"[&,(){}.-~] ?"];
-        [data setValue:arr forKey:@"classification"];
+        NSArray *arr = [clas componentsSeparatedByRegex:@"[&,(){}.-\\~] ?"];
+        if ([arr count] != 0){
+            [data setValue:arr forKey:@"classification"];
+        }else{
+            [data setValue:@[[clas trimWhiteSpace]] forKey:@"classification"];
+        }
+
     }
     
     Node *npubl = nclas->next_sibling->next_sibling;
     [data setValue: [self get_spilt_data:npubl] forKey:@"publisher"];
     
     Node *ncom = npubl->next_sibling->next_sibling;
-    [data setValue: [self get_spilt_data:ncom] forKey:@"composer"];
+    NSArray *com = [self get_spilt_data:ncom];
+    [data setValue: com forKey:@"composer"];
+    [data setValue: com forKey:@"artist"];
     
     Node *narr = ncom->next_sibling->next_sibling;
     [data setValue: [self get_spilt_data:narr] forKey:@"arranger"];
     
     Node *nper = narr->next_sibling->next_sibling;
     [data setValue: [self get_spilt_data:nper] forKey:@"performer"];
+    
+    
     
 }
  
@@ -265,7 +273,7 @@ string _html;
             }
             string _text = m->data.text();
             NSString *text = [NSString stringWithCppStringTrimmed:&_text];
-            if ([text length] >0 && ![text isMatchedByRegex:@"^[,& ]+$"]){
+            if ([text length] >0 && ![text isMatchedByRegex:@"^[,.()\\~ - \"'\\[\\]:!@]+$"]){
                 [arr addObject:@{ @"@english" : text }];
             }
         }else{

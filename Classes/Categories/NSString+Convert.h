@@ -20,4 +20,6 @@
 
 + (NSString*) stringWithCppStringTrimmed:(std::string*) cppString;
 
+- (NSString*) trimWhiteSpace;
+
 @end

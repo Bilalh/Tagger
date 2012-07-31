@@ -42,7 +42,8 @@ Vgmdb *vgmdb;
     @"date",@"publishedFormat",
     @"year",@"classification",
     @"publisher", @"composer",
-    @"arranger", @"performer"
+    @"arranger", @"performer",
+    @"artist"
     ];
     
     for (NSString *field in fields) {
@@ -86,6 +87,11 @@ Vgmdb *vgmdb;
             @"@english" : @"TEAM Entertainment",
             @"@kanji":     @"株式会社ティームエンタテインメント",
             @"@romaji":    @"TEAM Entertainment"
+        },
+        @{
+            @"@english" : @"Sony Music Distribution",
+            @"@kanji":     @"株式会社ソニー・ミュージックディストリビューション",
+            @"@romaji":    @"Sony Music Distribution"
         }
     ];
     
@@ -128,8 +134,9 @@ Vgmdb *vgmdb;
     @"publisher": publisher,
     @"composer": composer,
     @"arranger": arranger,
-    @"performer": performer
-    }; 
+    @"performer": performer,
+    @"artist": composer,
+    };
     
     
     [self testUsingTestData:correct];

@@ -15,12 +15,17 @@
 	return [[NSString alloc] initWithUTF8String:cppString->c_str() ];
 }
 
+- (NSString*) trimWhiteSpace
+{
+    return  [self stringByTrimmingCharactersInSet:
+             [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+
+}
 
 + (NSString*) stringWithCppStringTrimmed:(std::string*) cppString
 {
 	NSString *s =  [[NSString alloc] initWithUTF8String:cppString->c_str() ];
-    return  [s stringByTrimmingCharactersInSet:
-     [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    return  [s trimWhiteSpace];
 }
 
 
