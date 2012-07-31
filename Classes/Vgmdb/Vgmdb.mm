@@ -228,36 +228,48 @@ static const NSString const *testFolder = @"/Users/bilalh/Projects/Tagger/Test F
         NSArray *arr = [clas componentsSeparatedByRegex:@"[&,] ?"];
         [data setValue:arr forKey:@"classification"];
     }
+        
+    NSArray* (^get_spilt_data)(Node* n) = ^(Node *n){
+        NSMutableArray *arr = [NSMutableArray new];
+        Node *current = n->last_child;
+        
+        while (current) {
+            Node *m = current->first_child;
+            if (!m) {
+                current = current->next_sibling;
+                continue;
+            }
+            
+            if (!m->next_sibling) { // Only Text
+                while (m->data.isTag()) {
+                    m = m ->first_child;
+                }
+                string _text = m->data.text();
+                NSString *text = [NSString stringWithCppStringTrimmed:&_text];
+                if ([text length] >0 && ![text isMatchedByRegex:@"^[,& ]+$"]){
+                    [arr addObject:@{ @"@english" : text }];
+                }
+            }else{
+                Node *first_lang = current->first_child->first_child;
+                NSDictionary *results = [self splitLanguagesInNodes:first_lang];
+                [arr addObject:results];
+            }
+            current = current->next_sibling;
+        }
+        return arr;
+    };
     
     Node *npubl = nclas->next_sibling->next_sibling;
+    [data setValue:get_spilt_data(npubl) forKey:@"publisher"];
     
-    //get_spilt_data[6]
-    NSMutableArray *arr = [NSMutableArray new];
-    Node *current = npubl->first_child;
-    while (current) {
-        Node *m = current->first_child;
-        if (!m) {
-            current = current->next_sibling;
-            continue;
-        }
-        
-        if (!m->next_sibling) { // Only Text
-            while (m->data.isTag()) {
-                m = m ->first_child;
-            }
-            string _text = m->data.text();
-            NSString *text = [NSString stringWithCppStringTrimmed:&_text];
-            if ([text length] >0 && ![text isMatchedByRegex:@"^[,& ]+$"]){
-                [arr addObject:@{ @"@english" : text }];
-            }
-        }else{
-            Node *first_lang = current->first_child->first_child;
-            NSDictionary *results = [self splitLanguagesInNodes:first_lang];
-            [arr addObject:results];
-        }
-        current = current->next_sibling;
-    }
-    [data setValue:arr forKey:@"publisher"];
+    Node *ncom = npubl->next_sibling->next_sibling;
+    [data setValue:get_spilt_data(ncom) forKey:@"composer"];
+    
+    Node *narr = ncom->next_sibling->next_sibling;
+    [data setValue:get_spilt_data(narr) forKey:@"arranger"];
+    
+    Node *nper = narr->next_sibling->next_sibling;
+    [data setValue:get_spilt_data(nper) forKey:@"performer"];
     
 }
  

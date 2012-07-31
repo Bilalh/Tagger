@@ -41,16 +41,18 @@ Vgmdb *vgmdb;
     @"album", @"url",@"catalog",
     @"date",@"publishedFormat",
     @"year",@"classification",
-    @"publisher"
+    @"publisher", @"composer",
+    @"arranger", @"performer"
     ];
     
     for (NSString *field in fields) {
-        NSLog(@"\n\n\n");
-        NSLog(@"%@ - %@",field, name);
+//        NSLog(@"\n\n\n");
+//        NSLog(@"%@ - %@",field, name);
         STAssertEqualObjects(
                              [results valueForKey:field],
                              [correct valueForKey:field],
                              @"%@ - %@",field, name);
+        printf("\n\n");
     }
     
     STAssertEqualObjects(
@@ -69,7 +71,7 @@ Vgmdb *vgmdb;
 - (void)testMutiDisk
 {
     NSString *name = @"muti-disk.html";
-    NSLog(@"%@",name);
+    NSLog(@"Testing: %@",name);
     NSURL *url = [self getUrlForName:name];
     
     NSDictionary *album =@{
@@ -81,13 +83,38 @@ Vgmdb *vgmdb;
     NSArray *classification = @[@"Original Soundtrack"];
     
     NSArray *publisher =@[
-        @{ @"@english" : @"Published by" },
         @{
             @"@english" : @"TEAM Entertainment",
             @"@kanji":     @"株式会社ティームエンタテインメント",
             @"@romaji":    @"TEAM Entertainment"
         }
     ];
+    
+    NSArray *composer  =@[
+        @{
+            @"@english" : @"Ken Nakagawa",
+            @"@kanji"   : @"中河健"
+        }
+    ];
+
+    NSArray *arranger  =@[
+        @{
+            @"@english" : @"Ken Nakagawa",
+            @"@kanji"   : @"中河健"
+        }
+    ];
+
+    NSArray *performer  =@[
+        @{
+            @"@english" : @"Mineko Yamamoto",
+            @"@kanji"   : @"山本美禰子"
+        },
+        @{
+            @"@english" : @"Nana Furuhara",
+            @"@kanji"   : @"古原奈々"
+        },
+    ];
+    
     
     NSDictionary *correct = @{
     @"album":album,
@@ -99,7 +126,10 @@ Vgmdb *vgmdb;
     @"price": @"3360",
     @"mediaFormat": @"2 CD",
     @"classification": classification,
-    @"publisher": publisher
+    @"publisher": publisher,
+    @"composer": composer,
+    @"arranger": arranger,
+    @"performer": performer
     }; 
     
     
