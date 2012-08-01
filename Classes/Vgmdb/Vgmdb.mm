@@ -255,6 +255,9 @@ string _html;
     Node *nstats = *stats.begin();
     
     Node *nrat = nstats->first_child->next_sibling;
+    string _rat = nrat->last_child->prev_sibling->first_child-> data.text();
+    [data setValue:[NSString stringWithCppStringTrimmed:&_rat] forKey:@"rating"];
+    
     
     Node *ncoll = nrat->next_sibling->next_sibling;
     

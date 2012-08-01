@@ -150,7 +150,8 @@ Vgmdb *vgmdb;
     @"performer": performer,
     @"artist": composer,
     @"products": products,
-    @"platforms":platforms
+    @"platforms":platforms,
+    @"rating":  @"Rated 4.50 by 12 people"
     };
     
     
