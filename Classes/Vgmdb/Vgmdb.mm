@@ -186,8 +186,7 @@ string _html;
     Node *ncat = *catalogElem.begin();
     
     string _catalog = ncat->first_child->data.text();
-    NSString *catalog = [[NSString alloc] initWithCppString:&_catalog];
-    catalog =  [catalog trimWhiteSpace];
+    NSString *catalog = [NSString stringWithCppStringTrimmed:&_catalog];
     [data setValue:catalog forKey:@"catalog"];
     
     Node *m = *meta.begin();
@@ -251,7 +250,28 @@ string _html;
     Node *nper = narr->next_sibling->next_sibling;
     [data setValue: [self get_spilt_data:nper] forKey:@"performer"];
     
+    Selector stats = s.select(" td#rightcolumn  div.smallfont ");
     
+    Node *nstats = *stats.begin();
+    
+    Node *nrat = nstats->first_child->next_sibling;
+    
+    Node *ncoll = nrat->next_sibling->next_sibling;
+    
+    Node *nwish = ncoll->next_sibling->next_sibling;
+
+    Node *ngenre = nwish->next_sibling->next_sibling;
+    
+    Node *nprod = ngenre->next_sibling->next_sibling;
+    NSDictionary *prod =[self splitLanguagesInNodes: nprod->last_child->prev_sibling->first_child];
+    [data setValue:@[prod] forKey:@"products"];
+    
+    Node *nplat = nprod->next_sibling->next_sibling;
+    string _plat = nplat->last_child->data.text();
+    NSArray *plats = @[
+        [NSString stringWithCppStringTrimmed:&_plat]
+    ];
+    [data setValue:plats forKey:@"platforms"];
     
 }
  

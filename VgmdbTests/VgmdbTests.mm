@@ -43,7 +43,9 @@ Vgmdb *vgmdb;
     @"year",@"classification",
     @"publisher", @"composer",
     @"arranger", @"performer",
-    @"artist"
+    @"artist",
+    
+    @"products", @"platforms",
     ];
     
     for (NSString *field in fields) {
@@ -55,10 +57,10 @@ Vgmdb *vgmdb;
                              @"%@ - %@",field, name);
         printf("\n\n");
     }
-//    STAssertEqualObjects(
-//                         results,
-//                         correct,
-//                         @"Everything - %@",name);
+    STAssertEqualObjects(
+                         results,
+                         correct,
+                         @"Everything - %@",name);
 }
 
 -(NSURL*)getUrlForName:(NSString*)name
@@ -120,14 +122,25 @@ Vgmdb *vgmdb;
         },
     ];
     
+    NSArray *products =@[
+        @{
+            @"@english":  @"Atelier Rorona",
+            @"@kanji":    @"ロロナのアトリエ　～アーランドの錬金術師～",
+            @"@romaji":   @"Rorona no Atelier: Arland no Renkinjutsushi"
+        },
+    ];
+    
+    NSArray *platforms = @[
+        @"Sony PlayStation 3"
+    ];
     
     NSDictionary *correct = @{
     @"album":album,
     @"url": url,
     @"catalog" : @"KDSD-10038~9",
     @"date" : @"Jun 24, 2009",
-    @"publishedFormat": @"Commercial",
     @"year": @"2009",
+    @"publishedFormat": @"Commercial",
     @"price": @"3360",
     @"mediaFormat": @"2 CD",
     @"classification": classification,
@@ -136,6 +149,8 @@ Vgmdb *vgmdb;
     @"arranger": arranger,
     @"performer": performer,
     @"artist": composer,
+    @"products": products,
+    @"platforms":platforms
     };
     
     
