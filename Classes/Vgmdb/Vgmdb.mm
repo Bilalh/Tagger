@@ -31,9 +31,6 @@ using namespace std;
 using namespace hcxselect;
 
 
-
-
-static const NSString const *testFolder = @"/Users/bilalh/Projects/Tagger/Test Files/Albums/";
 @implementation Vgmdb
 
 #pragma mark -
@@ -44,23 +41,7 @@ static const NSString const *testFolder = @"/Users/bilalh/Projects/Tagger/Test F
 {
     self = [super init];
     if (self) {
-        DDLogVerbose(@"ddd");
-//        [self searchResults:@"Rorona"];
-        
-//        NSString *s=  [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://vgmdb.net/album/13192"]
-//                                               encoding:NSUTF8StringEncoding
-//                                                  error:nil];
-//        [s writeToFile:[@"~/ar.html" stringByExpandingTildeInPath]
-//            atomically:NO
-//              encoding:NSUTF8StringEncoding
-//                 error:nil];
-        
-        NSString *name = @"muti-disk.html";
-        NSString *_url = [testFolder stringByAppendingPathComponent:name];
-        NSURL *url = [[NSURL alloc] initFileURLWithPath:_url];
-        
-//        NSDictionary *d =[self getAlbumData:url];
-//        DDLogInfo(@"%@ ", d);
+
     }
     return self;
 }
@@ -216,7 +197,10 @@ string _html;
     
     
     Node *npub = ndate->next_sibling->next_sibling;
-    [data setValue:get_data(npub) forKey:@"publishedFormat"];
+    NSString *pub = get_data(npub);
+    NSArray *pubs = @[pub];
+    
+    [data setValue:pubs forKey:@"publishedFormat"];
     
     Node *nprice = npub->next_sibling->next_sibling;
     [data setValue:get_data(nprice) forKey:@"price"];
@@ -264,6 +248,10 @@ string _html;
     Node *nwish = ncoll->next_sibling->next_sibling;
 
     Node *ngenre = nwish->next_sibling->next_sibling;
+    string _genre = ngenre->last_child->data.text();
+    NSArray *genres = @[[NSString stringWithCppStringTrimmed:&_genre]];
+    [data setValue:genres forKey:@"genre"];
+    [data setValue:genres forKey:@"category"];
     
     Node *nprod = ngenre->next_sibling->next_sibling;
     NSDictionary *prod =[self splitLanguagesInNodes: nprod->last_child->prev_sibling->first_child];
@@ -309,6 +297,8 @@ string _html;
         current = current->next_sibling;
     }
     return arr;
+  
+        
     
 };
 
