@@ -263,7 +263,7 @@ Vgmdb *vgmdb;
         @{
             @"@english":  @"Atelier Elie",
             @"@kanji":    @"エリーのアトリエ ～ザールブルグの錬金術士2～",
-            @"@romaji":   @"エリーのアトリエ ～ザールブルグの錬金術士2～"
+            @"@romaji":   @"Elie no Atelier: Salburg no Renkinjutsushi 2"
         },
         @{
             @"@english":  @"Atelier Lilie",

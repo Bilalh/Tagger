@@ -250,6 +250,13 @@ string _html;
         if ( current->data.tagName().compare("a") ==0){
             [prods addObject:[self splitLanguagesInNodes: current->first_child]];
         }
+        else if(!current->data.isTag()){
+            string s = current->data.text();
+            NSString *prod = [NSString stringWithCppStringTrimmed:&s];
+            if ([prod length] != 0 && ![prod isMatchedByRegex:@"^[,.()\\~ - \"'\\[\\]:!@]+$"]){
+                [prods addObject:@{@"@english": prod}];
+            }
+        }
         
         current = current->next_sibling;
     }
@@ -268,14 +275,6 @@ string _html;
     if (!metadata) return nil;
     NSArray *arr = [metadata componentsSeparatedByRegex:@"[,&] ?"];
     if ([arr count] != 0){
-        
-//        NSIndexSet *is = [arr indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
-//            NSString *text = obj;
-//            return ![text isMatchedByRegex:@"^[,.()\\~ - \"'\\[\\]:!@]+$"];
-//            
-//        }];
-//        
-//        return [arr objectsAtIndexes:is] ;
         return arr;
         
     }else{
