@@ -198,9 +198,7 @@ string _html;
     
     Node *npub = ndate->next_sibling->next_sibling;
     NSString *pub = get_data(npub);
-    NSArray *pubs = @[pub];
-    
-    [data setValue:pubs forKey:@"publishedFormat"];
+    [data setValue:[self spiltMutiMetadataString:pub] forKey:@"publishedFormat"];
     
     Node *nprice = npub->next_sibling->next_sibling;
     [data setValue:get_data(nprice) forKey:@"price"];
@@ -210,15 +208,7 @@ string _html;
     
     Node *nclas = nfor->next_sibling->next_sibling;
     NSString *clas = get_data(nclas);
-    if (clas){
-        NSArray *arr = [clas componentsSeparatedByRegex:@"[&,(){}.-\\~] ?"];
-        if ([arr count] != 0){
-            [data setValue:arr forKey:@"classification"];
-        }else{
-            [data setValue:@[[clas trimWhiteSpace]] forKey:@"classification"];
-        }
-
-    }
+    [data setValue:[self spiltMutiMetadataString:clas] forKey:@"classification"];
     
     Node *npubl = nclas->next_sibling->next_sibling;
     [data setValue: [self get_spilt_data:npubl] forKey:@"publisher"];
@@ -254,18 +244,45 @@ string _html;
     [data setValue:genres forKey:@"category"];
     
     Node *nprod = ngenre->next_sibling->next_sibling;
-    NSDictionary *prod =[self splitLanguagesInNodes: nprod->last_child->prev_sibling->first_child];
-    [data setValue:@[prod] forKey:@"products"];
+    NSMutableArray *prods = [NSMutableArray new];
+    Node *current = nprod->first_child;
+    while (current) {
+        if ( current->data.tagName().compare("a") ==0){
+            [prods addObject:[self splitLanguagesInNodes: current->first_child]];
+        }
+        
+        current = current->next_sibling;
+    }
+    [data setValue:prods forKey:@"products"];
     
     Node *nplat = nprod->next_sibling->next_sibling;
     string _plat = nplat->last_child->data.text();
-    NSArray *plats = @[
-        [NSString stringWithCppStringTrimmed:&_plat]
-    ];
-    [data setValue:plats forKey:@"platforms"];
+    NSString *plat = [NSString stringWithCppStringTrimmed:&_plat];
+    [data setValue:[self spiltMutiMetadataString:plat] forKey:@"platforms"];
     
 }
  
+
+- (NSArray*) spiltMutiMetadataString:(NSString *)metadata
+{
+    if (!metadata) return nil;
+    NSArray *arr = [metadata componentsSeparatedByRegex:@"[,&] ?"];
+    if ([arr count] != 0){
+        
+//        NSIndexSet *is = [arr indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+//            NSString *text = obj;
+//            return ![text isMatchedByRegex:@"^[,.()\\~ - \"'\\[\\]:!@]+$"];
+//            
+//        }];
+//        
+//        return [arr objectsAtIndexes:is] ;
+        return arr;
+        
+    }else{
+        return @[[metadata trimWhiteSpace]];
+    }
+}
+
 - (NSArray*)get_spilt_data:(Node *)n
 {
     NSMutableArray *arr = [NSMutableArray new];

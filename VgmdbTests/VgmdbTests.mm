@@ -161,6 +161,9 @@ Vgmdb *vgmdb;
     @"genre": genre,
     @"category": genre
     };
+    
+    [self testUsingTestData:correct];
+
 }
 
 - (void)testMutiMetadata
