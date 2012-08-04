@@ -12,4 +12,6 @@
 
 - (BOOL) hasVaildData;
 
+- (NSString *)stringByDecodingXMLEntities;
+
 @end

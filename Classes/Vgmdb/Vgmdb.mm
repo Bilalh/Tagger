@@ -6,6 +6,9 @@
 //  Copyright (c) 2012 All rights reserved.
 //
 
+#include <AvailabilityMacros.h>
+#include <TargetConditionals.h>
+
 #import "Vgmdb.h"
 #import "Vgmdb+private.h"
 
@@ -130,7 +133,59 @@ using namespace hcxselect;
 #pragma mark -
 #pragma mark Album data
 
-// 
+
+- (NSDictionary*)getAlbumData:(NSURL*) url
+{
+    NSMutableDictionary *data = [NSMutableDictionary new];
+    
+    NSError *err;
+    string *html = [self cppstringWithContentsOfURL:url error:&err];
+    
+    if (html == NULL){
+        NSLog(@"Error %@", [err localizedDescription]);
+        return data;
+    }
+    
+    htmlcxx::HTML::ParserDom parser;
+    tree<htmlcxx::HTML::Node> dom = parser.parseTree(*html);
+    Selector s(dom);
+    
+    [data setValue:[self getAlbumTitles:dom forHtml:*html]
+            forKey:@"album"];
+    
+    [self storeMetadata:dom forHtml:*html in:data];
+    
+    [self storeNotes:dom forHtml:*html in:data];
+    
+    [data setValue:url forKey:@"url"];
+    return data;
+}
+
+
+- (void) storeNotes:(const tree<htmlcxx::HTML::Node>&)dom
+            forHtml:(const std::string&)html
+                    in:(NSDictionary*)data
+{
+    Selector s(dom);
+    Selector res = s.select("div.page > table > tr > td > div > div[style].smallfont");
+    
+    string buf;
+    Node *n = *res.rbegin();
+    n = n->first_child;
+    
+    while (n){
+        if (!n->data.isTag()){
+            buf.append( n->data.text());
+        }else if(n->data.tagName().compare("br") ==0){
+            buf.append("\n");
+        }
+        n= n->next_sibling;
+    }
+    
+    NSString *notes = [[NSString stringWithCppStringTrimmed: &buf] stringByDecodingXMLEntities];
+    [data setValue:notes forKey:@"comment"];
+}
+
 - (NSDictionary*) getAlbumTitles:(const tree<htmlcxx::HTML::Node>&)dom
                          forHtml:(const std::string&)html
 {
@@ -141,14 +196,6 @@ using namespace hcxselect;
     NSDictionary *titles = [self splitLanguagesInNodes:n];
     
     return titles;
-}
-
-- (Node*) getNodeFrom:(std::string) selector
-        usingSelector:(Selector) s
-{
-    Selector res = s.select("h1>span.albumtitle");
-    Node *n = *res.begin();
-    return n;
 }
 
 
@@ -318,33 +365,6 @@ string _html;
         
     
 };
-
-
-- (NSDictionary*)getAlbumData:(NSURL*) url
-{
-    NSMutableDictionary *data = [NSMutableDictionary new];
-    
-    NSError *err;
-    string *html = [self cppstringWithContentsOfURL:url error:&err];
-    
-    if (html == NULL){
-        NSLog(@"Error %@", [err localizedDescription]);
-        return data;
-    }
-    
-    htmlcxx::HTML::ParserDom parser;
-    tree<htmlcxx::HTML::Node> dom = parser.parseTree(*html);
-    Selector s(dom);
-    
-    [data setValue:[self getAlbumTitles:dom forHtml:*html]
-            forKey:@"album"];
-    
-    [self storeMetadata:dom forHtml:*html in:data];
-    
-    [data setValue:url forKey:@"url"];
-    return data;
-}
-
 
 #pragma mark -
 #pragma mark Common

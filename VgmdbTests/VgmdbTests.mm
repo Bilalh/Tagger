@@ -29,6 +29,8 @@ Vgmdb *vgmdb;
 @implementation VgmdbTests
 
 - (void) testUsingTestData:(NSDictionary*)correct
+                 withNotes:(BOOL)testNotes
+                withTracks:(BOOL)testTracks
 {
  
     NSURL *url = [correct valueForKey:@"url"];
@@ -56,6 +58,15 @@ Vgmdb *vgmdb;
                              @"%@ - %@",field, name);
         printf("\n\n");
     }
+    
+    if (testNotes){
+        NSString *field = @"comment";
+        STAssertEqualObjects(
+                             [results valueForKey:field],
+                             [correct valueForKey:field],
+                             @"%@ - %@",field, name);
+    }
+    
 //    STAssertEqualObjects(
 //                         results,
 //                         correct,
@@ -140,6 +151,8 @@ Vgmdb *vgmdb;
         @"Commercial"
     ];
     
+    NSString *comment = @"All Composed / Arranged by Ken Nakagawa(Gust)\nAll Lyrics by Ken Nakagawa(Gust)\n\n* Opening Song \"Falling, The Star Light\"\nVocal / Chorus by Mineko Yamamoto(digitalis)\n\n* Ending Song \"Fushigi na Recipe\" [\"A Mysterious Recipe\"]\nVocal / Chorus by Nana Furuhara";
+    
     NSDictionary *correct = @{
     @"album":album,
     @"url": url,
@@ -159,10 +172,13 @@ Vgmdb *vgmdb;
     @"platforms":platforms,
     @"rating":  @"Rated 4.50 by 12 people",
     @"genre": genre,
-    @"category": genre
+    @"category": genre,
+    @"comment":comment
     };
     
-    [self testUsingTestData:correct];
+    [self testUsingTestData:correct
+                  withNotes:YES
+                 withTracks:NO];
 
 }
 
@@ -326,7 +342,9 @@ Vgmdb *vgmdb;
     };
 
 
-    [self testUsingTestData:correct];
+    [self testUsingTestData:correct
+                  withNotes:NO
+                 withTracks:NO];
 }
 
 - (void)testNoPlatforms_small
@@ -417,7 +435,9 @@ Vgmdb *vgmdb;
     @"category": genre
     };
     
-    [self testUsingTestData:correct];
+    [self testUsingTestData:correct
+                  withNotes:NO
+                 withTracks:NO];
 
 }
 
