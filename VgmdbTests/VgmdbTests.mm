@@ -329,11 +329,105 @@ Vgmdb *vgmdb;
     [self testUsingTestData:correct];
 }
 
+- (void)testNoPlatforms_small
+{
+    NSString *name = @"noPlatforms_small.html";
+    NSURL *url = [self getUrlForName:name];
+    
+    NSDictionary *album =@{
+        @"@english": @"Nexus / ClariS",
+        @"@kanji":   @"Nexus / ClariS",
+        @"@romaji":  @"Nexus / ClariS"
+    };
+    
+    NSArray *classification = @[@"Vocal"];
+    
+    NSArray *publisher =@[
+    @{
+        @"@english" :  @"SME Records",
+        @"@kanji":     @"株式会社エスエムイーレコーズ",
+        @"@romaji":    @"SME Records"
+    },
+    ];
+    
+    NSArray *composer  =@[
+    @{
+        @"@english" : @"kz",
+    },
+    @{
+        @"@english" : @"小田桐ゆうき",
+    },
+    @{
+        @"@english" : @"Hiroo Ooyagi",
+        @"kanji":     @"オオヤギヒロオ"
+    },
+    ];
+    
+    NSArray *arranger  =@[
+    @{
+        @"@english" : @"kz",
+    },
+    @{
+        @"@english" : @"小田桐ゆうき",
+    },
+    @{
+        @"@english" : @"Hiroo Ooyagi",
+        @"kanji":     @"オオヤギヒロオ"
+    },
+    ];
+    
+    NSArray *performer  =@[
+    @{
+        @"@english" : @"ClariS",
+    },
+    ];
+    
+    NSArray *products =@[
+    @{
+        @"@english":  @"Ore no Imouto ga Konnani Kawaii Wake ga nai",
+    },
+    ];
+    
+    NSArray *platforms = @[];
+    
+    NSArray *genre = @[
+        @"Publication"
+    ];
+    
+    NSArray *publishedFormat =@[
+        @"Commercial"
+    ];
+    
+    NSDictionary *correct = @{
+    @"album":album,
+    @"url": url,
+    @"catalog" : @"SECL-1004~5",
+    @"date" : @"Sep 14, 2011",
+    @"year": @"2011",
+    @"publishedFormat": publishedFormat,
+    @"price": @"1575",
+    @"mediaFormat": @"CD + DVD",
+    @"classification": classification,
+    @"publisher": publisher,
+    @"composer": composer,
+    @"arranger": arranger,
+    @"performer": performer,
+    @"artist": composer,
+    @"products": products,
+    @"rating":  @"Nobody has rated this album yet.",
+    @"genre": genre,
+    @"category": genre
+    };
+    
+    [self testUsingTestData:correct];
 
+}
+
+//
 //- (void)testMakeFiles
 //{
-//    NSString *name = @"mutiMetadata.html";
-//    NSString *url = @"http://vgmdb.net/album/762";
+//    NSString *name = @"noPlatforms_small.html";
+//    NSString *url = @"http://vgmdb.net/album/30881";
 //    NSString *path = [testFolder stringByAppendingPathComponent:name];
 //    NSString *s=  [NSString stringWithContentsOfURL:[NSURL URLWithString:url]
 //                                           encoding:NSUTF8StringEncoding

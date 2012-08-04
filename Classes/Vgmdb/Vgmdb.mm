@@ -264,9 +264,11 @@ string _html;
     [data setValue:prods forKey:@"products"];
     
     Node *nplat = nprod->next_sibling->next_sibling;
-    string _plat = nplat->last_child->data.text();
-    NSString *plat = [NSString stringWithCppStringTrimmed:&_plat];
-    [data setValue:[self spiltMutiMetadataString:plat] forKey:@"platforms"];
+    if (nplat->last_child){
+        string _plat = nplat->last_child->data.text();
+        NSString *plat = [NSString stringWithCppStringTrimmed:&_plat];
+        [data setValue:[self spiltMutiMetadataString:plat] forKey:@"platforms"];
+    }
     
 }
  
