@@ -387,9 +387,7 @@ Vgmdb *vgmdb;
         @"@english":  @"Ore no Imouto ga Konnani Kawaii Wake ga nai",
     },
     ];
-    
-    NSArray *platforms = @[];
-    
+        
     NSArray *genre = @[
         @"Publication"
     ];

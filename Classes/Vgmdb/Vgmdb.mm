@@ -286,9 +286,11 @@ string _html;
             NSString *text = [NSString stringWithCppStringTrimmed:&_text];
             if ([text hasVaildData]){
                 NSString *result = [text stringByReplacingOccurrencesOfRegex:@", *" withString:@""];
-                [arr addObject:@{ @"@english" : result }];
-                current = current->next_sibling;
-                continue;
+                if (![text isMatchedByRegex:@"^\\("]){
+                    [arr addObject:@{ @"@english" : result }];
+                    current = current->next_sibling;
+                    continue;
+                }
             }
         }
         
