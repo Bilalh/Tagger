@@ -385,7 +385,7 @@ static const NSSet *tokensNumberSet;
 		}
 	}
 	
-	DDLogInfo(@"Results key %@ value %@ title %@ -- %@", dst);
+//	DDLogInfo(@"Results key %@ value %@ title %@ -- %@", dst);
 	
 	if ([dst count] == 2){
 	 	[tags setValue:[[NSString alloc]  initWithFormat:@"%@ %@",

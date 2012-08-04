@@ -10,6 +10,7 @@
 #import "Vgmdb+private.h"
 
 #import "NSString+Convert.h"
+#import "NSString+Regex.h"
 #import "RegexKitLite.h"
 
 #import "Logging.h"
@@ -253,7 +254,7 @@ string _html;
         else if(!current->data.isTag()){
             string s = current->data.text();
             NSString *prod = [NSString stringWithCppStringTrimmed:&s];
-            if ([prod length] != 0 && ![prod isMatchedByRegex:@"^[,.()\\~ - \"'\\[\\]:!@]+$"]){
+            if ([prod hasVaildData]){
                 [prods addObject:@{@"@english": prod}];
             }
         }
@@ -269,19 +270,6 @@ string _html;
     
 }
  
-
-- (NSArray*) spiltMutiMetadataString:(NSString *)metadata
-{
-    if (!metadata) return nil;
-    NSArray *arr = [metadata componentsSeparatedByRegex:@"[,&] ?"];
-    if ([arr count] != 0){
-        return arr;
-        
-    }else{
-        return @[[metadata trimWhiteSpace]];
-    }
-}
-
 - (NSArray*)get_spilt_data:(Node *)n
 {
     NSMutableArray *arr = [NSMutableArray new];
@@ -300,7 +288,7 @@ string _html;
             }
             string _text = m->data.text();
             NSString *text = [NSString stringWithCppStringTrimmed:&_text];
-            if ([text length] >0 && ![text isMatchedByRegex:@"^[,.()\\~ - \"'\\[\\]:!@]+$"]){
+            if ([text hasVaildData]){
                 [arr addObject:@{ @"@english" : text }];
             }
         }else{
@@ -348,10 +336,32 @@ string _html;
 #pragma mark -
 #pragma mark Common
 
+// String multiple values in a string into an array.
+- (NSArray*) spiltMutiMetadataString:(NSString *)metadata
+{
+    if (!metadata) return nil;
+    NSArray *arr = [metadata componentsSeparatedByRegex:@"[,&] ?"];
+    if ([arr count] != 0){
+        return arr;
+    }else{
+        return @[[metadata trimWhiteSpace]];
+    }
+}
+
 - (NSDictionary*)splitLanguagesInNodes:(Node*)node
 {
     NSMutableDictionary *titles= [NSMutableDictionary new];
     while (node) {
+        // for text only node
+        if (!node->data.isTag()){
+            string _title = node->data.text();
+            NSString *title = [NSString stringWithCppStringTrimmed:&_title];
+            if([title hasVaildData]){
+                [titles setValue:title forKey:@"@english"];
+                node = node->next_sibling;
+                continue;
+            }
+        }
         
         node->data.parseAttributes();
         map<string, string> att= node->data.attributes();

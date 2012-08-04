@@ -81,6 +81,8 @@
 		92D30AC31405B1B600677B70 /* IntPair.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D30AC21405B1B600677B70 /* IntPair.m */; };
 		92DBDEAD14AAB99A009434DB /* fields.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92DBDEAC14AAB99A009434DB /* fields.cpp */; };
 		92DECF1214ABFBAC00A956E8 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 92DECF1114ABFBAC00A956E8 /* Credits.html */; };
+		92E101F815CDB7FB00882A07 /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E101F715CDB7FB00882A07 /* NSString+Regex.m */; };
+		92E101F915CDB7FB00882A07 /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E101F715CDB7FB00882A07 /* NSString+Regex.m */; };
 		92E6EDB713F313230045679E /* NSAttributedString+Hyperlink.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E6ED7013F313230045679E /* NSAttributedString+Hyperlink.m */; };
 		92E6EDB813F313230045679E /* NSImage+bitmapData.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E6ED7213F313230045679E /* NSImage+bitmapData.m */; };
 		92E6EDB913F313230045679E /* NSMutableArray+Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E6ED7413F313230045679E /* NSMutableArray+Stack.m */; };
@@ -124,13 +126,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9254007213F0B4150020C912 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 925CE81413C3BD6D009D6D94 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 925CE81C13C3BD6D009D6D94;
-			remoteInfo = VGTagger;
-		};
 		925CC63D15C37DA700820B4F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 925CE81413C3BD6D009D6D94 /* Project object */;
@@ -225,6 +220,8 @@
 		92D30AC21405B1B600677B70 /* IntPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntPair.m; sourceTree = "<group>"; };
 		92DBDEAC14AAB99A009434DB /* fields.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fields.cpp; sourceTree = "<group>"; };
 		92DECF1114ABFBAC00A956E8 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		92E101F615CDB7FB00882A07 /* NSString+Regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Regex.h"; sourceTree = "<group>"; };
+		92E101F715CDB7FB00882A07 /* NSString+Regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Regex.m"; sourceTree = "<group>"; };
 		92E6ED6F13F313230045679E /* NSAttributedString+Hyperlink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Hyperlink.h"; sourceTree = "<group>"; };
 		92E6ED7013F313230045679E /* NSAttributedString+Hyperlink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Hyperlink.m"; sourceTree = "<group>"; };
 		92E6ED7113F313230045679E /* NSImage+bitmapData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+bitmapData.h"; sourceTree = "<group>"; };
@@ -582,6 +579,8 @@
 				92E6ED7A13F313230045679E /* NSString+Numbers.m */,
 				9254094715C367330074A280 /* NSString+Tag.h */,
 				9254094815C367330074A280 /* NSString+Tag.mm */,
+				92E101F615CDB7FB00882A07 /* NSString+Regex.h */,
+				92E101F715CDB7FB00882A07 /* NSString+Regex.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -724,24 +723,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXLegacyTarget section */
-		92CEE64A13F0A23600E4C5CE /* Embed MacRuby */ = {
-			isa = PBXLegacyTarget;
-			buildArgumentsString = "--compile --embed --gem nokogiri --gem htmlentities";
-			buildConfigurationList = 92CEE64B13F0A23600E4C5CE /* Build configuration list for PBXLegacyTarget "Embed MacRuby" */;
-			buildPhases = (
-			);
-			buildToolPath = /usr/local/bin/macruby_deploy;
-			buildWorkingDirectory = "";
-			dependencies = (
-				9254007313F0B4150020C912 /* PBXTargetDependency */,
-			);
-			name = "Embed MacRuby";
-			passBuildSettingsInEnvironment = 1;
-			productName = "Embed MacRuby";
-		};
-/* End PBXLegacyTarget section */
-
 /* Begin PBXNativeTarget section */
 		9252929415C359C300C8CD9E /* VgmdbTests */ = {
 			isa = PBXNativeTarget;
@@ -805,7 +786,6 @@
 			targets = (
 				925CE81C13C3BD6D009D6D94 /* Tagger */,
 				9273E64013D6166C002BA3A0 /* Documentation */,
-				92CEE64A13F0A23600E4C5CE /* Embed MacRuby */,
 				9293B85114AF8E55006D96E7 /* Sparkle */,
 				9252929415C359C300C8CD9E /* VgmdbTests */,
 			);
@@ -908,6 +888,7 @@
 				925292B115C35C8900C8CD9E /* PSDDFormatter.m in Sources */,
 				925292AD15C359EA00C8CD9E /* Vgmdb.mm in Sources */,
 				925292A715C359C300C8CD9E /* VgmdbTests.mm in Sources */,
+				92E101F915CDB7FB00882A07 /* NSString+Regex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -959,17 +940,13 @@
 				92DBDEAD14AAB99A009434DB /* fields.cpp in Sources */,
 				92A96F2D15BCD2DC004A320E /* Vgmdb.mm in Sources */,
 				9254094915C367330074A280 /* NSString+Tag.mm in Sources */,
+				92E101F815CDB7FB00882A07 /* NSString+Regex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9254007313F0B4150020C912 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 925CE81C13C3BD6D009D6D94 /* Tagger */;
-			targetProxy = 9254007213F0B4150020C912 /* PBXContainerItemProxy */;
-		};
 		925CC63E15C37DA700820B4F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 925CE81C13C3BD6D009D6D94 /* Tagger */;
@@ -1259,39 +1236,6 @@
 			};
 			name = Release;
 		};
-		92CEE64C13F0A23600E4C5CE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUGGING_SYMBOLS = YES;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		92CEE64D13F0A23600E4C5CE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1336,15 +1280,6 @@
 			buildConfigurations = (
 				9293B85314AF8E55006D96E7 /* Debug */,
 				9293B85414AF8E55006D96E7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		92CEE64B13F0A23600E4C5CE /* Build configuration list for PBXLegacyTarget "Embed MacRuby" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				92CEE64C13F0A23600E4C5CE /* Debug */,
-				92CEE64D13F0A23600E4C5CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
