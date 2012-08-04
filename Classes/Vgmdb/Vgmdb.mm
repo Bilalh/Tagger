@@ -281,6 +281,15 @@ string _html;
         if (!current) {
             current = current->next_sibling;
             continue;
+        }else if (!current->data.isTag()){
+            string _text = current->data.text();
+            NSString *text = [NSString stringWithCppStringTrimmed:&_text];
+            if ([text hasVaildData]){
+                NSString *result = [text stringByReplacingOccurrencesOfRegex:@", *" withString:@""];
+                [arr addObject:@{ @"@english" : result }];
+                current = current->next_sibling;
+                continue;
+            }
         }
         
         if (!current->next_sibling) { // Only Text

@@ -359,7 +359,7 @@ Vgmdb *vgmdb;
     },
     @{
         @"@english" : @"Hiroo Ooyagi",
-        @"kanji":     @"オオヤギヒロオ"
+        @"@kanji":     @"オオヤギヒロオ"
     },
     ];
     
@@ -372,7 +372,7 @@ Vgmdb *vgmdb;
     },
     @{
         @"@english" : @"Hiroo Ooyagi",
-        @"kanji":     @"オオヤギヒロオ"
+        @"@kanji":     @"オオヤギヒロオ"
     },
     ];
     
