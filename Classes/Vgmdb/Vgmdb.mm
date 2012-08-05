@@ -123,12 +123,14 @@ using namespace hcxselect;
                              nil]];
         }
         
+        delete html;
         return rows; 
         
     }else {
         DDLogInfo(@"%@", [err localizedFailureReason]);
     }
     
+    delete html;
     return [NSArray new];
 }
 
@@ -160,6 +162,7 @@ using namespace hcxselect;
     [self storeTracks:dom forHtml:*html in:data];
 
     
+    delete html;
     [data setValue:url forKey:@"url"];
     return data;
 }
@@ -459,9 +462,29 @@ string _html;
 };
 
 #pragma mark -
+#pragma mark Tracks Array
+
+- (NSArray*)getTracksArray:(NSMutableDictionary*)data
+{
+    return [[data valueForKey:@"tracks"] sortedArrayUsingComparator:
+     ^NSComparisonResult(NSDictionary *x, NSDictionary *y) {
+         NSComparisonResult res;
+         res = [[x valueForKey:@"disc"] compare:[y valueForKey:@"disc"]];
+         if (res == NSOrderedSame){
+             res = [[x valueForKey:@"track"] compare:[y valueForKey:@"track"]];
+         }
+         if (res == NSOrderedSame){
+             res = [[x valueForKey:@"length"] compare:[y valueForKey:@"length"]];
+         }
+         return res;
+    }];
+    
+}
+
+#pragma mark -
 #pragma mark Common
 
-- (NSString*) textFromNode:(Node *)n
+- (NSString*)textFromNode:(Node*)n
 {
     Node *current = n;
     while(current->first_child){

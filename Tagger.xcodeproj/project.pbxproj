@@ -38,9 +38,16 @@
 		921FBBEE140C68AF00D1CBE8 /* ArrayDefaultsPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921FBBED140C68AF00D1CBE8 /* ArrayDefaultsPreferencesView.xib */; };
 		922D866713F4E4EE0016B811 /* Tagger.icns in Resources */ = {isa = PBXBuildFile; fileRef = 922D866613F4E4EE0016B811 /* Tagger.icns */; };
 		922E35D713C89BF3003C5913 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922E35D613C89BF3003C5913 /* Cocoa.framework */; };
+		923926EE15CF078100135F07 /* libhtmlcxx.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 923926EB15CF076D00135F07 /* libhtmlcxx.3.dylib */; };
+		923926F015CF07F700135F07 /* libhtmlcxx.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 923926EB15CF076D00135F07 /* libhtmlcxx.3.dylib */; };
+		923926F115CF086300135F07 /* libhtmlcxx.3.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 923926EB15CF076D00135F07 /* libhtmlcxx.3.dylib */; };
+		923926FF15CF0B8D00135F07 /* libhcxselect.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 923926FC15CF0B7E00135F07 /* libhcxselect.dylib */; };
+		9239270015CF0B9F00135F07 /* libhcxselect.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 923926FC15CF0B7E00135F07 /* libhcxselect.dylib */; };
+		9239270315CF0E2F00135F07 /* libhcxselect.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 923926FC15CF0B7E00135F07 /* libhcxselect.dylib */; };
+		9239270415CF0E3100135F07 /* libhtmlcxx.3.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 923926EB15CF076D00135F07 /* libhtmlcxx.3.dylib */; };
+		9239270515CF0F8400135F07 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9252929715C359C300C8CD9E /* SenTestingKit.framework */; };
 		9239573013F43EB100A80074 /* CCTColorLabelMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9239572F13F43EB100A80074 /* CCTColorLabelMenuItemView.m */; };
 		923B846413F4B7A800524BFA /* BHFinderLabelColours.m in Sources */ = {isa = PBXBuildFile; fileRef = 923B846313F4B7A800524BFA /* BHFinderLabelColours.m */; };
-		9252929815C359C300C8CD9E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9252929715C359C300C8CD9E /* SenTestingKit.framework */; };
 		925292A415C359C300C8CD9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 925292A215C359C300C8CD9E /* InfoPlist.strings */; };
 		925292A715C359C300C8CD9E /* VgmdbTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 925292A615C359C300C8CD9E /* VgmdbTests.mm */; };
 		925292AD15C359EA00C8CD9E /* Vgmdb.mm in Sources */ = {isa = PBXBuildFile; fileRef = 92A96F2C15BCD2DC004A320E /* Vgmdb.mm */; };
@@ -50,8 +57,6 @@
 		925292B715C35CAB00C8CD9E /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD513DA087D00244796 /* DDFileLogger.m */; };
 		925292B915C35CAB00C8CD9E /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD713DA087D00244796 /* DDLog.m */; };
 		925292BB15C35CAB00C8CD9E /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD913DA087D00244796 /* DDTTYLogger.m */; };
-		925292BC15C35CD100C8CD9E /* libhcxselect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F2C1E515BC75DF00AF9D78 /* libhcxselect.a */; };
-		925292BD15C35D5900C8CD9E /* libhtmlcxx.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A96F3215BCEB25004A320E /* libhtmlcxx.3.dylib */; };
 		9254006713F0A82C0020C912 /* libtag.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.1.dylib */; };
 		9254007113F0AC8F0020C912 /* libtag.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.1.dylib */; };
 		9254094915C367330074A280 /* NSString+Tag.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9254094815C367330074A280 /* NSString+Tag.mm */; };
@@ -60,6 +65,9 @@
 		9264488A13D773CE0035E693 /* arrowLeftBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */; };
 		9264488B13D773CE0035E693 /* arrowRightBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488913D773CE0035E693 /* arrowRightBlack16.tiff */; };
 		928411AF13EB853600A92F3F /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 928411AE13EB853600A92F3F /* defaults.plist */; };
+		9289122815CF195500FBE113 /* hcxselect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9289122515CF195500FBE113 /* hcxselect.cpp */; };
+		9289122915CF195500FBE113 /* hcxselect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9289122515CF195500FBE113 /* hcxselect.cpp */; };
+		9289122A15CF198600FBE113 /* hcxselect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9289122515CF195500FBE113 /* hcxselect.cpp */; };
 		9293B84814AF7C7B006D96E7 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9293B84614AF7C71006D96E7 /* Sparkle.framework */; };
 		9293B84914AF7CA2006D96E7 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9293B84614AF7C71006D96E7 /* Sparkle.framework */; };
 		9293B84B14AF7DFA006D96E7 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 9293B84A14AF7DFA006D96E7 /* dsa_pub.pem */; };
@@ -74,7 +82,6 @@
 		92A6808813EC7B130067DD5F /* MASPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A6808513EC7B130067DD5F /* MASPreferencesWindow.xib */; };
 		92A6808913EC7B130067DD5F /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A6808713EC7B130067DD5F /* MASPreferencesWindowController.m */; };
 		92A96F2D15BCD2DC004A320E /* Vgmdb.mm in Sources */ = {isa = PBXBuildFile; fileRef = 92A96F2C15BCD2DC004A320E /* Vgmdb.mm */; };
-		92A96F3315BCEB25004A320E /* libhtmlcxx.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A96F3215BCEB25004A320E /* libhtmlcxx.3.dylib */; };
 		92B615D515C5EFEB002E048B /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F16DB014041AC10031E4B4 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		92C4466413E0BF830038F817 /* BWHyperlinkTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4466113E0BF830038F817 /* BWHyperlinkTitleButton.m */; };
 		92C4466513E0BF830038F817 /* BWHyperlinkButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4466313E0BF830038F817 /* BWHyperlinkButtonCell.m */; };
@@ -120,9 +127,24 @@
 		92E6EDE413F320540045679E /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E6EDE313F320540045679E /* ScriptingBridge.framework */; };
 		92E6EDF713F32B3C0045679E /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92E6EDF613F32B3C0045679E /* Quartz.framework */; };
 		92E6EE3213F35FD50045679E /* QuickLookTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E6EE3113F35FD50045679E /* QuickLookTableView.m */; };
+		92F0593F15CF13EF00256B52 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9252929715C359C300C8CD9E /* SenTestingKit.framework */; };
+		92F0594015CF13EF00256B52 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9252929915C359C300C8CD9E /* Cocoa.framework */; };
+		92F0594615CF13EF00256B52 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 92F0594415CF13EF00256B52 /* InfoPlist.strings */; };
+		92F0594915CF13EF00256B52 /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F0594815CF13EF00256B52 /* Tests.m */; };
+		92F0594F15CF14A800256B52 /* NSString+Convert.mm in Sources */ = {isa = PBXBuildFile; fileRef = 92E6ED7813F313230045679E /* NSString+Convert.mm */; };
+		92F0595015CF14B400256B52 /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E101F715CDB7FB00882A07 /* NSString+Regex.m */; };
+		92F0595115CF14BF00256B52 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F16DB014041AC10031E4B4 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		92F0595215CF14F100256B52 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD113DA087D00244796 /* DDAbstractDatabaseLogger.m */; };
+		92F0595315CF14F400256B52 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD313DA087D00244796 /* DDASLLogger.m */; };
+		92F0595415CF14F700256B52 /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD513DA087D00244796 /* DDFileLogger.m */; };
+		92F0595515CF14F900256B52 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD713DA087D00244796 /* DDLog.m */; };
+		92F0595615CF14FC00256B52 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD913DA087D00244796 /* DDTTYLogger.m */; };
+		92F0595815CF155600256B52 /* PSDDFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E6ED8A13F313230045679E /* PSDDFormatter.m */; };
+		92F0595A15CF157B00256B52 /* libhcxselect.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 923926FC15CF0B7E00135F07 /* libhcxselect.dylib */; };
+		92F0595B15CF157B00256B52 /* libhtmlcxx.3.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 923926EB15CF076D00135F07 /* libhtmlcxx.3.dylib */; };
+		92F0596115CF162A00256B52 /* libhtmlcxx.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 923926EB15CF076D00135F07 /* libhtmlcxx.3.dylib */; };
 		92F16DB114041AC10031E4B4 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F16DB014041AC10031E4B4 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		92F16DB314041D8B0031E4B4 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F16DB214041D8B0031E4B4 /* libicucore.dylib */; };
-		92F2C1E615BC75DF00AF9D78 /* libhcxselect.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F2C1E515BC75DF00AF9D78 /* libhcxselect.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,14 +158,38 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		9239270215CF0E1400135F07 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9239270315CF0E2F00135F07 /* libhcxselect.dylib in CopyFiles */,
+				9239270415CF0E3100135F07 /* libhtmlcxx.3.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9254006613F0A80C0020C912 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				923926FF15CF0B8D00135F07 /* libhcxselect.dylib in CopyFiles */,
+				923926F115CF086300135F07 /* libhtmlcxx.3.dylib in CopyFiles */,
 				9254006713F0A82C0020C912 /* libtag.1.dylib in CopyFiles */,
 				9293B84914AF7CA2006D96E7 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92F0595915CF156E00256B52 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				92F0595A15CF157B00256B52 /* libhcxselect.dylib in CopyFiles */,
+				92F0595B15CF157B00256B52 /* libhtmlcxx.3.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +208,8 @@
 		922D866613F4E4EE0016B811 /* Tagger.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Tagger.icns; path = ../Tagger.icns; sourceTree = "<group>"; };
 		922D866813F4E54B0016B811 /* Tagger.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Tagger.svg; sourceTree = "<group>"; };
 		922E35D613C89BF3003C5913 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		923926EB15CF076D00135F07 /* libhtmlcxx.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libhtmlcxx.3.dylib; path = Frameworks/libhtmlcxx.3.dylib; sourceTree = "<group>"; };
+		923926FC15CF0B7E00135F07 /* libhcxselect.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libhcxselect.dylib; path = Frameworks/libhcxselect.dylib; sourceTree = "<group>"; };
 		9239572E13F43EB100A80074 /* CCTColorLabelMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTColorLabelMenuItemView.h; sourceTree = "<group>"; };
 		9239572F13F43EB100A80074 /* CCTColorLabelMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTColorLabelMenuItemView.m; sourceTree = "<group>"; };
 		923B846213F4B7A800524BFA /* BHFinderLabelColours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHFinderLabelColours.h; sourceTree = "<group>"; };
@@ -186,6 +234,9 @@
 		927883C013E06EED00063D28 /* Todo.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = Todo.md; sourceTree = "<group>"; };
 		928411AE13EB853600A92F3F /* defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaults.plist; sourceTree = "<group>"; };
 		928557FF13EF6352002C5112 /* Test Files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Test Files"; sourceTree = SOURCE_ROOT; };
+		9289122515CF195500FBE113 /* hcxselect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hcxselect.cpp; sourceTree = "<group>"; };
+		9289122615CF195500FBE113 /* hcxselect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hcxselect.h; sourceTree = "<group>"; };
+		9289122715CF195500FBE113 /* lexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lexer.h; sourceTree = "<group>"; };
 		9293B84614AF7C71006D96E7 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		9293B84A14AF7DFA006D96E7 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		9293B84D14AF870D006D96E7 /* config.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.yaml; sourceTree = "<group>"; };
@@ -291,6 +342,12 @@
 		92E6EDF613F32B3C0045679E /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		92E6EE3013F35FD50045679E /* QuickLookTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickLookTableView.h; sourceTree = "<group>"; };
 		92E6EE3113F35FD50045679E /* QuickLookTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickLookTableView.m; sourceTree = "<group>"; };
+		92F0593E15CF13EF00256B52 /* Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		92F0594315CF13EF00256B52 /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
+		92F0594515CF13EF00256B52 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		92F0594715CF13EF00256B52 /* Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tests.h; sourceTree = "<group>"; };
+		92F0594815CF13EF00256B52 /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
+		92F0594A15CF13EF00256B52 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		92F16DAF14041AC10031E4B4 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
 		92F16DB014041AC10031E4B4 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
 		92F16DB214041D8B0031E4B4 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
@@ -302,10 +359,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9239270515CF0F8400135F07 /* SenTestingKit.framework in Frameworks */,
+				923926F015CF07F700135F07 /* libhtmlcxx.3.dylib in Frameworks */,
 				9254094B15C36CC00074A280 /* Cocoa.framework in Frameworks */,
-				925292BD15C35D5900C8CD9E /* libhtmlcxx.3.dylib in Frameworks */,
-				925292BC15C35CD100C8CD9E /* libhcxselect.a in Frameworks */,
-				9252929815C359C300C8CD9E /* SenTestingKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,14 +369,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92A96F3315BCEB25004A320E /* libhtmlcxx.3.dylib in Frameworks */,
+				923926EE15CF078100135F07 /* libhtmlcxx.3.dylib in Frameworks */,
 				92F16DB314041D8B0031E4B4 /* libicucore.dylib in Frameworks */,
 				92E6EDF713F32B3C0045679E /* Quartz.framework in Frameworks */,
 				92E6EDE413F320540045679E /* ScriptingBridge.framework in Frameworks */,
 				9254007113F0AC8F0020C912 /* libtag.1.dylib in Frameworks */,
 				922E35D713C89BF3003C5913 /* Cocoa.framework in Frameworks */,
+				9239270015CF0B9F00135F07 /* libhcxselect.dylib in Frameworks */,
 				9293B84814AF7C7B006D96E7 /* Sparkle.framework in Frameworks */,
-				92F2C1E615BC75DF00AF9D78 /* libhcxselect.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92F0593A15CF13EF00256B52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92F0596115CF162A00256B52 /* libhtmlcxx.3.dylib in Frameworks */,
+				92F0593F15CF13EF00256B52 /* SenTestingKit.framework in Frameworks */,
+				92F0594015CF13EF00256B52 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +449,8 @@
 		9252929615C359C300C8CD9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				923926FC15CF0B7E00135F07 /* libhcxselect.dylib */,
+				923926EB15CF076D00135F07 /* libhtmlcxx.3.dylib */,
 				9252929715C359C300C8CD9E /* SenTestingKit.framework */,
 				9252929915C359C300C8CD9E /* Cocoa.framework */,
 				9252929B15C359C300C8CD9E /* Other Frameworks */,
@@ -438,6 +506,7 @@
 				920660BD13C89845003A3803 /* Resources */,
 				920660BA13C89845003A3803 /* Other Sources */,
 				9252929F15C359C300C8CD9E /* VgmdbTests */,
+				92F0594115CF13EF00256B52 /* Tests */,
 				9252929615C359C300C8CD9E /* Frameworks */,
 				925CE81E13C3BD6D009D6D94 /* Products */,
 				928557FF13EF6352002C5112 /* Test Files */,
@@ -452,6 +521,7 @@
 			children = (
 				925CE81D13C3BD6D009D6D94 /* Tagger.app */,
 				9252929515C359C300C8CD9E /* VgmdbTests.octest */,
+				92F0593E15CF13EF00256B52 /* Tests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -467,6 +537,16 @@
 			);
 			name = Images;
 			path = ../Images;
+			sourceTree = "<group>";
+		};
+		9289122415CF193100FBE113 /* hcxselect */ = {
+			isa = PBXGroup;
+			children = (
+				9289122515CF195500FBE113 /* hcxselect.cpp */,
+				9289122615CF195500FBE113 /* hcxselect.h */,
+				9289122715CF195500FBE113 /* lexer.h */,
+			);
+			path = hcxselect;
 			sourceTree = "<group>";
 		};
 		929A4ACF13DA087D00244796 /* Lumberjack */ = {
@@ -547,6 +627,7 @@
 		92E6ED6D13F313230045679E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9289122415CF193100FBE113 /* hcxselect */,
 				92E6ED6E13F313230045679E /* Categories */,
 				92E6ED7B13F313230045679E /* GUI */,
 				92E6ED8213F313230045679E /* IO */,
@@ -712,6 +793,26 @@
 			path = Vgmdb;
 			sourceTree = "<group>";
 		};
+		92F0594115CF13EF00256B52 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				92F0594715CF13EF00256B52 /* Tests.h */,
+				92F0594815CF13EF00256B52 /* Tests.m */,
+				92F0594215CF13EF00256B52 /* Supporting Files */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		92F0594215CF13EF00256B52 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				92F0594315CF13EF00256B52 /* Tests-Info.plist */,
+				92F0594415CF13EF00256B52 /* InfoPlist.strings */,
+				92F0594A15CF13EF00256B52 /* Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		92F16DAE14041A780031E4B4 /* RegexKitLite */ = {
 			isa = PBXGroup;
 			children = (
@@ -731,6 +832,7 @@
 				9252929015C359C300C8CD9E /* Sources */,
 				9252929115C359C300C8CD9E /* Frameworks */,
 				9252929215C359C300C8CD9E /* Resources */,
+				9239270215CF0E1400135F07 /* CopyFiles */,
 				9252929315C359C300C8CD9E /* ShellScript */,
 			);
 			buildRules = (
@@ -761,6 +863,25 @@
 			productReference = 925CE81D13C3BD6D009D6D94 /* Tagger.app */;
 			productType = "com.apple.product-type.application";
 		};
+		92F0593D15CF13EF00256B52 /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92F0594D15CF13EF00256B52 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				92F0593915CF13EF00256B52 /* Sources */,
+				92F0593A15CF13EF00256B52 /* Frameworks */,
+				92F0593B15CF13EF00256B52 /* Resources */,
+				92F0593C15CF13EF00256B52 /* ShellScript */,
+				92F0595915CF156E00256B52 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = 92F0593E15CF13EF00256B52 /* Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -768,7 +889,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0440;
-				ORGANIZATIONNAME = "St. Andrews KY16 9XW";
+				ORGANIZATIONNAME = "";
 			};
 			buildConfigurationList = 925CE81713C3BD6D009D6D94 /* Build configuration list for PBXProject "Tagger" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -788,6 +909,7 @@
 				9273E64013D6166C002BA3A0 /* Documentation */,
 				9293B85114AF8E55006D96E7 /* Sparkle */,
 				9252929415C359C300C8CD9E /* VgmdbTests */,
+				92F0593D15CF13EF00256B52 /* Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -825,6 +947,14 @@
 				9293B84B14AF7DFA006D96E7 /* dsa_pub.pem in Resources */,
 				9293B84E14AF870D006D96E7 /* config.yaml in Resources */,
 				9202AEDC14BE7FCE00B24CE6 /* Tagger Help in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92F0593B15CF13EF00256B52 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92F0594615CF13EF00256B52 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -871,6 +1001,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$PROJECT_DIR/Other Sources/appcast_automation.rb\"";
 		};
+		92F0593C15CF13EF00256B52 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -879,7 +1022,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				92B615D515C5EFEB002E048B /* RegexKitLite.m in Sources */,
-				9254094A15C36BFB0074A280 /* NSString+Convert.mm in Sources */,
 				925292B315C35CAB00C8CD9E /* DDAbstractDatabaseLogger.m in Sources */,
 				925292B515C35CAB00C8CD9E /* DDASLLogger.m in Sources */,
 				925292B715C35CAB00C8CD9E /* DDFileLogger.m in Sources */,
@@ -888,7 +1030,9 @@
 				925292B115C35C8900C8CD9E /* PSDDFormatter.m in Sources */,
 				925292AD15C359EA00C8CD9E /* Vgmdb.mm in Sources */,
 				925292A715C359C300C8CD9E /* VgmdbTests.mm in Sources */,
+				9254094A15C36BFB0074A280 /* NSString+Convert.mm in Sources */,
 				92E101F915CDB7FB00882A07 /* NSString+Regex.m in Sources */,
+				9289122A15CF198600FBE113 /* hcxselect.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -941,6 +1085,25 @@
 				92A96F2D15BCD2DC004A320E /* Vgmdb.mm in Sources */,
 				9254094915C367330074A280 /* NSString+Tag.mm in Sources */,
 				92E101F815CDB7FB00882A07 /* NSString+Regex.m in Sources */,
+				9289122815CF195500FBE113 /* hcxselect.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92F0593915CF13EF00256B52 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92F0594915CF13EF00256B52 /* Tests.m in Sources */,
+				92F0594F15CF14A800256B52 /* NSString+Convert.mm in Sources */,
+				92F0595015CF14B400256B52 /* NSString+Regex.m in Sources */,
+				92F0595115CF14BF00256B52 /* RegexKitLite.m in Sources */,
+				92F0595215CF14F100256B52 /* DDAbstractDatabaseLogger.m in Sources */,
+				92F0595315CF14F400256B52 /* DDASLLogger.m in Sources */,
+				92F0595415CF14F700256B52 /* DDFileLogger.m in Sources */,
+				92F0595515CF14F900256B52 /* DDLog.m in Sources */,
+				92F0595615CF14FC00256B52 /* DDTTYLogger.m in Sources */,
+				92F0595815CF155600256B52 /* PSDDFormatter.m in Sources */,
+				9289122915CF195500FBE113 /* hcxselect.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -971,6 +1134,14 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
+		92F0594415CF13EF00256B52 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				92F0594515CF13EF00256B52 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -979,6 +1150,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -997,6 +1170,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_VERSION = "";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1011,8 +1185,9 @@
 					"$(inherited)",
 					"$(SRCROOT)/Frameworks",
 					/usr/local/Cellar/htmlcxx/0.84/lib/,
+					"\"$(SRCROOT)/../../Downloads/hcxselect-1.1/src\"",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-I/usr/local/include/taglib",
@@ -1022,6 +1197,7 @@
 				);
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -1031,6 +1207,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1045,6 +1223,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VgmdbTests/VgmdbTests-Prefix.pch";
+				GCC_VERSION = "";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1059,8 +1238,9 @@
 					"$(inherited)",
 					"$(SRCROOT)/Frameworks",
 					/usr/local/Cellar/htmlcxx/0.84/lib/,
+					"\"$(SRCROOT)/../../Downloads/hcxselect-1.1/src\"",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-I/usr/local/include/taglib",
@@ -1070,6 +1250,7 @@
 				);
 				OTHER_LDFLAGS = "-licucore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -1077,12 +1258,12 @@
 		925CE83913C3BD6D009D6D94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -1095,9 +1276,9 @@
 		925CE83A13C3BD6D009D6D94 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -1122,7 +1303,6 @@
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_ENABLE_PASCAL_STRINGS = YES;
 				GCC_FORCE_CPU_SUBTYPE_ALL = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1135,6 +1315,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/Frameworks",
 					/usr/local/Cellar/htmlcxx/0.84/lib,
+					"\"$(SRCROOT)/../../Downloads/hcxselect-1.1/src\"",
 				);
 				LLVM_LTO = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
@@ -1169,7 +1350,6 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_ENABLE_PASCAL_STRINGS = YES;
 				GCC_FORCE_CPU_SUBTYPE_ALL = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1182,6 +1362,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/Frameworks",
 					/usr/local/Cellar/htmlcxx/0.84/lib,
+					"\"$(SRCROOT)/../../Downloads/hcxselect-1.1/src\"",
 				);
 				LLVM_LTO = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
@@ -1236,6 +1417,104 @@
 			};
 			name = Release;
 		};
+		92F0594B15CF13EF00256B52 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/Frameworks\"",
+					"/Library/Frameworks/**",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Frameworks",
+					/usr/local/Cellar/htmlcxx/0.84/include/,
+					"$(SRCROOT)/Classes/",
+					"\"$(SRCROOT)/Other Sources/Headers/\"",
+					"\"$(SRCROOT)/Other Sources/RegexKitLite/\"",
+				);
+				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Frameworks",
+					/usr/local/Cellar/htmlcxx/0.84/lib/,
+					"\"$(SRCROOT)/../../Downloads/hcxselect-1.1/src\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-I/usr/local/include/taglib",
+					"-L@executable_path/../Resources",
+					"-I/usr/local/include/",
+				);
+				OTHER_LDFLAGS = "-licucore";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		92F0594C15CF13EF00256B52 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/Frameworks\"",
+					"/Library/Frameworks/**",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Frameworks",
+					/usr/local/Cellar/htmlcxx/0.84/include/,
+					"$(SRCROOT)/Classes/",
+					"\"$(SRCROOT)/Other Sources/Headers/\"",
+					"\"$(SRCROOT)/Other Sources/RegexKitLite/\"",
+				);
+				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/Frameworks",
+					/usr/local/Cellar/htmlcxx/0.84/lib/,
+					"\"$(SRCROOT)/../../Downloads/hcxselect-1.1/src\"",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-I/usr/local/include/taglib",
+					"-L@executable_path/../Resources",
+					"-I/usr/local/include/",
+				);
+				OTHER_LDFLAGS = "-licucore";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1280,6 +1559,15 @@
 			buildConfigurations = (
 				9293B85314AF8E55006D96E7 /* Debug */,
 				9293B85414AF8E55006D96E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92F0594D15CF13EF00256B52 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92F0594B15CF13EF00256B52 /* Debug */,
+				92F0594C15CF13EF00256B52 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

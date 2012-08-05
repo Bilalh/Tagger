@@ -27,4 +27,7 @@ struct _Vgmdb;
 
 - (NSArray*) searchResults:(NSString*)search;
 
+// Returns a Dictionar with data of the album
+- (NSDictionary*)getAlbumData:(NSURL*) url;
+
 @end
