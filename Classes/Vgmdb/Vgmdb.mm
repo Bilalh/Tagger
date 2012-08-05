@@ -193,6 +193,8 @@ using namespace hcxselect;
         [refs addObject:map];
     }
     
+    NSMutableDictionary *tracks = [NSMutableDictionary new];
+    
     for (NSDictionary *ref in refs) {
         NSString *_sel = [NSString stringWithFormat:@"span#%@>table", [ref valueForKey:@"ref"]];
         
@@ -204,6 +206,7 @@ using namespace hcxselect;
         [data setValue:@(num_discs) forKey:@"totalDiscs"];
         
         int disc_num = 1;
+        int totalTracks = 0;
         for (Selector::iterator it = discTables.begin(); it != discTables.end(); ++it) {
             Node *disc = *it;
             Node *track_tr = disc->first_child;
@@ -219,6 +222,26 @@ using namespace hcxselect;
                 long num = strtol(_num.c_str(),NULL, 10);
                 
                 
+                Node *trackTitle = track_num->next_sibling->next_sibling;
+                NSString *title = [self textFromNode:trackTitle];
+                
+                NSString *key = [NSString stringWithFormat:@"%d-%ld",disc_num,num];
+                NSDictionary *track = [tracks valueForKey:key];
+                
+                if (!track){
+                    Node *trackLen = trackTitle->next_sibling->next_sibling;
+                    NSString *len = [self textFromNode:trackLen];
+                    
+                    track = @{
+                    @"title" : [NSMutableDictionary new],
+                    @"disc":   @(disc_num),
+                    @"length": len
+                    };
+                    [tracks setValue:track forKey:key];
+                    totalTracks++;
+                }
+                
+                [[track valueForKey:@"title"] setValue:title forKey:[ref valueForKey:@"lang"]];
                 
                 track_tr = track_tr->next_sibling;
             }
@@ -226,11 +249,23 @@ using namespace hcxselect;
             
             disc_num++;
         }
-        
+        [data setValue:@(totalTracks) forKey:@"totalTracks"];
+        [data setValue:tracks forKey:@"tracks"];
     }
     
 }
 
+- (NSString*) textFromNode:(Node *)n
+{
+    Node *current = n;
+    while(current->first_child){
+        current=current->first_child;
+    }
+    
+    string _text = current->data.text();
+    NSString *text = [NSString stringWithCppStringTrimmed:&_text];
+    return text;
+}
 
 - (void) storeNotes:(const tree<htmlcxx::HTML::Node>&)dom
             forHtml:(const std::string&)html
