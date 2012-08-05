@@ -28,6 +28,7 @@ Vgmdb *vgmdb;
 
 @implementation VgmdbTests
 
+
 - (void) testUsingTestData:(NSDictionary*)correct
                  withNotes:(BOOL)testNotes
                 withTracks:(BOOL)testTracks
@@ -79,6 +80,7 @@ Vgmdb *vgmdb;
     NSURL *url = [[NSURL alloc] initFileURLWithPath:_url];
     return url;
 }
+
 
 - (void)testMutiDisk
 {
@@ -441,23 +443,148 @@ Vgmdb *vgmdb;
 
 }
 
+//- (void)testSingleDisk
+//{
+//    NSString *name = @"singleDisk.html";
+//    NSURL *url = [self getUrlForName:name];
 //
+//    NSDictionary *album =@{
+//        @"@english": @"Atelier Rorona Character Song Album ~Kanarien~",
+//        @"@kanji": @"ロロナのアトリエ キャラクターソングアルバム ～カナリア～",
+//        @"@romaji": @"Rorona no Atelier Character Song Album ~Kanarien~"
+//    };
+//
+//    NSArray *classification = @[@"Vocal"];
+//
+//    NSArray *publisher =@[
+//        @{
+//            @"@english" : @"TEAM Entertainment",
+//            @"@kanji":     @"株式会社ティームエンタテインメント",
+//            @"@romaji":    @"TEAM Entertainment"
+//        },
+//        @{
+//            @"@english" : @"Sony Music Distribution",
+//            @"@kanji":     @"株式会社ソニー・ミュージックディストリビューション",
+//            @"@romaji":    @"Sony Music Distribution"
+//        }
+//    ];
+//
+//    NSArray *composer  =@[
+//    @{
+//        @"@english" : @"Kazuki Yanagawa",
+//        @"@kanji"   : @"柳川和樹"
+//    },
+//    @{
+//        @"@english" : @"Daisuke Achiwa",
+//        @"@kanji"   : @"中河健"
+//    },
+//    @{
+//        @"@english" : @"Ken Nakagawa",
+//        @"@kanji"   : @"中河健"
+//    }
+//    ];
+//
+//    NSArray *arranger  =@[
+//    @{
+//        @"@english" : @"Kazuki Yanagawa",
+//        @"@kanji"   : @"柳川和樹"
+//    },
+//    @{
+//        @"@english" : @"Daisuke Achiwa",
+//        @"@kanji"   : @"中河健"
+//    },
+//    ];
+//
+//    NSArray *performer  =@[
+//    @{
+//        @"@english" : @"Kei Shindo",
+//        @"@kanji"   : @"真堂圭"
+//    },
+//    @{
+//        @"@english" : @"Eri Kitamura",
+//        @"@kanji"   : @"喜多村英梨"
+//    },
+//    @{
+//        @"@english" : @"Mai Kadowaki",
+//        @"@kanji"   : @"門脇舞以"
+//    },
+//    @{
+//        @"@english" : @"Dani",
+//    },
+//    ];
+//
+//    NSArray *products =@[
+//    @{
+//        @"@english":  @"Atelier Rorona",
+//        @"@kanji":    @"ロロナのアトリエ　～アーランドの錬金術師～",
+//        @"@romaji":   @"Rorona no Atelier: Arland no Renkinjutsushi"
+//    },
+//    ];
+//
+//    NSArray *platforms = @[
+//        @"Sony PlayStation 3"
+//    ];
+//
+//    NSArray *genre = @[
+//        @"Game"
+//    ];
+//
+//    NSArray *publishedFormat =@[
+//        @"Commercial"
+//    ];
+//
+//
+//    NSDictionary *correct = @{
+//    @"album":album,
+//    @"url": url,
+//    @"catalog" : @"KDSD-10052",
+//    @"date" : @"Sep 22, 2010",
+//    @"year": @"2010",
+//    @"publishedFormat": publishedFormat,
+//    @"price": @"2100",
+//    @"mediaFormat": @"CD",
+//    @"classification": classification,
+//    @"publisher": publisher,
+//    @"composer": composer,
+//    @"arranger": arranger,
+//    @"performer": performer,
+//    @"artist": composer,
+//    @"products": products,
+//    @"platforms":platforms,
+//    @"rating":  @"Rated 5.00 by 1 person",
+//    @"genre": genre,
+//    @"category": genre,
+//    };
+//
+//    [self testUsingTestData:correct
+//                  withNotes:NO
+//                 withTracks:NO];
+//
+//}
+
+
+#pragma mark -
+#pragma mark Setup
+
 //- (void)testMakeFiles
 //{
-//    NSString *name = @"noPlatforms_small.html";
-//    NSString *url = @"http://vgmdb.net/album/30881";
-//    NSString *path = [testFolder stringByAppendingPathComponent:name];
+//    NSString *name = @"singleDisk.html";
+//    NSString *url = @"http://vgmdb.net/album/20427";
+//    NSError *err;
+//    NSStringEncoding enc = NSUTF8StringEncoding;
 //    NSString *s=  [NSString stringWithContentsOfURL:[NSURL URLWithString:url]
-//                                           encoding:NSUTF8StringEncoding
-//                                              error:nil];
+//                                       usedEncoding:&enc
+//                                              error:&err];
+//    
+//    NSLog(@"%@",err);
+//    NSLog(@"%lu",enc);
+//    NSString *path = [testFolder stringByAppendingPathComponent:name];
 //    [s writeToFile:path
 //        atomically:YES
 //          encoding:NSUTF8StringEncoding
 //             error:nil];
 //}
 
-#pragma mark -
-#pragma mark Setup
 
 - (void)setUp
 {

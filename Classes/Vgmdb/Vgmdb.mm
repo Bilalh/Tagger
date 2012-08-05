@@ -22,6 +22,8 @@ LOG_LEVEL(LOG_LEVEL_VERBOSE);
 #include <string>
 #include <iostream>
 #include <set>
+#include <list>
+#include <map>
 
 #include <htmlcxx/html/ParserDom.h>
 
@@ -57,7 +59,7 @@ using namespace hcxselect;
                 @"@kanji",   @"ja",
                 @"@romaji",  @"ja-Latn",
                 @"@english", @"English",
-                @"@kanji",   @"Japanese ",
+                @"@kanji",   @"Japanese",
                 @"@romaji",  @"Romaji",
                 @"latin",    @"",
                 nil];
@@ -154,11 +156,79 @@ using namespace hcxselect;
             forKey:@"album"];
     
     [self storeMetadata:dom forHtml:*html in:data];
-    
     [self storeNotes:dom forHtml:*html in:data];
+    [self storeTracks:dom forHtml:*html in:data];
+
     
     [data setValue:url forKey:@"url"];
     return data;
+}
+
+
+- (void) storeTracks:(const tree<htmlcxx::HTML::Node>&)dom
+            forHtml:(const std::string&)html
+                 in:(NSDictionary*)data
+{
+    
+    Selector s(dom);
+    NSMutableArray *refs = [NSMutableArray new];
+    Selection res = s.select("ul#tlnav>li>a");
+    
+    for (Selector::iterator it = res.begin(); it != res.end(); ++it) {
+        Node *n =*it;
+        string text =n->first_child->data.text();
+        
+        NSString *_lang = [NSString stringWithCppStringTrimmed:&text];
+        NSString *lang = [namesMap objectForKey:_lang];
+
+        
+        n->data.parseAttributes();
+        map<string, string> att= n->data.attributes();
+        map<string, string>::iterator itLang= att.find("rel");
+        
+        string _rel  = itLang->second;
+        NSString *rel =  [NSString stringWithCppStringTrimmed:&_rel];
+        
+        NSDictionary *map = @{ @"lang" : lang, @"ref" : rel };
+        [refs addObject:map];
+    }
+    
+    for (NSDictionary *ref in refs) {
+        NSString *_sel = [NSString stringWithFormat:@"span#%@>table", [ref valueForKey:@"ref"]];
+        
+        string *sel = [_sel cppString];
+        Selector discTables = s.select(*sel);
+        delete sel;
+        
+        unsigned long num_discs = discTables.size();
+        [data setValue:@(num_discs) forKey:@"totalDiscs"];
+        
+        int disc_num = 1;
+        for (Selector::iterator it = discTables.begin(); it != discTables.end(); ++it) {
+            Node *disc = *it;
+            Node *track_tr = disc->first_child;
+            
+            while (track_tr) {
+                if (!track_tr->data.isTag()) {
+                    track_tr = track_tr->next_sibling;
+                    continue;
+                }
+                
+                Node *track_num = track_tr->first_child->next_sibling;
+                string _num = track_num->first_child->first_child ->data.text();
+                long num = strtol(_num.c_str(),NULL, 10);
+                
+                
+                
+                track_tr = track_tr->next_sibling;
+            }
+            
+            
+            disc_num++;
+        }
+        
+    }
+    
 }
 
 
@@ -272,8 +342,7 @@ string _html;
     Node *nper = narr->next_sibling->next_sibling;
     [data setValue: [self get_spilt_data:nper] forKey:@"performer"];
     
-    Selector stats = s.select(" td#rightcolumn  div.smallfont ");
-    
+    Selector stats = s.select("td#rightcolumn  div.smallfont");
     Node *nstats = *stats.begin();
     
     Node *nrat = nstats->first_child->next_sibling;
