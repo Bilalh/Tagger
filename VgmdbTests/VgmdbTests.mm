@@ -30,6 +30,7 @@ Vgmdb *vgmdb;
 
 
 - (void) testUsingTestData:(NSDictionary*)correct
+              withMetadata:(BOOL)testmetadata
                  withNotes:(BOOL)testNotes
                 withTracks:(BOOL)testTracks
 {
@@ -40,28 +41,38 @@ Vgmdb *vgmdb;
     
     NSDictionary *results =[vgmdb getAlbumData:url];
     
-    NSArray *fields = @[
-    @"album", @"url",@"catalog",
-    @"date",@"publishedFormat",
-    @"year",@"classification",
-    @"publisher", @"composer",
-    @"arranger", @"performer",
-    @"artist",
-    
-    @"genre",
-    @"products", @"platforms",
-    ];
-    
-    for (NSString *field in fields) {
+    if (testmetadata){
+        NSArray *fields = @[
+        @"album", @"url",@"catalog",
+        @"date",@"publishedFormat",
+        @"year",@"classification",
+        @"publisher", @"composer",
+        @"arranger", @"performer",
+        @"artist",
+        
+        @"genre",
+        @"products", @"platforms",
+        ];
+        
+        for (NSString *field in fields) {
+            STAssertEqualObjects(
+                                 [results valueForKey:field],
+                                 [correct valueForKey:field],
+                                 @"%@ - %@",field, name);
+            printf("\n\n");
+        }
+    }
+       
+    if (testNotes){
+        NSString *field = @"comment";
         STAssertEqualObjects(
                              [results valueForKey:field],
                              [correct valueForKey:field],
                              @"%@ - %@",field, name);
-        printf("\n\n");
     }
     
-    if (testNotes){
-        NSString *field = @"comment";
+    if (testTracks){
+        NSString *field = @"tracks";
         STAssertEqualObjects(
                              [results valueForKey:field],
                              [correct valueForKey:field],
@@ -179,6 +190,7 @@ Vgmdb *vgmdb;
     };
     
     [self testUsingTestData:correct
+               withMetadata:YES
                   withNotes:YES
                  withTracks:NO];
 
@@ -345,6 +357,7 @@ Vgmdb *vgmdb;
 
 
     [self testUsingTestData:correct
+               withMetadata:YES
                   withNotes:NO
                  withTracks:NO];
 }
@@ -438,8 +451,62 @@ Vgmdb *vgmdb;
     };
     
     [self testUsingTestData:correct
+               withMetadata:YES
                   withNotes:NO
                  withTracks:NO];
+
+}
+ 
+- (void)testTracks
+{
+    NSString *name = @"singleDisk.html";
+    NSURL *url = [self getUrlForName:name];
+
+    NSDictionary *tracks =
+    @{
+        @"1-1" :     @{
+             @"disc" : @(1),
+             @"length" : @"4:18",
+             @"title" :        @{
+                 @"@english" : @"Cross Heart",
+                 @"@kanji" : @"\u30af\u30ed\u30b9*\u30cf\u30fc\u30c8",
+             },
+         },
+         @"1-2" :    @{
+             @"disc" : @(1),
+             @"length" : @"5:14",
+             @"title" :        @{
+                 @"@english" : @"Mizutama",
+                 @"@kanji" : @"\u6c34\u7389",
+             },
+         },
+         @"1-3" :    @{
+             @"disc" : @(1),
+             @"length" : @"4:18",
+             @"title" :        @{
+                 @"@english" : @"Cross Heart (instrumental)",
+                 @"@kanji" : @"\u30af\u30ed\u30b9*\u30cf\u30fc\u30c8<instrumental>",
+             },
+         },
+         @"1-4" :    @{
+             @"disc" : @(1),
+             @"length" : @"5:11",
+             @"title" :        @{
+                 @"@english" : @"Mizutama (instrumental)",
+                 @"@kanji" : @"\u6c34\u7389<instrumental>",
+             },
+         },
+    };
+    
+    NSDictionary *correct = @{
+        @"url": url,
+        @"tracks":tracks
+    };
+    
+    [self testUsingTestData:correct
+               withMetadata:NO
+                  withNotes:NO
+                 withTracks:YES];
 
 }
 
@@ -569,7 +636,7 @@ Vgmdb *vgmdb;
 //- (void)testMakeFiles
 //{
 //    NSString *name = @"singleDisk.html";
-//    NSString *url = @"http://vgmdb.net/album/20427";
+//    NSString *url = @"http://vgmdb.net/album/30880";
 //    NSError *err;
 //    NSStringEncoding enc = NSUTF8StringEncoding;
 //    NSString *s=  [NSString stringWithContentsOfURL:[NSURL URLWithString:url]

@@ -180,7 +180,6 @@ using namespace hcxselect;
         
         NSString *_lang = [NSString stringWithCppStringTrimmed:&text];
         NSString *lang = [namesMap objectForKey:_lang];
-
         
         n->data.parseAttributes();
         map<string, string> att= n->data.attributes();
@@ -223,7 +222,7 @@ using namespace hcxselect;
                 
                 
                 Node *trackTitle = track_num->next_sibling->next_sibling;
-                NSString *title = [self textFromNode:trackTitle];
+                NSString *title = [[self textFromNode:trackTitle] stringByDecodingXMLEntities];
                 
                 NSString *key = [NSString stringWithFormat:@"%d-%ld",disc_num,num];
                 NSDictionary *track = [tracks valueForKey:key];
@@ -255,17 +254,6 @@ using namespace hcxselect;
     
 }
 
-- (NSString*) textFromNode:(Node *)n
-{
-    Node *current = n;
-    while(current->first_child){
-        current=current->first_child;
-    }
-    
-    string _text = current->data.text();
-    NSString *text = [NSString stringWithCppStringTrimmed:&_text];
-    return text;
-}
 
 - (void) storeNotes:(const tree<htmlcxx::HTML::Node>&)dom
             forHtml:(const std::string&)html
@@ -472,6 +460,18 @@ string _html;
 
 #pragma mark -
 #pragma mark Common
+
+- (NSString*) textFromNode:(Node *)n
+{
+    Node *current = n;
+    while(current->first_child){
+        current=current->first_child;
+    }
+    
+    string _text = current->data.text();
+    NSString *text = [NSString stringWithCppStringTrimmed:&_text];
+    return text;
+}
 
 // String multiple values in a string into an array.
 - (NSArray*) spiltMutiMetadataString:(NSString *)metadata
