@@ -1,6 +1,19 @@
 Changelog
 =========
 
+Version 1.6
+-----------
+### Improvements ###
+* Much faster app loading (Now loads instantly compared with 10 seconds before).
+* Auto taging rewriten in c++/Objective C hence much faster.
+* Updated Code for Xcode 4.4 -- using the new syntax.
+* Refactored Code.
+
+### Bug Fixes ### 
+* Fixes for 10.7.  
+* Added unit tests.
+
+
 Version 1.5.4 (Wed 18 Jul 2012 21:55:06 +0100)
 -------------
 * 'Renumber Files' populates a null disc track count.

@@ -6,7 +6,6 @@
 //  Copyright 2011  All rights reserved.
 //
 
-//#import <MacRuby/MacRuby.h>
 #import "DisplayController.h"
 #import "Utility.h"
 #import "FileSystemNode.h"
