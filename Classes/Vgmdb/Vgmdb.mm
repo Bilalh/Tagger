@@ -470,9 +470,9 @@ string _html;
 #pragma mark -
 #pragma mark Tracks Array
 
-- (NSArray*)getTracksArray:(NSMutableDictionary*)data
+- (NSArray*)getTracksArray:(NSDictionary*)data
 {
-    return [[data valueForKey:@"tracks"] sortedArrayUsingComparator:
+    return [[data[@"tracks"] allValues] sortedArrayUsingComparator:
      ^NSComparisonResult(NSDictionary *x, NSDictionary *y) {
          NSComparisonResult res;
          res = [[x valueForKey:@"disc"] compare:[y valueForKey:@"disc"]];

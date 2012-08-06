@@ -6,7 +6,7 @@
 //  Copyright 2011  All rights reserved.
 //
 
-#import <MacRuby/MacRuby.h>
+//#import <MacRuby/MacRuby.h>
 #import "DisplayController.h"
 #import "Utility.h"
 #import "FileSystemNode.h"
@@ -151,20 +151,19 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 #pragma mark Init
 
 - (id)initWithAlbum:(NSDictionary*)album
-              vgmdb:(id)vgmdbObject
+              vgmdb:(Vgmdb*)vgmdbObject
               files:(NSArray*)filesNodes
 {
 	vgmdb  = vgmdbObject;
 	albumDetails = album;
-	tracks =  [vgmdb performRubySelector:@selector(get_tracks_array:)
-						   withArguments:albumDetails,
-			   nil];
+    tracks = [vgmdb getTracksArray:albumDetails];
+    
 	id res = [self initCommon:filesNodes];
 	return res;
 }
 
 - (id)initWithUrl:(NSString*)url
-			vgmdb:(id)vgmdbObject
+			vgmdb:(Vgmdb*)vgmdbObject
 			files:(NSArray*)filesNodes;
 {
 	vgmdb = vgmdbObject;
@@ -289,12 +288,9 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 -(void)setAlbumUrl:(NSString *)url
 {
 	DDLogInfo(@"Set Album called, Album Url %@", url );
-	albumDetails = [vgmdb performRubySelector:@selector(get_data:)
-								withArguments:url, 
-					nil];
-	tracks =  [vgmdb performRubySelector:@selector(get_tracks_array:)
-						   withArguments:albumDetails, 
-			   nil];
+    albumDetails = [vgmdb getAlbumData:[NSURL URLWithString:url]];
+    tracks = [vgmdb getTracksArray:albumDetails];
+    
 //	DDLogVerbose(@"vgmdb.rb result tracks %@", tracks);
 	DDLogVerbose(@"vgmdb.rb result albumDetails %@", albumDetails);
 }

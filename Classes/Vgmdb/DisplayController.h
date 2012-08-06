@@ -7,12 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "Vgmdb.h"
 
 /// This class shows the data of the selected album in a sheet
 @interface DisplayController : NSWindowController {
 @private
 	IBOutlet NSWindow    *window;
-	id vgmdb;                         /// macruby Vgmdb class
+//	id vgmdb;                         /// macruby Vgmdb class
+    Vgmdb *vgmdb;
 	NSDictionary *albumDetails;       /// contains all the infomation
 	
 	NSString *selectedLanguage;       /// language of the tracks
@@ -38,11 +40,11 @@
   * @return An new Display Controller.
   */
 - (id)initWithUrl:(NSString*)url
-			vgmdb:(id)vgmdbObject
+			vgmdb:(Vgmdb*)vgmdbObject
 			files:(NSArray*)files;
 
 - (id)initWithAlbum:(NSDictionary*)album
-			  vgmdb:(id)vgmdbObject
+			  vgmdb:(Vgmdb*)vgmdbObject
 			  files:(NSArray*)filesNodes;
 
 /// @name Changing the language

@@ -30,6 +30,6 @@ struct _Vgmdb;
 - (NSDictionary*)getAlbumData:(NSURL*) url;
 
 // Gets a sorted array from the above Dictionary
-- (NSArray*)getTracksArray:(NSMutableDictionary*)data;
+- (NSArray*)getTracksArray:(NSDictionary*)data;
 
 @end
