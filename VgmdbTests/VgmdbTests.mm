@@ -28,6 +28,70 @@ Vgmdb *vgmdb;
 
 @implementation VgmdbTests
 
+#pragma mark -
+#pragma mark Search Results
+
+- (void) testSearch
+{
+    NSString *name   = @"searchResults.html";
+    NSURL *url = [self getUrlForName:name];
+
+    NSArray *results = [vgmdb _searchResults:url];
+    NSLog(@"%@", results);
+    
+    NSArray *correct =@[
+    @{
+        @"album" : @{
+            @"@english" : @"- Twilight Hour - Atelier Ayesha -Alchemist of the Ground of Dusk- Vocal Album",
+            @"@kanji"   : @"- Twilight Hour -\u30a2\u30fc\u30b7\u30e3\u306e\u30a2\u30c8\u30ea\u30a8\uff5e\u9ec4\u660f\u306e\u5927\u5730\u306e\u932c\u91d1\u8853\u58eb\uff5e\u30dc\u30fc\u30ab\u30eb\u30a2\u30eb\u30d0\u30e0",
+            @"@romaji"  : @"- Twilight Hour - Ayesha no Atelier: Tasogare no Daichi no Renkinjutsushi Vocal Album",
+        },
+        @"catalog"   : @"GUSTCD-10010",
+        @"released"  : @"Jun 27, 2012",
+        @"url"       : @"http://vgmdb.net/album/32234",
+    },
+        @{
+        @"album" : @{
+            @"@english" : @"Atelier Ayesha Recollection Archives",
+            @"@kanji"   : @"\u30a2\u30fc\u30b7\u30e3\u306e\u30a2\u30c8\u30ea\u30a8 \u30ea\u30b3\u30ec\u30af\u30b7\u30e7\u30f3\u30a2\u30fc\u30ab\u30a4\u30d6\u30b9",
+            @"@romaji"  : @"Atelier Ayesha Recollection Archives",
+        },
+        @"catalog"   : @"N/A",
+        @"released"  : @"Jun 27, 2012",
+        @"url"       : @"http://vgmdb.net/album/34019",
+    },
+        @{
+        @"album" : @{
+            @"@english" : @"Atelier Ayesha ~Alchemist of the Ground of Dusk~ Original Soundtrack",
+            @"@kanji"   : @"\u30a2\u30fc\u30b7\u30e3\u306e\u30a2\u30c8\u30ea\u30a8\uff5e\u9ec4\u660f\u306e\u5927\u5730\u306e\u932c\u91d1\u8853\u58eb\uff5e \u30aa\u30ea\u30b8\u30ca\u30eb\u30b5\u30a6\u30f3\u30c9\u30c8\u30e9\u30c3\u30af",
+            @"@romaji"  : @"Ayesha no Atelier: Tasogare no Daichi no Renkinjutsushi Original Soundtrack",
+        },
+        @"catalog"   : @"GUSTCD-10007~9",
+        @"released"  : @"Jun 27, 2012",
+        @"url"       : @"http://vgmdb.net/album/32230",
+    }
+    ];
+    
+    for (NSUInteger i; i < [correct count]; i++) {
+        
+        NSDictionary *cor = correct[i];
+        NSDictionary *res = results[i];
+     
+        for (NSString* key in cor) {
+            STAssertEqualObjects(
+                                 [res valueForKey:key],
+                                 [cor valueForKey:key],
+                                 @"%@ - %@",key, name);
+        }
+        
+        STAssertEqualObjects(cor,res, @"%@",name);
+    }
+    
+}
+
+
+#pragma mark -
+#pragma mark Album Data
 
 - (void) testUsingTestData:(NSDictionary*)correct
               withMetadata:(BOOL)testmetadata
@@ -83,13 +147,6 @@ Vgmdb *vgmdb;
 //                         results,
 //                         correct,
 //                         @"Everything - %@",name);
-}
-
--(NSURL*)getUrlForName:(NSString*)name
-{
-    NSString *_url = [testFolder stringByAppendingPathComponent:name];
-    NSURL *url = [[NSURL alloc] initFileURLWithPath:_url];
-    return url;
 }
 
 
@@ -633,10 +690,17 @@ Vgmdb *vgmdb;
 #pragma mark -
 #pragma mark Setup
 
+-(NSURL*)getUrlForName:(NSString*)name
+{
+    NSString *_url = [testFolder stringByAppendingPathComponent:name];
+    NSURL *url = [[NSURL alloc] initFileURLWithPath:_url];
+    return url;
+}
+
 //- (void)testMakeFiles
 //{
-//    NSString *name = @"singleDisk.html";
-//    NSString *url = @"http://vgmdb.net/album/30880";
+//    NSString *name = @"searchResults.html";
+//    NSString *url = @"http://vgmdb.net/search?q=Atelier+Ayesha";
 //    NSError *err;
 //    NSStringEncoding enc = NSUTF8StringEncoding;
 //    NSString *s=  [NSString stringWithContentsOfURL:[NSURL URLWithString:url]

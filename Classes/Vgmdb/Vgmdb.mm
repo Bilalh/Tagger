@@ -12,6 +12,7 @@
 #import "Vgmdb.h"
 #import "Vgmdb+private.h"
 
+
 #import "NSString+Convert.h"
 #import "NSString+Regex.h"
 #import "RegexKitLite.h"
@@ -73,8 +74,13 @@ using namespace hcxselect;
     NSString *baseUrl = @"http://vgmdb.net/search?q=";
     NSString *tmp = [baseUrl stringByAppendingString:search];
     NSString *_url = [tmp stringByAddingPercentEscapesUsingEncoding:NSUnicodeStringEncoding];
+    return [self _searchResults: [NSURL URLWithString:_url] ];
+}
+
+- (NSArray*) _searchResults:(NSURL*)url
+{
     NSError *err = nil;
-    string *html  = [self cppstringWithContentsOfURL:[NSURL URLWithString:_url]
+    string *html  = [self cppstringWithContentsOfURL:url
                                               error:&err];
     
     if (!err){
