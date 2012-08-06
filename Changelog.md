@@ -8,6 +8,7 @@ Version 1.6
 * Auto taging rewriten in c++/Objective C hence much faster.
 * Updated Code for Xcode 4.4 -- using the new syntax.
 * Refactored Code.
+* Go to Downloads shortcut changed to ⌥⌘L
 
 ### Bug Fixes ### 
 * Fixes for 10.7.  
