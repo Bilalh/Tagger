@@ -73,12 +73,13 @@ using namespace hcxselect;
 {
     NSString *baseUrl = @"http://vgmdb.net/search?q=";
     NSString *tmp = [baseUrl stringByAppendingString:search];
-    NSString *_url = [tmp stringByAddingPercentEscapesUsingEncoding:NSUnicodeStringEncoding];
+    NSString *_url = [tmp stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     return [self _searchResults: [NSURL URLWithString:_url] ];
 }
 
 - (NSArray*) _searchResults:(NSURL*)url
 {
+    DDLogInfo(@"Searching using URL %@", url);
     NSError *err = nil;
     string *html  = [self cppstringWithContentsOfURL:url
                                               error:&err];
