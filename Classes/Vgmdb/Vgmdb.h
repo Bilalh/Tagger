@@ -24,7 +24,7 @@ struct _Vgmdb;
 //    released = "Sep 28, 2010",
 //    url = "http://vgmdb.net/album/21270"
 //}
-- (NSArray*) searchResults:(NSString*)search;
+- (id) searchResults:(NSString*)search;
 
 // Returns a Dictionary with data of the album
 - (NSDictionary*)getAlbumData:(NSURL*) url;

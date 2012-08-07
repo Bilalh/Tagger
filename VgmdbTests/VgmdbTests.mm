@@ -37,7 +37,6 @@ Vgmdb *vgmdb;
     NSURL *url = [self getUrlForName:name];
 
     NSArray *results = [vgmdb _searchResults:url];
-    NSLog(@"%@", results);
     
     NSArray *correct =@[
     @{
@@ -89,6 +88,32 @@ Vgmdb *vgmdb;
     
 }
 
+- (void) testSingleResult
+{
+    NSString *name   = @"oneResult.html";
+    NSURL *url = [self getUrlForName:name];
+    
+    id _results = [vgmdb _searchResults:url];
+    NSDictionary *results = _results;
+    NSLog(@"%@",results);
+    
+    NSDictionary * album =     @{
+        @"@english" : @"Lunar 2: Eternal Blue Complete Music Soundtrack",
+        @"@kanji": @"Lunar 2: Eternal Blue Complete Music Soundtrack",
+        @"@romaji": @"Lunar 2: Eternal Blue Complete Music Soundtrack",
+    };
+ 
+    NSDictionary *correct =@{
+        @"album": album
+    };
+    
+    NSString *field = @"album";
+    STAssertEqualObjects(
+                         [results valueForKey:field],
+                         [correct valueForKey:field],
+                         @"%@ - %@",field, name);
+    
+}
 
 #pragma mark -
 #pragma mark Album Data
@@ -699,8 +724,8 @@ Vgmdb *vgmdb;
 
 //- (void)testMakeFiles
 //{
-//    NSString *name = @"searchResults.html";
-//    NSString *url = @"http://vgmdb.net/search?q=Atelier+Ayesha";
+//    NSString *name = @"oneResult.html";
+//    NSString *url = @"http://vgmdb.net/search?q=Lunar+2%3A+Eternal+Blue+Complete";
 //    NSError *err;
 //    NSStringEncoding enc = NSUTF8StringEncoding;
 //    NSString *s=  [NSString stringWithContentsOfURL:[NSURL URLWithString:url]

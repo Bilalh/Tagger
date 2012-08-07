@@ -1,8 +1,8 @@
 TODO
 ====
-* Reduce min size
 * Test on 10.7 
 * Test on 10.8 (inculding signing the app) 
+* vgmdb single result
 
 FIXME
 -----
@@ -54,6 +54,7 @@ Later
 ----
 Done
 ----
+* * Reduce min size
 * Allow muti row editing.
 * Muti row selection can be non constive rows, handle this.
 * Some means of showing that the values for selected rows are different.

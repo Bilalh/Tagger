@@ -69,7 +69,7 @@ using namespace hcxselect;
 #pragma mark -
 #pragma mark Searching 
 
-- (NSArray*) searchResults:(NSString*)search
+- (id) searchResults:(NSString*)search
 {
     NSString *baseUrl = @"http://vgmdb.net/search?q=";
     NSString *tmp = [baseUrl stringByAppendingString:search];
@@ -77,7 +77,7 @@ using namespace hcxselect;
     return [self _searchResults: [NSURL URLWithString:_url] ];
 }
 
-- (NSArray*) _searchResults:(NSURL*)url
+- (id) _searchResults:(NSURL*)url
 {
     DDLogInfo(@"Searching using URL %@", url);
     NSError *err = nil;
@@ -92,7 +92,23 @@ using namespace hcxselect;
         NSMutableArray *rows = [[NSMutableArray alloc] init];
         
         Selector res = s.select("div#albumresults tbody > tr");
-//        cout << "Selector num:" << res.size() << "\n";
+        
+        // Handles a single result (which redirects directly to the album.
+        if (res.empty()){
+            Selector test = s.select("ul#tlnav");
+            if (test.empty()){
+                return [NSNull null];
+            }
+            Selector surl = s.select("head>link:first-of-type");
+            Selector::iterator iurl = surl.begin();
+            Node *nurl = *iurl;
+            nurl->data.parseAttributes();
+            map<string, string> att= nurl->data.attributes();
+            string _url = att["href"];
+            NSString *url = [NSString stringWithCppStringTrimmed:&_url];
+            url = [url stringByReplacingOccurrencesOfString:@"/feed" withString:@""];
+            return [self getAlbumData:[NSURL URLWithString:url]];
+        }
         
         Selector::iterator it = res.begin();    
         for (; it != res.end(); ++it) {
