@@ -540,7 +540,7 @@ string _html;
             string _title = node->data.text();
             NSString *title = [NSString stringWithCppStringTrimmed:&_title];
             if([title hasVaildData]){
-                [titles setValue:title forKey:@"@english"];
+                [titles setValue:[title stringByDecodingXMLEntities] forKey:@"@english"];
                 node = node->next_sibling;
                 continue;
             }
@@ -573,7 +573,7 @@ string _html;
             string _title = titleNode->data.text();
             NSString *title = [[NSString alloc] initWithCppString:&_title];
             
-            [titles setValue: title forKey:lang];
+            [titles setValue: [title stringByDecodingXMLEntities] forKey:lang];
         }
         
         node = node->next_sibling;
