@@ -95,7 +95,6 @@ Vgmdb *vgmdb;
     
     id _results = [vgmdb _searchResults:url];
     NSDictionary *results = _results;
-    NSLog(@"%@",results);
     
     NSDictionary * album =     @{
         @"@english" : @"Lunar 2: Eternal Blue Complete Music Soundtrack",
@@ -125,9 +124,7 @@ Vgmdb *vgmdb;
 {
  
     NSURL *url = [correct valueForKey:@"url"];
-    
     NSString *name = [url lastPathComponent];
-    
     NSDictionary *results =[vgmdb getAlbumData:url];
     
     if (testmetadata){
@@ -539,50 +536,56 @@ Vgmdb *vgmdb;
 
 }
  
+NSDictionary *tracksForTesting =
+@{
+    @"1-1" :     @{
+         @"track": @(1),
+         @"disc" : @(1),
+         @"length" : @"4:18",
+         @"title" :        @{
+             @"@english" : @"Cross Heart",
+             @"@kanji" : @"\u30af\u30ed\u30b9*\u30cf\u30fc\u30c8",
+         },
+     },
+     @"1-2" :    @{
+         @"track": @(2),
+         @"disc" : @(1),
+         @"length" : @"5:14",
+         @"title" :        @{
+             @"@english" : @"Mizutama",
+             @"@kanji" : @"\u6c34\u7389",
+         },
+     },
+     @"1-3" :    @{
+         @"track": @(3),
+         @"disc" : @(1),
+         @"length" : @"4:18",
+         @"title" :        @{
+             @"@english" : @"Cross Heart (instrumental)",
+             @"@kanji" : @"\u30af\u30ed\u30b9*\u30cf\u30fc\u30c8<instrumental>",
+         },
+     },
+     @"1-4" :    @{
+         @"track": @(4),
+         @"disc" : @(1),
+         @"length" : @"5:11",
+         @"title" :        @{
+             @"@english" : @"Mizutama (instrumental)",
+             @"@kanji" : @"\u6c34\u7389<instrumental>",
+         },
+     },
+}; 
+ 
 - (void)testTracks
 {
     NSString *name = @"singleDisk.html";
     NSURL *url = [self getUrlForName:name];
 
-    NSDictionary *tracks =
-    @{
-        @"1-1" :     @{
-             @"disc" : @(1),
-             @"length" : @"4:18",
-             @"title" :        @{
-                 @"@english" : @"Cross Heart",
-                 @"@kanji" : @"\u30af\u30ed\u30b9*\u30cf\u30fc\u30c8",
-             },
-         },
-         @"1-2" :    @{
-             @"disc" : @(1),
-             @"length" : @"5:14",
-             @"title" :        @{
-                 @"@english" : @"Mizutama",
-                 @"@kanji" : @"\u6c34\u7389",
-             },
-         },
-         @"1-3" :    @{
-             @"disc" : @(1),
-             @"length" : @"4:18",
-             @"title" :        @{
-                 @"@english" : @"Cross Heart (instrumental)",
-                 @"@kanji" : @"\u30af\u30ed\u30b9*\u30cf\u30fc\u30c8<instrumental>",
-             },
-         },
-         @"1-4" :    @{
-             @"disc" : @(1),
-             @"length" : @"5:11",
-             @"title" :        @{
-                 @"@english" : @"Mizutama (instrumental)",
-                 @"@kanji" : @"\u6c34\u7389<instrumental>",
-             },
-         },
-    };
+
     
     NSDictionary *correct = @{
         @"url": url,
-        @"tracks":tracks
+        @"tracks":tracksForTesting
     };
     
     [self testUsingTestData:correct
@@ -592,7 +595,64 @@ Vgmdb *vgmdb;
 
 }
 
-//- (void)testSingleDisk
+
+
+- (void)testGetTracksArray
+{
+    NSString *name = @"singleDisk.html";
+    NSURL *url = [self getUrlForName:name];
+    NSDictionary *results =[vgmdb getAlbumData:url];
+    STAssertEqualObjects(results[@"tracks"],tracksForTesting,@"Check");
+    
+    NSArray *sorted = [vgmdb getTracksArray:results];
+    
+    NSArray *correct =
+    @[
+    @{
+        @"track": @(1),
+        @"disc" : @(1),
+        @"length" : @"4:18",
+        @"title" :        @{
+            @"@english" : @"Cross Heart",
+            @"@kanji" : @"\u30af\u30ed\u30b9*\u30cf\u30fc\u30c8",
+        },
+    },
+    @{
+        @"track": @(2),
+        @"disc" : @(1),
+        @"length" : @"5:14",
+        @"title" :        @{
+            @"@english" : @"Mizutama",
+            @"@kanji" : @"\u6c34\u7389",
+        },
+    },
+    @{
+        @"track": @(3),
+        @"disc" : @(1),
+        @"length" : @"4:18",
+        @"title" :        @{
+            @"@english" : @"Cross Heart (instrumental)",
+            @"@kanji" : @"\u30af\u30ed\u30b9*\u30cf\u30fc\u30c8<instrumental>",
+        },
+    },
+    @{
+        @"track": @(4),
+        @"disc" : @(1),
+        @"length" : @"5:11",
+        @"title" :        @{
+            @"@english" : @"Mizutama (instrumental)",
+            @"@kanji" : @"\u6c34\u7389<instrumental>",
+        }
+    }
+    ];
+    
+    STAssertEqualObjects(sorted,correct,@"Sorting correct");
+
+    
+}
+
+
+//- (void)testSingleDiskError
 //{
 //    NSString *name = @"singleDisk.html";
 //    NSURL *url = [self getUrlForName:name];
@@ -740,7 +800,6 @@ Vgmdb *vgmdb;
 //          encoding:NSUTF8StringEncoding
 //             error:nil];
 //}
-
 
 - (void)setUp
 {

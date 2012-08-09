@@ -258,7 +258,8 @@ using namespace hcxselect;
                     NSString *len = [self textFromNode:trackLen];
                     
                     track = @{
-                    @"title" : [NSMutableDictionary new],
+                    @"title":  [NSMutableDictionary new],
+                    @"track":  @(num),
                     @"disc":   @(disc_num),
                     @"length": len
                     };
