@@ -29,6 +29,9 @@ struct _Vgmdb;
 // Returns a Dictionary with data of the album
 - (NSDictionary*)getAlbumData:(NSURL*) url;
 
+- (NSDictionary*)getAlbumData:(NSURL*) url
+                     encoding:(NSStringEncoding)encoding;
+
 // Gets a sorted array from the above Dictionary
 - (NSArray*)getTracksArray:(NSDictionary*)data;
 

@@ -14,6 +14,7 @@ Version 1.6
 * Fixes for 10.7.  
 * Added unit tests.
 * Html decoding
+* Track number bug fix + tests
 
 
 Version 1.5.4 (Wed 18 Jul 2012 21:55:06 +0100)

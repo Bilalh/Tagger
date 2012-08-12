@@ -82,7 +82,8 @@ using namespace hcxselect;
     DDLogInfo(@"Searching using URL %@", url);
     NSError *err = nil;
     string *html  = [self cppstringWithContentsOfURL:url
-                                              error:&err];
+                                              error:&err
+                                            encoding:NSUTF8StringEncoding];
     
     if (!err){
         htmlcxx::HTML::ParserDom parser;
@@ -163,10 +164,16 @@ using namespace hcxselect;
 
 - (NSDictionary*)getAlbumData:(NSURL*) url
 {
+    [self getAlbumData:url encoding:NSUTF8StringEncoding];
+}
+
+- (NSDictionary*)getAlbumData:(NSURL*) url
+                     encoding:(NSStringEncoding)encoding
+{
     NSMutableDictionary *data = [NSMutableDictionary new];
     
     NSError *err;
-    string *html = [self cppstringWithContentsOfURL:url error:&err];
+    string *html = [self cppstringWithContentsOfURL:url error:&err encoding:encoding];
     
     if (html == NULL){
         NSLog(@"Error %@", [err localizedDescription]);
@@ -593,9 +600,10 @@ string _html;
 
 - (std::string*) cppstringWithContentsOfURL:(NSURL*)url
                                      error:(NSError**)error
+                                    encoding:(NSStringEncoding)encoding
 {
     NSString *_html = [NSString stringWithContentsOfURL: url
-                                               encoding:NSUTF8StringEncoding
+                                               encoding:encoding
                                                   error:error];
     if (!(*error)){
         return new string([_html UTF8String]);

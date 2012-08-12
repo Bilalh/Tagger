@@ -78,6 +78,7 @@
 		929A4ADD13DA087D00244796 /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD713DA087D00244796 /* DDLog.m */; };
 		929A4ADE13DA087D00244796 /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD913DA087D00244796 /* DDTTYLogger.m */; };
 		929F152913F1E5F60021F9FD /* BHDraggableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 929F152813F1E5F60021F9FD /* BHDraggableImageView.m */; };
+		92A41DE915D82097006D89C5 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A41DE815D82097006D89C5 /* libiconv.dylib */; };
 		92A6808813EC7B130067DD5F /* MASPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A6808513EC7B130067DD5F /* MASPreferencesWindow.xib */; };
 		92A6808913EC7B130067DD5F /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A6808713EC7B130067DD5F /* MASPreferencesWindowController.m */; };
 		92A96F2D15BCD2DC004A320E /* Vgmdb.mm in Sources */ = {isa = PBXBuildFile; fileRef = 92A96F2C15BCD2DC004A320E /* Vgmdb.mm */; };
@@ -226,6 +227,7 @@
 		929A4AD913DA087D00244796 /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
 		929F152713F1E5F60021F9FD /* BHDraggableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BHDraggableImageView.h; path = BHDraggableImageView/BHDraggableImageView.h; sourceTree = "<group>"; };
 		929F152813F1E5F60021F9FD /* BHDraggableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BHDraggableImageView.m; path = BHDraggableImageView/BHDraggableImageView.m; sourceTree = "<group>"; };
+		92A41DE815D82097006D89C5 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 		92A6808413EC7B130067DD5F /* MASPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesViewController.h; sourceTree = "<group>"; };
 		92A6808513EC7B130067DD5F /* MASPreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASPreferencesWindow.xib; sourceTree = "<group>"; };
 		92A6808613EC7B130067DD5F /* MASPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesWindowController.h; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A41DE915D82097006D89C5 /* libiconv.dylib in Frameworks */,
 				9239270515CF0F8400135F07 /* SenTestingKit.framework in Frameworks */,
 				923926F015CF07F700135F07 /* libhtmlcxx.3.dylib in Frameworks */,
 				9254094B15C36CC00074A280 /* Cocoa.framework in Frameworks */,
@@ -458,6 +461,7 @@
 		925CE81213C3BD6D009D6D94 = {
 			isa = PBXGroup;
 			children = (
+				92A41DE815D82097006D89C5 /* libiconv.dylib */,
 				92E6ED6D13F313230045679E /* Classes */,
 				920660BD13C89845003A3803 /* Resources */,
 				920660BA13C89845003A3803 /* Other Sources */,
