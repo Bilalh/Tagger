@@ -14,4 +14,9 @@
 
 - (NSString *)stringByDecodingXMLEntities;
 
++ (NSString*) stringWithContentsOfURLCleaned:(NSURL *)url
+                                       error:(NSError**)err;
+
++ (NSData *)cleanUTF8:(NSData *)data;
+
 @end

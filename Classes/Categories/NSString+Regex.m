@@ -7,6 +7,7 @@
 //
 
 #import "NSString+Regex.h"
+#include <iconv.h>
 
 @implementation NSString (Regex)
 
@@ -109,5 +110,44 @@
 finish:
     return result;
 }
+
++ (NSString*) stringWithContentsOfURLCleaned:(NSURL *)url
+                                       error:(NSError**)err
+{
+    NSString *text =  [NSString stringWithContentsOfURL: url
+                                               encoding:NSISOLatin1StringEncoding
+                                                  error:err];
+    
+    NSData *bytes= [text dataUsingEncoding:NSISOLatin1StringEncoding];
+    NSData *cleanedData = [NSString cleanUTF8:bytes];
+    NSString *cleaned = [[NSString alloc] initWithData:cleanedData encoding:NSUTF8StringEncoding];
+    return cleaned;
+}
+
++ (NSData *)cleanUTF8:(NSData *)data
+{
+    // Make sure its utf-8
+    iconv_t ic= iconv_open("UTF-8", "UTF-8");
+    // Remove invaild characters
+    int one = 1;
+    iconvctl(ic, ICONV_SET_DISCARD_ILSEQ, &one);
+    
+    size_t inBytes, outBytes;
+    inBytes = outBytes = data.length;
+    char *inbuf  = (char*)data.bytes;
+    char *outbuf = (char*) malloc(sizeof(char) * data.length);
+    char *outptr = outbuf;
+    
+    if (iconv(ic, &inbuf, &inBytes, &outptr, &outBytes) == (size_t) - 1) {
+        assert(false);
+        return nil;
+    }
+    
+    NSData *result = [NSData dataWithBytes:outbuf length:data.length - outBytes];
+    iconv_close(ic);
+    free(outbuf);
+    return result;
+}
+
 
 @end

@@ -85,6 +85,7 @@
 		92B615D515C5EFEB002E048B /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F16DB014041AC10031E4B4 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		92C4466413E0BF830038F817 /* BWHyperlinkTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4466113E0BF830038F817 /* BWHyperlinkTitleButton.m */; };
 		92C4466513E0BF830038F817 /* BWHyperlinkButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4466313E0BF830038F817 /* BWHyperlinkButtonCell.m */; };
+		92C85E6615DAFFA300436FAD /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A41DE815D82097006D89C5 /* libiconv.dylib */; };
 		92D2C4D715D05B7100FF5E96 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F16DB014041AC10031E4B4 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		92D30AC31405B1B600677B70 /* IntPair.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D30AC21405B1B600677B70 /* IntPair.m */; };
 		92DBDEAD14AAB99A009434DB /* fields.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92DBDEAC14AAB99A009434DB /* fields.cpp */; };
@@ -338,6 +339,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92C85E6615DAFFA300436FAD /* libiconv.dylib in Frameworks */,
 				923926EE15CF078100135F07 /* libhtmlcxx.3.dylib in Frameworks */,
 				92F16DB314041D8B0031E4B4 /* libicucore.dylib in Frameworks */,
 				92E6EDF713F32B3C0045679E /* Quartz.framework in Frameworks */,
@@ -408,6 +410,7 @@
 		9252929615C359C300C8CD9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92A41DE815D82097006D89C5 /* libiconv.dylib */,
 				923926FC15CF0B7E00135F07 /* libhcxselect.dylib */,
 				923926EB15CF076D00135F07 /* libhtmlcxx.3.dylib */,
 				9252929715C359C300C8CD9E /* SenTestingKit.framework */,
@@ -461,7 +464,6 @@
 		925CE81213C3BD6D009D6D94 = {
 			isa = PBXGroup;
 			children = (
-				92A41DE815D82097006D89C5 /* libiconv.dylib */,
 				92E6ED6D13F313230045679E /* Classes */,
 				920660BD13C89845003A3803 /* Resources */,
 				920660BA13C89845003A3803 /* Other Sources */,

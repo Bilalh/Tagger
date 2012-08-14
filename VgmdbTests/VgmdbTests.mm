@@ -138,6 +138,7 @@ Vgmdb *vgmdb;
         
         @"genre",
         @"products", @"platforms",
+        @"rating"
         ];
         
         for (NSString *field in fields) {
@@ -429,7 +430,7 @@ Vgmdb *vgmdb;
     @"artist": composer,
     @"products": products,
     @"platforms":platforms,
-    @"rating":  @"Rated 4.50 by 12 people",
+    @"rating":  @"Rated 4.13 by 4 people",
     @"genre": genre,
     @"category": genre
     };
@@ -595,6 +596,124 @@ NSDictionary *tracksForTesting =
 
 }
 
+- (void)testSingleDiskStatsDifferent
+{
+    NSString *name = @"statsDifferent.html";
+    NSURL *url = [self getUrlForName:name];
+
+    NSDictionary *album =@{
+        @"@english": @"Atelier Rorona Character Song Album ~Kanarien~",
+        @"@kanji": @"ロロナのアトリエ キャラクターソングアルバム ～カナリア～",
+        @"@romaji": @"Rorona no Atelier Character Song Album ~Kanaria~"
+    };
+
+    NSArray *classification = @[@"Vocal"];
+
+    NSArray *publisher =@[
+        @{
+            @"@english" : @"TEAM Entertainment",
+            @"@kanji":     @"株式会社ティームエンタテインメント",
+            @"@romaji":    @"TEAM Entertainment"
+        },
+        @{
+            @"@english" : @"Sony Music Distribution",
+            @"@kanji":     @"株式会社ソニー・ミュージックディストリビューション",
+            @"@romaji":    @"Sony Music Distribution"
+        }
+    ];
+
+    NSArray *composer  =@[
+    @{
+        @"@english" : @"Kazuki Yanagawa",
+        @"@kanji"   : @"柳川和樹"
+    },
+    @{
+        @"@english" : @"Daisuke Achiwa",
+        @"@kanji"   : @"阿知波大輔"
+    },
+    @{
+        @"@english" : @"Ken Nakagawa",
+        @"@kanji"   : @"中河健"
+    }
+    ];
+
+    NSArray *arranger  =@[
+    @{
+        @"@english" : @"Kazuki Yanagawa",
+        @"@kanji"   : @"柳川和樹"
+    },
+    @{
+        @"@english" : @"Daisuke Achiwa",
+        @"@kanji"   : @"阿知波大輔"
+    },
+    ];
+
+    NSArray *performer  =@[
+    @{
+        @"@english" : @"Kei Shindo",
+        @"@kanji"   : @"真堂圭"
+    },
+    @{
+        @"@english" : @"Eri Kitamura",
+        @"@kanji"   : @"喜多村英梨"
+    },
+    @{
+        @"@english" : @"Mai Kadowaki",
+        @"@kanji"   : @"門脇舞以"
+    },
+    @{
+        @"@english" : @"Dani",
+    },
+    ];
+
+    NSArray *products =@[
+    @{
+        @"@english":  @"Atelier Rorona",
+        @"@kanji":    @"ロロナのアトリエ　～アーランドの錬金術師～",
+        @"@romaji":   @"Rorona no Atelier: Arland no Renkinjutsushi"
+    },
+    ];
+
+    NSArray *platforms = @[
+        @"Sony PlayStation 3"
+    ];
+
+    NSArray *genre = @[
+        @"Game"
+    ];
+
+    NSArray *publishedFormat =@[
+        @"Commercial"
+    ];
+
+
+    NSDictionary *correct = @{
+    @"album":album,
+    @"url": url,
+    @"catalog" : @"KDSD-10052",
+    @"date" : @"Sep 22, 2010",
+    @"year": @"2010",
+    @"publishedFormat": publishedFormat,
+    @"price": @"2100",
+    @"mediaFormat": @"CD",
+    @"classification": classification,
+    @"publisher": publisher,
+    @"composer": composer,
+    @"arranger": arranger,
+    @"performer": performer,
+    @"artist": composer,
+    @"products": products,
+    @"platforms":platforms,
+    @"rating":  @"Rated 5.00 by 1 person",
+    @"genre": genre,
+    @"category": genre,
+    };
+
+    [self testUsingTestData:correct
+               withMetadata:YES
+                  withNotes:NO
+                 withTracks:NO];
+}
 
 #pragma mark -
 #pragma mark GetTracksArray
@@ -650,7 +769,6 @@ NSDictionary *tracksForTesting =
     
     STAssertEqualObjects(sorted,correct,@"Sorting correct");
 
-    
 }
 
 
@@ -664,32 +782,13 @@ NSDictionary *tracksForTesting =
     return url;
 }
 
-NSUInteger encodings[] =  {
-    NSUTF8StringEncoding,
-    NSISOLatin1StringEncoding
-//    NSASCIIStringEncoding,
-//    NSISOLatin1StringEncoding,
-//    NSShiftJISStringEncoding,
-//    NSNEXTSTEPStringEncoding,
-//    NSJapaneseEUCStringEncoding,
-//    NSISO2022JPStringEncoding,
-//    NSSymbolStringEncoding,
-//    NSNonLossyASCIIStringEncoding,
-//    NSISOLatin2StringEncoding,
-//    NSUnicodeStringEncoding,
-//    NSWindowsCP1251StringEncoding,
-//    NSWindowsCP1252StringEncoding,
-//    NSWindowsCP1253StringEncoding,
-//    NSWindowsCP1254StringEncoding,
-//    NSWindowsCP1250StringEncoding,
-//    NSMacOSRomanStringEncoding
-};
 
 - (void)testMakeFiles
 {
+    return;
     NSDictionary *files =
     @{
-        @"all_blank" : @"/Users/bilalh/20427.html" //@"http://vgmdb.net/album/32234"
+        @"statsDifferent" :   @"/Users/bilalh/20427.html" //@"http://vgmdb.net/album/32234"
     };
     
     for (NSString *name in files) {
@@ -698,70 +797,25 @@ NSUInteger encodings[] =  {
         NSLog(@"%@ -> %@", _url,name);
         NSError *err;
         
-        
-        NSString *s;
-        NSStringEncoding enc = NSISOLatin1StringEncoding;
-//        for (int i =0; i < sizeof(encodings)/sizeof(size_t); i++) {
-//            enc = encodings[i];
-//            s=  [NSString stringWithContentsOfURL:[[NSURL alloc ]initFileURLWithPath:_url]
-//                                                   encoding:enc
-//                                                      error:&err];
-//            if (!err){
-//                NSString *path = [testFolder stringByAppendingPathComponent:[name stringByAppendingFormat:@"%lul .html",enc ]];
-//                [s writeToFile:path
-//                    atomically:YES
-//                      encoding:NSUTF8StringEncoding
-//                         error:nil];
-//            }else{
-//                 NSLog(@"err %@", err);
-//            }
-//        }
-        
-        
-        s=  [NSString stringWithContentsOfURL:[[NSURL alloc ]initFileURLWithPath:_url]
-                                                  encoding:enc
+        NSURL *url  = [[NSURL alloc ]initFileURLWithPath:_url];
+        NSString *text =  [NSString stringWithContentsOfURL: url
+                                                  encoding:NSUTF8StringEncoding
                                                      error:&err];
-        
-        NSString *correct  = [NSString stringWithContentsOfURL:[[NSURL alloc ]initFileURLWithPath:@"/Users/bilalh/32234z correct.html"]
-                                     encoding:enc
-                                        error:&err];
-        
-//        NSRange r =[s rangeOfString:@"\u00E5\u00A3."];
-//        if (r.location != NSNotFound ){
-//            s = [s stringByReplacingCharactersInRange:r withString:@""];
-//            NSLog(@"!!!!!!");
-//        }
-    
-        NSString *nn = [s stringByReplacingOccurrencesOfRegex:@"å£." withString:@""];
-        NSString *ne = [s stringByReplacingOccurrencesOfString:@"å£." withString:@""];
-        
-        NSLog(@"equal %ul",[s isEqualToString:ne]);
-        NSLog(@"size correct:%zu s:%zu nn:%zu ne:%zu",[correct length], [s length], [nn length], [ne length]);
-        
-        NSString *res = [NSString stringWithCString:[nn cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
-        NSString *res2 = [NSString stringWithCString:[ne cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
-        NSString *res3 = [NSString stringWithCString:[correct cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
-        NSString *res_s = [NSString stringWithCString:[s cStringUsingEncoding:NSISOLatin1StringEncoding] encoding:NSUTF8StringEncoding];
-        NSLog(@"res_nn %d", res != nil);
-        NSLog(@"res_ne %d", res2 != nil);
-        NSLog(@"res_co %d", res3 != nil);
-        NSLog(@"res_s %d", res_s != nil);
-
+        if (!text){
+            text = [NSString stringWithContentsOfURLCleaned:url
+                                                  error:&err];
+        }
         
         NSString *path = [testFolder stringByAppendingPathComponent:[name stringByAppendingString:@".html"]];
-        [ne writeToFile:path
+        [text writeToFile:path
             atomically:YES
-              encoding:NSISOLatin1StringEncoding
+              encoding:NSUTF8StringEncoding
                  error:nil];
-
-        NSLog(@"!%@ -> %@ DONE using enc:%lu", _url,name,enc);
         
-//        id result = [vgmdb getAlbumData:[[NSURL alloc ]initFileURLWithPath:[testFolder stringByAppendingPathComponent:[name stringByAppendingString:@".html"]]] ];
+//        id result = [vgmdb getAlbumData:[[NSURL alloc ]initFileURLWithPath:
+//                                         [testFolder stringByAppendingPathComponent:[name stringByAppendingString:@".html"]]] ];
 //        NSLog(@" %@", result);
-        NSData *bytes= [s dataUsingEncoding:NSISOLatin1StringEncoding];
-        NSData *cleaned = [self cleanUTF8:bytes];
-        NSString *ss = [[NSString alloc] initWithData:cleaned encoding:NSUTF8StringEncoding];
-        NSLog(@"%@",ss);
+
     }
 }
 
@@ -777,28 +831,6 @@ NSUInteger encodings[] =  {
 {
     // Tear-down code here.
     [super tearDown];
-}
-
-
-- (NSData *)cleanUTF8:(NSData *)data {
-    iconv_t cd = iconv_open("UTF-8", "UTF-8"); // convert to UTF-8 from UTF-8
-    int one = 1;
-    iconvctl(cd, ICONV_SET_DISCARD_ILSEQ, &one); // discard invalid characters
-    
-    size_t inbytesleft, outbytesleft;
-    inbytesleft = outbytesleft = data.length;
-    char *inbuf  = (char *)data.bytes;
-    char *outbuf = (char*) malloc(sizeof(char) * data.length);
-    char *outptr = outbuf;
-    if (iconv(cd, &inbuf, &inbytesleft, &outptr, &outbytesleft)
-        == (size_t)-1) {
-        NSLog(@"this should not happen, seriously");
-        return nil;
-    }
-    NSData *result = [NSData dataWithBytes:outbuf length:data.length - outbytesleft];
-    iconv_close(cd);
-    free(outbuf);
-    return result;
 }
 
 @end

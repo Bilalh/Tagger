@@ -187,10 +187,11 @@ using namespace hcxselect;
     [data setValue:[self getAlbumTitles:dom forHtml:*html]
             forKey:@"album"];
     
+    _html = *html;
     [self storeMetadata:dom forHtml:*html in:data];
+    [self storeStats:dom forHtml:*html in:data];
     [self storeNotes:dom forHtml:*html in:data];
     [self storeTracks:dom forHtml:*html in:data];
-
     
     delete html;
     [data setValue:url forKey:@"url"];
@@ -295,6 +296,7 @@ using namespace hcxselect;
 {
     Selector s(dom);
     Selector res = s.select("div.page > table > tr > td > div > div[style].smallfont");
+    if (res.size() ==0) return;
     
     string buf;
     Node *n = *res.rbegin();
@@ -333,7 +335,6 @@ string _html;
                 in:(NSDictionary*)data
 {
 
-    _html = html;
     Selector s(dom);
     Selector meta = s.select("table#album_infobit_large");
     
@@ -398,10 +399,16 @@ string _html;
     
     Node *nper = narr->next_sibling->next_sibling;
     [data setValue: [self get_spilt_data:nper] forKey:@"performer"];
-    
+}
+ 
+- (void) storeStats:(const tree<htmlcxx::HTML::Node>&)dom
+               forHtml:(const std::string&)html
+                    in:(NSDictionary*)data
+{
+    Selector s(dom);
     Selector stats = s.select("td#rightcolumn  div.smallfont");
     Node *nstats = *stats.begin();
-    
+    if (!nstats) return;
     Node *nrat = nstats->first_child->next_sibling;
     string _rat = nrat->last_child->prev_sibling->first_child-> data.text();
     [data setValue:[NSString stringWithCppStringTrimmed:&_rat] forKey:@"rating"];
@@ -410,7 +417,7 @@ string _html;
     Node *ncoll = nrat->next_sibling->next_sibling;
     
     Node *nwish = ncoll->next_sibling->next_sibling;
-
+    
     Node *ngenre = nwish->next_sibling->next_sibling;
     string _genre = ngenre->last_child->data.text();
     NSArray *genres = @[[NSString stringWithCppStringTrimmed:&_genre]];
@@ -442,9 +449,8 @@ string _html;
         NSString *plat = [NSString stringWithCppStringTrimmed:&_plat];
         [data setValue:[self spiltMutiMetadataString:plat] forKey:@"platforms"];
     }
-    
 }
- 
+
 - (NSArray*)get_spilt_data:(Node *)n
 {
     NSMutableArray *arr = [NSMutableArray new];
