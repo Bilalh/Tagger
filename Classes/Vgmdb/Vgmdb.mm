@@ -337,11 +337,11 @@ string _html;
 
     Selector s(dom);
     Selector meta = s.select("table#album_infobit_large");
-    
+    cout<< meta.size();
     /* Catalog */
     Selector catalogElem = meta.select("tr td[width='100%']");
     Node *ncat = *catalogElem.begin();
-    
+    cout<< catalogElem.size();
     string _catalog = ncat->first_child->data.text();
     NSString *catalog = [NSString stringWithCppStringTrimmed:&_catalog];
     [data setValue:catalog forKey:@"catalog"];
@@ -406,9 +406,19 @@ string _html;
                     in:(NSDictionary*)data
 {
     Selector s(dom);
-    Selector stats = s.select("td#rightcolumn  div.smallfont");
+    Selector stats = s.select("td#rightcolumn div.smallfont");
+    cout << stats.size()<< "\n";
+    
+//    Selector rc = s.select("td#rightcolumn");
+//    cout << rc.size() << "\n";
+//    Node *nrc = *rc.begin();
+//    Node *nn = nrc->first_child;
+//    [self printNode:nrc->parent inHtml:_html];
+    
     Node *nstats = *stats.begin();
-    if (!nstats) return;
+    
+//    if (!nstats) return;
+    
     Node *nrat = nstats->first_child->next_sibling;
     string _rat = nrat->last_child->prev_sibling->first_child-> data.text();
     [data setValue:[NSString stringWithCppStringTrimmed:&_rat] forKey:@"rating"];

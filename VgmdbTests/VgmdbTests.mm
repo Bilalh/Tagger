@@ -119,6 +119,7 @@ Vgmdb *vgmdb;
 
 - (void) testUsingTestData:(NSDictionary*)correct
               withMetadata:(BOOL)testmetadata
+                 withStats:(BOOL)testStats
                  withNotes:(BOOL)testNotes
                 withTracks:(BOOL)testTracks
 {
@@ -134,12 +135,10 @@ Vgmdb *vgmdb;
         @"year",@"classification",
         @"publisher", @"composer",
         @"arranger", @"performer",
-        @"artist",
-        
-        @"genre",
-        @"products", @"platforms",
-        @"rating"
+        @"artist"
         ];
+        
+
         
         for (NSString *field in fields) {
             STAssertEqualObjects(
@@ -149,7 +148,22 @@ Vgmdb *vgmdb;
             printf("\n\n");
         }
     }
-       
+    
+    if (testStats){
+        NSArray *stats = @[
+        @"genre",
+        @"products", @"platforms",
+        @"rating"
+        ];
+        for (NSString *field in stats) {
+            STAssertEqualObjects(
+                                 [results valueForKey:field],
+                                 [correct valueForKey:field],
+                                 @"%@ - %@",field, name);
+            printf("\n\n");
+        }
+    }
+    
     if (testNotes){
         NSString *field = @"comment";
         STAssertEqualObjects(
@@ -271,6 +285,7 @@ Vgmdb *vgmdb;
     
     [self testUsingTestData:correct
                withMetadata:YES
+                  withStats:YES
                   withNotes:YES
                  withTracks:NO];
 
@@ -438,6 +453,7 @@ Vgmdb *vgmdb;
 
     [self testUsingTestData:correct
                withMetadata:YES
+                  withStats:YES     
                   withNotes:NO
                  withTracks:NO];
 }
@@ -532,6 +548,7 @@ Vgmdb *vgmdb;
     
     [self testUsingTestData:correct
                withMetadata:YES
+                  withStats:YES
                   withNotes:NO
                  withTracks:NO];
 
@@ -591,13 +608,188 @@ NSDictionary *tracksForTesting =
     
     [self testUsingTestData:correct
                withMetadata:NO
+                  withStats:NO
                   withNotes:NO
                  withTracks:YES];
 
 }
 
+- (void)testDifferent
+{
+    NSString *name = @"different.html";
+    NSURL *url = [self getUrlForName:name];
+    
+    NSDictionary *correct =
+    @{
+        @"album" :@{
+            @"@english" : @"- Twilight Hour - Atelier Ayesha -Alchemist of the Ground of Dusk- Vocal Album",
+            @"@kanji" : @"- Twilight Hour -\u30a2\u30fc\u30b7\u30e3\u306e\u30a2\u30c8\u30ea\u30a8\uff5e\u9ec4\u660f\u306e\u5927\u5730\u306e\u932c\u91d1\u8853\u58eb\uff5e\u30dc\u30fc\u30ab\u30eb\u30a2\u30eb\u30d0\u30e0",
+            @"@romaji" : @"- Twilight Hour - Ayesha no Atelier: Tasogare no Daichi no Renkinjutsushi Vocal Album",
+        },
+        @"arranger" :@[
+            @{
+                @"@english" : @"Kaz   uki YanagawaRurutiaDaisuke AchiwaChirinuruwowaka",
+            }
+        ],
+        @"artist" :@[
+                @{
+                @"@english" : @"Kazuki YanagawaRurutiaDaisuke AchiwaYu ShimodaYumi Nakashima",
+            }
+        ],
+        @"catalog" :@"GUSTCD-10010",
+        @"category" :@[
+            @"Game"
+        ],
+        @"classification" :@[
+            @"Vocal"
+        ],
+        @"composer" :@[
+                @{
+                @"@english" : @"Kazuki YanagawaRurutiaDaisuke AchiwaYu ShimodaYumi Nakashima",
+            }
+        ],
+        @"date" :@"Jun 27, 2012",
+        @"genre" :@[
+            @"Game",
+        ],
+        @"mediaFormat" :@"CD",
+        @"performer" :@[
+                @{
+                @"@english" : @"Mutsumi NomiyamaRurutiayanaginagiSayaTaeHaruka ShimotsukiChirinuruwowakaAnnabel",
+            }
+        ],
+        @"platforms" :@[
+            @"Sony PlayStation 3"
+        ],
+        @"price" :@(2415),
+        @"products" :@[
+                @{
+                @"@english" : @"Atelier Ayesha",
+                @"@kanji" : @"\u30a2\u30fc\u30b7\u30e3\u306e\u30a2\u30c8\u30ea\u30a8 \uff5e\u9ec4\u660f\u306e\u5927\u5730\u306e\u932c\u91d1\u8853\u58eb\uff5e",
+                @"@romaji" : @"Ayesha no Atelier: Tasogare no Daichi no Renkinjutsushi",
+            }
+        ],
+        @"publishedFormat" :@[
+            @"Commercial"
+        ],
+        @"publisher" :@[
+                @{
+                @"@english" : @"Gust",
+                @"@kanji" : @"\u682a\u5f0f\u4f1a\u793e\u30ac\u30b9\u30c8",
+                @"@romaji" : @"Gust",
+            }
+        ],
+        @"rating" :@"Rated 4.75 by 2 people",
+        @"totalDiscs" :@(1),
+        @"totalTracks" :@(0),
+        @"tracks" :@{
+            @"1-1" :     @{
+                @"disc" :@(1),
+                @"length" :@"3:27",
+                @"title" :        @{
+                    @"@english" : @"Flower Sign",
+                    @"@kanji" : @"\u82b1\u6a19",
+                    @"@romaji" : @"Hanashirube",
+                },
+                @"track" :@(1),
+            },
+            @"1-2" :     @{
+                @"disc" :@(1),
+                @"length" :@"5:45",
+                @"title" :        @{
+                    @"@english" : @"Mystic Pendulum",
+                    @"@kanji" : @"Mystic Pendulum",
+                    @"@romaji" : @"Mystic Pendulum",
+                },
+                @"track" :@(2),
+            },
+            @"1-3" :     @{
+                @"disc" :@(1),
+                @"length" :@"3:38",
+                @"title" :        @{
+                    @"@english" : @"Thorns",
+                    @"@kanji" : @"\u3044\u3070\u3089",
+                    @"@romaji" : @"Ibara",
+                },
+                @"track" :@(3),
+            },
+            @"1-4" :     @{
+                @"disc" :@(1),
+                @"length" :@"4:42",
+                @"title" :        @{
+                    @"@english" : @"Stargazer",
+                    @"@kanji" : @"Stargazer",
+                    @"@romaji" : @"Stargazer",
+                },
+                @"track" :@(4),
+            },
+            @"1-5" :     @{
+                @"disc" :@(1),
+                @"length" :@"4:20",
+                @"title" :        @{
+                    @"@english" : @"Twilight",
+                    @"@kanji" : @"\u9ec4\u660f",
+                    @"@romaji" : @"Tasogare",
+                },
+                @"track" :@(5),
+            },
+            @"1-6" :     @{
+                @"disc" :@(1),
+                @"length" :@"5:50",
+                @"title" :        @{
+                    @"@english" : @"MARIA",
+                    @"@kanji" : @"MARIA",
+                    @"@romaji" : @"MARIA",
+                },
+                @"track" :@(6),
+            },
+            @"1-7" :     @{
+                @"disc" :@(1),
+                @"length" :@"5:07",
+                @"title" :        @{
+                    @"@english" : @"Stars at Dusk",
+                    @"@kanji" : @"\u5bb5\u306e\u661f",
+                    @"@romaji" : @"Yoi no Hoshi",
+                },
+                @"track" :@(7),
+            },
+            @"1-8" :     @{
+                @"disc" :@(1),
+                @"length" :@"4:51",
+                @"title" :        @{
+                    @"@english" : @"Dream-Weaving House",
+                    @"@kanji" : @"\u5922\u3092\u7e54\u308b\u5bb6",
+                    @"@romaji" : @"Yume wo Oru Ie",
+                },
+                @"track" :@(8),
+            },
+            @"1-9" :     @{
+                @"disc" :@(1),
+                @"length" :@"4:38",
+                @"title" :        @{
+                    @"@english" : @"Altair",
+                    @"@kanji" : @"Altair",
+                    @"@romaji" : @"Altair",
+                },
+                @"track" :@(9),
+            },
+        },
+        @"url" :url,
+        @"year" :@"2012",
+    };
+
+    [self testUsingTestData:correct
+               withMetadata:YES
+                  withStats:YES
+                  withNotes:NO
+                 withTracks:YES];
+    
+
+}
+
 - (void)testSingleDiskStatsDifferent
 {
+    return;
     NSString *name = @"statsDifferent.html";
     NSURL *url = [self getUrlForName:name];
 
@@ -711,6 +903,7 @@ NSDictionary *tracksForTesting =
 
     [self testUsingTestData:correct
                withMetadata:YES
+                  withStats:YES     
                   withNotes:NO
                  withTracks:NO];
 }
@@ -788,7 +981,8 @@ NSDictionary *tracksForTesting =
     return;
     NSDictionary *files =
     @{
-        @"statsDifferent" :   @"/Users/bilalh/20427.html" //@"http://vgmdb.net/album/32234"
+        @"statsDifferent" :  @"http://vgmdb.net/album/20427",
+        @"different": @"http://vgmdb.net/album/32234"
     };
     
     for (NSString *name in files) {
@@ -797,11 +991,12 @@ NSDictionary *tracksForTesting =
         NSLog(@"%@ -> %@", _url,name);
         NSError *err;
         
-        NSURL *url  = [[NSURL alloc ]initFileURLWithPath:_url];
+        NSURL *url  = [[NSURL alloc ]initWithString:_url];
         NSString *text =  [NSString stringWithContentsOfURL: url
                                                   encoding:NSUTF8StringEncoding
                                                      error:&err];
         if (!text){
+            err = nil;
             text = [NSString stringWithContentsOfURLCleaned:url
                                                   error:&err];
         }
