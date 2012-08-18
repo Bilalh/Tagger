@@ -176,7 +176,7 @@ using namespace hcxselect;
     string *html = [self cppstringWithContentsOfURL:url error:&err encoding:encoding];
     
     if (html == NULL){
-        NSLog(@"Error %@", [err localizedDescription]);
+        DDLogError(@"Error %@", [err localizedDescription]);
         return data;
     }
     
@@ -337,11 +337,11 @@ string _html;
 
     Selector s(dom);
     Selector meta = s.select("table#album_infobit_large");
-    cout<< meta.size();
+//    cout<< meta.size();
     /* Catalog */
     Selector catalogElem = meta.select("tr td[width='100%']");
     Node *ncat = *catalogElem.begin();
-    cout<< catalogElem.size();
+//    cout<< catalogElem.size();
     string _catalog = ncat->first_child->data.text();
     NSString *catalog = [NSString stringWithCppStringTrimmed:&_catalog];
     [data setValue:catalog forKey:@"catalog"];
@@ -417,7 +417,7 @@ string _html;
     
     Node *nstats = *stats.begin();
     
-//    if (!nstats) return;
+    if (!nstats) return;
     
     Node *nrat = nstats->first_child->next_sibling;
     string _rat = nrat->last_child->prev_sibling->first_child-> data.text();
@@ -477,8 +477,9 @@ string _html;
                 NSString *result = [text stringByReplacingOccurrencesOfRegex:@", *" withString:@""];
                 
                 for (NSString *s in [text componentsSeparatedByRegex:@"[,]"]){
-                    if ([s hasVaildData] && ![s isMatchedByRegex:@"^\\("]){
-                        [arr addObject:@{ @"@english" : [s trimWhiteSpace] }];
+                    NSString *ss = [s trimWhiteSpace];
+                    if ([ss hasVaildData] && ![ss isMatchedByRegex:@"^\\("]){
+                        [arr addObject:@{ @"@english" : ss }];
                     }
                 }
                 
@@ -602,8 +603,9 @@ string _html;
             
             string _title = titleNode->data.text();
             NSString *title = [[NSString alloc] initWithCppString:&_title];
-            
-            [titles setValue: [title stringByDecodingXMLEntities] forKey:lang];
+            if ([title hasVaildData]){
+                 [titles setValue: [title stringByDecodingXMLEntities] forKey:lang];   
+            }
         }
         
         node = node->next_sibling;
@@ -621,13 +623,28 @@ string _html;
 }
 
 - (std::string*) cppstringWithContentsOfURL:(NSURL*)url
-                                     error:(NSError**)error
+                                     error:(NSError**)err
                                     encoding:(NSStringEncoding)encoding
 {
-    NSString *_html = [NSString stringWithContentsOfURL: url
-                                               encoding:encoding
-                                                  error:error];
-    if (!(*error)){
+    NSString *_html =  [NSString stringWithContentsOfURL: url
+                                               encoding:NSUTF8StringEncoding
+                                                  error:err];
+    if (!_html){
+        *err = nil;
+        DDLogVerbose(@"%@ url is Not UTF8", url);
+        if (encoding != NSUTF8StringEncoding){
+            _html =  [NSString stringWithContentsOfURL: url
+                                              encoding:encoding
+                                                 error:err];
+        }
+        
+        if (!_html){
+            _html = [NSString stringWithContentsOfURLCleaned:url
+                                                       error:err];
+        }
+    }
+    
+    if (!(*err)){
         return new string([_html UTF8String]);
     }
     return NULL;

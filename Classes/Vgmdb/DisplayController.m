@@ -13,7 +13,7 @@
 #import "NSAttributedString+Hyperlink.h"
 
 #import "Logging.h"
-LOG_LEVEL(LOG_LEVEL_INFO);
+LOG_LEVEL(LOG_LEVEL_VERBOSE);
 
 
 @interface DisplayController() // private methdods

@@ -324,7 +324,7 @@ if $0 == __FILE__
 	# vg.search("Atelier");
 	                                     
 	# url = File.expand_path("~/Desktop/55")
-	# url = "http://vgmdb.net/album/13192"
+  url = "http://vgmdb.net/album/13192"
 	# url = 'http://vgmdb.net/album/3885'
 	# url = 'http://vgmdb.net/album/19776'
 	# url = 'http://vgmdb.net/album/27827'  # 10 disks
@@ -335,7 +335,8 @@ if $0 == __FILE__
 	# url ='http://vgmdb.net/album/19090'
 	# url ='http://vgmdb.net/album/22124'   # Multiple classifications
 	# url ='http://vgmdb.net/album/10306'   # Multiple Products 
-	url = 'http://vgmdb.net/album/22125'    # Different format fior Products
+  # url = 'http://vgmdb.net/album/22125'    # Different format fior Products
+  # url = "http://vgmdb.net/album/32234"
 	hash = vg.get_data(url)	
 	require 'pp'
 	pp hash

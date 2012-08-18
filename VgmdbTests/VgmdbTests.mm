@@ -1035,6 +1035,10 @@ NSDictionary *tracksForTesting =
     return;
     NSDictionary *files =
     @{
+        @"muti-disk.html":   @"http://vgmdb.net/album/13192",
+        @"mutiMetadata.html":@"http://vgmdb.net/album/762",
+        @"noPlatforms_small.html":@"http://vgmdb.net/album/30881",
+        @"singleDisk.html":@"http://vgmdb.net/album/30880",
         @"statsDifferent" :  @"http://vgmdb.net/album/20427",
         @"different": @"http://vgmdb.net/album/32234"
     };

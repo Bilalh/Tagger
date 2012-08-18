@@ -13,7 +13,7 @@
 
 - (BOOL) hasVaildData
 {
-    return (self && [self length] != 0 && ![self isMatchedByRegex:@"^[,.()\\~ - \"'\\[\\]:!@]+$"]);
+    return (self && [self length] != 0 && ![self isMatchedByRegex:@"^[/,.()~\\\\ -\"'\\[\\] :!@]+$"]);
 }
 
 - (NSString *)stringByDecodingXMLEntities
