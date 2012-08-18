@@ -164,7 +164,7 @@ using namespace hcxselect;
 
 - (NSDictionary*)getAlbumData:(NSURL*) url
 {
-    [self getAlbumData:url encoding:NSUTF8StringEncoding];
+    return [self getAlbumData:url encoding:NSUTF8StringEncoding];
 }
 
 - (NSDictionary*)getAlbumData:(NSURL*) url
@@ -407,7 +407,7 @@ string _html;
 {
     Selector s(dom);
     Selector stats = s.select("td#rightcolumn div.smallfont");
-    cout << stats.size()<< "\n";
+//    cout << stats.size()<< "\n";
     
 //    Selector rc = s.select("td#rightcolumn");
 //    cout << rc.size() << "\n";
@@ -475,8 +475,14 @@ string _html;
             NSString *text = [NSString stringWithCppStringTrimmed:&_text];
             if ([text hasVaildData]){
                 NSString *result = [text stringByReplacingOccurrencesOfRegex:@", *" withString:@""];
-                if (![text isMatchedByRegex:@"^\\("]){
-                    [arr addObject:@{ @"@english" : result }];
+                
+                for (NSString *s in [text componentsSeparatedByRegex:@"[,]"]){
+                    if ([s hasVaildData] && ![s isMatchedByRegex:@"^\\("]){
+                        [arr addObject:@{ @"@english" : [s trimWhiteSpace] }];
+                    }
+                }
+                
+                if (![result isMatchedByRegex:@"^\\("]){
                     current = current->next_sibling;
                     continue;
                 }

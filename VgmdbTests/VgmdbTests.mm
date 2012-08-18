@@ -153,7 +153,7 @@ Vgmdb *vgmdb;
         NSArray *stats = @[
         @"genre",
         @"products", @"platforms",
-        @"rating"
+//        @"rating"
         ];
         for (NSString *field in stats) {
             STAssertEqualObjects(
@@ -632,6 +632,9 @@ NSDictionary *tracksForTesting =
             },
             @{
                 @"@english" : @"Rurutia",
+            },
+            @{
+                @"@english" : @"Daisuke Achiwa",
             },
             @{
                 @"@english" : @"Chirinuruwowaka",
