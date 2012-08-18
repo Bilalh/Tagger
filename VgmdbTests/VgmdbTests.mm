@@ -628,13 +628,31 @@ NSDictionary *tracksForTesting =
         },
         @"arranger" :@[
             @{
-                @"@english" : @"Kaz   uki YanagawaRurutiaDaisuke AchiwaChirinuruwowaka",
-            }
+                @"@english" : @"Kazuki Yanagawa",
+            },
+            @{
+                @"@english" : @"Rurutia",
+            },
+            @{
+                @"@english" : @"Chirinuruwowaka",
+            },
         ],
         @"artist" :@[
-                @{
-                @"@english" : @"Kazuki YanagawaRurutiaDaisuke AchiwaYu ShimodaYumi Nakashima",
-            }
+            @{
+                @"@english" : @"Kazuki Yanagawa",
+            },
+            @{
+                @"@english" : @"Rurutia",
+            },
+            @{
+                @"@english" : @"Daisuke Achiwa",
+            },
+            @{
+                @"@english" : @"Yu Shimoda",
+            },
+            @{
+                @"@english" : @"Yumi Nakashima",
+            },
         ],
         @"catalog" :@"GUSTCD-10010",
         @"category" :@[
@@ -644,9 +662,21 @@ NSDictionary *tracksForTesting =
             @"Vocal"
         ],
         @"composer" :@[
-                @{
-                @"@english" : @"Kazuki YanagawaRurutiaDaisuke AchiwaYu ShimodaYumi Nakashima",
-            }
+            @{
+                @"@english" : @"Kazuki Yanagawa",
+            },
+            @{
+                @"@english" : @"Rurutia",
+            },
+            @{
+                @"@english" : @"Daisuke Achiwa",
+            },
+            @{
+                @"@english" : @"Yu Shimoda",
+            },
+            @{
+                @"@english" : @"Yumi Nakashima",
+            },
         ],
         @"date" :@"Jun 27, 2012",
         @"genre" :@[
@@ -654,9 +684,30 @@ NSDictionary *tracksForTesting =
         ],
         @"mediaFormat" :@"CD",
         @"performer" :@[
-                @{
-                @"@english" : @"Mutsumi NomiyamaRurutiayanaginagiSayaTaeHaruka ShimotsukiChirinuruwowakaAnnabel",
-            }
+            @{
+                @"@english" : @"Mutsumi Nomiyama",
+            },
+            @{
+                @"@english" : @"Rurutia",
+            },
+            @{
+                @"@english" : @"yanaginagi",
+            },
+            @{
+                @"@english" : @"Saya",
+            },
+            @{
+                @"@english" : @"Tae",
+            },
+            @{
+                @"@english" : @"Haruka Shimotsuki",
+            },
+            @{
+                @"@english" : @"Chirinuruwowaka",
+            },
+            @{
+                @"@english" : @"Annabel",
+            },
         ],
         @"platforms" :@[
             @"Sony PlayStation 3"
