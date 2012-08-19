@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby19 -KU
+#!/usr/bin/env ruby -KU
 # encoding: UTF-8
 # Bilal Hussain
 

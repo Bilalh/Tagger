@@ -285,7 +285,6 @@ using namespace hcxselect;
         }
         [data setValue:tracks forKey:@"tracks"];
     }
-    NSLog(@"%@ %d", data[@"album"], totalTracks);
     [data setValue:@(totalTracks) forKey:@"totalTracks"];
     
 }
@@ -432,6 +431,9 @@ string _html;
     Node *ngenre = nwish->next_sibling->next_sibling;
     string _genre = ngenre->last_child->data.text();
     NSArray *genres = @[[NSString stringWithCppStringTrimmed:&_genre]];
+    if ([genres count] ==1 && [genres[0] isMatchedByRegex:@".+,.+"]){
+        genres = [self spiltMutiMetadataString:genres[0]];
+    }
     [data setValue:genres forKey:@"genre"];
     [data setValue:genres forKey:@"category"];
     
@@ -452,6 +454,21 @@ string _html;
         
         current = current->next_sibling;
     }
+    if ([prods count] == 1){
+        if ([prods[0] count] == 1){
+            NSString *s = prods[0][@"@english"];
+            if (s && [s isMatchedByRegex:@".+,.+"]){
+                NSMutableArray *prods2 =  [NSMutableArray new];
+                NSArray *split = [self spiltMutiMetadataString:s];
+                for (NSString *prod in split) {
+                    [prods2 addObject:@{@"@english": prod}];
+                }
+                prods = prods2;
+            }
+            
+        }
+    }
+    
     [data setValue:prods forKey:@"products"];
     
     Node *nplat = nprod->next_sibling->next_sibling;
@@ -555,7 +572,7 @@ string _html;
 - (NSArray*) spiltMutiMetadataString:(NSString *)metadata
 {
     if (!metadata) return nil;
-    NSArray *arr = [metadata componentsSeparatedByRegex:@"[,&] ?"];
+    NSArray *arr = [metadata componentsSeparatedByRegex:@"[,] ?"];
     if ([arr count] != 0){
         return arr;
     }else{
