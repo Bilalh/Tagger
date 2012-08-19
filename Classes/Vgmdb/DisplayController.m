@@ -158,6 +158,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
     tracks = [vgmdb getTracksArray:albumDetails];
     
 	id res = [self initCommon:filesNodes];
+    NSURL *url  =[fieldValues valueForKey:@"url"];
+    fieldValues[@"url"] = [url absoluteString];
 	return res;
 }
 
@@ -388,7 +390,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 							  selectedLanguage:@"english"]];	
 	
 	fieldValues = [[NSMutableDictionary alloc] initWithObjects:values forKeys:keys];
-	DDLogInfo(@"fieldValues\n %@", fieldValues);	
+	DDLogInfo(@"fieldValues\n %@", fieldValues);
 }
 
 - (void) initButtonsState
