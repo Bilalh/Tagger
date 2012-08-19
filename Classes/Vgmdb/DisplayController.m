@@ -220,9 +220,60 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 	min = MIN([files count], [tracks count]);
 	DDLogInfo(@"min:%zd", min);
-	
-	return[self initWithWindowNibName:@"VgmdbDisplay"];	
+    if ([files count] == [tracks count]){
+        // Only perform the changes on a multi disk album
+        if (!((FileSystemNode*)files[0]).tags.disc && tracks[0][@"disc"] != tracks[[tracks count] - 1][@"disc"]){
+            NSMutableDictionary *ftracks =[NSMutableDictionary new];
+            
+            for (FileSystemNode *n in files) {
+                NSNumber *track = n.tags.track;
+                NSMutableArray *arr = ftracks[track];
+                if (!arr){
+                    arr = [NSMutableArray new];
+                    ftracks[track] = arr;
+                }
+                [arr addObject:n];
+            }
+
+            DDLogVerbose(@"ftracks %@", ftracks);
+            NSMutableArray *nfiles = [NSMutableArray new];
+            for (NSDictionary  *track in tracks) {
+                NSNumber *ttrack = track[@"track"];
+                NSMutableArray *arr = ftracks[ttrack];
+                for (NSInteger i = 0; i < [arr count]; i++) {
+                    FileSystemNode *n = arr[i];
+                    int flen = [n.tags.length intValue];
+                    int nlen = [self timeToInt:track[@"length"]];
+                    DDLogVerbose(@"%@ %d %d",track[@"track"], flen,nlen);
+                    if (fabs(flen -nlen) <=1.5){
+                        [nfiles addObject:n];
+                        [arr removeObject:n];
+                        break;
+                    }
+                }
+            }
+            DDLogVerbose(@"results %@ same %zu %zu",nfiles, [files count], [tracks count]);
+            if ([files count] == [tracks count]){
+                files = nfiles;
+            }
+        }
+    }
+    
+	return[self initWithWindowNibName:@"VgmdbDisplay"];
 }	
+
+- (int) timeToInt:(NSString *)time
+{
+    if (!time) return 0;
+    NSArray *arr = [time componentsSeparatedByString:@":"];
+    int total = 0;
+    int mult  = 1;
+    for (NSInteger i = [arr count] - 1; i >= 0; i-- ) {
+        total +=  [arr[i] intValue] * mult;
+        mult  *= 60;
+    }
+    return total;
+}
 
 #pragma mark -
 #pragma mark Setup

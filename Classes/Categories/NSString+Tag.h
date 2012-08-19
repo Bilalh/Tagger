@@ -21,3 +21,10 @@
 - (TagLib::String) tagLibString;
 
 @end
+
+@interface NSURL (Tag)
+
+/// Convert the url to a TagLib::String, the memory is allocated with new
+- (TagLib::String) tagLibString;
+
+@end

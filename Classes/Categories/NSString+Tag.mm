@@ -24,5 +24,13 @@
 	TagLib::String s = TagLib::String([self UTF8String], TagLib::String::UTF8);
 	return s;
 }
+@end
+
+@implementation NSURL (Tag)
+
+- (TagLib::String) tagLibString
+{
+    return [[self  absoluteString] tagLibString];
+}
 
 @end

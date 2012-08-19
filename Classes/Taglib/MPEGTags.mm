@@ -22,7 +22,7 @@
 #include <commentsframe.h>
 
 #import "Logging.h"
-LOG_LEVEL(LOG_LEVEL_ERROR);
+LOG_LEVEL(LOG_FLAG_ERROR);
 
 
 @interface MPEGTags()
