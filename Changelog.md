@@ -5,16 +5,17 @@ Version 1.6
 -----------
 ### Improvements ###
 * Much faster app loading (Now loads instantly compared with 10 seconds before).
-* Auto taging rewriten in c++/Objective C hence much faster.
+* Auto taging rewriten in C++/Objective C hence much faster.
 * Updated Code for Xcode 4.4 -- using the new syntax.
 * Refactored Code.
-* Go to Downloads shortcut changed to ⌥⌘L
+* Go to Downloads shortcut changed to ⌥⌘L to comform to Finder's shortcut
 
 ### Bug Fixes ### 
 * Fixes for 10.7.  
 * Added unit tests.
 * Html decoding
 * Track number bug fix + tests
+
 
 
 Version 1.5.4 (Wed 18 Jul 2012 21:55:06 +0100)
