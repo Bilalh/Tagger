@@ -322,7 +322,21 @@ static const NSSet *tokensNumberSet;
 			 const FileSystemNode *a = obj1, *b = obj2;
 			 return  mult *[a.displayName localizedStandardCompare:b.displayName ];
 		 }];
-		
+
+    }else if ([key isEqualToString:@"album"]){
+        [_children sortWithOptions:NSSortStable usingComparator:
+		 ^NSComparisonResult(id obj1, id obj2) {
+			 const FileSystemNode *a = obj1, *b = obj2;
+			 NSComparisonResult res =  mult *[[a.tags valueForKey:key] localizedStandardCompare:[b.tags valueForKey:key ]];
+             if (res == NSOrderedSame){
+                 res = [a.tags.disc localizedStandardCompare:b.tags.disc];
+                 if (res == NSOrderedSame){
+                     res = [a.tags.track localizedStandardCompare:b.tags.track];
+                 }
+             }
+             return res;
+		 }];
+        
 	}else if ([key isEqualToString:@"size"]){
 		[_children sortWithOptions:NSSortStable usingComparator:
 		 ^NSComparisonResult(id obj1, id obj2) {
