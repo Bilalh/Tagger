@@ -222,7 +222,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	DDLogInfo(@"min:%zd", min);
     if ([files count] == [tracks count]){
         // Only perform the changes on a multi disk album
-        if (!((FileSystemNode*)files[0]).tags.disc && tracks[0][@"disc"] != tracks[[tracks count] - 1][@"disc"]){
+        if ((!((FileSystemNode*)files[0]).tags.disc && tracks[0][@"disc"] != tracks[[tracks count] - 1][@"disc"]) ||
+            (!((FileSystemNode*)files[0]).tags.track && tracks[0][@"track"])){
             NSMutableDictionary *ftracks =[NSMutableDictionary new];
             
             for (FileSystemNode *n in files) {
