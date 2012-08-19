@@ -67,10 +67,9 @@ LOG_LEVEL(LOG_LEVEL_VERBOSE);
 	
 	
 	[buttonProperties setObject:tmp  forKey:@"full"];
-	[buttonProperties setObject:[[tmp substringWithRange:NSMakeRange(1, 1)] 
+	[buttonProperties setObject:[[tmp substringWithRange:NSMakeRange(0, 1)]
 					capitalizedString] forKey:@"title" ];
-	[buttonProperties setObject:[[tmp substringFromIndex:1] 
-					capitalizedString] forKey:@"toolTip"  ];
+	[buttonProperties setObject:[tmp capitalizedString] forKey:@"toolTip"  ];
 	
 	id newValue =[self valuefromDetails:[properties objectForKey:@"name"]];
 	[fieldValues setObject:newValue forKey:[properties objectForKey:@"name"]];
@@ -423,9 +422,9 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 										   [NSString stringWithFormat:@"button%d",index] ];
 				[btn setObject:[NSNumber numberWithBool:NO] forKey:@"hidden"];
 				[btn setObject:[other objectAtIndex:i ]     forKey:@"full" ];
-				[btn setObject:[[[other objectAtIndex:i] substringWithRange:NSMakeRange(1, 1)] 
+				[btn setObject:[[[other objectAtIndex:i] substringWithRange:NSMakeRange(0, 1)]
 								capitalizedString] forKey:@"title" ];
-				[btn setObject:[[[other objectAtIndex:i] substringFromIndex:1] 
+				[btn setObject:[[other objectAtIndex:i]
 								capitalizedString] forKey:@"toolTip"  ];
 				++index;
 			}
