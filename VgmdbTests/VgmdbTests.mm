@@ -629,33 +629,38 @@ NSDictionary *tracksForTesting =
         @"arranger" :@[
             @{
                 @"@english" : @"Kazuki Yanagawa",
+                @"@kanji" : @"\u67f3\u5ddd\u548c\u6a39",
             },
             @{
                 @"@english" : @"Rurutia",
             },
             @{
                 @"@english" : @"Daisuke Achiwa",
+                @"@kanji" : @"\u963f\u77e5\u6ce2\u5927\u8f14",
             },
             @{
                 @"@english" : @"Chirinuruwowaka",
-            },
+            }
         ],
         @"artist" :@[
             @{
                 @"@english" : @"Kazuki Yanagawa",
+                @"@kanji" : @"\u67f3\u5ddd\u548c\u6a39",
             },
             @{
                 @"@english" : @"Rurutia",
             },
             @{
                 @"@english" : @"Daisuke Achiwa",
+                @"@kanji" : @"\u963f\u77e5\u6ce2\u5927\u8f14",
             },
             @{
                 @"@english" : @"Yu Shimoda",
+                @"@kanji" : @"\u4e0b\u7530\u7950",
             },
             @{
                 @"@english" : @"Yumi Nakashima",
-            },
+            }
         ],
         @"catalog" :@"GUSTCD-10010",
         @"category" :@[
@@ -667,19 +672,22 @@ NSDictionary *tracksForTesting =
         @"composer" :@[
             @{
                 @"@english" : @"Kazuki Yanagawa",
+                @"@kanji" : @"\u67f3\u5ddd\u548c\u6a39",
             },
             @{
                 @"@english" : @"Rurutia",
             },
             @{
                 @"@english" : @"Daisuke Achiwa",
+                @"@kanji" : @"\u963f\u77e5\u6ce2\u5927\u8f14",
             },
             @{
                 @"@english" : @"Yu Shimoda",
+                @"@kanji" : @"\u4e0b\u7530\u7950",
             },
             @{
                 @"@english" : @"Yumi Nakashima",
-            },
+            }
         ],
         @"date" :@"Jun 27, 2012",
         @"genre" :@[
@@ -689,12 +697,14 @@ NSDictionary *tracksForTesting =
         @"performer" :@[
             @{
                 @"@english" : @"Mutsumi Nomiyama",
+                @"@kanji" : @"\u91ce\u898b\u5c71\u7766\u672a",
             },
             @{
                 @"@english" : @"Rurutia",
             },
             @{
                 @"@english" : @"yanaginagi",
+                @"@kanji" : @"\u3084\u306a\u304e\u306a\u304e",
             },
             @{
                 @"@english" : @"Saya",
@@ -704,13 +714,14 @@ NSDictionary *tracksForTesting =
             },
             @{
                 @"@english" : @"Haruka Shimotsuki",
+                @"@kanji" : @"\u971c\u6708\u306f\u308b\u304b",
             },
             @{
                 @"@english" : @"Chirinuruwowaka",
             },
             @{
                 @"@english" : @"Annabel",
-            },
+            }
         ],
         @"platforms" :@[
             @"Sony PlayStation 3"
