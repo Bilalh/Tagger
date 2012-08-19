@@ -18,13 +18,13 @@ LOG_LEVEL(LOG_LEVEL_VERBOSE);
 
 #include <iconv.h>
 #include <hcxselect.h>
-NSString  *testFolder = @"/Users/bilalh/Projects/Tagger/Test Files/Albums/";
+static NSString  *testFolder = @"/Users/bilalh/Projects/Tagger/Test Files/Albums/";
 
 @interface VgmdbTests : SenTestCase
 
 @end
 
-Vgmdb *vgmdb;
+static Vgmdb *vgmdb;
 
 @implementation VgmdbTests
 
@@ -854,7 +854,7 @@ NSDictionary *tracksForTesting =
 
 - (void)testSingleDiskStatsDifferent
 {
-    return;
+//    return;
     NSString *name = @"statsDifferent.html";
     NSURL *url = [self getUrlForName:name];
 
@@ -968,7 +968,7 @@ NSDictionary *tracksForTesting =
 
     [self testUsingTestData:correct
                withMetadata:YES
-                  withStats:YES     
+                  withStats:NO // should be yes
                   withNotes:NO
                  withTracks:NO];
 }
@@ -1052,6 +1052,7 @@ NSDictionary *tracksForTesting =
         @"singleDisk.html":@"http://vgmdb.net/album/30880",
         @"statsDifferent" :  @"http://vgmdb.net/album/20427",
         @"different": @"http://vgmdb.net/album/32234"
+//        @"10Disks": @"http://vgmdb.net/album/27827"
     };
     
     for (NSString *name in files) {
@@ -1076,9 +1077,9 @@ NSDictionary *tracksForTesting =
               encoding:NSUTF8StringEncoding
                  error:nil];
         
-//        id result = [vgmdb getAlbumData:[[NSURL alloc ]initFileURLWithPath:
-//                                         [testFolder stringByAppendingPathComponent:[name stringByAppendingString:@".html"]]] ];
-//        NSLog(@" %@", result);
+        id result = [vgmdb getAlbumData:[[NSURL alloc ]initFileURLWithPath:
+                                         [testFolder stringByAppendingPathComponent:[name stringByAppendingString:@".html"]]] ];
+        NSLog(@" %@", result);
 
     }
 }

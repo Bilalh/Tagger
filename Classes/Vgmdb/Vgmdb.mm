@@ -228,6 +228,7 @@ using namespace hcxselect;
     
     NSMutableDictionary *tracks = [NSMutableDictionary new];
     
+    int totalTracks = 0;
     for (NSDictionary *ref in refs) {
         NSString *_sel = [NSString stringWithFormat:@"span#%@>table", [ref valueForKey:@"ref"]];
         
@@ -239,7 +240,6 @@ using namespace hcxselect;
         [data setValue:@(num_discs) forKey:@"totalDiscs"];
         
         int disc_num = 1;
-        int totalTracks = 0;
         for (Selector::iterator it = discTables.begin(); it != discTables.end(); ++it) {
             Node *disc = *it;
             Node *track_tr = disc->first_child;
@@ -283,9 +283,10 @@ using namespace hcxselect;
             
             disc_num++;
         }
-        [data setValue:@(totalTracks) forKey:@"totalTracks"];
         [data setValue:tracks forKey:@"tracks"];
     }
+    NSLog(@"%@ %d", data[@"album"], totalTracks);
+    [data setValue:@(totalTracks) forKey:@"totalTracks"];
     
 }
 
