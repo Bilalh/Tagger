@@ -62,7 +62,7 @@ using namespace hcxselect;
                 @"@english", @"English",
                 @"@kanji",   @"Japanese",
                 @"@romaji",  @"Romaji",
-                @"latin",    @"",
+                @"@latin",   @"Latin",
                 nil];
 }
 
