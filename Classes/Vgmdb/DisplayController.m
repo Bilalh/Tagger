@@ -184,7 +184,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}];
 	
 	DDLogVerbose(@"files %@", files);
-	selectedLanguage = @"@english";
+	selectedLanguage = @"english";
 	[self initFieldProperties];
 	[self initFieldValues];	
 	[self initButtonsState];
@@ -192,7 +192,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSDictionary *title = [[tracks objectAtIndex:0] objectForKey:@"title"];
 	NSDictionary *radio = [fieldProperties objectForKey:@"radio"];
 	
-	NSString *l[] = {@"@english", @"@romaji",@"@kanji", @"@latin"};
+	NSString *l[] = {@"english", @"romaji",@"kanji", @"latin"};
 	
 	int i;
 	for (i =0; i < sizeof(l)/sizeof(size_t) ; ++i) {
@@ -284,9 +284,9 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 {
 	NSMutableDictionary* (^hb)(NSString*) = ^(NSString *name){
 		return [self makeButtonProperties:@"R"
-							  button1Full:@"@romaji" 
+							  button1Full:@"romaji" 
 							 button2Title:@"K" 
-							  button2Full:@"@kanji"
+							  button2Full:@"kanji"
 									 name:name];
 	};
 	NSMutableDictionary* (^hc)(NSString*) = ^(NSString *name){
@@ -305,10 +305,10 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	};
 	
 	NSMutableDictionary* radio =  hc(@"radio");
-	[radio setObject:hd(@"@english") forKey:@"0"];
-	[radio setObject:hd(@"@romaji")  forKey:@"1"];
-	[radio setObject:hd(@"@kanji")   forKey:@"2"];
-	[radio setObject:hd(@"@latin")    forKey:@"3"];
+	[radio setObject:hd(@"english") forKey:@"0"];
+	[radio setObject:hd(@"romaji")  forKey:@"1"];
+	[radio setObject:hd(@"kanji")   forKey:@"2"];
+	[radio setObject:hd(@"latin")    forKey:@"3"];
 	
 	
 	fieldProperties = [[NSDictionary alloc] initWithObjectsAndKeys:
@@ -382,10 +382,10 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[values addObject:@""];
 	[keys addObject:@"classification"];
 	[values addObject:[Utility valueFromResult:[albumDetails objectForKey:@"classification"] 
-						   selectedLanguage:@"@english"]];
+						   selectedLanguage:@"english"]];
 	[keys addObject:@"category"];
 	[values addObject:[Utility valueFromResult:[albumDetails objectForKey:@"category"] 
-							  selectedLanguage:@"@english"]];	
+							  selectedLanguage:@"english"]];	
 	
 	fieldValues = [[NSMutableDictionary alloc] initWithObjects:values forKeys:keys];
 	DDLogInfo(@"fieldValues\n %@", fieldValues);	

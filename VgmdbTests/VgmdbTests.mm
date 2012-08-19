@@ -41,9 +41,9 @@ static Vgmdb *vgmdb;
     NSArray *correct =@[
     @{
         @"album" : @{
-            @"@english" : @"- Twilight Hour - Atelier Ayesha -Alchemist of the Ground of Dusk- Vocal Album",
-            @"@kanji"   : @"- Twilight Hour -\u30a2\u30fc\u30b7\u30e3\u306e\u30a2\u30c8\u30ea\u30a8\uff5e\u9ec4\u660f\u306e\u5927\u5730\u306e\u932c\u91d1\u8853\u58eb\uff5e\u30dc\u30fc\u30ab\u30eb\u30a2\u30eb\u30d0\u30e0",
-            @"@romaji"  : @"- Twilight Hour - Ayesha no Atelier: Tasogare no Daichi no Renkinjutsushi Vocal Album",
+            @"english" : @"- Twilight Hour - Atelier Ayesha -Alchemist of the Ground of Dusk- Vocal Album",
+            @"kanji"   : @"- Twilight Hour -\u30a2\u30fc\u30b7\u30e3\u306e\u30a2\u30c8\u30ea\u30a8\uff5e\u9ec4\u660f\u306e\u5927\u5730\u306e\u932c\u91d1\u8853\u58eb\uff5e\u30dc\u30fc\u30ab\u30eb\u30a2\u30eb\u30d0\u30e0",
+            @"romaji"  : @"- Twilight Hour - Ayesha no Atelier: Tasogare no Daichi no Renkinjutsushi Vocal Album",
         },
         @"catalog"   : @"GUSTCD-10010",
         @"released"  : @"Jun 27, 2012",
@@ -51,9 +51,9 @@ static Vgmdb *vgmdb;
     },
         @{
         @"album" : @{
-            @"@english" : @"Atelier Ayesha Recollection Archives",
-            @"@kanji"   : @"\u30a2\u30fc\u30b7\u30e3\u306e\u30a2\u30c8\u30ea\u30a8 \u30ea\u30b3\u30ec\u30af\u30b7\u30e7\u30f3\u30a2\u30fc\u30ab\u30a4\u30d6\u30b9",
-            @"@romaji"  : @"Atelier Ayesha Recollection Archives",
+            @"english" : @"Atelier Ayesha Recollection Archives",
+            @"kanji"   : @"\u30a2\u30fc\u30b7\u30e3\u306e\u30a2\u30c8\u30ea\u30a8 \u30ea\u30b3\u30ec\u30af\u30b7\u30e7\u30f3\u30a2\u30fc\u30ab\u30a4\u30d6\u30b9",
+            @"romaji"  : @"Atelier Ayesha Recollection Archives",
         },
         @"catalog"   : @"N/A",
         @"released"  : @"Jun 27, 2012",
@@ -61,9 +61,9 @@ static Vgmdb *vgmdb;
     },
         @{
         @"album" : @{
-            @"@english" : @"Atelier Ayesha ~Alchemist of the Ground of Dusk~ Original Soundtrack",
-            @"@kanji"   : @"\u30a2\u30fc\u30b7\u30e3\u306e\u30a2\u30c8\u30ea\u30a8\uff5e\u9ec4\u660f\u306e\u5927\u5730\u306e\u932c\u91d1\u8853\u58eb\uff5e \u30aa\u30ea\u30b8\u30ca\u30eb\u30b5\u30a6\u30f3\u30c9\u30c8\u30e9\u30c3\u30af",
-            @"@romaji"  : @"Ayesha no Atelier: Tasogare no Daichi no Renkinjutsushi Original Soundtrack",
+            @"english" : @"Atelier Ayesha ~Alchemist of the Ground of Dusk~ Original Soundtrack",
+            @"kanji"   : @"\u30a2\u30fc\u30b7\u30e3\u306e\u30a2\u30c8\u30ea\u30a8\uff5e\u9ec4\u660f\u306e\u5927\u5730\u306e\u932c\u91d1\u8853\u58eb\uff5e \u30aa\u30ea\u30b8\u30ca\u30eb\u30b5\u30a6\u30f3\u30c9\u30c8\u30e9\u30c3\u30af",
+            @"romaji"  : @"Ayesha no Atelier: Tasogare no Daichi no Renkinjutsushi Original Soundtrack",
         },
         @"catalog"   : @"GUSTCD-10007~9",
         @"released"  : @"Jun 27, 2012",
@@ -97,9 +97,9 @@ static Vgmdb *vgmdb;
     NSDictionary *results = _results;
     
     NSDictionary * album =     @{
-        @"@english" : @"Lunar 2: Eternal Blue Complete Music Soundtrack",
-        @"@kanji": @"Lunar 2: Eternal Blue Complete Music Soundtrack",
-        @"@romaji": @"Lunar 2: Eternal Blue Complete Music Soundtrack",
+        @"english" : @"Lunar 2: Eternal Blue Complete Music Soundtrack",
+        @"kanji": @"Lunar 2: Eternal Blue Complete Music Soundtrack",
+        @"romaji": @"Lunar 2: Eternal Blue Complete Music Soundtrack",
     };
  
     NSDictionary *correct =@{
@@ -192,56 +192,56 @@ static Vgmdb *vgmdb;
     NSURL *url = [self getUrlForName:name];
     
     NSDictionary *album =@{
-        @"@english": @"Atelier Rorona Original Sound Track",
-        @"@kanji": @"ロロナのアトリエ～アーランドの錬金術士～ オリジナルサウンドトラック",
-        @"@romaji": @"Rorona no Atelier: Arland no Renkinjutsushi Original Sound Track"
+        @"english": @"Atelier Rorona Original Sound Track",
+        @"kanji": @"ロロナのアトリエ～アーランドの錬金術士～ オリジナルサウンドトラック",
+        @"romaji": @"Rorona no Atelier: Arland no Renkinjutsushi Original Sound Track"
     };
     
     NSArray *classification = @[@"Original Soundtrack"];
     
     NSArray *publisher =@[
         @{
-            @"@english" : @"TEAM Entertainment",
-            @"@kanji":     @"株式会社ティームエンタテインメント",
-            @"@romaji":    @"TEAM Entertainment"
+            @"english" : @"TEAM Entertainment",
+            @"kanji":     @"株式会社ティームエンタテインメント",
+            @"romaji":    @"TEAM Entertainment"
         },
         @{
-            @"@english" : @"Sony Music Distribution",
-            @"@kanji":     @"株式会社ソニー・ミュージックディストリビューション",
-            @"@romaji":    @"Sony Music Distribution"
+            @"english" : @"Sony Music Distribution",
+            @"kanji":     @"株式会社ソニー・ミュージックディストリビューション",
+            @"romaji":    @"Sony Music Distribution"
         }
     ];
     
     NSArray *composer  =@[
         @{
-            @"@english" : @"Ken Nakagawa",
-            @"@kanji"   : @"中河健"
+            @"english" : @"Ken Nakagawa",
+            @"kanji"   : @"中河健"
         }
     ];
 
     NSArray *arranger  =@[
         @{
-            @"@english" : @"Ken Nakagawa",
-            @"@kanji"   : @"中河健"
+            @"english" : @"Ken Nakagawa",
+            @"kanji"   : @"中河健"
         }
     ];
 
     NSArray *performer  =@[
         @{
-            @"@english" : @"Mineko Yamamoto",
-            @"@kanji"   : @"山本美禰子" // @"\u5c71\u672c\u7f8e\u79b0\u5b50"    // 
+            @"english" : @"Mineko Yamamoto",
+            @"kanji"   : @"山本美禰子" // @"\u5c71\u672c\u7f8e\u79b0\u5b50"    // 
         },
         @{
-            @"@english" : @"Nana Furuhara",
-            @"@kanji"   : @"古原奈々"     //@"\u53e4\u539f\u5948\u3005"
+            @"english" : @"Nana Furuhara",
+            @"kanji"   : @"古原奈々"     //@"\u53e4\u539f\u5948\u3005"
         },
     ];
     
     NSArray *products =@[
         @{
-            @"@english":  @"Atelier Rorona",
-            @"@kanji":    @"ロロナのアトリエ　～アーランドの錬金術師～",
-            @"@romaji":   @"Rorona no Atelier: Arland no Renkinjutsushi"
+            @"english":  @"Atelier Rorona",
+            @"kanji":    @"ロロナのアトリエ　～アーランドの錬金術師～",
+            @"romaji":   @"Rorona no Atelier: Arland no Renkinjutsushi"
         },
     ];
     
@@ -296,9 +296,9 @@ static Vgmdb *vgmdb;
     NSURL *url = [self getUrlForName:name];
 
     NSDictionary *album =@{
-        @"@english": @"Atelier Best",
-        @"@kanji": @"アトリエ・ベスト",
-        @"@romaji": @"Atelier Best"
+        @"english": @"Atelier Best",
+        @"kanji": @"アトリエ・ベスト",
+        @"romaji": @"Atelier Best"
     };
 
     NSArray *classification = @[
@@ -308,109 +308,109 @@ static Vgmdb *vgmdb;
 
     NSArray *publisher =@[
         @{
-            @"@english" :  @"Gust",
-            @"@kanji":     @"株式会社ガスト",
-            @"@romaji":    @"Gust"
+            @"english" :  @"Gust",
+            @"kanji":     @"株式会社ガスト",
+            @"romaji":    @"Gust"
         }
     ];
 
     NSArray *composer  =@[
         @{
-            @"@english" : @"G.S.T. Gust Soundteam Atelier So-La",
+            @"english" : @"G.S.T. Gust Soundteam Atelier So-La",
         },
         @{
-            @"@english" : @"Daisuke Achiwa",
-            @"@kanji"   : @"阿知波大輔"
+            @"english" : @"Daisuke Achiwa",
+            @"kanji"   : @"阿知波大輔"
         },
         @{
-            @"@english" : @"Toshiharu Yamanishi",
-            @"@kanji"   : @"山西利治"
+            @"english" : @"Toshiharu Yamanishi",
+            @"kanji"   : @"山西利治"
         },
         @{
-            @"@english" : @"Akira Tsuchiya",
-            @"@kanji"   : @"土屋暁"
+            @"english" : @"Akira Tsuchiya",
+            @"kanji"   : @"土屋暁"
         },
         @{
-            @"@english" : @"Miyoko Kobayashi",
-            @"@kanji"   : @"小林美代子"
+            @"english" : @"Miyoko Kobayashi",
+            @"kanji"   : @"小林美代子"
         },
         @{
-            @"@english" : @"Ken Nakagawa",
-            @"@kanji"   : @"中河健"
+            @"english" : @"Ken Nakagawa",
+            @"kanji"   : @"中河健"
         },
 
     ];
 
     NSArray *arranger  =@[
         @{
-            @"@english" : @"Miyoko Kobayashi",
-            @"@kanji"   : @"小林美代子"
+            @"english" : @"Miyoko Kobayashi",
+            @"kanji"   : @"小林美代子"
         },
         @{
-            @"@english" : @"Akira Tsuchiya",
-            @"@kanji"   : @"土屋暁"
+            @"english" : @"Akira Tsuchiya",
+            @"kanji"   : @"土屋暁"
         },
         @{
-            @"@english" : @"Thousand sketcheS",
+            @"english" : @"Thousand sketcheS",
         },
     ];
 
     NSArray *performer  =@[
         @{
-            @"@english" : @"Yumi Higashino",
-            @"@kanji"   : @"東野佑美"
+            @"english" : @"Yumi Higashino",
+            @"kanji"   : @"東野佑美"
         },
         @{
-            @"@english" : @"Miki Nagasawa",
-            @"@kanji"   : @"長沢美樹"
+            @"english" : @"Miki Nagasawa",
+            @"kanji"   : @"長沢美樹"
         },
         @{
-            @"@english" : @"Miki Takahashi",
-            @"@kanji"   : @"高橋美紀"
+            @"english" : @"Miki Takahashi",
+            @"kanji"   : @"高橋美紀"
         },
         @{
-            @"@english" : @"Shue Nagakura",
-            @"@kanji"   : @"永倉秀恵"
+            @"english" : @"Shue Nagakura",
+            @"kanji"   : @"永倉秀恵"
         },
         @{
-            @"@english" : @"Mami Horie",
-            @"@kanji"   : @"堀江真美"
+            @"english" : @"Mami Horie",
+            @"kanji"   : @"堀江真美"
         },
     ];
 
     NSArray *products =@[
         @{
-            @"@english":  @"Atelier Marie",
-            @"@kanji":    @"マリーのアトリエ ～ザールブルグの錬金術士～",
-            @"@romaji":   @"Marie no Atelier: Salburg no Renkinjutsushi"
+            @"english":  @"Atelier Marie",
+            @"kanji":    @"マリーのアトリエ ～ザールブルグの錬金術士～",
+            @"romaji":   @"Marie no Atelier: Salburg no Renkinjutsushi"
         },
         @{
-            @"@english":  @"Atelier Elie",
-            @"@kanji":    @"エリーのアトリエ ～ザールブルグの錬金術士2～",
-            @"@romaji":   @"Elie no Atelier: Salburg no Renkinjutsushi 2"
+            @"english":  @"Atelier Elie",
+            @"kanji":    @"エリーのアトリエ ～ザールブルグの錬金術士2～",
+            @"romaji":   @"Elie no Atelier: Salburg no Renkinjutsushi 2"
         },
         @{
-            @"@english":  @"Atelier Lilie",
-            @"@kanji":    @"リリーのアトリエ ～ザールブルグの錬金術士3～",
-            @"@romaji":   @"Lilie no Atelier: Salburg no Renkinjutsushi 3"
+            @"english":  @"Atelier Lilie",
+            @"kanji":    @"リリーのアトリエ ～ザールブルグの錬金術士3～",
+            @"romaji":   @"Lilie no Atelier: Salburg no Renkinjutsushi 3"
         },
         @{
-            @"@english":  @"Lilie no Atelier: Salburg no Renkinjutsushi 3 Plus",
+            @"english":  @"Lilie no Atelier: Salburg no Renkinjutsushi 3 Plus",
         },
         @{
-            @"@english":  @"Hermina and Culus",
-            @"@kanji":    @"ヘルミーナとクルス ～リリーのアトリエ もう一つの物語～",
-            @"@romaji":   @"Hermina to Culus: Lilie no Atelier Mou Hitotsu no Monogatari"
+            @"english":  @"Hermina and Culus",
+            @"kanji":    @"ヘルミーナとクルス ～リリーのアトリエ もう一つの物語～",
+            @"romaji":   @"Hermina to Culus: Lilie no Atelier Mou Hitotsu no Monogatari"
         },
         @{
-            @"@english":  @"Atelier Judie",
-            @"@kanji":    @"ユーディーのアトリエ ～グラムナートの錬金術士～",
-            @"@romaji":   @"Judie no Atelier: Gramnad no Renkinjutsushi"
+            @"english":  @"Atelier Judie",
+            @"kanji":    @"ユーディーのアトリエ ～グラムナートの錬金術士～",
+            @"romaji":   @"Judie no Atelier: Gramnad no Renkinjutsushi"
         },
         @{
-            @"@english":  @"Atelier Viorate",
-            @"@kanji":    @"ヴィオラートのアトリエ ～グラムナートの錬金術士2～",
-            @"@romaji":   @"Viorate no Atelier: Gramnad no Renkinjutsushi 2"
+            @"english":  @"Atelier Viorate",
+            @"kanji":    @"ヴィオラートのアトリエ ～グラムナートの錬金術士2～",
+            @"romaji":   @"Viorate no Atelier: Gramnad no Renkinjutsushi 2"
         },
     ];
 
@@ -463,56 +463,56 @@ static Vgmdb *vgmdb;
     NSURL *url = [self getUrlForName:name];
     
     NSDictionary *album =@{
-        @"@english": @"Nexus / ClariS",
-        @"@kanji":   @"Nexus / ClariS",
-        @"@romaji":  @"Nexus / ClariS"
+        @"english": @"Nexus / ClariS",
+        @"kanji":   @"Nexus / ClariS",
+        @"romaji":  @"Nexus / ClariS"
     };
     
     NSArray *classification = @[@"Vocal"];
     
     NSArray *publisher =@[
     @{
-        @"@english" :  @"SME Records",
-        @"@kanji":     @"株式会社エスエムイーレコーズ",
-        @"@romaji":    @"SME Records"
+        @"english" :  @"SME Records",
+        @"kanji":     @"株式会社エスエムイーレコーズ",
+        @"romaji":    @"SME Records"
     },
     ];
     
     NSArray *composer  =@[
     @{
-        @"@english" : @"kz",
+        @"english" : @"kz",
     },
     @{
-        @"@english" : @"小田桐ゆうき",
+        @"english" : @"小田桐ゆうき",
     },
     @{
-        @"@english" : @"Hiroo Ooyagi",
-        @"@kanji":     @"オオヤギヒロオ"
+        @"english" : @"Hiroo Ooyagi",
+        @"kanji":     @"オオヤギヒロオ"
     },
     ];
     
     NSArray *arranger  =@[
     @{
-        @"@english" : @"kz",
+        @"english" : @"kz",
     },
     @{
-        @"@english" : @"小田桐ゆうき",
+        @"english" : @"小田桐ゆうき",
     },
     @{
-        @"@english" : @"Hiroo Ooyagi",
-        @"@kanji":     @"オオヤギヒロオ"
+        @"english" : @"Hiroo Ooyagi",
+        @"kanji":     @"オオヤギヒロオ"
     },
     ];
     
     NSArray *performer  =@[
     @{
-        @"@english" : @"ClariS",
+        @"english" : @"ClariS",
     },
     ];
     
     NSArray *products =@[
     @{
-        @"@english":  @"Ore no Imouto ga Konnani Kawaii Wake ga nai",
+        @"english":  @"Ore no Imouto ga Konnani Kawaii Wake ga nai",
     },
     ];
         
@@ -560,8 +560,8 @@ NSDictionary *tracksForTesting =
          @"disc" : @(1),
          @"length" : @"4:18",
          @"title" :        @{
-             @"@english" : @"Cross Heart",
-             @"@kanji" : @"\u30af\u30ed\u30b9*\u30cf\u30fc\u30c8",
+             @"english" : @"Cross Heart",
+             @"kanji" : @"\u30af\u30ed\u30b9*\u30cf\u30fc\u30c8",
          },
      },
      @"1-2" :    @{
@@ -569,8 +569,8 @@ NSDictionary *tracksForTesting =
          @"disc" : @(1),
          @"length" : @"5:14",
          @"title" :        @{
-             @"@english" : @"Mizutama",
-             @"@kanji" : @"\u6c34\u7389",
+             @"english" : @"Mizutama",
+             @"kanji" : @"\u6c34\u7389",
          },
      },
      @"1-3" :    @{
@@ -578,8 +578,8 @@ NSDictionary *tracksForTesting =
          @"disc" : @(1),
          @"length" : @"4:18",
          @"title" :        @{
-             @"@english" : @"Cross Heart (instrumental)",
-             @"@kanji" : @"\u30af\u30ed\u30b9*\u30cf\u30fc\u30c8<instrumental>",
+             @"english" : @"Cross Heart (instrumental)",
+             @"kanji" : @"\u30af\u30ed\u30b9*\u30cf\u30fc\u30c8<instrumental>",
          },
      },
      @"1-4" :    @{
@@ -587,8 +587,8 @@ NSDictionary *tracksForTesting =
          @"disc" : @(1),
          @"length" : @"5:11",
          @"title" :        @{
-             @"@english" : @"Mizutama (instrumental)",
-             @"@kanji" : @"\u6c34\u7389<instrumental>",
+             @"english" : @"Mizutama (instrumental)",
+             @"kanji" : @"\u6c34\u7389<instrumental>",
          },
      },
 }; 
@@ -621,44 +621,44 @@ NSDictionary *tracksForTesting =
     NSDictionary *correct =
     @{
         @"album" :@{
-            @"@english" : @"- Twilight Hour - Atelier Ayesha -Alchemist of the Ground of Dusk- Vocal Album",
-            @"@kanji" : @"- Twilight Hour -\u30a2\u30fc\u30b7\u30e3\u306e\u30a2\u30c8\u30ea\u30a8\uff5e\u9ec4\u660f\u306e\u5927\u5730\u306e\u932c\u91d1\u8853\u58eb\uff5e\u30dc\u30fc\u30ab\u30eb\u30a2\u30eb\u30d0\u30e0",
-            @"@romaji" : @"- Twilight Hour - Ayesha no Atelier: Tasogare no Daichi no Renkinjutsushi Vocal Album",
+            @"english" : @"- Twilight Hour - Atelier Ayesha -Alchemist of the Ground of Dusk- Vocal Album",
+            @"kanji" : @"- Twilight Hour -\u30a2\u30fc\u30b7\u30e3\u306e\u30a2\u30c8\u30ea\u30a8\uff5e\u9ec4\u660f\u306e\u5927\u5730\u306e\u932c\u91d1\u8853\u58eb\uff5e\u30dc\u30fc\u30ab\u30eb\u30a2\u30eb\u30d0\u30e0",
+            @"romaji" : @"- Twilight Hour - Ayesha no Atelier: Tasogare no Daichi no Renkinjutsushi Vocal Album",
         },
         @"arranger" :@[
             @{
-                @"@english" : @"Kazuki Yanagawa",
-                @"@kanji" : @"\u67f3\u5ddd\u548c\u6a39",
+                @"english" : @"Kazuki Yanagawa",
+                @"kanji" : @"\u67f3\u5ddd\u548c\u6a39",
             },
             @{
-                @"@english" : @"Rurutia",
+                @"english" : @"Rurutia",
             },
             @{
-                @"@english" : @"Daisuke Achiwa",
-                @"@kanji" : @"\u963f\u77e5\u6ce2\u5927\u8f14",
+                @"english" : @"Daisuke Achiwa",
+                @"kanji" : @"\u963f\u77e5\u6ce2\u5927\u8f14",
             },
             @{
-                @"@english" : @"Chirinuruwowaka",
+                @"english" : @"Chirinuruwowaka",
             }
         ],
         @"artist" :@[
             @{
-                @"@english" : @"Kazuki Yanagawa",
-                @"@kanji" : @"\u67f3\u5ddd\u548c\u6a39",
+                @"english" : @"Kazuki Yanagawa",
+                @"kanji" : @"\u67f3\u5ddd\u548c\u6a39",
             },
             @{
-                @"@english" : @"Rurutia",
+                @"english" : @"Rurutia",
             },
             @{
-                @"@english" : @"Daisuke Achiwa",
-                @"@kanji" : @"\u963f\u77e5\u6ce2\u5927\u8f14",
+                @"english" : @"Daisuke Achiwa",
+                @"kanji" : @"\u963f\u77e5\u6ce2\u5927\u8f14",
             },
             @{
-                @"@english" : @"Yu Shimoda",
-                @"@kanji" : @"\u4e0b\u7530\u7950",
+                @"english" : @"Yu Shimoda",
+                @"kanji" : @"\u4e0b\u7530\u7950",
             },
             @{
-                @"@english" : @"Yumi Nakashima",
+                @"english" : @"Yumi Nakashima",
             }
         ],
         @"catalog" :@"GUSTCD-10010",
@@ -670,22 +670,22 @@ NSDictionary *tracksForTesting =
         ],
         @"composer" :@[
             @{
-                @"@english" : @"Kazuki Yanagawa",
-                @"@kanji" : @"\u67f3\u5ddd\u548c\u6a39",
+                @"english" : @"Kazuki Yanagawa",
+                @"kanji" : @"\u67f3\u5ddd\u548c\u6a39",
             },
             @{
-                @"@english" : @"Rurutia",
+                @"english" : @"Rurutia",
             },
             @{
-                @"@english" : @"Daisuke Achiwa",
-                @"@kanji" : @"\u963f\u77e5\u6ce2\u5927\u8f14",
+                @"english" : @"Daisuke Achiwa",
+                @"kanji" : @"\u963f\u77e5\u6ce2\u5927\u8f14",
             },
             @{
-                @"@english" : @"Yu Shimoda",
-                @"@kanji" : @"\u4e0b\u7530\u7950",
+                @"english" : @"Yu Shimoda",
+                @"kanji" : @"\u4e0b\u7530\u7950",
             },
             @{
-                @"@english" : @"Yumi Nakashima",
+                @"english" : @"Yumi Nakashima",
             }
         ],
         @"date" :@"Jun 27, 2012",
@@ -695,31 +695,31 @@ NSDictionary *tracksForTesting =
         @"mediaFormat" :@"CD",
         @"performer" :@[
             @{
-                @"@english" : @"Mutsumi Nomiyama",
-                @"@kanji" : @"\u91ce\u898b\u5c71\u7766\u672a",
+                @"english" : @"Mutsumi Nomiyama",
+                @"kanji" : @"\u91ce\u898b\u5c71\u7766\u672a",
             },
             @{
-                @"@english" : @"Rurutia",
+                @"english" : @"Rurutia",
             },
             @{
-                @"@english" : @"yanaginagi",
-                @"@kanji" : @"\u3084\u306a\u304e\u306a\u304e",
+                @"english" : @"yanaginagi",
+                @"kanji" : @"\u3084\u306a\u304e\u306a\u304e",
             },
             @{
-                @"@english" : @"Saya",
+                @"english" : @"Saya",
             },
             @{
-                @"@english" : @"Tae",
+                @"english" : @"Tae",
             },
             @{
-                @"@english" : @"Haruka Shimotsuki",
-                @"@kanji" : @"\u971c\u6708\u306f\u308b\u304b",
+                @"english" : @"Haruka Shimotsuki",
+                @"kanji" : @"\u971c\u6708\u306f\u308b\u304b",
             },
             @{
-                @"@english" : @"Chirinuruwowaka",
+                @"english" : @"Chirinuruwowaka",
             },
             @{
-                @"@english" : @"Annabel",
+                @"english" : @"Annabel",
             }
         ],
         @"platforms" :@[
@@ -728,9 +728,9 @@ NSDictionary *tracksForTesting =
         @"price" :@(2415),
         @"products" :@[
                 @{
-                @"@english" : @"Atelier Ayesha",
-                @"@kanji" : @"\u30a2\u30fc\u30b7\u30e3\u306e\u30a2\u30c8\u30ea\u30a8 \uff5e\u9ec4\u660f\u306e\u5927\u5730\u306e\u932c\u91d1\u8853\u58eb\uff5e",
-                @"@romaji" : @"Ayesha no Atelier: Tasogare no Daichi no Renkinjutsushi",
+                @"english" : @"Atelier Ayesha",
+                @"kanji" : @"\u30a2\u30fc\u30b7\u30e3\u306e\u30a2\u30c8\u30ea\u30a8 \uff5e\u9ec4\u660f\u306e\u5927\u5730\u306e\u932c\u91d1\u8853\u58eb\uff5e",
+                @"romaji" : @"Ayesha no Atelier: Tasogare no Daichi no Renkinjutsushi",
             }
         ],
         @"publishedFormat" :@[
@@ -738,9 +738,9 @@ NSDictionary *tracksForTesting =
         ],
         @"publisher" :@[
                 @{
-                @"@english" : @"Gust",
-                @"@kanji" : @"\u682a\u5f0f\u4f1a\u793e\u30ac\u30b9\u30c8",
-                @"@romaji" : @"Gust",
+                @"english" : @"Gust",
+                @"kanji" : @"\u682a\u5f0f\u4f1a\u793e\u30ac\u30b9\u30c8",
+                @"romaji" : @"Gust",
             }
         ],
         @"rating" :@"Rated 4.75 by 2 people",
@@ -751,9 +751,9 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"3:27",
                 @"title" :        @{
-                    @"@english" : @"Flower Sign",
-                    @"@kanji" : @"\u82b1\u6a19",
-                    @"@romaji" : @"Hanashirube",
+                    @"english" : @"Flower Sign",
+                    @"kanji" : @"\u82b1\u6a19",
+                    @"romaji" : @"Hanashirube",
                 },
                 @"track" :@(1),
             },
@@ -761,9 +761,9 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"5:45",
                 @"title" :        @{
-                    @"@english" : @"Mystic Pendulum",
-                    @"@kanji" : @"Mystic Pendulum",
-                    @"@romaji" : @"Mystic Pendulum",
+                    @"english" : @"Mystic Pendulum",
+                    @"kanji" : @"Mystic Pendulum",
+                    @"romaji" : @"Mystic Pendulum",
                 },
                 @"track" :@(2),
             },
@@ -771,9 +771,9 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"3:38",
                 @"title" :        @{
-                    @"@english" : @"Thorns",
-                    @"@kanji" : @"\u3044\u3070\u3089",
-                    @"@romaji" : @"Ibara",
+                    @"english" : @"Thorns",
+                    @"kanji" : @"\u3044\u3070\u3089",
+                    @"romaji" : @"Ibara",
                 },
                 @"track" :@(3),
             },
@@ -781,9 +781,9 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"4:42",
                 @"title" :        @{
-                    @"@english" : @"Stargazer",
-                    @"@kanji" : @"Stargazer",
-                    @"@romaji" : @"Stargazer",
+                    @"english" : @"Stargazer",
+                    @"kanji" : @"Stargazer",
+                    @"romaji" : @"Stargazer",
                 },
                 @"track" :@(4),
             },
@@ -791,9 +791,9 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"4:20",
                 @"title" :        @{
-                    @"@english" : @"Twilight",
-                    @"@kanji" : @"\u9ec4\u660f",
-                    @"@romaji" : @"Tasogare",
+                    @"english" : @"Twilight",
+                    @"kanji" : @"\u9ec4\u660f",
+                    @"romaji" : @"Tasogare",
                 },
                 @"track" :@(5),
             },
@@ -801,9 +801,9 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"5:50",
                 @"title" :        @{
-                    @"@english" : @"MARIA",
-                    @"@kanji" : @"MARIA",
-                    @"@romaji" : @"MARIA",
+                    @"english" : @"MARIA",
+                    @"kanji" : @"MARIA",
+                    @"romaji" : @"MARIA",
                 },
                 @"track" :@(6),
             },
@@ -811,9 +811,9 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"5:07",
                 @"title" :        @{
-                    @"@english" : @"Stars at Dusk",
-                    @"@kanji" : @"\u5bb5\u306e\u661f",
-                    @"@romaji" : @"Yoi no Hoshi",
+                    @"english" : @"Stars at Dusk",
+                    @"kanji" : @"\u5bb5\u306e\u661f",
+                    @"romaji" : @"Yoi no Hoshi",
                 },
                 @"track" :@(7),
             },
@@ -821,9 +821,9 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"4:51",
                 @"title" :        @{
-                    @"@english" : @"Dream-Weaving House",
-                    @"@kanji" : @"\u5922\u3092\u7e54\u308b\u5bb6",
-                    @"@romaji" : @"Yume wo Oru Ie",
+                    @"english" : @"Dream-Weaving House",
+                    @"kanji" : @"\u5922\u3092\u7e54\u308b\u5bb6",
+                    @"romaji" : @"Yume wo Oru Ie",
                 },
                 @"track" :@(8),
             },
@@ -831,9 +831,9 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"4:38",
                 @"title" :        @{
-                    @"@english" : @"Altair",
-                    @"@kanji" : @"Altair",
-                    @"@romaji" : @"Altair",
+                    @"english" : @"Altair",
+                    @"kanji" : @"Altair",
+                    @"romaji" : @"Altair",
                 },
                 @"track" :@(9),
             },
@@ -858,75 +858,75 @@ NSDictionary *tracksForTesting =
     NSURL *url = [self getUrlForName:name];
 
     NSDictionary *album =@{
-        @"@english": @"Atelier Rorona Character Song Album ~Kanarien~",
-        @"@kanji": @"ロロナのアトリエ キャラクターソングアルバム ～カナリア～",
-        @"@romaji": @"Rorona no Atelier Character Song Album ~Kanaria~"
+        @"english": @"Atelier Rorona Character Song Album ~Kanarien~",
+        @"kanji": @"ロロナのアトリエ キャラクターソングアルバム ～カナリア～",
+        @"romaji": @"Rorona no Atelier Character Song Album ~Kanaria~"
     };
 
     NSArray *classification = @[@"Vocal"];
 
     NSArray *publisher =@[
         @{
-            @"@english" : @"TEAM Entertainment",
-            @"@kanji":     @"株式会社ティームエンタテインメント",
-            @"@romaji":    @"TEAM Entertainment"
+            @"english" : @"TEAM Entertainment",
+            @"kanji":     @"株式会社ティームエンタテインメント",
+            @"romaji":    @"TEAM Entertainment"
         },
         @{
-            @"@english" : @"Sony Music Distribution",
-            @"@kanji":     @"株式会社ソニー・ミュージックディストリビューション",
-            @"@romaji":    @"Sony Music Distribution"
+            @"english" : @"Sony Music Distribution",
+            @"kanji":     @"株式会社ソニー・ミュージックディストリビューション",
+            @"romaji":    @"Sony Music Distribution"
         }
     ];
 
     NSArray *composer  =@[
     @{
-        @"@english" : @"Kazuki Yanagawa",
-        @"@kanji"   : @"柳川和樹"
+        @"english" : @"Kazuki Yanagawa",
+        @"kanji"   : @"柳川和樹"
     },
     @{
-        @"@english" : @"Daisuke Achiwa",
-        @"@kanji"   : @"阿知波大輔"
+        @"english" : @"Daisuke Achiwa",
+        @"kanji"   : @"阿知波大輔"
     },
     @{
-        @"@english" : @"Ken Nakagawa",
-        @"@kanji"   : @"中河健"
+        @"english" : @"Ken Nakagawa",
+        @"kanji"   : @"中河健"
     }
     ];
 
     NSArray *arranger  =@[
     @{
-        @"@english" : @"Kazuki Yanagawa",
-        @"@kanji"   : @"柳川和樹"
+        @"english" : @"Kazuki Yanagawa",
+        @"kanji"   : @"柳川和樹"
     },
     @{
-        @"@english" : @"Daisuke Achiwa",
-        @"@kanji"   : @"阿知波大輔"
+        @"english" : @"Daisuke Achiwa",
+        @"kanji"   : @"阿知波大輔"
     },
     ];
 
     NSArray *performer  =@[
     @{
-        @"@english" : @"Kei Shindo",
-        @"@kanji"   : @"真堂圭"
+        @"english" : @"Kei Shindo",
+        @"kanji"   : @"真堂圭"
     },
     @{
-        @"@english" : @"Eri Kitamura",
-        @"@kanji"   : @"喜多村英梨"
+        @"english" : @"Eri Kitamura",
+        @"kanji"   : @"喜多村英梨"
     },
     @{
-        @"@english" : @"Mai Kadowaki",
-        @"@kanji"   : @"門脇舞以"
+        @"english" : @"Mai Kadowaki",
+        @"kanji"   : @"門脇舞以"
     },
     @{
-        @"@english" : @"Dani",
+        @"english" : @"Dani",
     },
     ];
 
     NSArray *products =@[
     @{
-        @"@english":  @"Atelier Rorona",
-        @"@kanji":    @"ロロナのアトリエ　～アーランドの錬金術師～",
-        @"@romaji":   @"Rorona no Atelier: Arland no Renkinjutsushi"
+        @"english":  @"Atelier Rorona",
+        @"kanji":    @"ロロナのアトリエ　～アーランドの錬金術師～",
+        @"romaji":   @"Rorona no Atelier: Arland no Renkinjutsushi"
     },
     ];
 
@@ -983,66 +983,66 @@ NSDictionary *tracksForTesting =
     NSDictionary *correct =
      @{
         @"album" :@{
-            @"@english" : @"My-HiME Best Collection",
-            @"@kanji" : @"\u821e-HiME ~\u30d9\u30b9\u30c8\u30b3\u30ec\u30af\u30b7\u30e7\u30f3~",
-            @"@romaji" : @"My-HiME Best Collection",
+            @"english" : @"My-HiME Best Collection",
+            @"kanji" : @"\u821e-HiME ~\u30d9\u30b9\u30c8\u30b3\u30ec\u30af\u30b7\u30e7\u30f3~",
+            @"romaji" : @"My-HiME Best Collection",
         },
         @"arranger" :@[
                 @{
-                @"@english" : @"Masaya Suzuki",
-                @"@kanji" : @"\u9234\u6728\u96c5\u4e5f",
+                @"english" : @"Masaya Suzuki",
+                @"kanji" : @"\u9234\u6728\u96c5\u4e5f",
             },
                 @{
-                @"@english" : @"Kaoru Okubo",
-                @"@kanji" : @"\u5927\u4e45\u4fdd\u85ab",
+                @"english" : @"Kaoru Okubo",
+                @"kanji" : @"\u5927\u4e45\u4fdd\u85ab",
             },
                 @{
-                @"@english" : @"Noriyasu Agematsu",
-                @"@kanji" : @"\u4e0a\u677e\u7bc4\u5eb7",
+                @"english" : @"Noriyasu Agematsu",
+                @"kanji" : @"\u4e0a\u677e\u7bc4\u5eb7",
             },
                 @{
-                @"@english" : @"Masaaki Iizuka",
-                @"@kanji" : @"\u98ef\u585a\u660c\u660e",
+                @"english" : @"Masaaki Iizuka",
+                @"kanji" : @"\u98ef\u585a\u660c\u660e",
             }
         ],
         @"artist" :@[
                 @{
-                @"@english" : @"Yuki Kajiura",
-                @"@kanji" : @"\u68b6\u6d66\u7531\u8a18",
+                @"english" : @"Yuki Kajiura",
+                @"kanji" : @"\u68b6\u6d66\u7531\u8a18",
             },
                 @{
-                @"@english" : @"Masaaki Iizuka",
-                @"@kanji" : @"\u98ef\u585a\u660c\u660e",
+                @"english" : @"Masaaki Iizuka",
+                @"kanji" : @"\u98ef\u585a\u660c\u660e",
             },
                 @{
-                @"@english" : @"mia",
+                @"english" : @"mia",
             },
                 @{
-                @"@english" : @"rino",
+                @"english" : @"rino",
             },
                 @{
-                @"@english" : @"Mika Watanabe",
-                @"@kanji" : @"\u6e21\u9089\u7f8e\u4f73",
+                @"english" : @"Mika Watanabe",
+                @"kanji" : @"\u6e21\u9089\u7f8e\u4f73",
             },
                 @{
-                @"@english" : @"Minami Kuribayashi",
-                @"@kanji" : @"\u6817\u6797\u307f\u306a\u5b9f",
+                @"english" : @"Minami Kuribayashi",
+                @"kanji" : @"\u6817\u6797\u307f\u306a\u5b9f",
             },
                 @{
-                @"@english" : @"Takaha Tachibana",
-                @"@kanji" : @"\u6a58\u5c2d\u8449",
+                @"english" : @"Takaha Tachibana",
+                @"kanji" : @"\u6a58\u5c2d\u8449",
             },
                 @{
-                @"@english" : @"Mikiya Katakura",
-                @"@kanji" : @"\u7247\u5009\u4e09\u8d77\u4e5f",
+                @"english" : @"Mikiya Katakura",
+                @"kanji" : @"\u7247\u5009\u4e09\u8d77\u4e5f",
             },
                 @{
-                @"@english" : @"Masanori Takumi",
-                @"@kanji" : @"\u5b85\u898b\u5c06\u5178",
+                @"english" : @"Masanori Takumi",
+                @"kanji" : @"\u5b85\u898b\u5c06\u5178",
             },
                 @{
-                @"@english" : @"Masumi Ito",
-                @"@kanji" : @"\u4f0a\u85e4\u771f\u6f84",
+                @"english" : @"Masumi Ito",
+                @"kanji" : @"\u4f0a\u85e4\u771f\u6f84",
             }
         ],
         @"catalog" :@"LACA-5465",
@@ -1054,42 +1054,42 @@ NSDictionary *tracksForTesting =
         ],
         @"composer" :@[
                 @{
-                @"@english" : @"Yuki Kajiura",
-                @"@kanji" : @"\u68b6\u6d66\u7531\u8a18",
+                @"english" : @"Yuki Kajiura",
+                @"kanji" : @"\u68b6\u6d66\u7531\u8a18",
             },
                 @{
-                @"@english" : @"Masaaki Iizuka",
-                @"@kanji" : @"\u98ef\u585a\u660c\u660e",
+                @"english" : @"Masaaki Iizuka",
+                @"kanji" : @"\u98ef\u585a\u660c\u660e",
             },
                 @{
-                @"@english" : @"mia",
+                @"english" : @"mia",
             },
                 @{
-                @"@english" : @"rino",
+                @"english" : @"rino",
             },
                 @{
-                @"@english" : @"Mika Watanabe",
-                @"@kanji" : @"\u6e21\u9089\u7f8e\u4f73",
+                @"english" : @"Mika Watanabe",
+                @"kanji" : @"\u6e21\u9089\u7f8e\u4f73",
             },
                 @{
-                @"@english" : @"Minami Kuribayashi",
-                @"@kanji" : @"\u6817\u6797\u307f\u306a\u5b9f",
+                @"english" : @"Minami Kuribayashi",
+                @"kanji" : @"\u6817\u6797\u307f\u306a\u5b9f",
             },
                 @{
-                @"@english" : @"Takaha Tachibana",
-                @"@kanji" : @"\u6a58\u5c2d\u8449",
+                @"english" : @"Takaha Tachibana",
+                @"kanji" : @"\u6a58\u5c2d\u8449",
             },
                 @{
-                @"@english" : @"Mikiya Katakura",
-                @"@kanji" : @"\u7247\u5009\u4e09\u8d77\u4e5f",
+                @"english" : @"Mikiya Katakura",
+                @"kanji" : @"\u7247\u5009\u4e09\u8d77\u4e5f",
             },
                 @{
-                @"@english" : @"Masanori Takumi",
-                @"@kanji" : @"\u5b85\u898b\u5c06\u5178",
+                @"english" : @"Masanori Takumi",
+                @"kanji" : @"\u5b85\u898b\u5c06\u5178",
             },
                 @{
-                @"@english" : @"Masumi Ito",
-                @"@kanji" : @"\u4f0a\u85e4\u771f\u6f84",
+                @"english" : @"Masumi Ito",
+                @"kanji" : @"\u4f0a\u85e4\u771f\u6f84",
             }
         ],
         @"date" :@"Dec 21, 2005",
@@ -1099,35 +1099,35 @@ NSDictionary *tracksForTesting =
         @"mediaFormat" :@"CD",
         @"performer" :@[
                 @{
-                @"@english" : @"Minami Kuribayashi",
-                @"@kanji" : @"\u6817\u6797\u307f\u306a\u5b9f",
+                @"english" : @"Minami Kuribayashi",
+                @"kanji" : @"\u6817\u6797\u307f\u306a\u5b9f",
             },
                 @{
-                @"@english" : @"Aki Misato",
-                @"@kanji" : @"\u7f8e\u90f7\u3042\u304d",
+                @"english" : @"Aki Misato",
+                @"kanji" : @"\u7f8e\u90f7\u3042\u304d",
             },
                 @{
-                @"@english" : @"Mai Nakahara",
-                @"@kanji" : @"\u4e2d\u539f\u9ebb\u8863",
+                @"english" : @"Mai Nakahara",
+                @"kanji" : @"\u4e2d\u539f\u9ebb\u8863",
             },
                 @{
-                @"@english" : @"Saeko Chiba",
-                @"@kanji" : @"\u5343\u8449\u7d17\u5b50",
+                @"english" : @"Saeko Chiba",
+                @"kanji" : @"\u5343\u8449\u7d17\u5b50",
             },
                 @{
-                @"@english" : @"Ai Shimizu",
-                @"@kanji" : @"\u6e05\u6c34\u611b",
+                @"english" : @"Ai Shimizu",
+                @"kanji" : @"\u6e05\u6c34\u611b",
             },
                 @{
-                @"@english" : @"Yuko Miyamura",
-                @"@kanji" : @"\u5bae\u6751\u512a\u5b50",
+                @"english" : @"Yuko Miyamura",
+                @"kanji" : @"\u5bae\u6751\u512a\u5b50",
             },
                 @{
-                @"@english" : @"Yousei Teikoku",
-                @"@kanji" : @"\u5996\u7cbe\u5e1d\u570b",
+                @"english" : @"Yousei Teikoku",
+                @"kanji" : @"\u5996\u7cbe\u5e1d\u570b",
             },
                 @{
-                @"@english" : @"ALI PROJECT",
+                @"english" : @"ALI PROJECT",
             }
         ],
         @"platforms" :@[
@@ -1136,10 +1136,10 @@ NSDictionary *tracksForTesting =
         @"price" :@(3000),
         @"products" :@[
             @{
-                @"@english" : @"MY-HiME",
+                @"english" : @"MY-HiME",
             },
             @{
-                @"@english" : @"MY-HiME: Unmei no Keitouju",
+                @"english" : @"MY-HiME: Unmei no Keitouju",
             },
         ],
         @"publishedFormat" :@[
@@ -1147,9 +1147,9 @@ NSDictionary *tracksForTesting =
         ],
         @"publisher" :@[
                 @{
-                @"@english" : @"Lantis",
-                @"@kanji" : @"\u682a\u5f0f\u4f1a\u793e\u30e9\u30f3\u30c6\u30a3\u30b9",
-                @"@romaji" : @"Lantis",
+                @"english" : @"Lantis",
+                @"kanji" : @"\u682a\u5f0f\u4f1a\u793e\u30e9\u30f3\u30c6\u30a3\u30b9",
+                @"romaji" : @"Lantis",
             }
         ],
         @"rating" :@"Rated 5.00 by 1 person",
@@ -1160,8 +1160,8 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"2:41",
                 @"title" :        @{
-                    @"@kanji" : @"\u5a9b\u661f",
-                    @"@romaji" : @"Ensei",
+                    @"kanji" : @"\u5a9b\u661f",
+                    @"romaji" : @"Ensei",
                 },
                 @"track" :@(1),
             },
@@ -1169,8 +1169,8 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"4:19",
                 @"title" :        @{
-                    @"@kanji" : @"last moment",
-                    @"@romaji" : @"last moment",
+                    @"kanji" : @"last moment",
+                    @"romaji" : @"last moment",
                 },
                 @"track" :@(10),
             },
@@ -1178,8 +1178,8 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"5:28",
                 @"title" :        @{
-                    @"@kanji" : @"Fortuna",
-                    @"@romaji" : @"Fortuna",
+                    @"kanji" : @"Fortuna",
+                    @"romaji" : @"Fortuna",
                 },
                 @"track" :@(11),
             },
@@ -1187,8 +1187,8 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"4:49",
                 @"title" :        @{
-                    @"@kanji" : @"\u963f\u4fee\u7f85\u59eb",
-                    @"@romaji" : @"Ashura-Hime",
+                    @"kanji" : @"\u963f\u4fee\u7f85\u59eb",
+                    @"romaji" : @"Ashura-Hime",
                 },
                 @"track" :@(12),
             },
@@ -1196,8 +1196,8 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"4:22",
                 @"title" :        @{
-                    @"@kanji" : @"Silent wing",
-                    @"@romaji" : @"Silent wing",
+                    @"kanji" : @"Silent wing",
+                    @"romaji" : @"Silent wing",
                 },
                 @"track" :@(13),
             },
@@ -1205,8 +1205,8 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"4:35",
                 @"title" :        @{
-                    @"@kanji" : @"\u541b\u304c\u7a7a\u3060\u3063\u305f",
-                    @"@romaji" : @"Kimi ga Sora datta",
+                    @"kanji" : @"\u541b\u304c\u7a7a\u3060\u3063\u305f",
+                    @"romaji" : @"Kimi ga Sora datta",
                 },
                 @"track" :@(14),
             },
@@ -1214,8 +1214,8 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"4:04",
                 @"title" :        @{
-                    @"@kanji" : @"\u79c1\u7acb\u98a8\u83ef\u5b66\u5712\u6821\u6b4c ~\u6c34\u6676\u306e\u5b88\u308a~",
-                    @"@romaji" : @"Shiritsu Fuuka Gakuen Kouka ~Suisho no Mamori~",
+                    @"kanji" : @"\u79c1\u7acb\u98a8\u83ef\u5b66\u5712\u6821\u6b4c ~\u6c34\u6676\u306e\u5b88\u308a~",
+                    @"romaji" : @"Shiritsu Fuuka Gakuen Kouka ~Suisho no Mamori~",
                 },
                 @"track" :@(15),
             },
@@ -1223,8 +1223,8 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"3:15",
                 @"title" :        @{
-                    @"@kanji" : @"\u821e-HiME\u30d7\u30ed\u30e2\u30fc\u30b7\u30e7\u30f3\u7528BGM",
-                    @"@romaji" : @"MY-HiME Promotion-You BGM",
+                    @"kanji" : @"\u821e-HiME\u30d7\u30ed\u30e2\u30fc\u30b7\u30e7\u30f3\u7528BGM",
+                    @"romaji" : @"MY-HiME Promotion-You BGM",
                 },
                 @"track" :@(16),
             },
@@ -1232,8 +1232,8 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"4:24",
                 @"title" :        @{
-                    @"@kanji" : @"Shining\u2606Days",
-                    @"@romaji" : @"Shining\u2606Days",
+                    @"kanji" : @"Shining\u2606Days",
+                    @"romaji" : @"Shining\u2606Days",
                 },
                 @"track" :@(2),
             },
@@ -1241,8 +1241,8 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"4:33",
                 @"title" :        @{
-                    @"@kanji" : @"TOMORROW'S TRUE",
-                    @"@romaji" : @"TOMORROW'S TRUE",
+                    @"kanji" : @"TOMORROW'S TRUE",
+                    @"romaji" : @"TOMORROW'S TRUE",
                 },
                 @"track" :@(3),
             },
@@ -1250,8 +1250,8 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"4:43",
                 @"title" :        @{
-                    @"@kanji" : @"\u611b\u3057\u3055\u306e\u4ea4\u5dee\u70b9",
-                    @"@romaji" : @"Itoshisa no Kousaten",
+                    @"kanji" : @"\u611b\u3057\u3055\u306e\u4ea4\u5dee\u70b9",
+                    @"romaji" : @"Itoshisa no Kousaten",
                 },
                 @"track" :@(4),
             },
@@ -1259,8 +1259,8 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"4:50",
                 @"title" :        @{
-                    @"@kanji" : @"\u6c34\u8fba\u306e\u82b1",
-                    @"@romaji" : @"Mizube no Hana",
+                    @"kanji" : @"\u6c34\u8fba\u306e\u82b1",
+                    @"romaji" : @"Mizube no Hana",
                 },
                 @"track" :@(5),
             },
@@ -1268,8 +1268,8 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"4:24",
                 @"title" :        @{
-                    @"@kanji" : @"\u30b3\u30b3\u30ed\u306e\u5263",
-                    @"@romaji" : @"Kokoro no Tsurugi",
+                    @"kanji" : @"\u30b3\u30b3\u30ed\u306e\u5263",
+                    @"romaji" : @"Kokoro no Tsurugi",
                 },
                 @"track" :@(6),
             },
@@ -1277,8 +1277,8 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"2:26",
                 @"title" :        @{
-                    @"@kanji" : @"It's only the fairy tale",
-                    @"@romaji" : @"It's only the fairy tale",
+                    @"kanji" : @"It's only the fairy tale",
+                    @"romaji" : @"It's only the fairy tale",
                 },
                 @"track" :@(7),
             },
@@ -1286,8 +1286,8 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"4:36",
                 @"title" :        @{
-                    @"@kanji" : @"\u5c0f\u3055\u306a\u661f\u304c\u964d\u308a\u308b\u6642",
-                    @"@romaji" : @"Chiisana Hoshi ga Oriru Toki",
+                    @"kanji" : @"\u5c0f\u3055\u306a\u661f\u304c\u964d\u308a\u308b\u6642",
+                    @"romaji" : @"Chiisana Hoshi ga Oriru Toki",
                 },
                 @"track" :@(8),
             },
@@ -1295,8 +1295,8 @@ NSDictionary *tracksForTesting =
                 @"disc" :@(1),
                 @"length" :@"4:32",
                 @"title" :        @{
-                    @"@kanji" : @"Parade",
-                    @"@romaji" : @"Parade",
+                    @"kanji" : @"Parade",
+                    @"romaji" : @"Parade",
                 },
                 @"track" :@(9),
             },
@@ -1332,8 +1332,8 @@ NSDictionary *tracksForTesting =
         @"disc" : @(1),
         @"length" : @"4:18",
         @"title" :        @{
-            @"@english" : @"Cross Heart",
-            @"@kanji" : @"\u30af\u30ed\u30b9*\u30cf\u30fc\u30c8",
+            @"english" : @"Cross Heart",
+            @"kanji" : @"\u30af\u30ed\u30b9*\u30cf\u30fc\u30c8",
         },
     },
     @{
@@ -1341,8 +1341,8 @@ NSDictionary *tracksForTesting =
         @"disc" : @(1),
         @"length" : @"5:14",
         @"title" :        @{
-            @"@english" : @"Mizutama",
-            @"@kanji" : @"\u6c34\u7389",
+            @"english" : @"Mizutama",
+            @"kanji" : @"\u6c34\u7389",
         },
     },
     @{
@@ -1350,8 +1350,8 @@ NSDictionary *tracksForTesting =
         @"disc" : @(1),
         @"length" : @"4:18",
         @"title" :        @{
-            @"@english" : @"Cross Heart (instrumental)",
-            @"@kanji" : @"\u30af\u30ed\u30b9*\u30cf\u30fc\u30c8<instrumental>",
+            @"english" : @"Cross Heart (instrumental)",
+            @"kanji" : @"\u30af\u30ed\u30b9*\u30cf\u30fc\u30c8<instrumental>",
         },
     },
     @{
@@ -1359,8 +1359,8 @@ NSDictionary *tracksForTesting =
         @"disc" : @(1),
         @"length" : @"5:11",
         @"title" :        @{
-            @"@english" : @"Mizutama (instrumental)",
-            @"@kanji" : @"\u6c34\u7389<instrumental>",
+            @"english" : @"Mizutama (instrumental)",
+            @"kanji" : @"\u6c34\u7389<instrumental>",
         }
     }
     ];

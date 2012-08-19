@@ -56,13 +56,13 @@ using namespace hcxselect;
 + (void)initialize
 {
     namesMap = [NSDictionary dictionaryWithObjectsAndKeys:
-                @"@english", @"en",
-                @"@kanji",   @"ja",
-                @"@romaji",  @"ja-Latn",
-                @"@english", @"English",
-                @"@kanji",   @"Japanese",
-                @"@romaji",  @"Romaji",
-                @"@latin",   @"Latin",
+                @"english", @"en",
+                @"kanji",   @"ja",
+                @"romaji",  @"ja-Latn",
+                @"english", @"English",
+                @"kanji",   @"Japanese",
+                @"romaji",  @"Romaji",
+                @"latin",   @"Latin",
                 nil];
 }
 
@@ -448,7 +448,7 @@ string _html;
             string s = current->data.text();
             NSString *prod = [NSString stringWithCppStringTrimmed:&s];
             if ([prod hasVaildData]){
-                [prods addObject:@{@"@english": prod}];
+                [prods addObject:@{@"english": prod}];
             }
         }
         
@@ -456,12 +456,12 @@ string _html;
     }
     if ([prods count] == 1){
         if ([prods[0] count] == 1){
-            NSString *s = prods[0][@"@english"];
+            NSString *s = prods[0][@"english"];
             if (s && [s isMatchedByRegex:@".+,.+"]){
                 NSMutableArray *prods2 =  [NSMutableArray new];
                 NSArray *split = [self spiltMutiMetadataString:s];
                 for (NSString *prod in split) {
-                    [prods2 addObject:@{@"@english": prod}];
+                    [prods2 addObject:@{@"english": prod}];
                 }
                 prods = prods2;
             }
@@ -497,7 +497,7 @@ string _html;
                 for (NSString *s in [text componentsSeparatedByRegex:@"[,]"]){
                     NSString *ss = [s trimWhiteSpace];
                     if ([ss hasVaildData] && ![ss isMatchedByRegex:@"^\\("]){
-                        [arr addObject:@{ @"@english" : ss }];
+                        [arr addObject:@{ @"english" : ss }];
                     }
                 }
                 
@@ -516,7 +516,7 @@ string _html;
             string _text = m->data.text();
             NSString *text = [NSString stringWithCppStringTrimmed:&_text];
             if ([text hasVaildData]){
-                [arr addObject:@{ @"@english" : text }];
+                [arr addObject:@{ @"english" : text }];
             }
         }else{
             Node *first_lang = current->first_child;
@@ -589,7 +589,7 @@ string _html;
             string _title = node->data.text();
             NSString *title = [NSString stringWithCppStringTrimmed:&_title];
             if([title hasVaildData]){
-                [titles setValue:[title stringByDecodingXMLEntities] forKey:@"@english"];
+                [titles setValue:[title stringByDecodingXMLEntities] forKey:@"english"];
                 node = node->next_sibling;
                 continue;
             }
@@ -606,7 +606,7 @@ string _html;
             lang = [[NSString alloc] initWithCppString:&_lang];
             lang = [namesMap valueForKey:lang];
         }else{
-            lang = @"@english";
+            lang = @"english";
         }
         
         if (node->first_child){

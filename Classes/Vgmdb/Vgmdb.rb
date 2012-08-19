@@ -14,13 +14,13 @@ class Vgmdb
 	
 	def initialize()
 		@names = {
-			'en'       => '@english',
-			'ja'       => '@kanji',
-			'ja-Latn'  => '@romaji',
-			'English'  => '@english',
-			'Japanese' => '@kanji',
-			'Romaji'   => '@romaji',
-			'Latin'    => '@latin'
+			'en'       => 'english',
+			'ja'       => 'kanji',
+			'ja-Latn'  => 'romaji',
+			'English'  => 'english',
+			'Japanese' => 'kanji',
+			'Romaji'   => 'romaji',
+			'Latin'    => 'latin'
 		}
 		
 		@genres = [
@@ -122,7 +122,7 @@ class Vgmdb
 					arr << spilt_lang(e.children)
 				elsif e.kind_of?(Nokogiri::XML::Text) then
 					s =e.to_s.strip
-					arr << {"@english" =>s} if s.length >0 and  ! s =~ '[,&]'
+					arr << {"english" =>s} if s.length >0 and  ! s =~ '[,&]'
 				end
 			end
 			return arr
@@ -170,7 +170,7 @@ class Vgmdb
 			if stats[id].next.next.children.length > 0 then
 				spilt_lang(stats[id].next.next.children)
 				else 
-				stats[id].next.next.text.split(', ').map { |e| {'@english' => e.strip} }
+				stats[id].next.next.text.split(', ').map { |e| {'english' => e.strip} }
 			end
 		}
 		
@@ -196,7 +196,7 @@ class Vgmdb
 		end
 		
 		# if hash.has_key?('genre') &&  ! hash.has_key?('products') && ! @genres.include?(hash['genre']) then
-		# 	hash['products'] =  {"@english" => hash['genre']}
+		# 	hash['products'] =  {"english" => hash['genre']}
 		# 	hash.delete 'genre'
 		# end
 		
@@ -311,7 +311,7 @@ class Vgmdb
 		h = {}
 		elems.each do |ele|
 			#TODO check for nothing
-			lang = (ele.has_attribute? 'lang') ? @names[ele['lang']] : '@english'
+			lang = (ele.has_attribute? 'lang') ? @names[ele['lang']] : 'english'
 			h[lang] = ele.text.strip.sub /^\/ /, ""
 		end
 		return h

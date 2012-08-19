@@ -237,7 +237,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	self = [super initWithWindowNibName:@"VgmdbSearch"];
     if (self) {
 		
-		languages = [[NSArray alloc] initWithObjects:@"@english", @"@romaji",@"@kanji" , nil];
+		languages = [[NSArray alloc] initWithObjects:@"english", @"romaji",@"kanji" , nil];
 		selectedLanguage = [languages objectAtIndex:0];
         
         vgmdb = [Vgmdb new];

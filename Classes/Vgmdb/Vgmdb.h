@@ -18,7 +18,7 @@ struct _Vgmdb;
 /// Returns array of results for the string
 //{
 //    album = {
-//        "@english" = "Atelier Rorona ~The Alchemist of Arland~ Arland of Music";
+//        "english" = "Atelier Rorona ~The Alchemist of Arland~ Arland of Music";
 //    },
 //    catalog = "N/A",
 //    released = "Sep 28, 2010",
