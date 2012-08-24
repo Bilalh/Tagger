@@ -1,11 +1,14 @@
 TODO
 ====
-* Test on 10.7 
-* Test on 10.8 (inculding signing the app) 
-* vgmdb single result
+* Test on 10.8 (inculding signing the app)
 
 FIXME
 -----
+
+* Tests for
+http://vgmdb.net/album/33474
+http://vgmdb.net/album/22168
+http://vgmdb.net/album/919
 
 * Bug in mp3 files sometimes when *replacing* (not adding) artwork on files who album art has *never* been edited in iTunes, means the file can't be added to iTunes. This happens sometimes happens after replacing the all work twice.
 	* **Work around**
@@ -33,9 +36,6 @@ Images
 * find image metadata like:
   * 1200x1200, 200 KB (JPEG)
 
-MacRuby
--------
-* Either find faster way to use it or rewrite Vgmdb in Objective C/C++
 
 VGMDB
 -----
@@ -54,7 +54,9 @@ Later
 ----
 Done
 ----
-* * Reduce min size
+* Either find faster way to use it or rewrite Vgmdb in Objective C/C++
+* Test on 10.7
+* Reduce min size
 * Allow muti row editing.
 * Muti row selection can be non constive rows, handle this.
 * Some means of showing that the values for selected rows are different.
