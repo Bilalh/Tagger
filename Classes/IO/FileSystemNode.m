@@ -51,10 +51,12 @@ static const NSSet *tokensNumberSet;
 			
 			if ([path hasSuffix:@"m4a"]){
 				tags = [[MP4Tags alloc] initWithFilename:path];
+                 if (!tags) return nil;
 				hasBasicMetadata   = true;
 				hasExtenedMetadata = true;
 			}else if ([path hasSuffix:@"mp3"]){
 				tags = [[MPEGTags alloc] initWithFilename:path];
+                 if (!tags) return nil;
 				hasBasicMetadata   = true;
 				hasExtenedMetadata = true;
 			}else{
@@ -184,6 +186,7 @@ static const NSSet *tokensNumberSet;
             childURL = (__bridge NSURL*) a;
             if (enumeratorResult == kCFURLEnumeratorSuccess) {
                 FileSystemNode *node = [[FileSystemNode alloc] initWithURL:childURL];
+                if (!node) continue;
                 if (_children != nil) {
                     NSInteger oldIndex = [_children indexOfObject:childURL];
                     if (oldIndex != NSNotFound) {
