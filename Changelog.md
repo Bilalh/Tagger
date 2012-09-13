@@ -1,21 +1,21 @@
 Changelog
 =========
 
-Version 1.6.1
+Version 1.6.1 (Thu 13 Sep 2012)
 -------------
-
 ### Bug Fixes ### 
-* fix for http://vgmdb.net/album/33201
+* fix for http://vgmdb.net/album/33201.
 
 
-Version 1.6
+Version 1.6 (Thu 13 Sep 2012 22:54:14 GMT+01:00)
 -----------
 ### Improvements ###
 * Much faster app loading (Now loads instantly compared with 10 seconds before).
 * Auto taging rewriten in C++/Objective C hence much faster.
 * Updated Code for Xcode 4.4 -- using the new syntax.
 * Refactored Code.
-* Go to Downloads shortcut changed to ⌥⌘L to comform to Finder's shortcut
+* Go to Downloads shortcut changed to ⌥⌘L to comform to Finder's shortcut.
+* File size reduced by over 50%.
 
 ### Bug Fixes ### 
 * Fixes for 10.7.  
