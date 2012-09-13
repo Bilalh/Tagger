@@ -40,7 +40,6 @@ Information
 Libraries Used
 --------------
 * TagLib
-
 * BWHyperlinkButtonCell from BWToolKit
 * CCTColorLabelMenuItemView
 * Lumberjack

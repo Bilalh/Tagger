@@ -613,6 +613,266 @@ NSDictionary *tracksForTesting =
 
 }
 
+- (void)testSingleDiskStatsDifferent
+{
+    //    return;
+    NSString *name = @"statsDifferent.html";
+    NSURL *url = [self getUrlForName:name];
+    
+    NSDictionary *album =@{
+    @"english": @"Atelier Rorona Character Song Album ~Kanarien~",
+    @"kanji": @"ロロナのアトリエ キャラクターソングアルバム ～カナリア～",
+    @"romaji": @"Rorona no Atelier Character Song Album ~Kanaria~"
+    };
+    
+    NSArray *classification = @[@"Vocal"];
+    
+    NSArray *publisher =@[
+    @{
+    @"english" : @"TEAM Entertainment",
+    @"kanji":     @"株式会社ティームエンタテインメント",
+    @"romaji":    @"TEAM Entertainment"
+    },
+    @{
+    @"english" : @"Sony Music Distribution",
+    @"kanji":     @"株式会社ソニー・ミュージックディストリビューション",
+    @"romaji":    @"Sony Music Distribution"
+    }
+    ];
+    
+    NSArray *composer  =@[
+    @{
+    @"english" : @"Kazuki Yanagawa",
+    @"kanji"   : @"柳川和樹"
+    },
+    @{
+    @"english" : @"Daisuke Achiwa",
+    @"kanji"   : @"阿知波大輔"
+    },
+    @{
+    @"english" : @"Ken Nakagawa",
+    @"kanji"   : @"中河健"
+    }
+    ];
+    
+    NSArray *arranger  =@[
+    @{
+    @"english" : @"Kazuki Yanagawa",
+    @"kanji"   : @"柳川和樹"
+    },
+    @{
+    @"english" : @"Daisuke Achiwa",
+    @"kanji"   : @"阿知波大輔"
+    },
+    ];
+    
+    NSArray *performer  =@[
+    @{
+    @"english" : @"Kei Shindo",
+    @"kanji"   : @"真堂圭"
+    },
+    @{
+    @"english" : @"Eri Kitamura",
+    @"kanji"   : @"喜多村英梨"
+    },
+    @{
+    @"english" : @"Mai Kadowaki",
+    @"kanji"   : @"門脇舞以"
+    },
+    @{
+    @"english" : @"Dani",
+    },
+    ];
+    
+    NSArray *products =@[
+    @{
+    @"english":  @"Atelier Rorona",
+    @"kanji":    @"ロロナのアトリエ　～アーランドの錬金術師～",
+    @"romaji":   @"Rorona no Atelier: Arland no Renkinjutsushi"
+    },
+    ];
+    
+    NSArray *platforms = @[
+    @"Sony PlayStation 3"
+    ];
+    
+    NSArray *genre = @[
+    @"Game"
+    ];
+    
+    NSArray *publishedFormat =@[
+    @"Commercial"
+    ];
+    
+    
+    NSDictionary *correct = @{
+    @"album":album,
+    @"url": url,
+    @"catalog" : @"KDSD-10052",
+    @"date" : @"Sep 22, 2010",
+    @"year": @"2010",
+    @"publishedFormat": publishedFormat,
+    @"price": @"2100",
+    @"mediaFormat": @"CD",
+    @"classification": classification,
+    @"publisher": publisher,
+    @"composer": composer,
+    @"arranger": arranger,
+    @"performer": performer,
+    @"artist": composer,
+    @"products": products,
+    @"platforms":platforms,
+    @"rating":  @"Rated 5.00 by 1 person",
+    @"genre": genre,
+    @"category": genre,
+    };
+    
+    [self testUsingTestData:correct
+               withMetadata:YES
+                  withStats:NO // should be yes
+                  withNotes:NO
+                 withTracks:NO];
+}
+
+- (void)testCrashOnSplitLang
+{
+    NSString *name = @"crash_EtrianOdysseyIV.html";
+    NSURL *url = [self getUrlForName:name];
+    
+    NSDictionary *correct = @{
+        @"album" :@{
+            @"english" :@"Sekaiju no MeiQ\u2074 *denshou no kyoshin* Original Soundtrack",
+            @"kanji" :@"\u4e16\u754c\u6a39\u306e\u8ff7\u5baeIV \u4f1d\u627f\u306e\u5de8\u795e \u30aa\u30ea\u30b8\u30ca\u30eb\u30fb\u30b5\u30a6\u30f3\u30c9\u30c8\u30e9\u30c3\u30af",
+            @"romaji" :@"Etrian Odyssey IV: Legend of the Giant God Original Soundtrack",
+        },
+        @"arranger" :@[
+                @{
+                @"english" :@"Yuzo Koshiro",
+                @"kanji" :@"\u53e4\u4ee3\u7950\u4e09",
+            },
+                @{
+                @"english" :@"Takeshi Yanagawa",
+                @"kanji" :@"\u67f3\u5ddd\u525b",
+            }
+        ],
+        @"artist" :@[
+                @{
+                @"english" :@"Yuzo Koshiro",
+                @"kanji" :@"\u53e4\u4ee3\u7950\u4e09",
+            }
+        ],
+        @"catalog" :@"FVCG-1208",
+        @"category" :@[
+            @"Game"
+        ],
+        @"classification" :@[
+            @"Original Soundtrack"
+        ],
+        @"composer" :@[
+                @{
+                @"english" :@"Yuzo Koshiro",
+                @"kanji" :@"\u53e4\u4ee3\u7950\u4e09",
+            }
+        ],
+        @"date" :@"Jul 25, 2012",
+        @"genre" :@[
+            @"Game"
+        ],
+        @"mediaFormat" :@"2 CD",
+        @"performer" :@[
+                @{
+                @"english" :@"Aya Ito",
+                @"kanji" :@"\u4f0a\u85e4\u5f69",
+            },
+                @{
+                @"english" :@"Yuya Yanagihara",
+                @"kanji" :@"\u67f3\u539f\u6709\u5f25",
+            },
+                @{
+                @"english" :@"Mikiyo Kikuchi",
+                @"kanji" :@"\u83ca\u5730\u5e79\u4ee3",
+            },
+                @{
+                @"english" :@"Masami Horisawa",
+                @"kanji" :@"\u5800\u6ca2\u771f\u5df1",
+            },
+                @{
+                @"english" :@"Ayaki Saito",
+            },
+                @{
+                @"english" :@"Daisuke Kunita",
+            },
+                @{
+                @"english" :@"G.A.Cool",
+            },
+                @{
+                @"english" :@"Katsuomi Goto",
+            },
+                @{
+                @"english" :@"Toshiyuki Tanahashi",
+            },
+                @{
+                @"english" :@"Hiroki Murakami",
+                @"kanji" :@"\u6751\u4e0a\u5e83\u6a39",
+            },
+                @{
+                @"english" :@"Naoko Sato",
+                @"kanji" :@"\u4f50\u85e4\u76f4\u5b50",
+            },
+                @{
+                @"english" :@"Yoshiki Minezaki",
+            },
+                @{
+                @"english" :@"Makoto Igarashi",
+                @"kanji" :@"\u4e94\u5341\u5d50\u8aa0",
+            },
+                @{
+                @"english" :@"Norihiko Hibino",
+                @"kanji" :@"\u65e5\u6bd4\u91ce\u5247\u5f66",
+            },
+                @{
+                @"english" :@"Ryo Sakagami",
+                @"kanji" :@"\u5742\u4e0a\u9818",
+            }
+        ],
+        @"platforms" :@[
+            @"Nintendo 3DS"
+        ],
+        @"price" :@(3360),
+        @"products" :@[
+                @{
+                @"english" :@"Sekaiju no Meikyuu IV: Denshou no Kyojin",
+                @"kanji" :@"\u4e16\u754c\u6a39\u306e\u8ff7\u5baeIV \u4f1d\u627f\u306e\u5de8\u795e",
+                @"romaji" :@"Sekaiju no Meikyuu IV: Denshou no Kyojin",
+            }
+        ],
+        @"publishedFormat" :@[
+            @"Commercial"
+        ],
+        @"publisher" :@[
+                @{
+                @"english" :@"5pb. Records",
+                @"kanji" :@"5pb. Records",
+                @"romaji" :@"5pb. Records",
+            }
+        ],
+        @"rating" :@"Rated 4.55 by 10 people",
+        @"totalDiscs" :@(2),
+        @"totalTracks" :@(37),
+        @"url" :url,
+        @"year" :@"2012",
+    };
+    
+    [self testUsingTestData:correct
+               withMetadata:YES
+                  withStats:YES
+                  withNotes:NO
+                 withTracks:NO];
+}
+
+#pragma  mark -
+#pragma  mark Auto
+
 - (void)testDifferent
 {
     NSString *name = @"different.html";
@@ -659,6 +919,7 @@ NSDictionary *tracksForTesting =
             },
             @{
                 @"english" : @"Yumi Nakashima",
+                @"kanji"   : @"\u4e2d\u5cf6\u512a\u7f8e",
             }
         ],
         @"catalog" :@"GUSTCD-10010",
@@ -686,6 +947,7 @@ NSDictionary *tracksForTesting =
             },
             @{
                 @"english" : @"Yumi Nakashima",
+                @"kanji"   : @"\u4e2d\u5cf6\u512a\u7f8e",
             }
         ],
         @"date" :@"Jun 27, 2012",
@@ -850,128 +1112,6 @@ NSDictionary *tracksForTesting =
     
 
 }
-
-- (void)testSingleDiskStatsDifferent
-{
-//    return;
-    NSString *name = @"statsDifferent.html";
-    NSURL *url = [self getUrlForName:name];
-
-    NSDictionary *album =@{
-        @"english": @"Atelier Rorona Character Song Album ~Kanarien~",
-        @"kanji": @"ロロナのアトリエ キャラクターソングアルバム ～カナリア～",
-        @"romaji": @"Rorona no Atelier Character Song Album ~Kanaria~"
-    };
-
-    NSArray *classification = @[@"Vocal"];
-
-    NSArray *publisher =@[
-        @{
-            @"english" : @"TEAM Entertainment",
-            @"kanji":     @"株式会社ティームエンタテインメント",
-            @"romaji":    @"TEAM Entertainment"
-        },
-        @{
-            @"english" : @"Sony Music Distribution",
-            @"kanji":     @"株式会社ソニー・ミュージックディストリビューション",
-            @"romaji":    @"Sony Music Distribution"
-        }
-    ];
-
-    NSArray *composer  =@[
-    @{
-        @"english" : @"Kazuki Yanagawa",
-        @"kanji"   : @"柳川和樹"
-    },
-    @{
-        @"english" : @"Daisuke Achiwa",
-        @"kanji"   : @"阿知波大輔"
-    },
-    @{
-        @"english" : @"Ken Nakagawa",
-        @"kanji"   : @"中河健"
-    }
-    ];
-
-    NSArray *arranger  =@[
-    @{
-        @"english" : @"Kazuki Yanagawa",
-        @"kanji"   : @"柳川和樹"
-    },
-    @{
-        @"english" : @"Daisuke Achiwa",
-        @"kanji"   : @"阿知波大輔"
-    },
-    ];
-
-    NSArray *performer  =@[
-    @{
-        @"english" : @"Kei Shindo",
-        @"kanji"   : @"真堂圭"
-    },
-    @{
-        @"english" : @"Eri Kitamura",
-        @"kanji"   : @"喜多村英梨"
-    },
-    @{
-        @"english" : @"Mai Kadowaki",
-        @"kanji"   : @"門脇舞以"
-    },
-    @{
-        @"english" : @"Dani",
-    },
-    ];
-
-    NSArray *products =@[
-    @{
-        @"english":  @"Atelier Rorona",
-        @"kanji":    @"ロロナのアトリエ　～アーランドの錬金術師～",
-        @"romaji":   @"Rorona no Atelier: Arland no Renkinjutsushi"
-    },
-    ];
-
-    NSArray *platforms = @[
-        @"Sony PlayStation 3"
-    ];
-
-    NSArray *genre = @[
-        @"Game"
-    ];
-
-    NSArray *publishedFormat =@[
-        @"Commercial"
-    ];
-
-
-    NSDictionary *correct = @{
-    @"album":album,
-    @"url": url,
-    @"catalog" : @"KDSD-10052",
-    @"date" : @"Sep 22, 2010",
-    @"year": @"2010",
-    @"publishedFormat": publishedFormat,
-    @"price": @"2100",
-    @"mediaFormat": @"CD",
-    @"classification": classification,
-    @"publisher": publisher,
-    @"composer": composer,
-    @"arranger": arranger,
-    @"performer": performer,
-    @"artist": composer,
-    @"products": products,
-    @"platforms":platforms,
-    @"rating":  @"Rated 5.00 by 1 person",
-    @"genre": genre,
-    @"category": genre,
-    };
-
-    [self testUsingTestData:correct
-               withMetadata:YES
-                  withStats:NO // should be yes
-                  withNotes:NO
-                 withTracks:NO];
-}
-
 
 - (void)testDifferentProduct
 {
@@ -1386,14 +1526,15 @@ NSDictionary *tracksForTesting =
     return;
     NSDictionary *files =
     @{
-        @"muti-disk.html":   @"http://vgmdb.net/album/13192",
-        @"mutiMetadata.html":@"http://vgmdb.net/album/762",
-        @"noPlatforms_small.html":@"http://vgmdb.net/album/30881",
-        @"singleDisk.html":@"http://vgmdb.net/album/30880",
-        @"statsDifferent" :  @"http://vgmdb.net/album/20427",
-        @"different": @"http://vgmdb.net/album/32234",
-//        @"10Disks": @"http://vgmdb.net/album/27827",
-        @"differentProduct": @"http://vgmdb.net/album/22125"
+//        @"muti-disk.html":   @"http://vgmdb.net/album/13192",
+//        @"mutiMetadata.html":@"http://vgmdb.net/album/762",
+//        @"noPlatforms_small.html":@"http://vgmdb.net/album/30881",
+//        @"singleDisk.html":@"http://vgmdb.net/album/30880",
+//        @"statsDifferent" :  @"http://vgmdb.net/album/20427",
+//        @"different": @"http://vgmdb.net/album/32234",
+////        @"10Disks": @"http://vgmdb.net/album/27827",
+//        @"differentProduct": @"http://vgmdb.net/album/22125",
+        @"crash_EtrianOdysseyIV":@"http://vgmdb.net/album/33201"
     };
     
     for (NSString *name in files) {
@@ -1417,10 +1558,9 @@ NSDictionary *tracksForTesting =
             atomically:YES
               encoding:NSUTF8StringEncoding
                  error:nil];
-//        
-//        id result = [vgmdb getAlbumData:[[NSURL alloc ]initFileURLWithPath:
-//                                         [testFolder stringByAppendingPathComponent:[name stringByAppendingString:@".html"]]] ];
-//        NSLog(@" %@", result);
+        
+        id result = [vgmdb getAlbumData:[[NSURL alloc ]initFileURLWithPath:path]];
+        NSLog(@"result@@ %@", result);
 
     }
 }

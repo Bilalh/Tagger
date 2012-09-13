@@ -611,19 +611,29 @@ string _html;
         
         if (node->first_child){
             Node *titleNode = node->first_child;
+//            cout << "DDD";
+//            cout << titleNode->data;
+//            cout << titleNode->data.isTag();
+//            cout << "ddd";
+//            int a = titleNode->data.isTag();
             while(titleNode->data.isTag()){
                 if (!titleNode->next_sibling){
                     titleNode = titleNode->first_child;
                 }else{
                     titleNode = titleNode->next_sibling;
                 }
+                if (!titleNode)
+                    break;
             }
             
-            string _title = titleNode->data.text();
-            NSString *title = [[NSString alloc] initWithCppString:&_title];
-            if ([title hasVaildData]){
-                 [titles setValue: [title stringByDecodingXMLEntities] forKey:lang];   
+            if (titleNode){
+                string _title = titleNode->data.text();
+                NSString *title = [[NSString alloc] initWithCppString:&_title];
+                if ([title hasVaildData]){
+                    [titles setValue: [title stringByDecodingXMLEntities] forKey:lang];
+                }
             }
+            
         }
         
         node = node->next_sibling;

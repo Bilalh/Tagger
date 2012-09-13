@@ -231,7 +231,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
                 NSMutableArray *arr = ftracks[track];
                 if (!arr){
                     arr = [NSMutableArray new];
-                    NSLog(@"ARRR '%@' %@",arr, ftracks);
                     ftracks[track] = arr;
                 }
                 [arr addObject:n];

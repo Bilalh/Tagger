@@ -1,6 +1,13 @@
 Changelog
 =========
 
+Version 1.6.1
+-------------
+
+### Bug Fixes ### 
+* fix for http://vgmdb.net/album/33201
+
+
 Version 1.6
 -----------
 ### Improvements ###
