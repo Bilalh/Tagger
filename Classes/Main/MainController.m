@@ -722,6 +722,11 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://bilalh.github.com/projects/tagger/"]]; 	
 }
 
+- (IBAction)openDonate:(id)sender
+{
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AMLSQBUQ8E8RE"]];
+}
+
 - (IBAction)openIssues:(id)sender
 {
 	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/Bilalh/Tagger/issues"]]; 	

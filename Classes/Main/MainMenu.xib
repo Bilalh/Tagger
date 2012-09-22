@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1070</int>
-		<string key="IBDocument.SystemVersion">11E2620</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2549</string>
-		<string key="IBDocument.AppKitVersion">1138.47</string>
+		<string key="IBDocument.SystemVersion">11G56</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2840</string>
+		<string key="IBDocument.AppKitVersion">1138.51</string>
 		<string key="IBDocument.HIToolboxVersion">569.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">2549</string>
+			<string key="NS.object.0">2840</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>NSArrayController</string>
@@ -106,6 +106,14 @@
 									<string key="NSTitle">Preferences…</string>
 									<string key="NSKeyEquiv">,</string>
 									<int key="NSKeyEquivModMask">1048576</int>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="35465992"/>
+									<reference key="NSMixedImage" ref="502551668"/>
+								</object>
+								<object class="NSMenuItem" id="758908389">
+									<reference key="NSMenu" ref="110575045"/>
+									<string key="NSTitle">Make a Donation…</string>
+									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
@@ -1241,8 +1249,7 @@
 								<object class="NSMenuItem" id="1004600617">
 									<reference key="NSMenu" ref="992780483"/>
 									<string key="NSTitle">Tagger's Homepage</string>
-									<string key="NSKeyEquiv">s</string>
-									<int key="NSKeyEquivModMask">1048576</int>
+									<string key="NSKeyEquiv"/>
 									<int key="NSMnemonicLoc">2147483647</int>
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
@@ -3817,7 +3824,6 @@ wGw</bytes>
 																<int key="NSvFlags">270</int>
 																<string key="NSFrame">{{81, 290}, {284.5, 22}}</string>
 																<reference key="NSSuperview" ref="585874588"/>
-																<reference key="NSNextKeyView"/>
 																<int key="NSViewLayerContentsRedrawPolicy">2</int>
 																<bool key="NSEnabled">YES</bool>
 																<object class="NSTextFieldCell" key="NSCell" id="479084661">
@@ -3878,7 +3884,6 @@ wGw</bytes>
 																</set>
 																<string key="NSFrame">{{14, 14}, {343, 416}}</string>
 																<reference key="NSSuperview" ref="463021270"/>
-																<reference key="NSNextKeyView"/>
 																<bool key="NSEnabled">YES</bool>
 																<object class="NSImageCell" key="NSCell" id="819217809">
 																	<int key="NSCellFlags">404880896</int>
@@ -4891,6 +4896,14 @@ wGw</bytes>
 						<reference key="destination" ref="306287700"/>
 					</object>
 					<int key="connectionID">1623</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">openDonate:</string>
+						<reference key="source" ref="588631224"/>
+						<reference key="destination" ref="758908389"/>
+					</object>
+					<int key="connectionID">1632</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -6709,10 +6722,10 @@ wGw</bytes>
 							<reference ref="694149608"/>
 							<reference ref="952259628"/>
 							<reference ref="713487014"/>
-							<reference ref="448692316"/>
 							<reference ref="923604819"/>
 							<reference ref="1036655123"/>
 							<reference ref="379814623"/>
+							<reference ref="448692316"/>
 							<reference ref="175649969"/>
 						</array>
 						<reference key="parent" ref="0"/>
@@ -7216,6 +7229,7 @@ wGw</bytes>
 							<reference ref="1056857174"/>
 							<reference ref="342932134"/>
 							<reference ref="516060328"/>
+							<reference ref="758908389"/>
 						</array>
 						<reference key="parent" ref="694149608"/>
 					</object>
@@ -8105,6 +8119,11 @@ wGw</bytes>
 						<reference key="object" ref="393246221"/>
 						<reference key="parent" ref="992780483"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1630</int>
+						<reference key="object" ref="758908389"/>
+						<reference key="parent" ref="110575045"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -8261,6 +8280,7 @@ wGw</bytes>
 				<string key="1621.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1624.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1628.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1630.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="19.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="195.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="196.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -8468,7 +8488,7 @@ wGw</bytes>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1629</int>
+			<int key="maxID">1632</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

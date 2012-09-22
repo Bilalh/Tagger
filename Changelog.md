@@ -1,6 +1,11 @@
 Changelog
 =========
 
+Version 1.6.2 (Sat 22 Sep 2012)
+-------------
+### Bug Fixes ### 
+* Gui Fixes
+
 Version 1.6.1 (Thu 13 Sep 2012)
 -------------
 ### Bug Fixes ### 
