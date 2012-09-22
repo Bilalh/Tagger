@@ -21,7 +21,6 @@ Version 1.6 (Thu 13 Sep 2012 22:54:14 GMT+01:00)
 * Refactored Code.
 * Go to Downloads shortcut changed to ⌥⌘L to comform to Finder's shortcut.
 * File size reduced by over 50%.
-* Using taglib 1.7.2
 
 ### Bug Fixes ### 
 * Fixes for 10.7.  

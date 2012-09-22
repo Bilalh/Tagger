@@ -832,7 +832,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 	rfc = [[RenamingFilesController alloc] initWithNodes:currentNodes 
 												selector:@selector(renameWithFormatArray:)
-											 buttonTitle:@"Reaname" ];
+											 buttonTitle:@"Rename" ];
 		
 	[NSApp beginSheet: [rfc window]
 	   modalForWindow: self.window
