@@ -203,6 +203,7 @@
 		9254094715C367330074A280 /* NSString+Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Tag.h"; sourceTree = "<group>"; };
 		9254094815C367330074A280 /* NSString+Tag.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+Tag.mm"; sourceTree = "<group>"; };
 		9254095015C3702A0074A280 /* Vgmdb+private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Vgmdb+private.h"; sourceTree = "<group>"; };
+		92557923160E4E020085F139 /* fix_libraries_paths.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = fix_libraries_paths.sh; sourceTree = "<group>"; };
 		925CE81D13C3BD6D009D6D94 /* Tagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowLeftBlack16.tiff; sourceTree = "<group>"; };
 		9264488913D773CE0035E693 /* arrowRightBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowRightBlack16.tiff; sourceTree = "<group>"; };
@@ -380,6 +381,7 @@
 				929A4ACF13DA087D00244796 /* Lumberjack */,
 				92A6808313EC7B130067DD5F /* MASPreferences */,
 				92F16DAE14041A780031E4B4 /* RegexKitLite */,
+				92557923160E4E020085F139 /* fix_libraries_paths.sh */,
 			);
 			path = "Other Sources";
 			sourceTree = "<group>";
@@ -796,6 +798,7 @@
 				925CE81A13C3BD6D009D6D94 /* Frameworks */,
 				925CE81B13C3BD6D009D6D94 /* Resources */,
 				9254006613F0A80C0020C912 /* CopyFiles */,
+				92557924160E4E5A0085F139 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -888,6 +891,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		92557924160E4E5A0085F139 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PROJECT_DIR/Other Sources/fix_libraries_paths.sh\"";
 		};
 		9273E64513D61678002BA3A0 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
