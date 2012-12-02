@@ -4,7 +4,7 @@ Changelog
 Version 1.7
 -----------
 * Uses taglib 1.8
-
+* Label column
 
 Version 1.6.2 (Sat 22 Sep 2012)
 -------------
