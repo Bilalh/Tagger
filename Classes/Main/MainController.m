@@ -725,8 +725,16 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
     NSString *path =  [node.URL path];
     path = [path stringByReplacingOccurrencesOfString:@"\'" withString:@"'\"'\"'"];
     
+    NSString *filepath = @"";
+    for (FileSystemNode *n in currentNodes.tagsArray) {
+        filepath = [n.URL path];
+        filepath = [filepath stringByReplacingOccurrencesOfString:@"\'" withString:@"'\"'\"'"];
+        break;
+	}
+    
+    
     NSString *s = [NSString stringWithFormat:
-                   @"tell application \"Terminal\" to do script \"cd '%@'; clear; pwd\"", path];
+                   @"tell application \"Terminal\" to do script \"cd '%@'; clear; pwd; f='%@'; echo 'f=%@' \"", path, filepath,filepath];
     NSAppleScript *as = [[NSAppleScript alloc] initWithSource: s];
     [as executeAndReturnError:nil];
     

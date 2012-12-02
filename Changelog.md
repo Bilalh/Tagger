@@ -5,12 +5,13 @@ Version 1.7
 -----------
 
 ### Features ###
-* Open In Terminal
-* Label column
+* Open In Terminal.
+* Label column.
 
 ### Improvements ###
-* Uses taglib 1.8
+* Uses taglib 1.8.
 * Handles arranger and Performer missing for metadata
+* Assigns the selected file to $f in the terminal.
 
 ### Bug Fixes ### 
 * Handle English (Official) in http://vgmdb.net/album/34827
