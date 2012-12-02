@@ -20,7 +20,7 @@
 #import "IntPair.h"
 
 #import "CCTColorLabelMenuItemView.h"
-
+#import "RegexKitLite.h"
 
 //#import <MacRuby/MacRuby.h>
 #import "iTunes.h"
@@ -834,13 +834,36 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 #pragma mark - Tag Renaming/Finding
 
+- (NSArray *)input:(NSString *)prompt{
+    NSAlert *alert = [NSAlert alertWithMessageText:prompt
+                                     defaultButton:@"OK"
+                                   alternateButton:@"Cancel"
+                                       otherButton:nil
+                         informativeTextWithFormat:@""];
+    
+    NSTextView *input = [[NSTextView alloc] initWithFrame:NSMakeRect(0, 0, 400, 100)];
+    NSScrollView *scroll =[[NSScrollView alloc] initWithFrame:[input frame]];
+    [scroll setDocumentView: input];
+    
+    [alert setAccessoryView:scroll];
+    NSInteger button = [alert runModal];
+    if (button == NSAlertDefaultReturn) {
+        return [[input string] componentsSeparatedByString:@"\n"];
+    } else if (button == NSAlertAlternateReturn) {
+        return nil;
+    } else {
+        NSAssert1(NO, @"Invalid input dialog button %ld", button);
+        return nil;
+    }
+    
+}
+
 - (IBAction) renumberFiles:(id)sender
 {
 	if (currentNodes.empty) return;
-	int i = 0;
-	
+    
+    int i = 0;
 	BOOL hasTrackTotal = NO;
-	
 	for (FileSystemNode *n in currentNodes.tagsArray) {
 		i++;
 		n.tags.track = [NSNumber numberWithInt:i];
@@ -854,6 +877,23 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}
 	
 }
+
+- (IBAction) renameArtistsWithNames:(id)sender
+{
+    if (currentNodes.empty) return;
+    [self renameWithArrayForTag:@"artist"];
+}
+
+- (void) renameWithArrayForTag:(id)tag
+{
+    NSString *msg = [NSString stringWithFormat:@"New names for the %@ tag:", [tag capitalizedString]];
+    NSArray *lines = [self input:msg];
+    NSArray *arr = currentNodes.tagsArray;
+    for(int i = 0, j = 0; i < [arr count] && j < [lines count]; i++, j++ ){
+        [((FileSystemNode*)arr[i]).tags  setValue:lines[j] forKey:tag];
+    }
+}
+
 
 - (IBAction)rename:(id)sender
 {

@@ -7,6 +7,7 @@ Version 1.7
 ### Features ###
 * Open In Terminal.
 * Label column.
+* RenameArtistWithNames
 
 ### Improvements ###
 * Uses taglib 1.8.

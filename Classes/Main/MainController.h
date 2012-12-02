@@ -146,6 +146,8 @@
 - (IBAction)deleteTag:(id)sender;
 - (IBAction)deleteAllTags:(id)sender;
 
+- (IBAction) renameArtistsWithNames:(id)sender;
+
 - (IBAction)performBlockOnTags:(id)sender
 					  tagNames:(const NSArray*)tagNames
 						 block:(id (^)(id value, NSString *tagName, Tags *tags ))block;
