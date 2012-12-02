@@ -38,45 +38,6 @@ static const NSArray *deleteMenuValues;
 static const NSArray *swapMenuValues;
 
 
-@interface MainController()  
-
-- (void) initDirectoryTable;
-- (void) setPopupMenuIcons;
-
-- (void) backForwordDirectoriesCommon;
-
-- (NSString *)stringFromFileSize:(NSInteger)size;
-
-- (IBAction)renameWithPredefinedFormat:(id)sender;
-
-- (void) openDirectoryNode: (FileSystemNode *) node;
-
-/// Checks if there any music files
-- (void) _vgmdbEnable;
-- (void) _vgmdbEnableDir;
-
-
-/// Change the current directory to the clicked entries
-- (IBAction) onClick:(id)sender;
-
-- (FileSystemNode*) nodeAtIndex:(NSInteger)row;
-- (NSArray*) children;
-
--(NSString*)formatPair:(NSNumber*)first
-				second:(NSNumber*)second;
-
-- (void) copyTags:(NSWindow *)sheet 
-	   returnCode:(int)returnCode 
-	  contextInfo:(IntPair*)pair;
-
-- (void) initTagManipulationSubMenus;
-- (void) initGoMenuItems;
-
-
-- (void) splitViewWillResizeSubviewsHandler:(id)object;
-
-@end
-
 @implementation FileSystemNode (QLPreviewItem)
 
 - (NSURL *)previewItemURL
