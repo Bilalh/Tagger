@@ -729,6 +729,11 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
                    @"tell application \"Terminal\" to do script \"cd '%@'; clear; pwd\"", path];
     NSAppleScript *as = [[NSAppleScript alloc] initWithSource: s];
     [as executeAndReturnError:nil];
+    
+    [[[NSAppleScript alloc]
+       initWithSource: @"tell application \"Terminal\" to activate"]
+       executeAndReturnError:nil];
+    
 }
 
 
