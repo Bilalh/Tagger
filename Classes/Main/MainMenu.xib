@@ -2331,13 +2331,13 @@
 																</object>
 																<object class="NSTableColumn" id="429043997">
 																	<string key="NSIdentifier">labelIndex</string>
-																	<double key="NSWidth">40</double>
-																	<double key="NSMinWidth">40</double>
-																	<double key="NSMaxWidth">70</double>
+																	<double key="NSWidth">15</double>
+																	<double key="NSMinWidth">15</double>
+																	<double key="NSMaxWidth">15</double>
 																	<object class="NSTableHeaderCell" key="NSHeaderCell">
 																		<int key="NSCellFlags">75497536</int>
 																		<int key="NSCellFlags2">2048</int>
-																		<string key="NSContents">label</string>
+																		<string key="NSContents">L</string>
 																		<reference key="NSSupport" ref="26"/>
 																		<reference key="NSBackgroundColor" ref="851741444"/>
 																		<reference key="NSTextColor" ref="830966565"/>
@@ -3225,7 +3225,7 @@
 																				<int key="NSvFlags">2322</int>
 																				<string key="NSFrameSize">{283, 116}</string>
 																				<reference key="NSSuperview" ref="326375348"/>
-																				<reference key="NSNextKeyView" ref="622853686"/>
+																				<reference key="NSNextKeyView" ref="673949500"/>
 																				<object class="NSTextContainer" key="NSTextContainer" id="195259803">
 																					<object class="NSLayoutManager" key="NSLayoutManager">
 																						<object class="NSTextStorage" key="NSTextStorage">
@@ -3472,7 +3472,7 @@ wGw</bytes>
 																</array>
 																<string key="NSFrame">{{81, 17}, {284, 118}}</string>
 																<reference key="NSSuperview" ref="10815081"/>
-																<reference key="NSNextKeyView" ref="673949500"/>
+																<reference key="NSNextKeyView" ref="326375348"/>
 																<int key="NSsFlags">133778</int>
 																<reference key="NSVScroller" ref="622853686"/>
 																<reference key="NSHScroller" ref="673949500"/>
@@ -8554,10 +8554,8 @@ wGw</bytes>
 						<string key="onClick:">id</string>
 						<string key="open:">id</string>
 						<string key="openDirectory:">id</string>
-						<string key="openDonate:">id</string>
 						<string key="openHomePage:">id</string>
 						<string key="openIssues:">id</string>
-						<string key="performBlockOnTags:tagNames:block:">id</string>
 						<string key="refresh:">id</string>
 						<string key="rename:">id</string>
 						<string key="renameWithPredefinedFormat:">id</string>
@@ -8567,7 +8565,6 @@ wGw</bytes>
 						<string key="search:">id</string>
 						<string key="searchWithSubDirectories:">id</string>
 						<string key="swapFirstAndLastName:">id</string>
-						<string key="tagWithPredefinedFormat:">id</string>
 						<string key="tagsFromFilename:">id</string>
 						<string key="toggleRightSubView:">id</string>
 						<string key="trimWhitespace:">id</string>
@@ -8642,20 +8639,12 @@ wGw</bytes>
 							<string key="name">openDirectory:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="openDonate:">
-							<string key="name">openDonate:</string>
-							<string key="candidateClassName">id</string>
-						</object>
 						<object class="IBActionInfo" key="openHomePage:">
 							<string key="name">openHomePage:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="openIssues:">
 							<string key="name">openIssues:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="performBlockOnTags:tagNames:block:">
-							<string key="name">performBlockOnTags:tagNames:block:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="refresh:">
@@ -8692,10 +8681,6 @@ wGw</bytes>
 						</object>
 						<object class="IBActionInfo" key="swapFirstAndLastName:">
 							<string key="name">swapFirstAndLastName:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="tagWithPredefinedFormat:">
-							<string key="name">tagWithPredefinedFormat:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="tagsFromFilename:">
