@@ -6,6 +6,7 @@ Version 1.7
 * Uses taglib 1.8
 * Label column
 * Handles arranger and Performer missing for metadata 
+* Open In Terminal
 
 Version 1.6.2 (Sat 22 Sep 2012)
 -------------

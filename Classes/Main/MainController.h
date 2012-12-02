@@ -124,6 +124,7 @@
 /// @name External 
 
 - (IBAction) revealInFinder:(id)sender;
+- (IBAction) openInTerminal:(id)sender;
 - (IBAction) addSelectedToItunes:(id)sender;
 
 /// @name Table

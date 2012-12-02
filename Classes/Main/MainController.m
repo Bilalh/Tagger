@@ -719,6 +719,20 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}
 }
 
+- (IBAction)openInTerminal:(id)sender
+{
+    FileSystemNode *node = [directoryStack lastObject];
+    NSString *path =  [node.URL path];
+    path = [path stringByReplacingOccurrencesOfString:@"\'" withString:@"'\"'\"'"];
+    
+    NSString *s = [NSString stringWithFormat:
+                   @"tell application \"Terminal\" to do script \"cd '%@'; clear; pwd\"", path];
+    NSAppleScript *as = [[NSAppleScript alloc] initWithSource: s];
+    [as executeAndReturnError:nil];
+}
+
+
+
 - (IBAction)openHomePage:(id)sender
 {
 	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://bilalh.github.com/projects/tagger/"]]; 	
