@@ -99,7 +99,6 @@
 		92E6EDBA13F313230045679E /* NSNumber+compare.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E6ED7613F313230045679E /* NSNumber+compare.m */; };
 		92E6EDBB13F313230045679E /* NSString+Convert.mm in Sources */ = {isa = PBXBuildFile; fileRef = 92E6ED7813F313230045679E /* NSString+Convert.mm */; };
 		92E6EDBC13F313230045679E /* NSString+Numbers.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E6ED7A13F313230045679E /* NSString+Numbers.m */; };
-		92E6EDBD13F313230045679E /* ButtonLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E6ED7D13F313230045679E /* ButtonLabelCell.m */; };
 		92E6EDBE13F313230045679E /* DraggableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E6ED7F13F313230045679E /* DraggableImageView.m */; };
 		92E6EDBF13F313230045679E /* ImageAndTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E6ED8113F313230045679E /* ImageAndTextCell.m */; };
 		92E6EDC013F313230045679E /* FileSystemNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E6ED8413F313230045679E /* FileSystemNode.m */; };
@@ -263,8 +262,6 @@
 		92E6ED7813F313230045679E /* NSString+Convert.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSString+Convert.mm"; sourceTree = "<group>"; };
 		92E6ED7913F313230045679E /* NSString+Numbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Numbers.h"; sourceTree = "<group>"; };
 		92E6ED7A13F313230045679E /* NSString+Numbers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Numbers.m"; sourceTree = "<group>"; };
-		92E6ED7C13F313230045679E /* ButtonLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonLabelCell.h; sourceTree = "<group>"; };
-		92E6ED7D13F313230045679E /* ButtonLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonLabelCell.m; sourceTree = "<group>"; };
 		92E6ED7E13F313230045679E /* DraggableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggableImageView.h; sourceTree = "<group>"; };
 		92E6ED7F13F313230045679E /* DraggableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableImageView.m; sourceTree = "<group>"; };
 		92E6ED8013F313230045679E /* ImageAndTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageAndTextCell.h; sourceTree = "<group>"; };
@@ -634,8 +631,6 @@
 		92E6ED7B13F313230045679E /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				92E6ED7C13F313230045679E /* ButtonLabelCell.h */,
-				92E6ED7D13F313230045679E /* ButtonLabelCell.m */,
 				92E6ED7E13F313230045679E /* DraggableImageView.h */,
 				92E6ED7F13F313230045679E /* DraggableImageView.m */,
 				92E6ED8013F313230045679E /* ImageAndTextCell.h */,
@@ -976,7 +971,6 @@
 				92E6EDBA13F313230045679E /* NSNumber+compare.m in Sources */,
 				92E6EDBB13F313230045679E /* NSString+Convert.mm in Sources */,
 				92E6EDBC13F313230045679E /* NSString+Numbers.m in Sources */,
-				92E6EDBD13F313230045679E /* ButtonLabelCell.m in Sources */,
 				92E6EDBE13F313230045679E /* DraggableImageView.m in Sources */,
 				92E6EDBF13F313230045679E /* ImageAndTextCell.m in Sources */,
 				92E6EDC013F313230045679E /* FileSystemNode.m in Sources */,
