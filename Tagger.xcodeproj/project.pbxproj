@@ -1062,7 +1062,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Frameworks",
-					/usr/local/Cellar/htmlcxx/0.84/include/,
+					/usr/local/include/,
 					"$(SRCROOT)/Classes/",
 					"\"$(SRCROOT)/Other Sources/Headers/\"",
 					"\"$(SRCROOT)/Other Sources/RegexKitLite/\"",
@@ -1071,7 +1071,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Frameworks",
-					/usr/local/Cellar/htmlcxx/0.84/lib/,
+					/usr/local/lib/,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CPLUSPLUSFLAGS = (
@@ -1113,7 +1113,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Frameworks",
-					/usr/local/Cellar/htmlcxx/0.84/include/,
+					/usr/local/include/,
 					"$(SRCROOT)/Classes/",
 					"\"$(SRCROOT)/Other Sources/Headers/\"",
 					"\"$(SRCROOT)/Other Sources/RegexKitLite/\"",
@@ -1122,7 +1122,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/Frameworks",
-					/usr/local/Cellar/htmlcxx/0.84/lib/,
+					/usr/local/lib/,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CPLUSPLUSFLAGS = (

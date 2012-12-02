@@ -734,6 +734,9 @@ NSDictionary *tracksForTesting =
                  withTracks:NO];
 }
 
+#pragma  mark -
+#pragma  mark Crashes
+
 - (void)testCrashOnSplitLang
 {
     NSString *name = @"crash_EtrianOdysseyIV.html";
@@ -868,6 +871,158 @@ NSDictionary *tracksForTesting =
                   withStats:YES
                   withNotes:NO
                  withTracks:NO];
+}
+
+
+- (void)testCrashOnTwoEnglish
+{
+    NSString *name = @"twoEnglish.html";
+    NSURL *url = [self getUrlForName:name];
+    
+    NSDictionary *correct = @{
+            @"url" :url,
+            @"tracks": @{
+                @"1-1" : @{
+                    @"disc" :@(1),
+                    @"length" :@"4:03",
+                    @"title" :    @{
+                        @"english" :@"Opening Movie (Theme of FINAL FANTASY XII) ~ The Dream to be a Sky Pirate",
+                        @"english_offical" : @"Opening Movie (FFXII Theme) - To Be a Sky Pirate",
+                        @"kanji" :@"\u30aa\u30fc\u30d7\u30cb\u30f3\u30b0\u30fb\u30e0\u30fc\u30d3\u30fc\uff08FINAL FANTASY XII\u306e\u30c6\u30fc\u30de\uff09 \uff5e \u7a7a\u8cca\u3078\u306e\u5922",
+                    },
+                    @"track" :@(1),
+                },
+                @"1-10" : @{
+                    @"disc" :@(1),
+                    @"length" :@"3:48",
+                    @"title" :    @{
+                        @"english" :@"Nalbina Fortress Town Ward",
+                        @"english_offical" : @"Nalbina Fortress",
+                        @"kanji" :@"\u30ca\u30eb\u30d3\u30ca\u57ce\u585e\u5e02\u8857\u5730",
+                    },
+                    @"track" :@(10),
+                },
+                @"1-11" : @{
+                    @"disc" :@(1),
+                    @"length" :@"4:37",
+                    @"title" :    @{
+                        @"english" :@"Rabanastre Downtown",
+                        @"english_offical" : @"Lowtown",
+                        @"kanji" :@"\u30e9\u30d0\u30ca\u30b9\u30bf\u30fb\u30c0\u30a6\u30f3\u30bf\u30a6\u30f3",
+                    },
+                    @"track" :@(11),
+                },
+                @"1-12" : @{
+                    @"disc" :@(1),
+                    @"length" :@"4:47",
+                    @"title" :    @{
+                        @"english" :@"Eruyt Village",
+                        @"english_offical" : @"Eruyt Village",
+                        @"kanji" :@"\u30a8\u30eb\u30c8\u306e\u91cc",
+                    },
+                    @"track" :@(12),
+                },
+                @"1-13" : @{
+                    @"disc" :@(1),
+                    @"length" :@"4:17",
+                    @"title" :    @{
+                        @"english" :@"The Skycity of Bhujerba",
+                        @"english_offical" : @"The Skycity of Bhujerba",
+                        @"kanji" :@"\u7a7a\u4e2d\u90fd\u5e02\u30d3\u30e5\u30a8\u30eb\u30d0",
+                    },
+                    @"track" :@(13),
+                },
+                @"1-2" : @{
+                    @"disc" :@(1),
+                    @"length" :@"4:34",
+                    @"title" :    @{
+                        @"english" :@"The Royal City of Rabanastre / Town Ward Upper Stratum",
+                        @"english_offical" : @"Streets of Rabanastre",
+                        @"kanji" :@"\u738b\u90fd\u30e9\u30d0\u30ca\u30b9\u30bf/\u5e02\u8857\u5730\u4e0a\u5c64",
+                    },
+                    @"track" :@(2),
+                },
+                @"1-3" : @{
+                    @"disc" :@(1),
+                    @"length" :@"6:19",
+                    @"title" :    @{
+                        @"english" :@"The Dalmasca Estersand",
+                        @"english_offical" : @"The Dalmasca Estersand",
+                        @"kanji" :@"\u6771\u30c0\u30eb\u30de\u30b9\u30ab\u7802\u6f20",
+                    },
+                    @"track" :@(3),
+                },
+                @"1-4" : @{
+                    @"disc" :@(1),
+                    @"length" :@"4:57",
+                    @"title" :    @{
+                        @"english" :@"Near the Water",
+                        @"english_offical" : @"On the Riverbank",
+                        @"kanji" :@"\u6c34\u306e\u307b\u3068\u308a",
+                    },
+                    @"track" :@(4),
+                },
+                @"1-5" : @{
+                    @"disc" :@(1),
+                    @"length" :@"4:54",
+                    @"title" :    @{
+                        @"english" :@"To the Place of the Gods",
+                        @"english_offical" : @"To Walk Amongst Gods",
+                        @"kanji" :@"\u795e\u3005\u306e\u5834\u6240\u3078",
+                    },
+                    @"track" :@(5),
+                },
+                @"1-6" : @{
+                    @"disc" :@(1),
+                    @"length" :@"4:16",
+                    @"title" :    @{
+                        @"english" :@"Penelo's Theme",
+                        @"english_offical" : @"Penelo's Theme",
+                        @"kanji" :@"\u30d1\u30f3\u30cd\u30ed\u306e\u30c6\u30fc\u30de",
+                    },
+                    @"track" :@(6),
+                },
+                @"1-7" : @{
+                    @"disc" :@(1),
+                    @"length" :@"4:12",
+                    @"title" :    @{
+                        @"english" :@"Ashe's Theme",
+                        @"english_offical" : @"Ashe's Theme",
+                        @"kanji" :@"\u30a2\u30fc\u30b7\u30a7\u306e\u30c6\u30fc\u30de",
+                    },
+                    @"track" :@(7),
+                },
+                @"1-8" : @{
+                    @"disc" :@(1),
+                    @"length" :@"5:23",
+                    @"title" :    @{
+                        @"english" :@"Theme of the Empire",
+                        @"english_offical" : @"The Archadian Empire",
+                        @"kanji" :@"\u5e1d\u56fd\u306e\u30c6\u30fc\u30de",
+                    },
+                    @"track" :@(8),
+                },
+                @"1-9" : @{
+                    @"disc" :@(1),
+                    @"length" :@"5:41",
+                    @"title" :    @{
+                        @"english" :@"A Moment's Rest",
+                        @"english_offical" : @"A Moment's Rest",
+                        @"kanji" :@"\u4e00\u6642\u306e\u4f11\u606f",
+                    },
+                    @"track" :@(9),
+                },
+            }
+            
+    };
+    
+    [self testUsingTestData:correct
+               withMetadata:NO
+                  withStats:NO
+                  withNotes:NO
+                 withTracks:YES];
+
+    
 }
 
 #pragma  mark -
@@ -1534,7 +1689,8 @@ NSDictionary *tracksForTesting =
 //        @"different": @"http://vgmdb.net/album/32234",
 ////        @"10Disks": @"http://vgmdb.net/album/27827",
 //        @"differentProduct": @"http://vgmdb.net/album/22125",
-        @"crash_EtrianOdysseyIV":@"http://vgmdb.net/album/33201"
+//        @"crash_EtrianOdysseyIV":@"http://vgmdb.net/album/33201",
+          @"twoEnglish":@"http://vgmdb.net/album/34827"
     };
     
     for (NSString *name in files) {
@@ -1559,8 +1715,8 @@ NSDictionary *tracksForTesting =
               encoding:NSUTF8StringEncoding
                  error:nil];
         
-        id result = [vgmdb getAlbumData:[[NSURL alloc ]initFileURLWithPath:path]];
-        NSLog(@"result@@ %@", result);
+//        id result = [vgmdb getAlbumData:[[NSURL alloc ]initFileURLWithPath:path]];
+//        NSLog(@"result@@ %@", result);
 
     }
 }

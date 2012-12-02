@@ -63,6 +63,7 @@ using namespace hcxselect;
                 @"kanji",   @"Japanese",
                 @"romaji",  @"Romaji",
                 @"latin",   @"Latin",
+                @"english_offical",   @"English (Official)",
                 nil];
 }
 
@@ -221,7 +222,7 @@ using namespace hcxselect;
         
         string _rel  = itLang->second;
         NSString *rel =  [NSString stringWithCppStringTrimmed:&_rel];
-        
+        assert(lang != nil);
         NSDictionary *map = @{ @"lang" : lang, @"ref" : rel };
         [refs addObject:map];
     }
