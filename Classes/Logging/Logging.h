@@ -1,6 +1,6 @@
 //
 //  Logging.h].h
-//  VGTagger
+//  Tagger
 //
 //  Created by Bilal Syed Hussain on 09/08/2011.
 //  Copyright 2011  All rights reserved.

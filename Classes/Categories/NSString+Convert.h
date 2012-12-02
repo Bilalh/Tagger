@@ -1,6 +1,6 @@
 //
 //  NSString+Convert.h
-//  VGTagger
+//  Tagger
 //
 //  Created by Bilal Syed Hussain on 15/07/2011.
 //  Copyright 2011  All rights reserved.
