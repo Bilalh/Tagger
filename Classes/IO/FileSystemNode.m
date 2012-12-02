@@ -340,7 +340,7 @@ static const NSSet *tokensNumberSet;
              return res;
 		 }];
         
-	}else if ([key isEqualToString:@"size"]){
+	}else if ([key isEqualToString:@"size"] || [key isEqualToString:@"labelIndex"]){
 		[_children sortWithOptions:NSSortStable usingComparator:
 		 ^NSComparisonResult(id obj1, id obj2) {
 			 const FileSystemNode *a = obj1, *b = obj2;

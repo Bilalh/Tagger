@@ -308,6 +308,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	
 	if ( [[aTableColumn identifier] isEqualToString:@"filename"] ){
 		return [node displayName];
+    }else if ([[aTableColumn identifier] isEqualToString:@"labelIndex"]){
+        return [[node labelIndex] stringValue];
 	}else if ([node isDirectory]){
 		return @"";
 	}else if ([[aTableColumn identifier] isEqualToString:@"size"]){
@@ -316,7 +318,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		return [self formatPair:node.tags.track second:node.tags.totalTracks];
 	}else if ([[aTableColumn identifier] isEqualToString:@"discPair"]){
 		return [self formatPair:node.tags.disc second:node.tags.totalDiscs];		
-	}
+    }
 	
 	return [node.tags valueForKey:[aTableColumn identifier]];
 }
