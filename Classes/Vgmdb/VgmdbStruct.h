@@ -3,7 +3,7 @@
 //  Tagger
 //
 //  Created by Bilal Hussain on 23/07/2012.
-//  Copyright (c) 2012 St. Andrews KY16 9XW. All rights reserved.
+//  Copyright (c) 2012  All rights reserved.
 //
 
 #ifndef Tagger_VgmdbStruct_h
