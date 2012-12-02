@@ -395,10 +395,20 @@ string _html;
     [data setValue: com forKey:@"artist"];
     
     Node *narr = ncom->next_sibling->next_sibling;
-    [data setValue: [self get_spilt_data:narr] forKey:@"arranger"];
-    
+    if (narr == NULL){
+//        [data setValue: @"" forKey:@"arranger"];
+        return;
+    }else{
+        [data setValue: [self get_spilt_data:narr] forKey:@"arranger"];
+    }
+
     Node *nper = narr->next_sibling->next_sibling;
-    [data setValue: [self get_spilt_data:nper] forKey:@"performer"];
+    if (nper == NULL){
+//        [data setValue: @"" forKey:@"performer"];
+    }else{
+        [data setValue: [self get_spilt_data:nper] forKey:@"performer"];
+    }
+
 }
  
 - (void) storeStats:(const tree<htmlcxx::HTML::Node>&)dom
