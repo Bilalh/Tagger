@@ -64,6 +64,7 @@ using namespace hcxselect;
                 @"romaji",  @"Romaji",
                 @"latin",   @"Latin",
                 @"english_offical",   @"English (Official)",
+                @"english_literal",   @"English Literal",
                 nil];
 }
 
