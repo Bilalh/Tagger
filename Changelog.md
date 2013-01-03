@@ -5,14 +5,15 @@ Version 1.7
 -----------
 
 ### Features ###
-* Open In Terminal.
+* Open current folder In Terminal.
 * Label column.
-* RenameArtistWithNames
+* Renaming Artists using a user specified list of names
+* Renaming Tracks using a user specified list of names
 
 ### Improvements ###
-* Uses taglib 1.8.
-* Handles arranger and Performer missing for metadata
-* Assigns the selected file to $f in the terminal.
+* Uses taglib 1.8 hence it faster.
+* Handles arranger and Performer missing for metadata searching
+* Assigns the selected file to $f in the Terminal.
 
 ### Bug Fixes ### 
 * Handle English (Official) in http://vgmdb.net/album/34827

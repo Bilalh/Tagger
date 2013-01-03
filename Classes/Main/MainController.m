@@ -845,6 +845,12 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
     [self renameWithArrayForTag:@"artist"];
 }
 
+- (IBAction) renameTitlesWithNames:(id)sender
+{
+    if (currentNodes.empty) return;
+    [self renameWithArrayForTag:@"title"];
+}
+
 - (void) renameWithArrayForTag:(id)tag
 {
     NSString *msg = [NSString stringWithFormat:@"New names for the %@ tag:", [tag capitalizedString]];

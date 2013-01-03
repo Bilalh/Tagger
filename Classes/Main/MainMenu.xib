@@ -1139,6 +1139,14 @@
 									<reference key="NSOnImage" ref="35465992"/>
 									<reference key="NSMixedImage" ref="502551668"/>
 								</object>
+								<object class="NSMenuItem" id="413434864">
+									<reference key="NSMenu" ref="397990970"/>
+									<string key="NSTitle">Rename Titles using Names</string>
+									<string key="NSKeyEquiv"/>
+									<int key="NSMnemonicLoc">2147483647</int>
+									<reference key="NSOnImage" ref="35465992"/>
+									<reference key="NSMixedImage" ref="502551668"/>
+								</object>
 							</array>
 						</object>
 					</object>
@@ -4981,6 +4989,14 @@ wGw</bytes>
 					<int key="connectionID">1643</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">renameTitlesWithNames:</string>
+						<reference key="source" ref="588631224"/>
+						<reference key="destination" ref="413434864"/>
+					</object>
+					<int key="connectionID">1647</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">enabled: vgmdbEnable</string>
 						<reference key="source" ref="459541536"/>
@@ -6050,6 +6066,22 @@ wGw</bytes>
 					</object>
 					<int key="connectionID">1640</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: currentNodes.hasBasicMetadata</string>
+						<reference key="source" ref="413434864"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="413434864"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: currentNodes.hasBasicMetadata</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">currentNodes.hasBasicMetadata</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1645</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -6963,6 +6995,7 @@ wGw</bytes>
 							<reference ref="420508456"/>
 							<reference ref="377484196"/>
 							<reference ref="568631955"/>
+							<reference ref="413434864"/>
 						</array>
 						<reference key="parent" ref="1036655123"/>
 					</object>
@@ -8242,6 +8275,11 @@ wGw</bytes>
 						<reference key="object" ref="568631955"/>
 						<reference key="parent" ref="397990970"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1644</int>
+						<reference key="object" ref="413434864"/>
+						<reference key="parent" ref="397990970"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -8403,6 +8441,7 @@ wGw</bytes>
 				<string key="1634.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1635.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1639.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1644.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="19.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="195.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="196.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -8610,7 +8649,7 @@ wGw</bytes>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1643</int>
+			<int key="maxID">1647</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -8656,25 +8695,20 @@ wGw</bytes>
 						<string key="gotoNextRow:">id</string>
 						<string key="gotoPreviousRow:">id</string>
 						<string key="lowercaseTags:">id</string>
-						<string key="onClick:">id</string>
 						<string key="open:">id</string>
 						<string key="openDirectory:">id</string>
-						<string key="openDonate:">id</string>
 						<string key="openHomePage:">id</string>
 						<string key="openInTerminal:">id</string>
 						<string key="openIssues:">id</string>
-						<string key="performBlockOnTags:tagNames:block:">id</string>
 						<string key="refresh:">id</string>
 						<string key="rename:">id</string>
 						<string key="renameArtistsWithNames:">id</string>
-						<string key="renameWithPredefinedFormat:">id</string>
 						<string key="renumberFiles:">id</string>
 						<string key="reopen:">id</string>
 						<string key="revealInFinder:">id</string>
 						<string key="search:">id</string>
 						<string key="searchWithSubDirectories:">id</string>
 						<string key="swapFirstAndLastName:">id</string>
-						<string key="tagWithPredefinedFormat:">id</string>
 						<string key="tagsFromFilename:">id</string>
 						<string key="toggleRightSubView:">id</string>
 						<string key="trimWhitespace:">id</string>
@@ -8737,20 +8771,12 @@ wGw</bytes>
 							<string key="name">lowercaseTags:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="onClick:">
-							<string key="name">onClick:</string>
-							<string key="candidateClassName">id</string>
-						</object>
 						<object class="IBActionInfo" key="open:">
 							<string key="name">open:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="openDirectory:">
 							<string key="name">openDirectory:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="openDonate:">
-							<string key="name">openDonate:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="openHomePage:">
@@ -8765,10 +8791,6 @@ wGw</bytes>
 							<string key="name">openIssues:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="performBlockOnTags:tagNames:block:">
-							<string key="name">performBlockOnTags:tagNames:block:</string>
-							<string key="candidateClassName">id</string>
-						</object>
 						<object class="IBActionInfo" key="refresh:">
 							<string key="name">refresh:</string>
 							<string key="candidateClassName">id</string>
@@ -8779,10 +8801,6 @@ wGw</bytes>
 						</object>
 						<object class="IBActionInfo" key="renameArtistsWithNames:">
 							<string key="name">renameArtistsWithNames:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="renameWithPredefinedFormat:">
-							<string key="name">renameWithPredefinedFormat:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="renumberFiles:">
@@ -8807,10 +8825,6 @@ wGw</bytes>
 						</object>
 						<object class="IBActionInfo" key="swapFirstAndLastName:">
 							<string key="name">swapFirstAndLastName:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="tagWithPredefinedFormat:">
-							<string key="name">tagWithPredefinedFormat:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="tagsFromFilename:">
