@@ -486,6 +486,7 @@ string _html;
     [data setValue:prods forKey:@"products"];
     
     Node *nplat = nprod->next_sibling->next_sibling;
+    if (!nplat) return;
     if (nplat->last_child){
         string _plat = nplat->last_child->data.text();
         NSString *plat = [NSString stringWithCppStringTrimmed:&_plat];
