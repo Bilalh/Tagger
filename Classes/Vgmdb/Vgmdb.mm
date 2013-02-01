@@ -266,7 +266,9 @@ using namespace hcxselect;
                 if (!track){
                     Node *trackLen = trackTitle->next_sibling->next_sibling;
                     NSString *len = [self textFromNode:trackLen];
-                    
+                    if ([len  stringByMatching:@"(.*<span.*?time.>)"] != NULL){
+                        len = @"?:??";
+                    }
                     track = @{
                     @"title":  [NSMutableDictionary new],
                     @"track":  @(num),
