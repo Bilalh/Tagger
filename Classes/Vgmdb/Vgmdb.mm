@@ -55,17 +55,16 @@ using namespace hcxselect;
 
 + (void)initialize
 {
-    namesMap = [NSDictionary dictionaryWithObjectsAndKeys:
-                @"english", @"en",
-                @"kanji",   @"ja",
-                @"romaji",  @"ja-Latn",
-                @"english", @"English",
-                @"kanji",   @"Japanese",
-                @"romaji",  @"Romaji",
-                @"latin",   @"Latin",
-                @"english_offical",   @"English (Official)",
-                @"english_literal",   @"English Literal",
-                nil];
+    namesMap = @{@"en":      @"english",
+                @"ja":       @"kanji",
+                @"ja-Latn":  @"romaji",
+                @"English":  @"english",
+                @"Japanese": @"kanji",
+                @"Romaji":   @"romaji",
+                @"Latin":    @"other",
+                @"English (Official)":  @"other",
+                @"English (localized)": @"other",
+                @"English Literal":     @"other"};
 }
 
 #pragma mark -
@@ -141,12 +140,10 @@ using namespace hcxselect;
             string _year = year_t->data.text();
             NSString *year = [[NSString alloc] initWithCppString:&_year];
 
-            [rows addObject:[NSDictionary dictionaryWithObjectsAndKeys:
-                             catalog, @"catalog" ,
-                             year,    @"released",
-                             album,   @"album",
-                             url,     @"url",
-                             nil]];
+            [rows addObject:@{@"catalog": catalog ,
+                             @"released": year,
+                             @"album": album,
+                             @"url": url}];
         }
         
         delete html;
@@ -215,7 +212,7 @@ using namespace hcxselect;
         string text =n->first_child->data.text();
         
         NSString *_lang = [NSString stringWithCppStringTrimmed:&text];
-        NSString *lang = [namesMap objectForKey:_lang];
+        NSString *lang = namesMap[_lang];
         
         n->data.parseAttributes();
         map<string, string> att= n->data.attributes();
@@ -224,7 +221,7 @@ using namespace hcxselect;
         string _rel  = itLang->second;
         NSString *rel =  [NSString stringWithCppStringTrimmed:&_rel];
 //        assert(lang != nil);
-        DDLogError(@"vgmdb lang is null _lang:%@", _lang);
+        if (!lang) DDLogError(@"vgmdb lang is null _lang:%@", _lang);
         if (!lang){
             if (!_lang){
                 lang = @"english";

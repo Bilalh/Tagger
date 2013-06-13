@@ -1073,7 +1073,7 @@
 					"$(SRCROOT)/Frameworks",
 					/usr/local/lib/,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-I/usr/local/include/taglib",
@@ -1124,7 +1124,7 @@
 					"$(SRCROOT)/Frameworks",
 					/usr/local/lib/,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-I/usr/local/include/taglib",
