@@ -223,7 +223,21 @@ using namespace hcxselect;
         
         string _rel  = itLang->second;
         NSString *rel =  [NSString stringWithCppStringTrimmed:&_rel];
-        assert(lang != nil);
+//        assert(lang != nil);
+        DDLogError(@"vgmdb lang is null _lang:%@", _lang);
+        if (!lang){
+            if (!_lang){
+                lang = @"english";
+            }else if ([_lang rangeOfString:@"latin" options:NSCaseInsensitiveSearch].length > 0){
+                lang= @"latin";
+            }else if ([_lang rangeOfString:@"kanji" options:NSCaseInsensitiveSearch].length > 0){
+                lang = @"kanji";
+            }else if ([_lang rangeOfString:@"romaji" options:NSCaseInsensitiveSearch].length > 0){
+                lang = @"romaji";
+            }else{
+                lang = @"english";
+            }
+        }
         NSDictionary *map = @{ @"lang" : lang, @"ref" : rel };
         [refs addObject:map];
     }
