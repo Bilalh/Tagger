@@ -9,14 +9,14 @@ Version 1.7
 * Label column.
 * Renaming Artists using a user specified list of names
 * Renaming Tracks using a user specified list of names
+* Allow searching for a album using an URL
+* Support rarer languages such as English (Official)  and English (Localized)
 
 ### Improvements ###
 * Uses taglib 1.8 hence it faster.
 * Handles arranger and Performer missing for metadata searching
 * Assigns the selected file to $f in the Terminal.
 
-### Bug Fixes ### 
-* Handle English (Official) in http://vgmdb.net/album/34827
 
 
 Version 1.6.2 (Sat 22 Sep 2012)

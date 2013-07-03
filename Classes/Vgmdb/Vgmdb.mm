@@ -64,6 +64,7 @@ using namespace hcxselect;
                 @"Latin":    @"other",
                 @"English (Official)":  @"other",
                 @"English (localized)": @"other",
+                @"English (Localized)": @"other",
                 @"English Literal":     @"other"};
 }
 
@@ -72,6 +73,11 @@ using namespace hcxselect;
 
 - (id) searchResults:(NSString*)search
 {
+    if ([search isMatchedByRegex:@"^http://vgmdb.net/album/\\d+$"]){
+        DDLogInfo(@"getting results directly for url: %@",search);
+        NSDictionary *res = [self getAlbumData: [NSURL URLWithString:search  ]];
+        return res;
+    }
     NSString *baseUrl = @"http://vgmdb.net/search?q=";
     NSString *tmp = [baseUrl stringByAppendingString:search];
     NSString *_url = [tmp stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
