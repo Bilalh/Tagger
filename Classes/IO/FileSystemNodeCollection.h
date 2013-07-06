@@ -148,4 +148,9 @@
 @property  (nonatomic) NSString *composerSort;
 @property  (nonatomic) NSString *albumArtistSort;
 
+/// @name Misc
+
+/// The Isrc of the file
+@property (strong,nonatomic) NSString *isrc;
+
 @end
