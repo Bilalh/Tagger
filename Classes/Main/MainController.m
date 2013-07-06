@@ -141,7 +141,6 @@ static const NSArray *swapMenuValues;
 
 - (NSString *)stringFromSeconds:(NSInteger)oseconds
 {
-    oseconds = oseconds / 100;
 	if (oseconds<60){
 		return([NSString stringWithFormat:@"00:%02zd",oseconds]);
     }
@@ -299,7 +298,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
         return @"";
         
     }else if ([[aTableColumn identifier] isEqualToString:@"length"]){
-		return [self stringFromSeconds:node.tags.length];
+		return [self stringFromSeconds:[node.tags.length integerValue]];
 	}else if ([[aTableColumn identifier] isEqualToString:@"size"]){
 		return [self stringFromFileSize:[[node size] integerValue]];
     }
