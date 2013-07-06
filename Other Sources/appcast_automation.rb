@@ -104,7 +104,7 @@ class AppCast
 
 	def copy_archive_to_appcast_path
 		begin
-			FileUtils.cp(@archive_path, @appcast_proj_folder)
+			FileUtils.mv(@archive_path, @appcast_proj_folder)
 		rescue
 			log_message("There was an error copying the zip file to appcast folder\nError: #{$!}")
 		end
