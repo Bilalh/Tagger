@@ -144,7 +144,7 @@ using namespace Fields::MPEG;
 
 
 - (bool) setFieldWithString:(const char*)field
-					   data:(NSString *)newValue
+					   value:(NSString *)newValue
 {
 	DDLogVerbose(@"%s '%@'", field, newValue);
 	(TagLib::ID3v2::FrameFactory::instance())->setDefaultTextEncoding(TagLib::String::UTF8);
@@ -176,7 +176,7 @@ using namespace Fields::MPEG;
 		DDLogVerbose(@"3 %@",text);
 	}
 	
-	[self setFieldWithString:field data:text];		
+	[self setFieldWithString:field value:text];		
 }
 
 #pragma mark -
@@ -191,31 +191,31 @@ using namespace Fields::MPEG;
 - (void) setAlbumArtist:(NSString *)newValue
 { 
 	TAG_SETTER_START(albumArtist);
-	[self setFieldWithString:ALBUM_ARTIST data:newValue];
+	[self setFieldWithString:ALBUM_ARTIST value:newValue];
 }
 
 - (void) setComposer:(NSString *)newValue
 {
 	TAG_SETTER_START(composer);
-	[self setFieldWithString:COMPOSER data:newValue];
+	[self setFieldWithString:COMPOSER value:newValue];
 }
 
 - (void) setGrouping:(NSString *)newValue
 { 
 	TAG_SETTER_START(grouping);
-	[self setFieldWithString:GROUPING data:newValue];
+	[self setFieldWithString:GROUPING value:newValue];
 }
 
 - (void) setBpm:(NSNumber *)newValue
 {
 	TAG_SETTER_START(bpm);
-	[self setFieldWithString:BPM data:[newValue stringValue]];	
+	[self setFieldWithString:BPM value:[newValue stringValue]];	
 }
 
 - (void) setCompilation:(NSNumber *)newValue
 {
 	TAG_SETTER_START(compilation);
-	[self setFieldWithString:COMPILATION data:[newValue boolValue] ? @"1" : nil ];		
+	[self setFieldWithString:COMPILATION value:[newValue boolValue] ? @"1" : nil ];		
 }
 
 - (void) setTrack:(NSNumber *)newValue
@@ -245,37 +245,37 @@ using namespace Fields::MPEG;
 - (void) setUrl:(NSString *)newValue
 {
 	TAG_SETTER_START(url);
-	[self setFieldWithString:URL data:newValue];
+	[self setFieldWithString:URL value:newValue];
 }
 
 - (void) setArtistSort:(NSString *)newValue
 {
 	TAG_SETTER_START(artistSort);
-	[self setFieldWithString:ARTIST_SORT data:newValue];
+	[self setFieldWithString:ARTIST_SORT value:newValue];
 }
 
 - (void) setAlbumSort:(NSString *)newValue
 {
 	TAG_SETTER_START(albumSort);
-	[self setFieldWithString:ALBUM_SORT data:newValue];
+	[self setFieldWithString:ALBUM_SORT value:newValue];
 }
 
 - (void) setTitleSort:(NSString *)newValue
 {
 	TAG_SETTER_START(titleSort);
-	[self setFieldWithString:TITLE_SORT data:newValue];
+	[self setFieldWithString:TITLE_SORT value:newValue];
 }
 
 - (void) setComposerSort:(NSString *)newValue
 {
 	TAG_SETTER_START(composerSort);
-	[self setFieldWithString:COMPOSER_SORT data:newValue];
+	[self setFieldWithString:COMPOSER_SORT value:newValue];
 }
 
 - (void) setAlbumArtistSort:(NSString *)newValue
 {
 	TAG_SETTER_START(albumArtistSort);
-	[self setFieldWithString:ALBUM_ARTIST_SORT data:newValue];
+	[self setFieldWithString:ALBUM_ARTIST_SORT value:newValue];
 }
 
 
@@ -297,7 +297,7 @@ using namespace Fields::MPEG;
 - (void) setIsrc:(NSString*)newValue
 {
 	TAG_SETTER_START(isrc);
-	[self setFieldWithString:ISRC data:newValue];
+	[self setFieldWithString:ISRC value:newValue];
 }
 
 
