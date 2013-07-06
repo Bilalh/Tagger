@@ -270,7 +270,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	if ( [[aTableColumn identifier] isEqualToString:@"filename"] ){
 		return [node displayName];
     }else if ([[aTableColumn identifier] isEqualToString:@"labelIndex"]){
-        return [[node labelIndex] stringValue];
+        return @"";
 	}else if ([node isDirectory]){
 		return @"";
 	}else if ([[aTableColumn identifier] isEqualToString:@"size"]){

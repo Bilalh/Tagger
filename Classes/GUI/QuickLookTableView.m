@@ -34,9 +34,16 @@
 // with nice rounded side if there is a label colour.
 - (void)drawRow:(NSInteger)row clipRect:(NSRect)clipRect;
 {
-	NSIndexSet *selectedRowIndexes = [self selectedRowIndexes];
+	[self addLabelColourFor:clipRect row:row columnName:@"filename"];
+    [self addLabelColourFor:clipRect row:row columnName:@"labelIndex"];
+
+}
+
+- (void)addLabelColourFor:(NSRect)clipRect row:(NSInteger)row columnName:(NSString *)columnName
+{
+    NSIndexSet *selectedRowIndexes = [self selectedRowIndexes];
 	if ([selectedRowIndexes containsIndex:row]){
-				
+        
 		// draw a "dot" of color, similar to what the Finder does, 
 		NSInteger labelIndex = BHLabelColorNone;
 		if ([[self dataSource] respondsToSelector:@selector(labelColorForRow:)]) {
@@ -47,7 +54,7 @@
 		if (gradient)
 		{			
 			NSRect rowRect = [self rectOfRow:row];
-			NSRect colRect = [self rectOfColumn: [self columnWithIdentifier:@"filename"]];
+			NSRect colRect = [self rectOfColumn: [self columnWithIdentifier:columnName]];
 			rowRect.origin.x   = colRect.origin.x;
 			rowRect.size.width = colRect.size.width;
 			NSRect gradientRect = 
@@ -72,7 +79,7 @@
 		if (gradient && ![[self selectedRowIndexes] containsIndex:row])
 		{
 			NSRect rowRect = [self rectOfRow:row];
-			NSRect colRect = [self rectOfColumn: [self columnWithIdentifier:@"filename"]];
+			NSRect colRect = [self rectOfColumn: [self columnWithIdentifier:columnName]];
 			rowRect.origin.x   = colRect.origin.x;
 			rowRect.size.width = colRect.size.width;
 			
@@ -90,6 +97,7 @@
 		[super drawRow:row clipRect:clipRect];	
 	}
 }
+
 
 
 - (void) awakeFromNib
