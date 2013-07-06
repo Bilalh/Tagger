@@ -84,7 +84,7 @@ using namespace Fields::MPEG;
 		}	
 	}
 
-	temp  = [self getFieldWithString:DISK_NUMBER];
+	temp  = [self getFieldWithString:DISC_NUMBER];
 	if (temp){
 		range = [temp rangeOfString:@"/" options:NSLiteralSearch];
 		
@@ -230,13 +230,13 @@ using namespace Fields::MPEG;
 - (void) setDisc:(NSNumber *)newValue
 {
 	TAG_SETTER_START(disc);
-	[self setNumberPair:DISK_NUMBER firstValue:disc secondValue:totalDiscs];
+	[self setNumberPair:DISC_NUMBER firstValue:disc secondValue:totalDiscs];
 }
 
 - (void) setTotalDiscs:(NSNumber *)newValue
 {
 	TAG_SETTER_START(totalDiscs);
-	[self setNumberPair:DISK_NUMBER firstValue:disc secondValue:totalDiscs];
+	[self setNumberPair:DISC_NUMBER firstValue:disc secondValue:totalDiscs];
 }
 
 - (void) setUrl:(NSString *)newValue

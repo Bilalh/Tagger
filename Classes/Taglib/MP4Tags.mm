@@ -52,7 +52,7 @@ using namespace std;
 {	
 	[super initFields];	
 	const MP4::Item::IntPair tracks = [self getField:TRACK_NUMBER].toIntPair();
-	const MP4::Item::IntPair discs  = [self getField:DISK_NUMBER].toIntPair();
+	const MP4::Item::IntPair discs  = [self getField:DISC_NUMBER].toIntPair();
 	MP4::CoverArtList coverList;
 	int i;
 	
@@ -182,13 +182,13 @@ using namespace std;
 - (void) setDisc:(NSNumber *)newValue
 {
 	TAG_SETTER_START(disc);
-	[self setField:DISK_NUMBER value:MP4::Item([newValue intValue], [totalDiscs intValue])];
+	[self setField:DISC_NUMBER value:MP4::Item([newValue intValue], [totalDiscs intValue])];
 }
 
 - (void) setTotalDiscs:(NSNumber *)newValue
 {
 	TAG_SETTER_START(totalDiscs);
-	[self setField:DISK_NUMBER value:MP4::Item([disc intValue], [newValue intValue])];
+	[self setField:DISC_NUMBER value:MP4::Item([disc intValue], [newValue intValue])];
 }
 
 - (void) setCompilation:(NSNumber *)newValue
