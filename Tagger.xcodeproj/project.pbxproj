@@ -179,6 +179,7 @@
 		921FBBEB140C682100D1CBE8 /* ArrayDefaultsPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrayDefaultsPreferencesViewController.m; sourceTree = "<group>"; };
 		921FBBED140C68AF00D1CBE8 /* ArrayDefaultsPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArrayDefaultsPreferencesView.xib; sourceTree = "<group>"; };
 		9228998E17885CD5002A59A0 /* fields.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = fields.txt; sourceTree = "<group>"; };
+		9228998F178862EA002A59A0 /* make_fields.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = make_fields.rb; sourceTree = "<group>"; };
 		922D865F13F4E4430016B811 /* Tagger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tagger.png; sourceTree = "<group>"; };
 		922D866613F4E4EE0016B811 /* Tagger.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Tagger.icns; path = ../Tagger.icns; sourceTree = "<group>"; };
 		922D866813F4E54B0016B811 /* Tagger.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Tagger.svg; sourceTree = "<group>"; };
@@ -710,6 +711,7 @@
 		92E6ED9F13F313230045679E /* Taglib */ = {
 			isa = PBXGroup;
 			children = (
+				9228998F178862EA002A59A0 /* make_fields.rb */,
 				9228998E17885CD5002A59A0 /* fields.txt */,
 				92E6EDA013F313230045679E /* Fields.h */,
 				92DBDEAC14AAB99A009434DB /* fields.cpp */,
