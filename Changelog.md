@@ -1,11 +1,6 @@
 Changelog
 =========
 
-Version 1.8
------------
-### Features ###
-* Length field formatted as time
-
 
 Version 1.7 Beta (Sat 06 Jul 2013)
 -----------
@@ -17,6 +12,8 @@ Version 1.7 Beta (Sat 06 Jul 2013)
 * Renaming Tracks using a user specified list of names
 * Allow searching for a album using an URL
 * Support rarer languages such as English (Official)  and English (Localized)
+* Length field formatted as time
+* ISRC field
 
 ### Improvements ###
 * Uses taglib 1.8 hence it faster.
