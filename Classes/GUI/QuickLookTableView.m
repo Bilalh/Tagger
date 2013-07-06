@@ -51,7 +51,7 @@
 			rowRect.origin.x   = colRect.origin.x;
 			rowRect.size.width = colRect.size.width;
 			NSRect gradientRect = 
-			NSMakeRect(2, 
+			NSMakeRect(colRect.origin.x+2,
 					   ([self rowHeight]+[self intercellSpacing].height)*row + 1.0, 
 					   20.0, 
 					   rowRect.size.height - 2.0);
@@ -76,7 +76,7 @@
 			rowRect.origin.x   = colRect.origin.x;
 			rowRect.size.width = colRect.size.width;
 			
-			NSRect gradientRect = NSMakeRect(0, 
+			NSRect gradientRect = NSMakeRect(colRect.origin.x, 
 											 ([self rowHeight]+[self intercellSpacing].height)*row + 1.0, 
 											 rowRect.size.width - 4.0, 
 											 rowRect.size.height - 2.0);
