@@ -1,6 +1,12 @@
 Changelog
 =========
 
+Version 1.8
+-----------
+### Features ###
+* Length field formatted as time
+
+
 Version 1.7 Beta (Sat 06 Jul 2013)
 -----------
 

@@ -139,6 +139,24 @@ static const NSArray *swapMenuValues;
 
 
 
+- (NSString *)stringFromSeconds:(NSInteger)oseconds
+{
+    oseconds = oseconds / 100;
+	if (oseconds<60){
+		return([NSString stringWithFormat:@"00:%02zd",oseconds]);
+    }
+    NSInteger minutes = oseconds / 60;
+    if (minutes < 60){
+        NSInteger seconds = oseconds % 60;
+        return([NSString stringWithFormat:@"%02zd:%02zd",minutes,seconds]);
+    }
+    NSInteger hours = minutes / 60;
+    minutes = hours % 60;
+    NSInteger seconds = minutes % 60;
+    return([NSString stringWithFormat:@"%02zd:%02zd:%02zd",hours,minutes,seconds]);
+}
+
+
 - (NSString *)stringFromFileSize:(NSInteger)size
 {
 	double floatSize = size;
@@ -266,19 +284,24 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	NSArray *children = [[directoryStack lastObject] children];
 	FileSystemNode *node = [children objectAtIndex:rowIndex];
 	
-	
 	if ( [[aTableColumn identifier] isEqualToString:@"filename"] ){
 		return [node displayName];
-    }else if ([[aTableColumn identifier] isEqualToString:@"labelIndex"]){
-        return @"";
+
 	}else if ([node isDirectory]){
 		return @"";
-	}else if ([[aTableColumn identifier] isEqualToString:@"size"]){
-		return [self stringFromFileSize:[[node size] integerValue]];
-	}else if ([[aTableColumn identifier] isEqualToString:@"trackPair"]){
+    
+    }else if ([[aTableColumn identifier] isEqualToString:@"trackPair"]){
 		return [self formatPair:node.tags.track second:node.tags.totalTracks];
 	}else if ([[aTableColumn identifier] isEqualToString:@"discPair"]){
-		return [self formatPair:node.tags.disc second:node.tags.totalDiscs];		
+		return [self formatPair:node.tags.disc second:node.tags.totalDiscs];
+
+    }else if ([[aTableColumn identifier] isEqualToString:@"labelIndex"]){
+        return @"";
+        
+    }else if ([[aTableColumn identifier] isEqualToString:@"length"]){
+		return [self stringFromSeconds:node.tags.length];
+	}else if ([[aTableColumn identifier] isEqualToString:@"size"]){
+		return [self stringFromFileSize:[[node size] integerValue]];
     }
 	
 	return [node.tags valueForKey:[aTableColumn identifier]];
