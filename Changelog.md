@@ -1,7 +1,7 @@
 Changelog
 =========
 
-Version 1.7
+Version 1.7 Beta (Sat 06 Jul 2013)
 -----------
 
 ### Features ###
