@@ -41,6 +41,10 @@
 
 - (void)addLabelColourFor:(NSRect)clipRect row:(NSInteger)row columnName:(NSString *)columnName
 {
+    if ([[self tableColumnWithIdentifier:columnName] isHidden]){
+        return;
+    }
+    
     NSIndexSet *selectedRowIndexes = [self selectedRowIndexes];
 	if ([selectedRowIndexes containsIndex:row]){
         
