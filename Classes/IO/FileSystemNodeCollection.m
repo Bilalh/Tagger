@@ -272,7 +272,7 @@ n.tags.field = newValue;                                              \
 - (void) setComposer                  :(NSString*)newValue {SETTER_METHOD_FSN(newValue, composer )}
 - (void) setGrouping                  :(NSString*)newValue {SETTER_METHOD_FSN(newValue, grouping )}
 - (void) setDisc                      :(NSNumber*)newValue {SETTER_METHOD_FSN(newValue, disc )}
-- (void) setCover                     :(NSImage*)newValue {SETTER_METHOD_FSN(newValue, cover )}
+- (void) setCover                     :(NSImage*)newValue  {SETTER_METHOD_FSN(newValue, cover )}
 - (void) setBpm                       :(NSNumber*)newValue {SETTER_METHOD_FSN(newValue, bpm )}
 - (void) setCompilation               :(NSNumber*)newValue {SETTER_METHOD_FSN(newValue, compilation )}
 - (void) setArtistSort                :(NSString*)newValue {SETTER_METHOD_FSN(newValue, artistSort )}
