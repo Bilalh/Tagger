@@ -81,7 +81,12 @@ using namespace std;
 	titleSort  = [self getFieldWithString:TITLE_SORT];
 	
 	composerSort    = [self getFieldWithString:COMPOSER_SORT];
-	albumArtistSort = [self getFieldWithString:ALBUM_ARTIST_SORT];}
+	albumArtistSort = [self getFieldWithString:ALBUM_ARTIST_SORT];
+
+    // Misc
+    isrc                       = [self getFieldWithString:ISRC];
+    
+}
 
 
 #pragma mark -
@@ -233,6 +238,14 @@ using namespace std;
 	[self setFieldWithString:ALBUM_ARTIST_SORT value:newValue];
 }
 
+
+// Misc
+
+- (void) setIsrc:(NSString*)newValue
+{
+	TAG_SETTER_START(isrc);
+	[self setFieldWithString:ISRC value:newValue];
+}
 
 // need fixing?
 - (void) setCover:(NSImage *)newValue

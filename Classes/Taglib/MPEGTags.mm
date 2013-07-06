@@ -111,6 +111,9 @@ using namespace Fields::MPEG;
 	composerSort    = [self getFieldWithString:COMPOSER_SORT];
 	albumArtistSort = [self getFieldWithString:ALBUM_ARTIST_SORT];
 
+    // Misc
+    
+    isrc                       = [self getFieldWithString:ISRC];
 	
 	[self initCover];
 }
@@ -290,6 +293,13 @@ using namespace Fields::MPEG;
 	}
 	data->file->save();
 }
+
+- (void) setIsrc:(NSString*)newValue
+{
+	TAG_SETTER_START(isrc);
+	[self setFieldWithString:ISRC data:newValue];
+}
+
 
 #pragma mark - Cover
 

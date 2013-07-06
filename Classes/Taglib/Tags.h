@@ -42,6 +42,12 @@ struct FileData;
 	NSString *titleSort;
 	NSString *composerSort;
 	NSString *albumArtistSort;
+    
+
+    // Misc
+    NSString *isrc;
+
+    
 }
 
 /// @name Initializing an Tags Object
@@ -143,6 +149,12 @@ struct FileData;
 @property (strong,nonatomic) NSString *titleSort;
 @property (strong,nonatomic) NSString *composerSort;
 @property (strong,nonatomic) NSString *albumArtistSort;
+
+
+/// @name Misc
+
+/// The Isrc of the file
+@property (strong,nonatomic) NSString *isrc;
 
 
 @end
