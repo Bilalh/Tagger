@@ -508,6 +508,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 			}
 		}
 		
+
+        
 		id newValue = [data objectForKey:@"title"];
 		if ([newValue isKindOfClass:[NSDictionary class]]){
 			newValue = [Utility stringFromLanguages:newValue selectedLanguage: &tracklanguage];
@@ -523,9 +525,12 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 		NSString *key = @"cover";
 		if ([[[fieldProperties valueForKey:key] valueForKey:@"write"] boolValue]){
 			[tags setValue:[fieldValues objectForKey:key]  
-					forKey:key];	
+					forKey:key];
 		}
-		
+        
+        // HAS to go after setting the track#
+        NSNumber *num_track_in_disc = albumDetails[@"disc_tracks"][[tags.disc integerValue] - 1 ];
+        [tags setValue:num_track_in_disc forKey:@"totalTracks"];
 	}
 	
 	

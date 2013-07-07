@@ -3,8 +3,8 @@ Changelog
 
 Version Next
 ------------
-### Improvements ###
-Store number of tracks on each disc.
+### Features ###
+* Set the total number of tracks on each disc when auto tagging.
 
 
 Version 1.7 Beta (Sat 06 Jul 2013)
