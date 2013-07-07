@@ -206,7 +206,7 @@ using namespace hcxselect;
 
 - (void) storeTracks:(const tree<htmlcxx::HTML::Node>&)dom
             forHtml:(const std::string&)html
-                 in:(NSDictionary*)data
+                 in:(NSMutableDictionary*)data
 {
     
     Selector s(dom);
@@ -246,7 +246,6 @@ using namespace hcxselect;
     }
     
     NSMutableDictionary *tracks = [NSMutableDictionary new];
-    
     int totalTracks = 0;
     for (NSDictionary *ref in refs) {
         NSString *_sel = [NSString stringWithFormat:@"span#%@>table", [ref valueForKey:@"ref"]];
@@ -259,6 +258,9 @@ using namespace hcxselect;
         [data setValue:@(num_discs) forKey:@"totalDiscs"];
         
         int disc_num = 1;
+        int disc_tracks[num_discs];
+        memset(disc_tracks, 0, sizeof(int)*num_discs);
+        
         for (Selector::iterator it = discTables.begin(); it != discTables.end(); ++it) {
             Node *disc = *it;
             Node *track_tr = disc->first_child;
@@ -295,7 +297,8 @@ using namespace hcxselect;
                     [tracks setValue:track forKey:key];
                     totalTracks++;
                 }
-                
+                disc_tracks[disc_num-1]++;
+
                 [[track valueForKey:@"title"] setValue:title forKey:[ref valueForKey:@"lang"]];
                 
                 track_tr = track_tr->next_sibling;
@@ -305,6 +308,10 @@ using namespace hcxselect;
             disc_num++;
         }
         [data setValue:tracks forKey:@"tracks"];
+        NSMutableArray *t = [[NSMutableArray alloc] initWithCapacity:num_discs];
+		for(size_t i = 0; i < num_discs; ++i) t[i]  = @(disc_tracks[i]);
+        DDLogRelease(@"%@",t);
+        data[@"disc_tracks"] = t;
     }
     [data setValue:@(totalTracks) forKey:@"totalTracks"];
     

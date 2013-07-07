@@ -1,6 +1,11 @@
 Changelog
 =========
 
+Version Next
+------------
+### Improvements ###
+Store number of tracks on each disc.
+
 
 Version 1.7 Beta (Sat 06 Jul 2013)
 -----------
