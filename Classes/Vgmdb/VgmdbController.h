@@ -26,6 +26,7 @@
 	
 	DisplayController *ssc;
 	Tags *tags;
+    NSString *directory;
 	NSTableView *mainTable;
 	
 	NSString *currentColumnKey;

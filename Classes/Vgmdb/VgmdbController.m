@@ -20,11 +20,6 @@ LOG_LEVEL(LOG_LEVEL_INFO);
 static NSArray *dateFormats;
 static NSMutableDictionary *dates;
 
-@interface VgmdbController()
-- (IBAction)confirmSheet:sender;
-- (IBAction) onClick:(id)sender;
-- (void) makeDates;
-@end
 
 @implementation VgmdbController
 @synthesize files, query;
@@ -93,9 +88,11 @@ static NSMutableDictionary *dates;
 #pragma mark -
 #pragma mark Query Setting
 
-- (IBAction) useAlbumForQuery:(id)sender   { self.query = tags.album; }
-- (IBAction) useArtistForQuery:(id)sender  { self.query = tags.artist; }
-- (IBAction) useCommentForQuery:(id)sender { self.query = tags.comment; }
+- (IBAction) useAlbumForQuery:(id)sender     { self.query = tags.album;   }
+- (IBAction) useArtistForQuery:(id)sender    { self.query = tags.artist;  }
+- (IBAction) useCommentForQuery:(id)sender   { self.query = tags.comment; }
+- (IBAction) useDirectoryForQuery:(id)sender { self.query = directory;    }
+
 
 
 #pragma mark -
@@ -279,7 +276,10 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[selectAlbumButton setEnabled:NO];
 	searchResults = [[NSArray alloc] init];
 	[table reloadData];
-	tags = 	[[files objectAtIndex:0 ] tags];
+	tags = 	[files[0] tags];
+    
+    NSArray *comps = [[[files[0] URL] filePathURL] pathComponents];
+    directory = comps[ [comps count] - 2 ];
 }
 
 

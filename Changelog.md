@@ -4,7 +4,11 @@ Changelog
 Version Next
 ------------
 ### Features ###
-* Set the total number of tracks on each disc when auto tagging.
+* Sets the total number of tracks on each disc when auto tagging.
+* Button to use the directory name as the search query
+
+### Improvements ###
+* Improvements to the auto taggering gui
 
 
 Version 1.7 Beta (Sat 06 Jul 2013)
