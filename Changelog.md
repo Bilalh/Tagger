@@ -6,6 +6,7 @@ Version Next
 ### Features ###
 * Sets the total number of tracks on each disc when auto tagging.
 * Button to use the directory name as the search query
+* Release date field
 
 ### Improvements ###
 * Improvements to the auto taggering gui

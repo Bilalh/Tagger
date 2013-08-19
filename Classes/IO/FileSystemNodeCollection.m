@@ -28,14 +28,14 @@ static const NSArray *fieldNames;
 @synthesize title, artist, album, comment, genre, year, track, length;
 @synthesize albumArtist, composer, grouping, bpm, totalTracks, disc, totalDiscs, compilation, url, cover;
 @dynamic urls;
-@synthesize albumSort, artistSort, titleSort, composerSort, albumArtistSort, isrc;
+@synthesize albumSort, artistSort, titleSort, composerSort, albumArtistSort, isrc,releaseDate;
 
 #pragma mark -
 #pragma mark Init
 
 + (void)initialize
 {
-	tagFieldNames = [[NSArray alloc] initWithObjects:
+	tagFieldNames = @[
 				  @"title", @"album" ,
 				  @"artist", @"albumArtist",
 				  @"genre", @"grouping",
@@ -46,8 +46,8 @@ static const NSArray *fieldNames;
 				  @"comment", @"cover", @"url",
 			      @"artistSort", @"albumSort", @"titleSort",
 				  @"composerSort", @"albumArtistSort",
-                  @"isrc",
-				  nil];
+                  @"isrc", @"releaseDate",
+				  ];
 	fieldNames = [[NSArray alloc] initWithObjects:
 				  @"labelColor", @"labelIndex",
 				  nil];
@@ -281,6 +281,7 @@ n.tags.field = newValue;                                              \
 - (void) setTitleSort                 :(NSString*)newValue {SETTER_METHOD_FSN(newValue, titleSort )}
 - (void) setComposerSort              :(NSString*)newValue {SETTER_METHOD_FSN(newValue, composerSort )}
 - (void) setIsrc                      :(NSString*)newValue {SETTER_METHOD_FSN(newValue, isrc )}
+- (void) setReleaseDate               :(NSString*)newValue {SETTER_METHOD_FSN(newValue, releaseDate )}
 - (void) setUrl                       :(NSString*)newValue {SETTER_METHOD_FSN(newValue, url )}
 - (void) setTotalTracks               :(NSNumber*)newValue {SETTER_METHOD_FSN(newValue, totalTracks )}
 - (void) setTotalDiscs                :(NSNumber*)newValue {SETTER_METHOD_FSN(newValue, totalDiscs )}

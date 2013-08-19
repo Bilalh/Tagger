@@ -84,7 +84,8 @@ using namespace std;
 	albumArtistSort = [self getFieldWithString:ALBUM_ARTIST_SORT];
 
     // Misc
-    isrc                       = [self getFieldWithString:ISRC];
+    isrc        = [self getFieldWithString:ISRC];
+    releaseDate = [self getFieldWithString:RELEASE_DATE];
     
 }
 
@@ -239,12 +240,19 @@ using namespace std;
 }
 
 
+
 // Misc
 
 - (void) setIsrc:(NSString*)newValue
 {
 	TAG_SETTER_START(isrc);
 	[self setFieldWithString:ISRC value:newValue];
+}
+
+- (void) setReleaseDate:(NSString*)newValue
+{
+	TAG_SETTER_START(releaseDate);
+	[self setFieldWithString:RELEASE_DATE value:newValue];
 }
 
 // need fixing?

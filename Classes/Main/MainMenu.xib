@@ -3910,10 +3910,10 @@ wGw</bytes>
 															<object class="NSTextField" id="632448726">
 																<reference key="NSNextResponder" ref="585874588"/>
 																<int key="NSvFlags">270</int>
-																<string key="NSFrame">{{81, 260}, {284.5, 22}}</string>
+																<string key="NSFrame">{{80, 235}, {284.5, 22}}</string>
 																<reference key="NSSuperview" ref="585874588"/>
 																<reference key="NSWindow"/>
-																<reference key="NSNextKeyView"/>
+																<reference key="NSNextKeyView" ref="415427940"/>
 																<bool key="NSEnabled">YES</bool>
 																<object class="NSTextFieldCell" key="NSCell" id="176892835">
 																	<int key="NSCellFlags">-1804599231</int>
@@ -3930,7 +3930,7 @@ wGw</bytes>
 															<object class="NSTextField" id="713832014">
 																<reference key="NSNextResponder" ref="585874588"/>
 																<int key="NSvFlags">268</int>
-																<string key="NSFrame">{{3, 263}, {73, 17}}</string>
+																<string key="NSFrame">{{3, 238}, {73, 17}}</string>
 																<reference key="NSSuperview" ref="585874588"/>
 																<reference key="NSWindow"/>
 																<reference key="NSNextKeyView" ref="632448726"/>
@@ -3941,6 +3941,45 @@ wGw</bytes>
 																	<string key="NSContents">ISRC</string>
 																	<reference key="NSSupport" ref="24"/>
 																	<reference key="NSControlView" ref="713832014"/>
+																	<reference key="NSBackgroundColor" ref="98462531"/>
+																	<reference key="NSTextColor" ref="687689502"/>
+																</object>
+																<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+															</object>
+															<object class="NSTextField" id="379779793">
+																<reference key="NSNextResponder" ref="585874588"/>
+																<int key="NSvFlags">270</int>
+																<string key="NSFrame">{{80, 208}, {284.5, 22}}</string>
+																<reference key="NSSuperview" ref="585874588"/>
+																<reference key="NSWindow"/>
+																<reference key="NSNextKeyView"/>
+																<bool key="NSEnabled">YES</bool>
+																<object class="NSTextFieldCell" key="NSCell" id="28975117">
+																	<int key="NSCellFlags">-1804599231</int>
+																	<int key="NSCellFlags2">272630784</int>
+																	<string key="NSContents">5</string>
+																	<reference key="NSSupport" ref="677191051"/>
+																	<reference key="NSControlView" ref="379779793"/>
+																	<bool key="NSDrawsBackground">YES</bool>
+																	<reference key="NSBackgroundColor" ref="293798682"/>
+																	<reference key="NSTextColor" ref="645565635"/>
+																</object>
+																<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+															</object>
+															<object class="NSTextField" id="415427940">
+																<reference key="NSNextResponder" ref="585874588"/>
+																<int key="NSvFlags">268</int>
+																<string key="NSFrame">{{3, 211}, {73, 17}}</string>
+																<reference key="NSSuperview" ref="585874588"/>
+																<reference key="NSWindow"/>
+																<reference key="NSNextKeyView" ref="379779793"/>
+																<bool key="NSEnabled">YES</bool>
+																<object class="NSTextFieldCell" key="NSCell" id="168716316">
+																	<int key="NSCellFlags">68157504</int>
+																	<int key="NSCellFlags2">71566336</int>
+																	<string key="NSContents">Release Date</string>
+																	<reference key="NSSupport" ref="24"/>
+																	<reference key="NSControlView" ref="415427940"/>
 																	<reference key="NSBackgroundColor" ref="98462531"/>
 																	<reference key="NSTextColor" ref="687689502"/>
 																</object>
@@ -6140,6 +6179,38 @@ wGw</bytes>
 					</object>
 					<int key="connectionID">1663</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">enabled: currentNodes.hasExtenedMetadata</string>
+						<reference key="source" ref="379779793"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="379779793"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">enabled: currentNodes.hasExtenedMetadata</string>
+							<string key="NSBinding">enabled</string>
+							<string key="NSKeyPath">currentNodes.hasExtenedMetadata</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1681</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: currentNodes.releaseDate</string>
+						<reference key="source" ref="379779793"/>
+						<reference key="destination" ref="588631224"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="379779793"/>
+							<reference key="NSDestination" ref="588631224"/>
+							<string key="NSLabel">value: currentNodes.releaseDate</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">currentNodes.releaseDate</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1683</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -8139,8 +8210,10 @@ wGw</bytes>
 							<reference ref="486985661"/>
 							<reference ref="698191252"/>
 							<reference ref="673714126"/>
-							<reference ref="632448726"/>
 							<reference ref="713832014"/>
+							<reference ref="632448726"/>
+							<reference ref="379779793"/>
+							<reference ref="415427940"/>
 						</array>
 						<reference key="parent" ref="730053151"/>
 					</object>
@@ -8380,6 +8453,32 @@ wGw</bytes>
 						<reference key="object" ref="176892835"/>
 						<reference key="parent" ref="632448726"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1676</int>
+						<reference key="object" ref="379779793"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="28975117"/>
+						</array>
+						<reference key="parent" ref="585874588"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1677</int>
+						<reference key="object" ref="415427940"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="168716316"/>
+						</array>
+						<reference key="parent" ref="585874588"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1678</int>
+						<reference key="object" ref="168716316"/>
+						<reference key="parent" ref="415427940"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">1679</int>
+						<reference key="object" ref="28975117"/>
+						<reference key="parent" ref="379779793"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -8548,6 +8647,10 @@ wGw</bytes>
 				<string key="1657.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1658.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1659.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1676.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1677.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1678.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="1679.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="19.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="195.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="196.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -8755,7 +8858,7 @@ wGw</bytes>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1663</int>
+			<int key="maxID">1683</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -8801,26 +8904,20 @@ wGw</bytes>
 						<string key="gotoNextRow:">id</string>
 						<string key="gotoPreviousRow:">id</string>
 						<string key="lowercaseTags:">id</string>
-						<string key="onClick:">id</string>
 						<string key="open:">id</string>
 						<string key="openDirectory:">id</string>
-						<string key="openDonate:">id</string>
 						<string key="openHomePage:">id</string>
 						<string key="openInTerminal:">id</string>
 						<string key="openIssues:">id</string>
-						<string key="performBlockOnTags:tagNames:block:">id</string>
 						<string key="refresh:">id</string>
 						<string key="rename:">id</string>
 						<string key="renameArtistsWithNames:">id</string>
-						<string key="renameTitlesWithNames:">id</string>
-						<string key="renameWithPredefinedFormat:">id</string>
 						<string key="renumberFiles:">id</string>
 						<string key="reopen:">id</string>
 						<string key="revealInFinder:">id</string>
 						<string key="search:">id</string>
 						<string key="searchWithSubDirectories:">id</string>
 						<string key="swapFirstAndLastName:">id</string>
-						<string key="tagWithPredefinedFormat:">id</string>
 						<string key="tagsFromFilename:">id</string>
 						<string key="toggleRightSubView:">id</string>
 						<string key="trimWhitespace:">id</string>
@@ -8883,20 +8980,12 @@ wGw</bytes>
 							<string key="name">lowercaseTags:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="onClick:">
-							<string key="name">onClick:</string>
-							<string key="candidateClassName">id</string>
-						</object>
 						<object class="IBActionInfo" key="open:">
 							<string key="name">open:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="openDirectory:">
 							<string key="name">openDirectory:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="openDonate:">
-							<string key="name">openDonate:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="openHomePage:">
@@ -8911,10 +9000,6 @@ wGw</bytes>
 							<string key="name">openIssues:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="performBlockOnTags:tagNames:block:">
-							<string key="name">performBlockOnTags:tagNames:block:</string>
-							<string key="candidateClassName">id</string>
-						</object>
 						<object class="IBActionInfo" key="refresh:">
 							<string key="name">refresh:</string>
 							<string key="candidateClassName">id</string>
@@ -8925,14 +9010,6 @@ wGw</bytes>
 						</object>
 						<object class="IBActionInfo" key="renameArtistsWithNames:">
 							<string key="name">renameArtistsWithNames:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="renameTitlesWithNames:">
-							<string key="name">renameTitlesWithNames:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="renameWithPredefinedFormat:">
-							<string key="name">renameWithPredefinedFormat:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="renumberFiles:">
@@ -8957,10 +9034,6 @@ wGw</bytes>
 						</object>
 						<object class="IBActionInfo" key="swapFirstAndLastName:">
 							<string key="name">swapFirstAndLastName:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="tagWithPredefinedFormat:">
-							<string key="name">tagWithPredefinedFormat:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="tagsFromFilename:">

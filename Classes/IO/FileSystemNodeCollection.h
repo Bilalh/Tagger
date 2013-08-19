@@ -151,6 +151,7 @@
 /// @name Misc
 
 /// The Isrc of the file
-@property (strong,nonatomic) NSString *isrc;
+@property (nonatomic) NSString *isrc;
+@property (nonatomic) NSString *releaseDate;
 
 @end

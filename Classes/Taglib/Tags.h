@@ -46,7 +46,7 @@ struct FileData;
 
     // Misc
     NSString *isrc;
-
+    NSString *releaseDate;
     
 }
 
@@ -155,6 +155,9 @@ struct FileData;
 
 /// The Isrc of the file
 @property (strong,nonatomic) NSString *isrc;
+
+/// The Release Date of the album
+@property (strong,nonatomic) NSString *releaseDate;
 
 
 @end

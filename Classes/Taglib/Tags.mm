@@ -30,6 +30,7 @@ using namespace TagLib;
 @synthesize albumArtist, composer, grouping, bpm, totalTracks, disc, totalDiscs, compilation, url, cover;
 @synthesize length, bitrate, channels, sampleRate, kind;
 @synthesize albumSort, artistSort, titleSort, composerSort, albumArtistSort, isrc;
+@synthesize releaseDate;
 
 #pragma mark -
 #pragma mark Init
@@ -173,6 +174,7 @@ DDLogInfo(@"res:%d "#field":%u", b, t->field());
 
 // Misc
 - (void) setIsrc                      :(NSString*)newValue {}
+- (void) setReleaseDate               :(NSString*)newValue {}
 
 
 

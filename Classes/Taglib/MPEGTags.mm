@@ -113,7 +113,8 @@ using namespace Fields::MPEG;
 
     // Misc
     
-    isrc                       = [self getFieldWithString:ISRC];
+    isrc        = [self getFieldWithString:ISRC];
+    releaseDate = [self getFieldWithString:RELEASE_DATE];
 	
 	[self initCover];
 }
@@ -298,6 +299,12 @@ using namespace Fields::MPEG;
 {
 	TAG_SETTER_START(isrc);
 	[self setFieldWithString:ISRC value:newValue];
+}
+
+- (void) setReleaseDate:(NSString*)newValue
+{
+	TAG_SETTER_START(releaseDate);
+	[self setFieldWithString:RELEASE_DATE value:newValue];
 }
 
 

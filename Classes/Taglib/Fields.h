@@ -66,6 +66,8 @@ namespace Fields {
 		String const LYRICS_SITE_URL               = "----:com.apple.iTunes:URL_LYRICS_SITE";
 		String const TOTAL_TRACKS                  = "trkn";
 		String const TOTAL_DISCS                   = "disk";
+        
+        String const RELEASE_DATE                   = "\251day";
 
 	}
 	
@@ -120,7 +122,9 @@ namespace Fields {
 		extern const char* LYRICS_SITE_URL;
 		extern const char* TOTAL_TRACKS;
 		extern const char* TOTAL_DISCS;
-	}	
+        
+        extern const char* RELEASE_DATE;
+	}
 }
 
 

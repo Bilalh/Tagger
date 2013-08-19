@@ -61,5 +61,8 @@ namespace Fields {
 		const char* TOTAL_TRACKS                  = "TRCK";
 		const char* TOTAL_DISCS                   = "TPOS";
         
+        const char* RELEASE_DATE                   = "TDRL";
+
+        
 	}
 }
