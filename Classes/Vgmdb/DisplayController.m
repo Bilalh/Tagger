@@ -347,7 +347,22 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 }
 
 
-- (void) initFieldValues 
+- (NSString*)yyyymmddFromDateString:(NSString*)dateString
+{
+    //TODO cache this
+	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+	NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+	[dateFormatter setLocale:locale];
+	[dateFormatter setDateFormat:@"MMM dd, yyyy"];
+	
+	NSDate *myDate = [dateFormatter dateFromString:dateString];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+	NSString *formattedDateString = [dateFormatter stringFromDate:myDate];
+	
+	return formattedDateString;
+}
+
+- (void) initFieldValues
 {	
 	DDLogVerbose(@"Started");	
 	NSMutableArray  *keys = [[NSMutableArray alloc] initWithObjects: 
@@ -387,6 +402,9 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[values addObject:[Utility valueFromResult:[albumDetails objectForKey:@"category"] 
 							  selectedLanguage:@"english"]];	
 	
+    [keys addObject:@"date"];
+    [values addObject: [self yyyymmddFromDateString:albumDetails[@"date"]]];
+    
 	fieldValues = [[NSMutableDictionary alloc] initWithObjects:values forKeys:keys];
 	DDLogInfo(@"fieldValues\n %@", fieldValues);
 }
