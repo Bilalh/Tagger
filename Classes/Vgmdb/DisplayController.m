@@ -315,7 +315,8 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 					   hb(@"album"      ), @"album"       ,
 					   hb(@"artist"     ), @"artist"      ,
 					   hc(@"albumArtist"), @"albumArtist" ,
-					   hc(@"year"       ), @"year"        ,
+                       hc(@"year"       ), @"year"        ,
+					   hc(@"releaseDate"), @"releaseDate" ,
 					   hc(@"genre"      ), @"genre"       ,
 					   hc(@"totalDiscs" ), @"totalDiscs"  ,
 					   hc(@"catalog"    ), @"catalog"     ,
@@ -402,7 +403,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[values addObject:[Utility valueFromResult:[albumDetails objectForKey:@"category"] 
 							  selectedLanguage:@"english"]];	
 	
-    [keys addObject:@"date"];
+    [keys addObject:@"releaseDate"];
     [values addObject: [self yyyymmddFromDateString:albumDetails[@"date"]]];
     
 	fieldValues = [[NSMutableDictionary alloc] initWithObjects:values forKeys:keys];
@@ -508,6 +509,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 							 @"album", @"artist", @"albumArtist",
 							 @"year" , @"genre" , @"composer",
 							 @"url"   , @"comment", @"totalDiscs",
+                             @"releaseDate",
 							 nil ];
 	
 	NSArray  *nodeKeys = [[NSArray alloc] initWithObjects: 
