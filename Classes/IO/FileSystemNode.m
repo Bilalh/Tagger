@@ -194,7 +194,7 @@ static const NSSet *tokensNumberSet;
                         node = [_children objectAtIndex:oldIndex];
                     }
                 }
-				NSString *extension = [[node.URL path] pathExtension];
+				NSString *extension = [[[node.URL path] pathExtension] lowercaseString];
 				//TODO make user passable block
 				if ([extension isEqualToString:@"mp3"]  || 
 					[extension isEqualToString:@"m4a"]  || 
