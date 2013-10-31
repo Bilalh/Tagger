@@ -1,15 +1,17 @@
 Changelog
 =========
 
-Version Next
+Version 1.8
 ------------
 ### Features ###
 * Sets the total number of tracks on each disc when auto tagging.
 * Button to use the directory name as the search query
 * Release date field
+* Quicklook on Vgmdb search results by pressing space
 
 ### Improvements ###
 * Improvements to the auto taggering gui
+* Clicking on a Vgmdb search result opens those results
 
 
 Version 1.7 Beta (Sat 06 Jul 2013)

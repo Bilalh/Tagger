@@ -6,11 +6,15 @@
 //  Copyright 2011  All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+#import <Quartz/Quartz.h>
+
 #import "VgmdbController.h"
 #import "DisplayController.h"
 #import "Utility.h"
 #import "FileSystemNode.h"
 #import "Tags.h"
+#import "QuickLookTableView.h"
 
 #import "Vgmdb.h"
 
@@ -185,12 +189,77 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 - (IBAction)onClick:(id)sender
 {
 	NSInteger row = [table clickedRow];
-	NSString *s= [Utility valueFromResult:
-				  [[searchResults objectAtIndex:row] 
-				   objectForKey:@"url"]
-						 selectedLanguage:selectedLanguage];
-	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:s]];
+    ssc = [[DisplayController alloc]
+		   initWithUrl:[[searchResults objectAtIndex:row]
+						objectForKey:@"url"]
+		   vgmdb:vgmdb
+		   files:files];
+	
+	[self confirmSheet:nil];
+    
 }
+
+#pragma mark - QuickLook
+
+- (BOOL)acceptsPreviewPanelControl:(QLPreviewPanel *)panel;
+{
+    return YES;
+}
+
+- (void)beginPreviewPanelControl:(QLPreviewPanel *)panel
+{
+    // This document is now responsible of the preview panel
+    // It is allowed to set the delegate, data source and refresh panel.
+    previewPanel = panel;
+    panel.delegate = self;
+    panel.dataSource = self;
+}
+
+- (void)endPreviewPanelControl:(QLPreviewPanel *)panel
+{
+    // This document loses its responsisibility on the preview panel
+    // Until the next call to -beginPreviewPanelControl: it must not
+    // change the panel's delegate, data source or refresh it.
+    previewPanel = nil;
+}
+
+- (NSInteger)numberOfPreviewItemsInPreviewPanel:(QLPreviewPanel *)panel
+{
+	return searchResults ? [searchResults count] : 0;
+}
+
+- (id <QLPreviewItem>)previewPanel:(QLPreviewPanel *)panel
+				previewItemAtIndex:(NSInteger)index
+{
+//    DDLogVerbose(@"url %@",searchResults[index][@"url"]);
+    return [NSURL URLWithString:searchResults[index][@"url"]] ;
+}
+
+- (BOOL)validateUserInterfaceItem:(id < NSValidatedUserInterfaceItem >)item
+{
+    SEL action = [item action];
+    if (action == @selector(togglePreviewPanel:)) {
+        if ([QLPreviewPanel sharedPreviewPanelExists] && [[QLPreviewPanel sharedPreviewPanel] isVisible]) {
+            [(NSMenuItem*)item setTitle:@"Close Quick Look panel"];
+        } else {
+            [(NSMenuItem*)item setTitle:@"Open Quick Look panel"];
+        }
+        return YES;
+    }
+    return YES;
+}
+
+#pragma mark - Quicklook Delegate
+- (BOOL)previewPanel:(QLPreviewPanel *)panel handleEvent:(NSEvent *)event
+{
+    // redirect all key down events to the table view
+    if ([event type] == NSKeyDown) {
+        [table keyDown:event];
+        return YES;
+    }
+    return NO;
+}
+
 
 #pragma mark -
 #pragma mark Sheets 

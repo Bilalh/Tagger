@@ -99,7 +99,7 @@ static const NSSet *tokensSet;
 
 // Do not let token be editable after they have been made.
 - (NSString *)          tokenField:(NSTokenField *)tokenField 
- editingStringForRepresentedObject:(id)representedObject
+// editingStringForRepresentedObject:(id)representedObject
 {
 	return nil;
 }

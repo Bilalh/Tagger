@@ -12,9 +12,11 @@
 @class DisplayController;
 @class FileSystemNode;
 @class Tags;
+@class QuickLookTableView;
+
 
 /// This class allows the user to serach for albums on vgmdb
-@interface VgmdbController : NSWindowController {
+@interface VgmdbController : NSWindowController <QLPreviewPanelDataSource, QLPreviewPanelDelegate> {
 @private
 	IBOutlet NSWindow *window;
 	IBOutlet NSTableView *table;
@@ -34,6 +36,7 @@
 	BOOL currentColumnAscending;
     
     Vgmdb *vgmdb;
+    QLPreviewPanel* previewPanel;
 }
 
 @property (strong) NSMutableArray *files;
