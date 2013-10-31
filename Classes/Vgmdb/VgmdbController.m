@@ -225,28 +225,28 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (NSInteger)numberOfPreviewItemsInPreviewPanel:(QLPreviewPanel *)panel
 {
-	return searchResults ? [searchResults count] : 0;
+
+	return [[table selectedRowIndexes ]count];
 }
 
 - (id <QLPreviewItem>)previewPanel:(QLPreviewPanel *)panel
 				previewItemAtIndex:(NSInteger)index
 {
-//    DDLogVerbose(@"url %@",searchResults[index][@"url"]);
-    return [NSURL URLWithString:searchResults[index][@"url"]] ;
-}
 
-- (BOOL)validateUserInterfaceItem:(id < NSValidatedUserInterfaceItem >)item
-{
-    SEL action = [item action];
-    if (action == @selector(togglePreviewPanel:)) {
-        if ([QLPreviewPanel sharedPreviewPanelExists] && [[QLPreviewPanel sharedPreviewPanel] isVisible]) {
-            [(NSMenuItem*)item setTitle:@"Close Quick Look panel"];
-        } else {
-            [(NSMenuItem*)item setTitle:@"Open Quick Look panel"];
-        }
-        return YES;
-    }
-    return YES;
+    
+    NSIndexSet *is = [table selectedRowIndexes ];
+    NSUInteger buff[[is count]];
+    
+    [is getIndexes:buff
+          maxCount:[is count]
+      inIndexRange:nil];
+    
+    NSString *str =  searchResults[buff[index]][@"url"];
+    
+    DDLogRelease(@"%@", is);
+    DDLogRelease(@"%zd", index);
+    DDLogRelease(@"url %@",str);
+    return [NSURL URLWithString:str] ;
 }
 
 #pragma mark - Quicklook Delegate
@@ -255,6 +255,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
     // redirect all key down events to the table view
     if ([event type] == NSKeyDown) {
         [table keyDown:event];
+        [panel reloadData];
         return YES;
     }
     return NO;

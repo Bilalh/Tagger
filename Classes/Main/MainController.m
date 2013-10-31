@@ -1054,6 +1054,9 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 - (id <QLPreviewItem>)previewPanel:(QLPreviewPanel *)panel 
 				previewItemAtIndex:(NSInteger)index
 {
+    DDLogRelease(@"%zd", index);
+    DDLogRelease(@"%@", currentNodes.tagsArray);
+    DDLogRelease(@"%@", [currentNodes.tagsArray objectAtIndex:index]);
 	return [currentNodes.tagsArray objectAtIndex:index];
 }
 

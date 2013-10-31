@@ -12,7 +12,6 @@
 @class DisplayController;
 @class FileSystemNode;
 @class Tags;
-@class QuickLookTableView;
 
 
 /// This class allows the user to serach for albums on vgmdb
@@ -30,7 +29,7 @@
 	Tags *tags;
     NSString *directory;
 	NSTableView *mainTable;
-	
+    
 	NSString *currentColumnKey;
     
 	BOOL currentColumnAscending;
