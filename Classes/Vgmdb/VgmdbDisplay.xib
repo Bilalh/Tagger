@@ -17,7 +17,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" utility="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="169" y="105" width="1120" height="540"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
             <value key="minSize" type="size" width="1086" height="535"/>
             <view key="contentView" id="4">
                 <rect key="frame" x="0.0" y="0.0" width="1120" height="540"/>
@@ -59,7 +59,7 @@ Gw
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <textField verticalHuggingPriority="750" id="27">
-                                    <rect key="frame" x="50" y="-272" width="50" height="17"/>
+                                    <rect key="frame" x="50" y="218" width="50" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" id="28">
                                         <font key="font" metaFont="system"/>
@@ -68,7 +68,7 @@ Gw
                                     </textFieldCell>
                                 </textField>
                                 <button id="901">
-                                    <rect key="frame" x="13" y="-274" width="86" height="22"/>
+                                    <rect key="frame" x="13" y="216" width="86" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="check" title="Album:" bezelStyle="regularSquare" imagePosition="left" alignment="right" inset="2" id="902">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -79,7 +79,7 @@ Gw
                                     </connections>
                                 </button>
                                 <textField verticalHuggingPriority="750" id="29">
-                                    <rect key="frame" x="105" y="-277" width="281" height="22"/>
+                                    <rect key="frame" x="105" y="213" width="281" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="30">
                                         <font key="font" metaFont="system"/>
@@ -95,7 +95,7 @@ Gw
                                     </connections>
                                 </textField>
                                 <textField verticalHuggingPriority="750" id="32">
-                                    <rect key="frame" x="105" y="-305" width="281" height="22"/>
+                                    <rect key="frame" x="105" y="185" width="281" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="33">
                                         <font key="font" metaFont="system"/>
@@ -111,9 +111,9 @@ Gw
                                     </connections>
                                 </textField>
                                 <textField verticalHuggingPriority="750" id="40">
-                                    <rect key="frame" x="105" y="-365" width="52" height="22"/>
+                                    <rect key="frame" x="105" y="125" width="281" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="1234" drawsBackground="YES" id="41">
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="41">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -127,7 +127,7 @@ Gw
                                     </connections>
                                 </textField>
                                 <textField verticalHuggingPriority="750" id="59">
-                                    <rect key="frame" x="295" y="-423" width="91" height="22"/>
+                                    <rect key="frame" x="295" y="67" width="91" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="60">
                                         <font key="font" metaFont="system"/>
@@ -143,7 +143,7 @@ Gw
                                     </connections>
                                 </textField>
                                 <textField verticalHuggingPriority="750" id="63">
-                                    <rect key="frame" x="240" y="-420" width="50" height="17"/>
+                                    <rect key="frame" x="240" y="70" width="50" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Discs:" id="64">
                                         <font key="font" metaFont="system"/>
@@ -152,7 +152,7 @@ Gw
                                     </textFieldCell>
                                 </textField>
                                 <textField verticalHuggingPriority="750" id="198">
-                                    <rect key="frame" x="43" y="-418" width="57" height="17"/>
+                                    <rect key="frame" x="43" y="72" width="57" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Catalog:" id="201">
                                         <font key="font" metaFont="system"/>
@@ -161,7 +161,7 @@ Gw
                                     </textFieldCell>
                                 </textField>
                                 <textField verticalHuggingPriority="750" id="199">
-                                    <rect key="frame" x="105" y="-423" width="130" height="22"/>
+                                    <rect key="frame" x="105" y="67" width="130" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" bezelStyle="round" id="200">
                                         <font key="font" metaFont="system"/>
@@ -177,13 +177,18 @@ Gw
                                     </connections>
                                 </textField>
                                 <button id="224">
-                                    <rect key="frame" x="392" y="-277" width="19" height="22"/>
+                                    <rect key="frame" x="392" y="213" width="19" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="square" title="A" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="225">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="10" name="LucidaGrande"/>
                                     </buttonCell>
                                     <connections>
+                                        <binding destination="-2" name="argument2" keyPath="fieldProperties.album.button1" previousBinding="447" id="450">
+                                            <dictionary key="options">
+                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="-2" name="argument" keyPath="fieldProperties.album" previousBinding="431" id="447">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
@@ -194,29 +199,29 @@ Gw
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
-                                        <binding destination="-2" name="argument2" keyPath="fieldProperties.album.button1" previousBinding="447" id="450">
-                                            <dictionary key="options">
-                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
-                                            </dictionary>
-                                        </binding>
                                         <binding destination="-2" name="hidden" keyPath="fieldProperties.album.button1.hidden" id="365"/>
-                                        <binding destination="-2" name="title" keyPath="fieldProperties.album.button1.title" id="350"/>
-                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.album.button1.toolTip" previousBinding="350" id="522"/>
                                         <binding destination="-2" name="target" keyPath="self" previousBinding="450" id="451">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="title" keyPath="fieldProperties.album.button1.title" id="350"/>
+                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.album.button1.toolTip" previousBinding="350" id="522"/>
                                     </connections>
                                 </button>
                                 <button id="339">
-                                    <rect key="frame" x="416" y="-277" width="19" height="22"/>
+                                    <rect key="frame" x="416" y="213" width="19" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="square" title="B" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="340">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="10" name="LucidaGrande"/>
                                     </buttonCell>
                                     <connections>
+                                        <binding destination="-2" name="argument2" keyPath="fieldProperties.album.button2" previousBinding="477" id="478">
+                                            <dictionary key="options">
+                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="-2" name="argument" keyPath="fieldProperties.album" id="476">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
@@ -227,23 +232,18 @@ Gw
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
-                                        <binding destination="-2" name="argument2" keyPath="fieldProperties.album.button2" previousBinding="477" id="478">
-                                            <dictionary key="options">
-                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
-                                            </dictionary>
-                                        </binding>
                                         <binding destination="-2" name="hidden" keyPath="fieldProperties.album.button2.hidden" id="363"/>
-                                        <binding destination="-2" name="title" keyPath="fieldProperties.album.button2.title" id="353"/>
-                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.album.button2.toolTip" previousBinding="353" id="525"/>
                                         <binding destination="-2" name="target" keyPath="self" previousBinding="478" id="479">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="title" keyPath="fieldProperties.album.button2.title" id="353"/>
+                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.album.button2.toolTip" previousBinding="353" id="525"/>
                                     </connections>
                                 </button>
                                 <textField verticalHuggingPriority="750" id="514">
-                                    <rect key="frame" x="12" y="-330" width="88" height="17"/>
+                                    <rect key="frame" x="12" y="160" width="88" height="17"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Artist Album:" id="517">
                                         <font key="font" metaFont="system"/>
@@ -252,7 +252,7 @@ Gw
                                     </textFieldCell>
                                 </textField>
                                 <textField verticalHuggingPriority="750" id="515">
-                                    <rect key="frame" x="105" y="-335" width="281" height="22"/>
+                                    <rect key="frame" x="105" y="155" width="281" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="516">
                                         <font key="font" metaFont="system"/>
@@ -268,63 +268,63 @@ Gw
                                     </connections>
                                 </textField>
                                 <button id="562">
-                                    <rect key="frame" x="392" y="-307" width="19" height="22"/>
+                                    <rect key="frame" x="392" y="183" width="19" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="square" title="A" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="565">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="10" name="LucidaGrande"/>
                                     </buttonCell>
                                     <connections>
-                                        <binding destination="-2" name="argument" keyPath="fieldProperties.artist" id="678">
-                                            <dictionary key="options">
-                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
-                                            </dictionary>
-                                        </binding>
                                         <binding destination="-2" name="argument2" keyPath="fieldProperties.artist.button1" previousBinding="678" id="681">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="argument" keyPath="fieldProperties.artist" id="678">
+                                            <dictionary key="options">
+                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="-2" name="hidden" keyPath="fieldProperties.artist.button1.hidden" id="683"/>
-                                        <binding destination="-2" name="title" keyPath="fieldProperties.artist.button1.title" id="684"/>
-                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.artist.button1.toolTip" previousBinding="684" id="688"/>
                                         <binding destination="-2" name="target" keyPath="self" previousBinding="681" id="682">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="title" keyPath="fieldProperties.artist.button1.title" id="684"/>
+                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.artist.button1.toolTip" previousBinding="684" id="688"/>
                                     </connections>
                                 </button>
                                 <button id="563">
-                                    <rect key="frame" x="416" y="-307" width="19" height="22"/>
+                                    <rect key="frame" x="416" y="183" width="19" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="square" title="B" bezelStyle="shadowlessSquare" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="564">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" size="10" name="LucidaGrande"/>
                                     </buttonCell>
                                     <connections>
-                                        <binding destination="-2" name="argument" keyPath="fieldProperties.artist" id="669">
-                                            <dictionary key="options">
-                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
-                                            </dictionary>
-                                        </binding>
                                         <binding destination="-2" name="argument2" keyPath="fieldProperties.artist.button2" previousBinding="669" id="672">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="argument" keyPath="fieldProperties.artist" id="669">
+                                            <dictionary key="options">
+                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="-2" name="hidden" keyPath="fieldProperties.artist.button2.hidden" id="674"/>
-                                        <binding destination="-2" name="title" keyPath="fieldProperties.artist.button2.title" id="675"/>
-                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.artist.button2.toolTip" previousBinding="675" id="677"/>
                                         <binding destination="-2" name="target" keyPath="self" previousBinding="672" id="673">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="title" keyPath="fieldProperties.artist.button2.title" id="675"/>
+                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.artist.button2.toolTip" previousBinding="675" id="677"/>
                                     </connections>
                                 </button>
                                 <button verticalHuggingPriority="750" id="832" customClass="BWHyperlinkTitleButton">
-                                    <rect key="frame" x="99" y="-459" width="293" height="32"/>
+                                    <rect key="frame" x="99" y="31" width="293" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="833" customClass="BWHyperlinkButtonCell">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -335,7 +335,7 @@ Gw
                                     </connections>
                                 </button>
                                 <button id="869">
-                                    <rect key="frame" x="13" y="-303" width="85" height="22"/>
+                                    <rect key="frame" x="13" y="187" width="85" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="check" title="Artist:" bezelStyle="regularSquare" imagePosition="left" alignment="right" inset="2" id="870">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -346,7 +346,7 @@ Gw
                                     </connections>
                                 </button>
                                 <button id="907">
-                                    <rect key="frame" x="13" y="-363" width="86" height="22"/>
+                                    <rect key="frame" x="13" y="127" width="86" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="check" title="Year:" bezelStyle="regularSquare" imagePosition="left" alignment="right" inset="2" id="908">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -357,7 +357,7 @@ Gw
                                     </connections>
                                 </button>
                                 <button id="910">
-                                    <rect key="frame" x="13" y="-391" width="86" height="22"/>
+                                    <rect key="frame" x="13" y="99" width="86" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="check" title="Genre:" bezelStyle="regularSquare" imagePosition="left" alignment="right" inset="2" id="911">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -368,7 +368,7 @@ Gw
                                     </connections>
                                 </button>
                                 <button id="927">
-                                    <rect key="frame" x="13" y="-451" width="86" height="22"/>
+                                    <rect key="frame" x="13" y="39" width="86" height="22"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="check" title="URL:" bezelStyle="regularSquare" imagePosition="left" alignment="right" inset="2" id="928">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -379,7 +379,7 @@ Gw
                                     </connections>
                                 </button>
                                 <button verticalHuggingPriority="750" id="932">
-                                    <rect key="frame" x="105" y="-478" width="154" height="19"/>
+                                    <rect key="frame" x="105" y="12" width="154" height="19"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <buttonCell key="cell" type="roundRect" title="Metadata to Comments" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="933">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -394,7 +394,7 @@ Gw
                                     </connections>
                                 </button>
                                 <comboBox verticalHuggingPriority="750" id="1036">
-                                    <rect key="frame" x="105" y="-397" width="284" height="26"/>
+                                    <rect key="frame" x="105" y="93" width="284" height="26"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                     <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" numberOfVisibleItems="5" id="1037">
                                         <font key="font" metaFont="system"/>
@@ -402,37 +402,10 @@ Gw
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                     </comboBoxCell>
                                     <connections>
-                                        <binding destination="-2" name="value" keyPath="fieldValues.genre" previousBinding="1042" id="1043"/>
                                         <binding destination="1018" name="content" keyPath="values.genres" id="1042"/>
+                                        <binding destination="-2" name="value" keyPath="fieldValues.genre" previousBinding="1042" id="1043"/>
                                     </connections>
                                 </comboBox>
-                                <textField toolTip="Must be yyyy-mm-dd" verticalHuggingPriority="750" id="1044">
-                                    <rect key="frame" x="295" y="-366" width="91" height="22"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="2012-02-01" drawsBackground="YES" id="1047">
-                                        <font key="font" metaFont="system"/>
-                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    </textFieldCell>
-                                    <connections>
-                                        <binding destination="-2" name="value" keyPath="fieldValues.releaseDate" id="1050">
-                                            <dictionary key="options">
-                                                <bool key="NSContinuouslyUpdatesValue" value="YES"/>
-                                            </dictionary>
-                                        </binding>
-                                    </connections>
-                                </textField>
-                                <button id="1045">
-                                    <rect key="frame" x="210" y="-364" width="79" height="22"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                    <buttonCell key="cell" type="check" title="Release:" bezelStyle="regularSquare" imagePosition="left" alignment="right" inset="2" id="1046">
-                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                        <font key="font" metaFont="system"/>
-                                    </buttonCell>
-                                    <connections>
-                                        <binding destination="-2" name="value" keyPath="fieldProperties.releaseDate.write" id="1051"/>
-                                    </connections>
-                                </button>
                             </subviews>
                         </view>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -448,7 +421,7 @@ Gw
                                 <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="175">
                                     <rect key="frame" x="5" y="7" width="1053" height="170"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
-                                    <clipView key="contentView" id="vFD-hw-Wtc">
+                                    <clipView key="contentView" id="lB9-J8-DlR">
                                         <rect key="frame" x="1" y="17" width="1051" height="152"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
@@ -722,7 +695,7 @@ Gw
                                 <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="165">
                                     <rect key="frame" x="21" y="14" width="355" height="59"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                    <clipView key="contentView" id="NZt-Ll-bCz">
+                                    <clipView key="contentView" id="b7j-LP-mRv">
                                         <rect key="frame" x="1" y="1" width="353" height="57"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
@@ -750,7 +723,7 @@ Gw
                                         <rect key="frame" x="-100" y="-100" width="338" height="15"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
-                                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="166">
+                                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="166">
                                         <rect key="frame" x="339" y="1" width="15" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
@@ -788,24 +761,24 @@ Gw
                                         <font key="font" size="10" name="LucidaGrande"/>
                                     </buttonCell>
                                     <connections>
-                                        <binding destination="-2" name="argument" keyPath="fieldProperties.composer" id="689">
-                                            <dictionary key="options">
-                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
-                                            </dictionary>
-                                        </binding>
                                         <binding destination="-2" name="argument2" keyPath="fieldProperties.composer.button1" previousBinding="689" id="692">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="argument" keyPath="fieldProperties.composer" id="689">
+                                            <dictionary key="options">
+                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="-2" name="hidden" keyPath="fieldProperties.composer.button1.hidden" id="694"/>
-                                        <binding destination="-2" name="title" keyPath="fieldProperties.composer.button1.title" id="695"/>
-                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.composer.button1.toolTip" previousBinding="695" id="697"/>
                                         <binding destination="-2" name="target" keyPath="self" previousBinding="692" id="693">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="title" keyPath="fieldProperties.composer.button1.title" id="695"/>
+                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.composer.button1.toolTip" previousBinding="695" id="697"/>
                                     </connections>
                                 </button>
                                 <button id="527">
@@ -816,24 +789,24 @@ Gw
                                         <font key="font" size="10" name="LucidaGrande"/>
                                     </buttonCell>
                                     <connections>
-                                        <binding destination="-2" name="argument" keyPath="fieldProperties.composer" id="698">
-                                            <dictionary key="options">
-                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
-                                            </dictionary>
-                                        </binding>
                                         <binding destination="-2" name="argument2" keyPath="fieldProperties.composer.button2" previousBinding="698" id="701">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="argument" keyPath="fieldProperties.composer" id="698">
+                                            <dictionary key="options">
+                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="-2" name="hidden" keyPath="fieldProperties.composer.button2.hidden" id="703"/>
-                                        <binding destination="-2" name="title" keyPath="fieldProperties.composer.button2.title" id="704"/>
-                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.composer.button2.toolTip" previousBinding="704" id="708"/>
                                         <binding destination="-2" name="target" keyPath="self" previousBinding="701" id="702">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="title" keyPath="fieldProperties.composer.button2.title" id="704"/>
+                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.composer.button2.toolTip" previousBinding="704" id="708"/>
                                     </connections>
                                 </button>
                                 <button id="580">
@@ -844,24 +817,24 @@ Gw
                                         <font key="font" size="10" name="LucidaGrande"/>
                                     </buttonCell>
                                     <connections>
-                                        <binding destination="-2" name="argument" keyPath="fieldProperties.performer" id="709">
-                                            <dictionary key="options">
-                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
-                                            </dictionary>
-                                        </binding>
                                         <binding destination="-2" name="argument2" keyPath="fieldProperties.performer.button1" previousBinding="709" id="712">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="argument" keyPath="fieldProperties.performer" id="709">
+                                            <dictionary key="options">
+                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="-2" name="hidden" keyPath="fieldProperties.performer.button1.hidden" id="714"/>
-                                        <binding destination="-2" name="title" keyPath="fieldProperties.performer.button1.title" id="715"/>
-                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.performer.button1.toolTip" previousBinding="715" id="717"/>
                                         <binding destination="-2" name="target" keyPath="self" previousBinding="712" id="713">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="title" keyPath="fieldProperties.performer.button1.title" id="715"/>
+                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.performer.button1.toolTip" previousBinding="715" id="717"/>
                                     </connections>
                                 </button>
                                 <button id="581">
@@ -872,24 +845,24 @@ Gw
                                         <font key="font" size="10" name="LucidaGrande"/>
                                     </buttonCell>
                                     <connections>
-                                        <binding destination="-2" name="argument" keyPath="fieldProperties.performer" id="765">
-                                            <dictionary key="options">
-                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
-                                            </dictionary>
-                                        </binding>
                                         <binding destination="-2" name="argument2" keyPath="fieldProperties.performer.button2" previousBinding="765" id="768">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="argument" keyPath="fieldProperties.performer" id="765">
+                                            <dictionary key="options">
+                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="-2" name="hidden" keyPath="fieldProperties.performer.button2.hidden" id="770"/>
-                                        <binding destination="-2" name="title" keyPath="fieldProperties.performer.button2.title" id="771"/>
-                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.performer.button2.toolTip" previousBinding="771" id="773"/>
                                         <binding destination="-2" name="target" keyPath="self" previousBinding="768" id="769">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="title" keyPath="fieldProperties.performer.button2.title" id="771"/>
+                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.performer.button2.toolTip" previousBinding="771" id="773"/>
                                     </connections>
                                 </button>
                                 <button id="598">
@@ -900,24 +873,24 @@ Gw
                                         <font key="font" size="10" name="LucidaGrande"/>
                                     </buttonCell>
                                     <connections>
-                                        <binding destination="-2" name="argument" keyPath="fieldProperties.arranger" id="718">
-                                            <dictionary key="options">
-                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
-                                            </dictionary>
-                                        </binding>
                                         <binding destination="-2" name="argument2" keyPath="fieldProperties.arranger.button1" previousBinding="718" id="721">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="argument" keyPath="fieldProperties.arranger" id="718">
+                                            <dictionary key="options">
+                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="-2" name="hidden" keyPath="fieldProperties.arranger.button1.hidden" id="723"/>
-                                        <binding destination="-2" name="title" keyPath="fieldProperties.arranger.button1.title" id="724"/>
-                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.arranger.button1.toolTip" previousBinding="724" id="726"/>
                                         <binding destination="-2" name="target" keyPath="self" previousBinding="721" id="722">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="title" keyPath="fieldProperties.arranger.button1.title" id="724"/>
+                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.arranger.button1.toolTip" previousBinding="724" id="726"/>
                                     </connections>
                                 </button>
                                 <button id="599">
@@ -928,24 +901,24 @@ Gw
                                         <font key="font" size="10" name="LucidaGrande"/>
                                     </buttonCell>
                                     <connections>
-                                        <binding destination="-2" name="argument" keyPath="fieldProperties.arranger" id="727">
-                                            <dictionary key="options">
-                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
-                                            </dictionary>
-                                        </binding>
                                         <binding destination="-2" name="argument2" keyPath="fieldProperties.arranger.button2" previousBinding="727" id="730">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="argument" keyPath="fieldProperties.arranger" id="727">
+                                            <dictionary key="options">
+                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="-2" name="hidden" keyPath="fieldProperties.arranger.button2.hidden" id="732"/>
-                                        <binding destination="-2" name="title" keyPath="fieldProperties.arranger.button2.title" id="733"/>
-                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.arranger.button2.toolTip" previousBinding="733" id="735"/>
                                         <binding destination="-2" name="target" keyPath="self" previousBinding="730" id="731">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="title" keyPath="fieldProperties.arranger.button2.title" id="733"/>
+                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.arranger.button2.toolTip" previousBinding="733" id="735"/>
                                     </connections>
                                 </button>
                                 <button id="616">
@@ -956,24 +929,24 @@ Gw
                                         <font key="font" size="10" name="LucidaGrande"/>
                                     </buttonCell>
                                     <connections>
-                                        <binding destination="-2" name="argument" keyPath="fieldProperties.products" id="736">
-                                            <dictionary key="options">
-                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
-                                            </dictionary>
-                                        </binding>
                                         <binding destination="-2" name="argument2" keyPath="fieldProperties.products.button1" previousBinding="736" id="739">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="argument" keyPath="fieldProperties.products" id="736">
+                                            <dictionary key="options">
+                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="-2" name="hidden" keyPath="fieldProperties.products.button1.hidden" id="741"/>
-                                        <binding destination="-2" name="title" keyPath="fieldProperties.products.button1.title" id="742"/>
-                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.products.button1.toolTip" previousBinding="742" id="744"/>
                                         <binding destination="-2" name="target" keyPath="self" previousBinding="739" id="740">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="title" keyPath="fieldProperties.products.button1.title" id="742"/>
+                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.products.button1.toolTip" previousBinding="742" id="744"/>
                                     </connections>
                                 </button>
                                 <button id="617">
@@ -984,24 +957,24 @@ Gw
                                         <font key="font" size="10" name="LucidaGrande"/>
                                     </buttonCell>
                                     <connections>
-                                        <binding destination="-2" name="argument" keyPath="fieldProperties.products" id="745">
-                                            <dictionary key="options">
-                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
-                                            </dictionary>
-                                        </binding>
                                         <binding destination="-2" name="argument2" keyPath="fieldProperties.products.button2" previousBinding="745" id="748">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="argument" keyPath="fieldProperties.products" id="745">
+                                            <dictionary key="options">
+                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="-2" name="hidden" keyPath="fieldProperties.products.button2.hidden" id="750"/>
-                                        <binding destination="-2" name="title" keyPath="fieldProperties.products.button2.title" id="751"/>
-                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.products.button2.toolTip" previousBinding="751" id="753"/>
                                         <binding destination="-2" name="target" keyPath="self" previousBinding="748" id="749">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="title" keyPath="fieldProperties.products.button2.title" id="751"/>
+                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.products.button2.toolTip" previousBinding="751" id="753"/>
                                     </connections>
                                 </button>
                                 <button id="634">
@@ -1012,24 +985,24 @@ Gw
                                         <font key="font" size="10" name="LucidaGrande"/>
                                     </buttonCell>
                                     <connections>
-                                        <binding destination="-2" name="argument" keyPath="fieldProperties.publisher" id="756">
-                                            <dictionary key="options">
-                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
-                                            </dictionary>
-                                        </binding>
                                         <binding destination="-2" name="argument2" keyPath="fieldProperties.publisher.button1" previousBinding="756" id="759">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="argument" keyPath="fieldProperties.publisher" id="756">
+                                            <dictionary key="options">
+                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="-2" name="hidden" keyPath="fieldProperties.publisher.button1.hidden" id="761"/>
-                                        <binding destination="-2" name="title" keyPath="fieldProperties.publisher.button1.title" id="762"/>
-                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.publisher.button1.toolTip" previousBinding="762" id="764"/>
                                         <binding destination="-2" name="target" keyPath="self" previousBinding="759" id="760">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="title" keyPath="fieldProperties.publisher.button1.title" id="762"/>
+                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.publisher.button1.toolTip" previousBinding="762" id="764"/>
                                     </connections>
                                 </button>
                                 <button id="635">
@@ -1040,24 +1013,24 @@ Gw
                                         <font key="font" size="10" name="LucidaGrande"/>
                                     </buttonCell>
                                     <connections>
-                                        <binding destination="-2" name="argument" keyPath="fieldProperties.publisher" id="774">
-                                            <dictionary key="options">
-                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
-                                            </dictionary>
-                                        </binding>
                                         <binding destination="-2" name="argument2" keyPath="fieldProperties.publisher.button2" previousBinding="774" id="777">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="argument" keyPath="fieldProperties.publisher" id="774">
+                                            <dictionary key="options">
+                                                <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="-2" name="hidden" keyPath="fieldProperties.publisher.button2.hidden" id="779"/>
-                                        <binding destination="-2" name="title" keyPath="fieldProperties.publisher.button2.title" id="780"/>
-                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.publisher.button2.toolTip" previousBinding="780" id="782"/>
                                         <binding destination="-2" name="target" keyPath="self" previousBinding="777" id="778">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">changeLanguage:buttonProperties:</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="-2" name="title" keyPath="fieldProperties.publisher.button2.title" id="780"/>
+                                        <binding destination="-2" name="toolTip" keyPath="fieldProperties.publisher.button2.toolTip" previousBinding="780" id="782"/>
                                     </connections>
                                 </button>
                                 <button id="913">
