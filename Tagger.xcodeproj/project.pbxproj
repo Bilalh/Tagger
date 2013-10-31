@@ -48,6 +48,7 @@
 		9239270515CF0F8400135F07 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9252929715C359C300C8CD9E /* SenTestingKit.framework */; };
 		9239573013F43EB100A80074 /* CCTColorLabelMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9239572F13F43EB100A80074 /* CCTColorLabelMenuItemView.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		923B846413F4B7A800524BFA /* BHFinderLabelColours.m in Sources */ = {isa = PBXBuildFile; fileRef = 923B846313F4B7A800524BFA /* BHFinderLabelColours.m */; };
+		924C34C91821F1D5004C70B7 /* WXXXToString.m in Sources */ = {isa = PBXBuildFile; fileRef = 924C34C81821F1D5004C70B7 /* WXXXToString.m */; };
 		924ED36E15E1303D000C504F /* Vgmdb_10_disks.mm in Sources */ = {isa = PBXBuildFile; fileRef = 924ED36D15E1303D000C504F /* Vgmdb_10_disks.mm */; };
 		925292A415C359C300C8CD9E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 925292A215C359C300C8CD9E /* InfoPlist.strings */; };
 		925292A715C359C300C8CD9E /* VgmdbTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = 925292A615C359C300C8CD9E /* VgmdbTests.mm */; };
@@ -190,6 +191,8 @@
 		9239572F13F43EB100A80074 /* CCTColorLabelMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTColorLabelMenuItemView.m; sourceTree = "<group>"; };
 		923B846213F4B7A800524BFA /* BHFinderLabelColours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHFinderLabelColours.h; sourceTree = "<group>"; };
 		923B846313F4B7A800524BFA /* BHFinderLabelColours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BHFinderLabelColours.m; sourceTree = "<group>"; };
+		924C34C71821F1D5004C70B7 /* WXXXToString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXXXToString.h; sourceTree = "<group>"; };
+		924C34C81821F1D5004C70B7 /* WXXXToString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXXXToString.m; sourceTree = "<group>"; };
 		924ED36D15E1303D000C504F /* Vgmdb_10_disks.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Vgmdb_10_disks.mm; sourceTree = "<group>"; };
 		9252929515C359C300C8CD9E /* VgmdbTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VgmdbTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9252929715C359C300C8CD9E /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -733,6 +736,8 @@
 			children = (
 				92E6EDAB13F313230045679E /* NumberToTimeTransformer.h */,
 				92E6EDAC13F313230045679E /* NumberToTimeTransformer.m */,
+				924C34C71821F1D5004C70B7 /* WXXXToString.h */,
+				924C34C81821F1D5004C70B7 /* WXXXToString.m */,
 			);
 			path = Transformers;
 			sourceTree = "<group>";
@@ -969,6 +974,7 @@
 				92C4466413E0BF830038F817 /* BWHyperlinkTitleButton.m in Sources */,
 				92C4466513E0BF830038F817 /* BWHyperlinkButtonCell.m in Sources */,
 				92A6808913EC7B130067DD5F /* MASPreferencesWindowController.m in Sources */,
+				924C34C91821F1D5004C70B7 /* WXXXToString.m in Sources */,
 				929F152913F1E5F60021F9FD /* BHDraggableImageView.m in Sources */,
 				92E6EDB713F313230045679E /* NSAttributedString+Hyperlink.m in Sources */,
 				92E6EDB813F313230045679E /* NSImage+bitmapData.m in Sources */,

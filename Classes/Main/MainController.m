@@ -723,7 +723,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
     [[[NSAppleScript alloc]
        initWithSource: @"tell application \"Terminal\" to activate"]
        executeAndReturnError:nil];
-    
+     
 }
 
 
