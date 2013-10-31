@@ -22,7 +22,6 @@
 #import "CCTColorLabelMenuItemView.h"
 #import "RegexKitLite.h"
 
-//#import <MacRuby/MacRuby.h>
 #import "iTunes.h"
 
 #import "Logging.h"
