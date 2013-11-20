@@ -18,7 +18,8 @@
 	NSArray *tagsArray;
 	BOOL hasBasicMetadata;
 	BOOL hasExtenedMetadata;
-	
+	BOOL allMp3s;
+    
 	BOOL containsMP4Files;
 	NSString *albumArtist;
 	NSString *composer;
@@ -90,6 +91,10 @@
 @property (readonly) BOOL  hasBasicMetadata;
 /// YES if all the files has extend metadata info.
 @property (readonly) BOOL  hasExtenedMetadata;
+
+/// YES if all the files are mp3s
+@property (readonly) BOOL  allMp3s;
+
 
 @property (readonly) BOOL  containsMP4Files;
 

@@ -126,17 +126,17 @@
                                 <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                 <connections>
                                     <action selector="addSelectedToItunes:" target="572" id="1328"/>
+                                    <binding destination="572" name="enabled" keyPath="currentNodes.containsMP4Files" id="1603">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
                                     <binding destination="572" name="enabled2" keyPath="currentNodes.hasBasicMetadata" previousBinding="1603" id="1605">
                                         <dictionary key="options">
                                             <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                             <integer key="NSNoSelectionPlaceholder" value="-1"/>
                                             <integer key="NSMultipleValuesPlaceholder" value="-1"/>
                                             <integer key="NSNullPlaceholder" value="-1"/>
-                                        </dictionary>
-                                    </binding>
-                                    <binding destination="572" name="enabled" keyPath="currentNodes.containsMP4Files" id="1603">
-                                        <dictionary key="options">
-                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
                                         </dictionary>
                                     </binding>
                                 </connections>
@@ -633,18 +633,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <customView id="538">
-                                <rect key="frame" x="0.0" y="0.0" width="703.5" height="481"/>
+                                <rect key="frame" x="0.0" y="0.0" width="704" height="481"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <scrollView borderType="groove" autohidesScrollers="YES" horizontalLineScroll="22" horizontalPageScroll="10" verticalLineScroll="22" verticalPageScroll="10" usesPredominantAxisScrolling="NO" id="539">
-                                        <rect key="frame" x="0.0" y="0.0" width="703.5" height="448"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="704" height="448"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <clipView key="contentView" id="raq-QO-ZRr">
-                                            <rect key="frame" x="2" y="19" width="699.5" height="427"/>
+                                            <rect key="frame" x="2" y="19" width="700" height="427"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" typeSelect="NO" autosaveName="MainMenuDataTable" rowHeight="20" headerView="548" id="546" customClass="QuickLookTableView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="699.5" height="427"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="700" height="427"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -994,19 +994,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <tableHeaderView key="headerView" id="548">
-                                            <rect key="frame" x="0.0" y="0.0" width="699.5" height="17"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="700" height="17"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableHeaderView>
                                     </scrollView>
                                     <popUpButton verticalHuggingPriority="750" id="540">
                                         <rect key="frame" x="83" y="451" width="314" height="26"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <popUpButtonCell key="cell" type="push" title="Item 3" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="541">
+                                        <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="541">
                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
+                                            <font key="font" metaFont="menu"/>
                                             <menu key="menu" title="OtherViews" id="542">
                                                 <items>
-                                                    <menuItem title="Item 3" state="on" id="543"/>
+                                                    <menuItem title="Item 3" id="543"/>
                                                 </items>
                                             </menu>
                                             <connections>
@@ -1028,21 +1028,21 @@
                                 </subviews>
                             </customView>
                             <customView id="537">
-                                <rect key="frame" x="712.5" y="0.0" width="391.5" height="481"/>
+                                <rect key="frame" x="713" y="0.0" width="391" height="481"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <tabView initialItem="556" id="554">
-                                        <rect key="frame" x="0.0" y="0.0" width="391.5" height="481"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="391" height="481"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <font key="font" metaFont="system"/>
                                         <tabViewItems>
                                             <tabViewItem label="General" identifier="1" id="556">
                                                 <view key="view" wantsLayer="YES" id="557">
-                                                    <rect key="frame" x="10" y="33" width="371.5" height="435"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <rect key="frame" x="10" y="33" width="371" height="435"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" id="560">
-                                                            <rect key="frame" x="81" y="405" width="284" height="22"/>
+                                                            <rect key="frame" x="81" y="405" width="283.5" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="1" drawsBackground="YES" id="561">
                                                                 <font key="font" metaFont="system"/>
@@ -1068,7 +1068,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="760">
-                                                            <rect key="frame" x="81" y="375" width="284" height="22"/>
+                                                            <rect key="frame" x="81" y="375" width="283.5" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="2" drawsBackground="YES" id="763">
                                                                 <font key="font" metaFont="system"/>
@@ -1076,12 +1076,12 @@
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <connections>
-                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasBasicMetadata" id="953"/>
                                                                 <binding destination="572" name="value" keyPath="currentNodes.album" id="1087">
                                                                     <dictionary key="options">
                                                                         <string key="NSMultipleValuesPlaceholder">Various</string>
                                                                     </dictionary>
                                                                 </binding>
+                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasBasicMetadata" id="953"/>
                                                             </connections>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="761">
@@ -1094,7 +1094,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="765">
-                                                            <rect key="frame" x="81" y="345" width="284" height="22"/>
+                                                            <rect key="frame" x="81" y="345" width="283.5" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="3" drawsBackground="YES" id="768">
                                                                 <font key="font" metaFont="system"/>
@@ -1102,12 +1102,12 @@
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <connections>
-                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasBasicMetadata" id="955"/>
                                                                 <binding destination="572" name="value" keyPath="currentNodes.artist" id="1088">
                                                                     <dictionary key="options">
                                                                         <string key="NSMultipleValuesPlaceholder">Various</string>
                                                                     </dictionary>
                                                                 </binding>
+                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasBasicMetadata" id="955"/>
                                                             </connections>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="766">
@@ -1120,7 +1120,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="770">
-                                                            <rect key="frame" x="81" y="315" width="284" height="22"/>
+                                                            <rect key="frame" x="81" y="315" width="283.5" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="4" drawsBackground="YES" id="773">
                                                                 <font key="font" metaFont="system"/>
@@ -1128,12 +1128,12 @@
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <connections>
-                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" id="966"/>
                                                                 <binding destination="572" name="value" keyPath="currentNodes.albumArtist" id="1089">
                                                                     <dictionary key="options">
                                                                         <string key="NSMultipleValuesPlaceholder">Various</string>
                                                                     </dictionary>
                                                                 </binding>
+                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" id="966"/>
                                                             </connections>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="771">
@@ -1146,7 +1146,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="775">
-                                                            <rect key="frame" x="81" y="285" width="284" height="22"/>
+                                                            <rect key="frame" x="81" y="285" width="283.5" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="5" drawsBackground="YES" id="778">
                                                                 <font key="font" metaFont="system"/>
@@ -1154,12 +1154,12 @@
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <connections>
-                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" id="965"/>
                                                                 <binding destination="572" name="value" keyPath="currentNodes.composer" id="1090">
                                                                     <dictionary key="options">
                                                                         <string key="NSMultipleValuesPlaceholder">Various</string>
                                                                     </dictionary>
                                                                 </binding>
+                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" id="965"/>
                                                             </connections>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="776">
@@ -1190,7 +1190,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="791">
-                                                            <rect key="frame" x="183" y="261" width="84" height="14"/>
+                                                            <rect key="frame" x="182.49999999999997" y="261" width="84" height="14"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Disc#:" id="796">
                                                                 <font key="font" metaFont="smallSystem"/>
@@ -1199,7 +1199,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="792">
-                                                            <rect key="frame" x="243" y="261" width="84" height="14"/>
+                                                            <rect key="frame" x="242.49999999999997" y="261" width="84" height="14"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="of" id="795">
                                                                 <font key="font" metaFont="smallSystem"/>
@@ -1217,7 +1217,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="821">
-                                                            <rect key="frame" x="183" y="231" width="84" height="14"/>
+                                                            <rect key="frame" x="182.49999999999997" y="231" width="84" height="14"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="BPM:" id="822">
                                                                 <font key="font" metaFont="smallSystem"/>
@@ -1260,12 +1260,12 @@
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
                                                             <connections>
-                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" id="962"/>
                                                                 <binding destination="572" name="value" keyPath="currentNodes.compilation" id="1103">
                                                                     <dictionary key="options">
                                                                         <string key="NSMultipleValuesPlaceholder">-</string>
                                                                     </dictionary>
                                                                 </binding>
+                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" id="962"/>
                                                             </connections>
                                                         </button>
                                                         <textField verticalHuggingPriority="750" id="912">
@@ -1321,7 +1321,7 @@
                                                             </connections>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="918">
-                                                            <rect key="frame" x="272" y="255" width="33" height="22"/>
+                                                            <rect key="frame" x="271.5" y="255" width="33" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="22" drawsBackground="YES" id="919">
                                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" localizesFormat="NO" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="920">
@@ -1338,16 +1338,16 @@
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <connections>
-                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" id="972"/>
                                                                 <binding destination="572" name="value" keyPath="currentNodes.disc" id="1097">
                                                                     <dictionary key="options">
                                                                         <string key="NSMultipleValuesPlaceholder">-</string>
                                                                     </dictionary>
                                                                 </binding>
+                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" id="972"/>
                                                             </connections>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="921">
-                                                            <rect key="frame" x="332" y="255" width="33" height="22"/>
+                                                            <rect key="frame" x="331.5" y="255" width="33" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="55" drawsBackground="YES" id="922">
                                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" localizesFormat="NO" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="923">
@@ -1373,7 +1373,7 @@
                                                             </connections>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="935">
-                                                            <rect key="frame" x="272" y="225" width="93" height="22"/>
+                                                            <rect key="frame" x="271.5" y="225" width="93" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="66" drawsBackground="YES" id="936">
                                                                 <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" localizesFormat="NO" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="937">
@@ -1390,12 +1390,12 @@
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <connections>
-                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" id="961"/>
                                                                 <binding destination="572" name="value" keyPath="currentNodes.bpm" id="1099">
                                                                     <dictionary key="options">
                                                                         <string key="NSMultipleValuesPlaceholder">-</string>
                                                                     </dictionary>
                                                                 </binding>
+                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" id="961"/>
                                                             </connections>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="941">
@@ -1425,24 +1425,24 @@
                                                             </connections>
                                                         </textField>
                                                         <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="1312">
-                                                            <rect key="frame" x="81" y="17" width="284" height="118"/>
+                                                            <rect key="frame" x="81" y="17" width="283.5" height="118"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                                             <clipView key="contentView" id="p9h-2J-0er">
-                                                                <rect key="frame" x="1" y="1" width="282" height="116"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <rect key="frame" x="1" y="1" width="281.5" height="116"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
                                                                     <textView importsGraphics="NO" richText="NO" continuousSpellChecking="YES" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="1313">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="283" height="116"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="2" height="14"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                        <size key="minSize" width="282" height="116"/>
+                                                                        <size key="minSize" width="1.5" height="0.0"/>
                                                                         <size key="maxSize" width="463" height="10000000"/>
                                                                         <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                                        <size key="minSize" width="282" height="116"/>
+                                                                        <size key="minSize" width="1.5" height="0.0"/>
                                                                         <size key="maxSize" width="463" height="10000000"/>
                                                                         <connections>
-                                                                            <binding destination="572" name="editable" keyPath="currentNodes.hasBasicMetadata" id="1319"/>
                                                                             <binding destination="572" name="value" keyPath="currentNodes.comment" id="1317"/>
+                                                                            <binding destination="572" name="editable" keyPath="currentNodes.hasBasicMetadata" id="1319"/>
                                                                         </connections>
                                                                     </textView>
                                                                 </subviews>
@@ -1458,7 +1458,7 @@
                                                             </scroller>
                                                         </scrollView>
                                                         <comboBox verticalHuggingPriority="750" id="1373">
-                                                            <rect key="frame" x="81" y="193" width="287" height="26"/>
+                                                            <rect key="frame" x="81" y="193" width="286.5" height="26"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="7" drawsBackground="YES" numberOfVisibleItems="5" id="1374">
                                                                 <font key="font" metaFont="system"/>
@@ -1466,13 +1466,13 @@
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </comboBoxCell>
                                                             <connections>
-                                                                <binding destination="1379" name="content" keyPath="values.groupings" id="1415"/>
-                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasBasicMetadata" id="1391"/>
                                                                 <binding destination="572" name="value" keyPath="currentNodes.grouping" previousBinding="1415" id="1416"/>
+                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasBasicMetadata" id="1391"/>
+                                                                <binding destination="1379" name="content" keyPath="values.groupings" id="1415"/>
                                                             </connections>
                                                         </comboBox>
                                                         <comboBox verticalHuggingPriority="750" id="1384">
-                                                            <rect key="frame" x="81" y="164" width="287" height="26"/>
+                                                            <rect key="frame" x="81" y="164" width="286.5" height="26"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" title="88" drawsBackground="YES" numberOfVisibleItems="5" id="1385">
                                                                 <font key="font" metaFont="system"/>
@@ -1480,9 +1480,9 @@
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </comboBoxCell>
                                                             <connections>
-                                                                <binding destination="1379" name="content" keyPath="values.genres" id="1404"/>
-                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasBasicMetadata" id="1400"/>
                                                                 <binding destination="572" name="value" keyPath="currentNodes.genre" previousBinding="1404" id="1405"/>
+                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasBasicMetadata" id="1400"/>
+                                                                <binding destination="1379" name="content" keyPath="values.genres" id="1404"/>
                                                             </connections>
                                                         </comboBox>
                                                     </subviews>
@@ -1490,11 +1490,11 @@
                                             </tabViewItem>
                                             <tabViewItem label="Sorting" identifier="1" id="1496">
                                                 <view key="view" wantsLayer="YES" id="1497">
-                                                    <rect key="frame" x="10" y="33" width="371.5" height="435"/>
+                                                    <rect key="frame" x="10" y="33" width="371" height="435"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <textField verticalHuggingPriority="750" id="1511">
-                                                            <rect key="frame" x="81" y="410" width="284.5" height="22"/>
+                                                            <rect key="frame" x="81" y="410" width="284" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="1" drawsBackground="YES" id="1545">
                                                                 <font key="font" metaFont="system"/>
@@ -1520,7 +1520,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="1509">
-                                                            <rect key="frame" x="81" y="380" width="284.5" height="22"/>
+                                                            <rect key="frame" x="81" y="380" width="284" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="2" drawsBackground="YES" id="1547">
                                                                 <font key="font" metaFont="system"/>
@@ -1528,12 +1528,12 @@
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <connections>
-                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" id="1611"/>
                                                                 <binding destination="572" name="value" keyPath="currentNodes.albumSort" id="1609">
                                                                     <dictionary key="options">
                                                                         <string key="NSMultipleValuesPlaceholder">Various</string>
                                                                     </dictionary>
                                                                 </binding>
+                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" id="1611"/>
                                                             </connections>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="1525">
@@ -1546,7 +1546,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="1510">
-                                                            <rect key="frame" x="81" y="350" width="284.5" height="22"/>
+                                                            <rect key="frame" x="81" y="350" width="284" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="3" drawsBackground="YES" id="1546">
                                                                 <font key="font" metaFont="system"/>
@@ -1554,12 +1554,12 @@
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <connections>
-                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" id="1597"/>
                                                                 <binding destination="572" name="value" keyPath="currentNodes.artistSort" id="1596">
                                                                     <dictionary key="options">
                                                                         <string key="NSMultipleValuesPlaceholder">Various</string>
                                                                     </dictionary>
                                                                 </binding>
+                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" id="1597"/>
                                                             </connections>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="1524" userLabel="StaticText - Artist Sort:">
@@ -1572,7 +1572,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="1523">
-                                                            <rect key="frame" x="81" y="320" width="284.5" height="22"/>
+                                                            <rect key="frame" x="81" y="320" width="284" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="4" drawsBackground="YES" id="1530">
                                                                 <font key="font" metaFont="system"/>
@@ -1580,12 +1580,12 @@
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <connections>
-                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" id="1587"/>
                                                                 <binding destination="572" name="value" keyPath="currentNodes.albumArtistSort" id="1607">
                                                                     <dictionary key="options">
                                                                         <string key="NSMultipleValuesPlaceholder">Various</string>
                                                                     </dictionary>
                                                                 </binding>
+                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" id="1587"/>
                                                             </connections>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="1522">
@@ -1598,7 +1598,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="1513">
-                                                            <rect key="frame" x="81" y="290" width="284.5" height="22"/>
+                                                            <rect key="frame" x="81" y="290" width="284" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="5" drawsBackground="YES" id="1542">
                                                                 <font key="font" metaFont="system"/>
@@ -1606,12 +1606,12 @@
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
                                                             <connections>
-                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" id="1569"/>
                                                                 <binding destination="572" name="value" keyPath="currentNodes.composerSort" id="1608">
                                                                     <dictionary key="options">
                                                                         <string key="NSMultipleValuesPlaceholder">Various</string>
                                                                     </dictionary>
                                                                 </binding>
+                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" id="1569"/>
                                                             </connections>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="1521">
@@ -1624,7 +1624,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="1656">
-                                                            <rect key="frame" x="80" y="235" width="285.5" height="22"/>
+                                                            <rect key="frame" x="80" y="235" width="285" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="5" drawsBackground="YES" id="1659">
                                                                 <font key="font" metaFont="system"/>
@@ -1646,7 +1646,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="1676">
-                                                            <rect key="frame" x="81" y="208" width="284.5" height="22"/>
+                                                            <rect key="frame" x="81" y="208" width="284" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="5" drawsBackground="YES" id="1679">
                                                                 <font key="font" metaFont="system"/>
@@ -1696,17 +1696,17 @@
                                             </tabViewItem>
                                             <tabViewItem label="Artwork" identifier="2" id="555">
                                                 <view key="view" id="564">
-                                                    <rect key="frame" x="10" y="33" width="371.5" height="435"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <rect key="frame" x="10" y="33" width="371" height="435"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <imageView id="977" customClass="DraggableImageView">
-                                                            <rect key="frame" x="14" y="14" width="343" height="416"/>
+                                                            <rect key="frame" x="14" y="14" width="342.5" height="416"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                                             <imageCell key="cell" selectable="YES" editable="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="978"/>
                                                             <connections>
-                                                                <binding destination="572" name="editable" keyPath="currentNodes.hasExtenedMetadata" id="1276"/>
-                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" previousBinding="1276" id="1277"/>
                                                                 <binding destination="572" name="value" keyPath="currentNodes.cover" id="980"/>
+                                                                <binding destination="572" name="editable" keyPath="currentNodes.allMp3s" id="q0C-qu-cVX"/>
+                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" previousBinding="q0C-qu-cVX" id="6US-kn-JUo"/>
                                                             </connections>
                                                         </imageView>
                                                     </subviews>

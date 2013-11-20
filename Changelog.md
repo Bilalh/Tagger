@@ -14,6 +14,9 @@ Version 1.8
 * Clicking on a Vgmdb search result opens those results
 
 
+### Bug Fixes ###
+* Disable editing album art of m4a since a  quite a few people use invalid m4a which could the tracks to be unplayable  in iTunes without using some command line tools
+
 Version 1.7 Beta (Sat 06 Jul 2013)
 -----------
 
