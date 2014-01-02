@@ -63,7 +63,7 @@ static const NSSet *tokensSet;
 						  NULL, 
 						  NULL, 
 						  nil, 
-						  [res localizedDescription]);
+						  @"%@", [res localizedDescription]);
 	}
 	
 	[self confirmSheet:self];
