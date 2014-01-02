@@ -5,13 +5,13 @@ Tagger is application that auto tags audio files. It also supports batch tag edi
 
 Prerequisites
 -------------
-* Only tested on the latest Mac OSX 10.8 release, should work on 10.7 and might work on 10.6.  Untested on 10.9
+* Only tested on the latest Mac OSX 10.8 release, should work on 10.7.  Untested on 10.9
 * 64 bit only
 
 Install From Source
 -------------------
 ### Prerequisites
-* Only tested on the latest Mac OSX 10.8 release, should work on 10.7 and might work on 10.6. Untested on 10.9
+* Only tested on the latest Mac OSX 10.8 release, should work on 10.7. Untested on 10.9
 * 64 bit only
 
 ### Introductions

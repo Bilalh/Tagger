@@ -1,6 +1,6 @@
 TODO
 ====
-* Test on 10.8 (inculding signing the app)
+* Test on 10.9 (inculding signing the app)
 * check swapFirstAndLastName 
 
 FIXME
