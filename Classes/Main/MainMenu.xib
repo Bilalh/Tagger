@@ -499,6 +499,21 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Swap First and Last Name" id="1484" userLabel="Menu -  Swap First and Last Name"/>
                             </menuItem>
+                            <menuItem isSeparatorItem="YES" id="UAO-1f-TYL"/>
+                            <menuItem title="Composer to Artist" id="tQ8-Bz-F1S">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="composerToArtist:" target="572" id="adM-Lg-AaX"/>
+                                    <binding destination="572" name="enabled" keyPath="currentNodes.hasBasicMetadata" id="ezH-8d-vCL"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Artist to Composer" id="edw-A1-ee9">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="artistToComposer:" target="572" id="Orx-SQ-pm8"/>
+                                    <binding destination="572" name="enabled" keyPath="currentNodes.hasBasicMetadata" id="gc2-DP-gUl"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="1449"/>
                             <menuItem title="Delete Tags" id="1460">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -1190,7 +1205,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="791">
-                                                            <rect key="frame" x="182.49999999999997" y="261" width="84" height="14"/>
+                                                            <rect key="frame" x="182.5" y="261" width="84" height="14"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Disc#:" id="796">
                                                                 <font key="font" metaFont="smallSystem"/>
@@ -1199,7 +1214,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="792">
-                                                            <rect key="frame" x="242.49999999999997" y="261" width="84" height="14"/>
+                                                            <rect key="frame" x="242.5" y="261" width="84" height="14"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="of" id="795">
                                                                 <font key="font" metaFont="smallSystem"/>
@@ -1217,7 +1232,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <textField verticalHuggingPriority="750" id="821">
-                                                            <rect key="frame" x="182.49999999999997" y="231" width="84" height="14"/>
+                                                            <rect key="frame" x="182.5" y="231" width="84" height="14"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="BPM:" id="822">
                                                                 <font key="font" metaFont="smallSystem"/>
@@ -1432,13 +1447,10 @@
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
                                                                     <textView importsGraphics="NO" richText="NO" continuousSpellChecking="YES" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="1313">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="2" height="14"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                        <size key="minSize" width="1.5" height="0.0"/>
                                                                         <size key="maxSize" width="463" height="10000000"/>
                                                                         <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                                        <size key="minSize" width="1.5" height="0.0"/>
                                                                         <size key="maxSize" width="463" height="10000000"/>
                                                                         <connections>
                                                                             <binding destination="572" name="value" keyPath="currentNodes.comment" id="1317"/>
@@ -1704,8 +1716,8 @@
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                                             <imageCell key="cell" selectable="YES" editable="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="978"/>
                                                             <connections>
-                                                                <binding destination="572" name="value" keyPath="currentNodes.cover" id="980"/>
                                                                 <binding destination="572" name="editable" keyPath="currentNodes.allMp3s" id="q0C-qu-cVX"/>
+                                                                <binding destination="572" name="value" keyPath="currentNodes.cover" id="980"/>
                                                                 <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" previousBinding="q0C-qu-cVX" id="6US-kn-JUo"/>
                                                             </connections>
                                                         </imageView>

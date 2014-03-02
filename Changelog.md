@@ -10,6 +10,8 @@ Version 1.8
 * Button to use the directory name as the search query when auto tagging/
 * Release date field.
 * Quicklook on Vgmdb search results by pressing space.
+* Artist to composer
+* Composer to artist
 
 ### Improvements ###
 * Improvements to the auto taggering gui.

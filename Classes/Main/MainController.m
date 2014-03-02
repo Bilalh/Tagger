@@ -788,6 +788,20 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[self refresh:sender];
 }
 
+- (IBAction)composerToArtist:(id)sender
+{
+	[self performBlockOnTags:sender tagNames:@[@"artist"] block:^id (id value, NSString *tagName, Tags *tags) {
+		return tags.composer;
+	}];
+}
+
+- (IBAction)artistToComposer:(id)sender
+{
+	[self performBlockOnTags:sender tagNames:@[@"composer"] block:^id (id value, NSString *tagName, Tags *tags) {
+		return tags.artist;
+	}];
+}
+
 - (IBAction)performBlockOnTags:(id)sender
 					  tagNames:(const NSArray*)tagNames
 						 block:(id (^)(id value, NSString *tagName, Tags *tags ))block
