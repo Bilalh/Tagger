@@ -205,8 +205,8 @@ using namespace std;
 
 - (void) setUrl:(NSString *)newValue
 {
-	TAG_SETTER_START(url);
-	[self setFieldWithString:URL  value:newValue]; 
+//	TAG_SETTER_START(url);
+//	[self setFieldWithString:URL  value:newValue]; 
 }
 
 - (void) setArtistSort:(NSString *)newValue
