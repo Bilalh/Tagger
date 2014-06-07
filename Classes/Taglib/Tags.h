@@ -11,9 +11,14 @@ struct FileData;
 
 /// Tags allows reading and writing of tags of audio files
 @interface Tags : NSObject {
-	@protected
 	struct FileData* data;  /// The tag data
 	
+    NSString *title;
+    NSString *album;
+    NSString *artist;
+    NSString *genre;
+    NSNumber *year;
+    
 	// Field that are handed by the subclasses
 	NSString *albumArtist;
 	NSString *composer;
@@ -91,6 +96,12 @@ struct FileData;
 
 - (void) removeAllTags;
 
+
+/// The url of the file
+@property (readonly, strong,nonatomic) NSURL *fileUrl;
+@property (readonly, strong,nonatomic) NSString *fileUrlType;
+
+
 /// @name Finding General metadata.
 
 /// The title of the file
@@ -131,11 +142,11 @@ struct FileData;
 /// The total number of tracks in the album
 @property (strong,nonatomic) NSNumber *totalTracks;
 /// The disc# of the file
-@property  (nonatomic) NSNumber *disc;
+@property  (strong,  nonatomic) NSNumber *disc;
 /// The total number of discs in the album
-@property (nonatomic) NSNumber *totalDiscs;
+@property (strong, nonatomic) NSNumber *totalDiscs;
 /// YES if the track is part of a compilation.
-@property (nonatomic) NSNumber *compilation;
+@property (strong, nonatomic) NSNumber *compilation;
 
 // The url associated with the file
 @property (strong,nonatomic) NSString *url;
