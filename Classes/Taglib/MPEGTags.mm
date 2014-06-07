@@ -116,7 +116,7 @@ using namespace Fields::MPEG;
     isrc        = [self getFieldWithString:ISRC];
     releaseDate = [self getFieldWithString:RELEASE_DATE];
 	
-	[self initCover];
+//	[self initCover];
 }
 
 - (void) initCover
