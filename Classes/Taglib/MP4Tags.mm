@@ -17,18 +17,13 @@
 #include <mp4tag.h> 
 #include <mp4file.h>
 
-#import "Logging.h"
-LOG_LEVEL(LOG_LEVEL_ERROR);
+#import <AVFoundation/AVFoundation.h>
 
-@interface MP4Tags()
-- (NSString*) getFieldWithString:(TagLib::String)field;
-- (TagLib::MP4::Item) getField:(TagLib::String)field;
-- (bool) setFieldWithString:(TagLib::String)field
-					  value:(NSString*)value;
-@end
+#import "Logging.h"
+LOG_LEVEL(LOG_LEVEL_VERBOSE);
+
 
 using namespace TagLib;
-using namespace Fields::MP4;
 using namespace std;
 @implementation MP4Tags
 
@@ -137,146 +132,228 @@ using namespace std;
 }
 
  
-#pragma mark -
-#pragma mark Setters
+#pragma mark AV translate
 
-- (void) removeAllTags
+- (void) writeMeta
 {
-	MP4::Tag * const t = data->f->mp4->tag();
-	MP4::ItemListMap &map =  t->itemListMap();
-	map.clear();
-	
-	data->f->mp4->save();
+    BOOL res = [self writeAssetToURL:self.fileUrl
+                      withDictionary:self.metadata
+                         andFileType:self.fileUrlType
+                           andFormat:AVMetadataFormatiTunesMetadata
+                         andKeySpace:AVMetadataKeySpaceiTunes];
+
+    if (!res){
+        DDLogError(@"write failed for %@", self.fileUrl);
+}
 }
 
-- (void) setAlbumArtist:(NSString *)newValue
-{ 
-	TAG_SETTER_START(albumArtist);
-	[self setFieldWithString:ALBUM_ARTIST  value:newValue]; 
+NSUInteger intgerForDataWithRange(NSData *theData, NSUInteger theLocation, NSUInteger theLength)
+{
+    if (!theData) return 0;
+    NSUInteger i = *(NSInteger*)([theData subdataWithRange:NSMakeRange(theLocation, theLength)].bytes);
+    return (NSUInteger)((theLength < 4) ? EndianU16_BtoN(i) : EndianU32_BtoN(i));
 }
 
-- (void) setComposer:(NSString *)newValue
+NSData *dataForInteger(NSUInteger theInteger)
 {
-	TAG_SETTER_START(composer);
-	[self setFieldWithString:COMPOSER  value:newValue]; 
+    int i = (sizeof(theInteger) < 4) ? EndianU16_NtoB(theInteger) : EndianU32_NtoB(theInteger);
+    return [NSData dataWithBytes:&i length:sizeof(i)];
 }
 
-- (void) setGrouping:(NSString *)newValue
+NSData *dataForIntegerPair(NSUInteger fst, NSUInteger snd)
 {
-	TAG_SETTER_START(grouping);
-	[self setFieldWithString:GROUPING  value:newValue]; 
-}
+    int i = (sizeof(fst) < 4) ? EndianU16_NtoB(fst) : EndianU32_NtoB(fst);
+    //  second byte is the inverse order
+    int k = (sizeof(fst) < 4) ? EndianU32_NtoB(snd) : EndianU16_NtoB(snd);
 
-- (void) setBpm:(NSNumber *)newValue
-{
-	TAG_SETTER_START(bpm);
-	[self setField:BPM value:  MP4::Item([newValue intValue])];
-}
-
-- (void) setTrack:(NSNumber *)newValue
-{
-	TAG_SETTER_START(track);
-	[self setField:TRACK_NUMBER value:MP4::Item([newValue intValue], [totalTracks intValue])];
-}
-
-- (void) setTotalTracks:(NSNumber *)newValue
-{
-	TAG_SETTER_START(totalTracks);
-	[self setField:TRACK_NUMBER value:MP4::Item([track intValue], [newValue intValue])];
-}
-
-- (void) setDisc:(NSNumber *)newValue
-{
-	TAG_SETTER_START(disc);
-	[self setField:DISC_NUMBER value:MP4::Item([newValue intValue], [totalDiscs intValue])];
-}
-
-- (void) setTotalDiscs:(NSNumber *)newValue
-{
-	TAG_SETTER_START(totalDiscs);
-	[self setField:DISC_NUMBER value:MP4::Item([disc intValue], [newValue intValue])];
-}
-
-- (void) setCompilation:(NSNumber *)newValue
-{
-	TAG_SETTER_START(compilation);
-	[self setField:COMPILATION value:MP4::Item([newValue boolValue] )];
-}
-
-- (void) setUrl:(NSString *)newValue
-{
-//	TAG_SETTER_START(url);
-//	[self setFieldWithString:URL  value:newValue]; 
-}
-
-- (void) setArtistSort:(NSString *)newValue
-{
-	TAG_SETTER_START(artistSort);
-	[self setFieldWithString:ARTIST_SORT value:newValue];
-}
-
-- (void) setAlbumSort:(NSString *)newValue
-{
-	TAG_SETTER_START(albumSort);
-	[self setFieldWithString:ALBUM_SORT value:newValue];
-}
-
-- (void) setTitleSort:(NSString *)newValue
-{
-	TAG_SETTER_START(titleSort);
-	[self setFieldWithString:TITLE_SORT value:newValue];
-}
-
-- (void) setComposerSort:(NSString *)newValue
-{
-	TAG_SETTER_START(composerSort);
-	[self setFieldWithString:COMPOSER_SORT value:newValue];
-}
-
-- (void) setAlbumArtistSort:(NSString *)newValue
-{
-	TAG_SETTER_START(albumArtistSort);
-	[self setFieldWithString:ALBUM_ARTIST_SORT value:newValue];
+    NSMutableData *mut = [NSMutableData  dataWithBytes:&i length:sizeof(i)];
+    [mut appendBytes:&k length:sizeof(k)];
+    return mut;
 }
 
 
+#pragma mark AV
 
-// Misc
-
-- (void) setIsrc:(NSString*)newValue
+- (BOOL)writeAssetToURL:(NSURL *)theURL
+          withDictionary:(NSDictionary *)assetDict
+             andFileType:(NSString *)theFileType
+               andFormat:(NSString *)theAVFormat
+             andKeySpace:(NSString *)theKeySpace
 {
-	TAG_SETTER_START(isrc);
-	[self setFieldWithString:ISRC value:newValue];
+
+    DDLogVerbose(@"writeAssetToURL");
+
+    AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:theURL options:nil];
+    if (!asset || ![asset isExportable]) {
+        DDLogVerbose(@"Not isExportable");
+        return NO;
+}
+    AVAssetExportSession *session = [AVAssetExportSession
+                                     exportSessionWithAsset:asset
+                                     presetName:AVAssetExportPresetPassthrough];
+
+    if (![[session supportedFileTypes] containsObject:theFileType]) {
+        DDLogVerbose(@"Not supportedFileTypes");
+        return NO;
 }
 
-- (void) setReleaseDate:(NSString*)newValue
-{
-	TAG_SETTER_START(releaseDate);
-	[self setFieldWithString:RELEASE_DATE value:newValue];
+    NSString *exportPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"sadasdasdasd"];
+    NSURL *exportUrl = [NSURL fileURLWithPath:exportPath];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:exportPath]) {
+        [[NSFileManager defaultManager] removeItemAtPath:exportPath error:nil];
 }
 
-// need fixing?
-- (void) setCover:(NSImage *)newValue
-{
-	using namespace TagLib::MP4;
-	TAG_SETTER_START(cover);
-	
-	ByteVector bv;
-	if (!cover){
-		bv = ByteVector::null;
-	}else{
-		NSData *imageData = [cover bitmapDataForType:NSJPEGFileType];
-		bv.setData((const char *)[imageData bytes], (uint)[imageData length]);
+    NSMutableDictionary *mutableMetadataDict = [NSMutableDictionary dictionaryWithDictionary:assetDict];
+
+    DDLogVerbose(@"load mutableMetadataDict: %@", mutableMetadataDict);
+
+    [mutableMetadataDict removeObjectForKey:@"com.apple.iTunes.iTunSMPB"];
+    [mutableMetadataDict removeObjectForKey:@"com.apple.iTunes.iTunMOVI"];
+    [mutableMetadataDict removeObjectForKey:@"com.apple.iTunes.iTunNORM"];
+    [mutableMetadataDict removeObjectForKey:@"meta"];
+
+
+    NSMutableArray *newMetadata = [NSMutableArray array];
+    for (id key in [mutableMetadataDict keyEnumerator]) {
+		id value = [mutableMetadataDict objectForKey:key];
+		if (value) {
+			AVMutableMetadataItem *newItem = [AVMutableMetadataItem metadataItem];
+			newItem.key = key;
+			if (nil != theKeySpace) {
+				newItem.keySpace = theKeySpace;
+}
+			else {
+				newItem.keySpace = AVMetadataKeySpaceCommon;
+			}
+			newItem.value = value;
+			[newMetadata addObject:newItem];
+		}
 	}
-	
-	CoverArtList coverArtList;
-	CoverArtList list = CoverArtList();
-	coverArtList.append(CoverArt(CoverArt::JPEG, bv));
+    DDLogVerbose(@"load newMetadata: %@", newMetadata);
+    session.outputURL      = exportUrl;
+    session.outputFileType = theFileType;
+    session.metadata       = newMetadata;
 
-//	[self setField:COVER value:list];
-	MP4::Tag * const tag = data->f->mp4->tag();
-	tag->itemListMap()["covr"] = coverArtList;
-	tag->save();
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+
+    __block BOOL result   = NO;
+    [session exportAsynchronouslyWithCompletionHandler:^{
+
+        switch (session.status) {
+            case AVAssetExportSessionStatusFailed:
+
+                DDLogVerbose(@"Export Status %@", session.error);
+
+                break;
+            case AVAssetExportSessionStatusCancelled:
+
+                DDLogVerbose(@"Export canceled");
+
+                break;
+            case AVAssetExportSessionStatusExporting:
+
+                DDLogVerbose(@"Export Exporting");
+
+                break;
+            case AVAssetExportSessionStatusCompleted:
+
+                DDLogVerbose(@"Export completed");
+
+                result = YES;
+                break;
+            default:
+                break;
 }
+
+        if (result) {
+            NSError *err;
+            NSFileManager *fm = [NSFileManager defaultManager];
+            if ([fm fileExistsAtPath:theURL.path]) {
+                [fm removeItemAtPath:theURL.path error:&err];
+
+                DDLogVerbose(@"Removing file: %@", err);
+
+            }
+            err = nil;
+            [fm moveItemAtURL:exportUrl toURL:theURL error:&err];
+            if (err) {
+                result = NO;
+}
+
+            DDLogVerbose(@"Moving file: %@", err);
+
+        }
+
+		dispatch_semaphore_signal(semaphore);
+    }];
+
+    long r = 0;
+	do {
+        r = dispatch_semaphore_wait(semaphore, dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC));
+	} while ( r );
+    return result;
+}
+
+
+- (NSMutableDictionary*) dictionaryAssetWithURL:(NSURL *)theURL
+{
+    AVURLAsset *ast = [AVURLAsset URLAssetWithURL:theURL
+                                          options:nil];
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    for (NSString *fmt in [ast availableMetadataFormats]) {
+		NSArray *items = [ast metadataForFormat:fmt];
+		if ([items count]) {
+			for (AVMetadataItem *item in items) {
+                if (nil != fmt) {
+                    NSString *keyAsString = nil;
+                    if ([item.key isKindOfClass:[NSString class]]) {
+                        keyAsString  = (NSString *)item.key;
+                    } else if ([item.key isKindOfClass:[NSNumber class]]) {
+                        keyAsString = stringForOSType([(NSNumber *)item.key unsignedIntValue]);
+                    } else if ([item.key isKindOfClass:[NSObject class]]) {
+                        keyAsString = [(NSObject *)item.key description];
+                    } else {
+                        // Do nothing.
+                    }
+                    [dict setObject:item.value forKey:keyAsString];
+                } else {
+                    [dict setObject:item.value forKey:item.commonKey];
+                }
+            }
+		}
+	}
+    [dict removeObjectForKey:@"com.apple.iTunes.iTunSMPB"];
+    [dict removeObjectForKey:@"com.apple.iTunes.iTunMOVI"];
+    [dict removeObjectForKey:@"com.apple.iTunes.iTunNORM"];
+    [dict removeObjectForKey:@"meta"];
+    [dict removeObjectForKey:@"titl"];
+    return dict;
+}
+
+NSString *stringForOSType(OSType theOSType)
+{
+    // Taken from: https://developer.apple.com/library/mac/samplecode/avmetadataeditor/Introduction/Intro.html
+	
+	size_t len = sizeof(OSType);
+	long addr = (unsigned long)&theOSType;
+	char cstring[5];
+
+	len = (theOSType >> 24) == 0 ? len - 1 : len;
+	len = (theOSType >> 16) == 0 ? len - 1 : len;
+	len = (theOSType >>  8) == 0 ? len - 1 : len;
+	len = (theOSType >>  0) == 0 ? len - 1 : len;
+	
+	addr += (4 - len);
+
+	theOSType = EndianU32_NtoB(theOSType);
+
+	strncpy(cstring, (char *)addr, len);
+	cstring[len] = 0;
+
+	return [NSString stringWithCString:(char *)cstring encoding:NSMacOSRomanStringEncoding];
+}
+
+
+
 
 @end
