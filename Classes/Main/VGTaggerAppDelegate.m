@@ -25,7 +25,11 @@
 @synthesize window, mainController, preferencesWindowController;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{	 
+{
+    
+    if(getenv("NSZombieEnabled") || getenv("NSAutoreleaseFreedObjectCheckEnabled"))
+        NSLog(@"NSZombieEnabled/NSAutoreleaseFreedObjectCheckEnabled enabled!");
+    
 	[[DDTTYLogger sharedInstance ] setLogFormatter:	[[PSDDFormatter alloc ] init ]];
 	[DDLog addLogger:[DDASLLogger sharedInstance]];
 	[DDLog addLogger:[DDTTYLogger sharedInstance]];
