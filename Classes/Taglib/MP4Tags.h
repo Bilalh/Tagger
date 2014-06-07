@@ -14,5 +14,7 @@
     
 }
 
+@property (strong,nonatomic) NSMutableDictionary *metadata;
+
 
 @end
