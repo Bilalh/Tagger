@@ -59,6 +59,12 @@ using namespace TagLib;
 		} else {
 			data = new FileData;
 			data->f = new FileDetails;
+
+            _fileUrl = [[NSURL alloc] initFileURLWithPath:filename];
+            NSString *tmp;
+            [self.fileUrl getResourceValue:&tmp forKey:NSURLTypeIdentifierKey error:nil];
+            _fileUrlType = tmp;
+
 		}
 	}
 	
