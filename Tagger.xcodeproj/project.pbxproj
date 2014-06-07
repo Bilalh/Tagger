@@ -60,12 +60,12 @@
 		925292B915C35CAB00C8CD9E /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD713DA087D00244796 /* DDLog.m */; };
 		925292BB15C35CAB00C8CD9E /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 929A4AD913DA087D00244796 /* DDTTYLogger.m */; };
 		9254006713F0A82C0020C912 /* libtag.1.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.1.dylib */; };
-		9254007113F0AC8F0020C912 /* libtag.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.1.dylib */; };
 		9254094915C367330074A280 /* NSString+Tag.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9254094815C367330074A280 /* NSString+Tag.mm */; };
 		9254094A15C36BFB0074A280 /* NSString+Convert.mm in Sources */ = {isa = PBXBuildFile; fileRef = 92E6ED7813F313230045679E /* NSString+Convert.mm */; };
 		9254094B15C36CC00074A280 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922E35D613C89BF3003C5913 /* Cocoa.framework */; };
 		9264488A13D773CE0035E693 /* arrowLeftBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */; };
 		9264488B13D773CE0035E693 /* arrowRightBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488913D773CE0035E693 /* arrowRightBlack16.tiff */; };
+		927058FD1942A02600CD322F /* libtag.1.14.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 927058FC1942A02600CD322F /* libtag.1.14.0.dylib */; };
 		928411AF13EB853600A92F3F /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 928411AE13EB853600A92F3F /* defaults.plist */; };
 		9289122815CF195500FBE113 /* hcxselect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9289122515CF195500FBE113 /* hcxselect.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		9289122A15CF198600FBE113 /* hcxselect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9289122515CF195500FBE113 /* hcxselect.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -83,6 +83,7 @@
 		92A41DE915D82097006D89C5 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A41DE815D82097006D89C5 /* libiconv.dylib */; };
 		92A6808813EC7B130067DD5F /* MASPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92A6808513EC7B130067DD5F /* MASPreferencesWindow.xib */; };
 		92A6808913EC7B130067DD5F /* MASPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92A6808713EC7B130067DD5F /* MASPreferencesWindowController.m */; };
+		92A80D01194376F3001AD4B1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A80D00194376F3001AD4B1 /* AVFoundation.framework */; };
 		92A96F2D15BCD2DC004A320E /* Vgmdb.mm in Sources */ = {isa = PBXBuildFile; fileRef = 92A96F2C15BCD2DC004A320E /* Vgmdb.mm */; };
 		92B615D515C5EFEB002E048B /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F16DB014041AC10031E4B4 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		92C4466413E0BF830038F817 /* BWHyperlinkTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 92C4466113E0BF830038F817 /* BWHyperlinkTitleButton.m */; };
@@ -90,7 +91,7 @@
 		92C85E6615DAFFA300436FAD /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A41DE815D82097006D89C5 /* libiconv.dylib */; };
 		92D2C4D715D05B7100FF5E96 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F16DB014041AC10031E4B4 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		92D30AC31405B1B600677B70 /* IntPair.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D30AC21405B1B600677B70 /* IntPair.m */; };
-		92DBDEAD14AAB99A009434DB /* fields.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92DBDEAC14AAB99A009434DB /* fields.cpp */; };
+		92DBDEAD14AAB99A009434DB /* fields.mm in Sources */ = {isa = PBXBuildFile; fileRef = 92DBDEAC14AAB99A009434DB /* fields.mm */; };
 		92DECF1214ABFBAC00A956E8 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 92DECF1114ABFBAC00A956E8 /* Credits.html */; };
 		92E101F815CDB7FB00882A07 /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E101F715CDB7FB00882A07 /* NSString+Regex.m */; };
 		92E101F915CDB7FB00882A07 /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E101F715CDB7FB00882A07 /* NSString+Regex.m */; };
@@ -211,6 +212,7 @@
 		925CE81D13C3BD6D009D6D94 /* Tagger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tagger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowLeftBlack16.tiff; sourceTree = "<group>"; };
 		9264488913D773CE0035E693 /* arrowRightBlack16.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = arrowRightBlack16.tiff; sourceTree = "<group>"; };
+		927058FC1942A02600CD322F /* libtag.1.14.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtag.1.14.0.dylib; path = ../../../../usr/local/Cellar/taglib/1.9.1/lib/libtag.1.14.0.dylib; sourceTree = "<group>"; };
 		927883BF13E06E5000063D28 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.md; sourceTree = "<group>"; };
 		927883C013E06EED00063D28 /* Todo.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = Todo.md; sourceTree = "<group>"; };
 		928411AE13EB853600A92F3F /* defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaults.plist; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 		9293B84A14AF7DFA006D96E7 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		9293B84D14AF870D006D96E7 /* config.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.yaml; sourceTree = "<group>"; };
 		9293B84F14AF88DC006D96E7 /* appcast_automation.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = appcast_automation.rb; sourceTree = "<group>"; };
+		92960CF6194295BF009431F0 /* libtag.1.12.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtag.1.12.0.dylib; path = ../../../../usr/local/Cellar/taglib/1.8/lib/libtag.1.12.0.dylib; sourceTree = "<group>"; };
 		929A4ACD13DA027C00244796 /* Changelog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Changelog.md; sourceTree = "<group>"; };
 		929A4AD013DA087D00244796 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
 		929A4AD113DA087D00244796 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
@@ -240,6 +243,7 @@
 		92A6808513EC7B130067DD5F /* MASPreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MASPreferencesWindow.xib; sourceTree = "<group>"; };
 		92A6808613EC7B130067DD5F /* MASPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASPreferencesWindowController.h; sourceTree = "<group>"; };
 		92A6808713EC7B130067DD5F /* MASPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASPreferencesWindowController.m; sourceTree = "<group>"; };
+		92A80D00194376F3001AD4B1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		92A96F2B15BCD2DC004A320E /* Vgmdb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vgmdb.h; sourceTree = "<group>"; };
 		92A96F2C15BCD2DC004A320E /* Vgmdb.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Vgmdb.mm; sourceTree = "<group>"; };
 		92A96F2E15BCD82B004A320E /* VgmdbStruct.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VgmdbStruct.h; sourceTree = "<group>"; };
@@ -251,7 +255,7 @@
 		92C4466313E0BF830038F817 /* BWHyperlinkButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWHyperlinkButtonCell.m; sourceTree = "<group>"; };
 		92D30AC11405B1B600677B70 /* IntPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntPair.h; sourceTree = "<group>"; };
 		92D30AC21405B1B600677B70 /* IntPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntPair.m; sourceTree = "<group>"; };
-		92DBDEAC14AAB99A009434DB /* fields.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fields.cpp; sourceTree = "<group>"; };
+		92DBDEAC14AAB99A009434DB /* fields.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = fields.mm; sourceTree = "<group>"; };
 		92DECF1114ABFBAC00A956E8 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		92E101F615CDB7FB00882A07 /* NSString+Regex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Regex.h"; sourceTree = "<group>"; };
 		92E101F715CDB7FB00882A07 /* NSString+Regex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Regex.m"; sourceTree = "<group>"; };
@@ -344,12 +348,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92A80D01194376F3001AD4B1 /* AVFoundation.framework in Frameworks */,
+				927058FD1942A02600CD322F /* libtag.1.14.0.dylib in Frameworks */,
 				92C85E6615DAFFA300436FAD /* libiconv.dylib in Frameworks */,
 				923926EE15CF078100135F07 /* libhtmlcxx.3.dylib in Frameworks */,
 				92F16DB314041D8B0031E4B4 /* libicucore.dylib in Frameworks */,
 				92E6EDF713F32B3C0045679E /* Quartz.framework in Frameworks */,
 				92E6EDE413F320540045679E /* ScriptingBridge.framework in Frameworks */,
-				9254007113F0AC8F0020C912 /* libtag.1.dylib in Frameworks */,
 				922E35D713C89BF3003C5913 /* Cocoa.framework in Frameworks */,
 				9239270015CF0B9F00135F07 /* libhcxselect.dylib in Frameworks */,
 				9293B84814AF7C7B006D96E7 /* Sparkle.framework in Frameworks */,
@@ -416,6 +421,9 @@
 		9252929615C359C300C8CD9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92A80D00194376F3001AD4B1 /* AVFoundation.framework */,
+				927058FC1942A02600CD322F /* libtag.1.14.0.dylib */,
+				92960CF6194295BF009431F0 /* libtag.1.12.0.dylib */,
 				92A41DE815D82097006D89C5 /* libiconv.dylib */,
 				923926FC15CF0B7E00135F07 /* libhcxselect.dylib */,
 				923926EB15CF076D00135F07 /* libhtmlcxx.3.dylib */,
@@ -717,7 +725,7 @@
 				9228998F178862EA002A59A0 /* make_fields.rb */,
 				9228998E17885CD5002A59A0 /* fields.txt */,
 				92E6EDA013F313230045679E /* Fields.h */,
-				92DBDEAC14AAB99A009434DB /* fields.cpp */,
+				92DBDEAC14AAB99A009434DB /* fields.mm */,
 				92E6EDA113F313230045679E /* framelistmp4.cpp */,
 				92E6EDA213F313230045679E /* MP4Tags.h */,
 				92E6EDA313F313230045679E /* MP4Tags.mm */,
@@ -819,6 +827,7 @@
 		925CE81413C3BD6D009D6D94 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0510;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "";
 			};
@@ -1005,7 +1014,7 @@
 				923B846413F4B7A800524BFA /* BHFinderLabelColours.m in Sources */,
 				92D30AC31405B1B600677B70 /* IntPair.m in Sources */,
 				921FBBEC140C682100D1CBE8 /* ArrayDefaultsPreferencesViewController.m in Sources */,
-				92DBDEAD14AAB99A009434DB /* fields.cpp in Sources */,
+				92DBDEAD14AAB99A009434DB /* fields.mm in Sources */,
 				92A96F2D15BCD2DC004A320E /* Vgmdb.mm in Sources */,
 				9254094915C367330074A280 /* NSString+Tag.mm in Sources */,
 				92E101F815CDB7FB00882A07 /* NSString+Regex.m in Sources */,
@@ -1158,9 +1167,10 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
+				SDKROOT = macosx10.8;
+				VALID_ARCHS = x86_64;
 			};
 			name = Debug;
 		};
@@ -1172,8 +1182,9 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				SDKROOT = macosx;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx10.8;
+				VALID_ARCHS = x86_64;
 			};
 			name = Release;
 		};
@@ -1181,6 +1192,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -1204,9 +1216,11 @@
 					"$(inherited)",
 					"$(SRCROOT)/Frameworks",
 					/usr/local/lib/,
+					/usr/local/Cellar/taglib/1.8/lib,
+					/usr/local/Cellar/taglib/1.9.1/lib,
 				);
 				LLVM_LTO = NO;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = "";
 				"OTHER_CPLUSPLUSFLAGS[arch=*]" = (
@@ -1217,7 +1231,9 @@
 				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
+				WARNING_CFLAGS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1226,6 +1242,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
@@ -1249,9 +1266,11 @@
 					"$(inherited)",
 					"$(SRCROOT)/Frameworks",
 					/usr/local/lib/,
+					/usr/local/Cellar/taglib/1.8/lib,
+					/usr/local/Cellar/taglib/1.9.1/lib,
 				);
 				LLVM_LTO = NO;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CFLAGS = "";
 				OTHER_CPLUSPLUSFLAGS = "";
 				"OTHER_CPLUSPLUSFLAGS[arch=*]" = (
@@ -1261,7 +1280,9 @@
 				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
+				WARNING_CFLAGS = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
