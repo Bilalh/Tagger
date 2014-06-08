@@ -24,6 +24,7 @@ LOG_LEVEL(LOG_LEVEL_VERBOSE);
 
 
 using namespace TagLib;
+using namespace Fields::MP4;
 using namespace std;
 @implementation MP4Tags
 
@@ -50,14 +51,28 @@ using namespace std;
     
     self.metadata = metadata;
     
-    title = metadata[AVMetadataiTunesMetadataKeySongName];
+    title  = metadata[TITLE];
+    album  = metadata[ALBUM];
+    artist = metadata[ARTIST];
+    genre  = metadata[GENRE];
+    year   = metadata[YEAR];
+
+    albumArtist = metadata[ALBUM_ARTIST];
+    composer    = metadata[COMPOSER];
+    grouping    = metadata[GROUPING];
+    bpm         = metadata[BPM];
+
+    isrc        = metadata[ISRC];
+    releaseDate = metadata[RELEASE_DATE];
+    comment     = metadata[COMMENT];
+    compilation = metadata[COMPILATION];
     
     NSData *d;
-    d=metadata[AVMetadataiTunesMetadataKeyTrackNumber];
+    d=metadata[TRACK_NUMBER];
     track = @(intgerForDataWithRange(d, 0, 4));
     totalTracks = @(intgerForDataWithRange(d, 4, 2));
     
-    d=metadata[AVMetadataiTunesMetadataKeyDiscNumber];
+    d=metadata[DISC_NUMBER];
     disc = @(intgerForDataWithRange(d, 0, 4));
     totalDiscs = @(intgerForDataWithRange(d, 4, 2));
     
@@ -71,7 +86,7 @@ using namespace std;
 - (void) setTitle:(NSString *)newValue
 {
     TAG_SETTER_START(title);
-    self.metadata[AVMetadataiTunesMetadataKeySongName] = title;
+    self.metadata[TITLE] = title;
     [self writeMeta];
 }
 
@@ -79,7 +94,7 @@ using namespace std;
 {
 	TAG_SETTER_START(track);
     NSData *trackData = dataForIntegerPair( [track unsignedIntegerValue], [totalTracks unsignedIntegerValue]);
-    self.metadata[AVMetadataiTunesMetadataKeyTrackNumber] =trackData;
+    self.metadata[TRACK_NUMBER] = trackData;
     [self writeMeta];
 }
 
@@ -87,7 +102,7 @@ using namespace std;
 {
 	TAG_SETTER_START(totalTracks);
     NSData *trackData = dataForIntegerPair( [track unsignedIntegerValue], [totalTracks unsignedIntegerValue]);
-    self.metadata[AVMetadataiTunesMetadataKeyTrackNumber] =trackData;
+    self.metadata[TRACK_NUMBER] = trackData;
     [self writeMeta];
 }
 
@@ -95,7 +110,7 @@ using namespace std;
 {
 	TAG_SETTER_START(disc);
     NSData *trackData = dataForIntegerPair( [disc unsignedIntegerValue], [totalDiscs unsignedIntegerValue]);
-    self.metadata[AVMetadataiTunesMetadataKeyDiscNumber] =trackData;
+    self.metadata[DISC_NUMBER] =trackData;
     [self writeMeta];
 }
 
@@ -103,7 +118,7 @@ using namespace std;
 {
 	TAG_SETTER_START(totalDiscs);
     NSData *trackData = dataForIntegerPair( [disc unsignedIntegerValue], [totalDiscs unsignedIntegerValue]);
-    self.metadata[AVMetadataiTunesMetadataKeyDiscNumber] =trackData;
+    self.metadata[DISC_NUMBER] =trackData;
     [self writeMeta];
 }
 
