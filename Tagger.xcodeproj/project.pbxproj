@@ -70,6 +70,8 @@
 		9289122815CF195500FBE113 /* hcxselect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9289122515CF195500FBE113 /* hcxselect.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		9289122A15CF198600FBE113 /* hcxselect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9289122515CF195500FBE113 /* hcxselect.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		928F20C81944023F0058366D /* xcode-git-version.sh in Resources */ = {isa = PBXBuildFile; fileRef = 928F20C71944023F0058366D /* xcode-git-version.sh */; };
+		928F20CF19440C7D0058366D /* CLIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 928F20CB19440C7D0058366D /* CLIColor.m */; };
+		928F20D019440C7D0058366D /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 928F20CD19440C7D0058366D /* DDASLLogCapture.m */; };
 		9293B84814AF7C7B006D96E7 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9293B84614AF7C71006D96E7 /* Sparkle.framework */; };
 		9293B84914AF7CA2006D96E7 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9293B84614AF7C71006D96E7 /* Sparkle.framework */; };
 		9293B84B14AF7DFA006D96E7 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 9293B84A14AF7DFA006D96E7 /* dsa_pub.pem */; };
@@ -222,6 +224,11 @@
 		9289122615CF195500FBE113 /* hcxselect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hcxselect.h; sourceTree = "<group>"; };
 		9289122715CF195500FBE113 /* lexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lexer.h; sourceTree = "<group>"; };
 		928F20C71944023F0058366D /* xcode-git-version.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "xcode-git-version.sh"; sourceTree = "<group>"; };
+		928F20CA19440C7D0058366D /* CLIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLIColor.h; sourceTree = "<group>"; };
+		928F20CB19440C7D0058366D /* CLIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLIColor.m; sourceTree = "<group>"; };
+		928F20CC19440C7D0058366D /* DDASLLogCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogCapture.h; sourceTree = "<group>"; };
+		928F20CD19440C7D0058366D /* DDASLLogCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogCapture.m; sourceTree = "<group>"; };
+		928F20CE19440C7D0058366D /* DDLog+LOGV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DDLog+LOGV.h"; sourceTree = "<group>"; };
 		9293B84614AF7C71006D96E7 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		9293B84A14AF7DFA006D96E7 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		9293B84D14AF870D006D96E7 /* config.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.yaml; sourceTree = "<group>"; };
@@ -527,9 +534,22 @@
 			path = hcxselect;
 			sourceTree = "<group>";
 		};
+		928F20C919440C7D0058366D /* CLI */ = {
+			isa = PBXGroup;
+			children = (
+				928F20CA19440C7D0058366D /* CLIColor.h */,
+				928F20CB19440C7D0058366D /* CLIColor.m */,
+			);
+			path = CLI;
+			sourceTree = "<group>";
+		};
 		929A4ACF13DA087D00244796 /* Lumberjack */ = {
 			isa = PBXGroup;
 			children = (
+				928F20C919440C7D0058366D /* CLI */,
+				928F20CC19440C7D0058366D /* DDASLLogCapture.h */,
+				928F20CD19440C7D0058366D /* DDASLLogCapture.m */,
+				928F20CE19440C7D0058366D /* DDLog+LOGV.h */,
 				929A4AD013DA087D00244796 /* DDAbstractDatabaseLogger.h */,
 				929A4AD113DA087D00244796 /* DDAbstractDatabaseLogger.m */,
 				929A4AD213DA087D00244796 /* DDASLLogger.h */,
@@ -993,6 +1013,7 @@
 			files = (
 				92D2C4D715D05B7100FF5E96 /* RegexKitLite.m in Sources */,
 				920660E113C89845003A3803 /* main.m in Sources */,
+				928F20CF19440C7D0058366D /* CLIColor.m in Sources */,
 				929A4ADA13DA087D00244796 /* DDAbstractDatabaseLogger.m in Sources */,
 				929A4ADB13DA087D00244796 /* DDASLLogger.m in Sources */,
 				929A4ADC13DA087D00244796 /* DDFileLogger.m in Sources */,
@@ -1032,6 +1053,7 @@
 				923B846413F4B7A800524BFA /* BHFinderLabelColours.m in Sources */,
 				92D30AC31405B1B600677B70 /* IntPair.m in Sources */,
 				921FBBEC140C682100D1CBE8 /* ArrayDefaultsPreferencesViewController.m in Sources */,
+				928F20D019440C7D0058366D /* DDASLLogCapture.m in Sources */,
 				92DBDEAD14AAB99A009434DB /* fields.mm in Sources */,
 				92A96F2D15BCD2DC004A320E /* Vgmdb.mm in Sources */,
 				9254094915C367330074A280 /* NSString+Tag.mm in Sources */,
