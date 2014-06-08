@@ -9,10 +9,10 @@
 #import "DDLog.h"
 
 
-#define LOG_FLAG_RELEASE  (1 << 4)  // 0...010000
+#define LOG_FLAG_RELEASE  (1 << 5)  // 0...100000
 
 
-#define LOG_LEVEL_RELEASE   (LOG_FLAG_RELEASE | LOG_FLAG_ERROR) // 0...010001
+#define LOG_LEVEL_RELEASE   (LOG_FLAG_RELEASE | LOG_FLAG_ERROR) // 0...100001
 
 
 
