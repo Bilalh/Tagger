@@ -13,7 +13,6 @@
 
 
 union FileDetails{
-	TagLib::MP4::File  *mp4;
 	TagLib::MPEG::File *mpeg;
 };
 
