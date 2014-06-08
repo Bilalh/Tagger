@@ -8,22 +8,16 @@
 
 #import "MP4Tags.h"
 #import "TagStructs.h"
-#import "NSString+Convert.h"
-#import "NSString+Tag.h"
 #import "NSImage+bitmapData.h"
 #import "Fields.h"
 #include "TagPrivate.h"
 
-#include <mp4tag.h> 
-#include <mp4file.h>
-
 #import <AVFoundation/AVFoundation.h>
 
 #import "Logging.h"
-LOG_LEVEL(LOG_LEVEL_VERBOSE);
+LOG_LEVEL(LOG_LEVEL_ERROR);
 
 
-using namespace TagLib;
 using namespace Fields::MP4;
 using namespace std;
 @implementation MP4Tags
@@ -36,8 +30,7 @@ using namespace std;
     self = [super initWithFilename:filename];
     if (self) {
 		kind = @"MP4";
-		data->f->mp4 = new MP4::File([filename UTF8String]);
-		data->file = data->f->mp4;
+		data->file = NULL;
 		[self initFields];
     }
     
@@ -83,7 +76,6 @@ using namespace std;
 
     
 # pragma mark Read/Write
-
 
 
 - (void) setTitle:(NSString *)newValue
@@ -223,7 +215,10 @@ using namespace std;
     
     if (!res){
         DDLogError(@"write failed for %@", self.fileUrl);
+    }else{
+        DDLogVerbose(@"write %u Finished for %@", res, self.fileUrl);
     }
+    assert(res);
 }
 
 NSUInteger intgerForDataWithRange(NSData *theData, NSUInteger theLocation, NSUInteger theLength)
@@ -277,6 +272,7 @@ NSData *dataForIntegerPair(NSUInteger fst, NSUInteger snd)
     }
     
     NSString *exportPath = [NSTemporaryDirectory() stringByAppendingPathComponent:@"sadasdasdasd"];
+    DDLogVerbose(@"exportPath %@", exportPath);
     NSURL *exportUrl = [NSURL fileURLWithPath:exportPath];
     if ([[NSFileManager defaultManager] fileExistsAtPath:exportPath]) {
         [[NSFileManager defaultManager] removeItemAtPath:exportPath error:nil];
