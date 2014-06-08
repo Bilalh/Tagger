@@ -7,17 +7,17 @@ Version 1.8
 ### Features ###
 * 10.9 Support
 * Sets the total number of tracks on each disc when auto tagging.
-* Button to use the directory name as the search query when auto tagging/
+* Button to use the directory name as the search query when auto tagging.
 * Release date field.
 * Quicklook on Vgmdb search results by pressing space.
-* Artist to composer
-* Composer to artist
+* Artist to composer.
+* Composer to artist.
 
 ### Improvements ###
 * Improvements to the auto taggering gui.
 * Clicking on a Vgmdb search result opens those results.
-* Using AVFoundation for mp4/m4a since it more reliable and fixes the problems with cover art
-
+* Using AVFoundation for mp4/m4a since it more reliable and fixes the problems with cover art.
+* Made m4a/mp4 tag writing faster.
 
 Version 1.7 Beta (Sat 06 Jul 2013)
 -----------
@@ -25,24 +25,24 @@ Version 1.7 Beta (Sat 06 Jul 2013)
 ### Features ###
 * Open current folder In Terminal.
 * Label column.
-* Renaming Artists using a user specified list of names
-* Renaming Tracks using a user specified list of names
-* Allow searching for a album using an URL
-* Support rarer languages such as English (Official)  and English (Localized)
+* Renaming Artists using a user specified list of names.
+* Renaming Tracks using a user specified list of names.
+* Allow searching for a album using an URL.
+* Support rarer languages such as English (Official)  and English (Localized).
 * Length field formatted as time.
-* ISRC field
+* ISRC field.
 
 ### Improvements ###
 * Uses taglib 1.8 hence it faster.
-* Handles arranger and Performer missing for metadata searching
+* Handles arranger and Performer missing for metadata searching.
 * Assigns the selected file to $f in the Terminal.
-* Label colour work better if the filename column is moved 
+* Label colour work better if the filename column is moved .
 
 
 Version 1.6.2 (Sat 22 Sep 2012)
 -------------
 ### Bug Fixes ###
-* Gui Fixes
+* Gui Fixes.
 
 Version 1.6.1 (Thu 13 Sep 2012)
 -------------
