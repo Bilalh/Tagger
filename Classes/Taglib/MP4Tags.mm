@@ -76,6 +76,8 @@ using namespace std;
     disc = @(intgerForDataWithRange(d, 0, 4));
     totalDiscs = @(intgerForDataWithRange(d, 4, 2));
     
+    cover = [[NSImage alloc ] initWithData: metadata[COVER] ];
+    
     DDLogVerbose(@"end initFields");
     
 }
@@ -239,6 +241,14 @@ using namespace std;
 	TAG_SETTER_START(totalDiscs);
     NSData *trackData = dataForIntegerPair( [disc unsignedIntegerValue], [totalDiscs unsignedIntegerValue]);
     self.metadata[DISC_NUMBER] =trackData;
+    [self writeMeta];
+}
+
+- (void) setCover:(NSImage*)newValue
+{
+	TAG_SETTER_START(cover);
+    NSData *coverData = [cover bitmapDataForType:NSJPEGFileType];
+    self.metadata[COVER] =coverData;
     [self writeMeta];
 }
 

@@ -1701,13 +1701,13 @@
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <imageView id="977" customClass="DraggableImageView">
-                                                            <rect key="frame" x="14" y="14" width="342.5" height="416"/>
+                                                            <rect key="frame" x="14" y="14.000000182593652" width="342.5" height="416"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                                             <imageCell key="cell" selectable="YES" editable="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="978"/>
                                                             <connections>
-                                                                <binding destination="572" name="editable" keyPath="currentNodes.allMp3s" id="q0C-qu-cVX"/>
                                                                 <binding destination="572" name="value" keyPath="currentNodes.cover" id="980"/>
-                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" previousBinding="q0C-qu-cVX" id="6US-kn-JUo"/>
+                                                                <binding destination="572" name="editable" keyPath="currentNodes.hasExtenedMetadata" id="lrw-es-1wB"/>
+                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" previousBinding="lrw-es-1wB" id="O1b-Zm-fNe"/>
                                                             </connections>
                                                         </imageView>
                                                     </subviews>
