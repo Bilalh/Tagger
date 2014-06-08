@@ -19,6 +19,8 @@
 	BOOL hasBasicMetadata;
 	BOOL hasExtenedMetadata;
 	BOOL allMp3s;
+	BOOL allMp4s;
+
     
 	BOOL containsMP4Files;
 	NSString *albumArtist;
@@ -95,6 +97,8 @@
 /// YES if all the files are mp3s
 @property (readonly) BOOL  allMp3s;
 
+/// YES if all the files are mp4
+@property (readonly) BOOL  allMp4s;
 
 @property (readonly) BOOL  containsMP4Files;
 

@@ -11,6 +11,7 @@
 #import "Tags.h"
 #import "NSImage+bitmapData.h"
 #import "MPEGTags.h"
+#import "MP4Tags.h"
 
 #import "Logging.h"
 LOG_LEVEL(LOG_LEVEL_INFO);
@@ -25,7 +26,7 @@ static const NSArray *fieldNames;
 @end
 
 @implementation FileSystemNodeCollection
-@synthesize tagsArray, hasBasicMetadata, hasExtenedMetadata, allMp3s, containsMP4Files, empty, labelColor, labelIndex;
+@synthesize tagsArray, hasBasicMetadata, hasExtenedMetadata, allMp3s, allMp4s, containsMP4Files, empty, labelColor, labelIndex;
 @synthesize title, artist, album, comment, genre, year, track, length;
 @synthesize albumArtist, composer, grouping, bpm, totalTracks, disc, totalDiscs, compilation, url, cover;
 @dynamic urls;
@@ -204,7 +205,7 @@ static const NSArray *fieldNames;
 - (void)nilAllFields
 {
 	writeToAll = NO;
-	hasBasicMetadata = hasExtenedMetadata = allMp3s = NO;
+	hasBasicMetadata = hasExtenedMetadata = allMp3s = allMp4s = NO;
 	for (NSString *key in tagFieldNames) {
 		[self setValue:nil forKey:key];
 	}
@@ -237,7 +238,7 @@ static const NSArray *fieldNames;
 	}
 	
 	self.empty = NO;
-	hasExtenedMetadata = hasBasicMetadata =  allMp3s = YES;
+	hasExtenedMetadata = hasBasicMetadata = allMp3s = allMp4s = YES;
 	
 	for (FileSystemNode *n in tagsArray) {
 		if (n.isDirectory){
@@ -248,9 +249,11 @@ static const NSArray *fieldNames;
 		hasBasicMetadata   &= n.hasBasicMetadata;
 		hasExtenedMetadata &= n.hasExtenedMetadata;
         allMp3s            &= [n.tags isMemberOfClass:[MPEGTags class]];
+        allMp4s            &= [n.tags isMemberOfClass:[MP4Tags class]];
+
 	}
 	
-	DDLogRelease(@"basic:%d extened %d allmp3s %d", hasBasicMetadata, hasExtenedMetadata, allMp3s);
+	DDLogRelease(@"basic:%d extened %d allmp3s %d allMp4 %d", hasBasicMetadata, hasExtenedMetadata, allMp3s, allMp4s);
 	if (hasBasicMetadata) [self initfields];
 	else                  [self nilAllFields];
 }
