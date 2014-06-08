@@ -39,7 +39,6 @@
 		922D866713F4E4EE0016B811 /* Tagger.icns in Resources */ = {isa = PBXBuildFile; fileRef = 922D866613F4E4EE0016B811 /* Tagger.icns */; };
 		922E35D713C89BF3003C5913 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922E35D613C89BF3003C5913 /* Cocoa.framework */; };
 		923926EE15CF078100135F07 /* libhtmlcxx.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 923926EB15CF076D00135F07 /* libhtmlcxx.3.dylib */; };
-		923926F015CF07F700135F07 /* libhtmlcxx.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 923926EB15CF076D00135F07 /* libhtmlcxx.3.dylib */; };
 		923926F115CF086300135F07 /* libhtmlcxx.3.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 923926EB15CF076D00135F07 /* libhtmlcxx.3.dylib */; };
 		923926FF15CF0B8D00135F07 /* libhcxselect.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 923926FC15CF0B7E00135F07 /* libhcxselect.dylib */; };
 		9239270015CF0B9F00135F07 /* libhcxselect.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 923926FC15CF0B7E00135F07 /* libhcxselect.dylib */; };
@@ -72,6 +71,8 @@
 		928F20C81944023F0058366D /* xcode-git-version.sh in Resources */ = {isa = PBXBuildFile; fileRef = 928F20C71944023F0058366D /* xcode-git-version.sh */; };
 		928F20CF19440C7D0058366D /* CLIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 928F20CB19440C7D0058366D /* CLIColor.m */; };
 		928F20D019440C7D0058366D /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 928F20CD19440C7D0058366D /* DDASLLogCapture.m */; };
+		928F20D119440E9B0058366D /* libhcxselect.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 923926FC15CF0B7E00135F07 /* libhcxselect.dylib */; };
+		928F20D219440EDB0058366D /* libtag.1.14.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 927058FC1942A02600CD322F /* libtag.1.14.0.dylib */; };
 		9293B84814AF7C7B006D96E7 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9293B84614AF7C71006D96E7 /* Sparkle.framework */; };
 		9293B84914AF7CA2006D96E7 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9293B84614AF7C71006D96E7 /* Sparkle.framework */; };
 		9293B84B14AF7DFA006D96E7 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 9293B84A14AF7DFA006D96E7 /* dsa_pub.pem */; };
@@ -346,9 +347,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				928F20D119440E9B0058366D /* libhcxselect.dylib in Frameworks */,
 				92A41DE915D82097006D89C5 /* libiconv.dylib in Frameworks */,
+				928F20D219440EDB0058366D /* libtag.1.14.0.dylib in Frameworks */,
 				9239270515CF0F8400135F07 /* SenTestingKit.framework in Frameworks */,
-				923926F015CF07F700135F07 /* libhtmlcxx.3.dylib in Frameworks */,
 				9254094B15C36CC00074A280 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1096,6 +1098,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
 				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1131,10 +1134,11 @@
 					"$(inherited)",
 					"$(SRCROOT)/Frameworks",
 					/usr/local/lib/,
+					"$(PROJECT_DIR)/Frameworks",
+					/usr/local/Cellar/taglib/1.9.1/lib,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CPLUSPLUSFLAGS = (
-					"$(OTHER_CFLAGS)",
 					"-I/usr/local/include/taglib",
 					"-L@executable_path/../Resources",
 					"-I/usr/local/include/",
@@ -1150,6 +1154,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
 				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1181,8 +1186,10 @@
 					"$(inherited)",
 					"$(SRCROOT)/Frameworks",
 					/usr/local/lib/,
+					"$(PROJECT_DIR)/Frameworks",
+					/usr/local/Cellar/taglib/1.9.1/lib,
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.6.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-I/usr/local/include/taglib",
@@ -1268,7 +1275,6 @@
 					"-I/usr/local/include/taglib",
 					"-L@executable_path/../Resources",
 					"-I/usr/local/include/",
-					"-I/usr/local/include/hcxselect",
 				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
