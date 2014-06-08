@@ -2,10 +2,10 @@ Changelog
 =========
 
 
-
 Version 1.8
 ------------
 ### Features ###
+* 10.9 Support
 * Sets the total number of tracks on each disc when auto tagging.
 * Button to use the directory name as the search query when auto tagging/
 * Release date field.
@@ -16,10 +16,7 @@ Version 1.8
 ### Improvements ###
 * Improvements to the auto taggering gui.
 * Clicking on a Vgmdb search result opens those results.
-
-
-### Bug Fixes ###
-* Disable editing album art of m4a since a  quite a few people use invalid m4a which could  cause the tracks to be unplayable in iTunes without using some command line tools.
+* Using AVFoundation for mp4/m4a since it more reliable and fixes the problems with cover art
 
 
 Version 1.7 Beta (Sat 06 Jul 2013)

@@ -69,6 +69,7 @@
 		928411AF13EB853600A92F3F /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 928411AE13EB853600A92F3F /* defaults.plist */; };
 		9289122815CF195500FBE113 /* hcxselect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9289122515CF195500FBE113 /* hcxselect.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		9289122A15CF198600FBE113 /* hcxselect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9289122515CF195500FBE113 /* hcxselect.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
+		928F20C81944023F0058366D /* xcode-git-version.sh in Resources */ = {isa = PBXBuildFile; fileRef = 928F20C71944023F0058366D /* xcode-git-version.sh */; };
 		9293B84814AF7C7B006D96E7 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9293B84614AF7C71006D96E7 /* Sparkle.framework */; };
 		9293B84914AF7CA2006D96E7 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9293B84614AF7C71006D96E7 /* Sparkle.framework */; };
 		9293B84B14AF7DFA006D96E7 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 9293B84A14AF7DFA006D96E7 /* dsa_pub.pem */; };
@@ -220,6 +221,7 @@
 		9289122515CF195500FBE113 /* hcxselect.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = hcxselect.cpp; sourceTree = "<group>"; };
 		9289122615CF195500FBE113 /* hcxselect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hcxselect.h; sourceTree = "<group>"; };
 		9289122715CF195500FBE113 /* lexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lexer.h; sourceTree = "<group>"; };
+		928F20C71944023F0058366D /* xcode-git-version.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "xcode-git-version.sh"; sourceTree = "<group>"; };
 		9293B84614AF7C71006D96E7 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		9293B84A14AF7DFA006D96E7 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		9293B84D14AF870D006D96E7 /* config.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.yaml; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 		920660BA13C89845003A3803 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				928F20C71944023F0058366D /* xcode-git-version.sh */,
 				92A96F3015BCDD3B004A320E /* Headers */,
 				9293B84F14AF88DC006D96E7 /* appcast_automation.rb */,
 				92CBDBA013F209D900B7F6C1 /* App */,
@@ -811,6 +814,7 @@
 				925CE81B13C3BD6D009D6D94 /* Resources */,
 				9254006613F0A80C0020C912 /* CopyFiles */,
 				92557924160E4E5A0085F139 /* ShellScript */,
+				928F20C6194401F90058366D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -871,6 +875,7 @@
 				929A4ACE13DA027C00244796 /* Changelog.md in Resources */,
 				928411AF13EB853600A92F3F /* defaults.plist in Resources */,
 				92A6808813EC7B130067DD5F /* MASPreferencesWindow.xib in Resources */,
+				928F20C81944023F0058366D /* xcode-git-version.sh in Resources */,
 				92E6EDC413F313230045679E /* MainMenu.xib in Resources */,
 				92E6EDC613F313230045679E /* AdvancedPreferencesView.xib in Resources */,
 				92E6EDC813F313230045679E /* CoverView.xib in Resources */,
@@ -932,6 +937,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/appledoc          \\\n--project-name Tagger            \\\n--project-company \"Bilal\"        \\\n--company-id bilal               \\\n--exit-threshold 2               \\\n--output ~/Desktop/log/          \\\n--logformat xcode                \\\n--ignore .m                      \\\n--ignore .mm                     \\\n--ignore .rb                     \\\n--keep-undocumented-members      \\\n\"$PROJECT_DIR\"/Classes";
+		};
+		928F20C6194401F90058366D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PROJECT_DIR/Other Sources/xcode-git-version.sh\"";
 		};
 		9293B85514AF8E5A006D96E7 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
