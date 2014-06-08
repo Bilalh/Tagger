@@ -1470,8 +1470,8 @@
                                                                         <size key="minSize" width="281.5" height="136"/>
                                                                         <size key="maxSize" width="463" height="10000000"/>
                                                                         <connections>
-                                                                            <binding destination="572" name="editable" keyPath="currentNodes.hasBasicMetadata" id="O2m-B2-xSx"/>
                                                                             <binding destination="572" name="value" keyPath="currentNodes.comment" id="W8l-hr-TdX"/>
+                                                                            <binding destination="572" name="editable" keyPath="currentNodes.hasBasicMetadata" id="O2m-B2-xSx"/>
                                                                         </connections>
                                                                     </textView>
                                                                 </subviews>
@@ -1706,8 +1706,24 @@
                                                             <imageCell key="cell" selectable="YES" editable="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="978"/>
                                                             <connections>
                                                                 <binding destination="572" name="value" keyPath="currentNodes.cover" id="980"/>
-                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" previousBinding="lrw-es-1wB" id="O1b-Zm-fNe"/>
                                                                 <binding destination="572" name="editable" keyPath="currentNodes.hasExtenedMetadata" id="lrw-es-1wB"/>
+                                                                <binding destination="572" name="editable2" keyPath="currentNodes.allMp4s" previousBinding="lrw-es-1wB" id="5aT-QR-icu">
+                                                                    <dictionary key="options">
+                                                                        <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                                        <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                                        <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                                        <integer key="NSNullPlaceholder" value="-1"/>
+                                                                    </dictionary>
+                                                                </binding>
+                                                                <binding destination="572" name="enabled2" keyPath="currentNodes.allMp4s" previousBinding="fd7-dD-gdu" id="iUb-a6-Gbr">
+                                                                    <dictionary key="options">
+                                                                        <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                                                        <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                                                        <integer key="NSNotApplicablePlaceholder" value="-1"/>
+                                                                        <integer key="NSNullPlaceholder" value="-1"/>
+                                                                    </dictionary>
+                                                                </binding>
+                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" previousBinding="5aT-QR-icu" id="fd7-dD-gdu"/>
                                                             </connections>
                                                         </imageView>
                                                     </subviews>
