@@ -67,6 +67,7 @@ using namespace std;
     comment     = metadata[COMMENT];
     compilation = metadata[COMPILATION];
     
+    
     NSData *d;
     d=metadata[TRACK_NUMBER];
     track = @(intgerForDataWithRange(d, 0, 4));
@@ -83,12 +84,99 @@ using namespace std;
     
 # pragma mark Read/Write
 
+
+
 - (void) setTitle:(NSString *)newValue
 {
     TAG_SETTER_START(title);
     self.metadata[TITLE] = title;
     [self writeMeta];
 }
+
+- (void) setAlbum:(NSString *)newValue
+{
+    TAG_SETTER_START(album);
+    self.metadata[ALBUM] = album;
+    [self writeMeta];
+}
+
+- (void) setArtist:(NSString *)newValue
+{
+    TAG_SETTER_START(artist);
+    self.metadata[ARTIST] = artist;
+    [self writeMeta];
+}
+
+- (void) setGenre:(NSString *)newValue
+{
+    TAG_SETTER_START(genre);
+    self.metadata[GENRE] = genre;
+    [self writeMeta];
+}
+
+- (void) setYear:(NSNumber *)newValue
+{
+    TAG_SETTER_START(year);
+    self.metadata[YEAR] = year;
+    [self writeMeta];
+}
+
+- (void) setAlbumArtist:(NSString *)newValue
+{
+    TAG_SETTER_START(albumArtist);
+    self.metadata[ALBUM_ARTIST] = albumArtist;
+    [self writeMeta];
+}
+
+- (void) setComposer:(NSString *)newValue
+{
+    TAG_SETTER_START(composer);
+    self.metadata[COMPOSER] = composer;
+    [self writeMeta];
+}
+
+- (void) setGrouping:(NSString *)newValue
+{
+    TAG_SETTER_START(grouping);
+    self.metadata[GROUPING] = grouping;
+    [self writeMeta];
+}
+
+- (void) setBpm:(NSNumber *)newValue
+{
+    TAG_SETTER_START(bpm);
+    self.metadata[BPM] = bpm;
+    [self writeMeta];
+}
+
+- (void) setIsrc:(NSString *)newValue
+{
+    TAG_SETTER_START(isrc);
+    self.metadata[ISRC] = isrc;
+    [self writeMeta];
+}
+
+- (void) setReleaseDate:(NSString *)newValue
+{
+    TAG_SETTER_START(releaseDate);
+    self.metadata[RELEASE_DATE] = releaseDate;
+    [self writeMeta];
+}
+
+- (void) setComment:(NSString *)newValue
+{
+    TAG_SETTER_START(comment);
+    self.metadata[COMMENT] = comment;
+    [self writeMeta];
+}
+
+- (void) setCompilation:(NSNumber *)newValue
+{
+    TAG_SETTER_START(compilation);
+    self.metadata[COMPILATION] = compilation;
+    [self writeMeta];
+}
+
 
 - (void) setTrack:(NSNumber *)newValue
 {
