@@ -93,126 +93,108 @@ using namespace std;
 {
     TAG_SETTER_START(title);
     self.metadata[TITLE] = title;
-    //[self writeMetaData];
 }
 
 - (void) setAlbum:(NSString *)newValue
 {
     TAG_SETTER_START(album);
     self.metadata[ALBUM] = album;
-    //[self writeMetaData];
 }
 
 - (void) setArtist:(NSString *)newValue
 {
     TAG_SETTER_START(artist);
     self.metadata[ARTIST] = artist;
-    //[self writeMetaData];
 }
 
 - (void) setGenre:(NSString *)newValue
 {
     TAG_SETTER_START(genre);
     self.metadata[GENRE] = genre;
-    //[self writeMetaData];
 }
 
 - (void) setYear:(NSNumber *)newValue
 {
     TAG_SETTER_START(year);
     self.metadata[YEAR] = year;
-    //[self writeMetaData];
 }
 
 - (void) setAlbumArtist:(NSString *)newValue
 {
     TAG_SETTER_START(albumArtist);
     self.metadata[ALBUM_ARTIST] = albumArtist;
-    //[self writeMetaData];
 }
 
 - (void) setComposer:(NSString *)newValue
 {
     TAG_SETTER_START(composer);
     self.metadata[COMPOSER] = composer;
-    //[self writeMetaData];
 }
 
 - (void) setGrouping:(NSString *)newValue
 {
     TAG_SETTER_START(grouping);
     self.metadata[GROUPING] = grouping;
-    //[self writeMetaData];
 }
 
 - (void) setBpm:(NSNumber *)newValue
 {
     TAG_SETTER_START(bpm);
     self.metadata[BPM] = bpm;
-    //[self writeMetaData];
 }
 
 - (void) setIsrc:(NSString *)newValue
 {
     TAG_SETTER_START(isrc);
     self.metadata[ISRC] = isrc;
-    //[self writeMetaData];
 }
 
 - (void) setReleaseDate:(NSString *)newValue
 {
     TAG_SETTER_START(releaseDate);
     self.metadata[RELEASE_DATE] = releaseDate;
-    //[self writeMetaData];
 }
 
 - (void) setComment:(NSString *)newValue
 {
     TAG_SETTER_START(comment);
     self.metadata[COMMENT] = comment;
-    //[self writeMetaData];
 }
 
 - (void) setCompilation:(NSNumber *)newValue
 {
     TAG_SETTER_START(compilation);
     self.metadata[COMPILATION] = compilation;
-    //[self writeMetaData];
 }
 
 - (void) setAlbumSort:(NSString *)newValue
 {
     TAG_SETTER_START(albumSort);
     self.metadata[ALBUM_SORT] = albumSort;
-    //[self writeMetaData];
 }
 
 - (void) setArtistSort:(NSString *)newValue
 {
     TAG_SETTER_START(artistSort);
     self.metadata[ARTIST_SORT] = artistSort;
-    //[self writeMetaData];
 }
 
 - (void) setTitleSort:(NSString *)newValue
 {
     TAG_SETTER_START(titleSort);
     self.metadata[TITLE_SORT] = titleSort;
-    //[self writeMetaData];
 }
 
 - (void) setComposerSort:(NSString *)newValue
 {
     TAG_SETTER_START(composerSort);
     self.metadata[COMPOSER_SORT] = composerSort;
-    //[self writeMetaData];
 }
 
 - (void) setAlbumArtistSort:(NSString *)newValue
 {
     TAG_SETTER_START(albumArtistSort);
     self.metadata[ALBUM_ARTIST_SORT] = albumArtistSort;
-    //[self writeMetaData];
 }
 
 - (void) setTrack:(NSNumber *)newValue
@@ -220,7 +202,6 @@ using namespace std;
 	TAG_SETTER_START(track);
     NSData *trackData = dataForIntegerPair( [track unsignedIntegerValue], [totalTracks unsignedIntegerValue]);
     self.metadata[TRACK_NUMBER] = trackData;
-    //[self writeMetaData];
 }
 
 - (void) setTotalTracks:(NSNumber *)newValue
@@ -228,7 +209,6 @@ using namespace std;
 	TAG_SETTER_START(totalTracks);
     NSData *trackData = dataForIntegerPair( [track unsignedIntegerValue], [totalTracks unsignedIntegerValue]);
     self.metadata[TRACK_NUMBER] = trackData;
-    //[self writeMetaData];
 }
 
 - (void) setDisc:(NSNumber *)newValue
@@ -236,7 +216,6 @@ using namespace std;
 	TAG_SETTER_START(disc);
     NSData *trackData = dataForIntegerPair( [disc unsignedIntegerValue], [totalDiscs unsignedIntegerValue]);
     self.metadata[DISC_NUMBER] =trackData;
-    //[self writeMetaData];
 }
 
 - (void) setTotalDiscs:(NSNumber *)newValue
@@ -244,7 +223,6 @@ using namespace std;
 	TAG_SETTER_START(totalDiscs);
     NSData *trackData = dataForIntegerPair( [disc unsignedIntegerValue], [totalDiscs unsignedIntegerValue]);
     self.metadata[DISC_NUMBER] =trackData;
-    //[self writeMetaData];
 }
 
 - (void) setCover:(NSImage*)newValue
@@ -252,7 +230,6 @@ using namespace std;
 	TAG_SETTER_START(cover);
     NSData *coverData = [cover bitmapDataForType:NSJPEGFileType];
     self.metadata[COVER] =coverData;
-    //[self writeMetaData];
 }
 
 
