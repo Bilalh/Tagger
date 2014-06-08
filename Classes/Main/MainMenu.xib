@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
     <dependencies>
-        <deployment defaultVersion="1060" identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+        <deployment defaultVersion="1080" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -133,9 +133,9 @@
                                     </binding>
                                     <binding destination="572" name="enabled2" keyPath="currentNodes.hasBasicMetadata" previousBinding="1603" id="1605">
                                         <dictionary key="options">
-                                            <integer key="NSNotApplicablePlaceholder" value="-1"/>
-                                            <integer key="NSNoSelectionPlaceholder" value="-1"/>
                                             <integer key="NSMultipleValuesPlaceholder" value="-1"/>
+                                            <integer key="NSNoSelectionPlaceholder" value="-1"/>
+                                            <integer key="NSNotApplicablePlaceholder" value="-1"/>
                                             <integer key="NSNullPlaceholder" value="-1"/>
                                         </dictionary>
                                     </binding>
@@ -1287,12 +1287,10 @@
                                                             <rect key="frame" x="81" y="255" width="33" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="3" drawsBackground="YES" id="913">
-                                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" localizesFormat="NO" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="914">
-                                                                    <real key="roundingIncrement" value="0.0"/>
+                                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" localizesFormat="NO" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="914">
                                                                     <real key="minimum" value="1"/>
                                                                     <real key="maximum" value="999"/>
                                                                     <metadata>
-                                                                        <bool key="localizesFormat" value="NO"/>
                                                                         <real key="inspectorSampleValue" value="0.0"/>
                                                                     </metadata>
                                                                 </numberFormatter>
@@ -1313,12 +1311,10 @@
                                                             <rect key="frame" x="141" y="255" width="33" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="5" drawsBackground="YES" id="916">
-                                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" localizesFormat="NO" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="917">
-                                                                    <real key="roundingIncrement" value="0.0"/>
+                                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" localizesFormat="NO" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="917">
                                                                     <real key="minimum" value="1"/>
                                                                     <real key="maximum" value="999"/>
                                                                     <metadata>
-                                                                        <bool key="localizesFormat" value="NO"/>
                                                                         <real key="inspectorSampleValue" value="0.0"/>
                                                                     </metadata>
                                                                 </numberFormatter>
@@ -1339,12 +1335,10 @@
                                                             <rect key="frame" x="271.5" y="255" width="33" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="22" drawsBackground="YES" id="919">
-                                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" localizesFormat="NO" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="920">
-                                                                    <real key="roundingIncrement" value="0.0"/>
+                                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" localizesFormat="NO" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="920">
                                                                     <real key="minimum" value="1"/>
                                                                     <real key="maximum" value="999"/>
                                                                     <metadata>
-                                                                        <bool key="localizesFormat" value="NO"/>
                                                                         <real key="inspectorSampleValue" value="0.0"/>
                                                                     </metadata>
                                                                 </numberFormatter>
@@ -1365,12 +1359,10 @@
                                                             <rect key="frame" x="331.5" y="255" width="33" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="55" drawsBackground="YES" id="922">
-                                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" localizesFormat="NO" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="923">
-                                                                    <real key="roundingIncrement" value="0.0"/>
+                                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" localizesFormat="NO" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="923">
                                                                     <real key="minimum" value="1"/>
                                                                     <real key="maximum" value="999"/>
                                                                     <metadata>
-                                                                        <bool key="localizesFormat" value="NO"/>
                                                                         <real key="inspectorSampleValue" value="0.0"/>
                                                                     </metadata>
                                                                 </numberFormatter>
@@ -1391,12 +1383,10 @@
                                                             <rect key="frame" x="271.5" y="225" width="93" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="66" drawsBackground="YES" id="936">
-                                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" localizesFormat="NO" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="937">
-                                                                    <real key="roundingIncrement" value="0.0"/>
+                                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" localizesFormat="NO" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="937">
                                                                     <real key="minimum" value="1"/>
                                                                     <real key="maximum" value="9999"/>
                                                                     <metadata>
-                                                                        <bool key="localizesFormat" value="NO"/>
                                                                         <real key="inspectorSampleValue" value="0.0"/>
                                                                     </metadata>
                                                                 </numberFormatter>
@@ -1417,12 +1407,10 @@
                                                             <rect key="frame" x="81" y="225" width="93" height="22"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" title="44" drawsBackground="YES" id="942">
-                                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" localizesFormat="NO" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" minimumFractionDigits="0" maximumFractionDigits="0" id="943">
-                                                                    <real key="roundingIncrement" value="0.0"/>
+                                                                <numberFormatter key="formatter" formatterBehavior="default10_4" positiveFormat="#" negativeFormat="#" localizesFormat="NO" usesGroupingSeparator="NO" paddingCharacter="*" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" decimalSeparator="." groupingSeparator="," currencyDecimalSeparator="." plusSign="+" minusSign="-" notANumberSymbol="NaN" perMillSymbol="‰" percentSymbol="%" exponentSymbol="E" positivePrefix="" positiveSuffix="" negativePrefix="-" negativeSuffix="" id="943">
                                                                     <real key="minimum" value="100"/>
                                                                     <real key="maximum" value="9999"/>
                                                                     <metadata>
-                                                                        <bool key="localizesFormat" value="NO"/>
                                                                         <real key="inspectorSampleValue" value="0.0"/>
                                                                     </metadata>
                                                                 </numberFormatter>
@@ -1447,10 +1435,13 @@
                                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                 <subviews>
                                                                     <textView importsGraphics="NO" richText="NO" continuousSpellChecking="YES" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="1313">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="116"/>
                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <size key="minSize" width="0.0" height="116"/>
                                                                         <size key="maxSize" width="463" height="10000000"/>
                                                                         <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <size key="minSize" width="0.0" height="116"/>
                                                                         <size key="maxSize" width="463" height="10000000"/>
                                                                         <connections>
                                                                             <binding destination="572" name="value" keyPath="currentNodes.comment" id="1317"/>
@@ -1478,9 +1469,8 @@
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </comboBoxCell>
                                                             <connections>
-                                                                <binding destination="572" name="value" keyPath="currentNodes.grouping" previousBinding="1415" id="1416"/>
                                                                 <binding destination="572" name="enabled" keyPath="currentNodes.hasBasicMetadata" id="1391"/>
-                                                                <binding destination="1379" name="content" keyPath="values.groupings" id="1415"/>
+                                                                <binding destination="572" name="value" keyPath="currentNodes.grouping" id="iXo-91-3o4"/>
                                                             </connections>
                                                         </comboBox>
                                                         <comboBox verticalHuggingPriority="750" id="1384">
@@ -1492,9 +1482,8 @@
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </comboBoxCell>
                                                             <connections>
-                                                                <binding destination="572" name="value" keyPath="currentNodes.genre" previousBinding="1404" id="1405"/>
                                                                 <binding destination="572" name="enabled" keyPath="currentNodes.hasBasicMetadata" id="1400"/>
-                                                                <binding destination="1379" name="content" keyPath="values.genres" id="1404"/>
+                                                                <binding destination="572" name="value" keyPath="currentNodes.genre" id="9Kd-A4-KuX"/>
                                                             </connections>
                                                         </comboBox>
                                                     </subviews>
