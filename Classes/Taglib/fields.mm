@@ -17,7 +17,7 @@ namespace Fields {
 		NSString* const TRACK_NUMBER                  = @"trkn";
 		NSString* const YEAR                          = @"©day";
 		NSString* const GENRE                         = @"©gen";
-		NSString* const COMMENT                       = @"cmt";
+		NSString* const COMMENT                       = @"©cmt";
 		NSString* const ALBUM_ARTIST                  = @"aART";
 		NSString* const COMPOSER                      = @"©wrt";
 		NSString* const GROUPING                      = @"©grp";

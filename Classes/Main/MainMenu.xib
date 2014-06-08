@@ -1043,11 +1043,11 @@
                                 </subviews>
                             </customView>
                             <customView id="537">
-                                <rect key="frame" x="713" y="0.0" width="391" height="481"/>
+                                <rect key="frame" x="713" y="0.0" width="391" height="480.99999981740621"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <tabView initialItem="556" id="554">
-                                        <rect key="frame" x="0.0" y="0.0" width="391" height="481"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="391" height="480.99999981740621"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <font key="font" metaFont="system"/>
                                         <tabViewItems>
@@ -1697,11 +1697,11 @@
                                             </tabViewItem>
                                             <tabViewItem label="Artwork" identifier="2" id="555">
                                                 <view key="view" id="564">
-                                                    <rect key="frame" x="10" y="33" width="371" height="435"/>
+                                                    <rect key="frame" x="10" y="33" width="371" height="434.99999981740621"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <imageView id="977" customClass="DraggableImageView">
-                                                            <rect key="frame" x="14" y="14.000000182593652" width="342.5" height="416"/>
+                                                            <rect key="frame" x="14" y="14" width="342.5" height="416"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                                             <imageCell key="cell" selectable="YES" editable="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="978"/>
                                                             <connections>
