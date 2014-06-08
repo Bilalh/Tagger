@@ -98,6 +98,8 @@ struct FileData;
 - (void) removeAllTags;
 
 
+- (void) writeMetaData;
+
 /// The url of the file
 @property (readonly, strong,nonatomic) NSURL *fileUrl;
 @property (readonly, strong,nonatomic) NSString *fileUrlType;

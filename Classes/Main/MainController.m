@@ -1103,10 +1103,17 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (BOOL)windowShouldClose:(NSNotification *)notification
 {
+    DDLogInfo(@"windowShouldClose");
+    [currentNodes saveMetadata];
 	[window orderOut:self];
 	return NO;
 }
 
+- (void)windowWillClose:(NSNotification *)notification
+{
+    DDLogInfo(@"windowWillClose");
+    [currentNodes saveMetadata];
+}
 
 
 #pragma mark - Helper Methods

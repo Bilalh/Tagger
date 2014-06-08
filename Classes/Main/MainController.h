@@ -21,7 +21,7 @@
 
 /// The main controller creates the other controllers 
 @interface MainController : NSWindowController 
-<QLPreviewPanelDataSource, QLPreviewPanelDelegate, CCTColorLabelMenuItemViewDelegate> {
+<QLPreviewPanelDataSource, QLPreviewPanelDelegate, CCTColorLabelMenuItemViewDelegate, NSWindowDelegate> {
 @private
 	
 	IBOutlet NSPopUpButton *popup;

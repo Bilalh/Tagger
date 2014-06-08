@@ -183,6 +183,11 @@ using namespace Fields::MPEG;
 #pragma mark -
 #pragma mark Setters
 
+- (void) writeMetaData
+{
+    data->file->save();
+}
+
 - (void) removeAllTags
 {
 	data->f->mpeg->strip(MPEG::File::ID3v1);
