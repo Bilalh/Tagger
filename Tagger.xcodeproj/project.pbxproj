@@ -388,9 +388,7 @@
 		920660BA13C89845003A3803 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				928F20C71944023F0058366D /* xcode-git-version.sh */,
 				92A96F3015BCDD3B004A320E /* Headers */,
-				9293B84F14AF88DC006D96E7 /* appcast_automation.rb */,
 				92CBDBA013F209D900B7F6C1 /* App */,
 				929F152313F1E5420021F9FD /* BHDraggableImageView */,
 				92C4465F13E0BF830038F817 /* BWToolKitEdits */,
@@ -398,7 +396,9 @@
 				929A4ACF13DA087D00244796 /* Lumberjack */,
 				92A6808313EC7B130067DD5F /* MASPreferences */,
 				92F16DAE14041A780031E4B4 /* RegexKitLite */,
+				9293B84F14AF88DC006D96E7 /* appcast_automation.rb */,
 				92557923160E4E020085F139 /* fix_libraries_paths.sh */,
+				928F20C71944023F0058366D /* xcode-git-version.sh */,
 			);
 			path = "Other Sources";
 			sourceTree = "<group>";
@@ -1232,6 +1232,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1282,6 +1283,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;

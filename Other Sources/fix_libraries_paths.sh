@@ -16,8 +16,7 @@ for TARGET in ${TARGETS} ; do
     #TARGETID=`otool -DX ${LIBPATH}/$TARGET`
     TARGETID=`otool -DX /usr/local/lib/$TARGET`
     NEWTARGETID=${NEWLIBPATH}/${TARGET}
-    # On 10.9 this need sudo for some reason
-    sudo install_name_tool -id ${NEWTARGETID} ${LIBFILE}
-    sudo install_name_tool -change ${TARGETID} ${NEWTARGETID} ${EXECFILE}
+    install_name_tool -id ${NEWTARGETID} ${LIBFILE}
+    install_name_tool -change ${TARGETID} ${NEWTARGETID} ${EXECFILE}
 done
 set +x
