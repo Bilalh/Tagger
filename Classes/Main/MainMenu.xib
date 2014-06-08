@@ -1043,11 +1043,11 @@
                                 </subviews>
                             </customView>
                             <customView id="537">
-                                <rect key="frame" x="713" y="0.0" width="391" height="480.99999981740621"/>
+                                <rect key="frame" x="713" y="0.0" width="391" height="481"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <tabView initialItem="556" id="554">
-                                        <rect key="frame" x="0.0" y="0.0" width="391" height="480.99999981740621"/>
+                                        <rect key="frame" x="0.0" y="-2" width="391" height="481"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <font key="font" metaFont="system"/>
                                         <tabViewItems>
@@ -1268,7 +1268,7 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <button id="850">
-                                                            <rect key="frame" x="79" y="141" width="99" height="18"/>
+                                                            <rect key="frame" x="79" y="144" width="99" height="18"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <buttonCell key="cell" type="check" title="Compilation" bezelStyle="regularSquare" imagePosition="left" alignment="left" inset="2" id="851">
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -1427,39 +1427,6 @@
                                                                 </binding>
                                                             </connections>
                                                         </textField>
-                                                        <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="1312">
-                                                            <rect key="frame" x="81" y="17" width="283.5" height="118"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
-                                                            <clipView key="contentView" id="p9h-2J-0er">
-                                                                <rect key="frame" x="1" y="1" width="281.5" height="116"/>
-                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                <subviews>
-                                                                    <textView importsGraphics="NO" richText="NO" continuousSpellChecking="YES" allowsUndo="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="1313">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="116"/>
-                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                        <size key="minSize" width="0.0" height="116"/>
-                                                                        <size key="maxSize" width="463" height="10000000"/>
-                                                                        <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                                        <size key="minSize" width="0.0" height="116"/>
-                                                                        <size key="maxSize" width="463" height="10000000"/>
-                                                                        <connections>
-                                                                            <binding destination="572" name="value" keyPath="currentNodes.comment" id="1317"/>
-                                                                            <binding destination="572" name="editable" keyPath="currentNodes.hasBasicMetadata" id="1319"/>
-                                                                        </connections>
-                                                                    </textView>
-                                                                </subviews>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            </clipView>
-                                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="1314">
-                                                                <rect key="frame" x="-100" y="-100" width="338" height="15"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                            </scroller>
-                                                            <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="1315">
-                                                                <rect key="frame" x="339" y="1" width="15" height="57"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                            </scroller>
-                                                        </scrollView>
                                                         <comboBox verticalHuggingPriority="750" id="1373">
                                                             <rect key="frame" x="81" y="193" width="286.5" height="26"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -1469,8 +1436,8 @@
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </comboBoxCell>
                                                             <connections>
-                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasBasicMetadata" id="1391"/>
                                                                 <binding destination="572" name="value" keyPath="currentNodes.grouping" id="iXo-91-3o4"/>
+                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasBasicMetadata" id="1391"/>
                                                             </connections>
                                                         </comboBox>
                                                         <comboBox verticalHuggingPriority="750" id="1384">
@@ -1482,10 +1449,43 @@
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </comboBoxCell>
                                                             <connections>
-                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasBasicMetadata" id="1400"/>
                                                                 <binding destination="572" name="value" keyPath="currentNodes.genre" id="9Kd-A4-KuX"/>
+                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasBasicMetadata" id="1400"/>
                                                             </connections>
                                                         </comboBox>
+                                                        <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" id="oPQ-mh-StE">
+                                                            <rect key="frame" x="81" y="-3" width="283.5" height="138"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <clipView key="contentView" id="CCH-N0-Yie">
+                                                                <rect key="frame" x="1" y="1" width="281.5" height="136"/>
+                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                <subviews>
+                                                                    <textView importsGraphics="NO" richText="NO" continuousSpellChecking="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="vxX-4G-sDC">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="283" height="136"/>
+                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <size key="minSize" width="281.5" height="136"/>
+                                                                        <size key="maxSize" width="463" height="10000000"/>
+                                                                        <color key="insertionPointColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <size key="minSize" width="281.5" height="136"/>
+                                                                        <size key="maxSize" width="463" height="10000000"/>
+                                                                        <connections>
+                                                                            <binding destination="572" name="editable" keyPath="currentNodes.hasBasicMetadata" id="O2m-B2-xSx"/>
+                                                                            <binding destination="572" name="value" keyPath="currentNodes.comment" id="W8l-hr-TdX"/>
+                                                                        </connections>
+                                                                    </textView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </clipView>
+                                                            <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="hcO-VV-2B1">
+                                                                <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </scroller>
+                                                            <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="1mt-dV-blv">
+                                                                <rect key="frame" x="266.5" y="1" width="16" height="136"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </scroller>
+                                                        </scrollView>
                                                     </subviews>
                                                 </view>
                                             </tabViewItem>
@@ -1706,8 +1706,8 @@
                                                             <imageCell key="cell" selectable="YES" editable="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="978"/>
                                                             <connections>
                                                                 <binding destination="572" name="value" keyPath="currentNodes.cover" id="980"/>
-                                                                <binding destination="572" name="editable" keyPath="currentNodes.hasExtenedMetadata" id="lrw-es-1wB"/>
                                                                 <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" previousBinding="lrw-es-1wB" id="O1b-Zm-fNe"/>
+                                                                <binding destination="572" name="editable" keyPath="currentNodes.hasExtenedMetadata" id="lrw-es-1wB"/>
                                                             </connections>
                                                         </imageView>
                                                     </subviews>
