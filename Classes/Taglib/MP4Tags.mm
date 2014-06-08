@@ -12,6 +12,8 @@
 #import "Fields.h"
 #include "TagPrivate.h"
 
+#include <mp4file.h>
+
 #import <AVFoundation/AVFoundation.h>
 
 #import "Logging.h"
@@ -30,7 +32,7 @@ using namespace std;
     self = [super initWithFilename:filename];
     if (self) {
 		kind = @"MP4";
-		data->file = NULL;
+		data->file =  new TagLib::MP4::File([filename UTF8String]);
 		[self initFields];
     }
     
@@ -79,7 +81,8 @@ using namespace std;
     cover = [[NSImage alloc ] initWithData: metadata[COVER] ];
     
     DDLogVerbose(@"end initFields");
-    
+    [self readAudioProperties];
+    delete data->file;
 }
 
     

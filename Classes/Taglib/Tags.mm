@@ -85,15 +85,17 @@ using namespace TagLib;
 	year    =  i ? [NSNumber numberWithUnsignedInt:i] :nil;
 	i = t->track();
 	track   =  i ? [NSNumber numberWithUnsignedInt:i] :nil;
-	
-	
+    [self readAudioProperties];
+}
+
+- (void) readAudioProperties
+{
 	length     = [NSNumber numberWithInt: data->file->audioProperties()->length()];
 	sampleRate = [NSNumber numberWithInt: data->file->audioProperties()->sampleRate()];
 	bitrate    = [NSNumber numberWithInt: data->file->audioProperties()->bitrate()];
 	channels   = [NSNumber numberWithInt: data->file->audioProperties()->channels()];
-
+    
 }
-
 
 - (void)dealloc
 {

@@ -74,6 +74,7 @@ struct FileData;
   */
 -(void) initFields;
 
+-(void) readAudioProperties;
 
 /** Compares the tag to another tag.
  
