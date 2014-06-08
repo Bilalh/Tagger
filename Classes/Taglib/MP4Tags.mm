@@ -60,7 +60,13 @@ using namespace std;
     comment     = metadata[COMMENT];
     compilation = metadata[COMPILATION];
     
-    
+    albumSort       = metadata[ALBUM_SORT];
+	artistSort      = metadata[ARTIST_SORT];
+	titleSort       = metadata[TITLE_SORT];
+	composerSort    = metadata[COMPOSER_SORT];
+	albumArtistSort = metadata[ALBUM_ARTIST_SORT];
+
+   
     NSData *d;
     d=metadata[TRACK_NUMBER];
     track = @(intgerForDataWithRange(d, 0, 4));
@@ -169,6 +175,40 @@ using namespace std;
     [self writeMeta];
 }
 
+- (void) setAlbumSort:(NSString *)newValue
+{
+    TAG_SETTER_START(albumSort);
+    self.metadata[ALBUM_SORT] = albumSort;
+    [self writeMeta];
+}
+
+- (void) setArtistSort:(NSString *)newValue
+{
+    TAG_SETTER_START(artistSort);
+    self.metadata[ARTIST_SORT] = artistSort;
+    [self writeMeta];
+}
+
+- (void) setTitleSort:(NSString *)newValue
+{
+    TAG_SETTER_START(titleSort);
+    self.metadata[TITLE_SORT] = titleSort;
+    [self writeMeta];
+}
+
+- (void) setComposerSort:(NSString *)newValue
+{
+    TAG_SETTER_START(composerSort);
+    self.metadata[COMPOSER_SORT] = composerSort;
+    [self writeMeta];
+}
+
+- (void) setAlbumArtistSort:(NSString *)newValue
+{
+    TAG_SETTER_START(albumArtistSort);
+    self.metadata[ALBUM_ARTIST_SORT] = albumArtistSort;
+    [self writeMeta];
+}
 
 - (void) setTrack:(NSNumber *)newValue
 {
