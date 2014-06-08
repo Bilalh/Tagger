@@ -40,9 +40,6 @@
 		922E35D713C89BF3003C5913 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922E35D613C89BF3003C5913 /* Cocoa.framework */; };
 		923926EE15CF078100135F07 /* libhtmlcxx.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 923926EB15CF076D00135F07 /* libhtmlcxx.3.dylib */; };
 		923926F115CF086300135F07 /* libhtmlcxx.3.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 923926EB15CF076D00135F07 /* libhtmlcxx.3.dylib */; };
-		923926FF15CF0B8D00135F07 /* libhcxselect.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 923926FC15CF0B7E00135F07 /* libhcxselect.dylib */; };
-		9239270015CF0B9F00135F07 /* libhcxselect.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 923926FC15CF0B7E00135F07 /* libhcxselect.dylib */; };
-		9239270315CF0E2F00135F07 /* libhcxselect.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 923926FC15CF0B7E00135F07 /* libhcxselect.dylib */; };
 		9239270415CF0E3100135F07 /* libhtmlcxx.3.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 923926EB15CF076D00135F07 /* libhtmlcxx.3.dylib */; };
 		9239270515CF0F8400135F07 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9252929715C359C300C8CD9E /* SenTestingKit.framework */; };
 		9239573013F43EB100A80074 /* CCTColorLabelMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9239572F13F43EB100A80074 /* CCTColorLabelMenuItemView.m */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -64,14 +61,12 @@
 		9254094B15C36CC00074A280 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 922E35D613C89BF3003C5913 /* Cocoa.framework */; };
 		9264488A13D773CE0035E693 /* arrowLeftBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488813D773CE0035E693 /* arrowLeftBlack16.tiff */; };
 		9264488B13D773CE0035E693 /* arrowRightBlack16.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 9264488913D773CE0035E693 /* arrowRightBlack16.tiff */; };
-		927058FD1942A02600CD322F /* libtag.1.14.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 927058FC1942A02600CD322F /* libtag.1.14.0.dylib */; };
 		928411AF13EB853600A92F3F /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 928411AE13EB853600A92F3F /* defaults.plist */; };
 		9289122815CF195500FBE113 /* hcxselect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9289122515CF195500FBE113 /* hcxselect.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		9289122A15CF198600FBE113 /* hcxselect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9289122515CF195500FBE113 /* hcxselect.cpp */; settings = {COMPILER_FLAGS = "-w"; }; };
 		928F20C81944023F0058366D /* xcode-git-version.sh in Resources */ = {isa = PBXBuildFile; fileRef = 928F20C71944023F0058366D /* xcode-git-version.sh */; };
 		928F20CF19440C7D0058366D /* CLIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 928F20CB19440C7D0058366D /* CLIColor.m */; };
 		928F20D019440C7D0058366D /* DDASLLogCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 928F20CD19440C7D0058366D /* DDASLLogCapture.m */; };
-		928F20D119440E9B0058366D /* libhcxselect.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 923926FC15CF0B7E00135F07 /* libhcxselect.dylib */; };
 		928F20D219440EDB0058366D /* libtag.1.14.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 927058FC1942A02600CD322F /* libtag.1.14.0.dylib */; };
 		9293B84814AF7C7B006D96E7 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9293B84614AF7C71006D96E7 /* Sparkle.framework */; };
 		9293B84914AF7CA2006D96E7 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 9293B84614AF7C71006D96E7 /* Sparkle.framework */; };
@@ -95,6 +90,7 @@
 		92C85E6615DAFFA300436FAD /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 92A41DE815D82097006D89C5 /* libiconv.dylib */; };
 		92D2C4D715D05B7100FF5E96 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 92F16DB014041AC10031E4B4 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		92D30AC31405B1B600677B70 /* IntPair.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D30AC21405B1B600677B70 /* IntPair.m */; };
+		92D329981944CB73000D7AAE /* libtag.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 920660B913C89845003A3803 /* libtag.1.dylib */; };
 		92DBDEAD14AAB99A009434DB /* fields.mm in Sources */ = {isa = PBXBuildFile; fileRef = 92DBDEAC14AAB99A009434DB /* fields.mm */; };
 		92DECF1214ABFBAC00A956E8 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 92DECF1114ABFBAC00A956E8 /* Credits.html */; };
 		92E101F815CDB7FB00882A07 /* NSString+Regex.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E101F715CDB7FB00882A07 /* NSString+Regex.m */; };
@@ -155,7 +151,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				9239270315CF0E2F00135F07 /* libhcxselect.dylib in CopyFiles */,
 				9239270415CF0E3100135F07 /* libhtmlcxx.3.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -166,7 +161,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				923926FF15CF0B8D00135F07 /* libhcxselect.dylib in CopyFiles */,
 				923926F115CF086300135F07 /* libhtmlcxx.3.dylib in CopyFiles */,
 				9254006713F0A82C0020C912 /* libtag.1.dylib in CopyFiles */,
 				9293B84914AF7CA2006D96E7 /* Sparkle.framework in CopyFiles */,
@@ -191,7 +185,6 @@
 		922D866813F4E54B0016B811 /* Tagger.svg */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Tagger.svg; sourceTree = "<group>"; };
 		922E35D613C89BF3003C5913 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		923926EB15CF076D00135F07 /* libhtmlcxx.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libhtmlcxx.3.dylib; path = Frameworks/libhtmlcxx.3.dylib; sourceTree = "<group>"; };
-		923926FC15CF0B7E00135F07 /* libhcxselect.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libhcxselect.dylib; path = Frameworks/libhcxselect.dylib; sourceTree = "<group>"; };
 		9239572E13F43EB100A80074 /* CCTColorLabelMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTColorLabelMenuItemView.h; sourceTree = "<group>"; };
 		9239572F13F43EB100A80074 /* CCTColorLabelMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTColorLabelMenuItemView.m; sourceTree = "<group>"; };
 		923B846213F4B7A800524BFA /* BHFinderLabelColours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BHFinderLabelColours.h; sourceTree = "<group>"; };
@@ -234,7 +227,6 @@
 		9293B84A14AF7DFA006D96E7 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		9293B84D14AF870D006D96E7 /* config.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.yaml; sourceTree = "<group>"; };
 		9293B84F14AF88DC006D96E7 /* appcast_automation.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = appcast_automation.rb; sourceTree = "<group>"; };
-		92960CF6194295BF009431F0 /* libtag.1.12.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtag.1.12.0.dylib; path = ../../../../usr/local/Cellar/taglib/1.8/lib/libtag.1.12.0.dylib; sourceTree = "<group>"; };
 		929A4ACD13DA027C00244796 /* Changelog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Changelog.md; sourceTree = "<group>"; };
 		929A4AD013DA087D00244796 /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
 		929A4AD113DA087D00244796 /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
@@ -347,7 +339,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				928F20D119440E9B0058366D /* libhcxselect.dylib in Frameworks */,
 				92A41DE915D82097006D89C5 /* libiconv.dylib in Frameworks */,
 				928F20D219440EDB0058366D /* libtag.1.14.0.dylib in Frameworks */,
 				9239270515CF0F8400135F07 /* SenTestingKit.framework in Frameworks */,
@@ -359,15 +350,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92D329981944CB73000D7AAE /* libtag.1.dylib in Frameworks */,
 				92A80D01194376F3001AD4B1 /* AVFoundation.framework in Frameworks */,
-				927058FD1942A02600CD322F /* libtag.1.14.0.dylib in Frameworks */,
 				92C85E6615DAFFA300436FAD /* libiconv.dylib in Frameworks */,
 				923926EE15CF078100135F07 /* libhtmlcxx.3.dylib in Frameworks */,
 				92F16DB314041D8B0031E4B4 /* libicucore.dylib in Frameworks */,
 				92E6EDF713F32B3C0045679E /* Quartz.framework in Frameworks */,
 				92E6EDE413F320540045679E /* ScriptingBridge.framework in Frameworks */,
 				922E35D713C89BF3003C5913 /* Cocoa.framework in Frameworks */,
-				9239270015CF0B9F00135F07 /* libhcxselect.dylib in Frameworks */,
 				9293B84814AF7C7B006D96E7 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,9 +425,7 @@
 			children = (
 				92A80D00194376F3001AD4B1 /* AVFoundation.framework */,
 				927058FC1942A02600CD322F /* libtag.1.14.0.dylib */,
-				92960CF6194295BF009431F0 /* libtag.1.12.0.dylib */,
 				92A41DE815D82097006D89C5 /* libiconv.dylib */,
-				923926FC15CF0B7E00135F07 /* libhcxselect.dylib */,
 				923926EB15CF076D00135F07 /* libhtmlcxx.3.dylib */,
 				9252929715C359C300C8CD9E /* SenTestingKit.framework */,
 				9252929915C359C300C8CD9E /* Cocoa.framework */,
@@ -1266,6 +1254,7 @@
 					/usr/local/lib/,
 					/usr/local/Cellar/taglib/1.8/lib,
 					/usr/local/Cellar/taglib/1.9.1/lib,
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				LLVM_LTO = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
@@ -1316,6 +1305,7 @@
 					/usr/local/lib/,
 					/usr/local/Cellar/taglib/1.8/lib,
 					/usr/local/Cellar/taglib/1.9.1/lib,
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				LLVM_LTO = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
