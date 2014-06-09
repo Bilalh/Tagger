@@ -31,10 +31,13 @@ static const NSSet *tokensSet;
 		nodes = newNodes;
 		tagSelector = selector;
 		self.buttonTitle = title;
+        
+
     }
 	
     return self;
 }
+
 
 + (void) initialize
 {
@@ -44,6 +47,12 @@ static const NSSet *tokensSet;
 				 nil];
 }
 
+- (IBAction)setTokenFieldToLastUsed:(id)sender
+{
+    [tokenField setObjectValue:
+     [[NSUserDefaults standardUserDefaults]
+      arrayForKey:@"lastUsedTagFormat"]];
+}
 
 #pragma mark -
 #pragma mark Tagging
@@ -51,7 +60,13 @@ static const NSSet *tokensSet;
 - (IBAction)tagFiles:(id)sender
 {
 	DDLogInfo(@"Obj %@", [tokenField objectValue]);
-	NSError *res = [nodes performSelector:tagSelector withObject:[tokenField objectValue]];
+    NSArray *objFormat = [tokenField objectValue];
+	NSError *res = [nodes performSelector:tagSelector withObject:objFormat];
+    
+    
+    [[NSUserDefaults standardUserDefaults] setObject:objFormat forKey:@"lastUsedTagFormat"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
 	DDLogInfo(@"res:%@", res ? [res localizedDescription] : nil);
 	if (res){
 		NSBeginAlertSheet(@"Error",
