@@ -48,13 +48,14 @@ static const NSSet *tokensNumberSet;
         _url = url;
 		if (! [self isDirectory] ){
 			NSString *path = [url path];
-			
-			if ([path hasSuffix:@"m4a"]){
+			NSString *ext = [[path pathExtension] lowercaseString];
+            
+			if ([ext isEqualToString:@"m4a"]){
 				tags = [[MP4Tags alloc] initWithFilename:path];
                  if (!tags) return nil;
 				hasBasicMetadata   = true;
 				hasExtenedMetadata = true;
-			}else if ([path hasSuffix:@"mp3"]){
+			}else if ([ext isEqualToString:@"mp3"]){
 				tags = [[MPEGTags alloc] initWithFilename:path];
                  if (!tags) return nil;
 				hasBasicMetadata   = true;
@@ -197,8 +198,8 @@ static const NSSet *tokensNumberSet;
 				NSString *extension = [[[node.URL path] pathExtension] lowercaseString];
 				//TODO make user passable block
 				if ([extension isEqualToString:@"mp3"]  || 
-					[extension isEqualToString:@"m4a"]  || 
-                    //					[extension isEqualToString:@"flac"] || 
+					[extension isEqualToString:@"m4a"]  ||
+                    //					[extension isEqualToString:@"flac"] ||
                     //					[extension isEqualToString:@"ogg"]  || 
                     //					[extension isEqualToString:@"wma"]  || 
 					[self isaDirectory:node.URL ] ){
