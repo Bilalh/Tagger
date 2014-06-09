@@ -302,7 +302,7 @@
 		92E6ED9D13F313230045679E /* RenamingFilesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenamingFilesController.h; sourceTree = "<group>"; };
 		92E6ED9E13F313230045679E /* RenamingFilesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RenamingFilesController.m; sourceTree = "<group>"; };
 		92E6EDA013F313230045679E /* Fields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fields.h; sourceTree = "<group>"; };
-		92E6EDA113F313230045679E /* framelistmp4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = framelistmp4.cpp; sourceTree = "<group>"; };
+		92E6EDA113F313230045679E /* framelistmp3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = framelistmp3.cpp; sourceTree = "<group>"; };
 		92E6EDA213F313230045679E /* MP4Tags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MP4Tags.h; sourceTree = "<group>"; };
 		92E6EDA313F313230045679E /* MP4Tags.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MP4Tags.mm; sourceTree = "<group>"; };
 		92E6EDA413F313230045679E /* MPEGTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPEGTags.h; sourceTree = "<group>"; };
@@ -739,7 +739,7 @@
 				9228998E17885CD5002A59A0 /* fields.txt */,
 				92E6EDA013F313230045679E /* Fields.h */,
 				92DBDEAC14AAB99A009434DB /* fields.mm */,
-				92E6EDA113F313230045679E /* framelistmp4.cpp */,
+				92E6EDA113F313230045679E /* framelistmp3.cpp */,
 				92E6EDA213F313230045679E /* MP4Tags.h */,
 				92E6EDA313F313230045679E /* MP4Tags.mm */,
 				92E6EDA413F313230045679E /* MPEGTags.h */,
