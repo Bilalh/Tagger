@@ -17,7 +17,7 @@
 #import <AVFoundation/AVFoundation.h>
 
 #import "Logging.h"
-LOG_LEVEL(LOG_LEVEL_VERBOSE);
+LOG_LEVEL(LOG_LEVEL_INFO);
 
 
 using namespace Fields::MP4;
