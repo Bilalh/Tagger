@@ -916,8 +916,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 {
 	DDLogVerbose(@"format array %@",[predefinedRenameFormats objectAtIndex:[sender tag]]);
 	[currentNodes renameWithFormatArray: [predefinedRenameFormats objectAtIndex:[sender tag]]];
-	[[directoryStack lastObject] invalidateChildren];
-	[table reloadData];
+	[self refresh:sender];
 }
 
 
@@ -1129,7 +1128,13 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 - (IBAction)refresh:(id)sender
 {
+    DDLogInfo(@"refreshing");
 	[[directoryStack lastObject] invalidateChildren];
+    
+    NSArray *newNodes = [[[directoryStack lastObject] children]
+                  objectsAtIndexes:[table selectedRowIndexes]];
+    DDLogInfo(@"Setting notes from \n %@ to \n %@", [currentNodes tagsArray], newNodes);
+    [currentNodes setTagsArrayNoWrite:newNodes];
 	[table reloadData];
 }
 
@@ -1244,8 +1249,6 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 
 + (void)initialize
 {
-//	NSString *path = [[NSBundle mainBundle] pathForResource:@"Vgmdb" ofType:@"rb"];
-//	[[MacRuby sharedRuntime] evaluateFileAtPath:path];
 	[[NSUserDefaults standardUserDefaults] registerDefaults:[NSDictionary dictionaryWithContentsOfFile:
 															 [[NSBundle mainBundle] pathForResource:@"defaults" ofType:@"plist"]]];	
 	[[NSUserDefaults standardUserDefaults]  synchronize];

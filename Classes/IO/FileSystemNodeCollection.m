@@ -228,6 +228,9 @@ static const NSArray *fieldNames;
 
 - (void)saveMetadata
 {
+    if (! tagsArray){
+        return;
+    }
     DDLogInfo(@"saving Metadata for each node");
     for (FileSystemNode *n in tagsArray) {
         if ([n tags]){
@@ -237,12 +240,17 @@ static const NSArray *fieldNames;
     
 }
 
-/// set the new array and finds the metdata for each tag
 - (void)setTagsArray:(NSArray *)newArray
 {
-    DDLogInfo(@"TagsArray Changing from \n %@ to \n %@", tagsArray, newArray);
-    [self  saveMetadata];
-    
+     DDLogInfo(@"TagsArray Changing from \n %@ to \n %@", tagsArray, newArray);
+     [self saveMetadata];
+     [self setTagsArrayNoWrite:newArray];
+}
+
+/// set the new array and finds the metdata for each tag
+- (void)setTagsArrayNoWrite:(NSArray *)newArray
+{
+    DDLogInfo(@"setTagsArrayNoWrite");
 	tagsArray = newArray;
 	if (!tagsArray || [tagsArray count] ==0){
 		[self nilAllFields];

@@ -86,6 +86,8 @@
 
 - (void)saveMetadata;
 
+- (void)setTagsArrayNoWrite:(NSArray *)newArray;
+
 /// @name Finding General metadata.
 
 // YES if empty
