@@ -12,6 +12,7 @@ Version 1.8
 * Quicklook on Vgmdb search results by pressing space.
 * Artist to composer.
 * Composer to artist.
+* Save last custom format.
 
 ### Improvements ###
 * Improvements to the auto taggering gui.
