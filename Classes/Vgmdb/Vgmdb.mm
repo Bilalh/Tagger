@@ -467,15 +467,23 @@ string _html;
     Node *nwish = ncoll->next_sibling->next_sibling;
     
     Node *ngenre = nwish->next_sibling->next_sibling;
-    string _genre = ngenre->last_child->data.text();
-    NSArray *genres = @[[NSString stringWithCppStringTrimmed:&_genre]];
-    if ([genres count] ==1 && [genres[0] isMatchedByRegex:@".+,.+"]){
-        genres = [self spiltMutiMetadataString:genres[0]];
+    
+    if (ngenre->last_child){
+        string _genre = ngenre->last_child->data.text();
+        NSArray *genres = @[[NSString stringWithCppStringTrimmed:&_genre]];
+        if ([genres count] ==1 && [genres[0] isMatchedByRegex:@".+,.+"]){
+            genres = [self spiltMutiMetadataString:genres[0]];
+        }
+        [data setValue:genres forKey:@"genre"];
+        [data setValue:genres forKey:@"category"];
     }
-    [data setValue:genres forKey:@"genre"];
-    [data setValue:genres forKey:@"category"];
     
     Node *nprod = ngenre->next_sibling->next_sibling;
+
+    if ( !nprod){
+        return;
+    }
+    
     NSMutableArray *prods = [NSMutableArray new];
     Node *current = nprod->first_child;
     while (current) {
