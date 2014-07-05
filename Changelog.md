@@ -13,6 +13,7 @@ Version 1.8
 * Artist to composer.
 * Composer to artist.
 * Save last custom format.
+* Regex replace on audio files metadata.
 
 ### Improvements ###
 * Improvements to the auto taggering gui.

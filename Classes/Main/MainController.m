@@ -35,7 +35,7 @@ static const NSArray *predefinedTagFormats;
 static const NSArray *tagMenuValues;
 static const NSArray *deleteMenuValues;
 static const NSArray *swapMenuValues;
-
+static const NSArray *regexMenuValues;
 
 @implementation FileSystemNode (QLPreviewItem)
 
@@ -802,6 +802,55 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	}];
 }
 
+
+- (IBAction)regexReplace:(id)sender
+{
+    NSTextField *regex    = [[NSTextField alloc] initWithFrame:NSMakeRect(90, 30, 200, 22)];
+    NSTextField *lregex   = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 30, 90, 22)];
+    [lregex setStringValue:@"Regex:"];
+    [lregex setBezeled:NO];
+    [lregex setDrawsBackground:NO];
+    [lregex setEditable:NO];
+    [lregex setSelectable:NO];
+    
+    NSTextField *replace    = [[NSTextField alloc] initWithFrame:NSMakeRect(90, 0, 200, 22)];
+    NSTextField *lreplace   = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 90, 22)];
+    [lreplace setStringValue:@"Replacement:"];
+    [lreplace setBezeled:NO];
+    [lreplace setDrawsBackground:NO];
+    [lreplace setEditable:NO];
+    [lreplace setSelectable:NO];
+    
+    
+    
+    NSAlert *alert = [NSAlert new];
+    NSView* tmpView = [[NSView alloc] initWithFrame:NSMakeRect(0, 0, 300, 60)];
+    [tmpView addSubview:lregex];
+    [tmpView addSubview:regex];
+    [tmpView addSubview:lreplace];
+    [tmpView addSubview:replace];
+    
+    [alert addButtonWithTitle:@"Replace"];
+    [alert addButtonWithTitle:@"Cancel"];
+    [alert setMessageText:@"Regex replace"];
+    [alert setInformativeText:@"Replace the substring matching Regex: with Replacement:. Using $1, etc for matched groups"];
+    [alert setAccessoryView:tmpView];
+    [alert setAlertStyle:NSWarningAlertStyle];
+    
+    [alert beginSheetModalForWindow:[self window] completionHandler:^(NSModalResponse returnCode) {
+        if (returnCode == NSAlertFirstButtonReturn){
+            [self performBlockOnTags:sender tagNames:tagMenuValues block:^id (id value, NSString *tagName, Tags *tags) {
+                    NSString *s = value;
+            		return [s stringByReplacingOccurrencesOfRegex:[regex stringValue] withString:[replace stringValue]];
+            }];
+
+        }
+    }];
+    
+
+}
+
+
 - (IBAction)performBlockOnTags:(id)sender
 					  tagNames:(const NSArray*)tagNames
 						 block:(id (^)(id value, NSString *tagName, Tags *tags ))block
@@ -1211,6 +1260,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	makeMenu(tagMenuValues, whitespaceMenu, @selector(trimWhitespace:));
 	makeMenu(deleteMenuValues, deleteMenu,  @selector(deleteTag:));
 	makeMenu(swapMenuValues, swapMenu,  @selector(swapFirstAndLastName:));
+	makeMenu(regexMenuValues, regexMenu,  @selector(regexReplace:));
 	
 	NSMenuItem *item = [swapMenu itemAtIndex:0];
 	[item setKeyEquivalent:@"p"];
@@ -1271,6 +1321,10 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	predefinedRenameFormats = [[NSUserDefaults standardUserDefaults] arrayForKey:@"predefinedRenameFormats"];
 	predefinedTagFormats    = [[NSUserDefaults standardUserDefaults] arrayForKey:@"predefinedTagFormats"];
 	tagMenuValues = [[NSArray alloc ] initWithObjects:
+					 @"title",  @"album",  @"artist",@"albumArtist", @"composer", @"genre",
+					 nil];
+    
+    regexMenuValues = [[NSArray alloc ] initWithObjects:
 					 @"title",  @"album",  @"artist",@"albumArtist", @"composer", @"genre",
 					 nil];
 	

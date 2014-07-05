@@ -38,7 +38,9 @@
 	IBOutlet NSMenu *whitespaceMenu;
 	IBOutlet NSMenu *deleteMenu;
 	IBOutlet NSMenu *swapMenu;
+	IBOutlet NSMenu *regexMenu;
 
+    
 	
 	IBOutlet NSSplitView *splitView;
 	IBOutlet NSView *leftSplitView;

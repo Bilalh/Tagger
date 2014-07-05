@@ -466,18 +466,23 @@
                             </menuItem>
                             <menuItem title="Lower Case" id="1439">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Lower Case" id="1440">
+                                <menu key="submenu" title="Lower Case" id="IlI-YV-KLn">
                                     <items>
-                                        <menuItem title="All Below" tag="-1" id="1442">
+                                        <menuItem title="All Below" tag="-1" id="D9s-w2-zAy">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="lowercaseTags:" target="572" id="1446"/>
-                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasBasicMetadata" id="1443"/>
+                                                <action selector="lowercaseTags:" target="572" id="jbb-mD-zSi"/>
+                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasBasicMetadata" id="eVC-ob-wM8"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="1441"/>
+                                        <menuItem isSeparatorItem="YES" id="R9x-hR-I1r"/>
                                     </items>
                                 </menu>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="7RW-HR-0xT"/>
+                            <menuItem title="Regex Replace" id="z7e-MA-SCT">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Regex Replace" id="0cq-17-iE3"/>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="1366"/>
                             <menuItem title="Trim Whitespace" id="1450">
@@ -1043,11 +1048,11 @@
                                 </subviews>
                             </customView>
                             <customView id="537">
-                                <rect key="frame" x="713" y="0.0" width="391" height="480.99999981740621"/>
+                                <rect key="frame" x="713" y="0.0" width="391" height="481"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <tabView initialItem="556" id="554">
-                                        <rect key="frame" x="0.0" y="-2" width="391" height="480.99999981740621"/>
+                                        <rect key="frame" x="0.0" y="-2" width="391" height="481"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <font key="font" metaFont="system"/>
                                         <tabViewItems>
@@ -1697,11 +1702,11 @@
                                             </tabViewItem>
                                             <tabViewItem label="Artwork" identifier="2" id="555">
                                                 <view key="view" id="564">
-                                                    <rect key="frame" x="10" y="33" width="371" height="434.99999981740621"/>
+                                                    <rect key="frame" x="10" y="33" width="371" height="435"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
                                                         <imageView id="977" customClass="DraggableImageView">
-                                                            <rect key="frame" x="14" y="14" width="342.5" height="416"/>
+                                                            <rect key="frame" x="14" y="14.000000182593652" width="342.5" height="416"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
                                                             <imageCell key="cell" selectable="YES" editable="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="978"/>
                                                             <connections>
@@ -1811,10 +1816,10 @@
                 <outlet property="downloadMenuItem" destination="1025" id="1492"/>
                 <outlet property="homeMenuItem" destination="1018" id="1493"/>
                 <outlet property="leftSplitView" destination="538" id="1472"/>
-                <outlet property="lowercaseMenu" destination="1440" id="1448"/>
                 <outlet property="movieMenuItem" destination="1031" id="1494"/>
                 <outlet property="musicMenuItem" destination="1029" id="1495"/>
                 <outlet property="popup" destination="540" id="678"/>
+                <outlet property="regexMenu" destination="0cq-17-iE3" id="1CQ-5z-apM"/>
                 <outlet property="renameMenu" destination="999" id="1301"/>
                 <outlet property="rightSplitView" destination="537" id="1478"/>
                 <outlet property="splitView" destination="536" id="1470"/>
