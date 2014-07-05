@@ -88,127 +88,136 @@ using namespace std;
     
 # pragma mark Read/Write
 
+- (void) setCommon:(id)value
+                 forKey:(NSString*)key
+{
+    if (value){
+        self.metadata[key] = value;
+    }else{
+        [self.metadata removeObjectForKey:key];
+    }
+}
 
 - (void) setTitle:(NSString *)newValue
 {
     TAG_SETTER_START(title);
-    self.metadata[TITLE] = title;
+    [self setCommon:title forKey:TITLE];
 }
 
 - (void) setAlbum:(NSString *)newValue
 {
     TAG_SETTER_START(album);
-    self.metadata[ALBUM] = album;
+    [self setCommon:album forKey:ALBUM];
 }
 
 - (void) setArtist:(NSString *)newValue
 {
     TAG_SETTER_START(artist);
-    self.metadata[ARTIST] = artist;
+    [self setCommon:artist forKey:ARTIST];
 }
 
 - (void) setGenre:(NSString *)newValue
 {
     TAG_SETTER_START(genre);
-    self.metadata[GENRE] = genre;
+    [self setCommon:genre forKey:GENRE];
 }
 
 - (void) setYear:(NSNumber *)newValue
 {
     TAG_SETTER_START(year);
-    self.metadata[YEAR] = year;
+    [self setCommon:year forKey:YEAR];
 }
 
 - (void) setAlbumArtist:(NSString *)newValue
 {
     TAG_SETTER_START(albumArtist);
-    self.metadata[ALBUM_ARTIST] = albumArtist;
+    [self setCommon:albumArtist forKey:ALBUM_ARTIST];
 }
 
 - (void) setComposer:(NSString *)newValue
 {
     TAG_SETTER_START(composer);
-    self.metadata[COMPOSER] = composer;
+    [self setCommon:composer forKey:COMPOSER];
 }
 
 - (void) setGrouping:(NSString *)newValue
 {
     TAG_SETTER_START(grouping);
-    self.metadata[GROUPING] = grouping;
+    [self setCommon:grouping forKey:GROUPING];
 }
 
 - (void) setBpm:(NSNumber *)newValue
 {
     TAG_SETTER_START(bpm);
-    self.metadata[BPM] = bpm;
+    [self setCommon:bpm forKey:BPM];
 }
 
 - (void) setIsrc:(NSString *)newValue
 {
     TAG_SETTER_START(isrc);
-    self.metadata[ISRC] = isrc;
+    [self setCommon:isrc forKey:ISRC];
 }
 
 - (void) setReleaseDate:(NSString *)newValue
 {
     TAG_SETTER_START(releaseDate);
-    self.metadata[RELEASE_DATE] = releaseDate;
+    [self setCommon:releaseDate forKey:RELEASE_DATE];
 }
 
 - (void) setComment:(NSString *)newValue
 {
     TAG_SETTER_START(comment);
-    self.metadata[COMMENT] = comment;
+    [self setCommon:comment forKey:COMMENT];
 }
 
 - (void) setCompilation:(NSNumber *)newValue
 {
     TAG_SETTER_START(compilation);
-    self.metadata[COMPILATION] = compilation;
+    [self setCommon:compilation forKey:COMPILATION];
 }
 
 - (void) setAlbumSort:(NSString *)newValue
 {
     TAG_SETTER_START(albumSort);
-    self.metadata[ALBUM_SORT] = albumSort;
+    [self setCommon:albumSort forKey:ALBUM_SORT];
 }
 
 - (void) setArtistSort:(NSString *)newValue
 {
     TAG_SETTER_START(artistSort);
-    self.metadata[ARTIST_SORT] = artistSort;
+    [self setCommon:artistSort forKey:ARTIST_SORT];
 }
 
 - (void) setTitleSort:(NSString *)newValue
 {
     TAG_SETTER_START(titleSort);
-    self.metadata[TITLE_SORT] = titleSort;
+    [self setCommon:titleSort forKey:TITLE_SORT];
 }
 
 - (void) setComposerSort:(NSString *)newValue
 {
     TAG_SETTER_START(composerSort);
-    self.metadata[COMPOSER_SORT] = composerSort;
+    [self setCommon:composerSort forKey:COMPOSER_SORT];
 }
 
 - (void) setAlbumArtistSort:(NSString *)newValue
 {
     TAG_SETTER_START(albumArtistSort);
-    self.metadata[ALBUM_ARTIST_SORT] = albumArtistSort;
+    [self setCommon:albumArtistSort forKey:ALBUM_ARTIST_SORT];
 }
 
 - (void) setTrack:(NSNumber *)newValue
 {
 	TAG_SETTER_START(track);
     NSData *trackData = dataForIntegerPair( [track unsignedIntegerValue], [totalTracks unsignedIntegerValue]);
-    self.metadata[TRACK_NUMBER] = trackData;
+    [self setCommon:trackData forKey:TRACK_NUMBER];
 }
 
 - (void) setTotalTracks:(NSNumber *)newValue
 {
 	TAG_SETTER_START(totalTracks);
     NSData *trackData = dataForIntegerPair( [track unsignedIntegerValue], [totalTracks unsignedIntegerValue]);
-    self.metadata[TRACK_NUMBER] = trackData;
+    [self setCommon:trackData forKey:TRACK_NUMBER];
 }
 
 - (void) setDisc:(NSNumber *)newValue

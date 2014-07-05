@@ -551,6 +551,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
         // HAS to go after setting the track#
         NSNumber *num_track_in_disc = albumDetails[@"disc_tracks"][[tags.disc integerValue] - 1 ];
         [tags setValue:num_track_in_disc forKey:@"totalTracks"];
+        [tags writeMetaData];
 	}
 	
 	

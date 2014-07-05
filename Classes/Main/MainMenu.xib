@@ -1043,11 +1043,11 @@
                                 </subviews>
                             </customView>
                             <customView id="537">
-                                <rect key="frame" x="713" y="0.0" width="391" height="481"/>
+                                <rect key="frame" x="713" y="0.0" width="391" height="480.99999981740621"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <tabView initialItem="556" id="554">
-                                        <rect key="frame" x="0.0" y="-2" width="391" height="481"/>
+                                        <rect key="frame" x="0.0" y="-2" width="391" height="480.99999981740621"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <font key="font" metaFont="system"/>
                                         <tabViewItems>
@@ -1706,24 +1706,8 @@
                                                             <imageCell key="cell" selectable="YES" editable="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="978"/>
                                                             <connections>
                                                                 <binding destination="572" name="value" keyPath="currentNodes.cover" id="980"/>
+                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" previousBinding="lrw-es-1wB" id="Ku4-aX-HoH"/>
                                                                 <binding destination="572" name="editable" keyPath="currentNodes.hasExtenedMetadata" id="lrw-es-1wB"/>
-                                                                <binding destination="572" name="editable2" keyPath="currentNodes.allMp4s" previousBinding="lrw-es-1wB" id="5aT-QR-icu">
-                                                                    <dictionary key="options">
-                                                                        <integer key="NSMultipleValuesPlaceholder" value="-1"/>
-                                                                        <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                                                        <integer key="NSNotApplicablePlaceholder" value="-1"/>
-                                                                        <integer key="NSNullPlaceholder" value="-1"/>
-                                                                    </dictionary>
-                                                                </binding>
-                                                                <binding destination="572" name="enabled2" keyPath="currentNodes.allMp4s" previousBinding="fd7-dD-gdu" id="iUb-a6-Gbr">
-                                                                    <dictionary key="options">
-                                                                        <integer key="NSMultipleValuesPlaceholder" value="-1"/>
-                                                                        <integer key="NSNoSelectionPlaceholder" value="-1"/>
-                                                                        <integer key="NSNotApplicablePlaceholder" value="-1"/>
-                                                                        <integer key="NSNullPlaceholder" value="-1"/>
-                                                                    </dictionary>
-                                                                </binding>
-                                                                <binding destination="572" name="enabled" keyPath="currentNodes.hasExtenedMetadata" previousBinding="5aT-QR-icu" id="fd7-dD-gdu"/>
                                                             </connections>
                                                         </imageView>
                                                     </subviews>

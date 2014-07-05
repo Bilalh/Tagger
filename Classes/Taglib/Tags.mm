@@ -64,7 +64,6 @@ using namespace TagLib;
             NSString *tmp;
             [self.fileUrl getResourceValue:&tmp forKey:NSURLTypeIdentifierKey error:nil];
             _fileUrlType = tmp;
-
 		}
 	}
 	
@@ -85,11 +84,14 @@ using namespace TagLib;
 	year    =  i ? [NSNumber numberWithUnsignedInt:i] :nil;
 	i = t->track();
 	track   =  i ? [NSNumber numberWithUnsignedInt:i] :nil;
+    
     [self readAudioProperties];
 }
 
 - (void) readAudioProperties
 {
+    assert(data);
+    if (!data->file->isValid()) return;
 	length     = [NSNumber numberWithInt: data->file->audioProperties()->length()];
 	sampleRate = [NSNumber numberWithInt: data->file->audioProperties()->sampleRate()];
 	bitrate    = [NSNumber numberWithInt: data->file->audioProperties()->bitrate()];

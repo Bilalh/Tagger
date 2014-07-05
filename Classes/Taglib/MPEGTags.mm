@@ -116,13 +116,13 @@ using namespace Fields::MPEG;
     isrc        = [self getFieldWithString:ISRC];
     releaseDate = [self getFieldWithString:RELEASE_DATE];
 	
-//	[self initCover];
+	[self initCover];
 }
 
 - (void) initCover
 {
 	const ID3v2::Tag *tag = data->f->mpeg->ID3v2Tag();
-	ID3v2::FrameList listOfMp3Frames = tag->frameListMap()[COVER];
+	ID3v2::FrameList listOfMp3Frames = tag->frameList(Fields::MPEG::COVER);
 	if (!listOfMp3Frames.isEmpty()){
 		ID3v2::AttachedPictureFrame *picture = static_cast<ID3v2::AttachedPictureFrame *>(listOfMp3Frames.front());
 		if (picture){
@@ -321,7 +321,7 @@ using namespace Fields::MPEG;
 	TAG_SETTER_START(cover);
 	
 	ID3v2::Tag *tag = data->f->mpeg->ID3v2Tag();
-	tag->removeFrames(COVER);
+	tag->removeFrames(Fields::MPEG::COVER);
 	data->f->mpeg->save();
 	if (cover){
 	
