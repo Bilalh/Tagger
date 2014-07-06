@@ -356,8 +356,22 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[dateFormatter setLocale:locale];
 	[dateFormatter setDateFormat:@"MMM dd, yyyy"];
 	
+    assert(locale);
+    assert(dateFormatter);
 	NSDate *myDate = [dateFormatter dateFromString:dateString];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    
+    if (!myDate){
+        [dateFormatter setDateFormat:@"MMM yyyy"];
+        myDate = [dateFormatter dateFromString:dateString];
+        if (!myDate){
+            return nil;
+        }
+        
+        [dateFormatter setDateFormat:@"yyyy-MM"];
+    }else{
+        [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    }
+    
 	NSString *formattedDateString = [dateFormatter stringFromDate:myDate];
 	
 	return formattedDateString;
@@ -403,8 +417,11 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
 	[values addObject:[Utility valueFromResult:[albumDetails objectForKey:@"category"] 
 							  selectedLanguage:@"english"]];	
 	
-    [keys addObject:@"releaseDate"];
-    [values addObject: [self yyyymmddFromDateString:albumDetails[@"date"]]];
+    NSString *rdate = [self yyyymmddFromDateString:albumDetails[@"date"]];
+    if (rdate){
+        [keys addObject:@"releaseDate"];
+        [values addObject: rdate];
+    }
     
 	fieldValues = [[NSMutableDictionary alloc] initWithObjects:values forKeys:keys];
 	DDLogInfo(@"fieldValues\n %@", fieldValues);
