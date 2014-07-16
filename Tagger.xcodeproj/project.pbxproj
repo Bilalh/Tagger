@@ -972,7 +972,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PROJECT_DIR/Other Sources/appcast_automation.rb\"";
+			shellScript = "export LANG=en_GB.UTF-8\nexport LANGUAGE=en_GB.UTF-8\nexport LC_ALL=en_GB.UTF-8\n\"$PROJECT_DIR/Other Sources/appcast_automation.rb\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
