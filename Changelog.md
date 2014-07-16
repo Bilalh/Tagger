@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-Version 1.8
+Version 1.8 (Wed 16 Jul 2014)
 ------------
 ### Features ###
 * 10.9 Support
