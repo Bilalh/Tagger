@@ -254,7 +254,7 @@ objectValueForTableColumn:(NSTableColumn *)aTableColumn
                 }
             }
             DDLogVerbose(@"results %@ same %zu %zu",nfiles, [files count], [tracks count]);
-            if ([files count] == [tracks count]){
+            if ([nfiles count] == [tracks count]){
                 files = nfiles;
             }
         }

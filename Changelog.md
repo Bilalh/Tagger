@@ -2,6 +2,12 @@ Changelog
 =========
 
 
+Version 1.8.1
+-------------
+### Bug Fixes ###
+* When tracks are different lengths when auto tagging using Vgmdb
+
+
 Version 1.8 (Wed 16 Jul 2014)
 ------------
 ### Features ###
@@ -16,7 +22,7 @@ Version 1.8 (Wed 16 Jul 2014)
 * Regex replace on audio files metadata.
 
 ### Improvements ###
-* Improvements to the auto taggering gui.
+* Improvements to the auto tagging gui.
 * Clicking on a Vgmdb search result opens those results.
 * Using AVFoundation for mp4/m4a since it more reliable and fixes the problems with cover art.
 * Made m4a/mp4 tag writing faster.
