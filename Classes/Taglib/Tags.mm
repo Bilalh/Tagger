@@ -186,7 +186,10 @@ DDLogInfo(@"res:%d "#field":%u", b, t->field());
 - (void) setIsrc                      :(NSString*)newValue {}
 - (void) setReleaseDate               :(NSString*)newValue {}
 
-
+- (void) writeMetaData
+{
+    
+}
 
 - (void) removeAllTags { DDLogInfo(@"removing tags");}
 

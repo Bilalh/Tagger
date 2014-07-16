@@ -38,7 +38,7 @@ To replace a mp3 cover art a second time use `refresh`(⌘R) then `Parent Folder
 
 Information
 ----------
-* Writes 2.3/2.4 id3 tags.
+* Writes 2.4 id3 tags.
 
 Libraries Used
 --------------

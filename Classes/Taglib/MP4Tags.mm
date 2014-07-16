@@ -91,7 +91,7 @@ using namespace std;
 - (void) setCommon:(id)value
                  forKey:(NSString*)key
 {
-    if (value){
+    if (value && [value isNotEqualTo:@""] ){
         self.metadata[key] = value;
     }else{
         [self.metadata removeObjectForKey:key];
@@ -304,6 +304,7 @@ NSData *dataForIntegerPair(NSUInteger fst, NSUInteger snd)
     AVAssetExportSession *session = [AVAssetExportSession
                                      exportSessionWithAsset:asset
                                      presetName:AVAssetExportPresetPassthrough];
+    session.shouldOptimizeForNetworkUse = YES;
     
     if (![[session supportedFileTypes] containsObject:theFileType]) {
         DDLogVerbose(@"Not supportedFileTypes");

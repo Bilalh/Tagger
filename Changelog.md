@@ -21,6 +21,7 @@ Version 1.8
 * Using AVFoundation for mp4/m4a since it more reliable and fixes the problems with cover art.
 * Made m4a/mp4 tag writing faster.
 
+
 Version 1.7 Beta (Sat 06 Jul 2013)
 -----------
 
