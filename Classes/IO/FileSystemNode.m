@@ -309,6 +309,7 @@ static const NSSet *tokensNumberSet;
 		}
 		[tags setValue: value forKey:[keys objectAtIndex:i-1]];
 	}
+    [tags writeMetaData];
 	return err;
 }
 
