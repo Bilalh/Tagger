@@ -5,13 +5,13 @@ Tagger is application that auto tags audio files. It also supports batch tag edi
 
 Prerequisites
 -------------
-* Only tested on the latest Mac OSX 10.8 release, should work on 10.7.  Untested on 10.9
+* Only tested on the latest Mac OSX 10.9 release, should work on 10.8.  Untested on 10.10
 * 64 bit only
 
 Install From Source
 -------------------
 ### Prerequisites
-* Only tested on the latest Mac OSX 10.8 release, should work on 10.7. Untested on 10.9
+* Only tested on the latest Mac OSX 10.9 release, should work on 10.8. Untested on 10.10
 * 64 bit only
 
 ### Introductions
@@ -38,7 +38,7 @@ To replace a mp3 cover art a second time use `refresh`(⌘R) then `Parent Folder
 
 Information
 ----------
-* Writes 2.4 id3 tags.
+* Writes 2.4 id3 tags for mp3s.
 
 Libraries Used
 --------------
