@@ -1,7 +1,6 @@
 TODO
 ====
-* Test on 10.9 (inculding signing the app)
-* check swapFirstAndLastName 
+* check swapFirstAndLastName
 
 FIXME
 -----
@@ -14,9 +13,6 @@ http://vgmdb.net/album/919
 * Bug in mp3 files sometimes when *replacing* (not adding) artwork on files who album art has *never* been edited in iTunes, means the file can't be added to iTunes. This happens sometimes happens after replacing the all work twice.
 	* **Work around**
 	To replace a mp3 cover art a second time use `refresh`(⌘R) then `Parent Folder`(⌘↑) then `Back`(⌘\[) menus items then replace the cover.
-* Bug in malformed m4a files sometimes when *replacing* (not adding) artwork, means the file can't be played in iTunes.
-* Renaming of files only seems to work once, have to go to a different dir and back to rename again.
-* Adding m4a without quiting Tagger (when Copy files to iTunes Media Folder is unchecked).
 
 Images
 ------
@@ -46,7 +42,6 @@ VGMDB
 
 Later
 -----
-* Add flac (should be easy).
 * Disallow the user from changing the preferences tab very quickly.
 * Butons with icons for capitalization, labelling and renaming.
 * Icon for cover preferences. 
