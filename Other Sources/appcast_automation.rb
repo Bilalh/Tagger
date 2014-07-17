@@ -84,7 +84,12 @@ class AppCast
 		@appcast_download_url  = "#{@download_base_url}#{@appcast_xml_name}"
 		@download_url          = 
 			if @config['github_hosted_downloads'] &&  @config['github_username']  then
-				"https://github.com/downloads/#{@config['github_username'] }/#{@proj_name}/#{@archive_filename}"
+                current_tag=@version.chomp.split(".")[0,3]
+                current_tag=current_tag.join(".")
+                
+				"https://github.com/#{@config['github_username']}/#{@proj_name}/releases/download/#{current_tag}/#{@archive_filename}"
+                # example
+                # https://github.com/Bilalh/Tagger/releases/download/1.8.0/Tagger_1.8.0.6.zip
 			else
 				"#{@download_base_url}#{@archive_filename}"
 			end
