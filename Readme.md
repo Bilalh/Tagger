@@ -7,6 +7,8 @@ Prerequisites
 -------------
 * Only tested on the latest Mac OSX 10.9 release, should work on 10.8.  Untested on 10.10
 * 64 bit only
+* The app is not code signed.  To open the app for the first time, right click on it and choose `Open`.
+
 
 Install From Source
 -------------------
