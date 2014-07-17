@@ -25,6 +25,7 @@
 				9293B85514AF8E5A006D96E7 /* ShellScript */,
 			);
 			dependencies = (
+				92963248197749E60098515B /* PBXTargetDependency */,
 			);
 			name = Sparkle;
 			productName = Sparkle;
@@ -136,6 +137,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		925CC63D15C37DA700820B4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 925CE81413C3BD6D009D6D94 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 925CE81C13C3BD6D009D6D94;
+			remoteInfo = Tagger;
+		};
+		92963247197749E60098515B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 925CE81413C3BD6D009D6D94 /* Project object */;
 			proxyType = 1;
@@ -1059,6 +1067,11 @@
 			isa = PBXTargetDependency;
 			target = 925CE81C13C3BD6D009D6D94 /* Tagger */;
 			targetProxy = 925CC63D15C37DA700820B4F /* PBXContainerItemProxy */;
+		};
+		92963248197749E60098515B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 925CE81C13C3BD6D009D6D94 /* Tagger */;
+			targetProxy = 92963247197749E60098515B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
