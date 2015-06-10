@@ -5,7 +5,7 @@ Tagger is application that auto tags audio files. It also supports batch tag edi
 
 Prerequisites
 -------------
-* Only tested on the latest Mac OSX 10.9 release, should work on 10.8.  Untested on 10.10
+* Only tested on the latest Mac OS X 10.10 release, should work on 10.9.
 * 64 bit only
 * The app is not code signed.  To open the app for the first time, right click on it and choose `Open`.
 
@@ -13,7 +13,7 @@ Prerequisites
 Install From Source
 -------------------
 ### Prerequisites
-* Only tested on the latest Mac OSX 10.9 release, should work on 10.8. Untested on 10.10
+* Only tested on the latest Mac OS X 10.10 release, should work on 10.9.
 * 64 bit only
 
 ### Introductions
